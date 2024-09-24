@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: get-help/view-submit-support-case.html 
+keywords:  
+summary:  
+---
+= 提交及檢視 ASA R2 儲存系統的支援案例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您遇到需要協助的問題、可以使用 ONTAP 系統管理員將案例提交給技術支援部門。您也可以使用 ONTAP 系統管理員來檢視已結案或進行中的案例。
+
+您必須link:https://activeiq-link.netapp.com/["已向 Active IQ 註冊"]檢視 ASA R2 系統的支援案例。
+
+.步驟
+. 若要提交支援案例、請在系統管理員中選取 * 叢集 > 支援 * 、然後選取 * 前往 NetApp 支援 * 。
+. 若要檢視先前提交的案例、請在 System Manager 中選取 * 叢集 > 支援 * 、然後選取 * 檢視我的案例 * 。
+

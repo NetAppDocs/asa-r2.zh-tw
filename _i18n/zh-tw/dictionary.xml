@@ -1,0 +1,1589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="e0144d4fbb3f9c2bd0da253d4d474166" category="summary">將磁碟機新增至節點或機櫃、以增加 ASA R2 儲存單元的容量。</block>
+  <block id="7dee5324bfa4a865b9f803cb87a5033c" category="doc">增加 ASA R2 儲存系統的儲存容量</block>
+  <block id="ac2c93dc09d777746f4eb0be24d69344" category="paragraph">將磁碟機新增至節點或機櫃、以增加 ASA R2 系統的儲存容量。</block>
+  <block id="d1566cdda155967b81fd9a70bd3c4fb5" category="section-title">使用 NetApp Hardware Universe 準備安裝新磁碟機</block>
+  <block id="0781fe35244a615a967521c3c38562c3" category="paragraph">在將新磁碟機安裝到節點或機櫃之前、請先使用 NetApp Hardware Universe 確認您要新增的磁碟機受到 ASA R2 平台的支援、並識別新磁碟機的正確插槽。新增磁碟機的正確插槽視平台機型和ONTAP 版本而定。在某些情況下、您需要依序將磁碟機新增至特定插槽。</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
+  <block id="e5e09031843479ef9ef8cbbd4c2f404c" category="inline-link-macro">NetApp Hardware Universe</block>
+  <block id="71ce934da626f129b18da1d468eb6ec0" category="list-text">前往<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
+  <block id="df9551630bd3ed1534543645b69f8c03" category="list-text">在 * 產品 * 下、選取您的硬體組態。</block>
+  <block id="6f9b9df730c535d946c72327cf939e99" category="list-text">選擇您的 ASA R2 平台。</block>
+  <block id="38df0ee5fe54dd6c758252b6c0d10ca2" category="list-text">選取您的 ONTAP 版本、然後選取 * 顯示結果 * 。</block>
+  <block id="2a1ce808a258d214a002629c6379e420" category="list-text">在圖形下方、選取 * 按一下此處以查看替代檢視 * 、然後選擇符合您組態的檢視。</block>
+  <block id="8879ae602a103ebb018f02c741b13bc6" category="list-text">使用組態檢視來確認新磁碟機是否受支援、以及安裝的正確插槽。</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
+  <block id="185a1f8fef7e6cf81a581dd2a40a152d" category="paragraph">您已確認新磁碟機受到支援、而且您知道適當的安裝插槽。</block>
+  <block id="eff30216681f42753f0004bfaa72a1d8" category="section-title">在 ASA R2 上安裝新磁碟機</block>
+  <block id="4305fddb87da90a117081f11c31b97be" category="paragraph">在單一程序中應新增的磁碟機數量下限為六個。新增單一磁碟機可能會降低效能。</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
+  <block id="ab8d4a8595207b62032f838aac5d0ec5" category="paragraph">您應該針對每個磁碟機重複本程序中的步驟。</block>
+  <block id="42fceed144d93d382eb9bdcc9b1254d2" category="list-text">請妥善接地。</block>
+  <block id="30bc8715fab2eca793d47ebeb9b97131" category="list-text">從平台正面輕移擋板。</block>
+  <block id="80177dc7bdbbbc02b9ce8afc2b88ec50" category="list-text">將新磁碟機插入正確的插槽。</block>
+  <block id="e0c83787dff0404e30c533312ac6d655" category="list-text">在CAM握把處於開啟位置時、請用手插入新的磁碟機。</block>
+  <block id="07107f94f54a6a09df951d28b2b9d729" category="list-text">推動直到磁碟機停止。</block>
+  <block id="ea606fa7b548cf2b580d32d8a7e06738" category="list-text">合上CAM握把、讓磁碟機完全插入中間平面、並將握把卡入定位。</block>
+  <block id="70c5de04671814ba5dcd9d09b741a1cf" category="paragraph">請務必緩慢關閉CAM握把、使其與磁碟機正面正確對齊。</block>
+  <block id="914880e8c4c1f2d863426d9fdb26e63d" category="list-text">確認磁碟機的活動LED（綠色）亮起。</block>
+  <block id="8540a1aa039945b859a1a577be974331" category="list-text">如果 LED 持續亮起、表示磁碟機已通電。</block>
+  <block id="b976d1eaf63b1cc64a0aefb8ee074737" category="list-text">如果 LED 閃爍、表示磁碟機已通電、而且 I/O 正在進行中。如果磁碟機韌體正在更新、 LED 也會閃爍。</block>
+  <block id="23e334f05e952b9ff19da92642272c97" category="paragraph">磁碟機韌體會在沒有目前韌體版本的新磁碟機上自動更新（不中斷營運）。</block>
+  <block id="ddd3f2f8d2c30dd30d7f438baa0b344c" category="list-text">如果您的節點已設定為磁碟機自動指派、您可以等待 ONTAP 自動將新磁碟機指派給節點。如果您的節點未設定為磁碟機自動指派、或是偏好的、您可以手動指派磁碟機。</block>
+  <block id="897b38142b945434cc4786647c86d6fe" category="paragraph">新磁碟機必須指派給節點、才能被辨識。</block>
+  <block id="3f297ef15cde0668e93b35f2752fd4fd" category="paragraph-title">接下來呢？</block>
+  <block id="6dec1c0e8c179a7aac02c43bb607e9b4" category="paragraph">識別新磁碟機之後、請確認已新增磁碟機、並正確指定其擁有權。</block>
+  <block id="ff3d3fb460c520aec3cd9e8982126fb4" category="summary">使用數位安全性憑證來驗證遠端伺服器的身分識別。</block>
+  <block id="8d8c4ed3c573517cf85c6f9774611682" category="doc">管理 ASA R2 儲存系統上的安全性憑證</block>
+  <block id="54fabbb7eaa4284fd9879cc6800e1c23" category="paragraph">線上憑證狀態傳輸協定（OCSP）會使用ONTAP SSL和傳輸層安全（TLS）連線、驗證來自支援服務的數位憑證要求狀態。</block>
+  <block id="14f2e941537be0af0ffcf0eb92638474" category="section-title">產生憑證簽署要求</block>
+  <block id="d9c581beaaa3f252519c2349b498df50" category="paragraph">產生憑證簽署要求（ CSR ）以建立可用於產生公開憑證的私密金鑰。</block>
+  <block id="9c2cdad0235d8d361f21c8343ef95363" category="list-text">在System Manager中、選取*叢集&gt;設定*。</block>
+  <block id="09ef944219bc98d60bb63812176764b8" category="inline-image-macro">指向右側的藍色箭頭</block>
+  <block id="036b8359968029867c0f53398c973b67" category="inline-image-macro">藍色矩形、包含加號、後面接著字詞「 generate CSR 」</block>
+  <block id="08a546dbc12b2c85cddd39198968436b" category="list-text">在 * 安全 * 下，在 * 證書 * 旁邊選擇<block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block>；然後選擇<block ref="98f8645ac2524866a7d14024818586c1" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="a37fbf5e4cab39699059b543072a0a58" category="list-text">輸入主旨一般名稱、然後選取國家 / 地區。</block>
+  <block id="763c4b735ed893cd16a51bd04983ace0" category="inline-image-macro">兩個箭頭朝對角方向、接著是更多選項</block>
+  <block id="0e7abfbe7afd6a026db3f74641f7c1dc" category="list-text">如果您要變更 GSR 預設值、請選取擴充金鑰使用方式、或新增主旨替代名稱、<block ref="ca3389cd4e212742391c26eb7cfeb92f" category="inline-image-macro-rx" type="image"></block>然後選取、再進行所需的更新。</block>
+  <block id="c67e909aabe72e49f90ee7cbe67386f3" category="list-text">選取*產生*。</block>
+  <block id="58a9444d475382ab6d41e5dfb3b74c25" category="paragraph">您已產生可用於產生公用憑證的 CSR 。</block>
+  <block id="d2239394e4657f1d0e7710610d913ea0" category="section-title">新增信任的憑證授權單位</block>
+  <block id="969be7a147de5a36fce282a68b738f12" category="paragraph">ONTAP 為使用傳輸層安全性（ TLS ）的應用程式提供一組預設的信任根憑證。您可以視需要新增其他信任的憑證授權單位。</block>
+  <block id="895ca0680053a3b00358e1394db5afd3" category="list-text">選擇*叢集&gt;設定*。</block>
+  <block id="6353d263da078b0850c730e96e2eaddc" category="list-text">在 * 安全 * 下，在 * 證書 * 旁邊，選擇<block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="af40d0c973be93e2306ea4acfd2f9138" category="list-text">選取 * 信任的憑證授權單位 * 。</block>
+  <block id="c3e430848a72c379bf1f417e27a1c536" category="inline-image-macro">包含加號的藍色矩形、後面接著以白色字母加上字詞</block>
+  <block id="b85d543ef058a5b9d03608263d6ebb00" category="list-text">輸入或匯入憑證詳細資料，然後選取<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="81d4d87b5a2c0e5a67346b0cfa7715e1" category="paragraph">您已將新的信任憑證授權單位新增至 ASA R2 系統。</block>
+  <block id="4d9d4efe062f0dfb4b9fb363303ccde7" category="section-title">續約或刪除信任的憑證授權單位</block>
+  <block id="752c3bde22d3e32e3d58a63e896456e5" category="paragraph">信任的憑證授權單位必須每年續約。如果您不想續約過期的憑證、您應該將其刪除。</block>
+  <block id="c222bab7c055dc9c80c22cac62d053ec" category="list-text">選取您要續約或刪除的信任憑證授權單位。</block>
+  <block id="59c982eff32f42adfa29c968a5c566b6" category="list-text">續約或刪除憑證授權單位。</block>
+  <block id="b2df3cf3b115278e9974b518ddd73e7b" category="cell">若要更新憑證授權單位、請執行此動作 ...</block>
+  <block id="4d391a8815f477c0b5b3acf7eabb40a8" category="cell">若要刪除憑證授權單位、請執行此動作 ...</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
+  <block id="f68a3e6f71e355a9835562cab8f0851b" category="inline-image-macro">三個垂直藍點</block>
+  <block id="fb6d4d442334588198457bbf46dc3018" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 續訂 * 。</block>
+  <block id="830f89f5010352162e970b4de8b2ce73" category="list-text">輸入或匯入憑證資訊；然後選取 * 更新 * 。</block>
+  <block id="ad86814df9824405195e3af8cb8008d4" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 刪除 * 。</block>
+  <block id="f56940559ec4140bfc4f83d1d53d3ed0" category="list-text">確認您要刪除、然後選取 * 刪除 * 。</block>
+  <block id="3cbc41dbd44d8693c2915e3f3b16e909" category="paragraph">您已在 ASA R2 系統上更新或刪除現有的信任憑證授權單位。</block>
+  <block id="873f6e5a4efadb9aff49317feb36e185" category="section-title">新增用戶端 / 伺服器憑證或本機憑證授權單位</block>
+  <block id="b57a795defde291f2d601de4109f26b6" category="paragraph">新增用戶端 / 伺服器憑證或本機憑證授權單位、以啟用安全的 Web 服務。</block>
+  <block id="71f6fd74b946dde1d2a4ff854f19c7b9" category="list-text">選取 * 用戶端 / 伺服器憑證 * 或 * 本機憑證授權單位 * 。</block>
+  <block id="4dd6ca4f0907dec3d977edfdf6951cda" category="inline-image-macro">藍色矩形包含藍色加號、後面接著新增一字</block>
+  <block id="b5598a4935a1c05406e7013e1ce324ee" category="list-text">添加證書信息，然後選擇<block ref="b104d32a56b17a03a4cfe13ea26d0a49" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="ecb3a7f6c4036e659d5d37de11089ae7" category="paragraph">您已將新的用戶端 / 伺服器憑證或本機授權新增至 ASA R2 系統。</block>
+  <block id="b591bafeccaa94a694d3723221e9d5b3" category="section-title">續約或刪除用戶端 / 伺服器憑證或本機憑證授權單位</block>
+  <block id="e8043bb715c74eec31d20d5a3ab64e27" category="paragraph">用戶端 / 伺服器憑證和本機憑證授權單位必須每年續約。如果您不想續約過期的憑證或本機憑證授權單位、您應該將其刪除。</block>
+  <block id="e5b9ab3062848e6fac501310d1f6171a" category="list-text">在 * 安全 * 下，在證書旁邊，選擇<block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="3ca515fb766423ca1b5e2902ae912cbd" category="list-text">選取 * 用戶端 / 伺服器憑證 * 或 * 本機憑證授權單位 * 。</block>
+  <block id="d593b3417192fbc0105a1cb4d0666e38" category="list-text">選取您要續約或刪除的憑證。</block>
+  <block id="9541193538215beddec4d0ff4179c02b" category="paragraph">您已在 ASA R2 系統上更新或刪除現有的用戶端 / 伺服器憑證或本機憑證授權單位。</block>
+  <block id="a08a1d658815d18af06f0f984093e1c8" category="summary">建立 LIF 以存取 ASA R2 上儲存單元中的資料。使用子網路來簡化 LIF 建立和 IPspace 、以提供安全的管理和路由。</block>
+  <block id="308b265e371a9880b0bd42bdd3062ea8" category="searchtitle">使用 ONTAP 系統管理員 | ASA R2 管理用戶端對儲存設備的存取</block>
+  <block id="aae1b867cf5c5c13dcc8b8e70c18c738" category="doc">管理用戶端存取 ASA R2 儲存系統上的儲存 VM</block>
+  <block id="921172c97bf93779d120cfbe016a6ce1" category="paragraph">ASA R2 系統上的儲存單元包含在儲存虛擬機器（ VM ）內。儲存 VM 可用來為 SAN 用戶端提供資料。使用 ONTAP System Manager 為 SAN 用戶端建立 LIF （網路介面）、以連線至儲存 VM 並存取儲存單元中的資料。您可以選擇性地使用子網路來簡化 LIF 建立和 IPspace 、為儲存 VM 提供自己的安全儲存、管理和路由。</block>
+  <block id="d695c844caf33f73193a8ea0e879c22e" category="section-title">建立IPspaces</block>
+  <block id="ec8b91f4ad5fc66727bb290ef07c8596" category="paragraph">IPspace 是儲存 VM 所在的獨特 IP 位址空間。建立 IPspace 時、您可以讓儲存 VM 擁有自己的安全儲存、管理和路由。您也可以讓管理性分隔網路網域中的用戶端使用相同 IP 位址子網路範圍中的重疊 IP 位址。</block>
+  <block id="df2b3ecb1c16c73b202a5c404c8d1d96" category="paragraph">您必須先建立 IPspace 、才能建立子網路。</block>
+  <block id="5838add9afd4c454a32ffdfa4b935384" category="list-text">選擇 * 網路 &gt; 總覽 * 。</block>
+  <block id="b5638b0fef11bce786230cdaa3303377" category="list-text">在 *IPspacs* 下，選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="fa1482576142ae3210a65a392759b847" category="list-text">輸入 IPspace 的名稱或接受預設名稱。</block>
+  <block id="3c8c9716d84dea224b7c0e49a802ae3d" category="paragraph">IPspace 名稱不能為「 ALL 」、因為「 ALL 」是系統保留的名稱。</block>
+  <block id="10492389e94efdebbb66f7b0cd8a1324" category="list-text">選擇*保存*。</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">接下來呢？</block>
+  <block id="79e6c5b282864befd0059c0b9507a94d" category="paragraph">現在您已建立 IPspace 、您可以使用它來建立子網路。</block>
+  <block id="e076d116ada24bf1c0b0893d53e30abe" category="section-title">建立子網路</block>
+  <block id="15c63fd73320216c99cdc2294d7f3cbc" category="paragraph">子網路可讓您分配特定的 IPv4 或 IPv6 位址區塊、以便在建立 LIF （網路介面）時使用。子網路可讓您指定子網路名稱、而非每個 LIF 的特定 IP 位址和網路遮罩、進而簡化 LIF 的建立。</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">開始之前</block>
+  <block id="ddaa39224424042ba35394afbe714a70" category="list-text">您必須是叢集管理員才能執行此工作。</block>
+  <block id="e16a6d9491427cd66f2caf8e459cb6d8" category="inline-link-macro">廣播網域</block>
+  <block id="1f129d358ee21707dbf46029daa0c4e8" category="list-text"><block ref="9caa7bd77d30a45130041387978bc871" category="inline-link-macro-rx"></block>您計畫新增子網路的和 IPspace 必須已經存在。</block>
+  <block id="f46ea849590d68e8ae2eebb83c3b85c0" category="list-text">選擇 * 子網 * ，然後選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="283bc04f4a8ce3e35200c13f726ec56d" category="list-text">輸入子網路名稱。</block>
+  <block id="394821118526283bc78aba0efc30c8b3" category="paragraph">所有子網路名稱在IPspace內必須是唯一的。</block>
+  <block id="c1e55da990837a8cad4297b295146e89" category="list-text">輸入子網路 IP 位址和子網路遮罩。</block>
+  <block id="8b98f7a91cc42e213582162339f84f04" category="list-text">指定子網路的 IP 位址範圍。</block>
+  <block id="f6c6f57c664e1038b12023e68f61ddae" category="paragraph">當您指定子網路的 IP 位址範圍時、請勿將 IP 位址與其他子網路重疊。當子網路 IP 位址重疊、且不同的子網路或主機嘗試使用相同的 IP 位址時、可能會發生網路問題。</block>
+  <block id="4c7037dbd07b6a0287ef755aa71a9605" category="list-text">選取子網路的廣播網域。</block>
+  <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">選取*「Add*」。</block>
+  <block id="ed7898c08720b7f938fd473f200d7f27" category="paragraph">您已經建立了子網路、現在您可以使用它來簡化建立您的生命。</block>
+  <block id="753ad49162ca6621affe67bf28ce6a1e" category="section-title">建立 LIF （網路介面）</block>
+  <block id="be23cf7af156de0532411edfa91f3361" category="paragraph">LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在您要用來存取資料的連接埠上建立生命。儲存 VM 會透過一或多個生命負載、將資料提供給用戶端。如果發生元件故障、 LIF 可能會容錯移轉或移轉至不同的實體連接埠、因此不會中斷網路通訊。</block>
+  <block id="ab643808e465ae91c1cb6822de36ce7f" category="paragraph">建立 IP 資料 LIF 時、預設可同時為 iSCSI 和 NVMe / TCP 流量提供服務。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。</block>
+  <block id="21f332db2a0aeb6d30c08d58804c1f1a" category="list-text">基礎實體或邏輯網路連接埠必須設定為管理<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>狀態。</block>
+  <block id="0b7a56152c376f386379636394d6eee1" category="list-text">如果您打算使用子網路名稱來配置LIF的IP位址和網路遮罩值、則該子網路必須已經存在。</block>
+  <block id="9ad4be6eef992b371fa173aecc5c7bd0" category="list-text">處理節點之間叢集內流量的LIF、不應與處理管理流量的LIF或處理資料流量的LIF位於相同的子網路上。</block>
+  <block id="56b6135f76acdfbc82482867e3f1993e" category="inline-image-macro">藍色矩形加上加號、接著加上白色字母</block>
+  <block id="f20ae60dbde59cfc56962bde92c564ae" category="list-text">選擇 * Network interfaces （網絡接口） * ；然後選擇<block ref="43ddb7c1c955eb9c1a5e185c29a240b7" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="c39ec700f510944ec561e2300803e178" category="list-text">選取介面類型和傳輸協定、然後選取儲存 VM 。</block>
+  <block id="22af9907f2214efa74666823a700346c" category="list-text">輸入 LIF 名稱或接受預設名稱。</block>
+  <block id="70d07ebe6650e85d459254bc46c6a062" category="list-text">選取網路介面的主節點、然後輸入 IP 位址和子網路遮罩。</block>
+  <block id="2561d57d2c3e5cb8cc1bd1d2687ba3a8" category="paragraph">您已建立資料存取的 LIF 。</block>
+  <block id="856860771c16744542e355c2e406905a" category="section-title">修改 LIF （網路介面）</block>
+  <block id="620d15987a36eaa7963054ae892dd4d2" category="paragraph">您可以視需要停用或重新命名救生。您也可以變更 LIF IP 位址和子網路遮罩。</block>
+  <block id="2d193e48a0472a44a25d382ba1a4653a" category="list-text">選擇 * 網路 &gt; 總覽 * 、然後選擇 * 網路介面 * 。</block>
+  <block id="02a99b9ab9f8588ad965b77c378cb8a3" category="list-text">將游標移至您要編輯的網路介面上方<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>、然後選取。</block>
+  <block id="071ef8ace6c74c9a1515550077974172" category="list-text">選擇*編輯*。</block>
+  <block id="c93a16b18c49ff50c8b370dab8b8ef87" category="list-text">您可以停用網路介面、重新命名網路介面、變更 IP 位址或變更子網路遮罩。</block>
+  <block id="f3833c816c6fe5b26b4e4266ccfed699" category="paragraph">您的 LIF 已修改。</block>
+  <block id="092a2a219a66f53ad918ecfca02a40cb" category="summary">使用 ONTAP 系統管理員在 ASA R2 系統上執行基本儲存網路管理。</block>
+  <block id="7727ebf2fbdb4d8c5b88383f3872253c" category="doc">管理 ASA R2 儲存系統上的叢集網路</block>
+  <block id="dce69090c45af3d113621dac45bca7fb" category="paragraph">您可以使用 ONTAP 系統管理員在 ASA R2 系統上執行基本的儲存網路管理。例如、您可以新增廣播網域或將連接埠重新指派給不同的廣播網域。</block>
+  <block id="142e63ab347e5afebe1ee3eddeb82dc4" category="section-title">新增廣播網域</block>
+  <block id="18021c31fe204f4bcb54336f24bb7958" category="paragraph">使用廣播網域將屬於同一層 2 網路的網路連接埠分組、以簡化叢集網路的管理。然後、儲存虛擬機器（ VM ）就可以使用群組中的連接埠來處理資料或管理流量。</block>
+  <block id="4d00d5474a9eac58d3c8b5a5efd05a9a" category="paragraph">「預設」廣播網域和「叢集」廣播網域是在叢集設定期間建立的。「預設」廣播網域包含位於「預設」 IPspace 的連接埠。這些連接埠主要用於提供資料。叢集管理和節點管理連接埠也位於此廣播網域中。「叢集」廣播網域包含位於「叢集」 IPspace 中的連接埠。這些連接埠用於叢集通訊、並包含叢集中所有節點的所有叢集連接埠。</block>
+  <block id="98436b7b9537997727c62df8cd1c5b4b" category="paragraph">您可以在叢集初始化之後建立其他廣播網域。當您建立廣播網域時、會自動建立包含相同連接埠的容錯移轉群組。</block>
+  <block id="67484e42ec7ef0f9c6081b26a7966a3f" category="paragraph">新增至廣播網域之連接埠的最大傳輸單元（MTU）會更新為廣播網域中設定的MTU值。</block>
+  <block id="5be487237484d4edf568d618438fb533" category="list-text">在 System Manager 中、選取 * 網路 &gt; 總覽 * 。</block>
+  <block id="6169050a4730f8d024d60e5e811d6085" category="list-text">在 * 廣播 * 網域下、選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="01b73cca64689dc46d9d7ff592613e09" category="list-text">輸入廣播網域的名稱或接受預設名稱。</block>
+  <block id="2da0403e9693c05aeecf9502d0349c34" category="paragraph">所有廣播網域名稱在IPspace內必須是唯一的。</block>
+  <block id="acee25e7c14048ef94827296427014c3" category="list-text">選取廣播網域的 IPspace 。</block>
+  <block id="728d0a63553bdc6b666a73ec8dd25036" category="paragraph">如果您未指定 IPspace 名稱、則廣播網域會建立在「預設」 IPspace 中。</block>
+  <block id="0a2846cba1b5e81aa9f42af3f33ba614" category="list-text">輸入最大傳輸單位（ MTU ）。</block>
+  <block id="eb2315da488570ba0aaa67aaf32507b6" category="paragraph">MTU 是可在廣播網域中接受的最大資料封包。</block>
+  <block id="c7adbe343adefa9627ff949dd3db0f69" category="list-text">選取所需的連接埠、然後選取 * 儲存 * 。</block>
+  <block id="31862e129b6cb07a60ddbee086f0cfb3" category="paragraph">您已新增廣播網域。</block>
+  <block id="79a445b13af94b222b8d21958b843d49" category="section-title">將連接埠重新指派給不同的廣播網域</block>
+  <block id="6da4a5f96d583bb97bbeb1eae5fc8e0f" category="paragraph">連接埠只能屬於一個廣播網域。如果您想要變更連接埠所屬的廣播網域、您需要將連接埠從現有的廣播網域重新指派給新的廣播網域。</block>
+  <block id="c258df26dcfb02d55a6b3c661938ad69" category="list-text">在 * 廣播網域 * 下、選取<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>網域名稱旁的、然後選取 * 編輯 * 。</block>
+  <block id="f91ac93e51b19237caea22ba4c2ef5ae" category="list-text">取消選取您要重新指派給其他網域的乙太網路連接埠。</block>
+  <block id="368198c9cdf4ab26f2c4bc3162cd610e" category="list-text">選取您要重新指派連接埠的廣播網域、然後選取 * 重新指派 * 。</block>
+  <block id="a66b179e6e9809ba16cdd935358ac7e0" category="paragraph">您已將連接埠重新指派給不同的廣播網域。</block>
+  <block id="afbd27ae71fcfac624980e215bb4ae35" category="section-title">建立 VLAN</block>
+  <block id="f1cf0419bf8f60dda383e9724ec169b9" category="paragraph">VLAN 由交換器連接埠組成、這些連接埠群組在一個廣播網域中。VLAN 可讓您提高安全性、隔離問題、並限制 IP 網路基礎架構內的可用路徑。</block>
+  <block id="95ec85f4f754ff1c4737e3daf82e2a5f" category="paragraph">部署在網路中的交換器必須符合IEEE 802.1Q標準、或是具有廠商專屬的VLAN實作。</block>
+  <block id="a6ebb754a0a723bd318e1c456c016b5c" category="list-text">無法在不含成員連接埠的介面群組連接埠上建立 VLAN 。</block>
+  <block id="6c7577eb4fed58aa2f71ec659459053a" category="list-text">當您第一次透過連接埠設定VLAN時、連接埠可能會關閉、導致網路暫時中斷連線。後續新增至相同連接埠的VLAN不會影響連接埠狀態。</block>
+  <block id="a14138582e52afe474d6f2c9d603b59c" category="list-text">您不應該在網路介面上建立與交換器原生VLAN相同識別碼的VLAN。例如、如果網路介面e0b位於原生VLAN 10、則不應在該介面上建立VLAN e0b-10。</block>
+  <block id="46eb33b2ea8d70f5aa28bc0928927131" category="inline-image-macro">藍色加號、後面接著 VLAN 字樣</block>
+  <block id="1d1859213dfee6d633cc438907fa9368" category="list-text">在 System Manager 中，選擇 *Network &gt; Ethernet ports * ；然後選擇<block ref="70fd934cd65ca7e12c29e61a94c9ee96" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="fcb3cf4cc4552ba4d297ad4694e6f311" category="list-text">選取 VLAN 的節點和廣播網域。</block>
+  <block id="4dad2964a3ea6c272dd1e33a701b136e" category="list-text">選取 VLAN 的連接埠。</block>
+  <block id="068327f3791c8917947738aa16c8e996" category="paragraph">VLAN 無法連接至主控叢集 LIF 的連接埠或指派給叢集 IPspace 的連接埠。</block>
+  <block id="de2a6ee1c3b4b6d139e9d079d51562a1" category="list-text">輸入 VLAN ID 。</block>
+  <block id="4b43fcb8416640ec9fab44fa28ba7990" category="paragraph">您已經建立了一個 VLAN 來提高安全性、隔離問題、並限制 IP 網路基礎架構內的可用路徑。</block>
+  <block id="6ed0df7e904b85eced349f3dfe9d7449" category="summary">為了維護、疑難排解、軟體更新或其他管理原因、您可能需要重新啟動節點。</block>
+  <block id="f32099e04b2acfe97d8355b9fa3ab9a0" category="doc">重新啟動 ASA R2 儲存系統上的節點</block>
+  <block id="d7b158851672ba435107aef39e567fc9" category="paragraph">為了維護、疑難排解、軟體更新或其他管理原因、您可能需要重新啟動節點。當節點重新開機時、其 HA 合作夥伴會自動執行接管。然後、在重新開機的節點重新上線後、合作夥伴節點會執行自動恢復。</block>
+  <block id="c352b7c4dd311b306fdd9f0fc9a8cd8c" category="list-text">在 System Manager 中、選取 * 叢集 &gt; 總覽 * 。</block>
+  <block id="9440e1c4b84b57408c464ace07a7a878" category="list-text">選取<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>您要重新開機的節點旁的、然後選取 * 重新開機 * 。</block>
+  <block id="4283dcef28f0d09e831a0be894435be6" category="list-text">輸入您要重新啟動節點的原因、然後選取 * 重新開機 * 。</block>
+  <block id="ca23d4a9dcd507fdb0e2b37edf93124f" category="paragraph">您輸入重新開機的原因會記錄在系統稽核記錄中。</block>
+  <block id="54dc5c16f4aee32cdc661e34243fd2b4" category="paragraph">當節點重新開機時、其 HA 合作夥伴會執行接管作業、使資料服務不會中斷。重新開機完成後、 HA 合作夥伴會執行恢復。</block>
+  <block id="8e709d4933b80517cc0796f25203c496" category="summary">您可能需要重新命名節點、以符合組織的命名慣例或其他管理理由。</block>
+  <block id="476d1f0db4e5f305c79190e60266f995" category="doc">重新命名 ASA R2 儲存系統上的節點</block>
+  <block id="75d2e00ad74f6a0ed1760ec89a776487" category="paragraph">您可以使用 ONTAP 系統管理員重新命名 ASA R2 系統上的節點。您可能需要重新命名節點、以符合組織的命名慣例或其他管理理由。</block>
+  <block id="6e44f6775202148b10a6a547cbc3387d" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>要重命名的節點旁邊的，然後選擇 * 重命名 * 。</block>
+  <block id="04cf2d1c62979e65af58dad93b9576d6" category="list-text">輸入節點的新名稱、然後選取 * 重新命名 * 。</block>
+  <block id="386965547e6b84de440cf671abaf2461" category="paragraph">新名稱會套用至節點。</block>
+  <block id="39d236810e52221ef0f78b5afe9dda51" category="summary">ONTAP 會自動更新 ASA R2 系統上的韌體。您可以使用 System Manager 停用自動更新、並在安裝更新之前檢視更新。</block>
+  <block id="531a0a7558ea49516e00375fc7a7c6c1" category="doc">更新 ASA R2 儲存系統上的韌體</block>
+  <block id="b1fa95bfdd87d26ef5f8aca8df282454" category="paragraph">根據預設、 ONTAP 會自動下載及更新 ASA R2 系統上的韌體和系統檔案。如果您想要在下載及安裝建議的更新之前，能夠靈活地檢視這些更新，可以使用 ONTAP 系統管理員來停用自動更新或編輯更新參數，以便在執行任何動作之前顯示可用更新的通知。</block>
+  <block id="9543e3c5ee671be608b8d7358d2905b4" category="section-title">啟用自動更新</block>
+  <block id="16dd8aa4e8a61c5fff4660292af260d6" category="paragraph">依預設、儲存韌體、 SP / BMC 韌體和系統檔案的建議更新會自動下載並安裝在 ASA R2 系統上。如果已停用自動更新、您可以讓它們恢復預設行為。</block>
+  <block id="61afff9f522bbf671738bb412c8fe956" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 啟用 * 。</block>
+  <block id="a05df79f4b35e5abaa3bdc88c372d245" category="list-text">閱讀並接受 EULA 。</block>
+  <block id="e96b4d3ae2048d6e0ab6b5175cdc67ba" category="list-text">接受預設值以自動更新韌體和系統檔案。您也可以選擇顯示通知、或自動關閉建議的更新。</block>
+  <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">選取以確認您的更新修改將套用至所有目前和未來的更新。</block>
+  <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">根據您的更新選擇、建議的更新會自動下載並安裝在您的 ASA R2 系統上。</block>
+  <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">停用自動更新</block>
+  <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">如果您想要在安裝前靈活檢視建議的更新、請停用自動更新。如果停用自動更新、您需要手動執行韌體和系統檔案更新。</block>
+  <block id="292eff21b210f8e769ea67e93af60cc2" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 禁用 * 。</block>
+  <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">自動更新已停用。您應該定期檢查建議的更新、並決定是否要執行手動安裝。</block>
+  <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">檢視自動更新</block>
+  <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">檢視已下載至叢集且排定自動安裝的韌體和系統檔案更新清單。同時檢視先前自動安裝的更新。</block>
+  <block id="abd4e9614ca55c29d3b65381570676f5" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 查看所有自動更新 * 。</block>
+  <block id="c5f5044ff24461ba8a4e4a6bc2887bd0" category="section-title">編輯自動更新</block>
+  <block id="aa32761812c5105416e1c8de6901bbf8" category="paragraph">您可以選擇自動下載並安裝儲存韌體、 SP / BMC 韌體和系統檔案的建議更新、或選擇自動關閉建議的更新。如果您想要手動控制更新的安裝或解僱、請選擇在有建議的更新可用時收到通知；然後您可以手動選擇安裝或關閉更新。</block>
+  <block id="72c17efc027d7f0c3f48d02c16886905" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 編輯自動更新 * 。</block>
+  <block id="820669251a6d9aa8a265e4aa20459cdf" category="list-text">更新自動更新的選項。</block>
+  <block id="aed3f23a5ce94e81514a2da9dce9b2ef" category="paragraph">自動更新會根據您的選擇進行修改。</block>
+  <block id="d51f54f2a9182b10cea278ae35000b46" category="section-title">手動更新韌體</block>
+  <block id="bc1104446ea3d0b83abd00c11e939335" category="paragraph">如果您想要在下載和安裝建議的更新之前、能夠靈活地檢視這些更新、您可以停用自動更新並手動更新韌體。</block>
+  <block id="bf48a37237272ddc300e21b45b8971dc" category="list-text">將韌體更新檔案下載至伺服器或本機用戶端。</block>
+  <block id="484bee1f3996418a874aa526da0b5753" category="list-text">在 System Manager 中、選取 * 叢集 &gt; 總覽 * 、然後選取 * 更新 * 。</block>
+  <block id="e5f510366eded3b692a9273af6f6bd62" category="inline-image-macro">藍色矩形包含加號、後面接著白色字母的更新韌體字樣</block>
+  <block id="1c6248c9b917dc357a68441deb105f78" category="list-text">選擇 * 韌體更新 * ；然後選擇<block ref="86ace020e2f51d5cc4db2b665d9f2405" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="70bd8d7d7e01ac7ceebd8e8ba2be8da6" category="paragraph">您的韌體已更新。</block>
+  <block id="a8d696bbc3e0da20e552c1bb59ce8581" category="doc">管理 ASA R2 儲存系統上的使用者帳戶和角色</block>
+  <block id="26c63dfee3232ccec05fbebd34b103b5" category="paragraph">使用 System Manager 為您的使用者帳戶設定 Active Directory 網域控制站存取、 LDAP 和 SAML 驗證。建立使用者帳戶角色、以定義指派給角色的使用者可在叢集上執行的特定功能。</block>
+  <block id="6dc7fdce5f04758fffbd1050c23f063c" category="section-title">設定 Active Directory 網域控制站存取</block>
+  <block id="f9adc1a73be5a88e97262617585fc35b" category="paragraph">設定 Active Directory （ AD ）網域控制器存取叢集或儲存 VM 、以便啟用 AD 帳戶存取。</block>
+  <block id="e2c5bc110c3134711e8a3af89700078e" category="list-text">在 * 安全性 * 區段的 * Active Directory* 下、選取 * 設定 * 。</block>
+  <block id="2d9774ef5d6550d067c7779bde2cc348" category="paragraph">您現在可以在 ASA R2 系統上啟用 AD 帳戶存取。</block>
+  <block id="f4577450199e9b0c070ffd7727b8b7db" category="section-title">設定LDAP 功能</block>
+  <block id="44f2ca033b29c7929c9960234e5b3e62" category="paragraph">設定輕量型目錄存取傳輸協定（ LDAP ）伺服器、以集中維護使用者資訊進行驗證。</block>
+  <block id="28f4e2e345ae192c477030352db45744" category="paragraph">您必須已產生憑證簽署要求、並新增 CA 簽署的伺服器數位憑證。</block>
+  <block id="9318939e830eeac5660efe38cc3ace9e" category="inline-image-macro">藍色機械齒輪的輪廓</block>
+  <block id="dcd1a8afdbb9149f68099d4fb40312e5" category="list-text">在 * 安全 * 區段的 * LDAP * 旁、選擇<block ref="b2be2652612d1190175919fee8760c1b" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="03e733fd3f9ea72397f1c6bf43c6899f" category="list-text">輸入必要的 LDAP 伺服器和繫結資訊、然後選取 * 儲存 * 。</block>
+  <block id="256ae3682a2f511447dc0e3c0ebb1b83" category="paragraph">您現在可以使用 LDAP 來取得使用者資訊和驗證。</block>
+  <block id="ee4f9ba4818273504bf6ff2e0c342ad8" category="section-title">設定SAML驗證</block>
+  <block id="2f336dc776e8965ad350d1cc24f7d05a" category="paragraph">安全聲明標記語言（ SAML ）驗證可讓使用者透過安全身分識別提供者（ IDP ）進行驗證、而非直接服務提供者（例如 Active Directory 和 LDAP ）。</block>
+  <block id="a1036b59d73505365ef378243a1e483a" category="list-text">必須設定您打算用於遠端驗證的IDP。</block>
+  <block id="bbbb5ba02f389abec12b75c1b9cb91bc" category="paragraph">請參閱 IDP 文件以瞭解組態。</block>
+  <block id="3a9e3f68d0c667f8a7b447e51b0c8cba" category="list-text">您必須擁有IDP的URI。</block>
+  <block id="ee70ca4f30627d772db092c5816654fa" category="inline-image-macro">機械齒輪的藍色輪廓</block>
+  <block id="2f57bb8657084586dcade5932725c4de" category="list-text">在 * 安全 * 下，在 * SAML 驗證 * 旁邊，選擇<block ref="a9be0719b387789238ea22451afbb122" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="7db9109baea64861f13be96391d9b81d" category="list-text">選取 * 啟用 SAML 驗證 * 。</block>
+  <block id="3e352186f36f76f562edca4984f0411a" category="list-text">輸入 IDP URL 和主機系統 IP 位址、然後選取 * 儲存 * 。</block>
+  <block id="cb4c43c9c7ec8689cc5b6b9004feb80d" category="paragraph">確認視窗會顯示已自動複製到剪貼簿的中繼資料資訊。</block>
+  <block id="a3159db686c1d366e5f2b352a66feac1" category="list-text">前往您指定的 IDP 系統、然後從剪貼簿複製中繼資料以更新系統中繼資料。</block>
+  <block id="7710ba0aff48fcda71a2abbcc40a4207" category="list-text">返回 System Manager 的確認視窗、然後選取 * 我已使用主機 URI 或中繼資料 * 設定 IDP 。</block>
+  <block id="1b15428800637bbda165a70162ae4a38" category="list-text">選取 * 登出 * 以啟用 SAML 型驗證。</block>
+  <block id="46a104f98e1224c5718cc97c759b2595" category="paragraph">IDP系統會顯示驗證畫面。</block>
+  <block id="1f5d625fbe13f457c48513ce1e397954" category="paragraph">您現在可以將 SAML 驗證用於使用者帳戶。</block>
+  <block id="4374a327e24ea03cc8606ed272d5ab67" category="section-title">建立使用者帳戶角色</block>
+  <block id="c30236cf1b83cdb71cdbc959dc102778" category="paragraph">叢集管理員和儲存 VM 管理員的角色會在初始化叢集時自動建立。建立其他使用者帳戶角色、以定義指派給角色的使用者可在叢集上執行的特定功能。</block>
+  <block id="2a42a02e0c80896d2cadfc33dac030f9" category="list-text">在 * 安全 * 區段的 * 使用者與角色 * 旁、選擇<block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="6f6e38f1b0974281d315186f96880854" category="list-text">在 * 角色 * 下，選擇 <block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="498aae2569549d125195c5040104972d" category="list-text">選取角色屬性。</block>
+  <block id="6e796a1d2d98e943a4e4e410ba8c1f2f" category="inline-image-macro">加號後加上藍色字母</block>
+  <block id="5dbb17b4e1f657315c973bc19eee1bd3" category="paragraph">要增加多個屬性，請選擇<block ref="0428df21f8cd0e9a5a515701151394b7" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="24b6945f1a167b1739c6f77f9120f9b7" category="paragraph">系統會建立新的使用者帳戶、供您的 ASA R2 系統使用。</block>
+  <block id="98fc301f6ebc41b73a73ffbfdede8c51" category="section-title">建立系統管理員帳戶</block>
+  <block id="e469f9bcea1da714ea47f113d37acc0a" category="paragraph">建立系統管理員使用者帳戶、讓帳戶使用者根據指派給帳戶的角色、在叢集上執行特定動作。若要增強帳戶安全性、請在建立帳戶時設定多因素驗證（ MFA ）。</block>
+  <block id="a730d357af30dbb64e05aedcc912bc6e" category="list-text">在 *Users* 下，選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="0591e5156b9b9934695bd3a29fc6ad2d" category="list-text">輸入使用者名稱、然後選取要指派給使用者的角色。</block>
+  <block id="993b9a4bb761c1677086e320fa017318" category="list-text">選取使用者登入方法和驗證方法。</block>
+  <block id="b21ff4532a83df036f4d23b6a3950c9d" category="list-text">若要啟用 MFA 、請選取<block ref="0428df21f8cd0e9a5a515701151394b7" category="inline-image-macro-rx" type="image"></block>；然後選取次要登入方法和驗證方法</block>
+  <block id="a684b58dd7cbb3dc60e9390e6971aad8" category="list-text">輸入使用者的密碼。</block>
+  <block id="3dbdb12dafcdfe6fa91ffde82420684c" category="paragraph">系統會建立新的系統管理員帳戶、供您在 ASA R2 叢集上使用。</block>
+  <block id="cd5ce84f06573fa36efd7de37fc1e5ba" category="summary">如果主機資料作業發生問題、您可以使用 ONTAP 系統管理員來驗證從主機到 ASA R2 儲存系統的連線是否為作用中。</block>
+  <block id="29aef3c4098e0c02a759b7ceeffd7bf5" category="doc">驗證 ASA R2 儲存系統上的主機連線能力</block>
+  <block id="2066e94a3e5e94a8e4ebdca7307614e8" category="list-text">在 System Manager 中、選取 * 主機 * 。</block>
+  <block id="d6a0ea19a115b4b6c1b0c1db29d0f8c8" category="paragraph">主機連線狀態會顯示在主機群組名稱旁邊、如下所示： * * 確定 * ：表示所有啟動器都已連線至兩個節點。* * 部分連線 * ：表示部分啟動器並未同時連接兩個節點。* * * 無連線 * ：表示未連線任何啟動器。</block>
+  <block id="7d19a1e7e72002fdb422d749fd4507db" category="paragraph">在主機上進行更新、以修正連線問題。ONTAP 會每十五分鐘重新檢查一次連線狀態。</block>
+  <block id="69cb7ab40e4d5787db8003ef13bf1939" category="summary">建立快照以備份 ASA R2 系統上的資料。您可以建立手動快照、也可以使用一致性群組來排程自動快照。</block>
+  <block id="a72d39c43f1da3c8e4c29dc1a6cf6185" category="searchtitle">使用 ONTAP System Manager | ASA R2 建立快照以備份資料</block>
+  <block id="054d41e4a716977ca191fd8200811262" category="doc">建立快照以備份 ASA R2 儲存系統上的資料</block>
+  <block id="c54a8c5c3612eb9292700d6127c38aae" category="paragraph">若要在 ASA R2 系統上備份資料、您需要建立快照。您可以使用 ONTAP 系統管理員來建立單一儲存單元的手動快照、或建立一致性群組、並同時排程多個儲存單元的自動快照。</block>
+  <block id="b4989e9cd4759ac2e6093d9980748a69" category="section-title">步驟 1 ：選擇性地建立一致性群組</block>
+  <block id="63530a16b44af6a1998622cd19c75435" category="paragraph">一致性群組是以單一單元管理的儲存單元集合。建立一致性群組、以簡化跨多個儲存單元的應用程式工作負載的儲存管理與資料保護。例如，假設您的資料庫由一致性群組中的 10 個儲存單元組成，而您需要備份整個資料庫。您只需將快照資料保護新增至一致性群組、即可備份整個資料庫、而無需備份每個儲存單元。</block>
+  <block id="36a26aba8b5d6874507e60d8aec48f50" category="paragraph">使用新的儲存單元建立一致性群組、或使用現有的儲存單元建立一致性群組。</block>
+  <block id="740174f32c20b38912003c5f89c457ad" category="open-title">使用新的儲存單元</block>
+  <block id="82fd6aa34bfb21de39dd81c963a0a2e8" category="list-text">在 System Manager 中、選取 * 保護 &gt; 一致性群組 * 。</block>
+  <block id="edb9e8b079cc1bbba23675ed2fb9ee82" category="list-text">選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 使用新的儲存單元 * 。</block>
+  <block id="52121a2aaeb6d47d15d81e8ee203b5f7" category="list-text">輸入新儲存單元的名稱、單位數量和每單位容量。</block>
+  <block id="b6a57406c839874cc450218c65042a9c" category="paragraph">如果您建立多個單元、則每個單元都會建立相同的容量和相同的主機作業系統。若要為每個單位指派不同的容量、請選取 * 更多選項 * 、然後選取 * 新增不同容量 * 。</block>
+  <block id="7028b1e3a2021d39c73b8824b7bc9a9d" category="list-text">選取主機作業系統和主機對應。</block>
+  <block id="97b6e4a76453272c0f1f20a9a7e57b6b" category="paragraph">您已建立一個一致性群組、其中包含您要保護的儲存單元。您現在已準備好建立快照。</block>
+  <block id="c8ea84d9e7c3634b93976499f8f58956" category="open-title">使用現有的儲存單元</block>
+  <block id="7e316dc54c2e1709ad364e8019e289ee" category="list-text">選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 使用現有的儲存單元 * 。</block>
+  <block id="2e61619ab9c0ca788e345712609869b9" category="list-text">輸入一致性群組的名稱、然後搜尋並選取您要包含在一致性群組中的儲存單元。</block>
+  <block id="e7c7a96626caf7f10a69abd91e0c9657" category="section-title">步驟 2 ：建立快照</block>
+  <block id="5ad8d455ea57e1690a8dd08af1513587" category="paragraph">Snapshot 是資料的本機唯讀複本、可用於將儲存單元還原至特定時間點。</block>
+  <block id="a55eea56b3b5ac156631717b66974529" category="inline-link-macro">Snapshot 原則與排程</block>
+  <block id="aa2f9feb235086807c06e316a374c42b" category="paragraph">快照可以隨需建立、也可以根據自動建立<block ref="174ad3d131cf18990fcf462c1e80dea1" category="inline-link-macro-rx"></block>、以固定的時間間隔建立。Snapshot 原則和排程會指定何時建立快照、要保留多少份複本、如何命名快照、以及如何標記快照以供複寫。例如、系統可能每天在上午 12 ： 10 建立一個快照、保留兩個最新的複本、將其命名為「每日」（附加時間戳記）、並將其標示為「每日」以供複寫。</block>
+  <block id="778e49c36a4b37504a26fe297bcd89cd" category="paragraph-title">快照類型</block>
+  <block id="d6acd69ed4935a0b24bcc6574f0a4d59" category="paragraph">您可以建立單一儲存單元或一致性群組的隨選快照。您可以為包含多個儲存單元的一致性群組建立自動快照。您無法建立單一儲存單元的自動快照。</block>
+  <block id="92cd7e74f8f496ce11ec549a066c7294" category="list-text">隨需快照</block>
+  <block id="db61b5e3845d577b00452465aebf140c" category="paragraph">您可以隨時建立儲存單元的隨選快照。儲存單元不需要是一致性群組的成員、就能受到隨需快照的保護。如果您為一致性群組成員的儲存單元建立隨選快照、則一致性群組中的其他儲存單元不會包含在隨需快照中。如果您建立一致性群組的隨需快照、則一致性群組中的所有儲存單元都會包含在快照中。</block>
+  <block id="1964699fd01a4c2ddcef9f17b9f6d567" category="list-text">自動快照</block>
+  <block id="7492dacea4eeb2d5921e9922d2b4507f" category="paragraph">自動快照是使用快照原則建立的。若要將快照原則套用至儲存單元以自動建立快照、儲存單元必須是一致性群組的成員。如果您將快照原則套用至一致性群組、則一致性群組中的所有儲存單元都會受到自動快照的保護。</block>
+  <block id="1ccdfa3ac7a08ca84e85557100c8e747" category="paragraph">建立一致性群組或儲存單元的快照。</block>
+  <block id="577715f98b92f1d580c94e3c3c1369ba" category="open-title">一致性群組的快照</block>
+  <block id="b7bfd93e035b206d04aef27c2f3386e2" category="list-text">將游標暫留在您要保護的一致性群組名稱上。</block>
+  <block id="db35d86c9bc090fa1188d269ecb84850" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 保護 * 。</block>
+  <block id="596162ed2473cff647bf31baf7a6bd00" category="list-text">如果您想要隨需建立即時快照、請在 * 本機保護 * 下選取 * 立即新增快照 * 。</block>
+  <block id="e40902c7a32eefc1643e664c2f5da292" category="paragraph">本機保護會在包含儲存單元的同一個叢集上建立快照。</block>
+  <block id="9e234717c17cb132226be9e21c351b98" category="list-text">輸入快照名稱或接受預設名稱、然後選擇性地輸入 SnapMirror 標籤。</block>
+  <block id="e3afffafdc9d2d30781b4982f6d374c4" category="paragraph">遠端目的地會使用 SnapMirror 標籤。</block>
+  <block id="a2d3e982e03d924beb198d99458a7ea7" category="list-text">如果要使用快照原則建立自動快照、請選取 * 排程快照 * 。</block>
+  <block id="6d984437f84200125e93c2afc3e1494e" category="list-text">選取快照原則。</block>
+  <block id="2a3163042f5b0df451913ee28d91daa4" category="paragraph">接受預設的快照原則、選取現有原則、或建立新原則。</block>
+  <block id="054b4f3ea543c990f6b125f41af6ebf7" category="cell">選項</block>
+  <block id="dc41e6416d57bd1edd6593088e69616c" category="cell">選取現有的快照原則</block>
+  <block id="489c376bfc4a222b1a886ded6998e28f" category="inline-image-macro">向下指向藍色箭頭</block>
+  <block id="da2093b32757937154ea6fbd7ba9d94f" category="paragraph">選取<block ref="ad6f4b1937ac80c272d93ceff6bae7b5" category="inline-image-macro-rx" type="image"></block>預設原則旁的、然後選取您要使用的現有原則。</block>
+  <block id="e9a241b2594039be3cdebf34cdd9b984" category="cell">建立新的快照原則</block>
+  <block id="082951028ef0b4999b51c96e84ec9dc7" category="inline-image-macro">藍色加號、接著加上「 ADD 」字樣</block>
+  <block id="bce4ea1c3ac85a33a255713f532d50c6" category="list-text">選擇<block ref="d5037d8bc032b89659bfdbce3d3d2753" category="inline-image-macro-rx" type="image"></block>；然後輸入快照原則參數。</block>
+  <block id="3a08b32c8007e0d1530fc753f2bfe9a9" category="list-text">選取 * 新增原則 * 。</block>
+  <block id="54c72dad9c08fa9ae361ea9fec5f23f4" category="list-text">如果要將快照複寫到遠端叢集、請在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。</block>
+  <block id="e9b39186eedf44bd8ca5e145d76a4d63" category="list-text">選取來源叢集和儲存 VM 、然後選取複寫原則。</block>
+  <block id="76de2e8e61a5638e14882250205f1fbd" category="paragraph">根據預設、複寫的初始資料傳輸會立即開始。</block>
+  <block id="a4d185388b1d0590ab82bd92ab9e5a4f" category="open-title">儲存單元快照</block>
+  <block id="10f0065e6ea2180cb3c97fabb6c95d12" category="list-text">在 System Manager 中、選取 * Storage* 。</block>
+  <block id="b533e24f42188dc84e030cbc9efbd351" category="list-text">將游標移至您要保護的儲存單元名稱上方。</block>
+  <block id="c32a6403a774a3688dc679bd55484681" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 保護 * 。如果您想要隨需建立即時快照、請在 * 本機保護 * 下選取 * 立即新增快照 * 。</block>
+  <block id="7a9a61ee2297500e102394139e96e623" category="inline-link-macro">設定快照複寫</block>
+  <block id="a63371f95cb6727e19c23f03f570df80" category="paragraph">現在您的資料已受到快照保護、您應該<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>將一致性群組複製到地理位置遠端位置、以便進行備份和災難恢復。</block>
+  <block id="28e240e6173e34f1942b6fae18eece4d" category="summary">使用一致性群組同時對多個儲存單元執行各種動作、而非在每個單元上個別執行動作。</block>
+  <block id="940cbe886b23355545e54a8e670dccf2" category="doc">在 ASA R2 儲存系統上管理 ONTAP 一致性群組</block>
+  <block id="3ec3496fc24d43fe7d9be310975cd088" category="paragraph">一致性群組是以單一單元管理的儲存單元集合。使用一致性群組來簡化儲存管理。例如，假設您的資料庫由一致性群組中的 10 個儲存單元組成，而您需要備份整個資料庫。您只需將快照資料保護新增至一致性群組、即可備份整個資料庫、而無需備份每個儲存單元。將儲存單元備份為一致性群組、而非個別備份、也能為所有單元提供一致的備份、而個別備份單元則可能會造成不一致的情況。</block>
+  <block id="756274998bfddb9ee5aca3ce09a0d910" category="section-title">將 Snapshot 資料保護新增至一致性群組</block>
+  <block id="ef96230e3fb35067c9001214ca84a12c" category="paragraph">將快照資料保護新增至一致性群組時、會根據預先定義的排程、定期擷取一致性群組的本機快照。</block>
+  <block id="e96ea80e31853245a2bf947241dc2cee" category="inline-link-macro">還原資料</block>
+  <block id="e4575afdee40389c50ab951775f50f9e" category="paragraph">您可以使用<block ref="a7f2e382c44a40bb56e9b639352d2592" category="inline-link-macro-rx"></block>遺失或毀損的快照。</block>
+  <block id="074d62224d0503ff6087225e736ee539" category="list-text">將游標移到您要保護的一致性群組上。</block>
+  <block id="33414f6307ba63e7051d9954ad9087f9" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 編輯 * 。</block>
+  <block id="64d07b931d0665d2943cee93c7ca29ab" category="list-text">在 * 本機保護 * 下、選取 * 排程快照 * 。</block>
+  <block id="9d881f9b7270312621fd4f788d3ffe17" category="list-text">選擇<block ref="d5037d8bc032b89659bfdbce3d3d2753" category="inline-image-macro-rx" type="image"></block>；然後輸入新的原則名稱。</block>
+  <block id="ec1a7b3257bed5985906c5e95f0d9c2f" category="list-text">選取原則範圍。</block>
+  <block id="2dd8d293360356e18c0f62fc243f1b43" category="list-text">在 * 排程 * 下<block ref="d5037d8bc032b89659bfdbce3d3d2753" category="inline-image-macro-rx" type="image"></block>、選擇。</block>
+  <block id="93c99d606f509a060b2e61a424494d1c" category="list-text">選擇出現在 * 排程名稱 * 下的名稱；</block>
+  <block id="87a06a011b61bdd0250533047157cd30" category="inline-image-macro">藍色箭頭指向向下方向</block>
+  <block id="58a9df332cae92457421a6c743d20c57" category="paragraph">然後選擇。<block ref="ae97822195fab64c57868f45af967727" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2a79371d63ff7c165ee10055e63ddc1a" category="list-text">選取原則排程。</block>
+  <block id="a3d38335033dbc3e63c68f76b308e45c" category="list-text">在 * 最大快照數 * 下、輸入您要保留一致性群組的最大快照數。</block>
+  <block id="72c9cc57bd3acc347a45ea0b780c14ab" category="list-text">或者、在 * SnapMirror label* 下輸入 SnapMirror 標籤。</block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
+  <block id="6b14136e2b75ff639f5ca263a5dd2a6a" category="paragraph">現在您的資料已透過快照進行保護、您應該<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>將一致性群組複製到地理位置遠端位置、以便進行備份和災難恢復。</block>
+  <block id="cf8693d6af83f33c68a196b12cffa29d" category="section-title">從一致性群組移除快照資料保護</block>
+  <block id="0e79d9ba3e974f486c0f5945f4e9673a" category="paragraph">當您從一致性群組移除快照資料保護時、一致性群組中所有儲存單元的快照都會停用。</block>
+  <block id="ddc789e2715034046ecb8d1c8ec50205" category="list-text">將游標移到您要停止保護的一致性群組上。</block>
+  <block id="4e79f33a9e0adc472ceaf99ed602b652" category="list-text">在 * 本機保護 * 下、取消選取排程快照。</block>
+  <block id="ca8e731d9e6dc4ba5a84e247c0d6d021" category="paragraph">不會為一致性群組中的任何儲存單元擷取快照。</block>
+  <block id="a01135c71d8b94ac55a2da9cf501ab6b" category="section-title">將儲存單元新增至一致性群組</block>
+  <block id="22226930fd23f1a9d384da5f9b324b54" category="paragraph">將儲存單元新增至一致性群組、以擴充由一致性群組管理的儲存容量。</block>
+  <block id="803580fce7a145b0005207254f703485" category="paragraph">您可以將現有的儲存單元新增至一致性群組、或是建立新的儲存單元以新增至一致性群組。</block>
+  <block id="9915e342b5df3a47dd8be45e6db325d1" category="open-title">新增現有的儲存單元</block>
+  <block id="7c05d8396bced6918c322e75b3d7987f" category="list-text">將游標移至您要擴充的一致性群組上方。</block>
+  <block id="beaf54a53c2f1698f45d4c0b98c04a2d" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 展開 * 。</block>
+  <block id="b0e0e1cf54898f05a439d2de790f030c" category="list-text">選擇 * 使用現有的儲存單元 * 。</block>
+  <block id="3113755fb38bae597c30dac8211ea82c" category="list-text">選取要新增至一致性群組的儲存單元、然後選取 * 展開 * 。</block>
+  <block id="1f27e0116140e973720d82f7ba2ab218" category="open-title">新增儲存單元</block>
+  <block id="236d027a29735ea241017b984070febe" category="list-text">選擇 * 使用新的儲存單元 * 。</block>
+  <block id="49cc1302e1d4a9fc25e79b21e9b9390d" category="list-text">輸入您要建立的單位數量、以及每單位的容量。</block>
+  <block id="0770b0d8eb6a68b2d6ebc8f812dd5c48" category="paragraph">如果您建立一個以上的單元、則每個單元都會建立相同的容量和相同的主機作業系統。若要為每個單位指派不同的容量、請選取 * 新增不同容量 * 、為每個單位指派不同的容量。</block>
+  <block id="6810fc9a2124dfae445328ea12c8054a" category="list-text">選取 * 展開 * 。</block>
+  <block id="0a20c90d5270bed19fcaf851778c663b" category="paragraph-title">下一步</block>
+  <block id="dca1bf967ef02ec6ead04262fe0c5dfd" category="inline-link-macro">新增主機啟動器</block>
+  <block id="7436bfb4eb62ddf1309c6ae813f75f0c" category="inline-link-macro">將新建立的儲存單元對應至主機</block>
+  <block id="191b857adf5e444490ae6b5ef5564654" category="paragraph">建立新的儲存單元之後<block ref="0b287ca0eb92c7f68147891f3dfb6ead" category="inline-link-macro-rx"></block>、您應該和<block ref="8f4058042298bb1cf89c5eaabd6331c6" category="inline-link-macro-rx"></block>。新增主機啟動器可讓主機符合存取儲存單元和執行資料作業的資格。將儲存單元對應至主機可讓儲存單元開始將資料提供給對應的主機。</block>
+  <block id="99700bd2ab6af15decb17885d5856657" category="inline-link-macro">建立即時快照</block>
+  <block id="883fa8b44943472ff82c4b395e3207ba" category="paragraph">一致性群組的現有快照不會包含新增的儲存單元。<block ref="bde1d2fc6fbace4be56bc1d078ee60f6" category="inline-link-macro-rx"></block>在自動建立下一個排程快照之前、您應該是一致性群組的成員、以保護新增的儲存單元。</block>
+  <block id="eb3d9524e99cab26e24c94b8d7a74f7b" category="section-title">從一致性群組中移除儲存單元</block>
+  <block id="e3572ea3b49259043177e2c8ecae6ad4" category="paragraph">如果您想要刪除儲存單元、想要將其視為不同一致性群組的一部分進行管理、或是不再需要保護其所包含的資料、則應該從一致性群組中移除儲存單元。從一致性群組移除儲存單元會中斷儲存單元與一致性群組之間的關係、但不會刪除儲存單元。</block>
+  <block id="f0717f353ffc00d2e4c1e2eaa33e7aa8" category="list-text">按兩下您要從中移除儲存單元的一致性群組。</block>
+  <block id="c7908abb23b7065aef5b318dd60abe7b" category="list-text">在 * 總覽 * 區段的 * 儲存單元 * 下、選取您要移除的儲存單元、然後選取 * 從一致性群組移除 * 。</block>
+  <block id="f3a864061c7c167216cb7e02d3f90cf4" category="paragraph">儲存單元不再是一致性群組的成員。</block>
+  <block id="9c09f709a9761f564907022b7331dbb1" category="paragraph">如果您需要繼續保護儲存單元的資料、請將儲存單元新增至另一個一致性群組。</block>
+  <block id="793fd1e28f15d34822702f9d70403404" category="section-title">刪除一致性群組</block>
+  <block id="2cd894b6ee2553a527a03b1a9086238b" category="paragraph">如果不再需要將一致性群組的成員當作單一單位來管理、您可以刪除一致性群組。刪除一致性群組之後、群組中先前的儲存單元仍會在叢集上保持作用中。</block>
+  <block id="8ca9256ffdf569f8b36fe638e605aa91" category="paragraph">如果您要刪除的一致性群組位於複寫關係中、則必須先中斷關聯、然後再刪除一致性群組。刪除之前的複寫一致性群組之後、一致性群組中的儲存單元會在叢集上保持作用中、而其複寫複本則會保留在遠端叢集上。</block>
+  <block id="3e905f617938aef0b388912bce87f2e2" category="list-text">將游標移至您要刪除的一致性群組上方。</block>
+  <block id="b32275e0392f5cbab8806c7ce85e42f5" category="list-text">接受警告、然後選取 * 刪除 * 。</block>
+  <block id="dde86492e27a0d7b75963e7c4b928397" category="paragraph">刪除一致性群組之後、先前位於一致性群組中的儲存單元將不再受到快照保護。請考慮將這些儲存單元新增至另一個一致性群組、以防止資料遺失。</block>
+  <block id="f64372c965917d3f83cea4c8fcaab6e6" category="summary">使用資料保護原則和排程、以自動排程保護資料。</block>
+  <block id="c9d9054182df60da02ddbfbf4efecfdb" category="doc">在 ASA R2 儲存系統上管理 ONTAP 資料保護原則和排程</block>
+  <block id="d3919acd269a3722bd7dde17248b45a2" category="paragraph">使用快照原則、以自動排程的方式保護一致性群組中的資料。在快照原則中使用原則排程來判斷快照的拍攝頻率。</block>
+  <block id="a5d94ffe746cc520a02e27113f7f17f8" category="section-title">建立新的保護原則排程</block>
+  <block id="839eaac1f4b53c683e9bc97157690966" category="paragraph">保護原則排程會定義快照原則的執行頻率。您可以建立排程、根據天數、小時數或分鐘、定期執行。例如、您可以建立每小時執行一次的排程、或每天只執行一次。您也可以建立排程、在特定時間於一週或一月的特定日期執行。例如、您可以建立排程、在每月 20 日上午 12 ： 15 執行。</block>
+  <block id="5602873045e45e073e4b6542b9eaa3bf" category="paragraph">定義各種保護原則排程可讓您靈活地增加或減少不同應用程式的快照頻率。這可讓您為關鍵工作負載提供更高層級的保護、並降低資料遺失風險、而非較不重要的工作負載所需的保護。</block>
+  <block id="4dcfd814948491e71a1d9ca23f69c54f" category="list-text">選取 * 保護 &gt; 原則 * ；然後選取 * 排程 * 。</block>
+  <block id="3a491464203f4d5c208474ff64bb5049" category="inline-image-macro">包含加號的藍色矩形、後面接著以白色字母加上字詞</block>
+  <block id="6410543768483abec88bed0e73b5e7e1" category="list-text">選擇。 <block ref="6ce47eb77e3cf8662282bcd32b9971d1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0269a8ba0e45323cac42de9d59d1de5b" category="list-text">輸入排程名稱、然後選取排程參數。</block>
+  <block id="92d0ab5425be6ef24b32b89b0e003e73" category="paragraph">現在您已建立新的原則排程、您可以使用原則中新建立的排程來定義拍攝快照的時間。</block>
+  <block id="e807ebdf213353b8a415f991a2cade81" category="section-title">建立快照原則</block>
+  <block id="97fef1670a856044b58543b0bb9c9a6d" category="paragraph">Snapshot 原則定義快照的拍攝頻率、允許的最大快照數、以及保留快照的時間長度。</block>
+  <block id="f2e05b7420eb3408f7ef6a05a0733024" category="list-text">在 System Manager 中、選取 * 保護 &gt; 原則 * 、然後選取 * 快照原則 * 。</block>
+  <block id="6bf05f35bf2d6a8946407440da2938fd" category="list-text">選擇。 <block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="177883a13692cc6b2a240a9eb176f518" category="list-text">輸入快照原則的名稱。</block>
+  <block id="d8ae1f3c2d9915ffcd2b71028c52661a" category="list-text">選取 * 叢集 * 將原則套用至整個叢集。選取 * 儲存 VM* 將原則套用至個別的儲存 VM 。</block>
+  <block id="dd7ef557ea392d7d7a8e9ddc3d40487f" category="list-text">選取 * 新增排程 * 、然後輸入快照原則排程。</block>
+  <block id="8bf4ba3f2ed35e1256e452979a821dc8" category="paragraph">現在您已經建立了快照原則、可以將其套用至一致性群組。系統會根據您在快照原則中設定的參數、為一致性群組擷取快照。</block>
+  <block id="520f1c3480de74b9674b39b93318fad9" category="section-title">將快照原則套用至一致性群組</block>
+  <block id="237fc3d39df5571a9028914f696726ac" category="paragraph">將快照原則套用至一致性群組、以自動建立、保留及標記一致性群組的快照。</block>
+  <block id="b9cb249d424007128d7ffbc0823dbe8d" category="list-text">將游標暫留在您要套用的快照原則名稱上。</block>
+  <block id="31ce73c51323669a605213f0e0e790eb" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 套用 * 。</block>
+  <block id="cfeaae7c79618f126692047c04747acd" category="list-text">選取您要套用快照原則的一致性群組、然後選取 * 套用 * 。</block>
+  <block id="9a50e1eaf0bb6f5464df0a5ab61d663f" category="inline-link-macro">設定複寫關係</block>
+  <block id="77ec3a368c81cec1f2da0fd5c151292f" category="paragraph">現在您的資料已受到快照保護、您應該<block ref="71383d603e2dd10cd99b2edcd612e72c" category="inline-link-macro-rx"></block>將一致性群組複製到地理位置遠端位置、以便進行備份和災難恢復。</block>
+  <block id="b9cad560d21e8e44891f35b522094161" category="section-title">編輯、刪除或停用快照原則</block>
+  <block id="55b3098f761e922e4cc46505a05c0b56" category="paragraph">編輯快照原則以修改原則名稱、最大快照數或 SnapMirror 標籤。刪除原則、將其及其相關的備份資料從叢集中移除。停用原則、以暫時停止建立或傳輸原則指定的快照。</block>
+  <block id="476aaf01fe137ae82d98a1885545f98b" category="list-text">將游標暫留在您要編輯的快照原則名稱上。</block>
+  <block id="b88f843a1498708989c2d5a092e2f732" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 編輯 * 、 * 刪除 * 或 * 停用 * 。</block>
+  <block id="535c668fa3441ff5eb5df6f60c734d9c" category="paragraph">您已修改、刪除或停用快照原則。</block>
+  <block id="140b481ea561e6db59b00912b5ea8eee" category="section-title">編輯複寫原則</block>
+  <block id="5de63e7b797a02abda90c3b397a6af86" category="paragraph">編輯複寫原則以修改原則說明、傳輸排程和規則。您也可以編輯原則來啟用或停用網路壓縮。</block>
+  <block id="2877a04ca8ab80ac5e88d0c96a575b26" category="list-text">在 System Manager 中、選取 * 保護 &gt; 原則 * 。</block>
+  <block id="88850c4b464eb3774fb43e6b09e54263" category="list-text">選取 * 複寫原則 * 。</block>
+  <block id="2aa13c213ee88c84d981559bd42eafe9" category="list-text">將游標移至您要編輯的複寫原則上方<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>、然後選取。</block>
+  <block id="a5e06406af0ed5340393cd73877c6372" category="list-text">更新原則、然後選取 * 儲存 * 。</block>
+  <block id="c3fcac5f888af495cdddd6f927ac06f4" category="paragraph">您已修改複寫原則。</block>
+  <block id="bbc80da4f9de51946791e7637ce0a3d6" category="summary">使用 Astra Control 將應用程式和資料從一個 Kubernetes 叢集移轉到另一個叢集、將應用程式複寫到遠端系統、以及複製應用程式。</block>
+  <block id="d24d04b05bbac5cac892cbefd2a83130" category="doc">保護 ASA R2 儲存系統上的 Kubernetes 應用程式</block>
+  <block id="80ba4b04e2df681011a628b59ca87edb" category="paragraph">使用 Astra Control Center 來保護 Kubernetes 應用程式。Astra Control Center 可讓您將應用程式和資料從一個 Kubernetes 叢集移轉到另一個叢集、使用 NetApp SnapMirror 技術將應用程式複寫到遠端系統、並將應用程式從移轉到正式作業。</block>
+  <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="paragraph-title">以取得更多資訊</block>
+  <block id="0ea6f406b3059a26d6d2c30c57d32527" category="inline-link-macro">深入瞭解如何使用 Astra Control 保護 Kubernetes 應用程式</block>
+  <block id="62e67996e09857d10435093487ac6a03" category="paragraph"><block ref="cbfa3bdab3a6403423ccd87efc882b64" category="inline-link-macro-rx"></block>。</block>
+  <block id="8833f2f06409ffe6dc4a7935b76b0754" category="summary">如果一致性群組中的資料毀損或遺失、您可以從遠端快照還原整個一致性群組。</block>
+  <block id="042d689a0af446510e1c4b24dd9c2fb3" category="doc">還原 ASA R2 儲存系統上的資料</block>
+  <block id="23f73d35f33960f836b4c972d5d09270" category="paragraph">如果資料遺失或毀損、則可還原受快照保護的一致性群組或儲存單元中的資料。</block>
+  <block id="0547aea64f49ba1efcd1fd9f6ef765bd" category="section-title">還原一致性群組</block>
+  <block id="345ca20e39c1b3f1423343d17031e8db" category="paragraph">還原一致性群組會將一致性群組中所有儲存單元中的資料取代為快照中的資料。建立快照後對儲存單元所做的變更不會還原。</block>
+  <block id="a97b0cb07478c4ff127c8ba83a66503f" category="paragraph">您可以從本機或遠端快照還原一致性群組。</block>
+  <block id="29deb93ec612425b64c0c477a30824d7" category="open-title">從本機快照還原</block>
+  <block id="e5f6b4e12f05c608a7c04738b6b2d7d1" category="list-text">按兩下包含您需要還原之資料的一致性群組。</block>
+  <block id="0a61380e0c7488e80ef61f4996c48f25" category="paragraph">隨即開啟一致性群組詳細資料頁面。</block>
+  <block id="2c54532c7dd8f01a1774f0e94f84303f" category="list-text">選擇 * Snapshots * 。</block>
+  <block id="5789c0a3bda698875070fea1218999a9" category="list-text">選擇要恢復的快照，然後選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="23416e37d1c053518d696d4f1d03753e" category="list-text">從此快照 * 中選擇 * 恢復一致性組；然後選擇 * 恢復 * 。</block>
+  <block id="dc206050db672fd0973fbd5f55386987" category="open-title">從遠端快照還原</block>
+  <block id="ec6646be259e5b1c9af3de1f81da6328" category="list-text">在 System Manager 中、選取 * 保護 &gt; 複寫 * 。</block>
+  <block id="ce2d1886747bc6ec7ee4807067a0d292" category="list-text">選取 * 本機目的地 * 。</block>
+  <block id="11c386ccca11e61bf991a0d4d045eac6" category="list-text">選擇要恢復的 * 來源 * ，然後選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="f77361b272ce81d8275727f7b1a756a8" category="list-text">選擇*還原*。</block>
+  <block id="b57644e0d335708a67583d0956efbff3" category="list-text">選取您要還原資料的叢集、儲存 VM 和一致性群組。</block>
+  <block id="ce4d637f09f1bd2207fae9d16deba844" category="list-text">選取您要還原的快照。</block>
+  <block id="bd684e560286532b061873277d322fdb" category="list-text">出現提示時、輸入「還原」、然後選取 * 還原 * 。</block>
+  <block id="eb63ca27c4dd2c0a2e4b591d345e25d2" category="paragraph">一致性群組會還原至用於還原的快照時間點。</block>
+  <block id="6d4a78fd67d3bb457705441efcfe3afd" category="section-title">還原儲存單元</block>
+  <block id="d94fc6c135b4ee62b600dec93bf34c49" category="paragraph">還原儲存單元會將儲存單元中的所有資料取代為快照中的資料。建立快照後對儲存單元所做的變更不會還原。</block>
+  <block id="d663cc8f89c4b2277f7f012a739d33ae" category="list-text">按兩下包含您需要還原之資料的儲存單元。</block>
+  <block id="90a313532b554324094e193fb4ff11aa" category="paragraph">隨即開啟儲存單元詳細資料頁面。</block>
+  <block id="b568bd4b5200ed62f74753ed44fe525f" category="list-text">選取您要還原的快照。</block>
+  <block id="e5bcfe810855bc6fcd167465762bd286" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 *Restore* 。</block>
+  <block id="2465c382a833d6fab0be0ac27a1252c7" category="list-text">選取 * 使用此快照來還原儲存單元 * ；然後選取 * 還原 * 。</block>
+  <block id="357f5562c118ce8eac8ecbcb73450b9a" category="paragraph">您的儲存單元會還原至用於還原的快照時間點。</block>
+  <block id="cbdc44f9706bda2ed3d7f682a5f396d2" category="summary">使用 ONTAP System Manager 將資料複製到遠端位置、以進行備份和災難恢復。設定需要建立複寫原則和關係。</block>
+  <block id="40bf81e755dc73fb04ab21c9f9f5756c" category="searchtitle">使用 ONTAP System Manager| ASA R2 將快照複寫到遠端叢集</block>
+  <block id="52e62ad767d46ccf1912124d9b984dd6" category="doc">從 ASA R2 儲存系統將快照複寫到遠端叢集</block>
+  <block id="f2b39b01edbe286e89542affc03f6d4f" category="paragraph">Snapshot 複寫是將 ASA R2 系統上的一致性群組複製到地理位置遠端位置的程序。初始複寫之後、一致性群組的變更會根據複寫原則複製到遠端位置。複寫一致性群組可用於災難恢復或資料移轉。</block>
+  <block id="69ed1baaf5609225833ab8e05dd02cda" category="admonition">只有另一個 ASA R2 儲存系統支援從 ASA R2 儲存系統進行快照複寫。您無法將快照從 ASA R2 系統複寫到目前的 ASA 、 AFF 或 FAS 系統。</block>
+  <block id="a11f569aa7659d38ad74c3348435869e" category="paragraph">若要設定 Snapshot 複寫、您需要在 ASA R2 系統和遠端位置之間建立複寫關係。複寫關係是由複寫原則所管理。叢集設定期間會建立複寫所有快照的預設原則。您可以使用預設原則、也可以選擇性地建立新原則。</block>
+  <block id="bb35c8e1197f3cb1f834baa178f51fdd" category="section-title">步驟 1 ：建立叢集對等關係</block>
+  <block id="256483a2b5ed8710e7c8fdf9ce515426" category="paragraph">您必須先在本機叢集和遠端叢集之間建立叢集對等關係、才能透過將資料複寫到遠端叢集來保護資料。</block>
+  <block id="53950c8063da261b283bbbda8dcdf670" category="list-text">在本機叢集的 System Manager 中、選取 * 叢集 &gt; 設定 * 。</block>
+  <block id="111e1e243efefbc8f1f98dbcb38b2be9" category="list-text">在 * 叢集對等端 * 旁邊的 * 叢集間設定 <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>* 下、選取 * 新增叢集對等端 * 。</block>
+  <block id="695db69b9d1b9c619b5e7ddaa2999cc1" category="list-text">選取 * Loch 遠端叢集 * ；這會產生您將用來驗證遠端叢集的密碼。</block>
+  <block id="817c3b20b4d3edad274a1a4e512f4000" category="list-text">產生遠端叢集的複雜密碼後、將其貼到本機叢集的 * 複雜密碼 * 下。</block>
+  <block id="94e8481f76f7459831da0ff830f03693" category="inline-image-macro">藍色加號加上藍色字母</block>
+  <block id="c48a364bcfea9942c880a707be66baf8" category="list-text">選擇<block ref="750f4f104efd8460cc9c38b724a23fe2" category="inline-image-macro-rx" type="image"></block>；然後輸入叢集間網路介面 IP 位址。</block>
+  <block id="8c0b8a980a5fccf0d26e14839c9636e5" category="list-text">選取 * 起始叢集對等 * 。</block>
+  <block id="128a86d6606d71775364b984ff92953c" category="paragraph">您已使用遠端叢集來連接本機 ASA R2 叢集。您現在可以建立複寫關係。</block>
+  <block id="20a02863b5c5716bf567035b35c78ac6" category="section-title">步驟 2 ：選擇性地建立複寫原則</block>
+  <block id="55a0affd4bb6a25bd38b35691abd1df0" category="paragraph">Snapshot 複寫原則定義何時將 ASA R2 叢集上執行的更新複寫到遠端站台。</block>
+  <block id="99ce99ecf863ff8fe2a9cbb3426c1e80" category="list-text">在 System Manager 中、選取 * 保護 &gt; 原則 * 、然後選取 * 複寫原則 * 。</block>
+  <block id="b03db2a30a32c3ac8c0f123bffb1ece4" category="list-text">輸入複寫原則的名稱或接受預設名稱、然後輸入說明。</block>
+  <block id="ca8308195da9e8f1aaa6981179fa1910" category="list-text">選取 * 原則範圍 * 。</block>
+  <block id="ba8e129c41029b7f9087dd518b733282" category="paragraph">如果要將複寫原則套用至整個叢集、請選取 * 叢集 * 。如果您只想將複寫原則套用至特定儲存 VM 中的儲存單元、請選取 * 儲存 VM* 。</block>
+  <block id="cc4bd2e3882617e7952e21c6edcf0f70" category="list-text">選取 * 原則類型 * 。</block>
+  <block id="94474bfd74d528818aa33385a7ef01b1" category="cell">將資料寫入來源後、複製到遠端站台。</block>
+  <block id="5b9740e84ea801d163925a0b1f33b1c2" category="list-text">選取 * 非同步 * 。</block>
+  <block id="ca4245a2767798f81970db32d522e7cf" category="list-text">在 * 從來源 * 傳輸快照 * 下、接受預設傳輸排程或選取不同的傳輸排程。</block>
+  <block id="63abd2a127bdae4f4eaf9ca003d89ab3" category="list-text">選取以傳輸所有快照、或建立規則以決定要傳輸哪些快照。</block>
+  <block id="0527fa3e946de1ec8c471d2c7cae3688" category="list-text">也可以啟用網路壓縮。</block>
+  <block id="a06950db009f1d0449acff1c4c0993e3" category="cell">同時將資料寫入來源和遠端站台。</block>
+  <block id="2ea2e8a2b83fdeb4e03eb89a3c69ea7a" category="list-text">選擇 * 同步 * 。</block>
+  <block id="caf0e8401f3720e2547947582afb98ff" category="paragraph">您已建立複寫原則、現在已準備好在 ASA R2 系統和遠端位置之間建立複寫關係。</block>
+  <block id="5e1ce6bacb63e4397cf8fa4bbd6cafc8" category="inline-link-macro">用於用戶端存取的儲存 VM</block>
+  <block id="308d9e6951d14df38557244f728d31ec" category="paragraph">深入瞭解 <block ref="b2f7d76a0b614957304f0bebec8320f7" category="inline-link-macro-rx"></block>。</block>
+  <block id="ce587252d09bb3dfb2d53f154ba81d93" category="section-title">步驟 3 ：建立複寫關係</block>
+  <block id="1ff21cfe2a98ae8b4a02a199611aa91d" category="paragraph">快照複寫關係會在 ASA R2 系統和遠端位置之間建立連線、以便將一致性群組複寫到遠端叢集。複寫一致性群組可用於災難恢復或資料移轉。</block>
+  <block id="620ffa86718c6f06b66b158b0a4bab51" category="paragraph">為了防範勒索軟體攻擊、當您設定複寫關係時、可以選擇鎖定目的地快照。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。</block>
+  <block id="bf5d4ab274f571d57107a348e35cb081" category="inline-link-macro">初始化 Snapshot 相容時鐘</block>
+  <block id="a2070fe1416691eeb91c53762fd2a74c" category="paragraph">如果您想要鎖定目的地快照、必須<block ref="27d9d0ff36409c51abdcd0a6f30da304" category="inline-link-macro-rx"></block>先建立複寫關係。</block>
+  <block id="f07148b3f2fd0f0a23b807626916df29" category="paragraph">建立具有或不具有鎖定目的地快照的複寫關係。</block>
+  <block id="b581751404702669bf568b5f9581e76c" category="open-title">使用鎖定的快照</block>
+  <block id="02934a3c9c75bfb962ac39201fdf6f3d" category="list-text">選取一致性群組。</block>
+  <block id="15217bdc015a8a108f980bdb8c2e1a23" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 保護 * 。</block>
+  <block id="ac59bb95e3695bc7bee3aef9c11cc7ec" category="list-text">在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。</block>
+  <block id="7e1e6a3712eae4789ecd885097e5a4e7" category="list-text">選取 * 複寫原則 * 。</block>
+  <block id="7d4ac3ed3440432276ca5b8085ed49e5" category="paragraph">您必須選取 _Vault_ 複寫原則。</block>
+  <block id="fcb838cd8f6e32d4a616ee3de4983333" category="list-text">選取 * 目的地設定 * 。</block>
+  <block id="b554adedaaae05384ba07663a14834e4" category="list-text">選取 * 鎖定目的地快照以防止刪除 *</block>
+  <block id="c4c50145f9cafae0b0fd638f59da1c0b" category="list-text">輸入資料保留期間上限和下限。</block>
+  <block id="9e3c1427208e1336b5583fb9b78c3cc4" category="list-text">若要延遲資料傳輸的開始、請取消選取 * 立即開始傳輸 * 。</block>
+  <block id="9625f43e1bf117d60569d5ad051c6f03" category="paragraph">根據預設、初始資料傳輸會立即開始。</block>
+  <block id="84a616a14078ce4e20513888ef5be141" category="list-text">或者、若要覆寫預設傳輸排程、請選取 * 目的地設定 * 、然後選取 * 覆寫傳輸排程 * 。</block>
+  <block id="eb9b31e6e7ba2bbd9f868ff108f65a0c" category="paragraph">您的傳輸排程必須至少 30 分鐘才能獲得支援。</block>
+  <block id="b89eff40453beaa28eca7c9de402f85f" category="open-title">沒有鎖定的快照</block>
+  <block id="656858cfe23bc7754225f82e6331e77e" category="list-text">選取以建立與本機目的地或本機來源的複寫關係。</block>
+  <block id="8edc642197b3fad6a6bfff2ea0a3c89d" category="cell">本機目的地</block>
+  <block id="eb46393253f3ac3c5696c2c6245f4718" category="inline-image-macro">背景為藍色的矩形、文字會以白色字母複寫</block>
+  <block id="3ef4e2b0ed7621b61717991263881b59" category="list-text">選擇 * 本地目的地 * ，然後選擇<block ref="08a74c2de12fbe2628462227f788ae6a" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="7485a1d9a9ea0155e076e47014e2a5cf" category="list-text">搜尋並選取來源一致性群組。</block>
+  <block id="d93ef2e9c8bf5236698bd94aa380ccdf" category="paragraph">_sourc_ 一致性群組是指您要複寫的本機叢集上的一致性群組。</block>
+  <block id="f731460115898cdd49151a66d75556b6" category="cell">本機來源</block>
+  <block id="5833acf9cb6206654194780dbf5bb4e0" category="list-text">選擇 * 本地來源 * ，然後選擇<block ref="08a74c2de12fbe2628462227f788ae6a" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="5a5499e4c4ae6b36a67583b6af81a9c3" category="list-text">在 * 複寫目的地 * 下、選取要複寫的叢集、然後選取儲存 VM 。</block>
+  <block id="a18a6418cfbf231c4bb22f6553628bd0" category="list-text">選取複寫原則。</block>
+  <block id="9572d425e8b443dcc7db3f94da93573b" category="list-text">若要延遲資料傳輸的開始、請選取 * 目的地設定 * 、然後取消選取 * 立即開始傳輸 * 。</block>
+  <block id="7ab1f0b2182b6c6f36937d583dfeac9c" category="paragraph">建立複寫原則和關係之後、就會依照複寫原則中的定義、開始進行初始資料傳輸。您可以選擇性地測試複寫容錯移轉、以驗證 ASA R2 系統離線時是否能成功進行容錯移轉。</block>
+  <block id="55af8fe36cb88367588d3f92024db64d" category="section-title">步驟 4 ：測試複寫容錯移轉</block>
+  <block id="920b6f48db05908e2d7fdde6821a89e3" category="paragraph">或者、驗證來源叢集離線時、您是否能成功提供來自遠端叢集上複寫儲存單元的資料。</block>
+  <block id="a2640285f2f549a8106a0b1aa4d9fbd1" category="list-text">將游標暫留在您要測試的複寫關係上<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>、然後選取。</block>
+  <block id="bf63515cf285de8238ef0309a2d05678" category="list-text">選擇 * 測試容錯移轉 * 。</block>
+  <block id="3376f100b6a6bbd185de234a90f4a252" category="list-text">輸入容錯移轉資訊、然後選取 * 測試容錯移轉 * 。</block>
+  <block id="0bb0adac08ee917b57b12b2ff068f754" category="inline-link-macro">加密靜態資料</block>
+  <block id="1fd0dd113b7d2a6e0f3a9fb170c02fb4" category="paragraph">現在您的資料已受到快照複寫保護<block ref="fe828903eaf34996ebfa181196a5a3c3" category="inline-link-macro-rx"></block>、可用於災難恢復、因此如果 ASA R2 系統中的磁碟被重新規劃、歸還、放錯位置或遭竊、您就無法讀取資料。</block>
+  <block id="f0afca309281c705315c3dbc8027d635" category="doc">在 ASA R2 儲存系統上管理 AutoSupport</block>
+  <block id="31147c2932798eadd955620b17929169" category="paragraph">此機制可主動監控系統健全狀況、並自動傳送訊息給NetApp技術支援、您的內部支援組織及支援合作夥伴。AutoSupport</block>
+  <block id="5814a9c468f0bf869cac19ccf16a8e35" category="paragraph">設定叢集時、預設會啟用提供技術支援的 AutoSupport 訊息。您必須設定正確的選項、並擁有有效的郵件主機、才能將訊息傳送至您的內部支援組織。ONTAP 會在啟用 AutoSupport 訊息 24 小時後開始傳送訊息。</block>
+  <block id="8e3b3443f7322d7c7fc2e9b691e9b154" category="paragraph">您必須是叢集管理員才能管理 AutoSupport 。</block>
+  <block id="a1a978a0ef405a79f3b2c5f89d50b536" category="section-title">測試 AutoSupport 連線能力</block>
+  <block id="d62c03a6357eefd7638471c82a6859be" category="paragraph">設定叢集之後、您應該測試 AutoSupport 連線能力、以確認技術支援人員是否會收到 AutoSupport 所產生的訊息。</block>
+  <block id="71ba518a68888a9623c97c1553396f78" category="list-text">在系統管理員中、選取 * 叢集 &gt; 設定 * 。</block>
+  <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 測試連線 * 。</block>
+  <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">輸入 AutoSupport 訊息的主旨、然後選取 * 傳送測試 AutoSupport 訊息 * 。</block>
+  <block id="fcb35f0da100ee7cfd8c2c2acdcbb8c0" category="paragraph">您的已驗證技術支援人員可以從 ASA R2 系統接收 AutoSupport 訊息、並會提供必要的資料、協助您在遇到問題時提供協助。</block>
+  <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">新增 AutoSupport 收件者</block>
+  <block id="4ceed55a3a8a0b3cd4cf3b3ad2f6c061" category="paragraph">將內部支援組織的成員新增至接收 AutoSupport 訊息的電子郵件地址清單。</block>
+  <block id="9b7d22da73a3e8a3cf955ff556c4bae7" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 更多選項 * 。</block>
+  <block id="0f86fcaaecd18bb5b840cecfe55df6dc" category="inline-image-macro">鉛筆圖示</block>
+  <block id="3c442f0ec8d0ee98ccd9181e6322ae19" category="inline-image-macro">藍色加號、後面接著新增一詞</block>
+  <block id="c05111112bb963a5fee8223525086c7b" category="list-text">在 *Email* 旁邊，選擇<block ref="64bf6947f7152489b534c7e3d9281ba8" category="inline-image-macro-rx" type="image"></block>；然後選擇<block ref="97e24a86610c75905260004f34de6d47" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="3e9e4333e164c87224379f79a203b056" category="list-text">輸入收件者的電子郵件地址、然後輸入收件者類別。</block>
+  <block id="5522155290b09c829eb53d555358b50e" category="paragraph">對於合作夥伴、請選擇 * 合作夥伴 * 作為收件者類別。選擇 * 一般 * 作為您內部支援組織的成員。</block>
+  <block id="829b98302a315e05b67e508979403a3b" category="list-text">選取儲存。</block>
+  <block id="0d683993ce85ab22516524e528e88ccb" category="paragraph">您新增的電子郵件地址會收到其特定收件者類別的新 AutoSupport 訊息。</block>
+  <block id="9c737282667df23d96526973f5d83281" category="section-title">傳送 AutoSupport 資料</block>
+  <block id="ea76f4a78d8b1c8eb7686c4e2510363b" category="paragraph">如果您的 ASA R2 系統發生問題、 AutoSupport 資料可能會大幅縮短識別和解決問題所需的時間。</block>
+  <block id="596e5ad65cc2287edec9431fb3738313" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 產生並傳送 * 。</block>
+  <block id="b00d74105f2f75d7d83deafe1ee17d16" category="list-text">輸入 AutoSupport 訊息的主旨，然後選取 * 傳送 * 。</block>
+  <block id="3f403887deb910b843fbdd5061624985" category="paragraph">您的 AutoSupport 資料會傳送給技術支援人員。</block>
+  <block id="727c52c787d0a406c89aeafe82127809" category="section-title">抑制支援案例的產生</block>
+  <block id="78c60a5388e5db3cf1b2b8f5cb2d3dac" category="paragraph">如果您要在 ASA R2 系統上執行升級或維護、您可能需要在升級或維護完成之前、抑制 AutoSupport 產生的支援案例。</block>
+  <block id="42e351a16b261d73b9b6daaefbae1aba" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 抑制支援個案產生 * 。</block>
+  <block id="069f94a2039e2d55deda826dcc459214" category="list-text">指定抑制支援案例產生的時數、然後選取不想產生案例的節點。</block>
+  <block id="94f66866107911bd36ca9497f33cdf55" category="list-text">選取*傳送*。</block>
+  <block id="fc9a5b8a8957163965bd3096ac6e9441" category="paragraph">AutoSupport 案例將不會在您指定的時間內產生。如果您在指定的時間到期之前完成升級或維護、您應該立即恢復支援案例的產生。</block>
+  <block id="0fdbfde385dfda36f515e38c6d0f7ac5" category="section-title">恢復支援案例的產生</block>
+  <block id="d84e06a7320bba7c7163b7715bd082fa" category="paragraph">如果您在升級或維護期間已抑制支援案例的產生、則應在升級或維護完成後立即恢復支援案例的產生。</block>
+  <block id="9a49b39c6fa2362b6f54f32a01f93b1c" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 恢復支援案例產生 * 。</block>
+  <block id="4f76e9881ff80c29458d366170a731f5" category="list-text">選取您要恢復所產生 AutoSupport 個案的節點。</block>
+  <block id="a3745d335f23bd8f84c22eac15093a39" category="paragraph">AutoSupport 案例會根據需要自動為您的 ASA R2 系統產生。</block>
+  <block id="095767130effe9a44b7d3ff367eda1fa" category="doc">提交及檢視 ASA R2 儲存系統的支援案例</block>
+  <block id="98c449686f1bb755fdc3ec64c1f3ea2e" category="paragraph">如果您遇到需要協助的問題、可以使用 ONTAP 系統管理員將案例提交給技術支援部門。您也可以使用 ONTAP 系統管理員來檢視已結案或進行中的案例。</block>
+  <block id="ce04aba89455a6f59cf366030c2056ab" category="inline-link-macro">已向 Active IQ 註冊</block>
+  <block id="871826e1588c93437ae23af0a8c5c29e" category="paragraph">您必須<block ref="2d57bedaf7449221ca7cf6e2da6e5236" category="inline-link-macro-rx"></block>檢視 ASA R2 系統的支援案例。</block>
+  <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">若要提交支援案例、請在系統管理員中選取 * 叢集 &gt; 支援 * 、然後選取 * 前往 NetApp 支援 * 。</block>
+  <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">若要檢視先前提交的案例、請在 System Manager 中選取 * 叢集 &gt; 支援 * 、然後選取 * 檢視我的案例 * 。</block>
+  <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、為僅限 SAN 的客戶提供簡化的體驗。</block>
+  <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">瞭解 ASA A1K 、 ASA A70 和 ASA A90 儲存系統</block>
+  <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">瞭解 ASA R2 儲存系統</block>
+  <block id="0ab1a7883d0399cbaf77a2e38633a6ea" category="paragraph">全新的 NetApp ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
+  <block id="4fdeef14779674f92738c7750c976920" category="paragraph">ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。NVMe 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
+  <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。</block>
+  <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
+  <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">_storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。</block>
+  <block id="e2969be58319571a8d10cc30d53f9a3b" category="list-text">_A Consistency group_ 是以單一單元管理的儲存單元集合。</block>
+  <block id="db5d2125ba43a68e1d147723a1fd42d2" category="paragraph">ASA R2 系統使用儲存單元和一致性群組來簡化儲存管理和資料保護。例如，假設您的資料庫由一致性群組中的 10 個儲存單元組成，而您需要備份整個資料庫。您可以備份一致性群組來保護整個資料庫、而無需個別備份每個儲存單元。</block>
+  <block id="99d7a989df24ddfeaed42c100e841eea" category="paragraph">為了協助保護資料免於遭竊或勒索軟體等惡意攻擊、 ASA R2 系統支援內建金鑰管理程式、雙層加密、防竄改快照、多因素驗證和多重管理驗證。</block>
+  <block id="85af1289b342af44c3abb8f8013b47f6" category="paragraph">ASA R2 系統不支援叢集混合搭配目前的 ASA 、 AFF 或 FAS 系統。</block>
+  <block id="989f2b4edace5981db8b18b1ad4a385f" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需ASA R2 系統支援與限制的詳細資訊，請參閱。</block>
+  <block id="c2c1bcd7adc7e36fe33a63a87106e2a7" category="inline-link-macro">相較於 ASA 系統、全新的 ASA R2 系統</block>
+  <block id="83397e1edfe32e6b68f408e5cf3870ee" category="list-text">深入瞭解 <block ref="b7749cfde79f0515b30017386210c7f6" category="inline-link-macro-rx"></block>。</block>
+  <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
+  <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">深入瞭解<block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>。</block>
+  <block id="05b76f77eda2923699bcc5fed0226549" category="summary">若要開始使用 ASA R2 （ ASA A1K 、 ASA A70 、 ASA A90 ）系統、請安裝硬體、設定叢集、設定資料存取、以及配置儲存設備。</block>
+  <block id="726d7bea9295f2cedea11857011476c0" category="searchtitle">安裝及設定 ASA A1K 、 ASA A70 及 ASA A90 儲存系統</block>
+  <block id="ceb35ef309bc127d4f8d63986f004986" category="doc">ASA R2 儲存系統快速入門</block>
+  <block id="7277c9d417ac8a6d967bd0e7b323cd57" category="paragraph">若要使用 ASA R2 系統開始運作、請安裝硬體元件、設定叢集、設定從主機存取儲存系統的資料、以及配置儲存設備。</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一</block>
+  <block id="40a0d9b63d17cd9ee40121b195ad7812" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>安裝及設定您的硬體</block>
+  <block id="0838ba24ec50794012b940c57af5703f" category="inline-link-macro">安裝與設定</block>
+  <block id="bd37b0d902cca84ba3edf7120a5ff8ea" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>您的 ASA R2 系統、並將其部署為 ONTAP 環境中的 HA 配對。</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">二</block>
+  <block id="d950f0cc340509cac6299d8daed8cf0a" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>設定叢集</block>
+  <block id="358ff255f5304eea2541b8491eafcb09" category="inline-link-macro">設定 ONTAP 叢集</block>
+  <block id="141b3275620de6180427ebac40835214" category="paragraph">使用 System Manager 引導您快速輕鬆地完成<block ref="ce4b3bacfb75f0b26075b3ebab24b181" category="inline-link-macro-rx"></block>。</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">三</block>
+  <block id="09ff4c434cf8a299f88882805a24126e" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>設定資料存取</block>
+  <block id="9dc880d5ebf1c4557e9aaa3149d43359" category="inline-link-macro">將 ASA R2 系統連線至 SAN 用戶端</block>
+  <block id="be3fbfdbc635fbd40b4ac1bb02656b40" category="paragraph"><block ref="7586540af02cab68d2e9697302565527" category="inline-link-macro-rx"></block>。</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">四</block>
+  <block id="7d644ccf1cc1af49cd019da4c8384075" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block>配置您的儲存設備</block>
+  <block id="032bb3c77a75d4bae0f58801b4d5326a" category="inline-link-macro">配置儲存設備</block>
+  <block id="416d7b4fb13f7595b6b5ae10eaf0da2e" category="paragraph"><block ref="24caf631dc8d0b7a958c2b39e9826f66" category="inline-link-macro-rx"></block>開始為您的 SAN 用戶端提供資料。</block>
+  <block id="e9b1c7305928c9a53874abbfc70aef12" category="inline-link-macro">建立快照</block>
+  <block id="f5f65ef11468147132736611aa414b0c" category="paragraph">您現在可以使用 System Manager 來保護資料<block ref="f2e8d78709894f634f64266a64a6a5f1" category="inline-link-macro-rx"></block>、方法是：</block>
+  <block id="4effe079c1a641bd05cf0513a1eaf8c6" category="summary">瞭解如何將 ASA R2 控制器纜線連接至網路、並將控制器纜線連接至機櫃。</block>
+  <block id="db8640dafbf216593610b43870a62e8d" category="doc">為 ASA R2 儲存系統連接硬體纜線</block>
+  <block id="08f29f426eac8bb0b1cef738430fac57" category="paragraph">為 ASA R2 儲存系統安裝機架硬體後、請安裝控制器的網路纜線、並將纜線連接到控制器和儲存櫃。</block>
+  <block id="403075fa89afdf5689d3f155524d9e1b" category="paragraph">檢查纜線連接器拉式彈片方向是否正確、請參閱纜線連接圖中的圖例箭頭。</block>
+  <block id="04c6391623d6bd5d0ac0d7df563f74dc" category="image-alt">纜線拉式彈片方向範例</block>
+  <block id="724b63ff77d309630df65f6af09956a2" category="list-text">插入連接器時、您應該會覺得它卡入定位；如果您不覺得卡住、請將其取下、將纜線頭翻轉過來、然後再試一次。</block>
+  <block id="c0b05ac617b77a5c10f26756e6ef04f2" category="list-text">如果連接至光纖交換器、請先將小型可插拔（ SFP ）收發器插入控制器連接埠、再將纜線連接至連接埠。</block>
+  <block id="417968dd9c410e2ebdf82236e2a6f1d8" category="section-title">步驟 1 ：將儲存控制器連接到您的網路</block>
+  <block id="1463138ead0bd5def70e2d744eddfc0a" category="paragraph">將控制器直接彼此連接、並連接到主機網路。</block>
+  <block id="73672e433c39ed0cc0cdb0334e672525" category="paragraph">如需將儲存系統連接至主機網路交換器的相關資訊、請聯絡您的網路管理員。</block>
+  <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="paragraph">這些程序顯示一般組態。具體的佈線取決於您的儲存系統所訂購的元件。如需完整的組態和插槽優先順序詳細資料、請參閱 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="5d6a7459a3583d9e29f4b486d809b6a1" category="open-title">ASA A1K</block>
+  <block id="10ddcbe568df11daf470f9b11ab92b62" category="paragraph">將儲存控制器彼此連接以建立 ONTAP 叢集連線、然後將每個控制器上的乙太網路連接埠連接至主機網路。</block>
+  <block id="ee6c90ad735c4fc892e900202d6ff034" category="list-text">使用叢集 /HA 互連纜線將連接埠 e1a 連接至 e1a 、並將連接埠 e7a 連接至 e7a 。</block>
+  <block id="883f8ccaa3b7bb186f5d85df551292e7" category="admonition">叢集互連流量和 HA 流量共用相同的實體連接埠。</block>
+  <block id="491359bee867965cfa22411b77d88b8d" category="list-text">將控制器 A 上的連接埠 e1a 連接到控制器 B 上的連接埠 e1A</block>
+  <block id="1a33712b794a97041f7338604473e7a3" category="list-text">將控制器 A 上的連接埠 e7a 連接至控制器 B 上的連接埠 e1A</block>
+  <block id="8c1f3262727530ad8d4652a5b107e167" category="paragraph">* 叢集 / HA 互連纜線 *</block>
+  <block id="29b62d617481485649ea2d5b54fca512" category="image-alt">叢集 HA 纜線</block>
+  <block id="3e86dd6511e223ecedd044d86cd934bf" category="image-alt">雙節點無交換器叢集佈線圖</block>
+  <block id="8637ca13eb3c1a10bb4383130268c950" category="list-text">將乙太網路模組連接埠連接到主機網路。</block>
+  <block id="e5878ec206640d3f0489cbe562e56856" category="paragraph">以下是一些典型的主機網路纜線範例。如需特定系統組態的詳細資訊、請參閱 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 。</block>
+  <block id="a6992cc3b8eb7adfbce0724b4ed8e4a4" category="list-text">如圖所示、將連接埠 e9a 和 e9b 連接至乙太網路資料網路交換器。</block>
+  <block id="b1a78b15892ed366f203ff3009cb08d9" category="admonition">為了讓叢集和 HA 流量發揮最大的系統效能、請勿使用連接埠 e1b 和 e7b 連接埠進行主機網路連線。請使用獨立的主機卡來發揮最大效能。</block>
+  <block id="d2163ed76fe91108f8a1e58f08924448" category="paragraph">*100 GbE 纜線 *</block>
+  <block id="dca4917cf460ca0094ae46e8d7178c17" category="image-alt">100Gb 乙太網路纜線</block>
+  <block id="63498c78e69ef7b5cc7cd5a1c0c3b724" category="image-alt">連接至 100Gb 乙太網路的纜線</block>
+  <block id="1cddeaef0a0b08b7178f9023a157d0fc" category="list-text">連接 10/25 GbE 主機網路交換器。</block>
+  <block id="fbb2ead6e1dba22c64b785b1864b9809" category="paragraph">*10/25 GbE 主機 *</block>
+  <block id="e6db43427a500d394f1d34dcfecf3b50" category="image-alt">10/25Gb 乙太網路纜線</block>
+  <block id="204d53c0ad48ec9abe6f3cde34241579" category="image-alt">連接到 10/25Gb 乙太網路的纜線</block>
+  <block id="9d62d1718b5465944796c5fb854d0f5d" category="list-text">使用 1000BASE-T RJ-45 纜線將控制器管理（扳手）連接埠連接至管理網路交換器。</block>
+  <block id="1107155d6b0c900a6485f06681854862" category="image-alt">RJ-45 纜線</block>
+  <block id="9c29eb35e98929529d99ca71cd855f4e" category="paragraph">* 1000BASE-T RJ-45 纜線 *</block>
+  <block id="a8536d671676b42d7c49328e04123a96" category="image-alt">連線至您的管理網路</block>
+  <block id="38821947dff053760f4c97b648ca454a" category="admonition">請勿插入電源線。</block>
+  <block id="8cf7baf96983d1c70a286576ddcd0ca1" category="open-title">ASA A70 和 ASA A90</block>
+  <block id="bd078f69cc3533ea9bc3100deef482d0" category="list-text">使用叢集 /HA 互連纜線、將連接埠 e1a 連接至 e1a 、並將連接埠 e7a 連接至 e7a 。</block>
+  <block id="d4f534f2d370cb0f29178f31331b3536" category="image-alt">連接至 100 Gb 乙太網路的纜線</block>
+  <block id="5a8b74659281e9e3495bfc29767b645c" category="paragraph">*4 個連接埠、 10/25 GbE 主機 *</block>
+  <block id="06d20f31fccdd7b31221a7b1e1ed37d1" category="image-alt">10/25 GB 纜線</block>
+  <block id="95b007a39e5ec5c4d9b8e17f2ec0424d" category="image-alt">RJ45 纜線</block>
+  <block id="4bdc8275aa2933fa877bfc4f40f6c3a2" category="section-title">步驟 2 ：將儲存控制器連接至儲存櫃</block>
+  <block id="581d5dbeb2b657af56ca70f32099c9d4" category="paragraph">以下佈線程序說明如何將控制器連接至一個機櫃和兩個機櫃。您最多可以直接將四個機櫃連線至控制器。</block>
+  <block id="b3623f40c8ee8913ca5a6a7756d97ce9" category="paragraph">請選擇符合您設定的下列其中一個纜線選項。</block>
+  <block id="45783cabcfb105d0da4815a8eccc2f24" category="example-title">選項 1 ：將控制器連接至一個 NS224 儲存櫃</block>
+  <block id="46d73bd828c75397e5f3cca81c4236e1" category="paragraph">將每個控制器連接至 NS224 機櫃上的 NSM 模組。圖形顯示每個控制器的纜線：控制器 A 纜線以藍色顯示、控制器 B 纜線則以黃色顯示。</block>
+  <block id="cdc609c675d24b2fff8b5acc2e37e89e" category="list-text">在控制器 A 上、連接下列連接埠：</block>
+  <block id="f316f1854f33785f42807636a3284714" category="list-text">將連接埠 e11a 連接至 NSM A 連接埠 e0a 。</block>
+  <block id="7fd21be5068998e5aac33f1cffcff76c" category="list-text">將連接埠 e11b 連接至連接埠 NSM B 連接埠 e0b 。</block>
+  <block id="2bc2dbfb240bdfb79a6c1bb80f34be8a" category="inline-image-macro">將控制器 A e11a 和 e11b 移至單一 NS224 機櫃</block>
+  <block id="e8e2e70664d58c738dc5f3e73dd79bbb" category="paragraph"><block ref="e8e2e70664d58c738dc5f3e73dd79bbb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ab7ef1e990b02e4f310f950e86665f24" category="list-text">在控制器 B 上、連接下列連接埠：</block>
+  <block id="a34418430d19dabd71e89f00a9e8e782" category="list-text">將連接埠 e11a 連接至 NSM B 連接埠 e0A 。</block>
+  <block id="3a95f3cf99705bbbd01d1dd74336e9fd" category="list-text">將連接埠 e11b 連接至 NSM a 連接埠 e0b 。</block>
+  <block id="182824a7bd82a321df1a100637995a19" category="inline-image-macro">纜線控制器 B 連接埠 e11a 和 e11b 至單一 NS224 機櫃</block>
+  <block id="86ab7b5fab8b30fc8e3619226fb66002" category="paragraph"><block ref="86ab7b5fab8b30fc8e3619226fb66002" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c5ac0907ecf688c8b8347e531e8a7106" category="example-title">選項 2 ：將控制器連接至兩個 NS224 儲存櫃</block>
+  <block id="348bd528033e13e79fcfb366a5cd5af4" category="paragraph">將每個控制器連接至兩個 NS224 機櫃上的 NSM 模組。圖形顯示每個控制器的纜線：控制器 A 纜線以藍色顯示、控制器 B 纜線則以黃色顯示。</block>
+  <block id="4b079ba797f88f932136bdbd1aa314a0" category="list-text">將連接埠 e11a 連接至機櫃 1 NSM A 連接埠 e0a 。</block>
+  <block id="486d7e107c3f396974308ba4cc20a5f9" category="list-text">將連接埠 e11b 連接至機櫃 2 NSM B 連接埠 e0b 。</block>
+  <block id="2eaa4fb60d669ed2bf97809a07457f81" category="list-text">將連接埠 E10A 連接至機櫃 2 NSM A 連接埠 e0a 。</block>
+  <block id="910336e4e301588a648d82f197dcbad1" category="list-text">將連接埠 e10b 連接至機櫃 1 NSM a 連接埠 e0b 。</block>
+  <block id="0f55271b4c6ea651f102c7fc3cd0c694" category="inline-image-macro">控制器 A 的控制器與機櫃連線</block>
+  <block id="35300d156e654cc20e9c29eb06999674" category="paragraph"><block ref="35300d156e654cc20e9c29eb06999674" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4a23f98c3274066686b18c28bfdbf7b2" category="list-text">將連接埠 e11a 連接至機櫃 1 NSM B 連接埠 e0A 。</block>
+  <block id="5e82af64ee793cb8b1b3d10f8e325bed" category="list-text">將連接埠 e11b 連接至機櫃 2 NSM a 連接埠 e0b 。</block>
+  <block id="2f6df380cd83e22784e9ab6e56edd84d" category="list-text">將連接埠 E10A 連接至機櫃 2 NSM B 連接埠 e0A 。</block>
+  <block id="cd510ec7974b62b233e62a6e6a5c727e" category="inline-image-macro">控制器 B 的控制器與機櫃連線</block>
+  <block id="462dd5d60871bb2319eb46e1da38c42d" category="paragraph"><block ref="462dd5d60871bb2319eb46e1da38c42d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bfe3957a11dab27de6793691acba1b94" category="paragraph">*100 GbE QSFP28 銅線 *</block>
+  <block id="59850ec6ce706547c89ff81eb99141db" category="image-alt">100 GbE QSFP28 銅線</block>
+  <block id="9dcc8dc3a558729dc61c31c84e00c3e4" category="list-text">將控制器 A 連接埠 e11a 連接至 NSM A 連接埠 e0a 。</block>
+  <block id="918349807746744597338bfd03ce241f" category="list-text">將控制器 A 連接埠 e11b 連接至連接埠 NSM B 連接埠 e0b 。</block>
+  <block id="956aab6b8733f2140ed524c12e37f4bd" category="paragraph"><block ref="956aab6b8733f2140ed524c12e37f4bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a8861b3a8d06aef3022e3d2cfa014512" category="list-text">將控制器 B 連接埠 e11a 連接至 NSM B 連接埠 e0A 。</block>
+  <block id="6a5052a8c54e3e46dc1452dcb9c98eaa" category="list-text">將控制器 B 連接埠 e11b 連接至 NSM A 連接埠 e0b 。</block>
+  <block id="a35e9f25f382abbe5abcfeab4b53167c" category="inline-image-macro">控制器 B e11a 和 e11b 至單一 NS224 機櫃</block>
+  <block id="7f958fb1f7822d334698802022ec3956" category="paragraph"><block ref="7f958fb1f7822d334698802022ec3956" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e934f6c11392ce362b9b522d3905e905" category="list-text">在控制器 A 上、連接下列連接埠：</block>
+  <block id="622567f759d81c4e71f74d57546ee33a" category="list-text">將連接埠 e11a 連接至機櫃 1 、 NSM A 連接埠 e0a 。</block>
+  <block id="fa65b92c92e4c6583d514be0324b7aae" category="list-text">將連接埠 e11b 連接至機櫃 2 、 NSM B 連接埠 e0b 。</block>
+  <block id="884b219f88a01bf8fe5bf55db135e450" category="list-text">將連接埠 e8a 連接至機櫃 2 、 NSM A 連接埠 e0a 。</block>
+  <block id="3d76afb25e68cbf6ec448ba97c8d77a4" category="list-text">將連接埠 e8b 連接至機櫃 1 、 NSM B 連接埠 e0b 。</block>
+  <block id="f574117739b3e8dc40831cbb75e78d7f" category="paragraph"><block ref="f574117739b3e8dc40831cbb75e78d7f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c74d901dd29a71ee51992bf6462dd04" category="list-text">將連接埠 e11a 連接至機櫃 1 、 NSM B 連接埠 e0A 。</block>
+  <block id="1e063e8299a01fcdf8268f46edf62dfe" category="list-text">將連接埠 e11b 連接至機櫃 2 、 NSM A 連接埠 e0b 。</block>
+  <block id="a032a8830d9e7689c545a9f5d436568b" category="list-text">將連接埠 e8a 連接至機櫃 2 、 NSM B 連接埠 e0a 。</block>
+  <block id="a7ac225913423b42ae7801d894de31c8" category="list-text">將連接埠 e8b 連接至機櫃 1 、 NSM A 連接埠 e0b 。</block>
+  <block id="bf1f9977d76210449a57d0b526df80f9" category="paragraph"><block ref="bf1f9977d76210449a57d0b526df80f9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4757f88150e08258ea28951d40a936cf" category="inline-link-macro">開啟 ASA R2 儲存系統電源</block>
+  <block id="b5d10bcdc319c3ca8d1fb925a5259701" category="paragraph">將儲存控制器連線至網路、然後將控制器連線至儲存櫃之後<block ref="9e913a1648528438a924ea21dfe1e70d" category="inline-link-macro-rx"></block>、您就可以了。</block>
+  <block id="7a0f3d1eee9b436516fb151eb9f5ad70" category="summary">瞭解如何安裝 ASA R2 儲存系統和儲存櫃的軌道套件、並將 ASA R2 硬體固定在機櫃或電信機架中。</block>
+  <block id="d7e0875bfb80935e3e52d40bf676268b" category="doc">安裝 ASA R2 儲存系統</block>
+  <block id="c5d051787e987f6a5a0bfc85ecde7a0d" category="paragraph">準備好安裝 ASA R2 儲存系統之後、請安裝系統的硬體。首先、安裝軌道套件。然後在機櫃或電信機架中安裝並保護您的儲存系統。</block>
+  <block id="25e29897c37b7e5f9f9f0d8aac2e8c21" category="list-text">請務必備有軌道套件隨附的說明。</block>
+  <block id="6a82938033e352436834589b4000acd1" category="list-text">請注意與儲存系統和儲存櫃重量相關的安全考量。</block>
+  <block id="cd5270ea2c99376e2e028058d02bfa65" category="list-text">瞭解透過儲存系統的氣流從安裝擋板或端蓋的前端進入、並排出連接埠所在的後端。</block>
+  <block id="a23c8df519f5dec5dcc76f5989d937c4" category="list-text">根據需要、依照套件隨附的說明、安裝儲存系統和儲存櫃的軌道套件。</block>
+  <block id="1c8c6696ac03ef01690be450b3767032" category="list-text">在機櫃或電信機架中安裝及保護您的儲存系統：</block>
+  <block id="bdb39b5926a304a8f387b036b6fd9445" category="list-text">將儲存系統放在機櫃或電信機架中央的軌道上、然後從底部支撐儲存系統、並將其滑入定位。</block>
+  <block id="0a508c750e66a219b3bc9449125a4672" category="list-text">使用隨附的安裝螺絲、將儲存系統固定在機櫃或電信機架上。</block>
+  <block id="c91c25b22baf3cf726a3ecc4b7e7f23f" category="list-text">安裝儲存櫃：</block>
+  <block id="76f6a6a53ead4da24271bca7a9b976e0" category="list-text">將儲存櫃的背面放在軌道上、然後從底部支撐機櫃、並將其滑入機櫃或電信機架。</block>
+  <block id="8ac98c640ab335c330eb3d45c03096ad" category="paragraph">如果您要安裝多個儲存櫃、請將第一個儲存櫃直接放在控制器上方。將第二個儲存櫃直接放在控制器下方。對任何其他儲存櫃重複此模式。</block>
+  <block id="871681e86e80556b261166721e0bbe3b" category="list-text">使用隨附的安裝螺絲、將儲存架固定在機櫃或電信機架上。</block>
+  <block id="c5eaaf4a6fa532356e5d0189384e0e34" category="list-text">將纜線管理裝置連接至儲存系統背面。</block>
+  <block id="6b7aa880220c7f598440de8d8a0f944b" category="image-alt">安裝纜線管理裝置</block>
+  <block id="36eaeecf3fe5d82e498290c50c773db1" category="list-text">將擋板連接至儲存系統正面。</block>
+  <block id="eb3b2ba356f7e0823316a945c2fa26ad" category="inline-link-macro">為 ASA R2 系統的控制器和儲存櫃佈線</block>
+  <block id="921f20e063803f94d318d6e06129c848" category="paragraph">安裝 ASA R2 系統的硬體之後<block ref="a741e349f7db03948fbc953426174fcb" category="inline-link-macro-rx"></block>，您就可以了。</block>
+  <block id="944c78edadc5c5ef521e34b1dec0c05a" category="summary">瞭解如何使用系統管理員在 ASA R2 系統上設定 ONTAP 叢集。</block>
+  <block id="49788dc3bfda64cb0f6ce15d682eed85" category="searchtitle">使用 ONTAP 系統管理員 | ASA R2 設定 ONTAP 叢集</block>
+  <block id="1882089e0bdb0678a0f7f4961cb8c364" category="doc">在 ASA R2 儲存系統上設定 ONTAP 叢集</block>
+  <block id="17c7b823efc5ec2f95c2ee4efe91f28c" category="paragraph">ONTAP 系統管理員會引導您快速輕鬆地完成 ONTAP ASA R2 叢集的設定工作流程。</block>
+  <block id="a55dbc185a6de620e646d1a9c553b807" category="paragraph">在叢集設定期間、系統會建立預設的資料儲存虛擬機器（ VM ）。您也可以選擇啟用網域名稱系統（ DNS ）來解析主機名稱、將叢集設定為使用網路時間傳輸協定（ NTP ）進行時間同步、以及啟用靜態資料的加密。</block>
+  <block id="284dc6d1de61ec5c2a96db8bc40dd3ab" category="paragraph">收集下列資訊：</block>
+  <block id="17f9763b5928eb7d43b4432194b9abfd" category="list-text">叢集管理IP位址</block>
+  <block id="d4ae77db8b9f2d8265bd2f43ce7da6eb" category="paragraph">叢集管理 IP 位址是叢集管理員用來存取管理儲存 VM 及管理叢集的叢集管理介面唯一的 IPv4 位址。您可以向負責指派組織IP位址的管理員取得此IP位址。</block>
+  <block id="cbb81dee4f5c03c21f392a86f157336d" category="list-text">網路子網路遮罩</block>
+  <block id="3978e6dda347f361f450b79bbf5a3dac" category="paragraph">在叢集設定期間、 ONTAP 會建議一組適合您組態的網路介面。如有必要、您可以調整建議。</block>
+  <block id="e62d1b7c016fb6f9a0829b685c2ab1ea" category="list-text">網路閘道 IP 位址</block>
+  <block id="be44991efa02215a48c63cd20a099e19" category="list-text">合作夥伴節點 IP 位址</block>
+  <block id="4f003881b79490db2f8b01b7c398fce1" category="list-text">DNS網域名稱</block>
+  <block id="e28af899651d52d4e958ed29e85f0c9c" category="list-text">DNS 名稱伺服器 IP 位址</block>
+  <block id="178e188a7017b433a79efd35d6037e4c" category="list-text">NTP 伺服器 IP 位址</block>
+  <block id="2676562cc6b0cf6c0163b1086bb1c6c9" category="list-text">資料子網路遮罩</block>
+  <block id="60d902b0a36cd8bdaed2c0e3cade40ba" category="list-text">探索叢集網路</block>
+  <block id="13a5c797fb82f415ef3d13e5c012faf4" category="list-text">將筆記型電腦連接到管理交換器、並存取網路電腦和裝置。</block>
+  <block id="098bbae74bb948e3ff3baff0a28b2546" category="list-text">開啟檔案總管。</block>
+  <block id="b43b6fc30d6fa5fad81a00f958b516dc" category="list-text">選擇 * 網路 * ；然後按一下滑鼠右鍵並選取 * 重新整理 * 。</block>
+  <block id="f3758175c2afcd3da425644e9af65b6b" category="list-text">選取任一 ONTAP 圖示、然後接受畫面上顯示的任何憑證。</block>
+  <block id="7e043f500d316c07931a265899f256e5" category="paragraph">系統管理程式隨即開啟。</block>
+  <block id="c34c9f445f071064b5ad57fa56a4966a" category="list-text">在 * 密碼 * 下、為管理帳戶建立強式密碼。</block>
+  <block id="94b83670319c428bbd5d0731ec0a776c" category="paragraph">密碼長度必須至少八個字元、且必須包含至少一個字母和一個數字。</block>
+  <block id="2bb39a27652ab0bfe0f806e7eb0a69da" category="list-text">重新輸入密碼以確認、然後選擇 * 繼續 * 。</block>
+  <block id="2e7cdddcc85c09e4ce2bbc7e09e8e9b7" category="list-text">在 * 網路位址 * 下、輸入儲存系統名稱或接受預設名稱。</block>
+  <block id="d6103bdebb0cdea1f299898bf5aa537c" category="paragraph">如果您變更預設的儲存系統名稱、新名稱必須以字母開頭、而且必須少於 44 個字元。您可以在名稱中使用句點（ . ）、連字號（ - ）或底線（ _ ）。</block>
+  <block id="70f6758d7d964f49a57485250ec5f376" category="list-text">輸入叢集管理 IP 位址、子網路遮罩、閘道 IP 位址和合作夥伴節點的 IP 位址、然後選取 * 繼續 * 。</block>
+  <block id="2793cf1965ac5c276accb7d1f74ddb88" category="list-text">在 * 網路服務 * 下、選擇想要的選項 * 使用網域名稱系統（ DNS ）來解析主機名稱 * 、並 * 使用網路時間傳輸協定（ NTP ）來保持時間同步 * 。</block>
+  <block id="cea8a18a6b41bf6c5aec862837b7bd58" category="paragraph">如果您選擇使用 DNS 、請輸入 DNS 網域和名稱伺服器。如果您選擇使用 NTP 、請輸入 NTP 伺服器、然後選取 * 繼續 * 。</block>
+  <block id="be61269156c259ed5a71421700f6286e" category="list-text">在 * 加密 * 下、輸入 Onboard Key Manager （ OKM ）的密碼。</block>
+  <block id="e57ddc55971e4d47dc0dfefe72739a42" category="paragraph">預設會選取使用內建金鑰管理程式（ OKM ）加密靜止資料。如果您想要使用外部金鑰管理程式、請更新所選項目。</block>
+  <block id="1c2616043df6f762868bba4372906a7e" category="paragraph">您也可以選擇在叢集設定完成後、將叢集設定為加密。</block>
+  <block id="18e73e557ecb75c57d1d16ca781cbfbe" category="list-text">選擇 * 初始化 * 。</block>
+  <block id="aafb0841cafa2537a8c36f26a1b80a8b" category="paragraph">設定完成後、系統會將您重新導向至叢集的管理 IP 位址。</block>
+  <block id="f3832c091df65857d84b2272bb9f8bff" category="list-text">在 * 網路 * 下、選取 * 設定通訊協定 * 。</block>
+  <block id="4fa6ee06d8862db8021430bc1fd6fcd4" category="cell">若要設定 IP （ iSCSI 和 NVMe / TCP ）、請執行 ...</block>
+  <block id="e5baa13934dc5926549fec972c608068" category="cell">若要設定 FC 和 NVMe / FC 、請執行 ...</block>
+  <block id="b6823f85b8eb79faaf8405cca765e850" category="list-text">選擇 *IP* ；然後選擇 * 設定 IP 介面 * 。</block>
+  <block id="affb16c6dd62cd5cd132ff8ad9235f6c" category="list-text">選取 * 新增子網路 * 。</block>
+  <block id="9b29fa7f7858d5f7972425eae795017f" category="list-text">輸入子網路名稱、然後輸入子網路 IP 位址。</block>
+  <block id="4899066f854965d1e13f4d453f8a19ba" category="list-text">輸入子網路遮罩、並選擇性地輸入閘道、然後選取 * 新增 * 。</block>
+  <block id="f7f90b62677d8ebd606eef5db24ec35c" category="list-text">選取您剛建立的子網路、然後選取 * 儲存 * 。</block>
+  <block id="358bced2dec3663f2ceabfa8d63a8b2b" category="list-text">選取 * FC* ；然後選取 * 設定 FC 介面 * 和 / 或 * 設定 NVMe / FC 介面 * 。</block>
+  <block id="af656b5abe916a2fcc4c982c22eb218e" category="list-text">選取 FC 和 / 或 NVMe / FC 連接埠、然後選取 * 儲存 * 。</block>
+  <block id="3b4ee3e7b6814b2e13395ba0a564f75e" category="inline-link-macro">ActiveIQ Config Advisor</block>
+  <block id="cee12206627e050cef2e5e404708fb8f" category="list-text">或者、下載並執行<block ref="507d664af375e43653af1c5a8b47d350" category="inline-link-macro-rx"></block>以確認您的組態。</block>
+  <block id="3db3a147abe72942496426f69c1dd90d" category="paragraph">ActiveIQ Config Advisor 是 NetApp 系統的工具、可檢查常見的組態錯誤。</block>
+  <block id="207386e3b0172c1af50dde9f13051302" category="inline-link-macro">設定資料存取</block>
+  <block id="8900f41df81d22bfaaf05191007f29e3" category="paragraph">您已準備好<block ref="f54c211ceb7143a6b47edba6fd865743" category="inline-link-macro-rx"></block>從 SAN 用戶端到 ASA R2 系統。</block>
+  <block id="25dc91603957126f1dd35a0571e41e4b" category="summary">檢閱 ASA R2 儲存系統和儲存櫃所需的設備和起重預防措施。</block>
+  <block id="504bac0c592e8381a55ff8e0449c83b6" category="doc">ASA R2 儲存系統的安裝需求</block>
+  <block id="38342a608d29c610e381db6c1bfd532c" category="section-title">安裝所需的設備</block>
+  <block id="f1c765364997d451a474f83c7c0abf53" category="paragraph">若要安裝 ASA R2 儲存系統、您需要下列設備和工具。</block>
+  <block id="5c454c254f4e346b0d54dac30e743b57" category="list-text">存取網頁瀏覽器以設定儲存系統</block>
+  <block id="8dd75d4e14815a2e3e3154ea67cd841e" category="list-text">靜電釋放（ ESD ）固定帶</block>
+  <block id="75b0ae11d26c806413ef6e8aed1ece4f" category="list-text">手電筒</block>
+  <block id="32271edc7814b81370e65a0b9ea22010" category="list-text">具備 USB/ 序列連線的筆記型電腦或主控台</block>
+  <block id="2e9e7e3bf632d3a831fdcb0a200d53b7" category="list-text">迴紋針或窄尖圓珠筆、用於設定 NS224 儲存櫃 ID</block>
+  <block id="f0ae587f290f3d775f2ea5aa1a8a00ea" category="list-text">2號十字螺絲起子</block>
+  <block id="8170c4932dac7ac5a018213e28744cab" category="section-title">起重預防措施</block>
+  <block id="f15e3b515c8037c307e56c131f269fc3" category="paragraph">ASA R2 儲存系統和 NS224 儲存櫃非常繁重。抬起和移動這些項目時請務必謹慎。</block>
+  <block id="522bd666055071c79860849502df1178" category="section-title">儲存系統重量</block>
+  <block id="03045764da1593b6b1f92a9fb7b61115" category="paragraph">移動或抬起 ASA R2 儲存系統時、請採取必要的預防措施。</block>
+  <block id="338f0823becae44822b99305a020773b" category="paragraph">ASA A1K 儲存系統的重量可達 62.83 磅（ 28.5 公斤）。若要抬起系統、請使用兩個人或液壓舉升設備。</block>
+  <block id="00db13616a21c862d199d7fae938549d" category="image-alt">AFF A1K 提升注意事項圖示</block>
+  <block id="b6eb05c05f5875d94df5d8c0c9fb06d9" category="paragraph">ASA A70 儲存系統或 ASA A90 儲存系統的重量可達 151.68 磅（ 68.8 公斤）。若要抬起系統、請使用四個人或液壓舉升設備。</block>
+  <block id="50c089c00eacadfe94238545067e1673" category="image-alt">AFF A90</block>
+  <block id="8cbb936501554e10d8ef238b0bed1516" category="section-title">儲存櫃重量</block>
+  <block id="2426c13bd8c78d02a8ccbd2a43174936" category="paragraph">NS224 儲存櫃的重量可達 66.78 磅（ 30.29 公斤）。若要抬起儲存架、請使用兩個人或液壓舉升設備。請將所有元件保留在儲存櫃（前後）、以避免在機櫃重量上出現不均衡的情況。</block>
+  <block id="c55a46464ae8350cc2bff0a097df93e1" category="image-alt">NS224 舉升注意事項</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相關資訊</block>
+  <block id="35c124f455f44a154eb3b514029ee58a" category="inline-link">安全資訊與法規注意事項</block>
+  <block id="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="list-text"><block ref="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="inline-link-rx"></block></block>
+  <block id="bc49acf6a4bdda7bb7cff74873359411" category="inline-link-macro">準備安裝 ASA R2 儲存系統</block>
+  <block id="9bc515044882c3ed46aa32f2e8aa575e" category="paragraph">在您檢閱過硬體需求之後<block ref="8054262d52a0c88e2eb96c4a29491e7c" category="inline-link-macro-rx"></block>，您就可以了。</block>
+  <block id="4e12da3ed45d8c0cbcaf56b1f9f08af6" category="summary">開始安裝和設定 ASA R2 儲存系統、並在 ONTAP 環境中將其部署為 HA 配對。</block>
+  <block id="bec12648a072f54e7209e45d72c0ba78" category="doc">ASA R2 儲存系統的安裝與設定工作流程</block>
+  <block id="f08e3211126883342efb2c1028678668" category="paragraph">若要安裝及設定 ASA R2 系統、請檢閱硬體需求、準備站台、安裝硬體元件並連接纜線、開啟系統電源、以及設定 ONTAP 叢集。</block>
+  <block id="7ccd978bf0dbca0a0746f98d09b99f7f" category="inline-link-macro">檢閱硬體安裝需求</block>
+  <block id="6889512d643df7fa8ccfb7e52dd1181c" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="90572de4b12061d10d3adbe91dd02ace" category="inline-link-macro-rx"></block></block>
+  <block id="2093d28d6edc661be7e0c92b7f6452f7" category="paragraph">檢閱硬體需求以安裝 ASA R2 儲存系統。</block>
+  <block id="654b7e4d986ad973f3c2838f5dac8c70" category="inline-link-macro">準備安裝 ASA R2 儲存系統</block>
+  <block id="00c1207f2baf7dc28041d8ac249f22f9" category="paragraph-title"><block ref="444c1bf2e877f5617e8ce0a2ded57f4f" category="inline-image-macro-rx" type="image"></block><block ref="364d625567d09103e7911f1934bc8d24" category="inline-link-macro-rx"></block></block>
+  <block id="50b9fda3a60203dfb56138338390ca5f" category="paragraph">若要準備安裝 ASA R2 系統、您必須準備好場地、檢查環境和電力需求、並確保有足夠的機架空間。然後、打開設備的包裝、將其內容與裝箱單進行比較、並註冊硬體以取得支援效益。</block>
+  <block id="04e16e17799ca1597df8b649304b6740" category="inline-link-macro">安裝 ASA R2 儲存系統的硬體</block>
+  <block id="1478911ba4fc781e8de9b3aa7b4f6979" category="paragraph-title"><block ref="4f954e3aac01b1dc982b61d245b37a02" category="inline-image-macro-rx" type="image"></block><block ref="65a058a30efdac510219d9d7c74f3657" category="inline-link-macro-rx"></block></block>
+  <block id="2d797c4cbf8f7f6c9e87e405560d40d4" category="paragraph">若要安裝硬體、請安裝儲存系統和機櫃的軌道套件、然後將儲存系統安裝並固定在機櫃或電信機架中。接著、將貨架滑到軌道上。最後、將纜線管理裝置連接至儲存系統背面、以便整理纜線佈線。</block>
+  <block id="b5990faed003b2a8d77aecd063000d1a" category="inline-link-macro">為 ASA R2 儲存系統的控制器和儲存櫃佈線</block>
+  <block id="a797a5c1bc5da9127e370ca2436a30a7" category="paragraph-title"><block ref="d5b760e3b486da6aca46a9bd83d66c13" category="inline-image-macro-rx" type="image"></block><block ref="29aaf1b4e7e6610ae4790f0740e69e4e" category="inline-link-macro-rx"></block></block>
+  <block id="5ff2c2e371b329794d430555ced9e3f7" category="paragraph">若要連接硬體、請先將儲存控制器連接至網路、然後將控制器連接至儲存櫃。</block>
+  <block id="f0458cb9a2bfe68bf005af12c17ad1aa" category="inline-link-macro">開啟 ASA R2 儲存系統電源</block>
+  <block id="22d9f0a1dd203d9cd6eba27e0a348588" category="paragraph-title"><block ref="91d7076df3f3bfcf6ace71bd0aa6cf68" category="inline-image-macro-rx" type="image"></block><block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
+  <block id="9adaba33c41b009e4561e4c9bfed5074" category="paragraph">開啟控制器電源之前、請先開啟每個 NS224 機櫃的電源、並指派唯一的機櫃 ID 、以確保每個機櫃在設定中都能唯一識別。</block>
+  <block id="8c81ca9e9e2ca6805e56478191f75c42" category="summary">開啟每個 NS224 機櫃的電源、以指派唯一的機櫃 ID 、開啟 ASA R2 控制器電源、並固定電源線。</block>
+  <block id="de4e7be8a936d1ed409fa1f461a34957" category="doc">開啟 ASA R2 儲存系統電源</block>
+  <block id="2b814ecf2be8542bceb68933db5cbcfe" category="paragraph">為 ASA R2 儲存系統安裝機架硬體、並安裝控制器和儲存櫃的纜線之後、您應該開啟儲存櫃和控制器的電源。</block>
+  <block id="0b5c1681fb8f009a141f0c7d0f2d8f64" category="section-title">步驟 1 ：開啟機櫃電源並指派機櫃 ID</block>
+  <block id="c239b345dc160b2bfc0fb8247acc17eb" category="paragraph">每個 NS224 機櫃都以獨特的機櫃 ID 加以區分。此 ID 可確保儲存系統設定中的機櫃各有不同。根據預設、機櫃 ID 會指派為「 00 」和「 01 」、但您可能需要調整這些 ID 、以維持整個儲存系統的唯一性。</block>
+  <block id="ca6592648e24fc75321ba685ce760213" category="list-text">有效的機櫃ID為00至99。</block>
+  <block id="4acf2e1827dc9d94e8643d89bb45be93" category="list-text">您必須將機櫃關機後再開機（拔下兩條電源線、等待適當的時間、然後重新插入）、機櫃 ID 才會生效。</block>
+  <block id="90b5c3b3e8b76a473c431858d638eccb" category="list-text">先將電源線連接至機櫃、然後使用電源線固定器將電源線固定到位、再將電源線連接至不同電路上的電源、以開啟機櫃電源。</block>
+  <block id="aa4d119638bea60a8850d8c9e0b57b86" category="paragraph">機櫃在插入電源時會自動開機和開機。</block>
+  <block id="67cfcbdbfb87a54aadf338e218c38216" category="list-text">取下左端蓋、即可存取面板後面的機櫃 ID 按鈕。</block>
+  <block id="f044e75ec5037aabefb204d1365ba96b" category="image-alt">變更 NS224 機櫃 ID</block>
+  <block id="eff9a2b0e485ca3fb80f96fc9995fb62" category="image-alt">編號 1</block>
+  <block id="48fb10beb7e1cd15b9bdbab40aac9532" category="paragraph">機櫃端蓋</block>
+  <block id="d8147b4a0f272144c59f006b412b8290" category="image-alt">[ 請撥號碼 2</block>
+  <block id="22f4a2aa68e94fdf29e1fc7d0f30d571" category="paragraph">機櫃面板</block>
+  <block id="8c5529e435c4992332c3afef54410f4e" category="image-alt">[ 請撥號碼 3</block>
+  <block id="40e6ceebb2eb1677b588bd7f52f95206" category="paragraph">機櫃 ID 號碼</block>
+  <block id="1e7068fa54071c2235730ac32aea59df" category="image-alt">[ 請撥號碼 4</block>
+  <block id="d99e56a0fc1270d6ad52dad4e860e03b" category="paragraph">機櫃 ID 按鈕</block>
+  <block id="208e81853e4dca831b5edd6d17516137" category="list-text">變更機櫃ID的第一個編號：</block>
+  <block id="d4c1c2e026b220a076548832df5663fd" category="list-text">將迴紋針或窄尖圓珠筆的拉直端插入小孔中、按下「機架 ID 」按鈕。</block>
+  <block id="a575fb8631b6f36bc982f14c1cc92a6e" category="list-text">按住「機櫃 ID 」按鈕、直到數位顯示器上的第一個數字閃爍、然後放開按鈕。</block>
+  <block id="6c986a8fa042f029d13ead15d42662bd" category="paragraph">此數字可能需要15秒的時間才能開始閃爍。這會啟動機櫃ID程式設定模式。</block>
+  <block id="d82a10aaede074fc250a2dc7ef372dca" category="admonition">如果 ID 需要超過 15 秒的時間來閃爍、請再次按住「機櫃 ID 」按鈕、並確保完全按下。</block>
+  <block id="1e6aa1713a8e26a3cecae4cd918e20a0" category="list-text">按下並放開「機櫃 ID 」按鈕以進階數字、直到您達到所需的數字、從 0 到 9 為止。</block>
+  <block id="9ae44f0bc1687521dee9858246cd5a9f" category="paragraph">每個新聞稿和發佈持續時間可短至一秒。</block>
+  <block id="1b0ebfdfcf370caa9ec32325934a52ca" category="paragraph">第一個數字會持續閃爍。</block>
+  <block id="c539e06786951f3062af110033f30a2e" category="list-text">變更機櫃ID的第二個編號：</block>
+  <block id="6bdc58776501a466691cbaa9d0a857ae" category="list-text">按住按鈕、直到數位顯示器上的第二個數字開始閃爍。</block>
+  <block id="b29901922763acb17e18f872ab1e2679" category="paragraph">最多可能需要三秒時間、才能讓號碼開始閃燈。</block>
+  <block id="e7082f29431b847aed08cb5f1ed03619" category="paragraph">數位顯示器上的第一個數字會停止閃爍。</block>
+  <block id="220344f33d58e5df2e69bb2dbb12a688" category="paragraph">第二個數字會持續閃爍。</block>
+  <block id="fbfc6fb88e89fa9fd421347ccdc222c8" category="list-text">鎖定所需的號碼、然後按住機櫃 ID 按鈕、直到第二個號碼停止閃爍、以結束程式設定模式。</block>
+  <block id="c2dca9d3a8a74a90e1c390b10134c3b9" category="paragraph">此數字可能需要三秒鐘才能停止閃爍。</block>
+  <block id="3a7f97a4c78b33a1c47a571494b17709" category="paragraph">數位顯示器上的兩個數字都會開始閃爍、且琥珀色 LED 會在大約五秒後亮起、提醒您擱置的機櫃 ID 尚未生效。</block>
+  <block id="6344f7fd68670da7ea2e25f860ab47c7" category="list-text">將機櫃關機至少 10 秒、使機櫃 ID 生效。</block>
+  <block id="8dd5b39a083288c66f9b37e4b47571ed" category="list-text">從機櫃上的兩個電源供應器拔下電源線。</block>
+  <block id="2fd334af24d7f85b4be7ae87f6cc3fd5" category="list-text">等待10秒。</block>
+  <block id="f4eba532dc9721310c35cdad2e0831ac" category="list-text">將電源線插回機櫃電源供應器、以完成電源循環。</block>
+  <block id="9761b42a968734c1023d46b29a16d960" category="paragraph">電源線一插上、電源就會立即開啟。其雙色 LED 燈應會亮起綠燈。</block>
+  <block id="5a6ec3ac63a7fb05de2686f31f690298" category="list-text">更換左端蓋。</block>
+  <block id="b1ea51baf980ec6bb00ca1b7b419d506" category="section-title">步驟 2 ：開啟控制器電源</block>
+  <block id="51ebfc33ce787da893819e3a68129a19" category="paragraph">開啟儲存櫃並指派唯一 ID 之後、請開啟儲存控制器的電源。</block>
+  <block id="9be560fd489238e97542aa683a683199" category="list-text">將筆記型電腦連接到序列主控台連接埠。這可讓您在控制器開啟時監控開機順序。</block>
+  <block id="943e3a7c8a0476b63130b5a3dfab2ef1" category="list-text">將筆記型電腦上的序列主控台連接埠設為 115200 傳輸速率（ N-8-1 ）。</block>
+  <block id="04112f6af1c35028ff6da3640556c14c" category="admonition">如需如何設定序列主控台連接埠的說明、請參閱筆記型電腦的線上說明。</block>
+  <block id="637d6f599c1184d1c5de273700d7924f" category="list-text">將主控台纜線連接至筆記型電腦、並使用儲存系統隨附的主控台纜線連接控制器上的序列主控台連接埠。</block>
+  <block id="dc4cb3e8c6b9abe025aa10b2d8d4b6f5" category="list-text">將筆記型電腦連接到管理子網路上的交換器。</block>
+  <block id="5dc15886a7be0b02974c471249fd2702" category="image-alt">主控台連線</block>
+  <block id="9e7e8b48adc159107d0baf9021253c61" category="list-text">使用位於管理子網路上的 TCP/IP 位址、將其指派給筆記型電腦。</block>
+  <block id="a2e521b7ad497537c9e544a50086c51b" category="list-text">將電源線插入控制器電源供應器、然後將電源線連接至不同電路上的電源。</block>
+  <block id="d4b97f0234af8d33d5ad6190a7930ff4" category="image-alt">一般電源連線圖表</block>
+  <block id="6b66db132383abf32640c51ec249e853" category="list-text">儲存系統開始開機。初始開機最多可能需要八分鐘。</block>
+  <block id="71abffb89587fc128eb09ec9ef2dd7e1" category="list-text">LED 會亮起、風扇會啟動、表示控制器正在開機。</block>
+  <block id="cd76e142e3adabbfc33b1de3c074b2cb" category="list-text">風扇第一次啟動時可能會非常吵雜。啟動時風扇發出噪音是正常現象。</block>
+  <block id="671754b07475807f952083aca6f98a97" category="list-text">使用每個電源供應器上的固定裝置固定電源線。</block>
+  <block id="b01257e209b4db1591904675a969a888" category="inline-link-macro">設定 ONTAP ASA R2 叢集</block>
+  <block id="5375af62a757a5f1f0b518f2b55d638e" category="paragraph">開啟 ASA R2 儲存系統之後<block ref="ad00ee8fa1dc09eacef7d17804bf3a85" category="inline-link-macro-rx"></block>、您就可以了。</block>
+  <block id="4795c2f303b604ed82cee521ffaeb4b7" category="summary">準備在您的 ONTAP 環境中安裝 ASA R2 儲存系統、並註冊硬體以取得支援效益。</block>
+  <block id="2addd7883fc82303d5053d125ce6d71e" category="doc">準備安裝 ASA R2 儲存系統</block>
+  <block id="d947c4efa0662eb2ca7150b618c02730" category="paragraph">準備安裝 ASA R2 儲存系統、方法是準備好場地、打開箱子的包裝箱、將箱子的內容與裝箱單進行比較、並註冊系統以取得支援效益。</block>
+  <block id="92c8397408f55d9526d554c55cde3d22" category="section-title">步驟 1 ：準備網站</block>
+  <block id="867f7657bd9567df4702cf9ddb87ae73" category="paragraph">若要安裝 ASA R2 儲存系統、請確定您計畫使用的站台和機櫃或機架符合您組態的規格。</block>
+  <block id="322c154066211ea062c12149146928fb" category="list-text">用於<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>確認您的站台符合 ASA R2 儲存系統的環境和電力需求。</block>
+  <block id="0b75c01928f08a952353b4ed76796fb5" category="list-text">請確定您有足夠的機架空間：</block>
+  <block id="26e7314ba01a2bdc4fda67ee84154359" category="list-text">儲存系統的 HA 組態中的 4U</block>
+  <block id="6ac193907083dd66438c89227559f4dc" category="list-text">2U 適用於每個 NS224 儲存櫃</block>
+  <block id="2df7e61cfe4bf7857f54171cec3da494" category="list-text">安裝所有必要的網路交換器。</block>
+  <block id="11b5963f8c4ca653ab5f43bc4b9828df" category="inline-link">交換器文件</block>
+  <block id="fa2548c5f212acd29e45e9296579f088" category="paragraph">如需安裝說明及相容性資訊、請參閱<block ref="512a1f6ca3554ab9c3f8be1627b41678" category="inline-link-rx"></block> <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 。</block>
+  <block id="6630a85163683d2127a4b50c91d77093" category="section-title">步驟 2 ：打開包裝盒</block>
+  <block id="c7fa73c8f25d1dda70af465f1a37aa84" category="paragraph">在您確定 ASA R2 儲存系統所要使用的站台和機櫃或機架符合所需規格之後、請打開所有包裝盒的包裝、並將內容物與裝箱單上的項目進行比較。</block>
+  <block id="82174a976e9a37564a41e6138a110eb6" category="list-text">小心打開所有包裝盒、並以井然有序的方式配置內容物。</block>
+  <block id="d6aed2118da6ba77f55936d16677727f" category="list-text">請比較裝箱單上的清單內容。</block>
+  <block id="6056345394434bf38ce0cd6fc7155a3e" category="admonition">您可以掃描運送紙箱側邊的 QR 碼、以取得裝箱清單。</block>
+  <block id="1726196375cd4d9085528facd587a31e" category="paragraph">下列項目是您可能會在方塊中看到的部分內容。</block>
+  <block id="3a5ea134befe8869fed079290f956fd1" category="paragraph">確保包裝箱內的所有物品都符合裝箱單上的清單。如果有任何差異、請記下這些差異以採取進一步行動。</block>
+  <block id="958c530ea1ae0e18b942f8784148734c" category="cell">*硬體*</block>
+  <block id="09ff86ce1246a36d79f5d417bc9fb6be" category="cell">* 纜線 *</block>
+  <block id="efb4c0c41cf8767bf0f9361a8c61a50a" category="list-text">擋板</block>
+  <block id="680d900a0d52fdf0778ee2a5588f6f69" category="list-text">纜線管理裝置</block>
+  <block id="f31303ddb8ada38aed08c2bb8f9d8e6c" category="list-text">儲存系統</block>
+  <block id="45e29b9394f4cac59a4b24854556dec2" category="list-text">軌道套件附說明（選用）</block>
+  <block id="2a6f49472befe7fd3e056a4a6fedfe00" category="list-text">儲存櫃</block>
+  <block id="06d2646a8077631818b55a12dc3c58ac" category="list-text">管理乙太網路纜線（ RJ-45 纜線）</block>
+  <block id="b2cdf9589096f203f816541f43a15f6c" category="list-text">網路纜線</block>
+  <block id="7ceeb9e2de47574891152d45e033aea1" category="list-text">電源線</block>
+  <block id="256397940895ecf3de88fca8684f0a2d" category="list-text">儲存纜線（如果您訂購額外的儲存設備）</block>
+  <block id="3ad4852daca6060d9a43783d0d67578c" category="list-text">USB-C 序列連接埠纜線</block>
+  <block id="9bea2d1b752b83d2f602c5b85b99a901" category="section-title">步驟 3 ：註冊您的儲存系統</block>
+  <block id="a2be4a0a69af403c3bba37d2bf7044a4" category="paragraph">確保您的網站符合 ASA R2 儲存系統規格的要求、並確認您已訂購所有零件之後、您應該註冊系統。</block>
+  <block id="04a9069d60a270b8326c0bf8dece532c" category="list-text">找到儲存系統的序號。</block>
+  <block id="501009762675d8b94f6d05080102eaa1" category="paragraph">您可以在裝箱單、確認電子郵件或控制器的系統管理模組中找到編號、然後再將其解壓縮。</block>
+  <block id="9a3ab30d090ff0aedb700d0ce5d6d031" category="image-alt">顯示號碼位置的系統序號範例</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp 支援網站</block>
+  <block id="f5c45bcc73f02c7f2b1398ee78576a7a" category="list-text">前往<block ref="1850de052c61829b534b07ba1a2ca402" category="inline-link-rx"></block>。</block>
+  <block id="6918c0735e9cef59385e60d3f94d7115" category="list-text">判斷您是否需要註冊儲存系統：</block>
+  <block id="8f45a9f1fcb944bee42c078bdeacd8ac" category="cell">如果您是...</block>
+  <block id="e3df4624e4d36502b5d044730eab97cc" category="cell">請遵循下列步驟...</block>
+  <block id="d3f2dc7623074c370346f082b621f2db" category="paragraph">現有NetApp客戶</block>
+  <block id="8a55a5b89690f6046e6de8dd649ff837" category="list-text">使用您的使用者名稱和密碼登入。</block>
+  <block id="5c83cedabfd78baf337988a092bcf317" category="list-text">選擇 * 系統 * &gt; * 我的系統 * 。</block>
+  <block id="8cc04c4151dd22af84b31cd55d6c5f57" category="list-text">確認已列出新的序號。</block>
+  <block id="d193a53b34315bee1bed499f665686ce" category="list-text">如果沒有、請依照新NetApp客戶的指示進行。</block>
+  <block id="daee797d0bf63a91fe069e1df88d7923" category="paragraph">NetApp新客戶</block>
+  <block id="12dc2a66a130388ec482398caa6ce95b" category="list-text">按一下*立即註冊*、然後建立帳戶。</block>
+  <block id="89cc8de091278e0fb0686833ac6a7982" category="list-text">選擇 * 系統 * &gt; * 註冊系統 * 。</block>
+  <block id="616ce92e68107b272305803b0da3016e" category="list-text">輸入儲存系統的序號和要求的詳細資料。</block>
+  <block id="9fcab783d1ffadeafb84de00efe883d9" category="paragraph">註冊核准後、您可以下載任何必要的軟體。核准程序可能需要24小時。</block>
+  <block id="b1d1ac1660761a14f96c8c2916c338ee" category="inline-link-macro">安裝 ASA R2 儲存系統的硬體</block>
+  <block id="1657efe0ea96d15a299ea1851942c2a9" category="paragraph">準備好安裝 ASA R2 硬體之後<block ref="fb5e4a441151f85bf2036b60142e5f3c" category="inline-link-macro-rx"></block>，您就可以了。</block>
+  <block id="7c67b8b9f7d3533c33fb6cecf037204c" category="doc">啟用從 SAN 主機到 ASA R2 儲存系統的資料存取</block>
+  <block id="2fa6f858dba87204a24e814faeae2b1a" category="paragraph">若要設定資料存取、您應確保正確設定 SAN 用戶端上對於正確操作 ONTAP 至關重要的特定參數和設定。如果您使用的是 VMware 、則應移轉虛擬機器。</block>
+  <block id="4c686f129e697b3603247005c22c0238" category="section-title">從 SAN 主機設定資料存取</block>
+  <block id="f66720607a76ceed4cebe5d6d2110bf4" category="paragraph">從 SAN 主機設定 ASA R2 系統資料存取所需的組態、會因主機作業系統和傳輸協定而異。正確的組態對於最佳效能和成功的容錯移轉非常重要。</block>
+  <block id="e3e3a193f32926fa7dded05dbaba1a71" category="inline-link-macro">VMware vSphere SCSI 用戶端</block>
+  <block id="36ca591cffb555ce1c260957ea8b34b9" category="inline-link-macro">VMware vSphere NVMe 用戶端</block>
+  <block id="48561298702873cfde274588e3672099" category="inline-link-macro">其他 SAN 用戶端</block>
+  <block id="d27cce4a42b7ea8d15ff3f8607643e33" category="paragraph">請參閱的 ONTAP SAN 主機文件<block ref="68f9f8f8e616f0e7ec59af9e1234ec7e" category="inline-link-macro-rx"></block>、<block ref="f2d6116a997a68be72ff8c2617977350" category="inline-link-macro-rx"></block>並<block ref="0066ce7dad22194ab05b9b3e8c713a35" category="inline-link-macro-rx"></block>將主機正確設定為連線至 ASA R2 系統。</block>
+  <block id="5d17193df18fedb451e3f5b9f064ef2f" category="section-title">移轉 VMware 虛擬機器</block>
+  <block id="112622c85a9cbee01c13e67b0b568c78" category="inline-link-macro">VMware vSphere VMotion</block>
+  <block id="36b30e26ad350b193fa96577b859aa6b" category="paragraph">如果您需要將 VM 工作負載從 ASA 儲存系統移轉至 ASA R2 儲存系統、 NetApp 建議您使用<block ref="97ce748bde1d0df326ab308ffcedbe79" category="inline-link-macro-rx"></block>執行即時且不中斷營運的資料移轉。</block>
+  <block id="d76fc5ee6d641846e5835d32d7f85b4f" category="inline-link-macro">配置儲存設備</block>
+  <block id="e397caa258e5d83ec68542ada3868a88" category="paragraph">您已準備好<block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>讓 SAN 主機讀取資料並將資料寫入儲存單元。</block>
+  <block id="7ca4fe244381dbbbb75b019c3bc54c14" category="summary">ASA R2 系統不支援某些 ONTAP 命令（ ASA A1K 、 ASA 70 、 ASA 90 ）。</block>
+  <block id="504d463c80199fc8015db827acb89c07" category="doc">ONTAP CLI 支援 ASA R2 儲存系統</block>
+  <block id="981793b9517680b559e7e18c40ff7865" category="paragraph">ASA R2 系統不使用傳統的集合體（擁有儲存系統中可用的一組特定磁碟）、而是使用 _ 儲存可用區域 _ 。儲存可用性區域是一個通用儲存池、可存取儲存系統中的所有可用磁碟。ASA R2 HA 配對中的兩個節點都可以看到儲存可用性區域。建立儲存單元（ LUN 或 NVMe 命名空間）時、 ONTAP 會自動在儲存可用性區域中建立包含儲存虛擬機器（ VM ）的磁碟區、以容納儲存單元。</block>
+  <block id="e46d2bbb0e6e44b354b5ca95c001185e" category="paragraph">由於這種簡化的儲存管理方法、<block ref="ba2a83cd4de4eb43c31f434bfb5213e0" prefix=" " category="inline-code"></block> ASA R2 系統不支援命令。對某些<block ref="03628ea331120176369891df319619e8" prefix=" " category="inline-code"></block>和<block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix=" " category="inline-code"></block>命令及參數的支援也受到限制。</block>
+  <block id="7c19782694334dcfd315e878b56096ba" category="paragraph">R2 上的 ASA 不支援下列命令和命令集：</block>
+  <block id="a72b8be483491b0d1db823bb36907bfd" category="example-title">不支援的 &lt;code&gt; &lt;/code&gt; 命令</block>
+  <block id="796b405c9879ad0e08e0cd88cd3b3e16" category="list-text"><block ref="792ce1786b8a3a128a82817b09eedada" prefix="" category="inline-code"></block></block>
+  <block id="1388cc53eae6c07af7f412dcc77461a9" category="list-text"><block ref="845a2fac965d9f41d0e11a08d1c7197e" prefix="" category="inline-code"></block></block>
+  <block id="a678425b303b1c78848e9a35c2a8efed" category="list-text"><block ref="49825176b871bf1fa1ea240a4c0e80c0" prefix="" category="inline-code"></block></block>
+  <block id="138a48c530be7f4d427db326006579dc" category="list-text"><block ref="c88a845d3f2d62180e81c5ca0791ece4" prefix="" category="inline-code"></block></block>
+  <block id="80ba53db01788531a5ea38bc875ea25a" category="list-text"><block ref="c08e62a617ee76b9db618195e488efc3" prefix="" category="inline-code"></block></block>
+  <block id="852cd11b2037d4dd0acd862bd2b9a5c9" category="list-text"><block ref="8a51b9d3d65c60087c0b81531c48360a" prefix="" category="inline-code"></block></block>
+  <block id="800c3de4f10284b3da9be36c5b86898b" category="list-text"><block ref="60464fc4c055fe08ca731eab1dc2f87d" prefix="" category="inline-code"></block></block>
+  <block id="ac96eb3372551e58a814ec8a5443e076" category="list-text"><block ref="787f67886dcefe1e2ad298992552116f" prefix="" category="inline-code"></block></block>
+  <block id="19aaf59eca0b457eb8afda83c65db41d" category="paragraph">此命令會取代為 LUN 重新命名 /vserver NVMe 命名空間重新命名。</block>
+  <block id="409d4da51e04f9d009857926014f1f37" category="list-text"><block ref="4def11aec86ba055ee41339ba1c11137" prefix="" category="inline-code"></block></block>
+  <block id="2ea7bbd3ec6708c463a3dcac7475cf58" category="example-title">不支援的 &lt;code&gt; &lt;/code&gt; 命令和參數</block>
+  <block id="2a906a9efdb7cde720cd1b69964f71fa" category="list-text"><block ref="08607041eac05174afe1b626af31d17e" prefix="" category="inline-code"></block></block>
+  <block id="81a179163b87a23fc5a3b34a128639a1" category="list-text"><block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix="" category="inline-code"></block></block>
+  <block id="80a7f4afc88dac6bf5cd511e7ef0628b" category="list-text"><block ref="d612b8e8dccca73b159ea44a402945a2" prefix="" category="inline-code"></block></block>
+  <block id="9c0466552ede7ceccb2d111a3ea6a49a" category="list-text"><block ref="a16771dcf5c4a1b4cc61e867cb5c496b" prefix="" category="inline-code"></block></block>
+  <block id="faeb16362aebc71b59f22777fa1f310b" category="list-text"><block ref="9f9fc58b577820fbcd41ff15739ed6f0" prefix="" category="inline-code"></block></block>
+  <block id="815606831020d956df025c86edf87cd4" category="paragraph">此命令與下列參數搭配使用時無法使用：</block>
+  <block id="cb155f4d5f8a9131448477feb45b8144" category="list-text"><block ref="3995205b73c95cf4655601532809ee8a" prefix="" category="inline-code"></block></block>
+  <block id="76ad5e438b8e39b492eff70a01526a5a" category="list-text"><block ref="f2ed04497fb3c35266d07f3bc29cdad9" prefix="" category="inline-code"></block></block>
+  <block id="77c18cea7f8f79214c57081598086362" category="list-text"><block ref="0da37a1d041b48a1054dcf98e3d74dcf" prefix="" category="inline-code"></block></block>
+  <block id="58ec00b441a32de29d6605f708526549" category="list-text"><block ref="5cb9c05a1675cb2287cea85877d04d6b" prefix="" category="inline-code"></block></block>
+  <block id="2d034844b11eb7c1e3efa7c57bdba4c6" category="list-text"><block ref="19e54da595e7acdacc9b76a0aa4722aa" prefix="" category="inline-code"></block></block>
+  <block id="03a4d906ba5dba9c77b2e0a68051763f" category="list-text"><block ref="067c74ea7ae3f466683053dc2fe7b5ac" prefix="" category="inline-code"></block></block>
+  <block id="c67b67d5bf7a90b27868b8660007a6d3" category="list-text"><block ref="8796fcae0e188d58f86e57aebdd0e1c8" prefix="" category="inline-code"></block></block>
+  <block id="76740d224a33c03457b200602d99d23b" category="list-text"><block ref="3b495129c097965da237d9d960a90015" prefix="" category="inline-code"></block></block>
+  <block id="af296d4ce16a21fedbb67446e3a32ce9" category="list-text"><block ref="722b6d3cea44760df8947a8baf655da0" prefix="" category="inline-code"></block></block>
+  <block id="e3696d0df80618276dd181db5c131d16" category="list-text"><block ref="0f463d9cbdef027e450fddb866052cf9" prefix="" category="inline-code"></block></block>
+  <block id="ef40f2891d764a01badc1cbeca9e1aed" category="list-text"><block ref="519fc7e40e50861192e6b81ea89d0637" prefix="" category="inline-code"></block></block>
+  <block id="d8bf508da556a05ee5dee496da467bd5" category="list-text"><block ref="b2d25575cf4b4392215792233621462a" prefix="" category="inline-code"></block></block>
+  <block id="5ca5ddafd76a5039900659b5e02c87b9" category="list-text"><block ref="196c8f0c8ef49299ce52c8932dae5c2c" prefix="" category="inline-code"></block></block>
+  <block id="dc7e0020183497aea9601fe9c4425ee9" category="list-text"><block ref="a2ddd097b2b3e0940127d4e4dbc60ab9" prefix="" category="inline-code"></block></block>
+  <block id="44a7aa87fe7c168e6182af0b81716c0f" category="list-text"><block ref="ac09a63861d88d6bc08ccb3bb974af22" prefix="" category="inline-code"></block></block>
+  <block id="ce50638833a472f81b96c973efd4df83" category="list-text"><block ref="fe2a6ffba423eca54c235c610e4a378e" prefix="" category="inline-code"></block></block>
+  <block id="e2f1a53d4fd4eda484302400179539a6" category="list-text"><block ref="ab6eb46572a048aa159a65262959e8ab" prefix="" category="inline-code"></block></block>
+  <block id="94607a1ecbd656379eec72bc723ddf4a" category="list-text"><block ref="25e667efc85df3fcb87cf35b3115480e" prefix="" category="inline-code"></block></block>
+  <block id="20357a89d645b9aa327362c29c0af6b2" category="list-text"><block ref="3393a442a1c4ac6ecee458cd92232f3a" prefix="" category="inline-code"></block></block>
+  <block id="98c77de883d1dab0ace4b8f370facf36" category="list-text"><block ref="a7eccb52726bd28c01fb9068943f7f7c" prefix="" category="inline-code"></block></block>
+  <block id="19e1aebab2d48d789af8d9c0e701ddde" category="list-text"><block ref="55c3d45354eb01d97141bb8bdf021ff1" prefix="" category="inline-code"></block></block>
+  <block id="fc8dd0d81792da88c66e8c80312a60f4" category="list-text"><block ref="27953840bbb95776004164a7f310c034" prefix="" category="inline-code"></block></block>
+  <block id="06fd7d7b5cc72a72a17454a219edb553" category="list-text"><block ref="f099e315dc94f50069e91525d8429f94" prefix="" category="inline-code"></block></block>
+  <block id="832c93e51c034cd9baa38d933a6507cf" category="list-text"><block ref="55790eabaa0d0684a03e1bc488848fc2" prefix="" category="inline-code"></block></block>
+  <block id="b969a6fb2fcda47c65eb2ad9608bc0e2" category="list-text"><block ref="3b631648bb79c552eb6489beff9d395e" prefix="" category="inline-code"></block></block>
+  <block id="e9a26fa266e3718c822ea485facf6f2a" category="list-text"><block ref="ed66df487a408dd3ef6b0b93921627ba" prefix="" category="inline-code"></block></block>
+  <block id="35447e70d18a978a76ef360d90537404" category="list-text"><block ref="0fc2ecb8aa71bddc595fbc39f593496a" prefix="" category="inline-code"></block></block>
+  <block id="22cf56fdbd9547173292df72109455d3" category="list-text"><block ref="31952b1196ef7f5f227825294e97578d" prefix="" category="inline-code"></block></block>
+  <block id="b4f8e98a96eb1b5b9d41702415f2a77a" category="list-text"><block ref="90da5145ca72e31c619ea378865a3ba7" prefix="" category="inline-code"></block></block>
+  <block id="e71b3e3b56f52c69dab6e761f5657b44" category="list-text"><block ref="a20f2ca62898278894850fd59b767e42" prefix="" category="inline-code"></block></block>
+  <block id="10751d9be54a908112c871700cb63da6" category="list-text"><block ref="63720a75a64fb857ccadc1c084467512" prefix="" category="inline-code"></block></block>
+  <block id="6e3b45488e3da33f4dbb7780916fa00d" category="list-text"><block ref="cce619f14d2e3ecfeb40003f41346dc3" prefix="" category="inline-code"></block></block>
+  <block id="96f6c66940164f50d07f5e6ef1487cf5" category="list-text"><block ref="ff05081e94632f33dddf04c612be563c" prefix="" category="inline-code"></block></block>
+  <block id="c84eedb6de4c3196ad3f3658a83998bd" category="example-title">不支援的 &lt;code&gt; 相關 &lt;/code&gt; 命令</block>
+  <block id="ec9e527e0817b671a3ed381597df7bab" category="list-text"><block ref="92018f0c387904208ed1f507a94c850a" prefix="" category="inline-code"></block></block>
+  <block id="f9b57bf343a3eed58aec7b55833e284f" category="list-text"><block ref="94b3c88f1b70ca72af298f8e69478caf" prefix="" category="inline-code"></block></block>
+  <block id="fd06724268ba83424cfb0949da18c10b" category="example-title">不支援的 &lt;code&gt; SnapLock &lt;/code&gt; 命令</block>
+  <block id="379b10751548694a37bb24a04a8cf11a" category="list-text"><block ref="1aaec43537f02cb8f7bf5a95f3a61a90" prefix="" category="inline-code"></block></block>
+  <block id="740c7cb193c8b99a6c138d4b0620f4f3" category="example-title">不支援的 &lt;code&gt; 快速 &lt;/code&gt; 命令</block>
+  <block id="14c12c55187800570fdccf34e8648006" category="list-text"><block ref="b5eaaa5f694a7f8ec5e907af460647fe" prefix="" category="inline-code"></block></block>
+  <block id="ad76af585be4114b2b481ab32ee4d50e" category="list-text"><block ref="113029fa6ce56a063915f85ebd4ae641" prefix="" category="inline-code"></block></block>
+  <block id="836c061c1dc44a39bbb786aa4d4c605c" category="list-text"><block ref="f806e2861bc85a6a52202feb4dcdeeb2" prefix="" category="inline-code"></block></block>
+  <block id="94b6f1c4d59834c67e37298cc9dece97" category="example-title">不支援的 &lt;code&gt; tM1000e &lt;/code&gt; 命令集</block>
+  <block id="2001e219589f3ac09fd945bb83d681b9" category="list-text"><block ref="2e503447edde8d9731d6eaf3206a2823" prefix="" category="inline-code"></block></block>
+  <block id="258c5b61480ea3ef51c386ef9a93612b" category="list-text"><block ref="6a065d62e8f649e5f0ee645cb86b2c4c" prefix="" category="inline-code"></block></block>
+  <block id="f2916a514f20c61ed148db8a3f2ad648" category="list-text"><block ref="e4dded82c02ddde32cfc7f0b59cc06a2" prefix="" category="inline-code"></block></block>
+  <block id="541dd58a6f2df631698d6ef47009f2fe" category="list-text"><block ref="2013cc794be467a24e7e7b96f54a00cf" prefix="" category="inline-code"></block></block>
+  <block id="46c9e7ae42ff771ec46f576ae0c56292" category="list-text"><block ref="36a59ee701572369821b3d5daecca36b" prefix="" category="inline-code"></block></block>
+  <block id="1d1435c6050288f9a0851d1a6a7ba1ef" category="list-text"><block ref="9fa3f5bf2d87cf38cc2b7176466830f2" prefix="" category="inline-code"></block></block>
+  <block id="26acc46c43740290cf729b0d7f0af8fd" category="list-text"><block ref="5946b326c86bd90ebdadf865ef578902" prefix="" category="inline-code"></block></block>
+  <block id="fbd22a464957a638abfbf27dbefd4cb4" category="list-text"><block ref="5ab3792208d3fd01ba510f4884c5b004" prefix="" category="inline-code"></block></block>
+  <block id="bb90cb63ecf5114628419d5360549f6f" category="list-text"><block ref="b75ac9a1cecb935254bf4baa527e8756" prefix="" category="inline-code"></block></block>
+  <block id="b1541a2af42e5e07fb907b2e28668f4d" category="list-text"><block ref="6cdbfe8738b38fcaf615c39fe7adda3d" prefix="" category="inline-code"></block></block>
+  <block id="ed0c19715a905e19bb82721af502630c" category="list-text"><block ref="48434cb0fdeab9bd9bcae192aa29f05a" prefix="" category="inline-code"></block></block>
+  <block id="acab53cb3439727c1f43f8f1a4685011" category="list-text"><block ref="ce94116aa29b7f1a685a6f9e4df03492" prefix="" category="inline-code"></block></block>
+  <block id="4ae7fe9372b5a3501794f4d45d0ad862" category="list-text"><block ref="f0bb69035b30fb4ba19ecac1dee37875" prefix="" category="inline-code"></block></block>
+  <block id="37ce6bd6955e00192759a7eab35c4ed5" category="list-text"><block ref="f02030dfe07304bd2e31d54cabb5e6d1" prefix="" category="inline-code"></block></block>
+  <block id="a75bf2b9e1da63b60510e670e13280f5" category="example-title">不支援的 &lt;code&gt; &lt;/code&gt; 命令</block>
+  <block id="96e3e25ced73cbc3087692d33e698dfc" category="list-text"><block ref="c1391c72a0f399cab63e0f906219eba1" prefix="" category="inline-code"></block></block>
+  <block id="db03a3b1b5e9221c407a3226384456b7" category="list-text"><block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix="" category="inline-code"></block></block>
+  <block id="cb493146003b5096fb9dbce0cf86abad" category="list-text"><block ref="f0f37fae9d089110c4fb0245013845fb" prefix="" category="inline-code"></block></block>
+  <block id="2134111bb81c1ada4be502decedecb30" category="list-text"><block ref="3c698d76925a2f101122edd72990fc94" prefix="" category="inline-code"></block></block>
+  <block id="c3c96ea806ac83498c365d5180661ba3" category="list-text"><block ref="9b82d4f814395730025ab1c7b269e56e" prefix="" category="inline-code"></block></block>
+  <block id="4dae76cd6e28c01554edf8f2fb2ff842" category="list-text"><block ref="ec9655721b41e06c690354a032042fc1" prefix="" category="inline-code"></block></block>
+  <block id="f3497351aae46692e603fedb2f2cd146" category="inline-link-macro">ONTAP 命令參照</block>
+  <block id="e9631e93a04d798bea6710be4a2f5da3" category="paragraph">如<block ref="585532baa3876b6b8281302459d86312" category="inline-link-macro-rx"></block>需支援命令的完整清單、請參閱</block>
+  <block id="7b25c381c7fe8ec42f4be59e49b01ffa" category="section-title">使用 CLI 設定 ONTAP ASA R2 叢集</block>
+  <block id="8770069e8d7e75b723f2a51c7a6e2e49" category="inline-link-macro">使用系統管理員來設定 ONTAP ASA R2 叢集</block>
+  <block id="36b66e7ec3e638a1c0d5532a210a47a1" category="paragraph">建議您<block ref="df4559a5b62289a9d3564a01abc04ba8" category="inline-link-macro-rx"></block>。System Manager 提供快速且簡單的引導式工作流程、讓您的叢集能夠正常運作。不過、如果您習慣使用 ONTAP 命令、則可以選用 ONTAP 命令列介面（ CLI ）來進行叢集設定。使用 CLI 進行叢集設定、除了使用 System Manager 設定叢集之外、沒有其他選項或優點。</block>
+  <block id="968e5fe06f5a932dd5a661ea2dc7dba2" category="paragraph">在叢集設定期間、會建立預設的資料儲存虛擬機器（ VM ）、建立初始儲存單元、並自動探索資料生命。您也可以選擇啟用網域名稱系統（ DNS ）來解析主機名稱、將叢集設定為使用網路時間傳輸協定（ NTS ）進行時間同步、以及啟用靜態資料的加密。</block>
+  <block id="8482ccc845851c74e1babfdb9e5f07ff" category="list-text">開啟 HA 配對的兩個節點。</block>
+  <block id="52560e7a62865ac74c44ac6603fc8243" category="list-text">顯示在本機網路上探索到的節點：</block>
+  <block id="cc5a41800687f63c8dbcaa7e401c8609" category="list-text">啟動叢集設定精靈：</block>
+  <block id="1a8bd2fc0d1e553a83a3015f18874702" category="list-text">認可AutoSupport 此聲明。</block>
+  <block id="e893a90ae57229dfac856adac6465299" category="list-text">輸入節點管理介面連接埠、 IP 位址、網路遮罩和預設閘道的值。</block>
+  <block id="fda6f1670b78ef61b08576d1471a103a" category="list-text">按 *Enter* 繼續使用命令列介面進行設定；然後輸入 *cre* 以建立新叢集。</block>
+  <block id="23e51af4fe58f92e39c0703d397ba59f" category="list-text">接受系統預設值或輸入您自己的值。</block>
+  <block id="3f700d9e97f3e9f6b70bf6dc7cf82fb5" category="list-text">在第一個節點上完成設定後、請登入叢集。</block>
+  <block id="275b7a31cf5aeda42b5da56c5563af69" category="list-text">驗證叢集是否為作用中、且第一個節點是否正常：</block>
+  <block id="54397080e1c14fad8fd9702ba806ff02" category="list-text">將第二個節點新增至叢集：</block>
+  <block id="fd9eecde4b53a516500ff1ac241b95d5" category="list-text">您也可以在叢集之間同步處理系統時間</block>
+  <block id="528044002fe90155568510e68d67f0c3" category="cell">不使用對稱驗證進行同步處理</block>
+  <block id="447e692a660d8bc8988c70b0737302db" category="cell">與對稱驗證同步</block>
+  <block id="3c3574a78c74302dbc13bf11e0435275" category="list-text">確認叢集與 NTP 伺服器相關聯：</block>
+  <block id="7a15ceb09d1ef08df7b9021f7341e654" category="paragraph">您已準備好<block ref="0675c663575ea5d2004171fa7c4c09af" category="inline-link-macro-rx"></block>從 SAN 用戶端到系統。</block>
+  <block id="e42d5bab0edf2441b75829873e298e1b" category="summary">ASA 系統提供專為僅 SAN 解決方案最佳化的硬體支援。ASA R2 系統提供硬體與軟體的最佳化。</block>
+  <block id="b8d343a2d9dfd7386b6b373e6050b930" category="searchtitle">比較 ASA R2 系統與其他 ONTAP 系統</block>
+  <block id="a96666c23540f7c6d0da8ca6ab7b57d5" category="paragraph">ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供統一化的硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。</block>
+  <block id="9bbd2ec1679b3be9cb3ca46d69e0297c" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在所有其他 ONTAP 系統（ ASA 、 AFF 、 FAS ）上執行的 ONTAP 會被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。</block>
+  <block id="cf4ae521a2a16cdd073860fee0fbab96" category="paragraph">您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。</block>
+  <block id="c3e4be39d2ab89664b205dd7d0bb6510" category="list-text">從 System Manager （系統管理器）菜單中，選擇 *Cluster （羣集） &gt; Overview （概述） * 。</block>
+  <block id="8fb6b6206aca4aa491419e270ea3424d" category="list-text">在 CLI 中輸入：<block ref="9228fcbc2cb846682f56e98989045eaa" prefix=" " category="inline-code"></block></block>
+  <block id="8369fc694deadf80f5d106ef41b6e7b2" category="paragraph">ONTAP 儲存系統的特性設定無法變更。</block>
+  <block id="df5591b00e0f940a96e7ea141a5a8f82" category="paragraph">執行統一化 ONTAP 特性設定之 ONTAP 系統的儲存層使用 Aggregate 做為儲存的基礎單元。Aggregate 擁有儲存系統中可用的一組特定磁碟。此集合會將其擁有的磁碟空間分配給磁碟區、以用於 LUN 和命名空間。統一化的 ONTAP 使用者可以使用命令列介面（ CLI ）來建立和修改集合體、磁碟區、 LUN 和命名空間。</block>
+  <block id="61fd53d6a04a3c721dc360956e9ca445" category="paragraph">ASA R2 系統中的儲存層使用儲存可用性區域、而非集合體。儲存可用性區域是一個通用儲存池、可存取儲存系統中的所有可用磁碟。ASA R2 HA 配對中的兩個節點都可以看到儲存可用性區域。建立儲存單元（以 LUN 或 NVMe 命名空間為基礎）時、 ONTAP 會自動在儲存可用性區域中建立包含儲存虛擬機器（ VM ）的磁碟區、以容納儲存單元。由於這種自動化且簡化的儲存管理方法、某些系統管理員選項、 ONTAP 命令和 REST API 端點在 ASA R2 系統上無法使用、或使用量有限。例如、由於 ASA R2 系統的磁碟區建立與管理是自動化的、因此系統管理員中不會顯示 * Volumes<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block> （磁碟區） * 功能表、而且不支援該命令。</block>
+  <block id="32b01bd4b9f59e30b1c7471c280b0045" category="paragraph">ASA R2 儲存設備以下列方式與其他 ONTAP 儲存系統進行比較：</block>
+  <block id="df5b8332c344a8d1a2ca6124ea06defe" category="cell">ASA r2</block>
+  <block id="b7b46ce5d1a547db89c0bc615ff272a5" category="cell">ASA</block>
+  <block id="c8984126713ed072b9cb0a44a162be4d" category="cell">AFF</block>
+  <block id="149f0ea389848f479bd80af6375b383b" category="cell">FAS</block>
+  <block id="d2a368fdf3bed0efcdf5dcbaad649139" category="paragraph">* ONTAP 特性 *</block>
+  <block id="1dbd464eef96e9cc4151734185a50c7a" category="cell">統一化</block>
+  <block id="7f97268f553298642e8144198d8de86f" category="paragraph">* SAN 傳輸協定支援 *</block>
+  <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">是的</block>
+  <block id="31581be3546d0864b39b0a71ad5ec2bf" category="paragraph">* NAS 傳輸協定支援 *</block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">否</block>
+  <block id="32cb0862435d6372c4c3486000755753" category="paragraph">* 儲存層支援 *</block>
+  <block id="5ded9d660c20efc47120134164abb3de" category="cell">儲存可用性區域</block>
+  <block id="d5350d8759b1ec84607e47908809058e" category="cell">集合體</block>
+  <block id="0627b8d84f59389e615cd7169d2cb392" category="paragraph">下列 ASA 平台歸類為 ASA R2 系統：</block>
+  <block id="cd527b2aadf2bebf28ba082002724ab0" category="list-text">ASA A70</block>
+  <block id="009f19d7e9e80eda1c7dbf7374519e58" category="list-text">ASA A90</block>
+  <block id="e039aa1be61543fd84f1c4eb5d3e9f6b" category="inline-link-macro">ONTAP 硬體系統</block>
+  <block id="850bd7b0cfd54017b4835ee80bcd19d6" category="list-text">深入瞭解 <block ref="87818029f41349444777fa70fdbcf742" category="inline-link-macro-rx"></block>。</block>
+  <block id="9d6bd9c6a911bce1e19d13baf3547790" category="list-text">請參閱中有關 ASA 和 ASA R2 系統的完整組態支援和限制<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
+  <block id="2734568aee16bf6e5d8b1dae1295b6bd" category="list-text">深入瞭解<block ref="b827a6cff8052295f0cbdcb7ea0abba2" category="inline-link-macro-rx"></block>。</block>
+  <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA R2 系統差異摘要</block>
+  <block id="396a0ea87d82ffa45a3a3dc95544f118" category="paragraph">以下說明 ASA R2 系統與 ONTAP 、 AFF 和 ASA 系統之間與 FAS 命令列介面（ CLI ）和 REST API 相關的主要差異。</block>
+  <block id="4e7270ba884019dc8b8fddd430315f25" category="paragraph-title">使用傳輸協定服務建立預設 SVM</block>
+  <block id="d62021d97a236605afe9b7862d64509e" category="paragraph">新叢集會自動包含已啟用 SAN 傳輸協定的預設資料 SVM 。IP 資料生命安全裝置支援 iSCSI 和 NVMe / TCP 傳輸協定、並<block ref="6ee97f4349d48b4c53372dfd08835169" prefix=" " category="inline-code"></block>依預設使用服務原則。</block>
+  <block id="363188350b1fe2b934c479c977a89ece" category="paragraph-title">自動建立 Volume</block>
+  <block id="eee98269dcd20c90abcc0a7bfb22f37c" category="paragraph">建立儲存單元（ LUN 或命名空間）會自動從儲存可用區域建立磁碟區。這會產生一個簡化且通用的命名空間。刪除儲存單元會自動刪除相關的磁碟區。</block>
+  <block id="deb157545e882ae10d45f43fcb06f0df" category="paragraph-title">精簡與完整資源配置的變更</block>
+  <block id="0cc302b38ca94109fc2cffd503adb3d4" category="paragraph">的儲存單元一律會在 ASA R2 儲存系統上精簡配置。不支援完整資源配置。</block>
+  <block id="3abf1b035bc420caf188c022ea7d792d" category="summary">ASA R2 REST API 是以統一化 ONTAP 特性設定所提供的 REST API 為基礎、其中有許多變更會因應 ASA R2 特性設定的獨特特性和功能。</block>
+  <block id="48c7d320d017a90d970e154c81d07dc1" category="doc">ASA R2 的 REST API 支援</block>
+  <block id="83e5ee07fc92447fe7a6ceed082d0c01" category="section-title">API 變更類型</block>
+  <block id="3d1d919573417660e4a546b32ac9d4b6" category="paragraph">ASA R2 系統 REST API 和 FAS 、 AFF 和 ASA 系統所提供的統一化 ONTAP REST API 之間有多種不同類型。瞭解變更類型將有助於您更好地利用線上 API 參考文件。</block>
+  <block id="0272115298f04a8bb0475566419279d1" category="paragraph-title">統一化 ONTAP 不支援新的 ASA R2 端點</block>
+  <block id="3e76642c1d2206ff9e90b4fd2de4b328" category="paragraph">ASA R2 REST API 中新增了數個端點、但統一化 ONTAP 無法使用這些端點。</block>
+  <block id="cade0ebd17dd3bed75c0337c741dd39a" category="paragraph">例如、 ASA R2 系統的 REST API 中新增了一個區塊 Volume 端點。區塊磁碟區端點可同時存取 LUN 和 NVMe 命名空間物件、以實現資源的彙總檢視。此功能僅可透過 REST API 取得。</block>
+  <block id="4e2d822d32afb78127f1f3bd026c34f2" category="paragraph">另一個例子是、 * 儲存單元 * 端點提供 LUN 和 NVMe 命名空間的彙總檢視。有多個端點、它們都是以或衍生自<block ref="42c6a9b31870ca2da123418c45f9511e" prefix=" " category="inline-code"></block>為基礎。您也應該檢閱<block ref="06b7e60de283e2e758b24eb1b37b804f" prefix=" " category="inline-code"></block>和<block ref="29932b1e0800c6702f61627c54342a61" prefix=" " category="inline-code"></block>。</block>
+  <block id="fd6e07bfcc281a1328e9ebe5847a3426" category="paragraph-title">限制某些端點使用的 HTTP 方法</block>
+  <block id="f3a1b4055985606a4d8517b47a8bbd41" category="paragraph">ASA R2 提供的多個端點都有限制、可與統一化 ONTAP 相比、使用哪些 HTTP 方法。例如、在<block ref="8e478b6b5801deeb609bbe13602b4ddf" prefix=" " category="inline-code"></block> ASA R2 系統上使用端點時、不允許進行 POST 和 DELETE 。</block>
+  <block id="f7f611f2d178b57ab165c40ead632fe1" category="paragraph-title">端點和 HTTP 方法的內容變更</block>
+  <block id="4d4e026413c7577f213ce0a4ad5d5886" category="paragraph">某些 ASA R2 系統端點和方法組合不支援統一化 ONTAP 特性設定中所有可用的已定義屬性。例如、當使用修補程式搭配端點<block ref="e1b0fcb86b8544c0bfae622fa2eee9eb" prefix=" " category="inline-code"></block>時、 ASA R2 不支援多個屬性、包括：</block>
+  <block id="86c3bce1e15b53a1cb43f69b5444a2ea" category="list-text"><block ref="53ac4723df1b82cecfb457968ed456d2" prefix="" category="inline-code"></block></block>
+  <block id="323eeafbe8577319f9fc77b2b6fc5846" category="list-text"><block ref="b3d2f478eeb2c97790a32aaa215b52ef" prefix="" category="inline-code"></block></block>
+  <block id="6b5364bbbb13fb3d94dfb092ea43b0a0" category="list-text"><block ref="f4b34c507e46d81b51ddb20e7c5fa344" prefix="" category="inline-code"></block></block>
+  <block id="3783d7c38022d89817e3d4975ed4f06a" category="paragraph-title">內部處理的變更</block>
+  <block id="0f2d5a548993b890865d45812675918e" category="paragraph">ASA R2 處理某些 REST API 要求的方式有幾項變更。例如、使用端點的刪除要求<block ref="0e7022c8e683287334a1293166df6b1c" prefix=" " category="inline-code"></block>會以非同步方式處理。</block>
+  <block id="b90fe5814139c1241ba59e097117a1eb" category="section-title">使用 OAuth 2.0 增強安全性</block>
+  <block id="6d7330a721349e1c14715f15fba9c715" category="paragraph">OAuth 2.0 是業界標準授權架構。它用於根據簽署的存取權杖來限制及控制受保護資源的存取。您可以使用系統管理員來設定 OAuth 2.0 、以保護 ASA R2 系統資源。</block>
+  <block id="2728eb13c00c9967af882c75ead94654" category="inline-link">使用 OAuth 2.0 進行驗證與授權</block>
+  <block id="de5bda1caf7f9fa5bdcc362a004a6647" category="paragraph">使用 System Manager 設定 OAuth 2.0 之後、即可控制其餘 API 用戶端的存取。您必須先從授權伺服器取得存取權杖。然後 REST 用戶端會使用 HTTP 授權要求標頭、將權杖以承載權杖的形式傳送至 ASA R2 叢集。如需詳細資訊、請參閱<block ref="79c0d5dfd9954672e62566078ff5fa99" category="inline-link-rx"></block> 。</block>
+  <block id="d2e127d8f90ff6fea31853498215d353" category="section-title">透過 Swagger UI 存取 ASA R2 API 參考文件</block>
+  <block id="1dd77106813e595b2ac1d5804e68dd1d" category="paragraph">您可以透過 ASA R2 系統上的 Swagger UI 來存取 REST API 參考文件。</block>
+  <block id="6816e108b712ff2d8ef941ef779a6a66" category="paragraph">如需 REST API 的詳細資訊、請存取 ASA R2 參考文件頁面。在此過程中、您可以搜尋字串 * 平台詳細資料 * 、以尋找 ASA R2 系統支援 API 呼叫和內容的詳細資料。</block>
+  <block id="a08d0039b6defc60dd0db0aebca289d8" category="paragraph">您必須具備下列條件：</block>
+  <block id="8728260d4fb3b850a7035a5aa26c5460" category="list-text">ASA R2 系統叢集管理 LIF 的 IP 位址或主機名稱</block>
+  <block id="01b4e6ef199b6543b82fafe8cb34f68a" category="list-text">擁有權限可存取 REST API 之帳戶的使用者名稱和密碼</block>
+  <block id="62ec0f81a066a5b633239c347d1b0032" category="list-text">在瀏覽器中鍵入 URL 、然後按 * Enter * ： +<block ref="5d395fe1e6baa7dad74ad6ac1530b309" prefix=" " category="inline-code"></block></block>
+  <block id="6dcfa77f1564b7c15bf3dfce5a565da8" category="list-text">使用您的系統管理員帳戶登入。</block>
+  <block id="b9c615d39dd17558defe4965b0f468fc" category="paragraph">ASA R2 API 文件頁面會顯示、並依主要資源類別組織 API 呼叫。</block>
+  <block id="8f6e134a706bb506e5b04c8d2621a9dc" category="list-text">若要查看僅適用於 ASA R2 系統的 API 呼叫範例、請向下捲動至 *SAN* 類別、然後按一下 * 取得 /storage / storage units * 。</block>
+  <block id="769cac8936a099436eaf35a70beb7039" category="summary">雖然 ASA R2 系統提供廣泛的 SAN 解決方案支援、但不支援某些 ONTAP 軟體功能。</block>
+  <block id="c305c29e81953bb01b7c42d73fc8099c" category="doc">ASA R2 儲存系統的 ONTAP 軟體支援與限制</block>
+  <block id="2f7f66e818d17cdf226ec888e94e2751" category="list-title">ASA R2 系統不支援下列項目：</block>
+  <block id="e2d11c222fd8d727dcdcff1a70a7c1c0" category="list-text">iSCSI LIF 容錯移轉</block>
+  <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
+  <block id="e4bc96983300161ae3464466c0030db7" category="list-text">LUN 密集資源配置</block>
+  <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
+  <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">物件傳輸協定</block>
+  <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">ONTAP S3 SnapMirror 和 S3 API</block>
+  <block id="f161dc3326510eaa0a4043b0403c9d6a" category="list-text">SnapMirror 轉雲端</block>
+  <block id="22d5ef0e46679353c835a058a6447e5d" category="list-text">SnapMirror 至非 ASA R2 系統</block>
+  <block id="cbb51e0b1487ab3d93d6d940a1533133" category="list-text">選擇性LUN對應（SLM)</block>
+  <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">ASA R2 系統支援下列項目：</block>
+  <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">SnapLock</block>
+  <block id="272175c607c14852d532cd2cf2304f90" category="list-text">雙層加密</block>
+  <block id="fcaf713648f48750892f53f60d9c5578" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需 ASA R2 硬體支援與限制的詳細資訊、請參閱。</block>
+  <block id="4428c7556a1eea23721f907d8d23eb21" category="inline-link-macro">瞭解如何鎖定快照</block>
+  <block id="19deecdd8b763ce6f48eadb0070d24cd" category="list-text"><block ref="f5c7881d0f64c83ae31bbc947dffd4c1" category="inline-link-macro-rx"></block>在您的 ASA R2 系統上。</block>
+  <block id="a45dbe7c067a9974c8fca40e2b212fd6" category="inline-link-macro">瞭解如何套用雙層加密</block>
+  <block id="bcdcf9cfaaa690edc9d618403dd65057" category="list-text"><block ref="285ab21de69619aa33a3697c0850e834" category="inline-link-macro-rx"></block>ASA R2 系統上的資料。</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律聲明</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律聲明提供版權聲明、商標、專利等存取權限。</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版權</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商標</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp 標誌及 NetApp 商標頁面上列出的標章均為 NetApp 、 Inc. 的商標。其他公司與產品名稱可能為其各自所有者的商標。</block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">專利</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">如需最新的 NetApp 擁有專利清單、請參閱：</block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">隱私權政策</block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">開放原始碼</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。</block>
+  <block id="b46e4e89d5c6947e865dbb8abc5ed28c" category="summary">瞭解如何在 ASA R2 系統上執行維護程序。</block>
+  <block id="c65b7989475d7b4b884961e0e5c53286" category="doc">維護 ASA R2 儲存系統</block>
+  <block id="2cc42d8e162137e099ab248df06c4f19" category="inline-link">ASA R2 維護文件</block>
+  <block id="a779dc7ba81016ed421e7c384c5d1e30" category="paragraph">請移至<block ref="54785b1ca9681752f04c4a927f80eaa1" category="inline-link-rx"></block>以瞭解如何在 ASA R2 系統元件上執行維護程序。</block>
+  <block id="637cdb5787a38a4d0da33ae01aa8fe4c" category="summary">在 ASA R2 上複製儲存單元和一致性群組、以建立資料複本、以便在正式作業環境以外的環境中用於各種用途。</block>
+  <block id="5efa28b67f38b8acf6f260494435aeb9" category="searchtitle">使用 ONTAP System Manager | ASA R2 進行資料複製</block>
+  <block id="b672b3c3c67f9dc97cb7aa4016ffd8de" category="doc">在 ASA R2 儲存系統上複製資料</block>
+  <block id="47aa16585c5d740c2e875956f91b75f5" category="paragraph">資料複製會使用 ONTAP 系統管理員在 ASA R2 系統上建立儲存單元和一致性群組的複本、可用於應用程式開發、測試、備份、資料移轉或其他管理功能。</block>
+  <block id="db111a2cf0c0f9671b7966268e827844" category="section-title">複製儲存單元</block>
+  <block id="580db26d8795089f4cfa24ccbd7c7866" category="paragraph">當您複製儲存單元時、您會在 ASA R2 系統上建立新的儲存單元、這是您複製的儲存單元的時間點可寫入複本。</block>
+  <block id="4307c2dc64df479564b106a5f1271db3" category="list-text">將游標暫留在您要複製的儲存單元名稱上。</block>
+  <block id="ea580839283d7c7b0911794a9bfb1b52" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * Clone * 。</block>
+  <block id="8ca2f3911c507c925b530bc0faad3e55" category="list-text">接受將建立為複本的新儲存單元的預設名稱、或輸入新名稱。</block>
+  <block id="d6996624e837ab6b30f3052394c9e346" category="list-text">選取主機作業系統。</block>
+  <block id="4964c71a898b0a4d4538d783e0b27917" category="paragraph">根據預設、會為複本建立新的快照。</block>
+  <block id="1a0fbbebb0c1b2a10fe0a8095caaf707" category="list-text">如果您想要使用現有的快照、建立新的主機群組或新增主機、請選取 * 更多選項 * 。</block>
+  <block id="73b1d804565defc4cbc4c2b8540aef0a" category="paragraph">使用現有的快照</block>
+  <block id="7d9b391000caf3061473fe6a78721b5a" category="list-text">在 * 要複製的快照 * 下、選取 * 使用現有的 snaphot* 。</block>
+  <block id="dd2959858bb587a8e2e3b6391d27d51e" category="list-text">選取您要用於複製的快照。</block>
+  <block id="f50eb1716c3a7ef3d283dc66e2d9e6ca" category="paragraph">建立新的主機群組</block>
+  <block id="c28d2416b4554c9f84c35d71e12a7fac" category="list-text">在 * 主機對應 * 下、選取 * 新主機群組 * 。</block>
+  <block id="10416ffc36188c466d8627eac03abfd0" category="list-text">輸入新主機群組的名稱、然後選取要包含在群組中的主機啟動器。</block>
+  <block id="3efaad102c1fa244e39e6e7a28ed1c4f" category="paragraph">新增主機</block>
+  <block id="341eef069de22b04769ebb34c6d5339a" category="list-text">在 * 主機對應 * 下、選取 * 新主機 * 。</block>
+  <block id="6ca59e1216e9b0b1d2f3bd35c4910f32" category="list-text">輸入新主機的 A 名稱、然後選取 * FC* 或 * iSCSI * 。</block>
+  <block id="41bb978973326f3efe8701e8b336c66c" category="list-text">從現有啟動器清單中選取主機啟動器、或選取 * 新增 * 來新增主機的啟動器。</block>
+  <block id="9de0e2b17d7e1e2da6c0ce7e9dc6e377" category="list-text">選擇* Clone（克隆）*。</block>
+  <block id="285a864bbeacf5127fb22d5579cb37e5" category="paragraph">您已建立與您複製的儲存單元相同的新儲存單元。您現在可以視需要使用新的儲存單元。</block>
+  <block id="c6f88571dc48a22a0d0521f201835ddb" category="section-title">複製一致性群組</block>
+  <block id="38723f66597a4a2025ffa53ade4f4036" category="paragraph">當您複製一致性群組時、您會建立一個新的一致性群組、該群組在結構、儲存單元和資料上與您所複製的一致性群組相同。使用一致性群組複製來執行應用程式測試或移轉資料。例如、假設您需要將正式作業工作負載移出一致性群組。您可以複製一致性群組、建立正式作業工作負載的複本、以維持備份、直到移轉完成為止。</block>
+  <block id="25002de97f63843d00fbff0f4029e142" category="paragraph">複本是從複製一致性群組的快照建立而成。複製所使用的快照是在預設情況下啟動複製程序的時間點拍攝。您可以修改預設行為、以使用預先存在的快照。</block>
+  <block id="f1f14c924a1d8d35f761cab684cabb5c" category="paragraph">儲存單元對應會複製為複製程序的一部分。快照原則不會在複製程序中複製。</block>
+  <block id="ea0dd6672a507c3e5ba664d40b22a74f" category="paragraph">您可以從儲存在 ASA R2 系統本機上的一致性群組或複寫到遠端位置的一致性群組建立複本。</block>
+  <block id="6c752a6f945b5533d67cb3d9fd5e42a5" category="open-title">使用本機快照複製</block>
+  <block id="a4b52c7ad12fbc7cc4074627fb90e4f5" category="list-text">將游標暫留在您要複製的一致性群組上。</block>
+  <block id="5dec74bd3c2c617dc14dae1a03a8bb5a" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * Clone * 。</block>
+  <block id="b82c420bb1251acd9f73ae4f4e76b7c2" category="list-text">輸入一致性群組複製的名稱、或接受預設名稱。</block>
+  <block id="5ab7a5d73aacf50fcf59ef58a06d87e8" category="list-text">如果您想要將複本與來源一致性群組分離、並分配磁碟空間、請選取 * 分割複本 * 。</block>
+  <block id="c73b1d88745a5bed2584eee88495a676" category="list-text">如果您想要使用現有的快照、建立新的主機群組或新增複本的主機、請選取 * 更多選項 * 。</block>
+  <block id="a0f75574dcf0ab525b71988128fd6dc9" category="list-text">在 * 要複製的快照 * 下、選取 * 使用現有的快照 * 。</block>
+  <block id="a5b860186416f0b7618bf4958b6cbf25" category="list-text">輸入名稱新主機名稱；然後選取 *FC* 或 *iSCSI* 。</block>
+  <block id="f84a91cff0f15a36959890fc896bd2d8" category="list-text">從現有啟動器清單中選取主機啟動器、或選取 * 新增啟動器 * 以新增主機的新啟動器。</block>
+  <block id="af29df6db90599d57c3c711c23eabd00" category="open-title">使用遠端快照複製</block>
+  <block id="e8f7c25de132ec56319553a579e69db6" category="list-text">將游標暫留在您要複製的 * 來源 * 上。</block>
+  <block id="640d4e03b14f3b4f574ba2656eecba2c" category="list-text">選取來源叢集和儲存 VM ；然後輸入新一致性群組的名稱或接受預設名稱。</block>
+  <block id="7cf7c9688adf64fe7b1805495dbb677d" category="list-text">選取要複製的快照、然後選取 * Clone * 。</block>
+  <block id="7f0b1507426929741a7bbc12ead7fb21" category="paragraph">您已從遠端位置複製一致性群組。新的一致性群組可在 ASA R2 系統的本機上視需要使用。</block>
+  <block id="0fc1cd180f7ef3529fdc528ef536fbc8" category="inline-link-macro">建立快照</block>
+  <block id="b16e804e926595ce52e11416c4c4021b" category="paragraph">為了保護您的資料、您應該<block ref="1d21a098bd9677c475d90af30f929e46" category="inline-link-macro-rx"></block>使用複製一致性群組。</block>
+  <block id="abfb7611be3d1984b4048c111c70896e" category="summary">刪除儲存單元以降低您需要的實體儲存容量、或是釋放其他主機應用程式所需的空間。</block>
+  <block id="130d99f3155a9524fbcee1b66d372637" category="doc">刪除 ASA R2 儲存系統上的儲存單元</block>
+  <block id="a43d503903bc397cb05151409b4aa0ee" category="paragraph">如果不再需要維護單元中包含的資料、請刪除儲存單元。刪除不再需要的儲存單元、有助於釋放其他主機應用程式所需的空間。</block>
+  <block id="149f67073e73a0379b210512f9ae9b34" category="inline-link-macro">從一致性群組中移除儲存單元</block>
+  <block id="e2401ad7b6793e511075543831eaf193" category="paragraph">如果您要刪除的儲存單元位於複寫關係中的一致性群組中、則必須<block ref="1bfd409ef7a0e58efec5d57a46fff2f5" category="inline-link-macro-rx"></block>先刪除它。</block>
+  <block id="3b82021e0930da2e3b1fe1bfe2aa2f70" category="list-text">將游標移至您要刪除的儲存單元名稱上方。</block>
+  <block id="a04511306488004fe2e50b58479b8bc6" category="list-text">確認刪除動作無法復原。</block>
+  <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">選擇*刪除*。</block>
+  <block id="a5331a83866cbfbb201d271b31461b12" category="inline-link-macro">增加尺寸</block>
+  <block id="4af5b851dfcd374944ce285278985595" category="paragraph">您可以使用從刪除的<block ref="f623a169728c03b0e232ffad71f851b4" category="inline-link-macro-rx"></block>儲存單元釋出到需要額外容量的儲存單元的空間。</block>
+  <block id="d144ceb11715b5ffc74a8293d3aa8303" category="summary">透過編輯儲存單元來增加容量、更新服務品質（ QoS ）原則或變更主機對應、來回應儲存系統效能和資料的變更。</block>
+  <block id="ceff03bfa1a8dafc5e617407d14564d3" category="doc">修改 ASA R2 儲存系統上的儲存單元</block>
+  <block id="e6f1f5b43dd2b3e740c42c5f1623750d" category="paragraph">若要最佳化 ASA R2 系統的效能、您可能需要修改儲存單元、以增加儲存單元的容量、更新 QoS 原則或變更對應至單元的主機。例如、如果將新的關鍵應用程式工作負載新增至現有的儲存單元、您可能需要變更套用至儲存單元的服務品質（ QoS ）原則、以支援新應用程式所需的效能等級。</block>
+  <block id="261c95ed5d454ef55df25657c605d472" category="paragraph-title">增加容量</block>
+  <block id="9c4dfedb8190eb2128e8185aff1c8e51" category="paragraph">在儲存單元達到完整容量之前、請先增加儲存單元的大小、以避免在儲存單元的可寫入空間不足時遺失資料存取。儲存單元的容量可增加至 128 TB 、這是 ONTAP 允許的最大容量。</block>
+  <block id="e2bcdafb5edd46c07debdaff4977f47e" category="paragraph-title">修改主機對應</block>
+  <block id="70e329035d20df3cdabdc84b9ea5820b" category="paragraph">修改對應至儲存單元的主機、以協助平衡工作負載或重新設定系統資源。</block>
+  <block id="e5c37d444d86dff14ece6ae023e44020" category="paragraph-title">修改 QoS 原則</block>
+  <block id="4972d5abe7ea9ebeeed39816f3e79ff6" category="paragraph">服務品質（ QoS ）原則可確保關鍵工作負載的效能不會因競爭工作負載而降低。您可以使用 QoS 原則來設定 QoS 處理量 _limit 及 QoS 處理量 _security_ 。</block>
+  <block id="accb829cd026de94b124e79b860517cc" category="list-text">QoS 處理量限制</block>
+  <block id="51cccde609eedbaa0dbefd5a37522cea" category="paragraph">QoS 處理量 _limit 限制工作負載對系統資源的影響、只要將工作負載的處理量限制在最大 IOPS 或 Mbps 、或 IOPS 和 Mbps 。</block>
+  <block id="7be8bec9d014e6ff4780ff7276446734" category="list-text">QoS 處理量保證</block>
+  <block id="b3ac1a6decd48c0296f588b71f9c8de9" category="paragraph">QoS 處理量 _ 保證 _ 可確保關鍵工作負載的處理量不會低於 IOPS 或 Mbps 的最低數量、或 IOPS 和 Mbps 、無論競爭工作負載的需求為何、都能達到最低處理量目標。</block>
+  <block id="45618ec4025fecb8e1200a6357ed0979" category="list-text">將游標移至您要編輯的儲存單元名稱上方。</block>
+  <block id="e9d629b5735fe27ecec42fd44b288935" category="list-text">視需要更新儲存單元參數、以增加容量、變更 QoS 原則、以及更新主機對應。</block>
+  <block id="2c7986b55d62aa1db59f4d09ab214512" category="paragraph">如果您增加了儲存單元的大小、則必須重新掃描主機上的儲存單元、以便主機識別大小變更。</block>
+  <block id="bb761368ebc9763c37adc9f2f9182164" category="summary">在 ASA R2 上佈建 ONTAP 儲存設備、讓 SAN （ SCSI 和 NVMe ）主機能夠讀寫資料至指定的儲存單元（ LUN 和 NVMe 命名空間）。</block>
+  <block id="1bd888345785eeccf1ec0db2ace03041" category="searchtitle">使用 ONTAP System Manager | ASA R2 來配置 SAN 儲存設備</block>
+  <block id="21ba50dbf4007619e7e1e3d1d4890d04" category="doc">在 ASA R2 系統上配置 ONTAP SAN 儲存設備</block>
+  <block id="5130efcbab54e3de0826ab521946e46d" category="paragraph">在配置儲存設備時、您可以讓 SAN 主機從 ASA R2 儲存系統讀取資料並將資料寫入其中。若要配置儲存設備、您可以使用 ONTAP 系統管理員來建立儲存單元、新增主機啟動器、以及將主機對應至儲存單元。您也需要在主機上執行步驟、以啟用讀取 / 寫入作業。</block>
+  <block id="765e871d79c6c686febb0d212efcee42" category="section-title">建立儲存單元</block>
+  <block id="e8ebd98873731ad8648e10093bffa519" category="paragraph">在 ASA R2 系統上、儲存單元可為 SAN 主機提供儲存空間、以供資料作業使用。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。如果您的叢集設定為支援 SCSI 主機、系統會提示您建立 LUN 。如果您的叢集設定為支援 NVMe 主機、系統會提示您建立 NVMe 命名空間。ASA R2 儲存單元的最大容量為 128TB 。</block>
+  <block id="2c9e1fb1b8b3b0713d51e8ae575f96cf" category="paragraph">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需 ASA R2 系統的最新儲存限制、請參閱。</block>
+  <block id="1d78dc8ed51214e518b5114fe24490ae" category="inline-link-macro">地圖</block>
+  <block id="07de3115f268ee32f824fa17392a0fcc" category="paragraph">主機啟動器會在儲存單元建立程序中新增並對應至儲存單元。您也可以<block ref="8a23e2c4e7cc30673e8b314a4ba4f4ed" category="inline-link-macro-rx"></block> <block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>在建立儲存單元之後、將其儲存至儲存單元。</block>
+  <block id="b6ef92a5067caea07262eb16524826b6" category="inline-image-macro">藍色背景的矩形圖示、文字會以白色字母為中心</block>
+  <block id="b5f594084b71d3aa55abadbedf670f86" category="list-text">在 System Manager 中，選擇 *Storage* ；然後選擇<block ref="da7582bfb005458d3066421df78a060d" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="51a192101931ecb5b57cbe0c93814a0f" category="list-text">輸入新儲存單元的名稱。</block>
+  <block id="9ea05ccb35a68dcbe26a1e76cfe57ea3" category="list-text">輸入您要建立的單位數量。</block>
+  <block id="3d7c12f3e6019c2627798720f2876385" category="paragraph">如果您建立一個以上的儲存單元、則會以相同的容量、主機作業系統和主機對應來建立每個單元。</block>
+  <block id="4ce211e7f3238dc2a7e5fc38f7096d99" category="list-text">輸入儲存單元容量、然後選取主機作業系統。</block>
+  <block id="4a12fcafc1a3c4f57a718c8ca92efc50" category="list-text">接受自動選取的 * 主機對應 * 、或選取要對應儲存單元的不同主機群組。</block>
+  <block id="3a880a9aa73ca2acefaaddbfcdb6e4e5" category="paragraph">* 主機對應 * 是指將新儲存單元對應至的主機群組。如果您為新儲存單元選取的主機類型有預先存在的主機群組、則會自動為主機對應選取預先存在的主機群組。您可以接受自動為主機對應選取的主機群組、也可以選取不同的主機群組。</block>
+  <block id="827c0951d229d00d677d2fcd8db9ed5e" category="paragraph">如果在您指定的作業系統上執行的主機沒有預先存在的主機群組、則 ONTAP 會自動建立新的主機群組。</block>
+  <block id="ec00cac618e2a8983fc71ca2a711519c" category="list-text">如果您想執行下列任何一項、請選取 * 更多選項 * 、然後完成所需步驟。</block>
+  <block id="7e8304ed8a1d7b1d5ea3d023833084ac" category="paragraph">變更預設的服務品質（ QoS ）原則</block>
+  <block id="670420248bfae86c26e9659cd428df4a" category="paragraph">如果先前未在要建立儲存單元的儲存虛擬機器（ VM ）上設定預設 QoS 原則、則無法使用此選項。</block>
+  <block id="05998b53a85e8c80c5b2173e79b5ebee" category="inline-image-macro">指向下方向的藍色箭頭圖示</block>
+  <block id="029f5652d4ec63fc9ca42d2aac2bc629" category="list-text">在 * 儲存與最佳化 * 下、在 * 服務品質（ QoS ） * 旁<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>、選擇。</block>
+  <block id="78b06e2559336fae293baa13507d3fff" category="list-text">選取現有的 QoS 原則。</block>
+  <block id="9b4adc8f209fe1ca07853989d48af3c0" category="paragraph">建立新的 QoS 原則</block>
+  <block id="89434c8406398c368cd7d10c247065ce" category="list-text">選取 * 定義新原則 * 。</block>
+  <block id="b74fc9d9c59f41be10173fdbb1700290" category="list-text">輸入新 QoS 原則的名稱。</block>
+  <block id="b34d54ae4685c8e077999235123045a8" category="list-text">設定 QoS 限制、 QoS 保證或兩者。</block>
+  <block id="6fcff5e2923098e24687f3697b183c43" category="list-text">或者、在 * 限制 * 下、輸入最大處理量限制、最大 IOPS 限制或兩者。</block>
+  <block id="7305685d9954c87c03f3ef6f8ce00770" category="paragraph">設定儲存單元的最大處理量和 IOPS 會限制其對系統資源的影響、使其不會降低關鍵工作負載的效能。</block>
+  <block id="23ad2f0aae96967cea4d44b68bd84695" category="list-text">您也可以在 * 保證 * 下輸入最小處理量、最小 IOPS 或兩者。</block>
+  <block id="e82195af68ae29e5c8daa9cf00135bf2" category="paragraph">設定儲存單元的最低處理量和 IOPS 、可確保它符合最低效能目標、無論競爭工作負載的需求為何。</block>
+  <block id="58eea123adcab62a2550f80b69ddd5a9" category="paragraph">新增 SCSI 主機</block>
+  <block id="96c1468491756a1eb186441d05cb7a20" category="list-text">在 * 主機資訊 * 下、選取 * SCSI * 作為連線傳輸協定。</block>
+  <block id="e8e4a57d251bab9e7b4b1e8b61f96586" category="list-text">在 * 主機對應 * 下、選取 * 新主機 * 。</block>
+  <block id="79229795f285c653ca4fcdf9c9b63655" category="list-text">選取 * FC* 或 * iSCSI * 。</block>
+  <block id="ccd83df36f88dc1a09b317d6de12c0bf" category="list-text">選取現有的主機啟動器、或選取 * 新增啟動器 * 以新增主機啟動器。</block>
+  <block id="f6da90af04d4c15a80c2e2856dca450e" category="paragraph">有效的 FC WWPN 範例為「 01:02:03:04:0A:0b:0c:0d 」。有效的 iSCSI 啟動器名稱範例為「 iqn.1995-08.com.example:string" 」和「 EUI.0123456789abcdef 」。</block>
+  <block id="553a4413fd75fda399dbbbad5061e71c" category="paragraph">建立新的 SCSI 主機群組</block>
+  <block id="8cdc2107de4d0892fbea299ade1a7389" category="list-text">在 * 主機對應 * 下、選取 * 新主機群組 * 。</block>
+  <block id="2cc23cb253e8f943cac50af357d9edc8" category="list-text">輸入主機群組的名稱、然後選取要新增至群組的主機。</block>
+  <block id="4a075e81f8301442d3e9e5b4667635dd" category="paragraph">新增 NVMe 子系統</block>
+  <block id="91bcfdb63019d941cc96c575d02d0c91" category="list-text">在 * 主機資訊 * 下、選取 * NVMe * 作為連線傳輸協定。</block>
+  <block id="0b8e0beddea8a5dec22715069bd394d5" category="list-text">在 * 主機對應 * 下、選取 * 新的 NVMe 子系統 * 。</block>
+  <block id="507c090d2095c61c63d1d11fc09648d8" category="list-text">輸入子系統的名稱或接受預設名稱。</block>
+  <block id="529cde3f73c7b74dc0660191d041c137" category="list-text">輸入啟動器的名稱。</block>
+  <block id="c62b9e1a44178019745ea2e78654a9c2" category="list-text">如果您想要啟用頻內驗證或傳輸層安全性（ TLS ）、請選取<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>；然後選取您的選項。</block>
+  <block id="86d44c7101e25ca99d38670a1efa356e" category="paragraph">頻內驗證可在 NVMe 主機和 ASA R2 系統之間進行安全的雙向單向驗證。</block>
+  <block id="a56968accba6c23d9088678742dc323d" category="paragraph">TLS 會加密透過網路在您的 NVMe / TCP 主機和 ASA R2 系統之間傳送的所有資料。</block>
+  <block id="b2006a7dcb49ba27d412bf7c975d494e" category="list-text">選取 * 新增啟動器 * 以新增更多啟動器。</block>
+  <block id="5d009b24bd2dd29f315f5549d323dd20" category="paragraph">主機 NQN 應格式化為 &lt;nqn.yyyy-mm&gt; 、後面接著完整網域名稱。年應等於或晚於 1970 年。總長度應為 223 。有效的 NVMe 啟動器範例是 nqn.2014-08.com.example:string</block>
+  <block id="22d9ca4f3f9229c260ae1d1236d3d11c" category="paragraph">系統會建立儲存單元、並將其對應至主機。您現在可以<block ref="13282ab1c43cc291d62099de29c76969" category="inline-link-macro-rx"></block>保護 ASA R2 系統上的資料。</block>
+  <block id="87c964622ab29664363b4b2888f1b356" category="inline-link-macro">ASA R2 系統如何使用儲存虛擬機器</block>
+  <block id="6afbcb648aad0c257ca7905b9d403b79" category="paragraph">深入瞭解 <block ref="f6474162100d04c74dacf0c12cf75d7f" category="inline-link-macro-rx"></block>。</block>
+  <block id="007b639c29878a7f9144ef1ec82e1a05" category="section-title">新增主機啟動器</block>
+  <block id="861837fb5150e5329dc5876b3f36d2c2" category="paragraph">您可以隨時將新的主機啟動器新增至 ASA R2 系統。啟動器可讓主機存取儲存單元並執行資料作業。</block>
+  <block id="fb2a77c6756f10fcc139a51a83349d7f" category="inline-link-macro">建立複寫關係</block>
+  <block id="2b952831be3770a06d94666549ad6923" category="paragraph">如果您想在新增主機啟動器的過程中、將主機組態複寫到目的地叢集、則叢集必須處於複寫關係中。您也可以選擇<block ref="a8cd586f3f0ee0518e9785ba89f98f50" category="inline-link-macro-rx"></block>在新增主機之後進行。</block>
+  <block id="5778dc2ea8b36e28d624fcb635603602" category="paragraph">新增 SCSI 或 NVMe 主機的主機啟動器。</block>
+  <block id="936d6bf12a2f5473474593ed4c4b37c1" category="open-title">SCSI主機</block>
+  <block id="d5bfe1e24726c9270b56e046bcc355a5" category="list-text">選取 * 主機 * 。</block>
+  <block id="23668366907d0bd878cf0526d4885e15" category="inline-image-macro">藍色矩形的圖示、包含加號、接著加上白色字母的新增字詞</block>
+  <block id="0cf3f3408e82583f1e4c8fe49ab01d4a" category="list-text">選擇 *SCSI* ，然後選擇<block ref="cd76ba5b91ec99e7f5293581ab71275c" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="a0a8a4be7e0ac646c97822c07b4e4cce" category="list-text">輸入主機名稱、選取主機作業系統、然後輸入主機說明。</block>
+  <block id="4ab36329d1ab0a122648f6fdc9d6c630" category="list-text">如果要將主機組態複寫到目的地叢集、請選取 * 複寫主機組態 * 、然後選取目的地叢集。</block>
+  <block id="67bfb75c0529d85899dc4ec1cd94f8e6" category="paragraph">您的叢集必須處於複寫關係中、才能複寫主機組態。</block>
+  <block id="44b4d3591866c825b147a365801d6279" category="list-text">新增或現有主機。</block>
+  <block id="42d4561914f5e1f32909a8838ad47516" category="cell">新增主機</block>
+  <block id="0881e17dfcc1c1230d83b0ce51a473ac" category="cell">新增現有主機</block>
+  <block id="19844fd7dc342298dcd47ea7ea4f2ba6" category="list-text">選取 * 新主機 * 。</block>
+  <block id="ba9ea0ef431fcb78a32a72f3f2674ce2" category="list-text">選取 * FC* 或 * iSCSI * ；然後選取主機啟動器。</block>
+  <block id="fb6474882051aa1abae977dab12da1fc" category="list-text">（可選）選擇 * 配置主機鄰近 * 。</block>
+  <block id="3a5a135807085fdd0074523f2290a7ce" category="paragraph">設定主機鄰近度可讓 ONTAP 識別最靠近主機的控制器、以進行資料路徑最佳化和縮短延遲。這僅適用於將資料複寫到遠端位置的情況。如果您尚未設定快照複寫、則不需要選取此選項。</block>
+  <block id="9f01c9e273792dda6376910f8c641593" category="list-text">如果您需要新增啟動器、請選取 * 新增啟動器 * 。</block>
+  <block id="c6d16fda0a1614f2118447c6369a063f" category="list-text">選擇 * 現有主機 * 。</block>
+  <block id="647afdee605035a2a42257c4f6e994be" category="list-text">選取您要新增的主機。</block>
+  <block id="eca8ded2a5382ca253dcca67c287671d" category="paragraph">您的 SCSI 主機會新增至 ASA R2 系統、並準備好將主機對應至儲存單元。</block>
+  <block id="60be673de0d179a5445abb10b44e23c3" category="open-title">NVMe 主機</block>
+  <block id="0f5b2ead837f0716bf25fd78b30738e9" category="list-text">選擇 * NVMe * 、然後選擇<block ref="da7582bfb005458d3066421df78a060d" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="f7009eb50a149c6b409872e7ab03cde0" category="list-text">輸入 NVMe 子系統的名稱、選取主機作業系統並輸入說明。</block>
+  <block id="8afc97bf18ed2d8332b9bb9de381b057" category="list-text">選取 * 新增啟動器 * 。</block>
+  <block id="8643ed37e687b297a4c27bec1904c098" category="paragraph">您的 NVMe 主機已新增至 ASA R2 系統、您可以將主機對應至儲存單元。</block>
+  <block id="50f3c6288588430494b3bf4bca173b55" category="section-title">建立主機群組</block>
+  <block id="1da1baa1434e589e17c7bccabaafa7bd" category="paragraph">在 ASA R2 系統上、 _ 主機群組 _ 是用於讓主機存取儲存單元的機制。主機群組是指 SCSI 主機的 igroup 、或 NVMe 主機的 NVMe 子系統。主機只能看到對應至其所屬主機群組的儲存單元。當主機群組對應至儲存單元時、屬於群組成員的主機便能掛載（在上建立目錄和檔案結構）儲存單元。</block>
+  <block id="efdb92741c05b002fee75d1aed7739f4" category="paragraph">當您建立儲存單元時、會自動或手動建立主機群組。您可以選擇在建立儲存單元之前或之後、使用下列步驟來建立主機群組。</block>
+  <block id="719a9c07fb982da45f633c2895007a16" category="list-text">從 System Manager 中選取 * 主機 * 。</block>
+  <block id="27016aa41f81d9bb1c573738f3f06dc1" category="list-text">選取要新增至主機群組的主機。</block>
+  <block id="412fddbb62911c2ce50e4d949374721b" category="paragraph">選取第一個主機之後、要新增至主機群組的選項會出現在主機清單上方。</block>
+  <block id="b7a9ab8dab2826ab36bbf1a3559850cc" category="list-text">選取 * 新增至主機群組 * 。</block>
+  <block id="0f53db9803696214ded0a88c8b0f7339" category="list-text">搜尋並選取您要新增主機的主機群組。</block>
+  <block id="a87bef4929f26a2f74d81126d152d9a4" category="paragraph">您已建立主機群組、現在可以將其對應至儲存單元。</block>
+  <block id="e4588db94d1d12fcf26071d43abfb9c8" category="section-title">將儲存單元對應至主機</block>
+  <block id="62ce85edaaef586187e6e1454db66f3c" category="paragraph">建立 ASA R2 儲存單元並新增主機啟動器之後、您必須將主機對應至儲存單元、才能開始提供資料服務。儲存單元會在儲存單元建立程序中對應至主機。您也可以隨時將現有的儲存單元對應至新的或現有的主機。</block>
+  <block id="8de000c670cb75a778efcd7807338e06" category="list-text">選擇 * 儲存 * 。</block>
+  <block id="1b9ba9248585970cf009d0cea53f480c" category="list-text">將游標移至您要對應的儲存單元名稱上方。</block>
+  <block id="d966085aed4aa82e0f344d0a574996c4" category="list-text">選取<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選取 * 對應至主機 * 。</block>
+  <block id="1d2ba6ce932a78f449c19d327c8ca622" category="list-text">選取您要對應至儲存單元的主機、然後選取 * 地圖 * 。</block>
+  <block id="327efe0295c9c1f38d1eac4b38523301" category="paragraph">您的儲存單元已對應至主機、您已準備好完成主機上的資源配置程序。</block>
+  <block id="961d7655e0a4aa81a379f4ca1062a6ba" category="section-title">完整的主機端資源配置</block>
+  <block id="1e377691c4a2dc37b2dfea57c8c79cae" category="paragraph">建立儲存單元、新增主機啟動器並對應儲存單元之後、您必須先在主機上執行一些步驟、才能在 ASA R2 系統上讀寫資料。</block>
+  <block id="524c0325bc0c4cec973cfa614f67ae72" category="list-text">對於 FC 和 FC/NVMe 、請依照 WWPN 將 FC 交換器分區。</block>
+  <block id="eab491a83c6a98ad8bb6d9536baf3f09" category="paragraph">每個啟動器使用一個區域、並在每個區域中包含所有目標連接埠。</block>
+  <block id="2cd3b5d294419c9fff1fdbc28271d35b" category="list-text">探索新的儲存單元。</block>
+  <block id="23244f25ac2815846af6dc09a2aee622" category="list-text">初始化儲存單元和建立檔案系統。</block>
+  <block id="59ef3fb6dbb76f4db63e803f61442ac8" category="list-text">確認主機可以在儲存單元上讀取和寫入資料。</block>
+  <block id="cbb4ea3ae0ace3dd5cedae78f9d2a805" category="paragraph">您已完成資源配置程序、準備好開始提供資料。您現在可以<block ref="13282ab1c43cc291d62099de29c76969" category="inline-link-macro-rx"></block>保護 ASA R2 系統上的資料。</block>
+  <block id="94751ffa48a4135b11ac22ac2dae643e" category="inline-link-macro">ONTAP SAN 主機文件</block>
+  <block id="88e865c72412e4a1327806858c6d2784" category="paragraph">如需主機端組態的詳細資訊、請參閱<block ref="5045572e3d187366935cbd2a743bcd07" category="inline-link-macro-rx"></block>適用於您特定主機的。</block>
+  <block id="1baa07f2ade9c6d963643a794d4825f3" category="summary">ASA R2 組態支援每個執行 FC 、 iSCSI 、 NVMe / FC 或 NVMe / TCP 通訊協定的叢集最多 2 個節點。</block>
+  <block id="b6e8a44e2a75e79622ab8bca1270a5ce" category="doc">ASA R2 儲存限制</block>
+  <block id="abe1583ce937db07d8d0619331789f3c" category="paragraph">為了獲得最佳效能、組態和支援、您應該注意 ASA R2 儲存限制。</block>
+  <block id="96518fa8caa802b5be6e8e42fa8d0690" category="cell">每個叢集的最大節點數</block>
+  <block id="c81e728d9d4c2f636f067f89cc14862c" category="cell">2</block>
+  <block id="d8aa4c4ba6e098346f0524ef76464fe4" category="cell">最大儲存單元大小</block>
+  <block id="d0bb632fcdb31cf3c729c1c59f826d4f" category="cell">128TB</block>
+  <block id="bebabfeb2bb62750bf38ee33a0e54982" category="paragraph">如需最新 ASA R2 儲存限制的完整清單，請參閱<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
+  <block id="fcfb17e140eb359d2e4bf0ffb8fc90f2" category="summary">監控叢集和儲存單元的效能、以判斷延遲、 IOPS 和處理量對關鍵業務應用程式的影響。</block>
+  <block id="7210645d4515e7cb96d5b26a294a9f25" category="searchtitle">使用 ONTAP System Manager| ASA R2 監控叢集效能</block>
+  <block id="064023636601914c7dfacc81fa4e3b57" category="doc">監控 ASA R2 儲存系統上的叢集與儲存單元效能</block>
+  <block id="ac48862a6c885879fa8b73f630f8e98f" category="paragraph">使用 ONTAP System Manager 監控叢集的整體效能和特定儲存單元的效能、以判斷延遲、 IOPS 和處理量對關鍵業務應用程式的影響程度。效能可在一小時到一年的各種時間段內監控。</block>
+  <block id="d2fee2bd5b0bc27aba9325efd2cf7765" category="paragraph">例如、假設關鍵應用程式發生高延遲和低處理量。當您檢視過去五個工作天的叢集效能時、您發現每天的效能會同時降低。當非關鍵程序開始在背景執行時、您可以使用此資訊來判斷關鍵應用程式正在競爭叢集資源。接著您就能修改 QoS 原則、以限制非關鍵工作負載對系統資源的影響、並確保關鍵工作負載符合最低處理量目標。</block>
+  <block id="9ed62a90862b2040ffb0a91ecf532fff" category="section-title">監控叢集效能</block>
+  <block id="4d46d963226f35fc56c0527f9740cc00" category="paragraph">使用叢集效能指標來判斷您是否需要移轉工作負載、以將延遲降至最低、並將關鍵應用程式的 IOPS 和處理量最大化。</block>
+  <block id="1d1e5cd96b3e552f9fc410fb90447401" category="list-text">在System Manager中、選取* Dashboard *。</block>
+  <block id="bb43028ae9e4800b654e763c40299fbe" category="list-text">在 * 效能 * 下、依小時、日、週、月或年檢視叢集的延遲、 IOPS 和處理量。</block>
+  <block id="c4a57aeaa3a97cfc89ca9dd44caf0b26" category="inline-image-macro">藍色向下箭頭</block>
+  <block id="96918061c7e2616ea10b5e257e6603f2" category="list-text">選取<block ref="f608c7f1ce9fe53ea7b08af0f988e017" category="inline-image-macro-rx" type="image"></block>以下載效能資料。</block>
+  <block id="5412d66d1b940cac9c30aada0447af3e" category="paragraph">使用叢集效能指標來分析您是否需要修改 QoS 原則、或是對應用程式工作負載進行其他調整、以最大化整體叢集效能。</block>
+  <block id="c67ce188029f9fc77043d58a50195faa" category="section-title">監控儲存單元效能</block>
+  <block id="945d548e0f2b6e0d893dcb3324931492" category="paragraph">使用儲存單元效能指標來判斷特定應用程式對延遲、 IOPS 和處理量的影響。</block>
+  <block id="4812565e03191bd47ded08296e78a657" category="list-text">選取您要監控的儲存單元、然後選取 * 總覽 * 。</block>
+  <block id="072f32b41d829885ee9a2c15a8f4bfac" category="list-text">在 * 效能 * 下、依小時、日、週、月或年檢視儲存單元的延遲、 IOPS 和處理量。</block>
+  <block id="5d2f85dc8c63d0351c36b672568478e7" category="paragraph">使用您的儲存單元效能指標來分析是否需要修改指派給儲存單元的 QoS 原則、以減少延遲並將 IOPS 和處理量最大化。</block>
+  <block id="d97140ad30592cff018c51a2915b6f8a" category="summary">監控儲存使用率、確保您擁有所需的儲存容量、以因應目前和未來的工作負載。</block>
+  <block id="4b611b60857c6c5cb2e68cf03f265ee3" category="searchtitle">使用 ONTAP System Manager | ASA R2 監控空間使用率</block>
+  <block id="70ad7a054da3fd05bc8ccb0e8e79aa8f" category="doc">監控 ASA R2 儲存系統上的叢集與儲存單元使用率</block>
+  <block id="28e68d878f4ee888dc2ca237d14a3909" category="paragraph">使用 ONTAP System Manager 監控儲存使用率、確保您擁有所需的儲存容量、以因應目前和未來的工作負載。</block>
+  <block id="e41cfa628f1aae1b344d1fcccc79b676" category="section-title">監控叢集使用率</block>
+  <block id="60522db54655ef0faaafdeb6e1dd2f6c" category="paragraph">定期監控叢集所耗用的儲存容量、以確保在空間不足之前、您已準備好在必要時擴充叢集容量。</block>
+  <block id="5ba997683bb88c0bd7da49e5420cd3b9" category="list-text">在 * 容量 * 下、檢視叢集上的實體使用空間量和可用空間量。</block>
+  <block id="3de31d3507312269ff6fd5ae8a31e0b7" category="paragraph">資料減量代表儲存效率所節省的空間量。</block>
+  <block id="049df4c0a4a8d9829026cfcdd73b2fa6" category="inline-link-macro">新增磁碟機</block>
+  <block id="70e4aa2a60c8c55fc487bdeaf9688dea" category="paragraph">如果叢集的空間不足、或是沒有容量來滿足未來需求、您應該計畫使用 <block ref="652f39ff07f6641e851e14e8190a6b59" category="inline-link-macro-rx"></block>ASA R2 系統來增加儲存容量。</block>
+  <block id="b9de8a926e3bbf2f3ddad971b60d4639" category="section-title">監控儲存單元使用率</block>
+  <block id="317901cd2a3bb979dae71e0401824ba4" category="paragraph">監控儲存單元所耗用的儲存容量、以便根據業務需求主動增加儲存單元的大小。</block>
+  <block id="875bad30627e3f1ac1d0763421ff7fa3" category="list-text">在 * 儲存 * 下、檢視下列項目：</block>
+  <block id="8bbac825aa128cef10318ba85443d845" category="list-text">儲存單元的大小</block>
+  <block id="fcceb5d3e6cc80acd81036e797aa4e14" category="list-text">已用空間量</block>
+  <block id="94269030598b71d635027cb23f6a62db" category="list-text">資料減量比率</block>
+  <block id="d0a1c45798851642d66c370a01c7d67e" category="paragraph">資料減量比率代表儲存效率所節省的空間量</block>
+  <block id="ea48781244aaf816e0378fc9ff55511c" category="list-text">已使用快照</block>
+  <block id="72cc8fd78f178b893fe94aa1a98d6e48" category="paragraph">使用的 Snapshot 代表快照所使用的儲存容量。</block>
+  <block id="cc9f3da7753ac722528dd2e7b661823e" category="inline-link-macro">修改儲存單元</block>
+  <block id="2b8de8601b25d70c91481a1b4a49a76f" category="paragraph">如果您的儲存單元接近容量、您應該<block ref="bb5958dc62cc0e4abec32a80fbc51ad2" category="inline-link-macro-rx"></block>增加其大小。</block>
+  <block id="f1bdb387b0a6ca7729dff5f9d56f1b32" category="summary">使用 ONTAP 系統管理員檢視系統中發生的錯誤或警示清單、以及建議的修正動作。</block>
+  <block id="a6f5a251b127b5c1f3099fc50f3fb13b" category="doc">檢視 ASA R2 儲存系統上的叢集事件和工作</block>
+  <block id="467608103d4414ac83274a52fd68b0fb" category="paragraph">使用 ONTAP 系統管理員檢視系統中發生的錯誤或警示清單、以及建議的修正動作。您也可以檢視系統稽核記錄、以及作用中、已完成或失敗的工作清單。</block>
+  <block id="f08f493401d8358eff80a99c9e80a9d8" category="list-text">在 System Manager 中、選取 * 事件與工作 * 。</block>
+  <block id="d5fbc9ab0d7773563c6c867a0e6c8b0b" category="list-text">檢視叢集事件和工作。</block>
+  <block id="206a4107db0d69e37472895504c1e96a" category="cell">若要檢視 ...</block>
+  <block id="5e2ad6fd9deb412d871137094ee43ef0" category="cell">執行此動作...</block>
+  <block id="a65bbfa2f92e76f6835cc7873a290317" category="cell">叢集事件</block>
+  <block id="ebf799ed141b6d91d5a0c1e2867be830" category="paragraph">選擇 * 事件 * ；然後選擇 * 事件日誌 * 。</block>
+  <block id="0d2a4b4549d38af456678e4abf1393cf" category="cell">Active IQ 建議</block>
+  <block id="11f7665806f16490df8100f89769a49c" category="paragraph">選取 * 事件 * ；然後選取 * Active IQ 建議 * 。</block>
+  <block id="e512eef8aa4d4325f3679d5566fe776f" category="cell">系統警示</block>
+  <block id="742b4d40384d8101386b3b727593c25f" category="list-text">選取 * 系統警示 * 。</block>
+  <block id="d776163bc03d8be142762724999e7204" category="list-text">選取您要採取行動的系統警示。</block>
+  <block id="46926d0d0b6257869bb99a97f0c1660e" category="list-text">確認或隱藏警示。</block>
+  <block id="98e696b2182cb7888e9c1743dba942e4" category="cell">叢集工作</block>
+  <block id="c837aa9c1cee76dc0a8b1e8ab7b15139" category="paragraph">選取 * 工作 * 。</block>
+  <block id="85400d2762ed87e169ee941a9c8d41f1" category="cell">稽核記錄</block>
+  <block id="bf0ee5d7820e7b49538636a2323b1e13" category="paragraph">選取 * 稽核記錄 * 。</block>
+  <block id="e6510e3179fb147d1aa28f84d375849d" category="section-title">傳送叢集事件和稽核記錄的電子郵件通知</block>
+  <block id="2689017fd391b9ef2b710efecac7fe98" category="paragraph">將系統設定為在發生叢集事件或稽核記錄項目時、將通知傳送至特定電子郵件地址。</block>
+  <block id="c9fa13c02cfead820376fc662f426b76" category="list-text">在 * 通知管理 * 旁邊，選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="b132288363444449f65274826d81b20a" category="list-text">若要設定事件目的地、請選取 * 檢視事件目的地 * 、然後選取 * 事件目的地 * 。若要設定稽核記錄目的地、請選取 * 檢視稽核目的地 * 、然後選取 * 稽核記錄目的地 * 。</block>
+  <block id="5a44cd233bac39affdb8362ac562d2b5" category="inline-image-macro">藍色矩形加上加號、接著加上白色字母</block>
+  <block id="a965541f47c7a323b09d8822116bc9d5" category="list-text">選擇。 <block ref="df7c335acb6f116ad3c95dc4cf3e7ccb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="94a2e0e8ab485816cc10fd24499c15d8" category="list-text">輸入目的地資訊、然後選取 * 新增 * 。</block>
+  <block id="ff859a51425032eeba77af0fbd94f566" category="paragraph">您新增的電子郵件地址現在會收到指定的叢集事件和稽核記錄電子郵件通知。</block>
+  <block id="902f69f8add54032a3780db669e4e052" category="summary">在 ONTAP System Manager 中檢視 Insights 、找出最佳實務做法和組態修改、以便在 ASA R2 系統上實作、以最佳化叢集安全性和效能。</block>
+  <block id="39eb974e3811334d91ec84b86aec1732" category="doc">透過 ASA R2 儲存系統洞見、最佳化叢集安全性與效能</block>
+  <block id="9d86f65ca6623815e9bd6f0547909992" category="paragraph">在 ONTAP System Manager 中檢視 _Insights 、找出最佳實務做法和組態修改、以便在 ASA R2 系統上實作、以最佳化叢集安全性和效能。</block>
+  <block id="f73a710b7e6b349114b2765ad1274f5e" category="paragraph">例如、假設您已為叢集設定網路時間傳輸協定（ NTP ）伺服器。不過、您並不知道您所需的 NTP 伺服器數量低於建議的數量、因此無法獲得最佳叢集時間管理。為了協助您預防叢集時間不準確時可能發生的問題、 Insights 會通知您已設定太少的 NTP 伺服器、並提供選項讓您進一步瞭解此問題、加以修正或將其排除。</block>
+  <block id="48cfda35c766b770b4272442f0e97eec" category="inline-image-macro">系統管理員深入分析頁面的螢幕擷取畫面</block>
+  <block id="179a9fb3c3da42fe1bb169f945a03c28" category="paragraph"><block ref="179a9fb3c3da42fe1bb169f945a03c28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="56f9f43ddcf9d91a9e02c96a84a15ef3" category="list-text">在 System Manager 中、選取 * Insights * 。</block>
+  <block id="1a09338f7e8c6093f1d857fedaa4f9ab" category="list-text">審查建議。</block>
+  <block id="e175dd30709c0589a580475db0f0f8fb" category="paragraph">執行任何必要的行動、以實作最佳實務做法、並最佳化叢集的安全性與效能。</block>
+  <block id="826af48aa0c4b34379a1a65ba5721ebe" category="doc">ASA R2 系統的 ONTAP 9 。 16.0 的新功能</block>
+  <block id="e887ad295f9758b43d9c2af5b2fbd1b9" category="paragraph">瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.10 提供的新功能。</block>
+  <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">平台</block>
+  <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">更新</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
+  <block id="2c84ef2816336594d59d5962b19f3047" category="cell">全新平台</block>
+  <block id="13d09074058b667f0fc1cfa7487fab45" category="paragraph">以下新的 NetApp ASA R2 系統可供使用。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
+  <block id="26ed02718973e705cd69ee6e109400e0" category="section-title">系統管理員</block>
+  <block id="43216e15c49bb3bc0da538a8d830f901" category="inline-link-macro">精簡支援僅限 SAN 的客戶</block>
+  <block id="60dc71f158c44e4e34a36dec8e3210a5" category="cell"><block ref="60dc71f158c44e4e34a36dec8e3210a5" category="inline-link-macro-rx"></block></block>
+  <block id="ab2425add74d81e8511466cd739d6809" category="cell">System Manager 經過簡化、可支援重要的 SAN 功能、同時移除 SAN 環境中不支援的功能和功能可見度。</block>
+  <block id="bfd15aa26ba0ced782240c4a8b7e517e" category="section-title">儲存管理</block>
+  <block id="8821a49cd0b40d836f9e5a46350b8301" category="inline-link-macro">簡化儲存管理</block>
+  <block id="e712537d178111b04c58fec64edb95d4" category="cell"><block ref="e712537d178111b04c58fec64edb95d4" category="inline-link-macro-rx"></block></block>
+  <block id="3633a3fe10949498631438569f50d9c1" category="paragraph">ASA R2 系統採用一致性群組的儲存單元、以簡化儲存管理。</block>
+  <block id="4c5d94eb4dc4bff93f6a96a08ab7b244" category="section-title">資料安全</block>
+  <block id="9b1382a3b1c349e2bcff099e9681b9d7" category="inline-link-macro">內建金鑰管理程式與雙層加密</block>
+  <block id="905e31a86b98bed115c483ce6ced7db9" category="cell"><block ref="905e31a86b98bed115c483ce6ced7db9" category="inline-link-macro-rx"></block></block>
+  <block id="44b4ce69d4c91b60f1b63caf0c4f7a16" category="paragraph">ASA R2 系統支援內建金鑰管理程式和雙層（硬體和軟體）加密。</block>
+  <block id="4c8be67d73679ae4d2b56af70c18930f" category="summary">加密靜止資料、以便在磁碟歸還、遺失或遭竊時無法讀取。使用硬體和軟體加密來啟用雙層保護。</block>
+  <block id="ecfe0d76736441fd5c3363a39c663578" category="searchtitle">使用 ONTAP System Manager| ASA R2 加密、保護靜態資料安全</block>
+  <block id="44934af219d5d85daa0f7f7a2a8d5efa" category="doc">加密 ASA R2 儲存系統上的閒置資料</block>
+  <block id="2906636dbf4e4249f5399e9553d745b9" category="paragraph">當您加密靜止資料時、如果儲存媒體被重新規劃、退回、放錯位置或遭竊、則無法讀取該資料。您可以使用 ONTAP 系統管理員、在硬體和軟體層級加密資料、以提供雙層保護。</block>
+  <block id="7b51e981529660667d1414c7a37e2172" category="paragraph">NetApp 儲存加密（ NSE ）支援使用自我加密磁碟機（ SED ）進行硬體加密。SED 會在資料寫入時加密資料。每個 SED 都包含唯一的加密金鑰。如果沒有 SED 的加密金鑰、則無法讀取儲存在 SED 上的加密資料。嘗試從 SED 讀取的節點必須通過驗證、才能存取 SED 的加密金鑰。透過從金鑰管理程式取得驗證金鑰、然後將驗證金鑰呈現給 SED 來驗證節點。如果驗證金鑰有效、 SED 會提供節點加密金鑰來存取其中包含的資料。</block>
+  <block id="97453174e9fea59b5b73518b257f2785" category="paragraph">使用 ASA R2 內建金鑰管理程式或外部金鑰管理程式、為節點提供驗證金鑰。</block>
+  <block id="2a1bd1bede081db0130e4d43abfae163" category="paragraph">除了 NSE 之外、您也可以啟用軟體加密、為資料增添另一層安全性。</block>
+  <block id="c3895fd1cc061addf95194af9659baa6" category="list-text">在系統管理器中，選擇 * 叢集 &gt; 設定 * 。</block>
+  <block id="b59449d4094d1449f93a0de73791997c" category="list-text">在 * 安全性 * 區段的 * 加密 * 下、選取 * 設定 * 。</block>
+  <block id="9bd21eab9d09006d0846084b0f1b970d" category="list-text">設定金鑰管理程式。</block>
+  <block id="ba6246026192852edb568b40ca46a1d0" category="cell">設定 Onboard Key Manager</block>
+  <block id="abe4eb783dfc1ed20a1767b1b0b37e12" category="list-text">選取 * 主機板內建金鑰管理員 * 以新增金鑰伺服器。</block>
+  <block id="1fd88d59c1d719c57b195c707d7951de" category="list-text">輸入通關密碼。</block>
+  <block id="9bb5ba94825ba6d28795229ea175d9b8" category="cell">設定外部金鑰管理程式</block>
+  <block id="13d04c22488a6d15142f8f511065deb1" category="list-text">選取 * 外部金鑰管理程式 * 以新增金鑰伺服器。</block>
+  <block id="d2197f431a28359dc4f7588a4ee17815" category="inline-image-macro">藍色加號加上「 ADD 」一詞</block>
+  <block id="21a9ff1d73ef5743603ab3f10d2f2a69" category="list-text">選取<block ref="36723c41fb4f69825dcd914ddf26b94e" category="inline-image-macro-rx" type="image"></block>以新增主要伺服器。</block>
+  <block id="81d0ae691a9f27dbb334598577d9e74d" category="list-text">新增 KMIP 伺服器 CA 憑證。</block>
+  <block id="b66a2d14c1891462455fed5e4a620880" category="list-text">新增 KMIP 用戶端憑證。</block>
+  <block id="a2d38e07f32f557705115c0e67b1cf0c" category="list-text">選取 * 雙層加密 * 以啟用軟體加密。</block>
+  <block id="3adddf5fb61118db0851698e94df9d20" category="inline-link-macro">加密透過網路傳送的所有資料</block>
+  <block id="7d48eac362573df2fed01eb80f7d4ec2" category="paragraph">現在您已將靜態資料加密、如果您使用的是 NVMe / TCP 傳輸協定、則可以<block ref="74cf61e3a0c52691fd5b474676f672e9" category="inline-link-macro-rx"></block>在 NVMe / TCP 主機和 ASA R2 系統之間進行加密。</block>
+  <block id="5c2176542e490214bcd9614880d942f0" category="summary">透過設定 NVMe / TCP over TLS 來加密透過網路在 NVMe / TCP 主機和 ONTAP 之間傳送的所有資料、來增強資料安全性。</block>
+  <block id="5bdd1772c315e3d023ef23531e6172d5" category="doc">ASA R2 儲存系統上的安全 NVMe 連線</block>
+  <block id="4bbb8f0466027ba41f7760a28b31c469" category="paragraph">如果您使用的是 NVMe 傳輸協定、您可以設定頻內驗證、以增強資料安全性。頻內驗證可在 NVMe 主機和 ASA R2 系統之間進行安全的雙向單向驗證。頻內驗證適用於所有 NVMe 主機。如果您使用的是 NVMe / TCP 傳輸協定、您可以設定傳輸層安全性（ TLS ）來加密透過網路在 NVMe / TCP 主機和 ASA R2 系統之間傳送的所有資料、進一步增強資料安全性。</block>
+  <block id="24e4b19fe20674545837cd1f5514b5cc" category="list-text">選取 * 主機 * 、然後選取 * NVMe * 。</block>
+  <block id="4843ac7779e1deaee1af5252373469ca" category="inline-image-macro">藍色方塊加上加號、接著加上新增白色字母</block>
+  <block id="53171f975b353bebf601cf13abc94ae5" category="list-text">選擇。<block ref="ffae57afd5555ce06187b71385ac5fc4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6f39c647858508710d4339c7d616e1fc" category="list-text">輸入主機名稱、然後選取主機作業系統。</block>
+  <block id="668f73fd95bcd6c27e0c274955cfc6a3" category="list-text">輸入主機說明、然後選取要連線到主機的儲存 VM 。</block>
+  <block id="f1a6537fcfe67a3762c0c7c1fac76e09" category="inline-image-macro">藍色向下箭頭</block>
+  <block id="f90fe1f9beb52bcf313f821095f53d4b" category="list-text">選取<block ref="47ea7f4f40e858d68b6ec8b3b27bf536" category="inline-image-macro-rx" type="image"></block>主機名稱旁的。</block>
+  <block id="32f997e9316059a556fadceb416a526a" category="list-text">選取 * 頻內驗證 * 。</block>
+  <block id="47d36da0620e65d065bfa9c8dd0f9034" category="list-text">如果您使用的是 NVMe / TCP 傳輸協定、請選取 * 需要傳輸層安全性（ TLS ） * 。</block>
+  <block id="24e39c7cf4f63ba3319caf3373485701" category="paragraph">透過頻內驗證和 / 或 TLS 來增強資料的安全性。</block>
+  <block id="f82f9abf9d39b3ea7e9931fe0ec02989" category="summary">使用防竄改快照來保護資料安全。防竄改快照無法刪除、也可用於恢復因勒索軟體攻擊而洩漏的資料。</block>
+  <block id="17d54966a51825ee64011655de8e99f5" category="doc">保護 ASA R2 儲存系統免受勒索軟體攻擊</block>
+  <block id="bb09a1295cce99402c216baed3c2b937" category="paragraph">為了加強防範勒索軟體攻擊、請將快照複寫到遠端叢集、然後鎖定目的地快照、使其防竄改。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。</block>
+  <block id="049905961ea2e1141d23d71eb662076b" category="section-title">初始化 SnapLock Compliance 時鐘</block>
+  <block id="045a584abdee8ddf49e1db3987711d93" category="paragraph">在建立防竄改快照之前、您必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance 時鐘。</block>
+  <block id="7e59070af3e4cd3a421461f7774f3c87" category="list-text">選擇*叢集&gt;總覽*。</block>
+  <block id="045e8ceb02be472a9bc3e54ba6f1d811" category="list-text">在 * 節點 * 區段中、選取 * 初始化 SnapLock Compliance 時鐘 * 。</block>
+  <block id="2012a4286c3a1864d4fa11ba1cb42b1c" category="list-text">確認規範時鐘已初始化。</block>
+  <block id="2bc6e7414d5cb75e3addfdeb234222a1" category="inline-image-macro">白色背景上的三個藍色欄</block>
+  <block id="ff632b6925cddc0c770d38368ff3755e" category="list-text">在 * 節點 * 區段中<block ref="db89dee19aae8a41518f426597d8cb6e" category="inline-image-macro-rx" type="image"></block>、選取；然後選取 * SnapLock Compliance 時鐘 * 。</block>
+  <block id="c19a0c09a1a9acec430b36accfdb5ac8" category="inline-link-macro">使用鎖定的快照建立複寫關係</block>
+  <block id="791bf7d3faa5342db177ff00f2bcca3f" category="paragraph">在本地和目標叢集上初始化 SnapLock Compliance 時鐘之後<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>、您就可以開始使用了。</block>
+  <block id="25abedf12d26e4bc8960557833ebe68d" category="summary">觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。</block>
+  <block id="9e9e90703a7077203260b19a3af9704a" category="doc">在 ASA R2 系統上設定 SAN 通訊協定</block>
+  <block id="21d3b12a5a9f6ff0d25b8b5e5e00b7ff" category="paragraph">以下是影片的記錄<block ref="1ef61309a2d73f2fc4d83b527ce1790e" prefix=" " category="inline-code"></block>。</block>
+  <block id="d0bbf471679ba0e6e7c8d0868d538ded" category="inline-link-macro">返回頁面</block>
+  <block id="8ec987fa6675a860245dc712f3312c0e" category="paragraph"><block ref="8ec987fa6675a860245dc712f3312c0e" category="inline-link-macro-rx"></block></block>
+  <block id="d5f2b6c9f6f10c18aaa16451b892f918" category="paragraph">您可以使用 ONTAP 系統管理員來快速輕鬆地設定 SAN 通訊協定。在此範例中、我們將為 iSCSI 網路介面設定 IP 位址。</block>
+  <block id="fb5c0f9ac1d7ca64f515441ac68af5b9" category="paragraph">從 System Manager 儀表板選取 * 設定通訊協定 * 。</block>
+  <block id="9e0acd2071d8ef683d886a96a243f9cc" category="paragraph">在 *IP* 下，選擇 * 配置 IP 接口 * ，然後選擇 * 添加子網 * 。</block>
+  <block id="75d7e21ebd9ad6b23f1103cbbb28fd31" category="paragraph">您只需輕鬆快速地為 iSCSI 網路介面設定 IP 位址即可。</block>
+  <block id="d41e8dd34fef54160816dae4105416f6" category="doc">在 ASA R2 系統上設定 SAN 儲存設備</block>
+  <block id="501a74ab6e17a226c7db107b0b362ce4" category="paragraph">以下是影片的記錄<block ref="c4c3ae1c600a410ad0a77c184a6ed22d" prefix=" " category="inline-code"></block>。</block>
+  <block id="cd4306b1f40c20342606f6ebe1b9b132" category="paragraph"><block ref="cd4306b1f40c20342606f6ebe1b9b132" category="inline-link-macro-rx"></block></block>
+  <block id="a74447cd194e6886256748db76e9ae46" category="paragraph">您可以使用 ONTAP 系統管理員、快速輕鬆地為 ASA R2 儲存系統上的主機配置儲存單元。</block>
+  <block id="eb691c0f91c8f9367dcb6c9f06318778" category="paragraph">在此範例中、我們將為 VMware 主機建立六個新的儲存單元。</block>
+  <block id="9edc34b4ab80212df9e7c8ff995825c4" category="paragraph">從 System Manager （系統管理器）菜單中，選擇 *Storage* （存儲），然後選擇 *Add* （添加 * ）。</block>
+  <block id="3adf360ca43a9d8f01cb80f266fa35be" category="paragraph">輸入儲存單元的名稱、單元數量和每個單元的容量、然後選取主機作業系統。</block>
+  <block id="4ccea427cedc0aa13b6387eefb9f5194" category="paragraph">如果您建立多個單元、則依預設、每個單元都會建立相同的容量。</block>
+  <block id="a66cbb9062921ed7caefb0322eb0ddb4" category="paragraph">選擇 * 更多選項 * 以輸入主機資訊。在此範例中、我們將選取 SCSI 傳輸協定並新增一個 iSCSI 主機。</block>
+  <block id="f6b2c7d0b15858e72084747a43188fcb" category="paragraph">輸入主機名稱、然後新增主機啟動器和說明。</block>
+  <block id="f61825fc58643cdacd498bc0d5806c39" category="paragraph">選擇 * 排程快照 * 以定期快照保護您的儲存單元。</block>
+  <block id="3e4b9d1aae6aa2f59c1eadf3c0ca50ea" category="paragraph">選擇遠端保護來 * 將您的裝置複寫到遠端位置 * 。</block>
+  <block id="6d063bf77d3ae072ca76e7760322365c" category="paragraph">選取儲存 VM 和複寫原則；選取 * 新增 * 。</block>
+  <block id="8e90462570ea8bacfd046c0e5be696fe" category="paragraph">儲存單元必須位於一致性群組中、才能進行複寫。輸入一致性群組名稱、然後選取 * 建立 * 。</block>
+  <block id="57518dcb41d6ac90666f3d8a3543cbf1" category="paragraph">您已為 VMware 主機快速輕鬆地配置 6 個儲存單元、並提供本機和遠端資料保護。</block>
+  <block id="ecb75446a7c4cfdf2386be49b4717f5e" category="doc">從 ASA R2 儲存系統將資料複寫到遠端叢集</block>
+  <block id="8572d98fea3b161eff979b45162c34a4" category="paragraph">以下是影片的記錄<block ref="ecb75446a7c4cfdf2386be49b4717f5e" prefix=" " category="inline-code"></block>。</block>
+  <block id="95735d0c5c7e1f277a6dc2f6343eafd2" category="paragraph"><block ref="95735d0c5c7e1f277a6dc2f6343eafd2" category="inline-link-macro-rx"></block></block>
+  <block id="7712dd1d9094f2df5051142ff1326fcf" category="paragraph">您可以使用 ONTAP 系統管理員來保護資料、方法是排程儲存單元或一致性群組的快照、並複寫到遠端位置。</block>
+  <block id="570740fdd385f21db680dfb9ac6e188c" category="paragraph">在此範例中、我們將為現有的儲存單元排程快照。</block>
+  <block id="7bf7b432cb3f092a1b6c4190957cb728" category="paragraph">從 System Manager （系統管理器）菜單中，選擇 * Storage* （存儲）。</block>
+  <block id="544455c6f16f4d71969edf3a2565935a" category="paragraph">選取您要保護的儲存單元、然後選取 * 保護 * 。</block>
+  <block id="c5f5af2c8b50c2d39423333ce69e2191" category="paragraph">您可以選擇 * 立即新增快照 * 來建立隨選快照。</block>
+  <block id="72b36aab0dddf73889fa827b616242ae" category="paragraph">在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。</block>
+  <block id="3299301b32e641c75ad8ee29888b68bb" category="paragraph">選取要複寫的儲存 VM 和複寫原則。根據預設、初始資料傳輸將立即開始。</block>
+  <block id="a305a5e70e729225565c1aba5b0b90bd" category="paragraph">如果儲存單元不在一致性群組中、您必須建立一個。輸入新一致性群組的名稱、然後選取 * 建立 * 。</block>
+  <block id="bc7e7ba96f4d714e6a4984ca11c4ec30" category="paragraph">您已快速輕鬆地將一致性群組複寫到遠端叢集。</block>
+  <block id="c2bd95eede310a783a57ed2138ac184f" category="doc">ASA R2 儲存系統影片示範</block>
+  <block id="c4133d9fc9777ada180196eb4ea0f521" category="inline-link-macro">視訊交談記錄</block>
+  <block id="5ef28dca4765c2062298d598ab026d26" category="paragraph"><block ref="5ef28dca4765c2062298d598ab026d26" category="inline-link-macro-rx"></block></block>
+  <block id="7ebbd6cd31821e10ac13f968ef34335c" category="video-title">在 ASA R2 系統上配置 SAN 儲存設備</block>
+  <block id="defcb9fd853d367bd660700f47c024f5" category="paragraph"><block ref="defcb9fd853d367bd660700f47c024f5" category="inline-link-macro-rx"></block></block>
+  <block id="df0ea0d9c07aa4c309c871e15407f287" category="video-title">從 ASA R2 系統將資料複寫到遠端叢集</block>
+  <block id="c36a662a0d118eeb7f481b5322c5ea40" category="paragraph"><block ref="c36a662a0d118eeb7f481b5322c5ea40" category="inline-link-macro-rx"></block></block>
+  <block id="1bb71df56b7ae979d57d7cedfffe49f5" category="sidebar">ASA R2 說明文件</block>
+  <block id="594032ab8be72e6b6adc8b69d77df644" category="sidebar">NetApp ASA R2 系統提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="sidebar">深入瞭解</block>
+  <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">快速入門</block>
+  <block id="77811a66f12d1085614f313861555339" category="sidebar">管理資料</block>
+  <block id="4906f544b7a764889e992fe4877ad659" category="sidebar">配置SAN儲存設備</block>
+  <block id="5fdb60d5b6b01cf54020a91ba4c6d229" category="sidebar">複製資料</block>
+  <block id="32d4bffffe6ace22e290e61f1bb14489" category="sidebar">修改儲存單元</block>
+  <block id="d70909396aef5247a5a1b17dd15cf43d" category="sidebar">保護及保護資料安全</block>
+  <block id="d0dfdfe73aea97321d81327461d381a2" category="sidebar">建立快照</block>
+  <block id="8d6905d51dacb11051a0666d04bc75af" category="sidebar">設定快照複寫</block>
+  <block id="adfd33fbce17f21dd8572d1c07677009" category="sidebar">加密靜態資料</block>
+  <block id="d8f87ca27811771e6005ec1e8989bb8c" category="sidebar">更多 ASA R2 資源</block>
+  <block id="ff529c4d04327f7d20ae4d7b457bcd18" category="sidebar">ASA 資料表</block>
+  <block id="8162203e3ec38c896e5f6d688115d731" category="sidebar">ONTAP REST API 參考</block>
+  <block id="27c7ca02055622739ea07ba1243d7683" category="sidebar">ONTAP EMS 參考</block>
+  <block id="69913262552614dd6dfbb8b0ef47e2e7" category="sidebar">其他 ONTAP 資源</block>
+  <block id="ed93db7141f383118e5c6b577cb5fb60" category="sidebar">適用於其他 ONTAP 系統的文件</block>
+  <block id="dee4aa6b5a1005459bfb48609b6d209e" category="sidebar">ASA R2 文件</block>
+  <block id="f090951c6f34b76fa7499153d4fd51be" category="sidebar">維護硬體</block>
+  <block id="5eb43e1edd4f0757c83c6d6f6632ff94" category="sidebar">管理與監控</block>
+  <block id="26b7d27228972563f9518dd3fc6e3db4" category="sidebar">管理用戶端對儲存 VM 的存取</block>
+  <block id="dced2d75745573df12ae5c487f914c89" category="sidebar">管理叢集網路</block>
+  <block id="d619a5fbd4eb7b52433e2bbe64a23c29" category="sidebar">監控使用量並增加容量</block>
+  <block id="44755f0fbb788033ad9fcd54884ce16f" category="sidebar">監控儲存效能</block>
+  <block id="05a9eab8572eb4d3688735a51ffe569a" category="sidebar">監控儲存使用率</block>
+  <block id="483c848cf08aacd19acb4d0b41190eb1" category="sidebar">增加儲存容量</block>
+  <block id="00a69742e414f1b267e0cae78e185336" category="sidebar">更新韌體</block>
+  <block id="b24e8ac6ebf51b2e3f20e0d679544254" category="sidebar">檢視洞見</block>
+  <block id="0e869b4e66b245a0be1e040bc39ffbd2" category="sidebar">檢視叢集事件和工作</block>
+  <block id="aa0c0e544bf34beca69dd898033ccc74" category="sidebar">管理節點</block>
+  <block id="b4303bffbe02b4c67802c0d65b92c40c" category="sidebar">重新開機、接管及回饋節點</block>
+  <block id="cb81b476c395da2d0fdc1d2c472250b0" category="sidebar">重新命名節點</block>
+  <block id="9b07fbfabdfd11dba3501e4898d66f4d" category="sidebar">管理使用者帳戶和角色</block>
+  <block id="2371424eba381b8fb39ac37404483e34" category="sidebar">管理安全性憑證</block>
+  <block id="9cfca5aaa3fdefb333e502b85101c29b" category="sidebar">驗證主機連線能力</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="sidebar">取得協助</block>
+  <block id="e8d169e6dc7b218b05fe89333590b11e" category="sidebar">管理AutoSupport</block>
+  <block id="b37dd40d8887ff3220c578fc6f7b779a" category="sidebar">提交及檢視支援案例</block>
+  <block id="7ffd99672c08d10ead862878012155ca" category="sidebar">瞭解 ASA R2 系統</block>
+  <block id="e9498944972ccc5d6aac754aa0c73421" category="sidebar">安裝 ASA R2 系統</block>
+  <block id="6f550466a69bad21f11ab99fc12db497" category="sidebar">安裝工作流程</block>
+  <block id="f5672ee179ad2bcc9cb2bc0cc89ba289" category="sidebar">檢閱硬體需求</block>
+  <block id="f76aaf3aaa7b30238e7a3e2b1a04493b" category="sidebar">準備安裝</block>
+  <block id="543e6a3c9b07a3642afb462fba582642" category="sidebar">安裝硬體</block>
+  <block id="ea6245a5aad1d347d3bfd8727ccbe15c" category="sidebar">纜線硬體</block>
+  <block id="7b2ca066e862da1c95471b425468af14" category="sidebar">開啟系統電源</block>
+  <block id="658c5031b9786c4f9023925fcf23cf70" category="sidebar">設定 ASA R2 系統</block>
+  <block id="e23243448b3ec49d7f5b13275d7f6335" category="sidebar">設定叢集</block>
+  <block id="27e94778a46e91ef4cb224d22fc1b5e1" category="sidebar">設定資料存取</block>
+  <block id="6561e9a6669528b215c28d49379cb719" category="sidebar">適用於 ONTAP 超級使用者的 ASA R2</block>
+  <block id="979756fd032c6ae260ffff6ed788d4cd" category="sidebar">比較硬體系統</block>
+  <block id="7e2ea756a457a94ace36e49a65d26ac5" category="sidebar">軟體支援與限制</block>
+  <block id="f554b6d60fa8d0d2c734310ba3e4bea6" category="sidebar">CLI 支援</block>
+  <block id="b9832b10a87d0c3793ed3b413ee1d839" category="sidebar">REST API支援</block>
+  <block id="7ff1cef1b3834d5f7483468510855c95" category="sidebar">使用 ONTAP 管理資料</block>
+  <block id="7ab7ad28070cbb8080c8e89600b8c55b" category="sidebar">常見工作影片</block>
+  <block id="4036bad119729c994bb3398c9935f6ab" category="sidebar">管理您的儲存設備</block>
+  <block id="7ade4491330b8b909764f7743d2141bc" category="sidebar">刪除儲存單元</block>
+  <block id="150a34e7bbdf7765066eae5fadb9f919" category="sidebar">儲存限制</block>
+  <block id="222e11fb018a824c05f5fc6a922f5240" category="sidebar">保護您的資料</block>
+  <block id="a674730095a9b5140cc595ad52f943c7" category="sidebar">保護 Kubernetes</block>
+  <block id="f4b3d5acc9c8ae0d4f905c0fb1312ab2" category="sidebar">還原資料</block>
+  <block id="9712f400eacfd75178398ff6c28bb880" category="sidebar">管理一致性群組</block>
+  <block id="75a949e17bd9625c11dfe6d712fe4599" category="sidebar">管理保護原則和排程</block>
+  <block id="535325b65194eedb1ca9712f222f64de" category="sidebar">保護資料安全</block>
+  <block id="8b2e17275c58b0f8936bb66925a8665f" category="sidebar">防範勒索軟體攻擊</block>
+  <block id="580170da57ca90dca0f62ce9faf29c6e" category="sidebar">安全的 NVMe 連線</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
+  <block id="4eae1c6da6a9edad5e5228cf8cfe3cdb" category="sidebar">ONTAP 9.16.0 的新功能</block>
+</blocks>

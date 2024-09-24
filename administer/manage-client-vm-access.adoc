@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-client-vm-access.html 
+keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface 
+summary: 建立 LIF 以存取 ASA R2 上儲存單元中的資料。使用子網路來簡化 LIF 建立和 IPspace 、以提供安全的管理和路由。 
+searchtitle: 使用 ONTAP 系統管理員 | ASA R2 管理用戶端對儲存設備的存取 
+---
+= 管理用戶端存取 ASA R2 儲存系統上的儲存 VM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2 系統上的儲存單元包含在儲存虛擬機器（ VM ）內。儲存 VM 可用來為 SAN 用戶端提供資料。使用 ONTAP System Manager 為 SAN 用戶端建立 LIF （網路介面）、以連線至儲存 VM 並存取儲存單元中的資料。您可以選擇性地使用子網路來簡化 LIF 建立和 IPspace 、為儲存 VM 提供自己的安全儲存、管理和路由。
+
+
+
+== 建立IPspaces
+
+IPspace 是儲存 VM 所在的獨特 IP 位址空間。建立 IPspace 時、您可以讓儲存 VM 擁有自己的安全儲存、管理和路由。您也可以讓管理性分隔網路網域中的用戶端使用相同 IP 位址子網路範圍中的重疊 IP 位址。
+
+您必須先建立 IPspace 、才能建立子網路。
+
+.步驟
+. 選擇 * 網路 > 總覽 * 。
+. 在 *IPspacs* 下，選擇image:icon_add_blue_bg.png["包含加號的藍色矩形、後面接著以白色字母加上字詞"]。
+. 輸入 IPspace 的名稱或接受預設名稱。
++
+IPspace 名稱不能為「 ALL 」、因為「 ALL 」是系統保留的名稱。
+
+. 選擇*保存*。
+
+
+.接下來呢？
+現在您已建立 IPspace 、您可以使用它來建立子網路。
+
+
+
+== 建立子網路
+
+子網路可讓您分配特定的 IPv4 或 IPv6 位址區塊、以便在建立 LIF （網路介面）時使用。子網路可讓您指定子網路名稱、而非每個 LIF 的特定 IP 位址和網路遮罩、進而簡化 LIF 的建立。
+
+.開始之前
+* 您必須是叢集管理員才能執行此工作。
+* link:../administer/manage-cluster-networking.html#add-a-broadcast-domain["廣播網域"]您計畫新增子網路的和 IPspace 必須已經存在。
+
+
+.步驟
+. 選擇 * 網路 > 總覽 * 。
+. 選擇 * 子網 * ，然後選擇image:icon_add_blue_bg.png["包含加號的藍色矩形、後面接著以白色字母加上字詞"]。
+. 輸入子網路名稱。
++
+所有子網路名稱在IPspace內必須是唯一的。
+
+. 輸入子網路 IP 位址和子網路遮罩。
+. 指定子網路的 IP 位址範圍。
++
+當您指定子網路的 IP 位址範圍時、請勿將 IP 位址與其他子網路重疊。當子網路 IP 位址重疊、且不同的子網路或主機嘗試使用相同的 IP 位址時、可能會發生網路問題。
+
+. 選取子網路的廣播網域。
+. 選取*「Add*」。
+
+
+.接下來呢？
+您已經建立了子網路、現在您可以使用它來簡化建立您的生命。
+
+
+
+== 建立 LIF （網路介面）
+
+LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在您要用來存取資料的連接埠上建立生命。儲存 VM 會透過一或多個生命負載、將資料提供給用戶端。如果發生元件故障、 LIF 可能會容錯移轉或移轉至不同的實體連接埠、因此不會中斷網路通訊。
+
+建立 IP 資料 LIF 時、預設可同時為 iSCSI 和 NVMe / TCP 流量提供服務。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。
+
+.開始之前
+* 您必須是叢集管理員才能執行此工作。
+* 基礎實體或邏輯網路連接埠必須設定為管理 `up`狀態。
+* 如果您打算使用子網路名稱來配置LIF的IP位址和網路遮罩值、則該子網路必須已經存在。
+* 處理節點之間叢集內流量的LIF、不應與處理管理流量的LIF或處理資料流量的LIF位於相同的子網路上。
+
+
+.步驟
+. 選擇 * 網路 > 總覽 * 。
+. 選擇 * Network interfaces （網絡接口） * ；然後選擇image:icon_add_blue_bg.png["藍色矩形加上加號、接著加上白色字母"]。
+. 選取介面類型和傳輸協定、然後選取儲存 VM 。
+. 輸入 LIF 名稱或接受預設名稱。
+. 選取網路介面的主節點、然後輸入 IP 位址和子網路遮罩。
+. 選擇*保存*。
+
+
+.結果
+您已建立資料存取的 LIF 。
+
+
+
+== 修改 LIF （網路介面）
+
+您可以視需要停用或重新命名救生。您也可以變更 LIF IP 位址和子網路遮罩。
+
+.步驟
+. 選擇 * 網路 > 總覽 * 、然後選擇 * 網路介面 * 。
+. 將游標移至您要編輯的網路介面上方image:icon_kabob.gif["三個垂直藍點"]、然後選取。
+. 選擇*編輯*。
+. 您可以停用網路介面、重新命名網路介面、變更 IP 位址或變更子網路遮罩。
+. 選擇*保存*。
+
+
+.結果
+您的 LIF 已修改。

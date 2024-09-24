@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: monitor/view-insights.html 
+keywords: view, insights, optimize, cluster, performance, best practices, configuration, security 
+summary: 在 ONTAP System Manager 中檢視 Insights 、找出最佳實務做法和組態修改、以便在 ASA R2 系統上實作、以最佳化叢集安全性和效能。 
+---
+= 透過 ASA R2 儲存系統洞見、最佳化叢集安全性與效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 ONTAP System Manager 中檢視 _Insights 、找出最佳實務做法和組態修改、以便在 ASA R2 系統上實作、以最佳化叢集安全性和效能。
+
+例如、假設您已為叢集設定網路時間傳輸協定（ NTP ）伺服器。不過、您並不知道您所需的 NTP 伺服器數量低於建議的數量、因此無法獲得最佳叢集時間管理。為了協助您預防叢集時間不準確時可能發生的問題、 Insights 會通知您已設定太少的 NTP 伺服器、並提供選項讓您進一步瞭解此問題、加以修正或將其排除。
+
+image:insights.png["系統管理員深入分析頁面的螢幕擷取畫面"]
+
+.步驟
+. 在 System Manager 中、選取 * Insights * 。
+. 審查建議。
+
+
+.下一步
+執行任何必要的行動、以實作最佳實務做法、並最佳化叢集的安全性與效能。

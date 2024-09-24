@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: install-setup/set-up-data-access.html 
+keywords:  
+summary:  
+---
+= 啟用從 SAN 主機到 ASA R2 儲存系統的資料存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要設定資料存取、您應確保正確設定 SAN 用戶端上對於正確操作 ONTAP 至關重要的特定參數和設定。如果您使用的是 VMware 、則應移轉虛擬機器。
+
+
+
+== 從 SAN 主機設定資料存取
+
+從 SAN 主機設定 ASA R2 系統資料存取所需的組態、會因主機作業系統和傳輸協定而異。正確的組態對於最佳效能和成功的容錯移轉非常重要。
+
+請參閱的 ONTAP SAN 主機文件link:https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html["VMware vSphere SCSI 用戶端"^]、link:https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_8.html["VMware vSphere NVMe 用戶端"^]並link:https://docs.netapp.com/us-en/ontap-sanhost/overview.html["其他 SAN 用戶端"^]將主機正確設定為連線至 ASA R2 系統。
+
+
+
+== 移轉 VMware 虛擬機器
+
+如果您需要將 VM 工作負載從 ASA 儲存系統移轉至 ASA R2 儲存系統、 NetApp 建議您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere VMotion"^]執行即時且不中斷營運的資料移轉。
+
+.接下來呢？
+您已準備好link:../manage-data/provision-san-storage.html["配置儲存設備"]讓 SAN 主機讀取資料並將資料寫入儲存單元。

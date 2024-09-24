@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: administer/verify-host-connectivity.html 
+keywords: host, connectivity, asa r2 
+summary: 如果主機資料作業發生問題、您可以使用 ONTAP 系統管理員來驗證從主機到 ASA R2 儲存系統的連線是否為作用中。 
+---
+= 驗證 ASA R2 儲存系統上的主機連線能力
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果主機資料作業發生問題、您可以使用 ONTAP 系統管理員來驗證從主機到 ASA R2 儲存系統的連線是否為作用中。
+
+.步驟
+. 在 System Manager 中、選取 * 主機 * 。
++
+主機連線狀態會顯示在主機群組名稱旁邊、如下所示： * * 確定 * ：表示所有啟動器都已連線至兩個節點。* * 部分連線 * ：表示部分啟動器並未同時連接兩個節點。* * * 無連線 * ：表示未連線任何啟動器。
+
+
+
+.接下來呢？
+在主機上進行更新、以修正連線問題。ONTAP 會每十五分鐘重新檢查一次連線狀態。

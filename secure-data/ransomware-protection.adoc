@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: secure-data/ransomware-protection.html 
+keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
+summary: 使用防竄改快照來保護資料安全。防竄改快照無法刪除、也可用於恢復因勒索軟體攻擊而洩漏的資料。 
+---
+= 保護 ASA R2 儲存系統免受勒索軟體攻擊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了加強防範勒索軟體攻擊、請將快照複寫到遠端叢集、然後鎖定目的地快照、使其防竄改。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。
+
+
+
+== 初始化 SnapLock Compliance 時鐘
+
+在建立防竄改快照之前、您必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance 時鐘。
+
+.步驟
+. 選擇*叢集>總覽*。
+. 在 * 節點 * 區段中、選取 * 初始化 SnapLock Compliance 時鐘 * 。
+. 選擇 * 初始化 * 。
+. 確認規範時鐘已初始化。
++
+.. 選擇*叢集>總覽*。
+.. 在 * 節點 * 區段中image:icon_show_hide.png["白色背景上的三個藍色欄"]、選取；然後選取 * SnapLock Compliance 時鐘 * 。
+
+
+
+
+.接下來呢？
+在本地和目標叢集上初始化 SnapLock Compliance 時鐘之後link:../data-protection/snapshot-replication.html#step-3-create-a-replication-relationship["使用鎖定的快照建立複寫關係"]、您就可以開始使用了。

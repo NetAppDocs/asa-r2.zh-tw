@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_provision_san_storage.html 
+keywords: frontmatter, front matter 
+summary: 觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。 
+---
+= 在 ASA R2 系統上設定 SAN 儲存設備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是影片的記錄 `Provision SAN storage on your ASA r2 storage system`。
+
+link:videos-common-tasks.html#video_transcript_return_provision_san_storage["返回頁面"]
+
+您可以使用 ONTAP 系統管理員、快速輕鬆地為 ASA R2 儲存系統上的主機配置儲存單元。
+
+在此範例中、我們將為 VMware 主機建立六個新的儲存單元。
+
+從 System Manager （系統管理器）菜單中，選擇 *Storage* （存儲），然後選擇 *Add* （添加 * ）。
+
+輸入儲存單元的名稱、單元數量和每個單元的容量、然後選取主機作業系統。
+
+如果您建立多個單元、則依預設、每個單元都會建立相同的容量。
+
+選擇 * 更多選項 * 以輸入主機資訊。在此範例中、我們將選取 SCSI 傳輸協定並新增一個 iSCSI 主機。
+
+輸入主機名稱、然後新增主機啟動器和說明。
+
+選擇 * 排程快照 * 以定期快照保護您的儲存單元。
+
+選擇遠端保護來 * 將您的裝置複寫到遠端位置 * 。
+
+選取儲存 VM 和複寫原則；選取 * 新增 * 。
+
+儲存單元必須位於一致性群組中、才能進行複寫。輸入一致性群組名稱、然後選取 * 建立 * 。
+
+您已為 VMware 主機快速輕鬆地配置 6 個儲存單元、並提供本機和遠端資料保護。

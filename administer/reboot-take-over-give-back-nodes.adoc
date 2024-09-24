@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: administer/reboot-take-over-give-back-nodes.html 
+keywords: reboot, take over, give back, nodes, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: 為了維護、疑難排解、軟體更新或其他管理原因、您可能需要重新啟動節點。 
+---
+= 重新啟動 ASA R2 儲存系統上的節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了維護、疑難排解、軟體更新或其他管理原因、您可能需要重新啟動節點。當節點重新開機時、其 HA 合作夥伴會自動執行接管。然後、在重新開機的節點重新上線後、合作夥伴節點會執行自動恢復。
+
+.步驟
+. 在 System Manager 中、選取 * 叢集 > 總覽 * 。
+. 選取image:icon_kabob.gif["三個垂直藍點"]您要重新開機的節點旁的、然後選取 * 重新開機 * 。
+. 輸入您要重新啟動節點的原因、然後選取 * 重新開機 * 。
++
+您輸入重新開機的原因會記錄在系統稽核記錄中。
+
+
+
+.接下來呢？
+當節點重新開機時、其 HA 合作夥伴會執行接管作業、使資料服務不會中斷。重新開機完成後、 HA 合作夥伴會執行恢復。

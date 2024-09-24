@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: monitor/view-events-jobs.html 
+keywords: view cluster events, view cluster jobs, event log, system alerts, jobs, audit logs, asa r2, event notifications, email notifications 
+summary: 使用 ONTAP 系統管理員檢視系統中發生的錯誤或警示清單、以及建議的修正動作。 
+---
+= 檢視 ASA R2 儲存系統上的叢集事件和工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 ONTAP 系統管理員檢視系統中發生的錯誤或警示清單、以及建議的修正動作。您也可以檢視系統稽核記錄、以及作用中、已完成或失敗的工作清單。
+
+.步驟
+. 在 System Manager 中、選取 * 事件與工作 * 。
+. 檢視叢集事件和工作。
++
+[cols="2,4a"]
+|===
+| 若要檢視 ... | 執行此動作... 
+
+
+| 叢集事件  a| 
+選擇 * 事件 * ；然後選擇 * 事件日誌 * 。
+
+
+
+| Active IQ 建議  a| 
+選取 * 事件 * ；然後選取 * Active IQ 建議 * 。
+
+
+
+| 系統警示  a| 
+.. 選取 * 系統警示 * 。
+.. 選取您要採取行動的系統警示。
+.. 確認或隱藏警示。
+
+
+
+
+| 叢集工作  a| 
+選取 * 工作 * 。
+
+
+
+| 稽核記錄  a| 
+選取 * 稽核記錄 * 。
+
+|===
+
+
+
+
+== 傳送叢集事件和稽核記錄的電子郵件通知
+
+將系統設定為在發生叢集事件或稽核記錄項目時、將通知傳送至特定電子郵件地址。
+
+.步驟
+. 在System Manager中、選取*叢集>設定*。
+. 在 * 通知管理 * 旁邊，選擇image:icon_kabob.gif["三個垂直藍點"]。
+. 若要設定事件目的地、請選取 * 檢視事件目的地 * 、然後選取 * 事件目的地 * 。若要設定稽核記錄目的地、請選取 * 檢視稽核目的地 * 、然後選取 * 稽核記錄目的地 * 。
+. 選擇。 image:icon_add_blue_bg.png["藍色矩形加上加號、接著加上白色字母"]
+. 輸入目的地資訊、然後選取 * 新增 * 。
+
+
+.結果
+您新增的電子郵件地址現在會收到指定的叢集事件和稽核記錄電子郵件通知。

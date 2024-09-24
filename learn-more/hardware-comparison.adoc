@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: learn-more/hardware-comparison.html 
+keywords: compare asa r2, asa a1k, asa a70, asa a90 
+summary: ASA 系統提供專為僅 SAN 解決方案最佳化的硬體支援。ASA R2 系統提供硬體與軟體的最佳化。 
+searchtitle: 比較 ASA R2 系統與其他 ONTAP 系統 
+---
+= 比較 ASA R2 系統與其他 ONTAP 系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供統一化的硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。
+
+在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在所有其他 ONTAP 系統（ ASA 、 AFF 、 FAS ）上執行的 ONTAP 會被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。
+
+您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。
+
+* 從 System Manager （系統管理器）菜單中，選擇 *Cluster （羣集） > Overview （概述） * 。
+* 在 CLI 中輸入： `san config show`
+
+
+ONTAP 儲存系統的特性設定無法變更。
+
+執行統一化 ONTAP 特性設定之 ONTAP 系統的儲存層使用 Aggregate 做為儲存的基礎單元。Aggregate 擁有儲存系統中可用的一組特定磁碟。此集合會將其擁有的磁碟空間分配給磁碟區、以用於 LUN 和命名空間。統一化的 ONTAP 使用者可以使用命令列介面（ CLI ）來建立和修改集合體、磁碟區、 LUN 和命名空間。
+
+ASA R2 系統中的儲存層使用儲存可用性區域、而非集合體。儲存可用性區域是一個通用儲存池、可存取儲存系統中的所有可用磁碟。ASA R2 HA 配對中的兩個節點都可以看到儲存可用性區域。建立儲存單元（以 LUN 或 NVMe 命名空間為基礎）時、 ONTAP 會自動在儲存可用性區域中建立包含儲存虛擬機器（ VM ）的磁碟區、以容納儲存單元。由於這種自動化且簡化的儲存管理方法、某些系統管理員選項、 ONTAP 命令和 REST API 端點在 ASA R2 系統上無法使用、或使用量有限。例如、由於 ASA R2 系統的磁碟區建立與管理是自動化的、因此系統管理員中不會顯示 * Volumes `volume create` （磁碟區） * 功能表、而且不支援該命令。
+
+ASA R2 儲存設備以下列方式與其他 ONTAP 儲存系統進行比較：
+
+[cols="1h,2,2,2,2"]
+|===
+|  | ASA r2 | ASA | AFF | FAS 
+
+
+ a| 
+* ONTAP 特性 *
+| ASA r2 | ASA | 統一化 | 統一化 
+
+
+ a| 
+* SAN 傳輸協定支援 *
+| 是的 | 是的 | 是的 | 是的 
+
+
+ a| 
+* NAS 傳輸協定支援 *
+| 否 | 否 | 是的 | 是的 
+
+
+ a| 
+* 儲存層支援 *
+| 儲存可用性區域 | 集合體 | 集合體 | 集合體 
+|===
+下列 ASA 平台歸類為 ASA R2 系統：
+
+* ASA A1K
+* ASA A70
+* ASA A90
+
+
+.以取得更多資訊
+* 深入瞭解 link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["ONTAP 硬體系統"^]。
+* 請參閱中有關 ASA 和 ASA R2 系統的完整組態支援和限制link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
+* 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^]。
+
+
+
+
+== ASA R2 系統差異摘要
+
+以下說明 ASA R2 系統與 ONTAP 、 AFF 和 ASA 系統之間與 FAS 命令列介面（ CLI ）和 REST API 相關的主要差異。
+
+.使用傳輸協定服務建立預設 SVM
+新叢集會自動包含已啟用 SAN 傳輸協定的預設資料 SVM 。IP 資料生命安全裝置支援 iSCSI 和 NVMe / TCP 傳輸協定、並 `default-data-blocks`依預設使用服務原則。
+
+.自動建立 Volume
+建立儲存單元（ LUN 或命名空間）會自動從儲存可用區域建立磁碟區。這會產生一個簡化且通用的命名空間。刪除儲存單元會自動刪除相關的磁碟區。
+
+.精簡與完整資源配置的變更
+的儲存單元一律會在 ASA R2 儲存系統上精簡配置。不支援完整資源配置。

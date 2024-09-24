@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: manage-data/delete-storage-units.html 
+keywords: delete lun, delete namespace, delete storage unit, asa r2 
+summary: 刪除儲存單元以降低您需要的實體儲存容量、或是釋放其他主機應用程式所需的空間。 
+---
+= 刪除 ASA R2 儲存系統上的儲存單元
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果不再需要維護單元中包含的資料、請刪除儲存單元。刪除不再需要的儲存單元、有助於釋放其他主機應用程式所需的空間。
+
+.開始之前
+如果您要刪除的儲存單元位於複寫關係中的一致性群組中、則必須link:../data-protection/manage-consistency-groups.html#remove-a-storage-unit-from-a-consistency-group["從一致性群組中移除儲存單元"]先刪除它。
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 將游標移至您要刪除的儲存單元名稱上方。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 刪除 * 。
+. 確認刪除動作無法復原。
+. 選擇*刪除*。
+
+
+.接下來呢？
+您可以使用從刪除的link:modify-storage-units.html["增加尺寸"]儲存單元釋出到需要額外容量的儲存單元的空間。

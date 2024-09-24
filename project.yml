@@ -1,0 +1,26 @@
+---
+settings:
+  name: ASA r2
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
+sidebar:
+  entries:
+  - title: ASA R2 文件
+    url: "/index.html"
+  - section: release-notes
+  - section: get-started
+  - section: manage-data
+  - section: administer
+  - title: 維護硬體
+    url: "/maintain-hardware.html"
+  - section: learn-more
+  - section: get-help
+  - title: 法律聲明
+    url: "/legal-notices.html"
+product-family:
+  name: ONTAP
+  repo: ontap-family

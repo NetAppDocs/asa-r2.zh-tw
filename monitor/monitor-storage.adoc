@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-storage.html 
+keywords: monitor, storage, cluster, utilization, usage 
+summary: 監控儲存使用率、確保您擁有所需的儲存容量、以因應目前和未來的工作負載。 
+searchtitle: 使用 ONTAP System Manager | ASA R2 監控空間使用率 
+---
+= 監控 ASA R2 儲存系統上的叢集與儲存單元使用率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 ONTAP System Manager 監控儲存使用率、確保您擁有所需的儲存容量、以因應目前和未來的工作負載。
+
+
+
+== 監控叢集使用率
+
+定期監控叢集所耗用的儲存容量、以確保在空間不足之前、您已準備好在必要時擴充叢集容量。
+
+.步驟
+. 在System Manager中、選取* Dashboard *。
+. 在 * 容量 * 下、檢視叢集上的實體使用空間量和可用空間量。
++
+資料減量代表儲存效率所節省的空間量。
+
+
+
+.接下來呢？
+如果叢集的空間不足、或是沒有容量來滿足未來需求、您應該計畫使用 link:../administer/increase-storage-capacity.html["新增磁碟機"]ASA R2 系統來增加儲存容量。
+
+
+
+== 監控儲存單元使用率
+
+監控儲存單元所耗用的儲存容量、以便根據業務需求主動增加儲存單元的大小。
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 選取您要監控的儲存單元、然後選取 * 總覽 * 。
+. 在 * 儲存 * 下、檢視下列項目：
++
+** 儲存單元的大小
+** 已用空間量
+** 資料減量比率
++
+資料減量比率代表儲存效率所節省的空間量
+
+** 已使用快照
++
+使用的 Snapshot 代表快照所使用的儲存容量。
+
+
+
+
+
+.接下來呢？
+如果您的儲存單元接近容量、您應該link:../manage-data/modify-storage-units.html["修改儲存單元"]增加其大小。

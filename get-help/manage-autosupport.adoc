@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: get-help/manage-autosupport.html 
+keywords:  
+summary:  
+---
+= 在 ASA R2 儲存系統上管理 AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此機制可主動監控系統健全狀況、並自動傳送訊息給NetApp技術支援、您的內部支援組織及支援合作夥伴。AutoSupport
+
+設定叢集時、預設會啟用提供技術支援的 AutoSupport 訊息。您必須設定正確的選項、並擁有有效的郵件主機、才能將訊息傳送至您的內部支援組織。ONTAP 會在啟用 AutoSupport 訊息 24 小時後開始傳送訊息。
+
+.開始之前
+您必須是叢集管理員才能管理 AutoSupport 。
+
+
+
+== 測試 AutoSupport 連線能力
+
+設定叢集之後、您應該測試 AutoSupport 連線能力、以確認技術支援人員是否會收到 AutoSupport 所產生的訊息。
+
+.步驟
+. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 測試連線 * 。
+. 輸入 AutoSupport 訊息的主旨、然後選取 * 傳送測試 AutoSupport 訊息 * 。
+
+
+.接下來呢？
+您的已驗證技術支援人員可以從 ASA R2 系統接收 AutoSupport 訊息、並會提供必要的資料、協助您在遇到問題時提供協助。
+
+
+
+== 新增 AutoSupport 收件者
+
+將內部支援組織的成員新增至接收 AutoSupport 訊息的電子郵件地址清單。
+
+.步驟
+. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 更多選項 * 。
+. 在 *Email* 旁邊，選擇image:icon_edit_pencil_blue_outline.png["鉛筆圖示"]；然後選擇image:icon_add.gif["藍色加號、後面接著新增一詞"]。
+. 輸入收件者的電子郵件地址、然後輸入收件者類別。
++
+對於合作夥伴、請選擇 * 合作夥伴 * 作為收件者類別。選擇 * 一般 * 作為您內部支援組織的成員。
+
+. 選取儲存。
+
+
+.接下來呢？
+您新增的電子郵件地址會收到其特定收件者類別的新 AutoSupport 訊息。
+
+
+
+== 傳送 AutoSupport 資料
+
+如果您的 ASA R2 系統發生問題、 AutoSupport 資料可能會大幅縮短識別和解決問題所需的時間。
+
+.步驟
+. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 產生並傳送 * 。
+. 輸入 AutoSupport 訊息的主旨，然後選取 * 傳送 * 。
+
+
+.接下來呢？
+您的 AutoSupport 資料會傳送給技術支援人員。
+
+
+
+== 抑制支援案例的產生
+
+如果您要在 ASA R2 系統上執行升級或維護、您可能需要在升級或維護完成之前、抑制 AutoSupport 產生的支援案例。
+
+.步驟
+. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 抑制支援個案產生 * 。
+. 指定抑制支援案例產生的時數、然後選取不想產生案例的節點。
+. 選取*傳送*。
+
+
+.接下來呢？
+AutoSupport 案例將不會在您指定的時間內產生。如果您在指定的時間到期之前完成升級或維護、您應該立即恢復支援案例的產生。
+
+
+
+== 恢復支援案例的產生
+
+如果您在升級或維護期間已抑制支援案例的產生、則應在升級或維護完成後立即恢復支援案例的產生。
+
+.步驟
+. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 恢復支援案例產生 * 。
+. 選取您要恢復所產生 AutoSupport 個案的節點。
+. 選取*傳送*。
+
+
+.結果
+AutoSupport 案例會根據需要自動為您的 ASA R2 系統產生。

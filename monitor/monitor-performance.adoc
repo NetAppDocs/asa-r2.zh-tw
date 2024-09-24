@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-performance.html 
+keywords: monitor, cluster, performance, storage units, latency, iops, throughput 
+summary: 監控叢集和儲存單元的效能、以判斷延遲、 IOPS 和處理量對關鍵業務應用程式的影響。 
+searchtitle: 使用 ONTAP System Manager| ASA R2 監控叢集效能 
+---
+= 監控 ASA R2 儲存系統上的叢集與儲存單元效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 ONTAP System Manager 監控叢集的整體效能和特定儲存單元的效能、以判斷延遲、 IOPS 和處理量對關鍵業務應用程式的影響程度。效能可在一小時到一年的各種時間段內監控。
+
+例如、假設關鍵應用程式發生高延遲和低處理量。當您檢視過去五個工作天的叢集效能時、您發現每天的效能會同時降低。當非關鍵程序開始在背景執行時、您可以使用此資訊來判斷關鍵應用程式正在競爭叢集資源。接著您就能修改 QoS 原則、以限制非關鍵工作負載對系統資源的影響、並確保關鍵工作負載符合最低處理量目標。
+
+
+
+== 監控叢集效能
+
+使用叢集效能指標來判斷您是否需要移轉工作負載、以將延遲降至最低、並將關鍵應用程式的 IOPS 和處理量最大化。
+
+.步驟
+. 在System Manager中、選取* Dashboard *。
+. 在 * 效能 * 下、依小時、日、週、月或年檢視叢集的延遲、 IOPS 和處理量。
+. 選取image:icon_download.png["藍色向下箭頭"]以下載效能資料。
+
+
+.接下來呢？
+使用叢集效能指標來分析您是否需要修改 QoS 原則、或是對應用程式工作負載進行其他調整、以最大化整體叢集效能。
+
+
+
+== 監控儲存單元效能
+
+使用儲存單元效能指標來判斷特定應用程式對延遲、 IOPS 和處理量的影響。
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 選取您要監控的儲存單元、然後選取 * 總覽 * 。
+. 在 * 效能 * 下、依小時、日、週、月或年檢視儲存單元的延遲、 IOPS 和處理量。
+. 選取image:icon_download.png["藍色向下箭頭"]以下載效能資料。
+
+
+.接下來呢？
+使用您的儲存單元效能指標來分析是否需要修改指派給儲存單元的 QoS 原則、以減少延遲並將 IOPS 和處理量最大化。

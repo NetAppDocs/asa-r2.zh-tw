@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: manage-data/modify-storage-units.html 
+keywords: increase storage units, resize luns, resize namespaces, san, nvme,  increase lun size, increase namespace, increase, modify, edit, luns, namespaces, modify quality of service, qos, host mapping, mapping host 
+summary: 透過編輯儲存單元來增加容量、更新服務品質（ QoS ）原則或變更主機對應、來回應儲存系統效能和資料的變更。 
+---
+= 修改 ASA R2 儲存系統上的儲存單元
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要最佳化 ASA R2 系統的效能、您可能需要修改儲存單元、以增加儲存單元的容量、更新 QoS 原則或變更對應至單元的主機。例如、如果將新的關鍵應用程式工作負載新增至現有的儲存單元、您可能需要變更套用至儲存單元的服務品質（ QoS ）原則、以支援新應用程式所需的效能等級。
+
+.增加容量
+在儲存單元達到完整容量之前、請先增加儲存單元的大小、以避免在儲存單元的可寫入空間不足時遺失資料存取。儲存單元的容量可增加至 128 TB 、這是 ONTAP 允許的最大容量。
+
+.修改主機對應
+修改對應至儲存單元的主機、以協助平衡工作負載或重新設定系統資源。
+
+.修改 QoS 原則
+服務品質（ QoS ）原則可確保關鍵工作負載的效能不會因競爭工作負載而降低。您可以使用 QoS 原則來設定 QoS 處理量 _limit 及 QoS 處理量 _security_ 。
+
+* QoS 處理量限制
++
+QoS 處理量 _limit 限制工作負載對系統資源的影響、只要將工作負載的處理量限制在最大 IOPS 或 Mbps 、或 IOPS 和 Mbps 。
+
+* QoS 處理量保證
++
+QoS 處理量 _ 保證 _ 可確保關鍵工作負載的處理量不會低於 IOPS 或 Mbps 的最低數量、或 IOPS 和 Mbps 、無論競爭工作負載的需求為何、都能達到最低處理量目標。
+
+
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 將游標移至您要編輯的儲存單元名稱上方。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 編輯 * 。
+. 視需要更新儲存單元參數、以增加容量、變更 QoS 原則、以及更新主機對應。
+
+
+.接下來呢？
+如果您增加了儲存單元的大小、則必須重新掃描主機上的儲存單元、以便主機識別大小變更。

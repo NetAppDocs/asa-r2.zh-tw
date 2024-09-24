@@ -1,0 +1,40 @@
+---
+section: manage-data
+title: 使用 ONTAP 管理資料
+entries:
+- title: 常見工作影片
+  url: "/videos/videos-common-tasks.html"
+- title: 管理您的儲存設備
+  entries:
+  - title: 配置儲存設備
+    url: "/manage-data/provision-san-storage.html"
+  - title: 複製資料
+    url: "/manage-data/data-cloning.html"
+  - title: 修改儲存單元
+    url: "/manage-data/modify-storage-units.html"
+  - title: 刪除儲存單元
+    url: "/manage-data/delete-storage-units.html"
+  - title: 儲存限制
+    url: "/manage-data/storage-limits.html"
+- title: 保護您的資料
+  entries:
+  - title: 建立快照
+    url: "/data-protection/create-snapshots.html"
+  - title: 設定快照複寫
+    url: "/data-protection/snapshot-replication.html"
+  - title: 保護 Kubernetes
+    url: "/data-protection/protect-kubernetes.html"
+  - title: 還原資料
+    url: "/data-protection/restore-data.html"
+  - title: 管理一致性群組
+    url: "/data-protection/manage-consistency-groups.html"
+  - title: 管理保護原則和排程
+    url: "/data-protection/policies-schedules.html"
+- title: 保護資料安全
+  entries:
+  - title: 加密靜態資料
+    url: "/secure-data/encrypt-data-at-rest.html"
+  - title: 防範勒索軟體攻擊
+    url: "/secure-data/ransomware-protection.html"
+  - title: 安全的 NVMe 連線
+    url: "/secure-data/nvme-tcp-connections.html"

@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: get-started/learn-about.html 
+keywords: asa r2, asa a1k, asa 70, asa 90 
+summary: ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、為僅限 SAN 的客戶提供簡化的體驗。 
+searchtitle: 瞭解 ASA A1K 、 ASA A70 和 ASA A90 儲存系統 
+---
+= 瞭解 ASA R2 儲存系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+全新的 NetApp ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。
+
+ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。NVMe 傳輸協定支援主機和儲存設備之間的直接路徑。
+
+在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。
+
+ASA R2 系統採用一致性群組的儲存單元：
+
+* _storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。
+* _A Consistency group_ 是以單一單元管理的儲存單元集合。
+
+
+ASA R2 系統使用儲存單元和一致性群組來簡化儲存管理和資料保護。例如，假設您的資料庫由一致性群組中的 10 個儲存單元組成，而您需要備份整個資料庫。您可以備份一致性群組來保護整個資料庫、而無需個別備份每個儲存單元。
+
+為了協助保護資料免於遭竊或勒索軟體等惡意攻擊、 ASA R2 系統支援內建金鑰管理程式、雙層加密、防竄改快照、多因素驗證和多重管理驗證。
+
+ASA R2 系統不支援叢集混合搭配目前的 ASA 、 AFF 或 FAS 系統。
+
+.以取得更多資訊
+* 如link:https://hwu.netapp.com/["NetApp Hardware Universe"^]需ASA R2 系統支援與限制的詳細資訊，請參閱。
+* 深入瞭解 link:../learn-more/hardware-comparison.html["相較於 ASA 系統、全新的 ASA R2 系統"]。
+* 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"]。
+

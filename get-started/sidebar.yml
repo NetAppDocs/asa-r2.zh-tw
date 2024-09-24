@@ -1,0 +1,28 @@
+---
+section: get-started
+title: 開始使用
+entries:
+- title: 瞭解 ASA R2 系統
+  url: "/get-started/learn-about.html"
+- title: 快速入門
+  url: "/get-started/quick-start.html"
+- title: 安裝 ASA R2 系統
+  entries:
+  - title: 安裝工作流程
+    url: "/install-setup/install-setup-workflow.html"
+  - title: 檢閱硬體需求
+    url: "/install-setup/install-setup-requirements.html"
+  - title: 準備安裝
+    url: "/install-setup/prepare-hardware.html"
+  - title: 安裝硬體
+    url: "/install-setup/deploy-hardware.html"
+  - title: 纜線硬體
+    url: "/install-setup/cable-hardware.html"
+  - title: 開啟系統電源
+    url: "/install-setup/power-on-hardware.html"
+- title: 設定 ASA R2 系統
+  entries:
+  - title: 設定叢集
+    url: "/install-setup/initialize-ontap-cluster.html"
+  - title: 設定資料存取
+    url: "/install-setup/set-up-data-access.html"

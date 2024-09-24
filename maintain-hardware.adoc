@@ -1,0 +1,14 @@
+---
+sidebar: sidebar 
+permalink: maintain-hardware.html 
+keywords: asa r2, asa a1k, asa 70, asa 90, maintain, hardware 
+summary: 瞭解如何在 ASA R2 系統上執行維護程序。 
+---
+= 維護 ASA R2 儲存系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+請移至 https://docs.netapp.com/us-en/ontap-systems/asa-r2-landing-maintain/index.html["ASA R2 維護文件"^]以瞭解如何在 ASA R2 系統元件上執行維護程序。

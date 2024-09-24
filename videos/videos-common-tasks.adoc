@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: videos/videos-common-tasks.html 
+keywords: demo,asa r2, videos 
+summary: 觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。 
+---
+= ASA R2 儲存系統影片示範
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。
+
+.在 ASA R2 系統上設定 SAN 通訊協定
+video::96cf3b2d-1cbd-4fff-a6e7-b1f0014ef793[panopto]
+link:video_transcript_configure_san_protocols.html["視訊交談記錄"]
+
+[#video_transcript_return_configure_san_protocols]
+.在 ASA R2 系統上配置 SAN 儲存設備
+video::1d3e1a18-7dbe-44e9-a53d-b1f0014ef7c5[panopto]
+link:video_transcript_provision_san_storage.html["視訊交談記錄"]
+
+[#video_transcript_return_provision_san_storage]
+.從 ASA R2 系統將資料複寫到遠端叢集
+video::4b78312d-1bfa-4df5-afac-b1f0014ef80e[panopto]
+link:video_transcript_replicate_data.html["視訊交談記錄"]

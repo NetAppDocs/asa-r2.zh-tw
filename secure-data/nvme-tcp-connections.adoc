@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: secure-data/nvme-tcp-connections.html 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption 
+summary: 透過設定 NVMe / TCP over TLS 來加密透過網路在 NVMe / TCP 主機和 ONTAP 之間傳送的所有資料、來增強資料安全性。 
+---
+= ASA R2 儲存系統上的安全 NVMe 連線
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用的是 NVMe 傳輸協定、您可以設定頻內驗證、以增強資料安全性。頻內驗證可在 NVMe 主機和 ASA R2 系統之間進行安全的雙向單向驗證。頻內驗證適用於所有 NVMe 主機。如果您使用的是 NVMe / TCP 傳輸協定、您可以設定傳輸層安全性（ TLS ）來加密透過網路在 NVMe / TCP 主機和 ASA R2 系統之間傳送的所有資料、進一步增強資料安全性。
+
+.步驟
+. 選取 * 主機 * 、然後選取 * NVMe * 。
+. 選擇。image:icon_add_blue_bg.png["藍色方塊加上加號、接著加上新增白色字母"]
+. 輸入主機名稱、然後選取主機作業系統。
+. 輸入主機說明、然後選取要連線到主機的儲存 VM 。
+. 選取image:icon_dropdown_arrow.gif["藍色向下箭頭"]主機名稱旁的。
+. 選取 * 頻內驗證 * 。
+. 如果您使用的是 NVMe / TCP 傳輸協定、請選取 * 需要傳輸層安全性（ TLS ） * 。
+. 選取*「Add*」。
+
+
+.結果
+透過頻內驗證和 / 或 TLS 來增強資料的安全性。

@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: learn-more/rest-api-support.html 
+keywords: asa, asa r2, rest, rest api, asa r2 rest api 
+summary: ASA R2 REST API 是以統一化 ONTAP 特性設定所提供的 REST API 為基礎、其中有許多變更會因應 ASA R2 特性設定的獨特特性和功能。 
+---
+= ASA R2 的 REST API 支援
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2 REST API 是以統一化 ONTAP 特性設定所提供的 REST API 為基礎、其中有許多變更會因應 ASA R2 特性設定的獨特特性和功能。
+
+
+
+== API 變更類型
+
+ASA R2 系統 REST API 和 FAS 、 AFF 和 ASA 系統所提供的統一化 ONTAP REST API 之間有多種不同類型。瞭解變更類型將有助於您更好地利用線上 API 參考文件。
+
+.統一化 ONTAP 不支援新的 ASA R2 端點
+ASA R2 REST API 中新增了數個端點、但統一化 ONTAP 無法使用這些端點。
+
+例如、 ASA R2 系統的 REST API 中新增了一個區塊 Volume 端點。區塊磁碟區端點可同時存取 LUN 和 NVMe 命名空間物件、以實現資源的彙總檢視。此功能僅可透過 REST API 取得。
+
+另一個例子是、 * 儲存單元 * 端點提供 LUN 和 NVMe 命名空間的彙總檢視。有多個端點、它們都是以或衍生自 `/api/storage/storage-units`為基礎。您也應該檢閱 `/api/storage/luns`和 `/api/storage/namespaces`。
+
+.限制某些端點使用的 HTTP 方法
+ASA R2 提供的多個端點都有限制、可與統一化 ONTAP 相比、使用哪些 HTTP 方法。例如、在 `/api/protocols/nvme/services` ASA R2 系統上使用端點時、不允許進行 POST 和 DELETE 。
+
+.端點和 HTTP 方法的內容變更
+某些 ASA R2 系統端點和方法組合不支援統一化 ONTAP 特性設定中所有可用的已定義屬性。例如、當使用修補程式搭配端點 `/api/storage/volumes/{uuid}`時、 ASA R2 不支援多個屬性、包括：
+
+* `autosize.maximum`
+* `autosize.minimum`
+* `autosize.mode`
+
+
+.內部處理的變更
+ASA R2 處理某些 REST API 要求的方式有幾項變更。例如、使用端點的刪除要求 `/api/storage/luns/{uuid}`會以非同步方式處理。
+
+
+
+== 使用 OAuth 2.0 增強安全性
+
+OAuth 2.0 是業界標準授權架構。它用於根據簽署的存取權杖來限制及控制受保護資源的存取。您可以使用系統管理員來設定 OAuth 2.0 、以保護 ASA R2 系統資源。
+
+使用 System Manager 設定 OAuth 2.0 之後、即可控制其餘 API 用戶端的存取。您必須先從授權伺服器取得存取權杖。然後 REST 用戶端會使用 HTTP 授權要求標頭、將權杖以承載權杖的形式傳送至 ASA R2 叢集。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["使用 OAuth 2.0 進行驗證與授權"^] 。
+
+
+
+== 透過 Swagger UI 存取 ASA R2 API 參考文件
+
+您可以透過 ASA R2 系統上的 Swagger UI 來存取 REST API 參考文件。
+
+.關於這項工作
+如需 REST API 的詳細資訊、請存取 ASA R2 參考文件頁面。在此過程中、您可以搜尋字串 * 平台詳細資料 * 、以尋找 ASA R2 系統支援 API 呼叫和內容的詳細資料。
+
+.開始之前
+您必須具備下列條件：
+
+* ASA R2 系統叢集管理 LIF 的 IP 位址或主機名稱
+* 擁有權限可存取 REST API 之帳戶的使用者名稱和密碼
+
+
+.步驟
+. 在瀏覽器中鍵入 URL 、然後按 * Enter * ： +
+`https://<ip_address>/docs/api`
+. 使用您的系統管理員帳戶登入。
++
+ASA R2 API 文件頁面會顯示、並依主要資源類別組織 API 呼叫。
+
+. 若要查看僅適用於 ASA R2 系統的 API 呼叫範例、請向下捲動至 *SAN* 類別、然後按一下 * 取得 /storage / storage units * 。
+

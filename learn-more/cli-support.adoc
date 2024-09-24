@@ -1,0 +1,237 @@
+---
+sidebar: sidebar 
+permalink: learn-more/cli-support.html 
+keywords: asa r2, cli, asa r2, asa a1k, asa 70, asa 90 
+summary: ASA R2 系統不支援某些 ONTAP 命令（ ASA A1K 、 ASA 70 、 ASA 90 ）。 
+---
+= ONTAP CLI 支援 ASA R2 儲存系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2 系統不使用傳統的集合體（擁有儲存系統中可用的一組特定磁碟）、而是使用 _ 儲存可用區域 _ 。儲存可用性區域是一個通用儲存池、可存取儲存系統中的所有可用磁碟。ASA R2 HA 配對中的兩個節點都可以看到儲存可用性區域。建立儲存單元（ LUN 或 NVMe 命名空間）時、 ONTAP 會自動在儲存可用性區域中建立包含儲存虛擬機器（ VM ）的磁碟區、以容納儲存單元。
+
+由於這種簡化的儲存管理方法、 `storage aggregate` ASA R2 系統不支援命令。對某些 `lun`和 `volume`命令及參數的支援也受到限制。
+
+R2 上的 ASA 不支援下列命令和命令集：
+
+.不支援的 <code> </code> 命令
+[%collapsible]
+====
+* `lun copy`
+* `lun geometry`
+* `lun import`
+* `lun mapping add-reportng-nodes`
+* `lun mapping-remove-reporting-nodes`
+* `lun maxsize`
+* `lun move`
+* `lun move-in-volume`
++
+此命令會取代為 LUN 重新命名 /vserver NVMe 命名空間重新命名。
+
+* `lun transition`
+
+
+====
+.不支援的 <code> </code> 命令和參數
+[%collapsible]
+====
+* `volume autosize`
+* `volume create`
+* `volume delete`
+* `volume expand`
+* `volume modify`
++
+此命令與下列參數搭配使用時無法使用：
+
++
+** `-anti-ransomware-state`
+** `-autosize`
+** `-autosize-mode`
+** `-autosize-shrik-threshold-percent`
+** `-autosize-reset`
+** `-group`
+** `-is-cloud-write-enabled`
+** `-is-space-enforcement-logical`
+** `-max-autosize`
+** `-min-autosize`
+** `-offline`
+** `-online`
+** `-percent-snapshot-space`
+** `-qos*`
+** `-size`
+** `-snapshot-policy`
+** `-space-guarantee`
+** `-space-mgmt-try-first`
+** `-state`
+** `-tiering-policy`
+** `-tiering-minimum-cooling-days`
+** `-user`
+** `-unix-permisions`
+** `-vserver-dr-protection`
+
+
+* `volume make-vsroot`
+* `volume mount`
+* `volume move`
+* `volume offline`
+* `volume rehost`
+* `volume rename`
+* `volume restrict`
+* `volume transition-prepare-to-downgrade`
+* `volume unmount`
+
+
+====
+.不支援的 <code> 相關 </code> 命令
+[%collapsible]
+====
+* `volume clone create`
+* `volume clone split`
+
+
+====
+.不支援的 <code> SnapLock </code> 命令
+[%collapsible]
+====
+* `volume snaplock modify`
+
+
+====
+.不支援的 <code> 快速 </code> 命令
+[%collapsible]
+====
+* `volume snapshot`
+* `volume snapshot autodelete modify`
+* `volume snapshot policy modify`
+
+
+====
+.不支援的 <code> tM1000e </code> 命令集
+[%collapsible]
+====
+* `volume activity-tracking`
+* `volume analytics`
+* `volume conversion`
+* `volume file`
+* `volume flexcache`
+* `volume flexgroup`
+* `volume inode-upgrade`
+* `volume object-store`
+* `volume qtree`
+* `volume quota`
+* `volume reallocation`
+* `volume rebalance`
+* `volume recovery-queue`
+* `volume schedule-style`
+
+
+====
+.不支援的 <code> </code> 命令
+[%collapsible]
+====
+* `storage failover show-takeover`
+* `storage failover show-giveback`
+* `storage aggregate relocation`
+* `storage disk assign`
+* `storage disk partition`
+* `storage disk reassign`
+
+
+====
+.以取得更多資訊
+如link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP 命令參照"]需支援命令的完整清單、請參閱
+
+
+
+== 使用 CLI 設定 ONTAP ASA R2 叢集
+
+建議您link:../install-setup/initialize-ontap-cluster.html["使用系統管理員來設定 ONTAP ASA R2 叢集"]。System Manager 提供快速且簡單的引導式工作流程、讓您的叢集能夠正常運作。不過、如果您習慣使用 ONTAP 命令、則可以選用 ONTAP 命令列介面（ CLI ）來進行叢集設定。使用 CLI 進行叢集設定、除了使用 System Manager 設定叢集之外、沒有其他選項或優點。
+
+在叢集設定期間、會建立預設的資料儲存虛擬機器（ VM ）、建立初始儲存單元、並自動探索資料生命。您也可以選擇啟用網域名稱系統（ DNS ）來解析主機名稱、將叢集設定為使用網路時間傳輸協定（ NTS ）進行時間同步、以及啟用靜態資料的加密。
+
+.開始之前
+收集下列資訊：
+
+* 叢集管理IP位址
++
+叢集管理 IP 位址是叢集管理員用來存取管理儲存 VM 及管理叢集的叢集管理介面唯一的 IPv4 位址。您可以向負責指派組織IP位址的管理員取得此IP位址。
+
+* 網路子網路遮罩
++
+在叢集設定期間、 ONTAP 會建議一組適合您組態的網路介面。如有必要、您可以調整建議。
+
+* 網路閘道 IP 位址
+* 合作夥伴節點 IP 位址
+* DNS網域名稱
+* DNS 名稱伺服器 IP 位址
+* NTP 伺服器 IP 位址
+* 資料子網路遮罩
+
+
+.步驟
+. 開啟 HA 配對的兩個節點。
+. 顯示在本機網路上探索到的節點：
++
+[source, cli]
+----
+system node show-discovered -is-in-cluster false
+----
+. 啟動叢集設定精靈：
++
+[source, cli]
+----
+cluster setup
+----
+. 認可AutoSupport 此聲明。
+. 輸入節點管理介面連接埠、 IP 位址、網路遮罩和預設閘道的值。
+. 按 *Enter* 繼續使用命令列介面進行設定；然後輸入 *cre* 以建立新叢集。
+. 接受系統預設值或輸入您自己的值。
+. 在第一個節點上完成設定後、請登入叢集。
+. 驗證叢集是否為作用中、且第一個節點是否正常：
++
+[source, cli]
+----
+system node show-discovered
+----
+. 將第二個節點新增至叢集：
++
+[source, cli]
+----
+cluster add-node -cluster-ip <partner_node_ip_address>
+----
+. 您也可以在叢集之間同步處理系統時間
++
+[cols="1h, 1"]
+|===
+
+
+| 不使用對稱驗證進行同步處理  a| 
+[source, cli]
+----
+cluster time-service ntp server create -server <server_name>
+----
+
+
+| 與對稱驗證同步  a| 
+[source, cli]
+----
+cluster time-service ntp server create -server <server_ip_address> -key-id <key_id>
+----
+|===
++
+.. 確認叢集與 NTP 伺服器相關聯：
++
+[source, cli]
+----
+Cluster time-service ntp show
+----
+
+
+. 或者、下載並執行link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["ActiveIQ Config Advisor"]以確認您的組態。
+
+
+.接下來呢？
+您已準備好link:../install-setup/set-up-data-access.html["設定資料存取"]從 SAN 用戶端到系統。

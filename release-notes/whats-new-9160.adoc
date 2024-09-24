@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9160.html 
+keywords:  
+summary:  
+---
+= ASA R2 系統的 ONTAP 9 。 16.0 的新功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.10 提供的新功能。
+
+
+
+== 平台
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| 全新平台  a| 
+以下新的 NetApp ASA R2 系統可供使用。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。
+
+* ASA A1K
+* ASA A70
+* ASA A90
+
+
+|===
+
+
+== 系統管理員
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../get-started/learn-about.html["精簡支援僅限 SAN 的客戶"] | System Manager 經過簡化、可支援重要的 SAN 功能、同時移除 SAN 環境中不支援的功能和功能可見度。 
+|===
+
+
+== 儲存管理
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../manage-data/provision-san-storage.html["簡化儲存管理"]  a| 
+ASA R2 系統採用一致性群組的儲存單元、以簡化儲存管理。
+
+* _storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。
+* _A Consistency group_ 是以單一單元管理的儲存單元集合。
+
+
+|===
+
+
+== 資料安全
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../secure-data/encrypt-data-at-rest.html["內建金鑰管理程式與雙層加密"]  a| 
+ASA R2 系統支援內建金鑰管理程式和雙層（硬體和軟體）加密。
+
+|===

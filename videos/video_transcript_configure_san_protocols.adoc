@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_configure_san_protocols.html 
+keywords: frontmatter, front matter 
+summary: 觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。 
+---
+= 在 ASA R2 系統上設定 SAN 通訊協定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是影片的記錄 `Configure SAN protocols on your ASA r2 storage system`。
+
+link:videos-common-tasks.html#video_transcript_return_configure_san_protocols["返回頁面"]
+
+您可以使用 ONTAP 系統管理員來快速輕鬆地設定 SAN 通訊協定。在此範例中、我們將為 iSCSI 網路介面設定 IP 位址。
+
+從 System Manager 儀表板選取 * 設定通訊協定 * 。
+
+在 *IP* 下，選擇 * 配置 IP 接口 * ，然後選擇 * 添加子網 * 。
+
+輸入子網路名稱、然後輸入子網路 IP 位址。
+
+輸入子網路遮罩、並選擇性地輸入閘道、然後選取 * 新增 * 。
+
+選取您剛建立的子網路、然後選取 * 儲存 * 。
+
+您只需輕鬆快速地為 iSCSI 網路介面設定 IP 位址即可。
