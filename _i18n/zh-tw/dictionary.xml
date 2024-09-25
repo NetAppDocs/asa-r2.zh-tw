@@ -256,7 +256,6 @@
   <block id="cd5ce84f06573fa36efd7de37fc1e5ba" category="summary">如果主機資料作業發生問題、您可以使用 ONTAP 系統管理員來驗證從主機到 ASA R2 儲存系統的連線是否為作用中。</block>
   <block id="29aef3c4098e0c02a759b7ceeffd7bf5" category="doc">驗證 ASA R2 儲存系統上的主機連線能力</block>
   <block id="2066e94a3e5e94a8e4ebdca7307614e8" category="list-text">在 System Manager 中、選取 * 主機 * 。</block>
-  <block id="d6a0ea19a115b4b6c1b0c1db29d0f8c8" category="paragraph">主機連線狀態會顯示在主機群組名稱旁邊、如下所示： * * 確定 * ：表示所有啟動器都已連線至兩個節點。* * 部分連線 * ：表示部分啟動器並未同時連接兩個節點。* * * 無連線 * ：表示未連線任何啟動器。</block>
   <block id="7d19a1e7e72002fdb422d749fd4507db" category="paragraph">在主機上進行更新、以修正連線問題。ONTAP 會每十五分鐘重新檢查一次連線狀態。</block>
   <block id="69cb7ab40e4d5787db8003ef13bf1939" category="summary">建立快照以備份 ASA R2 系統上的資料。您可以建立手動快照、也可以使用一致性群組來排程自動快照。</block>
   <block id="a72d39c43f1da3c8e4c29dc1a6cf6185" category="searchtitle">使用 ONTAP System Manager | ASA R2 建立快照以備份資料</block>
@@ -1586,4 +1585,8 @@
   <block id="580170da57ca90dca0f62ce9faf29c6e" category="sidebar">安全的 NVMe 連線</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
   <block id="4eae1c6da6a9edad5e5228cf8cfe3cdb" category="sidebar">ONTAP 9.16.0 的新功能</block>
+  <block id="0a57cb4625de2148aa1f3fe6815e78eb" category="paragraph">主機連線狀態會顯示在主機群組名稱旁邊、如下所示：</block>
+  <block id="5b13dc2b1f3390e14daacb1f2f882717" category="list-text">* 確定 * ：表示所有啟動器都已連線至兩個節點。</block>
+  <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">* 部分連線 * ：表示部分啟動器並未同時連接兩個節點。</block>
+  <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">* 無連線 * ：表示未連線任何啟動器。</block>
 </blocks>
