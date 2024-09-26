@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.10 提供的新功能。
+瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。
 
 
 

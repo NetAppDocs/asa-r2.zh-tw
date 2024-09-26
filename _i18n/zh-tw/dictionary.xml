@@ -1406,7 +1406,6 @@
   <block id="1a09338f7e8c6093f1d857fedaa4f9ab" category="list-text">審查建議。</block>
   <block id="e175dd30709c0589a580475db0f0f8fb" category="paragraph">執行任何必要的行動、以實作最佳實務做法、並最佳化叢集的安全性與效能。</block>
   <block id="826af48aa0c4b34379a1a65ba5721ebe" category="doc">ASA R2 系統的 ONTAP 9 。 16.0 的新功能</block>
-  <block id="e887ad295f9758b43d9c2af5b2fbd1b9" category="paragraph">瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.10 提供的新功能。</block>
   <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">平台</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">更新</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
@@ -1529,8 +1528,6 @@
   <block id="adfd33fbce17f21dd8572d1c07677009" category="sidebar">加密靜態資料</block>
   <block id="d8f87ca27811771e6005ec1e8989bb8c" category="sidebar">更多 ASA R2 資源</block>
   <block id="ff529c4d04327f7d20ae4d7b457bcd18" category="sidebar">ASA 資料表</block>
-  <block id="8162203e3ec38c896e5f6d688115d731" category="sidebar">ONTAP REST API 參考</block>
-  <block id="27c7ca02055622739ea07ba1243d7683" category="sidebar">ONTAP EMS 參考</block>
   <block id="69913262552614dd6dfbb8b0ef47e2e7" category="sidebar">其他 ONTAP 資源</block>
   <block id="ed93db7141f383118e5c6b577cb5fb60" category="sidebar">適用於其他 ONTAP 系統的文件</block>
   <block id="dee4aa6b5a1005459bfb48609b6d209e" category="sidebar">ASA R2 文件</block>
@@ -1589,4 +1586,5 @@
   <block id="5b13dc2b1f3390e14daacb1f2f882717" category="list-text">* 確定 * ：表示所有啟動器都已連線至兩個節點。</block>
   <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">* 部分連線 * ：表示部分啟動器並未同時連接兩個節點。</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">* 無連線 * ：表示未連線任何啟動器。</block>
+  <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。</block>
 </blocks>
