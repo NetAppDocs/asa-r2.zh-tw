@@ -332,7 +332,6 @@
   <block id="a3d38335033dbc3e63c68f76b308e45c" category="list-text">在 * 最大快照數 * 下、輸入您要保留一致性群組的最大快照數。</block>
   <block id="72c9cc57bd3acc347a45ea0b780c14ab" category="list-text">或者、在 * SnapMirror label* 下輸入 SnapMirror 標籤。</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
-  <block id="6b14136e2b75ff639f5ca263a5dd2a6a" category="paragraph">現在您的資料已透過快照進行保護、您應該<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>將一致性群組複製到地理位置遠端位置、以便進行備份和災難恢復。</block>
   <block id="cf8693d6af83f33c68a196b12cffa29d" category="section-title">從一致性群組移除快照資料保護</block>
   <block id="0e79d9ba3e974f486c0f5945f4e9673a" category="paragraph">當您從一致性群組移除快照資料保護時、一致性群組中所有儲存單元的快照都會停用。</block>
   <block id="ddc789e2715034046ecb8d1c8ec50205" category="list-text">將游標移到您要停止保護的一致性群組上。</block>
@@ -365,7 +364,6 @@
   <block id="9c09f709a9761f564907022b7331dbb1" category="paragraph">如果您需要繼續保護儲存單元的資料、請將儲存單元新增至另一個一致性群組。</block>
   <block id="793fd1e28f15d34822702f9d70403404" category="section-title">刪除一致性群組</block>
   <block id="2cd894b6ee2553a527a03b1a9086238b" category="paragraph">如果不再需要將一致性群組的成員當作單一單位來管理、您可以刪除一致性群組。刪除一致性群組之後、群組中先前的儲存單元仍會在叢集上保持作用中。</block>
-  <block id="8ca9256ffdf569f8b36fe638e605aa91" category="paragraph">如果您要刪除的一致性群組位於複寫關係中、則必須先中斷關聯、然後再刪除一致性群組。刪除之前的複寫一致性群組之後、一致性群組中的儲存單元會在叢集上保持作用中、而其複寫複本則會保留在遠端叢集上。</block>
   <block id="3e905f617938aef0b388912bce87f2e2" category="list-text">將游標移至您要刪除的一致性群組上方。</block>
   <block id="b32275e0392f5cbab8806c7ce85e42f5" category="list-text">接受警告、然後選取 * 刪除 * 。</block>
   <block id="dde86492e27a0d7b75963e7c4b928397" category="paragraph">刪除一致性群組之後、先前位於一致性群組中的儲存單元將不再受到快照保護。請考慮將這些儲存單元新增至另一個一致性群組、以防止資料遺失。</block>
@@ -523,7 +521,6 @@
   <block id="71ba518a68888a9623c97c1553396f78" category="list-text">在系統管理員中、選取 * 叢集 &gt; 設定 * 。</block>
   <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 測試連線 * 。</block>
   <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">輸入 AutoSupport 訊息的主旨、然後選取 * 傳送測試 AutoSupport 訊息 * 。</block>
-  <block id="fcb35f0da100ee7cfd8c2c2acdcbb8c0" category="paragraph">您的已驗證技術支援人員可以從 ASA R2 系統接收 AutoSupport 訊息、並會提供必要的資料、協助您在遇到問題時提供協助。</block>
   <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">新增 AutoSupport 收件者</block>
   <block id="4ceed55a3a8a0b3cd4cf3b3ad2f6c061" category="paragraph">將內部支援組織的成員新增至接收 AutoSupport 訊息的電子郵件地址清單。</block>
   <block id="9b7d22da73a3e8a3cf955ff556c4bae7" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 更多選項 * 。</block>
@@ -1070,7 +1067,6 @@
   <block id="363188350b1fe2b934c479c977a89ece" category="paragraph-title">自動建立 Volume</block>
   <block id="eee98269dcd20c90abcc0a7bfb22f37c" category="paragraph">建立儲存單元（ LUN 或命名空間）會自動從儲存可用區域建立磁碟區。這會產生一個簡化且通用的命名空間。刪除儲存單元會自動刪除相關的磁碟區。</block>
   <block id="deb157545e882ae10d45f43fcb06f0df" category="paragraph-title">精簡與完整資源配置的變更</block>
-  <block id="0cc302b38ca94109fc2cffd503adb3d4" category="paragraph">的儲存單元一律會在 ASA R2 儲存系統上精簡配置。不支援完整資源配置。</block>
   <block id="3abf1b035bc420caf188c022ea7d792d" category="summary">ASA R2 REST API 是以統一化 ONTAP 特性設定所提供的 REST API 為基礎、其中有許多變更會因應 ASA R2 特性設定的獨特特性和功能。</block>
   <block id="48c7d320d017a90d970e154c81d07dc1" category="doc">ASA R2 的 REST API 支援</block>
   <block id="83e5ee07fc92447fe7a6ceed082d0c01" category="section-title">API 變更類型</block>
@@ -1142,8 +1138,6 @@
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。</block>
   <block id="b46e4e89d5c6947e865dbb8abc5ed28c" category="summary">瞭解如何在 ASA R2 系統上執行維護程序。</block>
   <block id="c65b7989475d7b4b884961e0e5c53286" category="doc">維護 ASA R2 儲存系統</block>
-  <block id="2cc42d8e162137e099ab248df06c4f19" category="inline-link">ASA R2 維護文件</block>
-  <block id="a779dc7ba81016ed421e7c384c5d1e30" category="paragraph">請移至<block ref="54785b1ca9681752f04c4a927f80eaa1" category="inline-link-rx"></block>以瞭解如何在 ASA R2 系統元件上執行維護程序。</block>
   <block id="637cdb5787a38a4d0da33ae01aa8fe4c" category="summary">在 ASA R2 上複製儲存單元和一致性群組、以建立資料複本、以便在正式作業環境以外的環境中用於各種用途。</block>
   <block id="5efa28b67f38b8acf6f260494435aeb9" category="searchtitle">使用 ONTAP System Manager | ASA R2 進行資料複製</block>
   <block id="b672b3c3c67f9dc97cb7aa4016ffd8de" category="doc">在 ASA R2 儲存系統上複製資料</block>
@@ -1335,7 +1329,6 @@
   <block id="7210645d4515e7cb96d5b26a294a9f25" category="searchtitle">使用 ONTAP System Manager| ASA R2 監控叢集效能</block>
   <block id="064023636601914c7dfacc81fa4e3b57" category="doc">監控 ASA R2 儲存系統上的叢集與儲存單元效能</block>
   <block id="ac48862a6c885879fa8b73f630f8e98f" category="paragraph">使用 ONTAP System Manager 監控叢集的整體效能和特定儲存單元的效能、以判斷延遲、 IOPS 和處理量對關鍵業務應用程式的影響程度。效能可在一小時到一年的各種時間段內監控。</block>
-  <block id="d2fee2bd5b0bc27aba9325efd2cf7765" category="paragraph">例如、假設關鍵應用程式發生高延遲和低處理量。當您檢視過去五個工作天的叢集效能時、您發現每天的效能會同時降低。當非關鍵程序開始在背景執行時、您可以使用此資訊來判斷關鍵應用程式正在競爭叢集資源。接著您就能修改 QoS 原則、以限制非關鍵工作負載對系統資源的影響、並確保關鍵工作負載符合最低處理量目標。</block>
   <block id="9ed62a90862b2040ffb0a91ecf532fff" category="section-title">監控叢集效能</block>
   <block id="4d46d963226f35fc56c0527f9740cc00" category="paragraph">使用叢集效能指標來判斷您是否需要移轉工作負載、以將延遲降至最低、並將關鍵應用程式的 IOPS 和處理量最大化。</block>
   <block id="1d1e5cd96b3e552f9fc410fb90447401" category="list-text">在System Manager中、選取* Dashboard *。</block>
@@ -1587,4 +1580,10 @@
   <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">* 部分連線 * ：表示部分啟動器並未同時連接兩個節點。</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">* 無連線 * ：表示未連線任何啟動器。</block>
   <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。</block>
+  <block id="6913e721908f172fd672e46e9459c4ad" category="paragraph">如果您要刪除的一致性群組位於複寫關係中、則必須先中斷關聯、然後再刪除一致性群組。刪除複寫一致性群組之後、一致性群組中的儲存單元會在叢集上保持作用中、而其複寫複本則會保留在遠端叢集上。</block>
+  <block id="22a4c2b7564a7f7d551ab23d23fbcac8" category="paragraph">您已確認技術支援人員可以從 ASA R2 系統接收 AutoSupport 訊息、確保他們擁有必要的資料、在發生任何問題時能提供協助。</block>
+  <block id="3ae7feb5d9cb2335f10922aa1130319d" category="paragraph">ASA R2 儲存系統上的儲存單元一律會精簡佈建。不支援完整資源配置。</block>
+  <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA R2 維護文件</block>
+  <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph">請移至<block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block>以瞭解如何在 ASA R2 系統元件上執行維護程序。</block>
+  <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假設關鍵應用程式發生高延遲和低處理量。當您檢視過去五個工作天的叢集效能時、您發現每天的效能會同時降低。當非關鍵程序開始在背景執行時、您可以使用此資訊來判斷關鍵應用程式正在競爭叢集資源。接著您就能修改 QoS 原則、以限制非關鍵工作負載對系統資源的影響、並確保關鍵工作負載符合最低處理量目標。</block>
 </blocks>
