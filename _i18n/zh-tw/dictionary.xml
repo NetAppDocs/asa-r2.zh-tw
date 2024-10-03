@@ -556,7 +556,6 @@
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、為僅限 SAN 的客戶提供簡化的體驗。</block>
   <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">瞭解 ASA A1K 、 ASA A70 和 ASA A90 儲存系統</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">瞭解 ASA R2 儲存系統</block>
-  <block id="0ab1a7883d0399cbaf77a2e38633a6ea" category="paragraph">全新的 NetApp ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
   <block id="4fdeef14779674f92738c7750c976920" category="paragraph">ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。NVMe 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
@@ -1402,8 +1401,6 @@
   <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">平台</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">更新</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
-  <block id="2c84ef2816336594d59d5962b19f3047" category="cell">全新平台</block>
-  <block id="13d09074058b667f0fc1cfa7487fab45" category="paragraph">以下新的 NetApp ASA R2 系統可供使用。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
   <block id="26ed02718973e705cd69ee6e109400e0" category="section-title">系統管理員</block>
   <block id="43216e15c49bb3bc0da538a8d830f901" category="inline-link-macro">精簡支援僅限 SAN 的客戶</block>
   <block id="60dc71f158c44e4e34a36dec8e3210a5" category="cell"><block ref="60dc71f158c44e4e34a36dec8e3210a5" category="inline-link-macro-rx"></block></block>
@@ -1586,4 +1583,6 @@
   <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA R2 維護文件</block>
   <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph">請移至<block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block>以瞭解如何在 ASA R2 系統元件上執行維護程序。</block>
   <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假設關鍵應用程式發生高延遲和低處理量。當您檢視過去五個工作天的叢集效能時、您發現每天的效能會同時降低。當非關鍵程序開始在背景執行時、您可以使用此資訊來判斷關鍵應用程式正在競爭叢集資源。接著您就能修改 QoS 原則、以限制非關鍵工作負載對系統資源的影響、並確保關鍵工作負載符合最低處理量目標。</block>
+  <block id="9df0af6622b120b0338c4289d4d6b9e4" category="paragraph">NetApp ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
+  <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">下列 NetApp ASA R2 系統可供使用。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
 </blocks>
