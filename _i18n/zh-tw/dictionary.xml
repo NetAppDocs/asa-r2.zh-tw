@@ -1585,4 +1585,6 @@
   <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假設關鍵應用程式發生高延遲和低處理量。當您檢視過去五個工作天的叢集效能時、您發現每天的效能會同時降低。當非關鍵程序開始在背景執行時、您可以使用此資訊來判斷關鍵應用程式正在競爭叢集資源。接著您就能修改 QoS 原則、以限制非關鍵工作負載對系統資源的影響、並確保關鍵工作負載符合最低處理量目標。</block>
   <block id="9df0af6622b120b0338c4289d4d6b9e4" category="paragraph">NetApp ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
   <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">下列 NetApp ASA R2 系統可供使用。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
+  <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">資料壓縮的變更</block>
+  <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">對溫度敏感的儲存效率不適用於 ASA R2 系統。在 ASA R2 系統上、壓縮並非以 _hot_ （經常存取）資料或 _cold （不常存取）資料為基礎。壓縮開始時、不會等到資料變冷。</block>
 </blocks>
