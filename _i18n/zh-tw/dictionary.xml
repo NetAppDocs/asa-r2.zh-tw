@@ -518,7 +518,6 @@
   <block id="8e3b3443f7322d7c7fc2e9b691e9b154" category="paragraph">您必須是叢集管理員才能管理 AutoSupport 。</block>
   <block id="a1a978a0ef405a79f3b2c5f89d50b536" category="section-title">測試 AutoSupport 連線能力</block>
   <block id="d62c03a6357eefd7638471c82a6859be" category="paragraph">設定叢集之後、您應該測試 AutoSupport 連線能力、以確認技術支援人員是否會收到 AutoSupport 所產生的訊息。</block>
-  <block id="71ba518a68888a9623c97c1553396f78" category="list-text">在系統管理員中、選取 * 叢集 &gt; 設定 * 。</block>
   <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">在 * AutoSupport * 旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 測試連線 * 。</block>
   <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">輸入 AutoSupport 訊息的主旨、然後選取 * 傳送測試 AutoSupport 訊息 * 。</block>
   <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">新增 AutoSupport 收件者</block>
@@ -1451,15 +1450,12 @@
   <block id="f82f9abf9d39b3ea7e9931fe0ec02989" category="summary">使用防竄改快照來保護資料安全。防竄改快照無法刪除、也可用於恢復因勒索軟體攻擊而洩漏的資料。</block>
   <block id="17d54966a51825ee64011655de8e99f5" category="doc">保護 ASA R2 儲存系統免受勒索軟體攻擊</block>
   <block id="bb09a1295cce99402c216baed3c2b937" category="paragraph">為了加強防範勒索軟體攻擊、請將快照複寫到遠端叢集、然後鎖定目的地快照、使其防竄改。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。</block>
-  <block id="049905961ea2e1141d23d71eb662076b" category="section-title">初始化 SnapLock Compliance 時鐘</block>
-  <block id="045a584abdee8ddf49e1db3987711d93" category="paragraph">在建立防竄改快照之前、您必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance 時鐘。</block>
   <block id="7e59070af3e4cd3a421461f7774f3c87" category="list-text">選擇*叢集&gt;總覽*。</block>
   <block id="045e8ceb02be472a9bc3e54ba6f1d811" category="list-text">在 * 節點 * 區段中、選取 * 初始化 SnapLock Compliance 時鐘 * 。</block>
   <block id="2012a4286c3a1864d4fa11ba1cb42b1c" category="list-text">確認規範時鐘已初始化。</block>
   <block id="2bc6e7414d5cb75e3addfdeb234222a1" category="inline-image-macro">白色背景上的三個藍色欄</block>
   <block id="ff632b6925cddc0c770d38368ff3755e" category="list-text">在 * 節點 * 區段中<block ref="db89dee19aae8a41518f426597d8cb6e" category="inline-image-macro-rx" type="image"></block>、選取；然後選取 * SnapLock Compliance 時鐘 * 。</block>
   <block id="c19a0c09a1a9acec430b36accfdb5ac8" category="inline-link-macro">使用鎖定的快照建立複寫關係</block>
-  <block id="791bf7d3faa5342db177ff00f2bcca3f" category="paragraph">在本地和目標叢集上初始化 SnapLock Compliance 時鐘之後<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>、您就可以開始使用了。</block>
   <block id="25abedf12d26e4bc8960557833ebe68d" category="summary">觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。</block>
   <block id="9e9e90703a7077203260b19a3af9704a" category="doc">在 ASA R2 系統上設定 SAN 通訊協定</block>
   <block id="21d3b12a5a9f6ff0d25b8b5e5e00b7ff" category="paragraph">以下是影片的記錄<block ref="1ef61309a2d73f2fc4d83b527ce1790e" prefix=" " category="inline-code"></block>。</block>
@@ -1587,4 +1583,8 @@
   <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">下列 NetApp ASA R2 系統可供使用。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
   <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">資料壓縮的變更</block>
   <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">對溫度敏感的儲存效率不適用於 ASA R2 系統。在 ASA R2 系統上、壓縮並非以 _hot_ （經常存取）資料或 _cold （不常存取）資料為基礎。壓縮開始時、不會等到資料變冷。</block>
+  <block id="e9dac8f777563b18c14aec6d0406e876" category="list-text">在 System Manager 中、選取 * 叢集 &gt; 設定 * 。</block>
+  <block id="b16351f807fbda6965666255eef268dd" category="section-title">初始化 SnapLock Compliance 時鐘</block>
+  <block id="6f7e58f2fc20167d69dc971955e6bb11" category="paragraph">在建立防竄改快照之前、您必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance 時鐘。</block>
+  <block id="71c1cda56d6fad5ca8b28cabd1f98042" category="paragraph">在本地和目標叢集上初始化 SnapLock Compliance 時鐘之後<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>、您就可以開始使用了。</block>
 </blocks>

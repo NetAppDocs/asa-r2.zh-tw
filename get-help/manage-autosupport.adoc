@@ -25,7 +25,7 @@ summary:
 設定叢集之後、您應該測試 AutoSupport 連線能力、以確認技術支援人員是否會收到 AutoSupport 所產生的訊息。
 
 .步驟
-. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 System Manager 中、選取 * 叢集 > 設定 * 。
 . 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 測試連線 * 。
 . 輸入 AutoSupport 訊息的主旨、然後選取 * 傳送測試 AutoSupport 訊息 * 。
 
@@ -40,7 +40,7 @@ summary:
 將內部支援組織的成員新增至接收 AutoSupport 訊息的電子郵件地址清單。
 
 .步驟
-. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 System Manager 中、選取 * 叢集 > 設定 * 。
 . 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 更多選項 * 。
 . 在 *Email* 旁邊，選擇image:icon_edit_pencil_blue_outline.png["鉛筆圖示"]；然後選擇image:icon_add.gif["藍色加號、後面接著新增一詞"]。
 . 輸入收件者的電子郵件地址、然後輸入收件者類別。
@@ -60,7 +60,7 @@ summary:
 如果您的 ASA R2 系統發生問題、 AutoSupport 資料可能會大幅縮短識別和解決問題所需的時間。
 
 .步驟
-. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 System Manager 中、選取 * 叢集 > 設定 * 。
 . 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 產生並傳送 * 。
 . 輸入 AutoSupport 訊息的主旨，然後選取 * 傳送 * 。
 
@@ -75,7 +75,7 @@ summary:
 如果您要在 ASA R2 系統上執行升級或維護、您可能需要在升級或維護完成之前、抑制 AutoSupport 產生的支援案例。
 
 .步驟
-. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 System Manager 中、選取 * 叢集 > 設定 * 。
 . 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 抑制支援個案產生 * 。
 . 指定抑制支援案例產生的時數、然後選取不想產生案例的節點。
 . 選取*傳送*。
@@ -91,7 +91,7 @@ AutoSupport 案例將不會在您指定的時間內產生。如果您在指定�
 如果您在升級或維護期間已抑制支援案例的產生、則應在升級或維護完成後立即恢復支援案例的產生。
 
 .步驟
-. 在系統管理員中、選取 * 叢集 > 設定 * 。
+. 在 System Manager 中、選取 * 叢集 > 設定 * 。
 . 在 * AutoSupport * 旁選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 恢復支援案例產生 * 。
 . 選取您要恢復所產生 AutoSupport 個案的節點。
 . 選取*傳送*。
