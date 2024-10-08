@@ -46,3 +46,9 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 == 開放原始碼
 
 通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。
+
+
+
+== ONTAP
+
+link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3329264["ONTAP 9 的注意事項 .16.01"^]
