@@ -564,8 +564,6 @@
   <block id="99d7a989df24ddfeaed42c100e841eea" category="paragraph">為了協助保護資料免於遭竊或勒索軟體等惡意攻擊、 ASA R2 系統支援內建金鑰管理程式、雙層加密、防竄改快照、多因素驗證和多重管理驗證。</block>
   <block id="85af1289b342af44c3abb8f8013b47f6" category="paragraph">ASA R2 系統不支援叢集混合搭配目前的 ASA 、 AFF 或 FAS 系統。</block>
   <block id="989f2b4edace5981db8b18b1ad4a385f" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需ASA R2 系統支援與限制的詳細資訊，請參閱。</block>
-  <block id="c2c1bcd7adc7e36fe33a63a87106e2a7" category="inline-link-macro">相較於 ASA 系統、全新的 ASA R2 系統</block>
-  <block id="83397e1edfe32e6b68f408e5cf3870ee" category="list-text">深入瞭解 <block ref="b7749cfde79f0515b30017386210c7f6" category="inline-link-macro-rx"></block>。</block>
   <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
   <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">深入瞭解<block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>。</block>
   <block id="05b76f77eda2923699bcc5fed0226549" category="summary">若要開始使用 ASA R2 （ ASA A1K 、 ASA A70 、 ASA A90 ）系統、請安裝硬體、設定叢集、設定資料存取、以及配置儲存設備。</block>
@@ -1590,4 +1588,6 @@
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
   <block id="f20a7be09bb1e964599f6a093df3c792" category="inline-link-macro">ONTAP 9 的注意事項 .16.01</block>
   <block id="7f4ce7e91f585315eb8df215a736469e" category="paragraph"><block ref="7f4ce7e91f585315eb8df215a736469e" category="inline-link-macro-rx"></block></block>
+  <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">ASA R2 系統與 ASA 系統的比較</block>
+  <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">深入瞭解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
 </blocks>

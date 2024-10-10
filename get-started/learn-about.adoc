@@ -32,6 +32,6 @@ ASA R2 系統不支援叢集混合搭配目前的 ASA 、 AFF 或 FAS 系統。
 
 .以取得更多資訊
 * 如link:https://hwu.netapp.com/["NetApp Hardware Universe"^]需ASA R2 系統支援與限制的詳細資訊，請參閱。
-* 深入瞭解 link:../learn-more/hardware-comparison.html["相較於 ASA 系統、全新的 ASA R2 系統"]。
+* 深入瞭解 link:../learn-more/hardware-comparison.html["ASA R2 系統與 ASA 系統的比較"]。
 * 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"]。
 
