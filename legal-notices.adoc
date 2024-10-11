@@ -51,4 +51,4 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 == ONTAP
 
-link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3329264["ONTAP 9 的注意事項 .16.01"^]
+link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3329264["ONTAP 9 注意事項。 16.1"^]

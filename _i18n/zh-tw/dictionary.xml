@@ -1585,9 +1585,9 @@
   <block id="6f7e58f2fc20167d69dc971955e6bb11" category="paragraph">在建立防竄改快照之前、您必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance 時鐘。</block>
   <block id="71c1cda56d6fad5ca8b28cabd1f98042" category="paragraph">在本地和目標叢集上初始化 SnapLock Compliance 時鐘之後<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>、您就可以開始使用了。</block>
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
-  <block id="f20a7be09bb1e964599f6a093df3c792" category="inline-link-macro">ONTAP 9 的注意事項 .16.01</block>
-  <block id="7f4ce7e91f585315eb8df215a736469e" category="paragraph"><block ref="7f4ce7e91f585315eb8df215a736469e" category="inline-link-macro-rx"></block></block>
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">ASA R2 系統與 ASA 系統的比較</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">深入瞭解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
   <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">ASA R2 儲存系統的 Snapshot 複寫僅支援與其他 ASA R2 儲存系統之間的快照複寫。您無法將快照從 ASA R2 系統複寫到目前的 ASA 、 AFF 或 FAS 系統、或從目前的 ASA 、 AFF 或 FAS 系統複寫到 ASA R2 系統。</block>
+  <block id="3f808654ebfed6aae875b71a402ac91b" category="inline-link-macro">ONTAP 9 注意事項。 16.1</block>
+  <block id="ccde34ed9a96a11b25c1db2a8c9acb87" category="paragraph"><block ref="ccde34ed9a96a11b25c1db2a8c9acb87" category="inline-link-macro-rx"></block></block>
 </blocks>
