@@ -444,7 +444,6 @@
   <block id="40bf81e755dc73fb04ab21c9f9f5756c" category="searchtitle">使用 ONTAP System Manager| ASA R2 將快照複寫到遠端叢集</block>
   <block id="52e62ad767d46ccf1912124d9b984dd6" category="doc">從 ASA R2 儲存系統將快照複寫到遠端叢集</block>
   <block id="f2b39b01edbe286e89542affc03f6d4f" category="paragraph">Snapshot 複寫是將 ASA R2 系統上的一致性群組複製到地理位置遠端位置的程序。初始複寫之後、一致性群組的變更會根據複寫原則複製到遠端位置。複寫一致性群組可用於災難恢復或資料移轉。</block>
-  <block id="69ed1baaf5609225833ab8e05dd02cda" category="admonition">只有另一個 ASA R2 儲存系統支援從 ASA R2 儲存系統進行快照複寫。您無法將快照從 ASA R2 系統複寫到目前的 ASA 、 AFF 或 FAS 系統。</block>
   <block id="a11f569aa7659d38ad74c3348435869e" category="paragraph">若要設定 Snapshot 複寫、您需要在 ASA R2 系統和遠端位置之間建立複寫關係。複寫關係是由複寫原則所管理。叢集設定期間會建立複寫所有快照的預設原則。您可以使用預設原則、也可以選擇性地建立新原則。</block>
   <block id="bb35c8e1197f3cb1f834baa178f51fdd" category="section-title">步驟 1 ：建立叢集對等關係</block>
   <block id="256483a2b5ed8710e7c8fdf9ce515426" category="paragraph">您必須先在本機叢集和遠端叢集之間建立叢集對等關係、才能透過將資料複寫到遠端叢集來保護資料。</block>
@@ -1590,4 +1589,5 @@
   <block id="7f4ce7e91f585315eb8df215a736469e" category="paragraph"><block ref="7f4ce7e91f585315eb8df215a736469e" category="inline-link-macro-rx"></block></block>
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">ASA R2 系統與 ASA 系統的比較</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">深入瞭解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
+  <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">ASA R2 儲存系統的 Snapshot 複寫僅支援與其他 ASA R2 儲存系統之間的快照複寫。您無法將快照從 ASA R2 系統複寫到目前的 ASA 、 AFF 或 FAS 系統、或從目前的 ASA 、 AFF 或 FAS 系統複寫到 ASA R2 系統。</block>
 </blocks>
