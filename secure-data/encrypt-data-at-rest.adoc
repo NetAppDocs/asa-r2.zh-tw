@@ -51,3 +51,5 @@ NetApp 儲存加密（ NSE ）支援使用自我加密磁碟機（ SED ）進行
 
 .接下來呢？
 現在您已將靜態資料加密、如果您使用的是 NVMe / TCP 傳輸協定、則可以link:nvme-tcp-connections.html["加密透過網路傳送的所有資料"]在 NVMe / TCP 主機和 ASA R2 系統之間進行加密。
+
+如果您需要從機載金鑰管理程式切換至外部金鑰管理程式，或是從外部金鑰管理程式切換至外部金鑰管理程式link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/migrate-keys-between-key-managers["在金鑰管理員之間移轉 ONTAP 資料加密金鑰"^]，請參閱。

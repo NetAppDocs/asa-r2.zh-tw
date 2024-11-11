@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: release-notes/changes-to-limits-defaults.html 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa 70, asa 90 
+summary: 瞭解影響 ASA R2 系統的限制和預設值變更。 
+---
+= ONTAP 限制與預設值的變更會影響 ASA R2 系統
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解影響 ASA R2 系統的限制和預設值變更。NetApp 致力於協助客戶瞭解每個 ONTAP 版本中最重要的預設值、並限制變更。
+
+
+
+== ONTAP 限制變更
+
+[cols="2,4,4"]
+|===
+| 功能 | 限制變更 | 版本變更 ... 
+
+
+| 儲存單元 | 儲存單元數量上限從每個 HA 配對 2500 個增加到每個 HA 配對 10,000 個。 | ONTAP 9.16.1. 
+|===
