@@ -2,9 +2,9 @@
 section: release-notes
 title: 版本資訊
 entries:
-- title: ONTAP 9.16.0 的新功能
-  url: "/release-notes/whats-new-9160.html"
 - title: ONTAP 9.16.1 的新功能
   url: "/release-notes/whats-new-9161.html"
+- title: ONTAP 9.16.0 的新功能
+  url: "/release-notes/whats-new-9160.html"
 - title: 變更為 ONTAP 預設值和限制
   url: "/release-notes/changes-to-limits-defaults.html"
