@@ -20,8 +20,8 @@ summary: 雖然 ASA R2 系統提供廣泛的 SAN 解決方案支援、但不支�
 * MetroCluster
 * 物件傳輸協定
 * ONTAP S3 SnapMirror 和 S3 API
-* SnapMirror 轉雲端
-* SnapMirror 至非 ASA R2 系統
+* SnapMirror （非同步與同步）移轉至雲端
+* SnapMirror （非同步和同步）至非 ASA R2 系統
 * 選擇性LUN對應（SLM)
 
 

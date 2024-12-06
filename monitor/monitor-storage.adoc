@@ -24,7 +24,7 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 監控空間使用率
 . 在System Manager中、選取* Dashboard *。
 . 在 * 容量 * 下、檢視叢集上的實體使用空間量和可用空間量。
 +
-資料減量代表儲存效率所節省的空間量。
+資料減量比率代表儲存效率所節省的空間量。
 
 
 

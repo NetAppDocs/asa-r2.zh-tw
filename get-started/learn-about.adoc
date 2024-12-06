@@ -14,7 +14,7 @@ searchtitle: 瞭解 ASA A1K 、 ASA A70 和 ASA A90 儲存系統
 [role="lead"]
 NetApp ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。
 
-ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。NVMe 傳輸協定支援主機和儲存設備之間的直接路徑。
+ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。
 
 在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。
 

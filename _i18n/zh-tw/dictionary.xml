@@ -553,7 +553,6 @@
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、為僅限 SAN 的客戶提供簡化的體驗。</block>
   <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">瞭解 ASA A1K 、 ASA A70 和 ASA A90 儲存系統</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">瞭解 ASA R2 儲存系統</block>
-  <block id="4fdeef14779674f92738c7750c976920" category="paragraph">ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。NVMe 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
   <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">_storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。</block>
@@ -1101,8 +1100,6 @@
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
   <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">物件傳輸協定</block>
   <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">ONTAP S3 SnapMirror 和 S3 API</block>
-  <block id="f161dc3326510eaa0a4043b0403c9d6a" category="list-text">SnapMirror 轉雲端</block>
-  <block id="22d5ef0e46679353c835a058a6447e5d" category="list-text">SnapMirror 至非 ASA R2 系統</block>
   <block id="cbb51e0b1487ab3d93d6d940a1533133" category="list-text">選擇性LUN對應（SLM)</block>
   <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">ASA R2 系統支援下列項目：</block>
   <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">SnapLock</block>
@@ -1342,7 +1339,6 @@
   <block id="e41cfa628f1aae1b344d1fcccc79b676" category="section-title">監控叢集使用率</block>
   <block id="60522db54655ef0faaafdeb6e1dd2f6c" category="paragraph">定期監控叢集所耗用的儲存容量、以確保在空間不足之前、您已準備好在必要時擴充叢集容量。</block>
   <block id="5ba997683bb88c0bd7da49e5420cd3b9" category="list-text">在 * 容量 * 下、檢視叢集上的實體使用空間量和可用空間量。</block>
-  <block id="3de31d3507312269ff6fd5ae8a31e0b7" category="paragraph">資料減量代表儲存效率所節省的空間量。</block>
   <block id="049df4c0a4a8d9829026cfcdd73b2fa6" category="inline-link-macro">新增磁碟機</block>
   <block id="70e4aa2a60c8c55fc487bdeaf9688dea" category="paragraph">如果叢集的空間不足、或是沒有容量來滿足未來需求、您應該計畫使用 <block ref="652f39ff07f6641e851e14e8190a6b59" category="inline-link-macro-rx"></block>ASA R2 系統來增加儲存容量。</block>
   <block id="b9de8a926e3bbf2f3ddad971b60d4639" category="section-title">監控儲存單元使用率</block>
@@ -1610,4 +1606,8 @@
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1 的新功能</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">變更為 ONTAP 預設值和限制</block>
   <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">如果您需要從機載金鑰管理程式切換至外部金鑰管理程式，或是從外部金鑰管理程式切換至外部金鑰管理程式<block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>，請參閱。</block>
+  <block id="741966f7a31d60fddc8857d2cb9fb674" category="paragraph">ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
+  <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror （非同步與同步）移轉至雲端</block>
+  <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror （非同步和同步）至非 ASA R2 系統</block>
+  <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">資料減量比率代表儲存效率所節省的空間量。</block>
 </blocks>
