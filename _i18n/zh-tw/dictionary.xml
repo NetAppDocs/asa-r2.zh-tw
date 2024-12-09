@@ -1610,4 +1610,5 @@
   <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror （非同步與同步）移轉至雲端</block>
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror （非同步和同步）至非 ASA R2 系統</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">資料減量比率代表儲存效率所節省的空間量。</block>
+  <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror （非同步和同步）僅支援從 ASA R2 系統到 ASA R2 系統。從 ASA R2 系統到 AFF 或 FAS 系統不支援 SnapMirror 。</block>
 </blocks>

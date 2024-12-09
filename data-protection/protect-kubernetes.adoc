@@ -13,5 +13,8 @@ summary: 使用 Astra Control 將應用程式和資料從一個 Kubernetes 叢�
 [role="lead"]
 使用 Astra Control Center 來保護 Kubernetes 應用程式。Astra Control Center 可讓您將應用程式和資料從一個 Kubernetes 叢集移轉到另一個叢集、使用 NetApp SnapMirror 技術將應用程式複寫到遠端系統、並將應用程式從移轉到正式作業。
 
+
+NOTE: SnapMirror （非同步和同步）僅支援從 ASA R2 系統到 ASA R2 系統。從 ASA R2 系統到 AFF 或 FAS 系統不支援 SnapMirror 。
+
 .以取得更多資訊
 link:https://docs.netapp.com/us-en/astra-control-service/use/protect-apps.html["深入瞭解如何使用 Astra Control 保護 Kubernetes 應用程式"^]。
