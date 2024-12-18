@@ -551,7 +551,6 @@
   <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">若要提交支援案例、請在系統管理員中選取 * 叢集 &gt; 支援 * 、然後選取 * 前往 NetApp 支援 * 。</block>
   <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">若要檢視先前提交的案例、請在 System Manager 中選取 * 叢集 &gt; 支援 * 、然後選取 * 檢視我的案例 * 。</block>
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、為僅限 SAN 的客戶提供簡化的體驗。</block>
-  <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">瞭解 ASA A1K 、 ASA A70 和 ASA A90 儲存系統</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">瞭解 ASA R2 儲存系統</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
@@ -1611,4 +1610,5 @@
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">資料減量比率代表儲存效率所節省的空間量。</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror （非同步和同步）僅支援從 ASA R2 系統到 ASA R2 系統。從 ASA R2 系統到 AFF 或 FAS 系統不支援 SnapMirror 。</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">ASA R2 儲存系統快速入門</block>
+  <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">瞭解 ASA R2 儲存系統： A1K ， A90 和 A70</block>
 </blocks>

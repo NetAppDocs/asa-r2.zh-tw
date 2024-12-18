@@ -3,7 +3,7 @@ sidebar: sidebar
 permalink: get-started/learn-about.html 
 keywords: asa r2, asa a1k, asa 70, asa 90 
 summary: ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、為僅限 SAN 的客戶提供簡化的體驗。 
-searchtitle: 瞭解 ASA A1K 、 ASA A70 和 ASA A90 儲存系統 
+searchtitle: 瞭解 ASA R2 儲存系統： A1K ， A90 和 A70 
 ---
 = 瞭解 ASA R2 儲存系統
 :allow-uri-read: 
