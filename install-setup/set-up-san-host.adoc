@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: install-setup/set-up-san-host.html 
+keywords: san, host, configuration, fc, iscsi, nvme, zoning, fabric, network 
+summary: ASA R2 系統遵循與所有其他 ONTAP 系統相同的 SAN 主機組態建議與準則。 
+---
+= ASA R2 系統的 SAN 主機組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2 系統遵循與所有其他 ONTAP 系統相同的 SAN 主機組態建議與準則。
+
+建議您使用兩個以上的交換器，將儲存系統連接到一或多個 SAN 主機。對於 iSCSI 組態，連接主機，交換器和儲存系統的網路拓撲稱為 _network_ 。對於 FC 和 FC-NVMe 組態，這種相同的網路拓撲稱為 _Fabric 。
+
+建議使用多網路或多架構組態（使用兩個或多個交換器的組態），因為它們在交換器和儲存層都提供備援。此備援功能可讓您的儲存系統更具容錯能力，並支援不中斷營運。
+
+下圖是 FC 組態的範例，其中包含使用兩個架構存取單一 HA 配對的多部主機。FC 目標連接埠編號（ 0c ， 0d ， 1a ， 1b ）也是範例。實際的連接埠編號會因您的平台型號和是否使用擴充介面卡而異。
+
+image::multi-fabric-san-configuration.png[兩個 FC 架構，將多個主機連線至單一 HA 配對]
+
+深入瞭解 link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-san-hosts-ha-pairs-reference.html["iSCSI 主機的 SAN 組態"^]。深入瞭解 link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html["FC 和 FC/NVMe 主機的 SAN 組態"^]。
+
+
+
+== FC 主機的分區建議
+
+您應該將 FC 主機設定為使用分區。ASA R2 系統遵循與所有其他 ONTAP 系統相同的 FC 主機分區建議和準則。
+
+區域是指在架構內由一或多個連接埠組成的邏輯群組。為了讓裝置能夠彼此探索，彼此建立工作階段，並進行通訊，這兩個連接埠都必須具備共同區域成員資格。
+
+深入瞭解 link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html["FC/FC-NVMe 分區"^]。

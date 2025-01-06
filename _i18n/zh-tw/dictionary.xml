@@ -1611,4 +1611,19 @@
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror （非同步和同步）僅支援從 ASA R2 系統到 ASA R2 系統。從 ASA R2 系統到 AFF 或 FAS 系統不支援 SnapMirror 。</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">ASA R2 儲存系統快速入門</block>
   <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">瞭解 ASA R2 儲存系統： A1K ， A90 和 A70</block>
+  <block id="465ce601131c87fafd3a4a3da5836246" category="summary">ASA R2 系統遵循與所有其他 ONTAP 系統相同的 SAN 主機組態建議與準則。</block>
+  <block id="9a364a877707d0b61983419895ba3632" category="doc">ASA R2 系統的 SAN 主機組態</block>
+  <block id="31eb0490b298463d8797eab8041ed748" category="paragraph">建議您使用兩個以上的交換器，將儲存系統連接到一或多個 SAN 主機。對於 iSCSI 組態，連接主機，交換器和儲存系統的網路拓撲稱為 _network_ 。對於 FC 和 FC-NVMe 組態，這種相同的網路拓撲稱為 _Fabric 。</block>
+  <block id="1ea2e359c5275499813dff319ee20baa" category="paragraph">建議使用多網路或多架構組態（使用兩個或多個交換器的組態），因為它們在交換器和儲存層都提供備援。此備援功能可讓您的儲存系統更具容錯能力，並支援不中斷營運。</block>
+  <block id="37fdee11e5eadf392d943f0a18609831" category="paragraph">下圖是 FC 組態的範例，其中包含使用兩個架構存取單一 HA 配對的多部主機。FC 目標連接埠編號（ 0c ， 0d ， 1a ， 1b ）也是範例。實際的連接埠編號會因您的平台型號和是否使用擴充介面卡而異。</block>
+  <block id="cafd65a257cc24af0e84e8951ad9d9b5" category="image-alt">兩個 FC 架構，將多個主機連線至單一 HA 配對</block>
+  <block id="7934e04423cdef3122abed138d14e800" category="inline-link-macro">iSCSI 主機的 SAN 組態</block>
+  <block id="1697498835ad65fe0eb56d5a08926207" category="inline-link-macro">FC 和 FC/NVMe 主機的 SAN 組態</block>
+  <block id="ebd194f81358f792dec388e009d8bec3" category="paragraph">深入瞭解 <block ref="9880b1feac4156c93ea0abed0c0efc7f" category="inline-link-macro-rx"></block>。深入瞭解 <block ref="e620f7fdd29d4d62cc1639e7aa82a5ed" category="inline-link-macro-rx"></block>。</block>
+  <block id="f32de8a0d0833354764d0913e73367fa" category="section-title">FC 主機的分區建議</block>
+  <block id="3efb87f7842540462326a834b157f4ab" category="paragraph">您應該將 FC 主機設定為使用分區。ASA R2 系統遵循與所有其他 ONTAP 系統相同的 FC 主機分區建議和準則。</block>
+  <block id="db6c51496ac3638e90475615dca619b4" category="paragraph">區域是指在架構內由一或多個連接埠組成的邏輯群組。為了讓裝置能夠彼此探索，彼此建立工作階段，並進行通訊，這兩個連接埠都必須具備共同區域成員資格。</block>
+  <block id="61cf7293359faa875bba34aec2374d5e" category="inline-link-macro">FC/FC-NVMe 分區</block>
+  <block id="05c164818e6cf72673636c3f026f35fd" category="paragraph">深入瞭解 <block ref="04395b79c4c7664c0e1d06aced656acd" category="inline-link-macro-rx"></block>。</block>
+  <block id="9567f97a2f92160f66cfc2ac7b1e9cc2" category="sidebar">設定 SAN 主機組態</block>
 </blocks>

@@ -24,5 +24,7 @@ entries:
   entries:
   - title: 設定叢集
     url: "/install-setup/initialize-ontap-cluster.html"
+  - title: 設定 SAN 主機組態
+    url: "/install-setup/set-up-san-host.html"
   - title: 設定資料存取
     url: "/install-setup/set-up-data-access.html"
