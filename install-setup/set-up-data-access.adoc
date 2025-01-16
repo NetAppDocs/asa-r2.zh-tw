@@ -37,11 +37,11 @@ summary:
 
 ASA R2 系統受及更新版本支援link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/concepts/ontap-tools-overview.html["適用於 VMware vSphere 10.3 的 ONTAP 工具"]。
 
-瞭解如何link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/deploy/ontap-tools-deployment.html["部署適用於 VMware 的 ONTAP 工具"^]使用它來執行下列作業：
+瞭解如何link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/deploy/ontap-tools-deployment.html["部署適用於 VMware 的 ONTAP 工具"^]使用它來執行下列作業：
 
-* link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/configure/add-vcenter.html["新增 vCenter Server 執行個體"^]
-* link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/configure/configure-esx-server-multipath-and-timeout-settings.html["設定 ESXi 主機設定"^]
-* link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/configure/discover-storage-systems-and-hosts.html["探索您的 ASA R2 儲存系統和主機"^]
+* link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/configure/add-vcenter.html["新增 vCenter Server 執行個體"^]
+* link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/configure/configure-esx-server-multipath-and-timeout-settings.html["設定 ESXi 主機設定"^]
+* link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/configure/discover-storage-systems-and-hosts.html["探索您的 ASA R2 儲存系統和主機"^]
 
 
 .接下來呢？
