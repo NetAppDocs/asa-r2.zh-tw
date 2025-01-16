@@ -35,7 +35,7 @@ summary:
 
 適用於 VMware vSphere 的 ONTAP 工具是一組與 VMware vCenter Server 虛擬應用裝置（ vCSA ）搭配使用的工具，可輕鬆管理 VMware ESXi 主機上的虛擬機器。
 
-ASA R2 系統受及更新版本支援link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/concepts/ontap-tools-overview.html["適用於 VMware vSphere 10.3 的 ONTAP 工具"]。
+ASA R2 系統受及更新版本支援link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/concepts/ontap-tools-overview.html["適用於 VMware vSphere 10.3 的 ONTAP 工具"^]。
 
 瞭解如何link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/deploy/ontap-tools-deployment.html["部署適用於 VMware 的 ONTAP 工具"^]使用它來執行下列作業：
 
