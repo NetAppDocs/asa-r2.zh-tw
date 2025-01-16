@@ -11,7 +11,7 @@ summary:
 
 
 [role="lead"]
-若要設定資料存取、您應確保正確設定 SAN 用戶端上對於正確操作 ONTAP 至關重要的特定參數和設定。如果您使用的是 VMware 、則應移轉虛擬機器。
+若要設定資料存取，您應該確定 SAN 用戶端上的關鍵參數和設定已正確設定，以便與 ONTAP 正常運作。如果您要為 VMware 環境提供儲存設備，您應該安裝 OTV 10.3 ，只需管理 ASA R2 儲存設備即可。
 
 
 
@@ -26,6 +26,23 @@ summary:
 == 移轉 VMware 虛擬機器
 
 如果您需要將 VM 工作負載從 ASA 儲存系統移轉至 ASA R2 儲存系統、 NetApp 建議您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere VMotion"^]執行即時且不中斷營運的資料移轉。
+
+
+
+== 將 ASA R2 系統設定為 VMware 環境中的儲存供應商
+
+您可以使用適用於 VMware 的 ONTAP 工具，輕鬆將 ASA R2 系統啟用為 VMware 環境中的儲存供應商。
+
+適用於 VMware vSphere 的 ONTAP 工具是一組與 VMware vCenter Server 虛擬應用裝置（ vCSA ）搭配使用的工具，可輕鬆管理 VMware ESXi 主機上的虛擬機器。
+
+ASA R2 系統受及更新版本支援link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/concepts/ontap-tools-overview.html["適用於 VMware vSphere 10.3 的 ONTAP 工具"]。
+
+瞭解如何link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/deploy/ontap-tools-deployment.html["部署適用於 VMware 的 ONTAP 工具"^]使用它來執行下列作業：
+
+* link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/configure/add-vcenter.html["新增 vCenter Server 執行個體"^]
+* link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/configure/configure-esx-server-multipath-and-timeout-settings.html["設定 ESXi 主機設定"^]
+* link:https://review.docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10_otv103-releasebranch/configure/discover-storage-systems-and-hosts.html["探索您的 ASA R2 儲存系統和主機"^]
+
 
 .接下來呢？
 您已準備好link:../manage-data/provision-san-storage.html["配置儲存設備"]讓 SAN 主機讀取資料並將資料寫入儲存單元。
