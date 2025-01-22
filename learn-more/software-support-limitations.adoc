@@ -14,7 +14,13 @@ summary: 雖然 ASA R2 系統提供廣泛的 SAN 解決方案支援、但不支�
 雖然 ASA R2 系統提供廣泛的 SAN 解決方案支援、但不支援某些 ONTAP 軟體功能。
 
 .ASA R2 系統不支援下列項目：
-* iSCSI LIF 容錯移轉
+* 預設自動 iSCSI LIF 容錯移轉
++
+在 ASA R2 系統中，預設的網路 LIF 會在 NVMe 和 SCSI 主機之間共用，因此不支援自動容錯移轉。若要啟用自動 iSCSI LIF 容錯移轉link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["建立僅 iSCSI LIF"]，您必須。依預設，自動容錯移轉僅在 iSCSI 上啟用。
+
++
+啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點的健全連接埠，然後在連接埠再次正常運作時，再移回原始連接埠。
+
 * FabricPool
 * LUN 密集資源配置
 * MetroCluster
@@ -27,11 +33,15 @@ summary: 雖然 ASA R2 系統提供廣泛的 SAN 解決方案支援、但不支�
 
 .ASA R2 系統支援下列項目：
 * SnapLock
++
+link:../secure-data/ransomware-protection.html["瞭解如何鎖定快照"]在您的 ASA R2 系統上。
+
 * 雙層加密
++
+link:../secure-data/encrypt-data-at-rest.html["瞭解如何套用雙層加密"]ASA R2 系統上的資料。
+
 
 
 .以取得更多資訊
 * 如link:https://hwu.netapp.com/["NetApp Hardware Universe"^]需 ASA R2 硬體支援與限制的詳細資訊、請參閱。
-* link:../secure-data/ransomware-protection.html["瞭解如何鎖定快照"]在您的 ASA R2 系統上。
-* link:../secure-data/encrypt-data-at-rest.html["瞭解如何套用雙層加密"]ASA R2 系統上的資料。
 
