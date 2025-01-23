@@ -1754,7 +1754,6 @@
   <block id="f35462670e9b95d1e4a8748ba6872f91" category="admonition">如果您執行的 ONTAP 9.16.1 在叢集中有 2 個以上的節點，則無法還原為 ONTAP 9.16.0 。</block>
   <block id="7e7397a7b79323762c61941fc0e6b5f9" category="section-title">資料保護</block>
   <block id="52b359b5c00e0db3bdd91a9f5c05cf7a" category="inline-link-macro">支援階層式一致性群組</block>
-  <block id="410817362abc44b1b70bdc2f9f49fece" category="cell"><block ref="410817362abc44b1b70bdc2f9f49fece" category="inline-link-macro-rx"></block></block>
   <block id="aada91e6d0de9250c4de431c33ad5116" category="cell">階層式一致性群組可讓您建立包含多個子一致性群組的父一致性群組。如此可簡化複雜資料結構的資料保護與管理。</block>
   <block id="6feaf968503604ce3e0d0b4eefca6c57" category="cell">支援儲存單元的自動重新平衡</block>
   <block id="ec84fb814253e6779e1876e18f7db731" category="cell">ONTAP 會自動重新平衡儲存可用區域中的儲存單元，以達到最佳效能和容量使用率。</block>
@@ -1763,4 +1762,5 @@
   <block id="fb3dca1c5682d0eef255de24a00af0f3" category="sidebar">新增節點</block>
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理儲存單元</block>
   <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">移動儲存單元</block>
+  <block id="ffb5ca95f1d59040ebadb90640b1970b" category="cell"><block ref="ffb5ca95f1d59040ebadb90640b1970b" category="inline-link-macro-rx"></block></block>
 </blocks>
