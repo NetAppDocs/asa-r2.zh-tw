@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a70, asa a90, asa c80, power on 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, power on 
 summary: 開啟每個 NS224 機櫃的電源、以指派唯一的機櫃 ID 、開啟 ASA R2 控制器電源、並固定電源線。 
 ---
 = 開啟 ASA R2 儲存系統電源

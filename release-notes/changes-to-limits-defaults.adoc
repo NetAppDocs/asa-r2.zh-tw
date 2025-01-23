@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/changes-to-limits-defaults.html 
-keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa 70, asa 90 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa a90, asa a70 
 summary: 瞭解影響 ASA R2 系統的限制和預設值變更。 
 ---
 = ONTAP 限制與預設值的變更會影響 ASA R2 系統
@@ -23,6 +23,14 @@ summary: 瞭解影響 ASA R2 系統的限制和預設值變更。
 [cols="2,4,4"]
 |===
 | 功能 | 限制變更 | 版本變更 ... 
+
+
+| 每個叢集的節點數  a| 
+每個叢集的最大節點數從 2 增加到 12 個。
+
+
+NOTE: 如果您執行的 ONTAP 9.16.1 在叢集中有 2 個以上的節點，則無法還原為 ONTAP 9.16.0 。
+| ONTAP 9.16.1. 
 
 
 | 儲存單元 | 儲存單元數量上限從每個 HA 配對 2500 個增加到每個 HA 配對 10,000 個。 | ONTAP 9.16.1. 

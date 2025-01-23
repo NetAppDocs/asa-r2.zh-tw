@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: install-setup/install-setup-workflow.html 
 keywords: asa r2, install, setup, workflow 
-summary: 開始安裝和設定 ASA R2 儲存系統、並在 ONTAP 環境中將其部署為 HA 配對。 
+summary: 開始安裝和設定 ASA R2 儲存系統，並將其部署在 ONTAP 環境中。 
 ---
 = ASA R2 儲存系統的安裝與設定工作流程
 :allow-uri-read: 

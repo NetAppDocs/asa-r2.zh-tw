@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/cable-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a70, asa a90, asa c80, cable controllers 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, cable controllers 
 summary: 瞭解如何將 ASA R2 控制器纜線連接至網路、並將控制器纜線連接至機櫃。 
 ---
 = 為 ASA R2 儲存系統連接硬體纜線

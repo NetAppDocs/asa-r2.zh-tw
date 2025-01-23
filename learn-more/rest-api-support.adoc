@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/rest-api-support.html 
-keywords: asa, asa r2, rest, rest api, asa r2 rest api 
+keywords: asa, asa r2, rest, rest api, asa r2 rest api, asa a1k, asa a90, asa a70 
 summary: ASA R2 REST API 是以統一化 ONTAP 特性設定所提供的 REST API 為基礎、其中有許多變更會因應 ASA R2 特性設定的獨特特性和功能。 
 ---
 = ASA R2 的 REST API 支援

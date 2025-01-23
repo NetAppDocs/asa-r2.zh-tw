@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: administer/add-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: 您可能需要重新命名節點、以符合組織的命名慣例或其他管理理由。 
+---
+= 將 ASA R2 節點新增至 ONTAP 叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從 ONTAP 9.16.1 開始， ASA R2 儲存系統每個叢集最多可支援 12 個節點。在 HA 配對的新節點連接纜線並開啟電源之後，您需要將它們加入叢集。
+
+.開始之前
+收集下列資訊：
+
+* 節點 IP 位址
+* 叢集間網路介面 IP 位址
+* 叢集間網路子網路遮罩
+* 叢集間網路閘道
+* 如果您想要設定內建金鑰管理程式（ OKM ），則需要 OKM 複雜密碼。
+
+
+.步驟
+. 在 System Manager 中、選取 * 叢集 > 總覽 * 。
+. 選取image:icon_kabob.gif["三個垂直藍點"]您要加入叢集的節點旁的，然後選取 * 新增節點 *
+. 輸入每個節點的 IP 位址。
+. 輸入叢集間網路介面 IP 位址，子網路遮罩和閘道。
+. 如果您想要設定內建金鑰管理程式（ OKM ），請輸入 OKM 複雜密碼。
++
+* 預設會選取設定內建金鑰管理程式進行加密 * 。
+
+. 選取*「Add*」。
+
+
+.結果
+新的 HA 配對即會加入叢集。
+
+.接下來呢？
+將新的 HA 配對新增至叢集之後，您就可以新增link:../install-setup/set-up-data-access.html["啟用從 SAN 主機存取資料的功能"]節點。

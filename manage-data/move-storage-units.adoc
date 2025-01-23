@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: manage-data/move-storage-units.html 
+keywords: move lun, lun move, move namespace, move storage unit, asa r2 
+summary: 刪除儲存單元以降低您需要的實體儲存容量、或是釋放其他主機應用程式所需的空間。 
+---
+= 在 ASA R2 儲存系統上移動儲存單元
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。
+
+您可以在儲存單元上線並提供資料時移動儲存單元。移動作業不會中斷營運。
+
+.開始之前
+* 您必須執行 ONTAP 9.16.1 或更新版本。
+* 您的叢集必須包含四個以上的節點。
+
+
+.步驟
+. 在 System Manager 中，選取 * Storage* ，然後選取您要移動的儲存單元。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 移動 * 。
+. 選取您要將儲存單元移至的儲存可用區域，然後選取 * 移動 * 。
+

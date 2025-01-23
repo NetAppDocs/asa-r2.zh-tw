@@ -268,7 +268,6 @@
   <block id="82fd6aa34bfb21de39dd81c963a0a2e8" category="list-text">在 System Manager 中、選取 * 保護 &gt; 一致性群組 * 。</block>
   <block id="edb9e8b079cc1bbba23675ed2fb9ee82" category="list-text">選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 使用新的儲存單元 * 。</block>
   <block id="52121a2aaeb6d47d15d81e8ee203b5f7" category="list-text">輸入新儲存單元的名稱、單位數量和每單位容量。</block>
-  <block id="b6a57406c839874cc450218c65042a9c" category="paragraph">如果您建立多個單元、則每個單元都會建立相同的容量和相同的主機作業系統。若要為每個單位指派不同的容量、請選取 * 更多選項 * 、然後選取 * 新增不同容量 * 。</block>
   <block id="7028b1e3a2021d39c73b8824b7bc9a9d" category="list-text">選取主機作業系統和主機對應。</block>
   <block id="97b6e4a76453272c0f1f20a9a7e57b6b" category="paragraph">您已建立一個一致性群組、其中包含您要保護的儲存單元。您現在已準備好建立快照。</block>
   <block id="c8ea84d9e7c3634b93976499f8f58956" category="open-title">使用現有的儲存單元</block>
@@ -550,7 +549,6 @@
   <block id="871826e1588c93437ae23af0a8c5c29e" category="paragraph">您必須<block ref="2d57bedaf7449221ca7cf6e2da6e5236" category="inline-link-macro-rx"></block>檢視 ASA R2 系統的支援案例。</block>
   <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">若要提交支援案例、請在系統管理員中選取 * 叢集 &gt; 支援 * 、然後選取 * 前往 NetApp 支援 * 。</block>
   <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">若要檢視先前提交的案例、請在 System Manager 中選取 * 叢集 &gt; 支援 * 、然後選取 * 檢視我的案例 * 。</block>
-  <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、為僅限 SAN 的客戶提供簡化的體驗。</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">瞭解 ASA R2 儲存系統</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
@@ -562,13 +560,10 @@
   <block id="989f2b4edace5981db8b18b1ad4a385f" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需ASA R2 系統支援與限制的詳細資訊，請參閱。</block>
   <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
   <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">深入瞭解<block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>。</block>
-  <block id="05b76f77eda2923699bcc5fed0226549" category="summary">若要開始使用 ASA R2 （ ASA A1K 、 ASA A70 、 ASA A90 ）系統、請安裝硬體、設定叢集、設定資料存取、以及配置儲存設備。</block>
-  <block id="726d7bea9295f2cedea11857011476c0" category="searchtitle">安裝及設定 ASA A1K 、 ASA A70 及 ASA A90 儲存系統</block>
   <block id="7277c9d417ac8a6d967bd0e7b323cd57" category="paragraph">若要使用 ASA R2 系統開始運作、請安裝硬體元件、設定叢集、設定從主機存取儲存系統的資料、以及配置儲存設備。</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一</block>
   <block id="40a0d9b63d17cd9ee40121b195ad7812" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>安裝及設定您的硬體</block>
   <block id="0838ba24ec50794012b940c57af5703f" category="inline-link-macro">安裝與設定</block>
-  <block id="bd37b0d902cca84ba3edf7120a5ff8ea" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>您的 ASA R2 系統、並將其部署為 ONTAP 環境中的 HA 配對。</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">二</block>
   <block id="d950f0cc340509cac6299d8daed8cf0a" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>設定叢集</block>
   <block id="358ff255f5304eea2541b8491eafcb09" category="inline-link-macro">設定 ONTAP 叢集</block>
@@ -770,7 +765,6 @@
   <block id="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="list-text"><block ref="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="inline-link-rx"></block></block>
   <block id="bc49acf6a4bdda7bb7cff74873359411" category="inline-link-macro">準備安裝 ASA R2 儲存系統</block>
   <block id="9bc515044882c3ed46aa32f2e8aa575e" category="paragraph">在您檢閱過硬體需求之後<block ref="8054262d52a0c88e2eb96c4a29491e7c" category="inline-link-macro-rx"></block>，您就可以了。</block>
-  <block id="4e12da3ed45d8c0cbcaf56b1f9f08af6" category="summary">開始安裝和設定 ASA R2 儲存系統、並在 ONTAP 環境中將其部署為 HA 配對。</block>
   <block id="bec12648a072f54e7209e45d72c0ba78" category="doc">ASA R2 儲存系統的安裝與設定工作流程</block>
   <block id="f08e3211126883342efb2c1028678668" category="paragraph">若要安裝及設定 ASA R2 系統、請檢閱硬體需求、準備站台、安裝硬體元件並連接纜線、開啟系統電源、以及設定 ONTAP 叢集。</block>
   <block id="7ccd978bf0dbca0a0746f98d09b99f7f" category="inline-link-macro">檢閱硬體安裝需求</block>
@@ -1213,7 +1207,6 @@
   <block id="4ce211e7f3238dc2a7e5fc38f7096d99" category="list-text">輸入儲存單元容量、然後選取主機作業系統。</block>
   <block id="4a12fcafc1a3c4f57a718c8ca92efc50" category="list-text">接受自動選取的 * 主機對應 * 、或選取要對應儲存單元的不同主機群組。</block>
   <block id="3a880a9aa73ca2acefaaddbfcdb6e4e5" category="paragraph">* 主機對應 * 是指將新儲存單元對應至的主機群組。如果您為新儲存單元選取的主機類型有預先存在的主機群組、則會自動為主機對應選取預先存在的主機群組。您可以接受自動為主機對應選取的主機群組、也可以選取不同的主機群組。</block>
-  <block id="827c0951d229d00d677d2fcd8db9ed5e" category="paragraph">如果在您指定的作業系統上執行的主機沒有預先存在的主機群組、則 ONTAP 會自動建立新的主機群組。</block>
   <block id="ec00cac618e2a8983fc71ca2a711519c" category="list-text">如果您想執行下列任何一項、請選取 * 更多選項 * 、然後完成所需步驟。</block>
   <block id="7e8304ed8a1d7b1d5ea3d023833084ac" category="paragraph">變更預設的服務品質（ QoS ）原則</block>
   <block id="670420248bfae86c26e9659cd428df4a" category="paragraph">如果先前未在要建立儲存單元的儲存虛擬機器（ VM ）上設定預設 QoS 原則、則無法使用此選項。</block>
@@ -1308,7 +1301,6 @@
   <block id="b6e8a44e2a75e79622ab8bca1270a5ce" category="doc">ASA R2 儲存限制</block>
   <block id="abe1583ce937db07d8d0619331789f3c" category="paragraph">為了獲得最佳效能、組態和支援、您應該注意 ASA R2 儲存限制。</block>
   <block id="96518fa8caa802b5be6e8e42fa8d0690" category="cell">每個叢集的最大節點數</block>
-  <block id="c81e728d9d4c2f636f067f89cc14862c" category="cell">2</block>
   <block id="d8aa4c4ba6e098346f0524ef76464fe4" category="cell">最大儲存單元大小</block>
   <block id="d0bb632fcdb31cf3c729c1c59f826d4f" category="cell">128TB</block>
   <block id="bebabfeb2bb62750bf38ee33a0e54982" category="paragraph">如需最新 ASA R2 儲存限制的完整清單，請參閱<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
@@ -1602,13 +1594,11 @@
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1 的新功能</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">變更為 ONTAP 預設值和限制</block>
   <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">如果您需要從機載金鑰管理程式切換至外部金鑰管理程式，或是從外部金鑰管理程式切換至外部金鑰管理程式<block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>，請參閱。</block>
-  <block id="741966f7a31d60fddc8857d2cb9fb674" category="paragraph">ASA R2 系統在單一 HA 配對部署上支援所有 SAN 傳輸協定（ iSCSI 、 FC 、 NVMe / FC 、 NVMe / TCP ）。SCSI （ iSCSI 和 FC ）傳輸協定使用對稱的雙主動式架構來執行多重路徑、因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
   <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror （非同步與同步）移轉至雲端</block>
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror （非同步和同步）至非 ASA R2 系統</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">資料減量比率代表儲存效率所節省的空間量。</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror （非同步和同步）僅支援從 ASA R2 系統到 ASA R2 系統。從 ASA R2 系統到 AFF 或 FAS 系統不支援 SnapMirror 。</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">ASA R2 儲存系統快速入門</block>
-  <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">瞭解 ASA R2 儲存系統： A1K ， A90 和 A70</block>
   <block id="465ce601131c87fafd3a4a3da5836246" category="summary">ASA R2 系統遵循與所有其他 ONTAP 系統相同的 SAN 主機組態建議與準則。</block>
   <block id="9a364a877707d0b61983419895ba3632" category="doc">ASA R2 系統的 SAN 主機組態</block>
   <block id="31eb0490b298463d8797eab8041ed748" category="paragraph">建議您使用兩個以上的交換器，將儲存系統連接到一或多個 SAN 主機。對於 iSCSI 組態，連接主機，交換器和儲存系統的網路拓撲稱為 _network_ 。對於 FC 和 FC-NVMe 組態，這種相同的網路拓撲稱為 _Fabric 。</block>
@@ -1644,4 +1634,133 @@
   <block id="4b3d6eefe10e552e93669e44e3908ab2" category="inline-link-macro">建立僅 iSCSI LIF</block>
   <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">在 ASA R2 系統中，預設的網路 LIF 會在 NVMe 和 SCSI 主機之間共用，因此不支援自動容錯移轉。若要啟用自動 iSCSI LIF 容錯移轉<block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>，您必須。依預設，自動容錯移轉僅在 iSCSI 上啟用。</block>
   <block id="22f4d4e3ef9ad886ae95608e10f828cb" category="paragraph">啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點的健全連接埠，然後在連接埠再次正常運作時，再移回原始連接埠。</block>
+  <block id="e51f73897cef482e683893c74ad0aebf" category="doc">將 ASA R2 節點新增至 ONTAP 叢集</block>
+  <block id="be36547b484c259b8e39cb4b17bdac83" category="paragraph">從 ONTAP 9.16.1 開始， ASA R2 儲存系統每個叢集最多可支援 12 個節點。在 HA 配對的新節點連接纜線並開啟電源之後，您需要將它們加入叢集。</block>
+  <block id="97a5a9f5366a279a2160c428ad458079" category="list-text">節點 IP 位址</block>
+  <block id="d08cd309dd95d7aa27f8f977cf1a060e" category="list-text">叢集間網路介面 IP 位址</block>
+  <block id="20f5ca91f6dbeac15890f67c9a4cb751" category="list-text">叢集間網路子網路遮罩</block>
+  <block id="62f6882cb404e558e070fbed9abb8408" category="list-text">叢集間網路閘道</block>
+  <block id="8d5bab260f1fd17a58eead81f9a933dc" category="list-text">如果您想要設定內建金鑰管理程式（ OKM ），則需要 OKM 複雜密碼。</block>
+  <block id="01c399628d4ca140e3f9a9b4af069aaf" category="list-text">選取<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>您要加入叢集的節點旁的，然後選取 * 新增節點 *</block>
+  <block id="83574618638225092ab0e933a6da9812" category="list-text">輸入每個節點的 IP 位址。</block>
+  <block id="e7b7c94e6d81ece348285ff2b7c586bc" category="list-text">輸入叢集間網路介面 IP 位址，子網路遮罩和閘道。</block>
+  <block id="4cb7615df5933d98f247b46408545f05" category="list-text">如果您想要設定內建金鑰管理程式（ OKM ），請輸入 OKM 複雜密碼。</block>
+  <block id="e65c1f346347ea2c3f94d2f7b1f37252" category="paragraph">* 預設會選取設定內建金鑰管理程式進行加密 * 。</block>
+  <block id="114bac06cb680744fb618e2d1de76644" category="paragraph">新的 HA 配對即會加入叢集。</block>
+  <block id="d46a824e09e83ce9ce018295770894a6" category="inline-link-macro">啟用從 SAN 主機存取資料的功能</block>
+  <block id="a5f04ac5782b3b4db001475a2ce8f1f8" category="paragraph">將新的 HA 配對新增至叢集之後，您就可以新增<block ref="180fb7c364ff620a7da1de634e394af5" category="inline-link-macro-rx"></block>節點。</block>
+  <block id="f142a152601a952c440aa742ae54d56c" category="doc">升級 ASA R2 儲存系統上的 ONTAP</block>
+  <block id="f46c905b973360f57c509a5dac0d6aca" category="paragraph">當您在 ASA R2 系統上升級 ONTAP 軟體時，您可以利用新的增強 ONTAP 功能，協助您降低成本，加速關鍵工作負載，改善安全性，並擴大組織可用的資料保護範圍。</block>
+  <block id="1609fb0c876b70bfae98d1cafa399784" category="inline-link-macro">準備使用 Upgrade Advisor 升級</block>
+  <block id="e4b24f4689bdc8358c4d409b6a9d4103" category="inline-link-macro">準備升級而不使用 Upgrade Advisor</block>
+  <block id="715a6cc9b89f202d46f87d2b8ae93e8e" category="paragraph">ASA R2 系統的 ONTAP 軟體升級程序與其他 ONTAP 系統的升級程序相同。如果您有 Active IQ 數位顧問（也稱為數位顧問）的有效 SupportEdge 合約、您應該<block ref="1117d34674fd91a6ee3c7506ddc3a8f0" category="inline-link-macro-rx"></block>。升級顧問提供的智慧功能可協助您評估叢集並建立專屬組態的升級計畫、以將不確定性和風險降至最低。如果您沒有適用於 Active IQ 數位顧問的有效 SupportEdge 合約<block ref="66ecb4b248d940ec34981282ad334ce1" category="inline-link-macro-rx"></block>，您應該。</block>
+  <block id="46629b819dff531a5a2a49fcda5443dd" category="inline-link-macro">從 System Manager 自動進行不中斷升級（ andu ）</block>
+  <block id="d351531ad851e21d1ccbc812e54540ff" category="paragraph">準備升級之後，建議您使用執行升級<block ref="a93595527d1144b0b27a701c939efa63" category="inline-link-macro-rx"></block>。ANDU 利用 ONTAP 的高可用度（ HA ）容錯移轉技術、確保叢集在升級期間能持續提供資料、而不會中斷。</block>
+  <block id="8b7f4f92636306e034e67a0098393065" category="inline-link-macro">ONTAP 軟體升級</block>
+  <block id="db24448a282517925d7637e0ab57fb35" category="paragraph">深入瞭解 <block ref="ee50b0384392ffd34e721693cf1abb90" category="inline-link-macro-rx"></block>。</block>
+  <block id="fff17537d9a4bdde67e260b49d17c884" category="paragraph">當您使用新的儲存單元建立一致性群組時，可以為每個儲存單元指派不同的容量，變更預設效能服務層級，以及建立最多五個子一致性群組。當您使用現有的儲存單元建立一致性群組時，可以新增已在使用中的儲存單元。</block>
+  <block id="06b783ccc728f89654eb406f121a920e" category="paragraph">如果您建立多個單元，則每個單元預設會使用相同的容量和相同的主機作業系統建立。您可以選擇性地為每個單元指派不同的容量。</block>
+  <block id="c714809f14fa9d9c65c38961426d89e3" category="paragraph">為每個儲存單元指派不同的容量</block>
+  <block id="b079c5d39925229ba3c754aec7200bfe" category="paragraph">選取 * 新增不同容量 * 。</block>
+  <block id="31a76ac8189f6bc9ca7266bc2fa13c8d" category="paragraph">變更預設效能服務層級</block>
+  <block id="fe36b3d0747e41e736245b1f2f016f37" category="paragraph">在 * 效能服務層級 * 下，選取不同的服務層級。</block>
+  <block id="e39fb54244b4e7e5902cf86f104eae5f" category="paragraph">建立子一致性群組</block>
+  <block id="df30ab788ddab119f1a9a52f397c1578" category="paragraph">選取 * 新增子一致性群組 * 。</block>
+  <block id="47f30cf1dbc386b695e587c89d934679" category="paragraph">從 ONTAP 9.16.1 開始，您可以使用系統管理員在 ASA R2 系統上建立階層式一致性群組。在階層式結構中，一個或多個一致性群組會設定為父一致性群組下的子群組。</block>
+  <block id="accc48ba80dae134714334f9974f857c" category="paragraph">階層式一致性群組可讓您將個別的快照原則套用到每個子一致性群組，並透過複寫父叢集，將所有子一致性群組的快照複寫到單一單元的遠端叢集。如此可簡化複雜資料結構的資料保護與管理。例如，假設您建立一個父一致性群組，稱為<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>，其中包含兩個子一致性群組：<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>應用程式資料和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>應用程式記錄。每 15 分鐘拍攝一次的快照<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>，每小時拍攝一次的快照<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>。父一致性群組具有 SnapMirror 原則，<block ref="d6faa7ca58e81c6f13095e4f9ff20e81" prefix=" " category="inline-code"></block>可每 24 小時將和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>的快照複寫<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>到遠端叢集。父一致性群組<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>是以單一單位來管理，子一致性群組則以個別單位來管理。</block>
+  <block id="5c31d135ad789e411ad759e0c134e359" category="section-title">將現有的一致性群組轉換成父一致性群組</block>
+  <block id="ab5220486193aa4a04c53d18e19056fc" category="paragraph">儲存單元不能直接與父一致性群組相關聯。如果您將現有的一致性群組轉換為父群組，則會建立新的子一致性群組，並將屬於轉換一致性群組的儲存單元移至新的子一致性群組。</block>
+  <block id="9bb9a0458dabe990942bf493592cb497" category="list-text">將游標移到您要轉換成父一致性群組的一致性群組上。</block>
+  <block id="ec57f29bebbe66441595e764308d00a6" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 提升至父一致性群組 * 。</block>
+  <block id="e0e1d719c3169a36adccf812d315cc3d" category="list-text">輸入父一致性群組的名稱或接受預設名稱，然後選取一致性群組元件類型。</block>
+  <block id="3073e32eb6f2f0cb69e9248a5f0c848c" category="list-text">選擇 * 促銷 * 。</block>
+  <block id="f61d709beaccfca851c4fd737b049a61" category="paragraph">您可以在父一致性群組下建立其他子一致性群組。您也可以<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>將父一致性群組複製到地理位置遠端位置，以進行備份和災難恢復。</block>
+  <block id="f28898d3cd8988ff697e782c8449eb18" category="paragraph">建立子一致性群組可讓您將個別的快照原則套用至每個子層級，同時將複寫原則套用至父層級的所有子一致性群組。</block>
+  <block id="34dd18f2c196dd45fa9dfab7e7517350" category="paragraph">您可以從新的或現有的一致性群組建立子一致性群組。</block>
+  <block id="643328739ada7596678f9066cec81be9" category="open-title">來自新的一致性群組</block>
+  <block id="d7c5fedb6bb1501de8279366644bdd86" category="list-text">將游標移至您要新增子一致性群組的父一致性群組。</block>
+  <block id="f51c3dd065cb4f7804909df96d48e637" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 新增子一致性群組 * 。</block>
+  <block id="1e01b7d6c9d4045d5d60b1701e87a5f6" category="list-text">輸入子一致性群組的名稱或接受預設名稱，然後選取一致性群組元件類型。</block>
+  <block id="fd11eccc6260851a0ec00ec6dfe7a17e" category="list-text">選取以將現有儲存單元新增至子一致性群組，或建立新的儲存單元。</block>
+  <block id="214e2148a848b4d516c6f14ed1efd50d" category="paragraph">如果您建立新的儲存單元，請輸入您要建立的單元數和每個單元的容量，然後輸入主機資訊。</block>
+  <block id="34277bacf7bd7771bbb4c1c64a00dedb" category="paragraph">如果您建立多個儲存單元，則每個單元都會建立相同的容量和相同的主機作業系統。若要指派不同容量給每個單位，請選取 * 新增不同容量 * 。</block>
+  <block id="3fb56bc224d2a0ac3d902de4d323e71a" category="open-title">來自現有一致性群組</block>
+  <block id="9e532008425c88c7f9f600e01feb942c" category="list-text">選取您要建立子一致性群組的現有一致性群組。</block>
+  <block id="7ab1a538b156a84c113e1b25aa016aef" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 移至不同一致性群組 * 下。</block>
+  <block id="f50d0d6201337aee6a17962f21e42153" category="paragraph">如果您想將一致性群組當作另一個一致性群組的子群組使用，則必須先將其與現有父一致性群組分離，才能將其移至新的父一致性群組。</block>
+  <block id="b13aafb46acdbda66ede2f929c14fff7" category="list-text">輸入子一致性群組的新名稱或接受預設名稱，然後選取一致性群組元件類型。</block>
+  <block id="767e4528802b2fbd53126bfeffbfbb47" category="list-text">選取您想要建立父一致性群組的現有一致性群組，或選取以建立新的父一致性群組。</block>
+  <block id="36a7554cab29967611589d7eefa20c88" category="paragraph">如果您選擇建立新的父一致性群組，請輸入父一致性群組的名稱或接受預設名稱，然後選取一致性應用程式元件類型。</block>
+  <block id="c3eb9435da3ee7c0ac02ef30983ba9d2" category="list-text">選取 * 移動 * 。</block>
+  <block id="1aebd2565785840796b5b11c1362918f" category="inline-link-macro">套用個別的快照保護原則</block>
+  <block id="27f6c159b783eaece3b27009d252861f" category="inline-link-macro">設定複寫原則</block>
+  <block id="5584e5580824a6a612aaebc7cae0dc13" category="paragraph">建立子一致性群組之後，您可以<block ref="b20e7e9a535f6a3244da85f4587a0502" category="inline-link-macro-rx"></block>移至每個子一致性群組。您也可以<block ref="cbc7b65bc979a0ca08aaa98e2dc63eda" category="inline-link-macro-rx"></block>在父一致性群組上，將所有子一致性群組的快照複寫到單一單位的遠端叢集。</block>
+  <block id="4aafb19b9676db4e8aa85eb3131ac5f4" category="section-title">將父一致性群組降級為單一一致性群組</block>
+  <block id="5837ba118b622a1f9ee732410e451284" category="paragraph">當您將父一致性群組降級為單一一致性群組時，相關子一致性群組的儲存單元會新增至父一致性群組。子一致性群組會被刪除，然後將父一致性群組管理為單一一致性群組。</block>
+  <block id="dd487eacf1aba6e2726ce73064acff7b" category="list-text">將游標暫留在您要降級的父一致性群組上。</block>
+  <block id="d26a37885a1db03d1d33fa1b32e74c25" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 降級至單一一致性群組 * 。</block>
+  <block id="0b886822f169d28b04dc34a1cb55c402" category="list-text">選擇 * 降級 *</block>
+  <block id="8eea35138709fe7cf5caaf5b5fb53a4d" category="inline-link-macro">新增快照原則</block>
+  <block id="a4cc38b952e58f7fac916d3297d86f9f" category="paragraph"><block ref="9b6117933a7d1c9745a65ab485bb26f2" category="inline-link-macro-rx"></block>移至降級一致性群組，以保護先前由子一致性群組管理的儲存單元。</block>
+  <block id="e8289e36e948e36d5aeb9297cf2c6712" category="section-title">將子一致性群組與父一致性群組分離</block>
+  <block id="a98e8367b6b0b1bc6b9fdb2658c07a83" category="paragraph">當您將子一致性群組與父一致性群組分離時，子一致性群組會從父一致性群組中移除，並以單一一致性群組來管理。套用至父項的複寫原則不再套用至分離的子項一致性群組。</block>
+  <block id="94db0ec67f710fec5c7f775e299a2d6e" category="list-text">選取父一致性群組。</block>
+  <block id="77b355d4c3903a5367febffb1d5fb080" category="list-text">選取您要分離的子一致性群組。</block>
+  <block id="baffc5619c6b92cfb8bd0f06efe69615" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 從父 * 分離。</block>
+  <block id="43faed766403b7432cc59c42e8d49ebf" category="list-text">為您要分離的一致性群組輸入新名稱，或接受預設名稱，然後選取一致性群組應用程式類型。</block>
+  <block id="f9e81700c82de44e7b8b9b6bfcfbba80" category="list-text">選取 * 分離 * 。</block>
+  <block id="3fe9697b148df0f9994a0c38ed482555" category="inline-link-macro">設定複寫原則</block>
+  <block id="ee498a1797cb05156ed6a63b8ff17543" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>將分離子一致性群組的快照複寫到遠端叢集，做為單一一致性群組。</block>
+  <block id="ab8f09c8990747589e661d2b7b0d3f20" category="summary">ASA R2 系統（ ASA A1K ， A90 ， A70 ）提供統一化的硬體與軟體解決方案，為僅限 SAN 的客戶提供簡化的體驗。</block>
+  <block id="2168b2f72c5b19d6c97100664276ea67" category="searchtitle">瞭解 ASA A1K ， A90 和 A70 系統</block>
+  <block id="a2d4e1cad7dfa6160fb66fdbda1b87c5" category="paragraph">ASA R2 系統支援所有 SAN 傳輸協定（ iSCSI ， FC ， NVMe / FC ， NVMe / TCP ）。iSCSI ， FC 和 NVMe / FC 傳輸協定支援對稱的雙主動式多重路徑架構，因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
+  <block id="109a51a8a2c0a685a3c75a58d3c4230b" category="summary">若要開始使用 ASA R2 （ ASA A1K ， A90 ， A70 ）系統，請安裝硬體，設定叢集，設定資料存取，以及配置儲存設備。</block>
+  <block id="1e6107a968feb6567db48861306cc49f" category="searchtitle">安裝及設定 ASA A1K ， A90 及 A70 儲存系統</block>
+  <block id="e5c51f544e69319bec042113911e203e" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>您的 ASA R2 系統，並將其部署在 ONTAP 環境中。</block>
+  <block id="9a5e67864d1a0cbd6f43034e561f51a2" category="summary">開始安裝和設定 ASA R2 儲存系統，並將其部署在 ONTAP 環境中。</block>
+  <block id="bf0f6aa21aec3e349179a68aa2cb89e0" category="section-title">分割一致性群組複本</block>
+  <block id="6227fd79476a373a893c1d081a6db13e" category="paragraph">分割一致性群組複本時，您會將複本與來源一致性群組分離，並為複本分配磁碟空間。該複本會變成獨立的一致性群組，可獨立於來源一致性群組使用。</block>
+  <block id="d76e4c0366befa279b219a5ee2ef2f9c" category="list-text">將游標移至您要分割的一致性群組複本上。</block>
+  <block id="c7146cc88efb9d4aa82ab0e52c436a48" category="list-text">選取 * 分割複本 * 。</block>
+  <block id="54e2c4dd2b9e992b761540f131754e81" category="list-text">選取 * 分割 * 。</block>
+  <block id="b75f8c35975d217c69d40f46c56bb8c5" category="paragraph">該複本會與來源一致性群組分離，並為複本分配磁碟空間。</block>
+  <block id="9ebaaa53fbc9e58c2b9ee7ad84f3ada8" category="doc">在 ASA R2 儲存系統上移動儲存單元</block>
+  <block id="aa2588a0578a9bf3830dd720f8969abf" category="paragraph">如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。</block>
+  <block id="d4ec5e86ec36bfd751dc7ae22931f6a3" category="paragraph">您可以在儲存單元上線並提供資料時移動儲存單元。移動作業不會中斷營運。</block>
+  <block id="3df7f1089e4d9e422795c1f9b7ebd7cb" category="list-text">您必須執行 ONTAP 9.16.1 或更新版本。</block>
+  <block id="89f5399d31e98d41d9ed3262351036ba" category="list-text">您的叢集必須包含四個以上的節點。</block>
+  <block id="75c802412c81363d98f12df3afdd41ee" category="list-text">在 System Manager 中，選取 * Storage* ，然後選取您要移動的儲存單元。</block>
+  <block id="d5ea13be4cb9332cce8fc578618d94de" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 移動 * 。</block>
+  <block id="fdc877319615730d39477cdaa8dc7207" category="list-text">選取您要將儲存單元移至的儲存可用區域，然後選取 * 移動 * 。</block>
+  <block id="a48688c54c854235d38fe4b42f162152" category="paragraph">如果在您指定的作業系統上執行的主機沒有預先存在的主機群組， ONTAP 會自動建立新的主機群組。</block>
+  <block id="12a1557d26fa34ac5e904bc3e60b0bf4" category="list-text">在 * 儲存與最佳化 * 下，在 * 服務品質（ QoS ） * 旁<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>，選擇。</block>
+  <block id="2cb253331363d78b30ad71dd5d7edd19" category="paragraph">變更預設效能服務層級。</block>
+  <block id="550794613b3e2574a3e7ea8c2b3d0529" category="paragraph">ASA R2 系統提供兩種效能等級。預設效能等級為 * 極致 * ，這是最高可用等級。您可以將效能層級降至 * 效能 * 。</block>
+  <block id="337c483d117ff7e78ed214b1799b666f" category="list-text">在 * 儲存與最佳化 * 下，在 * 效能服務層級 * 旁<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>，選擇。</block>
+  <block id="06a4e0373e144570a83a3fcfaa55ff46" category="list-text">選擇 * 效能 * 。</block>
+  <block id="c20ad4d76fe97759aa27a0c99bff6710" category="cell">12</block>
+  <block id="455f024d5e786170a224f947b09bd74a" category="section-title">監控儲存可用性區域使用率</block>
+  <block id="9cf3716a035447d7f3920daf3ae979bd" category="paragraph">ASA R2 系統中的每個 HA 配對都使用一個稱為儲存可用區域 _ 的通用儲存池。儲存可用性區域可存取儲存系統中的所有可用磁碟，而且 HA 配對中的兩個節點都可以看到。</block>
+  <block id="c54830fa97aef91a8bc830d439dc004a" category="paragraph">如果叢集中有 4 個以上的節點，您可以檢視每個 HA 配對的儲存可用性區域所使用的空間量。此度量不適用於雙節點叢集。</block>
+  <block id="dd7cd8aba78024bcc6ec1c67f3987760" category="list-text">在 System Manager 中，選擇 *Cluster* ；然後選擇 *Overview * 。</block>
+  <block id="0ce03f9ea97502f3a10721575d8a9696" category="paragraph">會顯示叢集中每個 HA 配對的儲存可用性區域使用率摘要。</block>
+  <block id="3670021e257ef0702d763c08d8b9c8b3" category="list-text">如果您想要更詳細的數據，請選取特定的儲存可用度。</block>
+  <block id="b8e5e4895e260a0a4eeab6a3c66ae9b3" category="paragraph">在 * 總覽 * 下，會顯示儲存可用區域的容量，已用空間量及資料減量比率。</block>
+  <block id="97803d08cef50f43e58f978c9b2e1f08" category="paragraph">在 * 儲存單元 * 下，會顯示儲存可用區域中所有儲存單元的清單。</block>
+  <block id="c5b460be9264c217ff7aa949f8f26aab" category="inline-link-macro">移動儲存單元</block>
+  <block id="7245821daa5af47d8243d8eee3f64b1e" category="paragraph">如果您的儲存可用性區域空間不足，您應該計畫<block ref="a3223fe003597dcfd7b6d75426783c5a" category="inline-link-macro-rx"></block>到另一個儲存可用性區域，以平衡整個叢集的儲存使用率。</block>
+  <block id="8010ab2f71c733c1a8013b31b901be79" category="cell">每個叢集的節點數</block>
+  <block id="c7ae27ad054ff4d389e7c15cc82b0866" category="paragraph">每個叢集的最大節點數從 2 增加到 12 個。</block>
+  <block id="f35462670e9b95d1e4a8748ba6872f91" category="admonition">如果您執行的 ONTAP 9.16.1 在叢集中有 2 個以上的節點，則無法還原為 ONTAP 9.16.0 。</block>
+  <block id="7e7397a7b79323762c61941fc0e6b5f9" category="section-title">資料保護</block>
+  <block id="52b359b5c00e0db3bdd91a9f5c05cf7a" category="inline-link-macro">支援階層式一致性群組</block>
+  <block id="410817362abc44b1b70bdc2f9f49fece" category="cell"><block ref="410817362abc44b1b70bdc2f9f49fece" category="inline-link-macro-rx"></block></block>
+  <block id="aada91e6d0de9250c4de431c33ad5116" category="cell">階層式一致性群組可讓您建立包含多個子一致性群組的父一致性群組。如此可簡化複雜資料結構的資料保護與管理。</block>
+  <block id="6feaf968503604ce3e0d0b4eefca6c57" category="cell">支援儲存單元的自動重新平衡</block>
+  <block id="ec84fb814253e6779e1876e18f7db731" category="cell">ONTAP 會自動重新平衡儲存可用區域中的儲存單元，以達到最佳效能和容量使用率。</block>
+  <block id="abdffd3ebdd2031130d1592a9a139a92" category="sidebar">NetApp ASA R2 系統（ ASA A1K ， A90 ， A70 ）提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。</block>
+  <block id="d04e5f519989e5f2ca95f9541ffe17a0" category="sidebar">升級ONTAP</block>
+  <block id="fb3dca1c5682d0eef255de24a00af0f3" category="sidebar">新增節點</block>
+  <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理儲存單元</block>
+  <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">移動儲存單元</block>
 </blocks>
