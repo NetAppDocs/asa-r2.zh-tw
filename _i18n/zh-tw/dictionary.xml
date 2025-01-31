@@ -1713,7 +1713,6 @@
   <block id="ee498a1797cb05156ed6a63b8ff17543" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>將分離子一致性群組的快照複寫到遠端叢集，做為單一一致性群組。</block>
   <block id="ab8f09c8990747589e661d2b7b0d3f20" category="summary">ASA R2 系統（ ASA A1K ， A90 ， A70 ）提供統一化的硬體與軟體解決方案，為僅限 SAN 的客戶提供簡化的體驗。</block>
   <block id="2168b2f72c5b19d6c97100664276ea67" category="searchtitle">瞭解 ASA A1K ， A90 和 A70 系統</block>
-  <block id="a2d4e1cad7dfa6160fb66fdbda1b87c5" category="paragraph">ASA R2 系統支援所有 SAN 傳輸協定（ iSCSI ， FC ， NVMe / FC ， NVMe / TCP ）。iSCSI ， FC 和 NVMe / FC 傳輸協定支援對稱的雙主動式多重路徑架構，因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
   <block id="109a51a8a2c0a685a3c75a58d3c4230b" category="summary">若要開始使用 ASA R2 （ ASA A1K ， A90 ， A70 ）系統，請安裝硬體，設定叢集，設定資料存取，以及配置儲存設備。</block>
   <block id="1e6107a968feb6567db48861306cc49f" category="searchtitle">安裝及設定 ASA A1K ， A90 及 A70 儲存系統</block>
   <block id="e5c51f544e69319bec042113911e203e" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>您的 ASA R2 系統，並將其部署在 ONTAP 環境中。</block>
@@ -1763,4 +1762,9 @@
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理儲存單元</block>
   <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">移動儲存單元</block>
   <block id="ffb5ca95f1d59040ebadb90640b1970b" category="cell"><block ref="ffb5ca95f1d59040ebadb90640b1970b" category="inline-link-macro-rx"></block></block>
+  <block id="07f2a299db43ab53ccb5d7b05918e3fc" category="paragraph">ASA R2 系統支援所有 SAN 傳輸協定（ iSCSI ， FC ， NVMe / FC ， NVMe / TCP ）。iSCSI ， FC ， NVMe / FC 和 NVMe / TCP 傳輸協定支援對稱的雙主動式架構，可執行多重路徑，讓主機和儲存設備之間的所有路徑都處於主動 / 最佳化狀態。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
+  <block id="30388d1a3ab1a01f6930553a577eb80b" category="section-title">傳輸協定支援</block>
+  <block id="de67fc8f6fb798124dcbf65615888af5" category="inline-link-macro">NVMe 支援對稱式主動 / 主動式多重路徑</block>
+  <block id="ac187c37acbb455a3ec9ef006a79fdf8" category="cell"><block ref="ac187c37acbb455a3ec9ef006a79fdf8" category="inline-link-macro-rx"></block></block>
+  <block id="ac12d691d1b6c417de929f3b833cef99" category="cell">NVMe / FC 和 NVMe / TCP 現在支援對稱的雙主動式架構，可執行多重路徑，因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。</block>
 </blocks>
