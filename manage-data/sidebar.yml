@@ -38,6 +38,8 @@ entries:
   entries:
   - title: 加密靜態資料
     url: "/secure-data/encrypt-data-at-rest.html"
+  - title: 在金鑰管理員之間移轉資料加密金鑰
+    url: "/secure-data/migrate-encryption-keys-between-key-managers.html"
   - title: 防範勒索軟體攻擊
     url: "/secure-data/ransomware-protection.html"
   - title: 安全的 NVMe 連線

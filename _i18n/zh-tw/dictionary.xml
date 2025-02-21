@@ -1767,4 +1767,36 @@
   <block id="de67fc8f6fb798124dcbf65615888af5" category="inline-link-macro">NVMe 支援對稱式主動 / 主動式多重路徑</block>
   <block id="ac187c37acbb455a3ec9ef006a79fdf8" category="cell"><block ref="ac187c37acbb455a3ec9ef006a79fdf8" category="inline-link-macro-rx"></block></block>
   <block id="ac12d691d1b6c417de929f3b833cef99" category="cell">NVMe / FC 和 NVMe / TCP 現在支援對稱的雙主動式架構，可執行多重路徑，因此主機和儲存設備之間的所有路徑都是主動 / 最佳化的。</block>
+  <block id="1b2a9f2a24a72c15335105126ba3c988" category="summary">您可以使用 ASA R2 系統上的 ONTAP 內建金鑰管理程式，或是外部金鑰管理程式，或兩者（在某種情況下）來管理資料加密金鑰。</block>
+  <block id="e99ed2862cc3fe1cd81a9f3a2dd33c56" category="doc">在 ASA R2 系統上的金鑰管理員之間移轉 ONTAP 資料加密金鑰</block>
+  <block id="b5badfcddc250ad4fcc8251908f87e29" category="paragraph">您可以使用 ASA R2 系統上的 ONTAP 機載金鑰管理程式或外部金鑰管理程式（或兩者）來管理資料加密金鑰。外部金鑰管理員只能在儲存 VM 層級啟用。在 ONTAP 叢集層級，您可以啟用內建金鑰管理程式或外部金鑰管理程式。</block>
+  <block id="afcb105c793faf5a2de8b7bec9a27701" category="cell">如果您在 ...</block>
+  <block id="0fe3023d00cc7e6a03e47a3c68ab74c5" category="cell">您可以使用 ...</block>
+  <block id="5c5372da5c24091217c06cc0f6ec8d03" category="cell">僅叢集層級</block>
+  <block id="ac4595d6d7fb8008d832bded40c17ce1" category="paragraph">內建金鑰管理程式或外部金鑰管理程式</block>
+  <block id="ee660d5fa0fcf5d6a9acb167806fbf93" category="cell">僅 SVM 層級</block>
+  <block id="0553120d27a584be88a1ae3bd8c69d64" category="cell">僅限外部金鑰管理員</block>
+  <block id="81b9ace7cc0d5c4a18ed0debac590134" category="paragraph">叢集和 SVM 層級</block>
+  <block id="a8baf82d452f3a828b4d58fae37b7d17" category="paragraph">下列其中一個按鍵管理器組合：</block>
+  <block id="fd577a8bfd88959b13dfc6803c7ef6ce" category="list-text">選項1</block>
+  <block id="08c0163f788e58353da3da5e9a5fa6c7" category="paragraph">叢集層級：內建金鑰管理程式</block>
+  <block id="434835c03ec88a20257ade31cd0f6e40" category="paragraph">SVM 層級：外部金鑰管理程式</block>
+  <block id="e24963e40778134b357f4a5eac58e1f5" category="list-text">選項2</block>
+  <block id="3a8a9355eb7486336283b79738409c86" category="paragraph">叢集層級：外部金鑰管理程式</block>
+  <block id="0210c164d56b9ee340b6de0f8bcc2d48" category="section-title">在 ONTAP 叢集層級的關鍵管理員之間移轉金鑰</block>
+  <block id="fbcbd18b1b9340d453b1e6de03001b58" category="paragraph">從 ONTAP 9.16.1 開始，您可以使用 ONTAP 命令列介面（ CLI ）在叢集層級的關鍵管理員之間移轉金鑰。</block>
+  <block id="ad149857660a2356599fe21affd4451d" category="open-title">從內建到外接</block>
+  <block id="b5c6fde8816eb583a49b6c0314b82928" category="list-text">將權限層級設為進階：</block>
+  <block id="e1bb323a4b2b039ad5f3cab3ae012f34" category="list-text">建立非作用中的外部金鑰管理程式組態：</block>
+  <block id="d3004c556729998245acc90f8fa80c9c" category="list-text">切換至外部金鑰管理程式：</block>
+  <block id="98e4d41b2a29ccd0b80651026a329d11" category="list-text">刪除機載金鑰管理程式組態：</block>
+  <block id="fe07e34b9c4a621f8012d19499fb4ea5" category="list-text">將權限等級設為admin：</block>
+  <block id="e23deb899dce1ad56b34b17413e1b7ec" category="open-title">從外部到內建</block>
+  <block id="8f2a471846efc7bf912e0fa539aa3330" category="list-text">建立非使用中的機載金鑰管理程式組態：</block>
+  <block id="b0b9d1953037e9596f7d9b5447aeafb2" category="list-text">啟用內建金鑰管理程式組態：</block>
+  <block id="dfa14df9c3238dad5e97f0b19204f7d3" category="list-text">刪除外部金鑰管理程式組態</block>
+  <block id="8168a513576ac2e105ea5be6de6b1d72" category="section-title">在 ONTAP 叢集和儲存 VM 層級的關鍵管理程式之間移轉金鑰</block>
+  <block id="cc1a9524f9ddd8574a5553ccd90ee9c3" category="paragraph">您可以使用 ONTAP 命令列介面（ CLI ），在叢集層級的金鑰管理程式與儲存 VM 層級的金鑰管理程式之間移轉金鑰。</block>
+  <block id="5efbf2392161773688bf42568dd2c8c6" category="list-text">移轉金鑰：</block>
+  <block id="f7d82610ce1c76769575f4a95bb11e80" category="sidebar">在金鑰管理員之間移轉資料加密金鑰</block>
 </blocks>
