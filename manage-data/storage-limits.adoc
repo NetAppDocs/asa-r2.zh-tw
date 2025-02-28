@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
-keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70 
+keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20 
 summary: ASA R2 組態支援每個執行 FC 、 iSCSI 、 NVMe / FC 或 NVMe / TCP 通訊協定的叢集最多 2 個節點。 
 ---
 = ASA R2 儲存限制

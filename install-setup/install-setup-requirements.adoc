@@ -23,7 +23,7 @@ summary: 檢閱 ASA R2 儲存系統和儲存櫃所需的設備和起重預防措
 * 靜電釋放（ ESD ）固定帶
 * 手電筒
 * 具備 USB/ 序列連線的筆記型電腦或主控台
-* 迴紋針或窄尖圓珠筆、用於設定 NS224 儲存櫃 ID
+* 迴紋針或窄尖圓珠筆，用於設定儲存櫃 ID
 * 2號十字螺絲起子
 
 
@@ -31,7 +31,7 @@ summary: 檢閱 ASA R2 儲存系統和儲存櫃所需的設備和起重預防措
 
 == 起重預防措施
 
-ASA R2 儲存系統和 NS224 儲存櫃非常繁重。抬起和移動這些項目時請務必謹慎。
+ASA R2 儲存系統和儲存櫃非常繁重。抬起和移動這些項目時請務必謹慎。
 
 
 
@@ -41,18 +41,25 @@ ASA R2 儲存系統和 NS224 儲存櫃非常繁重。抬起和移動這些項目
 
 [role="tabbed-block"]
 ====
-.ASA A1K
+.A1K
 --
-ASA A1K 儲存系統的重量可達 62.83 磅（ 28.5 公斤）。若要抬起系統、請使用兩個人或液壓舉升設備。
+ASA A1K 儲存系統的重量可達 62.83 磅（ 28.5 公斤）。若要抬起儲存系統，請使用兩個人或液壓舉升設備。
 
-image::../media/drw_a1k_weight_caution_ieops-1698.svg[AFF A1K 提升注意事項圖示]
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[ASA A1K 提升注意事項圖示]
 
 --
-.ASA A70 和 ASA A90
+.A70 和 A90
 --
-ASA A70 儲存系統或 ASA A90 儲存系統的重量可達 151.68 磅（ 68.8 公斤）。若要抬起系統、請使用四個人或液壓舉升設備。
+ASA A70 或 ASA A90 儲存系統最重可達 151.68 磅（ 68.8 公斤）。若要抬起儲存系統，請使用四個人或液壓舉升設備。
 
-image::../media/drw_a70-90_weight_icon_ieops-1730.svg[AFF A90]
+image::../media/drw_a70-90_weight_icon_ieops-1730.svg[ASA A90]
+
+--
+.A20、A30和A50
+--
+ASA A20 ， ASA A30 或 ASA A50 儲存系統最重可達 61.5 磅（ 27.9 公斤）。若要抬起儲存系統，請使用兩個人或液壓舉升設備。
+
+image::../media/drw_g_lifting_weight_ieops-1831.svg[ASA A20,A30,or an A50 weight caution icon]
 
 --
 ====
@@ -60,10 +67,25 @@ image::../media/drw_a70-90_weight_icon_ieops-1730.svg[AFF A90]
 
 === 儲存櫃重量
 
-NS224 儲存櫃的重量可達 66.78 磅（ 30.29 公斤）。若要抬起儲存架、請使用兩個人或液壓舉升設備。請將所有元件保留在儲存櫃（前後）、以避免在機櫃重量上出現不均衡的情況。
+移動或舉起貨架時，請採取必要的預防措施。
 
-image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 舉升注意事項]
+[role="tabbed-block"]
+====
+.NS224 機櫃
+--
+NS224 機櫃最重可達 66.78 磅（ 30.29 公斤）。若要抬起貨架，請兩個人或液壓舉升。請將所有元件保留在機架中（前後），以避免機架重量不均衡。
 
+image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 NSM100 舉升注意事項]
+
+--
+.NS224 機櫃，含 NSM100B 模組
+--
+配備 NSM100B 模組的 NS224 機櫃可重達 56.8 磅（ 25.8 公斤）。若要抬起貨架，請兩個人或液壓舉升。請將所有元件保留在機架中（前後），以避免機架重量不均衡。
+
+image::../media/drw_ns224_nsm100b_lifting_weight_ieops-1832.svg[NS224 ，含 NSM100b 舉升注意事項]
+
+--
+====
 .相關資訊
 * https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["安全資訊與法規注意事項"^]
 

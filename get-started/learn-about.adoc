@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/learn-about.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, learn more, learn about, get started 
-summary: ASA R2 系統（ ASA A1K ， A90 ， A70 ）提供統一化的硬體與軟體解決方案，為僅限 SAN 的客戶提供簡化的體驗。 
-searchtitle: 瞭解 ASA A1K ， A90 和 A70 系統 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, learn more, learn about, get started 
+summary: ASA R2 系統（ ASA A1K ， A90 ， A70 ， A50 ， A30 ， A20 ）提供統一化的硬體與軟體解決方案，為僅限 SAN 的客戶提供簡化的體驗。 
+searchtitle: 瞭解 ASA A1K ， A90 ， A70 ， A50 ， A30 和 A20 系統 
 ---
 = 瞭解 ASA R2 儲存系統
 :allow-uri-read: 
@@ -12,7 +12,17 @@ searchtitle: 瞭解 ASA A1K ， A90 和 A70 系統
 
 
 [role="lead"]
-NetApp ASA R2 系統（ ASA A1K 、 ASA A70 和 ASA A90 ）提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。
+NetApp ASA R2 系統提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。
+
+下列 ASA 平台歸類為 ASA R2 系統：
+
+* ASA A1K
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+
 
 ASA R2 系統支援所有 SAN 傳輸協定（ iSCSI ， FC ， NVMe / FC ， NVMe / TCP ）。iSCSI ， FC ， NVMe / FC 和 NVMe / TCP 傳輸協定支援對稱的雙主動式架構，可執行多重路徑，讓主機和儲存設備之間的所有路徑都處於主動 / 最佳化狀態。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/whats-new-9161.html 
-keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa a90, asa a70' 
+keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
 summary: 瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.1 中提供的新功能。 
 ---
 = 適用於 ASA R2 系統的 ONTAP 9 。 16.1 的新功能
@@ -16,6 +16,24 @@ summary: 瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.1 中提供的新功能
 [role="lead"]
 瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.1 中提供的新功能。
 
+
+
+== 平台
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| 平台  a| 
+從 ONTAP 9.16.1 開始支援下列 NetApp ASA R2 系統。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。
+
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
 
 
 == 資料保護
