@@ -1901,4 +1901,7 @@
   <block id="556e0ee8174fe1dd298dfe165915e58f" category="summary">ASA R2 系統不支援某些 ONTAP 命令（ ASA A1K ， ASA 90 ， ASA 70 ， ASA A50 ， ASA A30 ， ASA A20 ）。</block>
   <block id="d4b904a6ceddca0805b85998f1946d36" category="paragraph">從 ONTAP 9.16.1 開始支援下列 NetApp ASA R2 系統。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
   <block id="1afab26d25573baff41c4a297e2b15fb" category="sidebar">NetApp ASA R2 系統（ ASA A1K ， ASA A90 ， ASA A70 ， ASA A50 ， ASA A30 ， ASA A20 ）提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。</block>
+  <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">支援金鑰管理員之間的加密金鑰移轉</block>
+  <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
+  <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。</block>
 </blocks>

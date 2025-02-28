@@ -43,6 +43,9 @@ summary: 瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.1 中提供的新功能
 | 更新 | 說明 
 
 
+| link:../secure-data/migrate-encryption-keys-between-key-managers.html["支援金鑰管理員之間的加密金鑰移轉"] | 當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。 
+
+
 | link:../data-protection/manage-consistency-groups.html["支援階層式一致性群組"] | 階層式一致性群組可讓您建立包含多個子一致性群組的父一致性群組。如此可簡化複雜資料結構的資料保護與管理。 
 |===
 
