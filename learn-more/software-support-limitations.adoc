@@ -28,7 +28,6 @@ summary: 雖然 ASA R2 系統提供廣泛的 SAN 解決方案支援、但不支�
 * ONTAP S3 SnapMirror 和 S3 API
 * SnapMirror （非同步與同步）移轉至雲端
 * SnapMirror （非同步和同步）至非 ASA R2 系統
-* 選擇性LUN對應（SLM)
 
 
 .ASA R2 系統支援下列項目：
