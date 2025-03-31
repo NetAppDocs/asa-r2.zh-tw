@@ -1903,4 +1903,5 @@
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">探索叢集網路</block>
+  <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">對於 ASAr2 A20 ， A30 或 A50 儲存系統，系統機箱正面的機櫃 ID 不會亮起。系統的內部機櫃 ID 固定為 00 。</block>
 </blocks>
