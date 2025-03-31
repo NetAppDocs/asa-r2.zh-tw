@@ -684,7 +684,6 @@
   <block id="e28af899651d52d4e958ed29e85f0c9c" category="list-text">DNS 名稱伺服器 IP 位址</block>
   <block id="178e188a7017b433a79efd35d6037e4c" category="list-text">NTP 伺服器 IP 位址</block>
   <block id="2676562cc6b0cf6c0163b1086bb1c6c9" category="list-text">資料子網路遮罩</block>
-  <block id="60d902b0a36cd8bdaed2c0e3cade40ba" category="list-text">探索叢集網路</block>
   <block id="13a5c797fb82f415ef3d13e5c012faf4" category="list-text">將筆記型電腦連接到管理交換器、並存取網路電腦和裝置。</block>
   <block id="098bbae74bb948e3ff3baff0a28b2546" category="list-text">開啟檔案總管。</block>
   <block id="b43b6fc30d6fa5fad81a00f958b516dc" category="list-text">選擇 * 網路 * ；然後按一下滑鼠右鍵並選取 * 重新整理 * 。</block>
@@ -1040,7 +1039,6 @@
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
   <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">物件傳輸協定</block>
   <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">ONTAP S3 SnapMirror 和 S3 API</block>
-  <block id="cbb51e0b1487ab3d93d6d940a1533133" category="list-text">選擇性LUN對應（SLM)</block>
   <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">ASA R2 系統支援下列項目：</block>
   <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">SnapLock</block>
   <block id="272175c607c14852d532cd2cf2304f90" category="list-text">雙層加密</block>
@@ -1904,4 +1902,5 @@
   <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">支援金鑰管理員之間的加密金鑰移轉</block>
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。</block>
+  <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">探索叢集網路</block>
 </blocks>
