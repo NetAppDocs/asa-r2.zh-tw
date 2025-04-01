@@ -964,8 +964,6 @@
   <block id="7a15ceb09d1ef08df7b9021f7341e654" category="paragraph">您已準備好<block ref="0675c663575ea5d2004171fa7c4c09af" category="inline-link-macro-rx"></block>從 SAN 用戶端到系統。</block>
   <block id="e42d5bab0edf2441b75829873e298e1b" category="summary">ASA 系統提供專為僅 SAN 解決方案最佳化的硬體支援。ASA R2 系統提供硬體與軟體的最佳化。</block>
   <block id="b8d343a2d9dfd7386b6b373e6050b930" category="searchtitle">比較 ASA R2 系統與其他 ONTAP 系統</block>
-  <block id="a96666c23540f7c6d0da8ca6ab7b57d5" category="paragraph">ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供統一化的硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。</block>
-  <block id="9bbd2ec1679b3be9cb3ca46d69e0297c" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在所有其他 ONTAP 系統（ ASA 、 AFF 、 FAS ）上執行的 ONTAP 會被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。</block>
   <block id="cf4ae521a2a16cdd073860fee0fbab96" category="paragraph">您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。</block>
   <block id="c3e4be39d2ab89664b205dd7d0bb6510" category="list-text">從 System Manager （系統管理器）菜單中，選擇 *Cluster （羣集） &gt; Overview （概述） * 。</block>
   <block id="8fb6b6206aca4aa491419e270ea3424d" category="list-text">在 CLI 中輸入：<block ref="9228fcbc2cb846682f56e98989045eaa" prefix=" " category="inline-code"></block></block>
@@ -1904,4 +1902,6 @@
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">探索叢集網路</block>
   <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">對於 ASAr2 A20 ， A30 或 A50 儲存系統，系統機箱正面的機櫃 ID 不會亮起。系統的內部機櫃 ID 固定為 00 。</block>
+  <block id="792fd8488bba0c03a6a9c46a34c7db99" category="paragraph">ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。</block>
+  <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在 ASA 系統上執行的 ONTAP 會識別為 ASA ONTAP 特性設定 _ 。在 AFF 和 FAS ONTAP 系統上執行的 ONTAP 被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。</block>
 </blocks>

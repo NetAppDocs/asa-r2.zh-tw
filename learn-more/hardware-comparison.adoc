@@ -12,9 +12,9 @@ searchtitle: 比較 ASA R2 系統與其他 ONTAP 系統
 
 
 [role="lead"]
-ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供統一化的硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。
+ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。
 
-在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在所有其他 ONTAP 系統（ ASA 、 AFF 、 FAS ）上執行的 ONTAP 會被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。
+在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在 ASA 系統上執行的 ONTAP 會識別為 ASA ONTAP 特性設定 _ 。在 AFF 和 FAS ONTAP 系統上執行的 ONTAP 被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。
 
 您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。
 
