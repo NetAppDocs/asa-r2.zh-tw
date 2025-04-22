@@ -112,7 +112,6 @@
   <block id="ed7898c08720b7f938fd473f200d7f27" category="paragraph">您已經建立了子網路、現在您可以使用它來簡化建立您的生命。</block>
   <block id="753ad49162ca6621affe67bf28ce6a1e" category="section-title">建立 LIF （網路介面）</block>
   <block id="be23cf7af156de0532411edfa91f3361" category="paragraph">LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在您要用來存取資料的連接埠上建立生命。儲存 VM 會透過一或多個生命負載、將資料提供給用戶端。如果發生元件故障、 LIF 可能會容錯移轉或移轉至不同的實體連接埠、因此不會中斷網路通訊。</block>
-  <block id="ab643808e465ae91c1cb6822de36ce7f" category="paragraph">建立 IP 資料 LIF 時、預設可同時為 iSCSI 和 NVMe / TCP 流量提供服務。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。</block>
   <block id="21f332db2a0aeb6d30c08d58804c1f1a" category="list-text">基礎實體或邏輯網路連接埠必須設定為管理<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>狀態。</block>
   <block id="0b7a56152c376f386379636394d6eee1" category="list-text">如果您打算使用子網路名稱來配置LIF的IP位址和網路遮罩值、則該子網路必須已經存在。</block>
   <block id="9ad4be6eef992b371fa173aecc5c7bd0" category="list-text">處理節點之間叢集內流量的LIF、不應與處理管理流量的LIF或處理資料流量的LIF位於相同的子網路上。</block>
@@ -1571,8 +1570,6 @@
   <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
   <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
   <block id="8027cf82d29e89bcd72c0f7ae984c222" category="paragraph">ASA R2 系統受及更新版本支援<block ref="6a0b5c767b375da41f0e7140f5d8129e" category="inline-link-macro-rx"></block>。</block>
-  <block id="ace9c44d680e3a8684441fd776f4db68" category="paragraph">如果您想要啟用自動 iSCSI LIF 容錯移轉，則必須建立僅限 iSCSI 的 LIF 。啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點的健全連接埠，然後在連接埠再次正常運作時，再移回原始連接埠。</block>
-  <block id="38db38181d3edceaf9353ed23bb6a1d6" category="paragraph">若要建立單一傳輸協定 LIF ，請僅選取一個傳輸協定。例如，若要建立僅限 iSCSI 的 LIF ，請選取 * iSCSI* 。</block>
   <block id="f08b07b736a8c5201accc4549e8a0762" category="list-text">預設自動 iSCSI LIF 容錯移轉</block>
   <block id="4b3d6eefe10e552e93669e44e3908ab2" category="inline-link-macro">建立僅 iSCSI LIF</block>
   <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">在 ASA R2 系統中，預設的網路 LIF 會在 NVMe 和 SCSI 主機之間共用，因此不支援自動容錯移轉。若要啟用自動 iSCSI LIF 容錯移轉<block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>，您必須。依預設，自動容錯移轉僅在 iSCSI 上啟用。</block>
@@ -1904,4 +1901,7 @@
   <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">對於 ASAr2 A20 ， A30 或 A50 儲存系統，系統機箱正面的機櫃 ID 不會亮起。系統的內部機櫃 ID 固定為 00 。</block>
   <block id="792fd8488bba0c03a6a9c46a34c7db99" category="paragraph">ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。</block>
   <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在 ASA 系統上執行的 ONTAP 會識別為 ASA ONTAP 特性設定 _ 。在 AFF 和 FAS ONTAP 系統上執行的 ONTAP 被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。</block>
+  <block id="7332b2297a735d659182d1392cf28129" category="paragraph">在 ASA R2 系統上，您可以建立 IP ， FC ， NVMe / FC 生命。根據預設， IP 資料 LIF 可同時服務 iSCSI 和 NVMe / TCP 流量。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。</block>
+  <block id="fda16306cdb213cc2a2b4bf98efbf826" category="paragraph">如果您想要啟用自動 iSCSI LIF 容錯移轉，則必須為僅 iSCSI 流量建立 IP LIF 。啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， IP iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 IP iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點中的健全連接埠，然後在連接埠再次正常運作後，再返回其原始連接埠。</block>
+  <block id="25ac2a61e9eb3eec03212d96ad6b965a" category="paragraph">若要啟用 iSCSI LIF 容錯移轉，請僅選取 IP 傳輸協定。</block>
 </blocks>
