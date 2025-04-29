@@ -13,22 +13,22 @@ summary: 開始安裝和設定 ASA R2 儲存系統，並將其部署在 ONTAP �
 [role="lead"]
 若要安裝及設定 ASA R2 系統、請檢閱硬體需求、準備站台、安裝硬體元件並連接纜線、開啟系統電源、以及設定 ONTAP 叢集。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:install-setup-requirements.html["檢閱硬體安裝需求"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] link:install-setup-requirements.html["檢閱硬體安裝需求"]
 [role="quick-margin-para"]
 檢閱硬體需求以安裝 ASA R2 儲存系統。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["一"]link:prepare-hardware.html["準備安裝 ASA R2 儲存系統"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] link:prepare-hardware.html["準備安裝 ASA R2 儲存系統"]
 [role="quick-margin-para"]
 若要準備安裝 ASA R2 系統、您必須準備好場地、檢查環境和電力需求、並確保有足夠的機架空間。然後、打開設備的包裝、將其內容與裝箱單進行比較、並註冊硬體以取得支援效益。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["二"]link:deploy-hardware.html["安裝 ASA R2 儲存系統的硬體"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] link:deploy-hardware.html["安裝 ASA R2 儲存系統的硬體"]
 [role="quick-margin-para"]
 若要安裝硬體、請安裝儲存系統和機櫃的軌道套件、然後將儲存系統安裝並固定在機櫃或電信機架中。接著、將貨架滑到軌道上。最後、將纜線管理裝置連接至儲存系統背面、以便整理纜線佈線。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["三"]link:cable-hardware.html["為 ASA R2 儲存系統的控制器和儲存櫃佈線"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] link:cable-hardware.html["為 ASA R2 儲存系統的控制器和儲存櫃佈線"]
 [role="quick-margin-para"]
 若要連接硬體、請先將儲存控制器連接至網路、然後將控制器連接至儲存櫃。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["四"]link:power-on-hardware.html["開啟 ASA R2 儲存系統電源"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] link:power-on-hardware.html["開啟 ASA R2 儲存系統電源"]
 [role="quick-margin-para"]
 開啟控制器電源之前、請先開啟每個 NS224 機櫃的電源、並指派唯一的機櫃 ID 、以確保每個機櫃在設定中都能唯一識別。

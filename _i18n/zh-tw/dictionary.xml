@@ -736,19 +736,14 @@
   <block id="bec12648a072f54e7209e45d72c0ba78" category="doc">ASA R2 儲存系統的安裝與設定工作流程</block>
   <block id="f08e3211126883342efb2c1028678668" category="paragraph">若要安裝及設定 ASA R2 系統、請檢閱硬體需求、準備站台、安裝硬體元件並連接纜線、開啟系統電源、以及設定 ONTAP 叢集。</block>
   <block id="7ccd978bf0dbca0a0746f98d09b99f7f" category="inline-link-macro">檢閱硬體安裝需求</block>
-  <block id="6889512d643df7fa8ccfb7e52dd1181c" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="90572de4b12061d10d3adbe91dd02ace" category="inline-link-macro-rx"></block></block>
   <block id="2093d28d6edc661be7e0c92b7f6452f7" category="paragraph">檢閱硬體需求以安裝 ASA R2 儲存系統。</block>
   <block id="654b7e4d986ad973f3c2838f5dac8c70" category="inline-link-macro">準備安裝 ASA R2 儲存系統</block>
-  <block id="00c1207f2baf7dc28041d8ac249f22f9" category="paragraph-title"><block ref="444c1bf2e877f5617e8ce0a2ded57f4f" category="inline-image-macro-rx" type="image"></block><block ref="364d625567d09103e7911f1934bc8d24" category="inline-link-macro-rx"></block></block>
   <block id="50b9fda3a60203dfb56138338390ca5f" category="paragraph">若要準備安裝 ASA R2 系統、您必須準備好場地、檢查環境和電力需求、並確保有足夠的機架空間。然後、打開設備的包裝、將其內容與裝箱單進行比較、並註冊硬體以取得支援效益。</block>
   <block id="04e16e17799ca1597df8b649304b6740" category="inline-link-macro">安裝 ASA R2 儲存系統的硬體</block>
-  <block id="1478911ba4fc781e8de9b3aa7b4f6979" category="paragraph-title"><block ref="4f954e3aac01b1dc982b61d245b37a02" category="inline-image-macro-rx" type="image"></block><block ref="65a058a30efdac510219d9d7c74f3657" category="inline-link-macro-rx"></block></block>
   <block id="2d797c4cbf8f7f6c9e87e405560d40d4" category="paragraph">若要安裝硬體、請安裝儲存系統和機櫃的軌道套件、然後將儲存系統安裝並固定在機櫃或電信機架中。接著、將貨架滑到軌道上。最後、將纜線管理裝置連接至儲存系統背面、以便整理纜線佈線。</block>
   <block id="b5990faed003b2a8d77aecd063000d1a" category="inline-link-macro">為 ASA R2 儲存系統的控制器和儲存櫃佈線</block>
-  <block id="a797a5c1bc5da9127e370ca2436a30a7" category="paragraph-title"><block ref="d5b760e3b486da6aca46a9bd83d66c13" category="inline-image-macro-rx" type="image"></block><block ref="29aaf1b4e7e6610ae4790f0740e69e4e" category="inline-link-macro-rx"></block></block>
   <block id="5ff2c2e371b329794d430555ced9e3f7" category="paragraph">若要連接硬體、請先將儲存控制器連接至網路、然後將控制器連接至儲存櫃。</block>
   <block id="f0458cb9a2bfe68bf005af12c17ad1aa" category="inline-link-macro">開啟 ASA R2 儲存系統電源</block>
-  <block id="22d9f0a1dd203d9cd6eba27e0a348588" category="paragraph-title"><block ref="91d7076df3f3bfcf6ace71bd0aa6cf68" category="inline-image-macro-rx" type="image"></block><block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
   <block id="9adaba33c41b009e4561e4c9bfed5074" category="paragraph">開啟控制器電源之前、請先開啟每個 NS224 機櫃的電源、並指派唯一的機櫃 ID 、以確保每個機櫃在設定中都能唯一識別。</block>
   <block id="de4e7be8a936d1ed409fa1f461a34957" category="doc">開啟 ASA R2 儲存系統電源</block>
   <block id="2b814ecf2be8542bceb68933db5cbcfe" category="paragraph">為 ASA R2 儲存系統安裝機架硬體、並安裝控制器和儲存櫃的纜線之後、您應該開啟儲存櫃和控制器的電源。</block>
@@ -1897,11 +1892,17 @@
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">探索叢集網路</block>
   <block id="792fd8488bba0c03a6a9c46a34c7db99" category="paragraph">ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。</block>
   <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在 ASA 系統上執行的 ONTAP 會識別為 ASA ONTAP 特性設定 _ 。在 AFF 和 FAS ONTAP 系統上執行的 ONTAP 被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。</block>
-  <block id="7332b2297a735d659182d1392cf28129" category="paragraph">在 ASA R2 系統上，您可以建立 IP ， FC ， NVMe / FC 生命。根據預設， IP 資料 LIF 可同時服務 iSCSI 和 NVMe / TCP 流量。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。</block>
   <block id="fda16306cdb213cc2a2b4bf98efbf826" category="paragraph">如果您想要啟用自動 iSCSI LIF 容錯移轉，則必須為僅 iSCSI 流量建立 IP LIF 。啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， IP iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 IP iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點中的健全連接埠，然後在連接埠再次正常運作後，再返回其原始連接埠。</block>
   <block id="25ac2a61e9eb3eec03212d96ad6b965a" category="paragraph">若要啟用 iSCSI LIF 容錯移轉，請僅選取 IP 傳輸協定。</block>
   <block id="bca36b0a086865a5988c326bd3a3c6ef" category="list-text">系統會啟動開機程序。初始開機順序最多可能需要八分鐘。</block>
   <block id="f3e09817ba15a4f8685cb156fe2ade6f" category="list-text">在開機過程中，您將觀察 LED 閃爍，風扇啟動，表示控制器正在開機。</block>
   <block id="86450f6a6524d00aefa9dda44e7aee80" category="list-text">請注意，風扇第一次啟動時，可能會發出很大的噪音。啟動時風扇發出噪音是正常現象。</block>
   <block id="43dd17b3ea5146830157251c7508ca20" category="list-text">對於 ASA A20 ， ASA A30 和 ASA A50 儲存系統，系統機箱正面的機櫃 ID 不會亮起。</block>
+  <block id="c8aaa99aa53241360c3c889fc0ceba93" category="paragraph">在 ASA R2 系統上，您可以建立 IP ， FC 和 NVMe / FC 生命。根據預設， IP 資料 LIF 可同時服務 iSCSI 和 NVMe / TCP 流量。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。</block>
+  <block id="f137f93169cc0e3caf4322bfd35b3f03" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="90572de4b12061d10d3adbe91dd02ace" category="inline-link-macro-rx"></block></block>
+  <block id="9938ec4aaa5e9affe1e87bdd3406a54f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="364d625567d09103e7911f1934bc8d24" category="inline-link-macro-rx"></block></block>
+  <block id="0b226b2a00795026190da142779bab13" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="65a058a30efdac510219d9d7c74f3657" category="inline-link-macro-rx"></block></block>
+  <block id="b78c98e70e341751d6f58db28ecec461" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> <block ref="29aaf1b4e7e6610ae4790f0740e69e4e" category="inline-link-macro-rx"></block></block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五</block>
+  <block id="77aa123fc5c68731cdf628d8e9c75afc" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> <block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
 </blocks>
