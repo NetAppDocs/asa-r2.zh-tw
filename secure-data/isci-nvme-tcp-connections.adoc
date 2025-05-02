@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: secure-data/iscsi-nvme-tcp-connections.html 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, iscsi, nvme/tcp, ipsec, data-in-flight, ip security, secure connections, secure data connections, hardware offload 
+summary: 如果您在 ASA R2 系統上使用 IP 傳輸協定，您可以設定 IP 安全性（ IPsec ）來增強資料安全性。 
+---
+= 保護 ASA R2 儲存系統上的 IP 連線安全
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您在 ASA R2 系統上使用 IP 傳輸協定，您可以設定 IP 安全性（ IPsec ）來增強資料安全性。IPsec 是一種網際網路標準，可提供資料傳輸加密， IP 層級網路端點之間流量傳輸的驗證，以及防止資料遭到重播和惡意攔截式攻擊。
+
+對於 ASA R2 系統， IPsec 可用於 iSCSI 和 NVMe / TCP 主機。
+
+在某些 ASA R2 系統上，可將多項加密作業（例如加密和完整性檢查）卸載至支援的網路介面控制器（ NIC ）卡。卸載到 NIC 卡的作業處理量約為 5% 或更低。這可大幅改善受 IPsec 保護的網路流量的效能和處理量。
+
+下列 ASA R2 系統的硬體卸載支援下列 NIC 卡：
+
+[cols="2"]
+|===
+| 支援的 NIC 卡 | ASA r2 系統 
+
+
+ a| 
+X50131A - （ 2p ， 40G/100g/200g/400G 乙太網路控制器）
+ a| 
+* ASA A1K
+* ASA A90
+* ASA A70
+
+
+
+
+ a| 
+X60132A - （ 4p ， 10G/25G 乙太網路控制器）
+ a| 
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
+相關資訊
+
+link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["設定 ONTAP 網路的 IP 安全性"]

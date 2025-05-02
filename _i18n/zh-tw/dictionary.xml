@@ -1905,4 +1905,17 @@
   <block id="b78c98e70e341751d6f58db28ecec461" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> <block ref="29aaf1b4e7e6610ae4790f0740e69e4e" category="inline-link-macro-rx"></block></block>
   <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五</block>
   <block id="77aa123fc5c68731cdf628d8e9c75afc" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> <block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
+  <block id="43be05fcb9765d24f8081a2284f82de7" category="summary">如果您在 ASA R2 系統上使用 IP 傳輸協定，您可以設定 IP 安全性（ IPsec ）來增強資料安全性。</block>
+  <block id="95f5e5110bbbc9d987c115097008c227" category="doc">保護 ASA R2 儲存系統上的 IP 連線安全</block>
+  <block id="c10f6cdf89366933afe9e0a05f726423" category="paragraph">如果您在 ASA R2 系統上使用 IP 傳輸協定，您可以設定 IP 安全性（ IPsec ）來增強資料安全性。IPsec 是一種網際網路標準，可提供資料傳輸加密， IP 層級網路端點之間流量傳輸的驗證，以及防止資料遭到重播和惡意攔截式攻擊。</block>
+  <block id="602c5938acf67898ca9af2011ec2c721" category="paragraph">對於 ASA R2 系統， IPsec 可用於 iSCSI 和 NVMe / TCP 主機。</block>
+  <block id="a0304825371175c4b6363207289817a6" category="paragraph">在某些 ASA R2 系統上，可將多項加密作業（例如加密和完整性檢查）卸載至支援的網路介面控制器（ NIC ）卡。卸載到 NIC 卡的作業處理量約為 5% 或更低。這可大幅改善受 IPsec 保護的網路流量的效能和處理量。</block>
+  <block id="1d0cc018fd5504976c79bca7bbffc647" category="paragraph">下列 ASA R2 系統的硬體卸載支援下列 NIC 卡：</block>
+  <block id="90dda976d3b078f124db5239495ee246" category="cell">支援的 NIC 卡</block>
+  <block id="fde1abb5537b55c34521d414267b3f70" category="cell">ASA r2 系統</block>
+  <block id="9709e8dba9666b1074d2084b0d7f0020" category="paragraph">X50131A - （ 2p ， 40G/100g/200g/400G 乙太網路控制器）</block>
+  <block id="078fcdf403281df3fd9849a79a715dc5" category="paragraph">X60132A - （ 4p ， 10G/25G 乙太網路控制器）</block>
+  <block id="68852b93a73d565bf943b2e28d4c653b" category="inline-link-macro">設定 ONTAP 網路的 IP 安全性</block>
+  <block id="22935e4bd8297da6bdfa32067fc7243c" category="paragraph"><block ref="22935e4bd8297da6bdfa32067fc7243c" category="inline-link-macro-rx"></block></block>
+  <block id="0a0e33e3bee1123a43e4178aad30ed45" category="sidebar">安全的 IP 連線</block>
 </blocks>
