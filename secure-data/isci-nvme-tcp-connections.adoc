@@ -43,6 +43,5 @@ X60132A - （ 4p ， 10G/25G 乙太網路控制器）
 
 
 |===
-相關資訊
-
+.接下來呢？
 link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["設定 ONTAP 網路的 IP 安全性"]
