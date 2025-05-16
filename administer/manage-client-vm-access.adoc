@@ -16,6 +16,28 @@ ASA R2 系統上的儲存單元包含在儲存虛擬機器（ VM ）內。儲存
 
 
 
+== 建立儲存VM
+
+在叢集設定期間、系統會建立預設的資料儲存虛擬機器（ VM ）。除非您建立並選取不同的儲存 VM ，否則所有新的儲存單元都會建立在預設的資料儲存 VM 中。您可能想要建立額外的儲存 VM ，以分隔不同應用程式，部門或用戶端的儲存單元。例如，您可能想要為開發環境建立儲存 VM ，並為正式作業環境建立另一個儲存 VM ，或是想為財務部門建立儲存 VM ，並為行銷部門建立另一個儲存 VM 。
+
+.步驟
+. 選取 * 叢集 > 儲存 VM* 。
+. 選擇。 image:icon_add_blue_bg.png["包含加號的藍色矩形、後面接著以白色字母加上字詞"]
+. 輸入儲存 VM 的名稱或接受預設名稱。
+. 在 * 設定通訊協定 * 下，選取儲存 VM 的通訊協定。
++
+選擇 * IP* 作為 iSCSI 和 NVMe / TCP 。為光纖通道或 NVMe / FC 選取 * FC* 。
+
+. 在 * 儲存 VM 管理 * 下，選取 * 管理系統管理員帳戶 * ，然後輸入系統管理員帳戶的使用者名稱和密碼。
+. 新增儲存 VM 的網路介面。
+. 選擇*保存*。
+
+
+.接下來呢？
+您已建立儲存 VM 。您現在可以將儲存 VM 用於link:../manage-data/provision-san-storage.html["配置儲存設備"]。
+
+
+
 == 建立IPspaces
 
 IPspace 是儲存 VM 所在的獨特 IP 位址空間。建立 IPspace 時、您可以讓儲存 VM 擁有自己的安全儲存、管理和路由。您也可以讓管理性分隔網路網域中的用戶端使用相同 IP 位址子網路範圍中的重疊 IP 位址。
@@ -96,6 +118,26 @@ LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在
 
 .結果
 您已建立資料存取的 LIF 。
+
+.接下來呢？
+如果您已為 iSCSI 建立 IP LIF ，則可以使用 ONTAP 命令列介面（ CLI ）來啟用自動 iSCSI LIF 容錯移轉。
+
+
+
+=== 啟用自動 iSCSI LIF 容錯移轉
+
+如果 SVM 上的 iSCSI 生命期未啟用自動 LIF 容錯移轉、則新建立的生命期也不會啟用自動 LIF 容錯移轉。如果未啟用自動 LIF 容錯移轉、且發生容錯移轉事件、則 iSCSI 生命將不會移轉。
+
+您必須使用 ONTAP 命令列介面（ CLI ）來啟用自動 iSCSI LIF 容錯移轉。
+
+.步驟
+. 啟用自動 iSCSI LIF 容錯移轉：
++
+[source, cli]
+----
+network interface modify -vserver <SVM_name> -lif <iscsi_lif> -failover-policy sfo-partner-only -auto-revert true
+----
+
 
 
 

@@ -961,7 +961,6 @@
   <block id="8fb6b6206aca4aa491419e270ea3424d" category="list-text">在 CLI 中輸入：<block ref="9228fcbc2cb846682f56e98989045eaa" prefix=" " category="inline-code"></block></block>
   <block id="8369fc694deadf80f5d106ef41b6e7b2" category="paragraph">ONTAP 儲存系統的特性設定無法變更。</block>
   <block id="df5591b00e0f940a96e7ea141a5a8f82" category="paragraph">執行統一化 ONTAP 特性設定之 ONTAP 系統的儲存層使用 Aggregate 做為儲存的基礎單元。Aggregate 擁有儲存系統中可用的一組特定磁碟。此集合會將其擁有的磁碟空間分配給磁碟區、以用於 LUN 和命名空間。統一化的 ONTAP 使用者可以使用命令列介面（ CLI ）來建立和修改集合體、磁碟區、 LUN 和命名空間。</block>
-  <block id="61fd53d6a04a3c721dc360956e9ca445" category="paragraph">ASA R2 系統中的儲存層使用儲存可用性區域、而非集合體。儲存可用性區域是一個通用儲存池、可存取儲存系統中的所有可用磁碟。ASA R2 HA 配對中的兩個節點都可以看到儲存可用性區域。建立儲存單元（以 LUN 或 NVMe 命名空間為基礎）時、 ONTAP 會自動在儲存可用性區域中建立包含儲存虛擬機器（ VM ）的磁碟區、以容納儲存單元。由於這種自動化且簡化的儲存管理方法、某些系統管理員選項、 ONTAP 命令和 REST API 端點在 ASA R2 系統上無法使用、或使用量有限。例如、由於 ASA R2 系統的磁碟區建立與管理是自動化的、因此系統管理員中不會顯示 * Volumes<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block> （磁碟區） * 功能表、而且不支援該命令。</block>
   <block id="32b01bd4b9f59e30b1c7471c280b0045" category="paragraph">ASA R2 儲存設備以下列方式與其他 ONTAP 儲存系統進行比較：</block>
   <block id="df5b8332c344a8d1a2ca6124ea06defe" category="cell">ASA r2</block>
   <block id="b7b46ce5d1a547db89c0bc615ff272a5" category="cell">ASA</block>
@@ -1918,4 +1917,20 @@
   <block id="68852b93a73d565bf943b2e28d4c653b" category="inline-link-macro">設定 ONTAP 網路的 IP 安全性</block>
   <block id="22935e4bd8297da6bdfa32067fc7243c" category="paragraph"><block ref="22935e4bd8297da6bdfa32067fc7243c" category="inline-link-macro-rx"></block></block>
   <block id="0a0e33e3bee1123a43e4178aad30ed45" category="sidebar">安全的 IP 連線</block>
+  <block id="8272f5b23e79d0ee33bd5151dcddc454" category="section-title">建立儲存VM</block>
+  <block id="628df41697616cee6d5c865542d342ad" category="paragraph">在叢集設定期間、系統會建立預設的資料儲存虛擬機器（ VM ）。除非您建立並選取不同的儲存 VM ，否則所有新的儲存單元都會建立在預設的資料儲存 VM 中。您可能想要建立額外的儲存 VM ，以分隔不同應用程式，部門或用戶端的儲存單元。例如，您可能想要為開發環境建立儲存 VM ，並為正式作業環境建立另一個儲存 VM ，或是想為財務部門建立儲存 VM ，並為行銷部門建立另一個儲存 VM 。</block>
+  <block id="9d51c1df5884ca3290827847b5ca369e" category="list-text">選取 * 叢集 &gt; 儲存 VM* 。</block>
+  <block id="a2606f19bd0ddba50071c32e6f0d3941" category="list-text">輸入儲存 VM 的名稱或接受預設名稱。</block>
+  <block id="47e869b5fd15e0e1eb4d7ed47d7db38e" category="list-text">在 * 設定通訊協定 * 下，選取儲存 VM 的通訊協定。</block>
+  <block id="e5f4e279e78936e76a497e9a15004b2e" category="paragraph">選擇 * IP* 作為 iSCSI 和 NVMe / TCP 。為光纖通道或 NVMe / FC 選取 * FC* 。</block>
+  <block id="7829236e8ef56480b7f29df2b14afa3a" category="list-text">在 * 儲存 VM 管理 * 下，選取 * 管理系統管理員帳戶 * ，然後輸入系統管理員帳戶的使用者名稱和密碼。</block>
+  <block id="ff5f233f84c798fec376d29c4c3db0a9" category="list-text">新增儲存 VM 的網路介面。</block>
+  <block id="b1481e6f17d8c80e8f17d881ac08a5a1" category="paragraph">您已建立儲存 VM 。您現在可以將儲存 VM 用於<block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>。</block>
+  <block id="2a001457153311540278338d0772fe89" category="paragraph">如果您已為 iSCSI 建立 IP LIF ，則可以使用 ONTAP 命令列介面（ CLI ）來啟用自動 iSCSI LIF 容錯移轉。</block>
+  <block id="4d1481a2752fdec4530d68b1f27aff2e" category="section-title">啟用自動 iSCSI LIF 容錯移轉</block>
+  <block id="7dca75f4415194c135e180d8fe8fa1a8" category="paragraph">如果 SVM 上的 iSCSI 生命期未啟用自動 LIF 容錯移轉、則新建立的生命期也不會啟用自動 LIF 容錯移轉。如果未啟用自動 LIF 容錯移轉、且發生容錯移轉事件、則 iSCSI 生命將不會移轉。</block>
+  <block id="c6ed1523d61eecc1cc0a6a7b92992e00" category="paragraph">您必須使用 ONTAP 命令列介面（ CLI ）來啟用自動 iSCSI LIF 容錯移轉。</block>
+  <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">步驟</block>
+  <block id="e44a90b30c1dfbb968cf631463193afc" category="list-text">啟用自動 iSCSI LIF 容錯移轉：</block>
+  <block id="0ce336b8cb4b71d1f6d61b47075052a1" category="paragraph">ASA R2 系統中的儲存層使用儲存可用性區域、而非集合體。儲存可用性區域是一個通用儲存池、可存取儲存系統中的所有可用磁碟。ASA R2 HA 配對中的兩個節點都可以看到儲存可用性區域。建立儲存單元（以 LUN 或 NVMe 命名空間為基礎）時， ONTAP 會在儲存可用性區域的所選儲存虛擬機器（ VM ）內自動建立磁碟區，以容納儲存單元。由於這種自動化且簡化的儲存管理方法、某些系統管理員選項、 ONTAP 命令和 REST API 端點在 ASA R2 系統上無法使用、或使用量有限。例如、由於 ASA R2 系統的磁碟區建立與管理是自動化的、因此系統管理員中不會顯示 * Volumes<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block> （磁碟區） * 功能表、而且不支援該命令。</block>
 </blocks>
