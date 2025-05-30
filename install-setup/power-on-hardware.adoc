@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, power on 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, asa c30, power on 
 summary: 開啟每個機櫃的電源，以指派唯一的機櫃 ID ，開啟 ASA R2 控制器電源，並固定電源線。 
 ---
 = 開啟 ASA R2 儲存系統電源
@@ -156,6 +156,11 @@ image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[主控台連線]
 image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[主控台連線]
 
 --
+.C30
+--
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[主控台連線]
+
+--
 ====
 
 
@@ -181,12 +186,17 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[A1K 儲存系統和 
 image::../media/drw_psu_layout_1_ieops-1886.svg[A20 ， A30 或 A50 儲存系統電源連接圖]
 
 --
+.C30
+--
+image::../media/drw_psu_layout_1_ieops-1886.svg[A20 ， A30 或 A50 儲存系統電源連接圖]
+
+--
 ====
 +
 ** 系統會啟動開機程序。初始開機順序最多可能需要八分鐘。
 ** 在開機過程中，您將觀察 LED 閃爍，風扇啟動，表示控制器正在開機。
 ** 請注意，風扇第一次啟動時，可能會發出很大的噪音。啟動時風扇發出噪音是正常現象。
-** 對於 ASA A20 ， ASA A30 和 ASA A50 儲存系統，系統機箱正面的機櫃 ID 不會亮起。
+** 對於 ASA A20、A30、A50 和 ASA C30 儲存系統，系統機殼正面的層架 ID 顯示器不亮。
 
 
 
