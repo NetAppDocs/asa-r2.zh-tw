@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/software-support-limitations.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, asa, a50, asa a30, asa a20, unsupported features 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa, a50, asa a30, asa a20, asa c30, unsupported features 
 summary: 雖然 ASA R2 系統提供廣泛的 SAN 解決方案支援、但不支援某些 ONTAP 軟體功能。 
 ---
 = ASA R2 儲存系統的 ONTAP 軟體支援與限制

@@ -184,29 +184,20 @@
   <block id="b1fa95bfdd87d26ef5f8aca8df282454" category="paragraph">根據預設、 ONTAP 會自動下載及更新 ASA R2 系統上的韌體和系統檔案。如果您想要在下載及安裝建議的更新之前，能夠靈活地檢視這些更新，可以使用 ONTAP 系統管理員來停用自動更新或編輯更新參數，以便在執行任何動作之前顯示可用更新的通知。</block>
   <block id="9543e3c5ee671be608b8d7358d2905b4" category="section-title">啟用自動更新</block>
   <block id="16dd8aa4e8a61c5fff4660292af260d6" category="paragraph">依預設、儲存韌體、 SP / BMC 韌體和系統檔案的建議更新會自動下載並安裝在 ASA R2 系統上。如果已停用自動更新、您可以讓它們恢復預設行為。</block>
-  <block id="61afff9f522bbf671738bb412c8fe956" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 啟用 * 。</block>
-  <block id="a05df79f4b35e5abaa3bdc88c372d245" category="list-text">閱讀並接受 EULA 。</block>
-  <block id="e96b4d3ae2048d6e0ab6b5175cdc67ba" category="list-text">接受預設值以自動更新韌體和系統檔案。您也可以選擇顯示通知、或自動關閉建議的更新。</block>
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">選取以確認您的更新修改將套用至所有目前和未來的更新。</block>
   <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">根據您的更新選擇、建議的更新會自動下載並安裝在您的 ASA R2 系統上。</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">停用自動更新</block>
   <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">如果您想要在安裝前靈活檢視建議的更新、請停用自動更新。如果停用自動更新、您需要手動執行韌體和系統檔案更新。</block>
-  <block id="292eff21b210f8e769ea67e93af60cc2" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 禁用 * 。</block>
   <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">自動更新已停用。您應該定期檢查建議的更新、並決定是否要執行手動安裝。</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">檢視自動更新</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">檢視已下載至叢集且排定自動安裝的韌體和系統檔案更新清單。同時檢視先前自動安裝的更新。</block>
-  <block id="abd4e9614ca55c29d3b65381570676f5" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 查看所有自動更新 * 。</block>
   <block id="c5f5044ff24461ba8a4e4a6bc2887bd0" category="section-title">編輯自動更新</block>
   <block id="aa32761812c5105416e1c8de6901bbf8" category="paragraph">您可以選擇自動下載並安裝儲存韌體、 SP / BMC 韌體和系統檔案的建議更新、或選擇自動關閉建議的更新。如果您想要手動控制更新的安裝或解僱、請選擇在有建議的更新可用時收到通知；然後您可以手動選擇安裝或關閉更新。</block>
-  <block id="72c17efc027d7f0c3f48d02c16886905" category="list-text">在 * 自動更新 * 旁邊選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 * 編輯自動更新 * 。</block>
   <block id="820669251a6d9aa8a265e4aa20459cdf" category="list-text">更新自動更新的選項。</block>
   <block id="aed3f23a5ce94e81514a2da9dce9b2ef" category="paragraph">自動更新會根據您的選擇進行修改。</block>
   <block id="d51f54f2a9182b10cea278ae35000b46" category="section-title">手動更新韌體</block>
   <block id="bc1104446ea3d0b83abd00c11e939335" category="paragraph">如果您想要在下載和安裝建議的更新之前、能夠靈活地檢視這些更新、您可以停用自動更新並手動更新韌體。</block>
   <block id="bf48a37237272ddc300e21b45b8971dc" category="list-text">將韌體更新檔案下載至伺服器或本機用戶端。</block>
-  <block id="484bee1f3996418a874aa526da0b5753" category="list-text">在 System Manager 中、選取 * 叢集 &gt; 總覽 * 、然後選取 * 更新 * 。</block>
-  <block id="e5f510366eded3b692a9273af6f6bd62" category="inline-image-macro">藍色矩形包含加號、後面接著白色字母的更新韌體字樣</block>
-  <block id="1c6248c9b917dc357a68441deb105f78" category="list-text">選擇 * 韌體更新 * ；然後選擇<block ref="86ace020e2f51d5cc4db2b665d9f2405" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="70bd8d7d7e01ac7ceebd8e8ba2be8da6" category="paragraph">您的韌體已更新。</block>
   <block id="a8d696bbc3e0da20e552c1bb59ce8581" category="doc">管理 ASA R2 儲存系統上的使用者帳戶和角色</block>
   <block id="26c63dfee3232ccec05fbebd34b103b5" category="paragraph">使用 System Manager 為您的使用者帳戶設定 Active Directory 網域控制站存取、 LDAP 和 SAML 驗證。建立使用者帳戶角色、以定義指派給角色的使用者可在叢集上執行的特定功能。</block>
@@ -1724,14 +1715,10 @@
   <block id="cc1a9524f9ddd8574a5553ccd90ee9c3" category="paragraph">您可以使用 ONTAP 命令列介面（ CLI ），在叢集層級的金鑰管理程式與儲存 VM 層級的金鑰管理程式之間移轉金鑰。</block>
   <block id="5efbf2392161773688bf42568dd2c8c6" category="list-text">移轉金鑰：</block>
   <block id="f7d82610ce1c76769575f4a95bb11e80" category="sidebar">在金鑰管理員之間移轉資料加密金鑰</block>
-  <block id="77a58a8f042eca52cbae63333451e567" category="summary">ASA R2 系統（ ASA A1K ， A90 ， A70 ， A50 ， A30 ， A20 ）提供統一化的硬體與軟體解決方案，為僅限 SAN 的客戶提供簡化的體驗。</block>
-  <block id="16b2362ce213edbe317b5df3169d035c" category="searchtitle">瞭解 ASA A1K ， A90 ， A70 ， A50 ， A30 和 A20 系統</block>
   <block id="feb8007866385642b73ef1e6524ba327" category="paragraph">NetApp ASA R2 系統提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。</block>
   <block id="3ee9bc9a210bd85fa921ca63bdeef612" category="list-text">ASA A50</block>
   <block id="e21bdbd552261278be0a5ad02fbc6fa7" category="list-text">ASA A30</block>
   <block id="3c609b480f1311eaec9774146ac50e79" category="list-text">ASA A20</block>
-  <block id="eb020f30ead1b473ff4a75c9863c0d1a" category="summary">若要開始使用 ASA R2 （ ASA A1K ， A90 ， A70 ， A50 ， A30 ， A20 ）系統，請安裝硬體，設定叢集，設定資料存取，以及配置儲存設備。</block>
-  <block id="e25344cc16f12d622f2af42aea8ed7a8" category="searchtitle">安裝並設定 ASA A1K ， A90 ， A70 ， A50 ， A30 和 A20 儲存系統</block>
   <block id="b3a1e3cfc607694cb423d46b8b23fa54" category="paragraph">如需將儲存系統連接至網路交換器的相關資訊，請聯絡您的網路管理員。</block>
   <block id="28c4b42113d6ebd3c5e6ca40929d04a6" category="list-text">將連接器插入連接埠時，纜線連接器拉片上的箭頭圖示會顯示正確的方向（上或下）。</block>
   <block id="fd2cb99acafb4f0144bfb5e0e4c31373" category="paragraph">插入連接器時、您應該會感覺到它卡入到位；如果您沒有感覺到它卡入定位、請將其移除、將其翻轉、然後再試一次。</block>
@@ -1864,9 +1851,7 @@
   <block id="676b7066692787a119854c062d5f6c05" category="list-text">在每個控制器或某些系統上，位於每個控制器的系統管理模組上</block>
   <block id="3b2136486adac3ad66275a45c07c6ebf" category="image-alt">系統序號範例</block>
   <block id="6b127ae60215df1a5f77bc62deb0fa41" category="list-text">如果序號未列出，請遵循適用於新 NetApp 客戶的指示。</block>
-  <block id="556e0ee8174fe1dd298dfe165915e58f" category="summary">ASA R2 系統不支援某些 ONTAP 命令（ ASA A1K ， ASA 90 ， ASA 70 ， ASA A50 ， ASA A30 ， ASA A20 ）。</block>
   <block id="d4b904a6ceddca0805b85998f1946d36" category="paragraph">從 ONTAP 9.16.1 開始支援下列 NetApp ASA R2 系統。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
-  <block id="1afab26d25573baff41c4a297e2b15fb" category="sidebar">NetApp ASA R2 系統（ ASA A1K ， ASA A90 ， ASA A70 ， ASA A50 ， ASA A30 ， ASA A20 ）提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。</block>
   <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">支援金鑰管理員之間的加密金鑰移轉</block>
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。</block>
@@ -1960,4 +1945,20 @@
   <block id="d7c72b30313c5745f0e330939a9ac031" category="paragraph">ASA C30 儲存系統重量最多可達 61.5 磅（27.9 公斤）。若要抬起儲存系統，請使用兩個人或液壓舉升設備。</block>
   <block id="7dcb9af2c1167cd0c65ac5b5a874a41d" category="image-alt">ASA A20 A30 或 A50 重量警告圖標</block>
   <block id="48931ca8df47e809f96404b5fc332cc1" category="list-text">對於 ASA A20、A30、A50 和 ASA C30 儲存系統，系統機殼正面的層架 ID 顯示器不亮。</block>
+  <block id="39256e8b85463e186dc7bbc4daac9a22" category="list-text">在「*軟體更新*」下，選擇「*啟用*」。</block>
+  <block id="c06b2149bbe3e94f6eac8a64039cc025" category="list-text">閱讀 EULA。</block>
+  <block id="d6aeb9cf91111f522e0f1901518a3836" category="list-text">接受預設設置，即“顯示推薦更新通知”。您也可以選擇「自動更新」或「自動忽略」建議更新。</block>
+  <block id="03e58722e5fd35b95b0154a42ee279d7" category="list-text">在「*軟體更新*」下，選擇「*停用*」。</block>
+  <block id="e087c576f536a1cc1b027d2338ddf55d" category="list-text">在「軟體更新」旁選擇<block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block> ，然後選擇*查看所有自動更新*。</block>
+  <block id="e3cdf65f6a174657c946f8da21d91054" category="list-text">在「軟體更新」旁選擇<block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block> ，然後選擇*所有其他更新*。</block>
+  <block id="97edade986fff30cbc58d1915b7fc92b" category="list-text">在系統管理員中，選擇*叢集 &gt; 概覽*，然後選擇*所有其他更新*。</block>
+  <block id="7d089e6b0cd0c4c6a9cc9f51d3933449" category="list-text">在*手動更新*下，選擇*新增韌體檔案*；然後選擇*從伺服器下載*或*從本機用戶端上傳*。</block>
+  <block id="a8e89726f0704bd34a60f163989365a7" category="list-text">安裝韌體更新檔案。</block>
+  <block id="7c0a9ac67bcf9f088200f570d11de5cb" category="summary">ASA r2 系統（ASA A1K、A90、A70、A50、A30、A20、C30）提供統一的硬體和軟體解決方案，為僅限 SAN 的客戶提供簡化的體驗。</block>
+  <block id="9e6435d0d0e7d0459a63bf9be064a900" category="searchtitle">了解 ASA A1K、A90、A70、A50、A30 A20 和 C30 系統</block>
+  <block id="14a1b02d9ac34f22a362671d392a3852" category="list-text">ASA C30</block>
+  <block id="e2c77d4bd35cfd8d81e8af62db4c144b" category="summary">若要開始使用 ASA r2（ASA A1K、A90、A70、A50、A30、A20、C30）系統，請安裝硬體、設定叢集、設定資料存取並設定儲存。</block>
+  <block id="434872b119bd955476c150025f7da4b2" category="searchtitle">安裝和設定 ASA A1K、A90、A70、A50、A30、A20 和 C30 儲存系統</block>
+  <block id="c3993bfac3ec8dac794fe31c3a3f3195" category="summary">ASA r2 系統（ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20、ASA C30）不支援某些 ONTAP 指令。</block>
+  <block id="13af08b425d55aad64c53d60ae2a530a" category="sidebar">NetApp ASA r2 系統（ASA A1K、ASA A90、ASA A70、ASA A50、ASA A30、ASA A20、ASA C30）提供統一的硬體和軟體解決方案，可根據僅使用 SAN 的客戶的需求建立簡化的體驗。</block>
 </blocks>

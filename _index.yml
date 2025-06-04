@@ -2,9 +2,10 @@
 indexpage:
   title: ASA R2 說明文件
   summary: NetApp ASA R2 系統提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。
-  keywords: asa r2, ontap, documentation, asa a1k, asa a70, asa a90
-  lead: NetApp ASA R2 系統（ ASA A1K ， ASA A90 ， ASA A70 ， ASA A50 ， ASA A30 ， ASA A20
-    ）提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。
+  keywords: asa r2, ontap, documentation, asa a1k, asa a70, asa a90, asa a50, asa
+    a30, asa a20, asa c30, all flash
+  lead: NetApp ASA r2 系統（ASA A1K、ASA A90、ASA A70、ASA A50、ASA A30、ASA A20、ASA C30）提供統一的硬體和軟體解決方案，可根據僅使用
+    SAN 的客戶的需求建立簡化的體驗。
   tiles:
   - title: 開始使用
     links:
