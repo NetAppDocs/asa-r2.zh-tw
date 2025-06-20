@@ -545,7 +545,6 @@
   <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">_storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。</block>
   <block id="e2969be58319571a8d10cc30d53f9a3b" category="list-text">_A Consistency group_ 是以單一單元管理的儲存單元集合。</block>
   <block id="db5d2125ba43a68e1d147723a1fd42d2" category="paragraph">ASA R2 系統使用儲存單元和一致性群組來簡化儲存管理和資料保護。例如，假設您的資料庫由一致性群組中的 10 個儲存單元組成，而您需要備份整個資料庫。您可以備份一致性群組來保護整個資料庫、而無需個別備份每個儲存單元。</block>
-  <block id="99d7a989df24ddfeaed42c100e841eea" category="paragraph">為了協助保護資料免於遭竊或勒索軟體等惡意攻擊、 ASA R2 系統支援內建金鑰管理程式、雙層加密、防竄改快照、多因素驗證和多重管理驗證。</block>
   <block id="85af1289b342af44c3abb8f8013b47f6" category="paragraph">ASA R2 系統不支援叢集混合搭配目前的 ASA 、 AFF 或 FAS 系統。</block>
   <block id="989f2b4edace5981db8b18b1ad4a385f" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需ASA R2 系統支援與限制的詳細資訊，請參閱。</block>
   <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
@@ -1961,4 +1960,5 @@
   <block id="434872b119bd955476c150025f7da4b2" category="searchtitle">安裝和設定 ASA A1K、A90、A70、A50、A30、A20 和 C30 儲存系統</block>
   <block id="c3993bfac3ec8dac794fe31c3a3f3195" category="summary">ASA r2 系統（ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20、ASA C30）不支援某些 ONTAP 指令。</block>
   <block id="13af08b425d55aad64c53d60ae2a530a" category="sidebar">NetApp ASA r2 系統（ASA A1K、ASA A90、ASA A70、ASA A50、ASA A30、ASA A20、ASA C30）提供統一的硬體和軟體解決方案，可根據僅使用 SAN 的客戶的需求建立簡化的體驗。</block>
+  <block id="3087fbc39029f766e18398db33407a03" category="paragraph">為了保護您的資料免受盜竊或勒索軟體等惡意攻擊，ASA r2 系統支援板載金鑰管理器、雙層加密、多因素身份驗證和多管理員驗證。輔助 ASA r2 系統也支援防篡改快照。</block>
 </blocks>
