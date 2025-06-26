@@ -22,9 +22,6 @@ R2 上的 ASA 不支援下列命令和命令集：
 ====
 * `lun copy`
 * `lun geometry`
-* `lun import`
-* `lun mapping add-reportng-nodes`
-* `lun mapping-remove-reporting-nodes`
 * `lun maxsize`
 * `lun move`
 * `lun move-in-volume`
