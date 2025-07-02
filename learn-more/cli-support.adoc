@@ -26,9 +26,42 @@ R2 上的 ASA 不支援下列命令和命令集：
 * `lun move`
 * `lun move-in-volume`
 +
-此命令會取代為 LUN 重新命名 /vserver NVMe 命名空間重新命名。
+
+NOTE: 這 `lun move-in-volume`命令被替換為 `lun rename`和 `vserver nvme namespace rename`命令。
 
 * `lun transition`
+
+
+====
+.不支援的 <code> </code> 命令
+[%collapsible]
+====
+* `storage failover show-takeover`
+* `storage failover show-giveback`
+* `storage aggregate relocation`
+* `storage disk assign`
+* `storage disk partition`
+* `storage disk reassign`
+
+
+====
+.不支援的 <code> tM1000e </code> 命令集
+[%collapsible]
+====
+* `volume activity-tracking`
+* `volume analytics`
+* `volume conversion`
+* `volume file`
+* `volume flexcache`
+* `volume flexgroup`
+* `volume inode-upgrade`
+* `volume object-store`
+* `volume qtree`
+* `volume quota`
+* `volume reallocation`
+* `volume rebalance`
+* `volume recovery-queue`
+* `volume schedule-style`
 
 
 ====
@@ -41,7 +74,7 @@ R2 上的 ASA 不支援下列命令和命令集：
 * `volume expand`
 * `volume modify`
 +
-此命令與下列參數搭配使用時無法使用：
+這 `volume modify`與以下參數一起使用時命令不可用：
 
 +
 ** `-anti-ransomware-state`
@@ -103,38 +136,6 @@ R2 上的 ASA 不支援下列命令和命令集：
 * `volume snapshot`
 * `volume snapshot autodelete modify`
 * `volume snapshot policy modify`
-
-
-====
-.不支援的 <code> tM1000e </code> 命令集
-[%collapsible]
-====
-* `volume activity-tracking`
-* `volume analytics`
-* `volume conversion`
-* `volume file`
-* `volume flexcache`
-* `volume flexgroup`
-* `volume inode-upgrade`
-* `volume object-store`
-* `volume qtree`
-* `volume quota`
-* `volume reallocation`
-* `volume rebalance`
-* `volume recovery-queue`
-* `volume schedule-style`
-
-
-====
-.不支援的 <code> </code> 命令
-[%collapsible]
-====
-* `storage failover show-takeover`
-* `storage failover show-giveback`
-* `storage aggregate relocation`
-* `storage disk assign`
-* `storage disk partition`
-* `storage disk reassign`
 
 
 ====
