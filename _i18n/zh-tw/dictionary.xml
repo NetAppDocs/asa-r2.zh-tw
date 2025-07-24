@@ -393,7 +393,6 @@
   <block id="2aa13c213ee88c84d981559bd42eafe9" category="list-text">將游標移至您要編輯的複寫原則上方<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>、然後選取。</block>
   <block id="a5e06406af0ed5340393cd73877c6372" category="list-text">更新原則、然後選取 * 儲存 * 。</block>
   <block id="c3fcac5f888af495cdddd6f927ac06f4" category="paragraph">您已修改複寫原則。</block>
-  <block id="bbc80da4f9de51946791e7637ce0a3d6" category="summary">使用 Astra Control 將應用程式和資料從一個 Kubernetes 叢集移轉到另一個叢集、將應用程式複寫到遠端系統、以及複製應用程式。</block>
   <block id="d24d04b05bbac5cac892cbefd2a83130" category="doc">保護 ASA R2 儲存系統上的 Kubernetes 應用程式</block>
   <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="paragraph-title">以取得更多資訊</block>
   <block id="8833f2f06409ffe6dc4a7935b76b0754" category="summary">如果一致性群組中的資料毀損或遺失、您可以從遠端快照還原整個一致性群組。</block>
@@ -1989,8 +1988,6 @@
   <block id="2a8a59c901b916190a5f0c2fc9db590e" category="cell">刪除活動的匯入關係</block>
   <block id="2d1eaa6efdb3bbcbeddb0390177c033f" category="cell">已啟用反勒索軟體保護</block>
   <block id="e8718651f207e77e4c3719811e7c0cf4" category="cell">禁用反勒索軟體保護</block>
-  <block id="1996460c612249c4e9073063973db5cf" category="summary">了解如何使用自簽章憑證為ASA r2 系統設定ONTAP調解器。</block>
-  <block id="438b149138b2eb032ac73f3ee85a50f1" category="doc">在ASA r2 系統上使用自簽章憑證設定中介器</block>
   <block id="46a90b9185317a19d7817a93ff7da452" category="paragraph">您必須先設定ONTAP調解器或ONTAP Cloud Mediator，然後才能開始使用SnapMirror主動同步功能進行叢集監控。 ONTAPONTAP和ONTAP Cloud Mediator 均提供持久且受保護的存儲，用於儲存SnapMirror主動同步關係中ONTAP叢集使用的高可用性 (HA) 元資料。此外，這兩個調解器都提供同步節點運行狀況查詢功能，以協助確定仲裁數量，並充當控制器活動性偵測的 Ping 代理程式。</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">先決條件</block>
   <block id="e67055b6d8c65ffeed652e0147459791" category="list-text">如果您正在使用ONTAP Cloud Mediator，請驗證您的ASA r2 系統是否符合必要的<block ref="efcd0c458e1c451926dd33228d1c1e37" category="inline-link-macro-rx"></block> 。</block>
@@ -2018,7 +2015,6 @@
   <block id="842dcef5223aaf88ec80c981db6281af" category="list-text">選擇儲存虛擬機器。</block>
   <block id="533fb0f30c2a24bf44c7a68b00aed588" category="list-text">對於複製策略，選擇*AutomatedFailOverDuplex*。</block>
   <block id="28dda6c6cd8928858d47bf343ece67f7" category="list-text">如果您正在建立非統一對稱主動/主動配置，請選擇*目標設定*；然後在開始此程序之前輸入您建立的新目標一致性群組的名稱。</block>
-  <block id="2669d1e1577667b5c6ef9d1d66a9d293" category="paragraph">SnapMirror主動同步配置為保護您的數據，以便您在發生災難時能夠以零恢復點目標 (RPO) 和零恢復時間目標 (RTO) 繼續操作。</block>
   <block id="9973b2dc6ff0d198b66645d9b9f56c95" category="doc">在ASA r2 儲存系統上建立叢集間儲存虛擬機器對等關係</block>
   <block id="2b85569d3702bb2d36113451710361a0" category="paragraph">對等關係定義了允許叢集和儲存虛擬機器 (VM) 安全地交換資料的網路連線。在不同叢集上的儲存虛擬機器之間建立對等關係，以便使用SnapMirror實現資料保護和災難復原。</block>
   <block id="96d54cd4dca11897495ae0700eabe4db" category="inline-link-macro">了解有關同伴關係的更多信息</block>
@@ -2032,7 +2028,6 @@
   <block id="0fb74d2568d6cf20bc19115cdd606402" category="doc">在ASA r2 系統上安裝ONTAP調解器</block>
   <block id="348ee35966a7b6c3421172402e2e9693" category="paragraph">若要為您的ASA r2 系統安裝ONTAP Mediator，您應該遵循為所有其他ONTAP系統安裝ONTAP Mediator 的相同步驟。</block>
   <block id="061335c3997dbcabda35dde0127379e4" category="paragraph">安裝ONTAP Mediator 包括準備安裝、啟用儲存庫存取、下載ONTAP Mediator 軟體包、驗證程式碼簽章、在主機上安裝軟體包以及執行安裝後任務。</block>
-  <block id="093d47f75177924386f95fb70b12fd2a" category="paragraph"><block ref="093d47f75177924386f95fb70b12fd2a" category="inline-link-rx"></block></block>
   <block id="2750fca314c2c1638adaed4f8779bc87" category="inline-link-macro">此工作流程</block>
   <block id="62c0f4c22bba3059d9f25e8564fbcaf6" category="paragraph">若要安裝ONTAP調解器，請依照<block ref="282bbe8a51966ce59628339a2fff99b4" category="inline-link-macro-rx"></block></block>
   <block id="6fb5023500d2f772bfda250aee9189e3" category="inline-link-macro">使用自簽名憑證設定ONTAP調解器</block>
@@ -2049,7 +2044,6 @@
   <block id="5ab8d08c17560d60176a3e3a7d40a7b3" category="paragraph"><block ref="524396f856e0b8dc25625395aeecb268" category="inline-link-macro-rx"></block> 。</block>
   <block id="ea0189f809d6b6d584c711fa45f5bd6a" category="list-text">確認每個叢集上的儲存虛擬機器 (VM) 之間存在對等關係。</block>
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">建立叢集間儲存虛擬機器對等關係</block>
-  <block id="4e42f19925c81428eeaa35fccac4f6f6" category="paragraph"><block ref="f6108a5d392cfcd53dcdf7e788e56bab" category="inline-link-macro-rx"></block> 。</block>
   <block id="0a1048623dcc4bf6a07e4f070c75b99a" category="list-text">確認叢集中的每個節點上至少建立了一個 LIF。</block>
   <block id="f0a8f8a4710c7aff45926e4c429a8cc0" category="inline-link-macro">創建 LIF</block>
   <block id="d57b4f0ac425b878d2f45da8c8c89d8d" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block></block>
@@ -2076,7 +2070,6 @@
   <block id="2d137e28030b86348fecb0ac2d1d45bc" category="inline-link-macro">確認您的主機作業系統受支援</block>
   <block id="35257f18ebb7c478bcbdcb1cb37d5a07" category="list-text"><block ref="64203d3afd5f3fdaa90aa5469bd8129b" category="inline-link-macro-rx"></block>用於SnapMirror主動同步。</block>
   <block id="280d8b4f4ce474c32dbebfe78cd8c2c7" category="inline-link-macro">對象限制</block>
-  <block id="ee2277c4271750d93880b2831e674a15" category="list-text">回顧<block ref="65161ee8c272b1c94aad582682bf5791" category="inline-link-macro-rx"></block>這可能會影響您的配置。</block>
   <block id="336e658898dafc01584991f35ca06ff9" category="list-text">驗證ASA r2 系統上主機協定是否支援SnapMirror主動同步。</block>
   <block id="9d70dd832c82246e1a4170e782c9ee62" category="paragraph">ASA r2 系統上對SnapMirror主動同步的支援因ONTAP版本和主機協定而異。</block>
   <block id="bb946878eac9fb6750d6fedc775d6159" category="cell">從ONTAP開始...</block>
@@ -2139,7 +2132,6 @@
   <block id="62a4788f7c7724a21bfbeadbf6f4d9c0" category="inline-link-macro">配置SnapMirror主動同步</block>
   <block id="210c669df337d7e9ea8a63eaa073bee9" category="paragraph"><block ref="5732f343d340c87b03b110910fa5222c" category="inline-link-macro-rx"></block>在輔助站點建立資料副本，並使主機應用程式能夠在發生災難時自動透明地進行故障轉移。</block>
   <block id="bcde3dcffb78cbdd7bcc34a9e7872629" category="inline-link-macro">查看叢集對等連線的先決條件</block>
-  <block id="8eaf3fcd5f4c28c6a30f743eb3006656" category="paragraph">ASA r2 系統與其他ONTAP系統的叢集對等先決條件相同。<block ref="a853a7230b75a880e0aeca10aa7028e4" category="inline-link-macro-rx"></block> 。</block>
   <block id="1546c57263450319fef8d1d8de83e306" category="section-title">從第三方儲存系統遷移數據</block>
   <block id="99657bc66973f189d87f6d702b300b6e" category="paragraph">從ONTAP 9.17.1 開始，您可以使用外部 LUN 匯入 (FLI) 將資料從第三方儲存系統上的 LUN 遷移到ASA r2 系統。使用 FLI 進行資料遷移可以幫助您降低遷移過程中資料遺失和停機的風險。</block>
   <block id="cd7fc10aafbc563ec83b036726716d53" category="paragraph">FLI 支援線上和離線遷移。在線上遷移中，客戶端系統保持在線，同時將資料從第三方儲存系統複製到ONTAP儲存系統。 Windows、Linux 和 ESXi 主機作業系統支援線上遷移。在離線遷移中，客戶端系統處於離線狀態，LUN 資料從第三方儲存系統複製到ONTAP儲存系統，然後客戶端系統重新處於線上狀態。</block>
@@ -2217,8 +2209,6 @@
   <block id="fc8d37b5de0a3458dc2fe8a1da741c5a" category="inline-link-macro">支援利用人工智慧 (ARP/AI) 進行自主勒索軟體防護</block>
   <block id="3808c918aa048ef04ca543387e9d19bc" category="cell"><block ref="3808c918aa048ef04ca543387e9d19bc" category="inline-link-macro-rx"></block></block>
   <block id="ab3721eb6cf69168eba216763f76f9d8" category="cell">ARP/AI 可在ASA r2 儲存單元上啟用。 ARP/AI 無需學習期，即可偵測並報告潛在的勒索軟體攻擊，從而提供額外的資料保護。</block>
-  <block id="319d07699c758b34ad0e77793fc529af" category="inline-link-macro">SnapMirror主動同步</block>
-  <block id="fc1121afc2b3c5f62592309d85da4ca5" category="cell"><block ref="fc1121afc2b3c5f62592309d85da4ca5" category="inline-link-macro-rx"></block></block>
   <block id="f231c7e641e6d267354740a6c9850600" category="cell">SnapMirror Active Sync 新增了對 VMware 工作負載的支持，支援 NVMe/TCP 和 NVMe/FC 主機訪問，適用於雙節點ONTAP叢集。 VMware工作負載對 NVMe/TCP 的支援取決於 VMware 錯誤 ID：TR1049746 的解決。</block>
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">支援自動工作負載平衡</block>
   <block id="c33e823e9a93260b53fe781334bf0f34" category="cell"><block ref="c33e823e9a93260b53fe781334bf0f34" category="inline-link-macro-rx"></block></block>
@@ -2307,7 +2297,6 @@
   <block id="40fadaf9e9b5a2ea060ac57be669def8" category="sidebar">準備配置SnapMirror主動同步</block>
   <block id="4dafe14c736e023b90f1e3edec0ec907" category="sidebar">確認叢集配置</block>
   <block id="305e7e49ade15c0cfc57375e188c0f62" category="sidebar">安裝ONTAP調解器</block>
-  <block id="61ef80ea8d9e92d0a652bb75148884d3" category="sidebar">配置ONTAP調解器</block>
   <block id="9f2970594362084647462609d4b2d054" category="sidebar">管理SnapMirror主動同步</block>
   <block id="e39b47ff21b06cf5168c2115e34abb73" category="sidebar">使用SnapMirror主動同步執行計劃內故障轉移</block>
   <block id="e9a1e0623ef8495e8c5eb4f577eebc56" category="sidebar">在計劃外故障轉移後重新建立SnapMirror活動同步</block>
@@ -2317,4 +2306,16 @@
   <block id="2a1d671c971c0af470fbdc7401172b0f" category="sidebar">回應 ARP/AI 警報</block>
   <block id="65af6614b420bd97b9cd190dea5aea32" category="sidebar">暫停或恢復 ARP/AI</block>
   <block id="db63e5e7d34efa3840098020c2d030bc" category="sidebar">ONTAP 9.17.1 的新增功能</block>
+  <block id="7d456ea58781d907d2b20d5b2aca677d" category="summary">了解如何使用自簽章憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。</block>
+  <block id="851790a9f21b5ff71a9331c624658b8f" category="doc">在ASA r2 系統上使用自簽章憑證設定ONTAP Mediator 或ONTAP Cloud Mediatior</block>
+  <block id="3d1a9a8962bb1e463a972fd3eef1a2d7" category="paragraph">SnapMirror主動同步配置為保護您的數據，以便您在發生災難時能夠以接近零的恢復點目標 (RPO) 和接近零的恢復時間目標 (RTO) 繼續操作。</block>
+  <block id="19e274092e78148b7f8f40a16e4e4b47" category="summary">在不同叢集上的儲存虛擬機器之間建立對等關係，以便使用SnapMirror實現資料保護和災難復原。</block>
+  <block id="ce17aceb2c7b8c41256df32bd57c85e3" category="summary">使用Trident Protect 將應用程式和資料從一個 Kubernetes 叢集遷移到另一個 Kubernetes 集群，將應用程式複製到遠端系統，以及克隆應用程式。</block>
+  <block id="e7a712b62a3b9917efcf632c95771bf8" category="summary">在設定SnapMirror主動同步之前，您應該確認您的ASA r2 叢集處於支援的對等關係，並且符合其他設定需求。</block>
+  <block id="df990990a5ec1d2de43a7f0d3883ace1" category="paragraph"><block ref="518fe62c2bcad9680c7b9bc17854f068" category="inline-link-macro-rx"></block> 。</block>
+  <block id="fd2001c44ae139d4e281a0cdd502224a" category="list-text">回顧<block ref="6fb29c3af745e27506f2b8729349d0f4" category="inline-link-macro-rx"></block>這可能會影響您的配置。</block>
+  <block id="222e2cd23b65b26198298edef09e6653" category="paragraph">ASA r2 系統與其他ONTAP系統的叢集對等先決條件相同。<block ref="bbba0a6c9386ee840a26b101e54e4db2" category="inline-link-macro-rx"></block> 。</block>
+  <block id="521fe9d2abe779913bdc56fbd86e8714" category="inline-link-macro">SnapMirror Active Sync 對 NVMe 協定的支持</block>
+  <block id="e06d24391fbc504b412b98e695d20dac" category="cell"><block ref="e06d24391fbc504b412b98e695d20dac" category="inline-link-macro-rx"></block></block>
+  <block id="dea3a75107d7790747be36ffd87dfafd" category="sidebar">配置ONTAP調解器或ONTAP Cloud 調解器</block>
 </blocks>

@@ -26,7 +26,7 @@ NOTE: ASA R2 儲存系統的 Snapshot 複寫僅支援與其他 ASA R2 儲存系�
 您必須先在本機叢集和遠端叢集之間建立叢集對等關係、才能透過將資料複寫到遠端叢集來保護資料。
 
 .開始之前
-ASA r2 系統與其他ONTAP系統的叢集對等先決條件相同。link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["查看叢集對等連線的先決條件"] 。
+ASA r2 系統與其他ONTAP系統的叢集對等先決條件相同。link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["查看叢集對等連線的先決條件"^] 。
 
 .步驟
 . 在本機叢集的 System Manager 中、選取 * 叢集 > 設定 * 。

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: administer/manage-client-vm-access.html 
-keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface 
+keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface, iscsi lif failover, 
 summary: 建立 LIF 以存取 ASA R2 上儲存單元中的資料。使用子網路來簡化 LIF 建立和 IPspace 、以提供安全的管理和路由。 
 searchtitle: 使用 ONTAP 系統管理員 | ASA R2 管理用戶端對儲存設備的存取 
 ---

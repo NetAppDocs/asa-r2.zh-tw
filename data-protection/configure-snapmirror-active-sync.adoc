@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/configure-snapmirror-active-sync.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active/active 
 summary: 了解如何設定SnapMirror主動同步，透過建立輔助資料副本並在災難發生時啟用自動故障轉移來確保業務連續性。 
 ---
 = 在ASA r2 系統上設定SnapMirror主動同步
@@ -36,4 +36,4 @@ link:create-snapshots.html#step-1-optionally-create-a-consistency-group["建立�
 
 
 .結果
-SnapMirror主動同步配置為保護您的數據，以便您在發生災難時能夠以零恢復點目標 (RPO) 和零恢復時間目標 (RTO) 繼續操作。
+SnapMirror主動同步配置為保護您的數據，以便您在發生災難時能夠以接近零的恢復點目標 (RPO) 和接近零的恢復時間目標 (RTO) 繼續操作。

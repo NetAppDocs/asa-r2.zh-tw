@@ -39,7 +39,7 @@ summary: 了解ONTAP 9.17.1 中適用於ASA r2 系統的新功能。
 | link:../secure-data/enable-anti-ransomware-protection.html["支援利用人工智慧 (ARP/AI) 進行自主勒索軟體防護"] | ARP/AI 可在ASA r2 儲存單元上啟用。 ARP/AI 無需學習期，即可偵測並報告潛在的勒索軟體攻擊，從而提供額外的資料保護。 
 
 
-| link:../data-protection/snapmirror-active-sync.html["SnapMirror主動同步"] | SnapMirror Active Sync 新增了對 VMware 工作負載的支持，支援 NVMe/TCP 和 NVMe/FC 主機訪問，適用於雙節點ONTAP叢集。 VMware工作負載對 NVMe/TCP 的支援取決於 VMware 錯誤 ID：TR1049746 的解決。 
+| link:../data-protection/snapmirror-active-sync.html["SnapMirror Active Sync 對 NVMe 協定的支持"] | SnapMirror Active Sync 新增了對 VMware 工作負載的支持，支援 NVMe/TCP 和 NVMe/FC 主機訪問，適用於雙節點ONTAP叢集。 VMware工作負載對 NVMe/TCP 的支援取決於 VMware 錯誤 ID：TR1049746 的解決。 
 |===
 
 

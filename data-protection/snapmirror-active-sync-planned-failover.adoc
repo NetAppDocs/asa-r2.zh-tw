@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-planned-failover.html 
-keywords: snapmirror active sync, planned failover, disaster recovery, business continuity, data replication, ONTAP, secondary site, continuous availability 
+keywords: snapmirror active sync, planned failover, disaster recovery 
 summary: 了解如何執行SnapMirror主動同步關係的計畫故障轉移，以確保業務連續性和災難復原。 
 ---
 = 在SnapMirror主動同步關係中執行ASA r2 叢集的計畫故障轉移
