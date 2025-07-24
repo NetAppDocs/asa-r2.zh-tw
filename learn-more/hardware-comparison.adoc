@@ -12,7 +12,22 @@ searchtitle: 比較 ASA R2 系統與其他 ONTAP 系統
 
 
 [role="lead"]
-ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供硬體與軟體解決方案。ASA R2 系統在實作其儲存層、支援的通訊協定和 ONTAP 特性時、會與其他 ONTAP 系統（ ASA 、 AFF 和 FAS ）不同。
+ASA r2 系統為基於全快閃平台建置的純 SAN 環境提供硬體和軟體解決方案。 ASAr2 系統與其他ONTAP系統（ ASA 、 AFF和FAS）在ONTAP特性、儲存層和支援協定的實作方面有所不同。
+
+下列 ASA 平台歸類為 ASA R2 系統：
+
+* ASA A1K
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+* ASA C30
+
+
+
+
+== 性格差異
 
 在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在 ASA 系統上執行的 ONTAP 會識別為 ASA ONTAP 特性設定 _ 。在 AFF 和 FAS ONTAP 系統上執行的 ONTAP 被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。
 
@@ -24,11 +39,35 @@ ASA R2 系統為所有 Flash 平台上建置的僅 SAN 環境提供硬體與軟�
 
 ONTAP 儲存系統的特性設定無法變更。
 
-執行統一化 ONTAP 特性設定之 ONTAP 系統的儲存層使用 Aggregate 做為儲存的基礎單元。Aggregate 擁有儲存系統中可用的一組特定磁碟。此集合會將其擁有的磁碟空間分配給磁碟區、以用於 LUN 和命名空間。統一化的 ONTAP 使用者可以使用命令列介面（ CLI ）來建立和修改集合體、磁碟區、 LUN 和命名空間。
 
-ASA R2 系統中的儲存層使用儲存可用性區域、而非集合體。儲存可用性區域是一個通用儲存池、可存取儲存系統中的所有可用磁碟。ASA R2 HA 配對中的兩個節點都可以看到儲存可用性區域。建立儲存單元（以 LUN 或 NVMe 命名空間為基礎）時， ONTAP 會在儲存可用性區域的所選儲存虛擬機器（ VM ）內自動建立磁碟區，以容納儲存單元。由於這種自動化且簡化的儲存管理方法、某些系統管理員選項、 ONTAP 命令和 REST API 端點在 ASA R2 系統上無法使用、或使用量有限。例如、由於 ASA R2 系統的磁碟區建立與管理是自動化的、因此系統管理員中不會顯示 * Volumes `volume create` （磁碟區） * 功能表、而且不支援該命令。
 
-ASA R2 儲存設備以下列方式與其他 ONTAP 儲存系統進行比較：
+== 儲存層差異
+
+ASA r2 系統使用簡化的儲存層，該儲存層與FAS、 AFF和ASA系統所使用的儲存層不同。
+
+.FAS、 AFF和ASA系統
+FAS、 AFF和ASA系統的儲存層使用聚合作為基本儲存單元。聚合擁有儲存系統中可用的一組特定磁碟。聚合將其擁有的磁碟上的空間分配給 LUN 和命名空間的磁碟區。使用這些系統， ONTAP使用者可以建立和修改聚合、磁碟區、LUN 和命名空間。
+
+.ASA r2 系統
+ASA r2 系統中的儲存層使用儲存可用區，而非聚合。儲存可用區是單一 HA 對的兩個節點均可存取的公共儲存池。 HA對中的兩個節點均可存取其共享儲存可用區中的所有可用磁碟。例如，在雙節點ASA r2 系統ONTAP叢集中，有一個儲存可用區，叢集中的兩個節點均可存取。在四節點ASA r2 系統ONTAP叢集中，有兩個儲存可用區。叢集中的每個 HA 對都可以存取其中一個儲存可用區。
+
+建立儲存單元（基於 LUN 或 NVMe 命名空間）時， ONTAP會自動在對應的儲存可用區中建立一個磁碟區來容納該儲存單元。新建立的磁碟區將自動放置在該儲存可用區內，以實現最佳效能和均衡的容量利用率。根據您的ONTAP版本， ASA r2 系統還支援跨儲存可用區自動重新平衡儲存單元，以及在 HA 對中的節點之間自動重新平衡工作負載。
+
+* 自動儲存單元重新平衡
++
+從ONTAP 9.16.1 開始，如果儲存單元的增加或減少導致整個儲存可用區域的儲存利用率不平衡，則ONTAP會根據需要自動移動儲存單元以重新平衡利用率並最佳化效能。
+
+* 自動工作負載重新平衡
++
+從ONTAP 9.17.1 開始， ONTAP會自動在ASA r2 系統 HA 對中的節點之間重新平衡工作負載，以達到最佳效能。例如，如果節點的使用率增加到 70%，而其 HA 配對節點的使用率僅為 30%，則ONTAP會自動調整工作負載，以使每個節點的使用率更接近。由於 HA 對中的節點共享相同的儲存可用區，因此工作負載重新平衡是一種無副本操作，不會對效能產生任何影響。升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集 14 天后，預設啟用自動工作負載重新平衡功能。您可以link:../administer/rebalance-workloads.html["更改預設設定"]啟用或停用自動工作負載重新平衡，或將其設為建議狀態以標記不平衡的工作負載而不自動移動它們。
+
+
+
+
+
+== ASA R2 系統差異摘要
+
+ASA r2 系統與FAS、 AFF和ASA系統有以下不同：
 
 [cols="1h,2,2,2,2"]
 |===
@@ -54,26 +93,7 @@ ASA R2 儲存設備以下列方式與其他 ONTAP 儲存系統進行比較：
 * 儲存層支援 *
 | 儲存可用性區域 | 集合體 | 集合體 | 集合體 
 |===
-下列 ASA 平台歸類為 ASA R2 系統：
-
-* ASA A1K
-* ASA A90
-* ASA A70
-* ASA A50
-* ASA A30
-* ASA A20
-* ASA C30
-
-
-.以取得更多資訊
-* 深入瞭解 link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["ONTAP 硬體系統"^]。
-* 請參閱中有關 ASA 和 ASA R2 系統的完整組態支援和限制link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
-* 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^]。
-
-
-
-
-== ASA R2 系統差異摘要
+由於這種自動化且簡化的儲存管理方法，某些 System Manager 選項、 ONTAP指令和 REST API 端點在ASA r2 系統上不可用或使用受限。例如，由於ASA r2 系統的磁碟區建立和管理是自動化的，因此「磁碟區」功能表不會顯示在 System Manager 中，且 `volume create`命令不受支援。link:cli-support.html["了解有關不受支援的ASA r2 命令的更多信息"] 。
 
 以下說明 ASA R2 系統與 ONTAP 、 AFF 和 ASA 系統之間與 FAS 命令列介面（ CLI ）和 REST API 相關的主要差異。
 
@@ -88,3 +108,9 @@ ASA R2 儲存系統上的儲存單元一律會精簡佈建。不支援完整資�
 
 .資料壓縮的變更
 對溫度敏感的儲存效率不適用於 ASA R2 系統。在 ASA R2 系統上、壓縮並非以 _hot_ （經常存取）資料或 _cold （不常存取）資料為基礎。壓縮開始時、不會等到資料變冷。
+
+.以取得更多資訊
+* 深入瞭解 link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["ONTAP 硬體系統"^]。
+* 請參閱中有關 ASA 和 ASA R2 系統的完整組態支援和限制link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
+* 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^]。
+

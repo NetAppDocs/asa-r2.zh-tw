@@ -29,6 +29,18 @@ summary:
 
 
 
+== 從第三方儲存系統遷移數據
+
+從ONTAP 9.17.1 開始，您可以使用外部 LUN 匯入 (FLI) 將資料從第三方儲存系統上的 LUN 遷移到ASA r2 系統。使用 FLI 進行資料遷移可以幫助您降低遷移過程中資料遺失和停機的風險。
+
+FLI 支援線上和離線遷移。在線上遷移中，客戶端系統保持在線，同時將資料從第三方儲存系統複製到ONTAP儲存系統。 Windows、Linux 和 ESXi 主機作業系統支援線上遷移。在離線遷移中，客戶端系統處於離線狀態，LUN 資料從第三方儲存系統複製到ONTAP儲存系統，然後客戶端系統重新處於線上狀態。
+
+* 學習如何執行link:https://docs.netapp.com/us-en/ontap-fli/san-migration//concept_fli_offline_workflow.html["FLI 離線遷移"^] 。
+* 學習如何執行link:https://docs.netapp.com/us-en/ontap-fli/san-migration//concept_fli_online_workflow.html["FLI 線上遷移"^] 。
+
+
+
+
 == 將 ASA R2 系統設定為 VMware 環境中的儲存供應商
 
 您可以使用適用於 VMware 的 ONTAP 工具，輕鬆將 ASA R2 系統啟用為 VMware 環境中的儲存供應商。

@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: administer/revert-ontap.html 
+keywords: update, revert, ontap, asa r2 
+summary: ONTAP 會自動更新 ASA R2 系統上的韌體。您可以使用 System Manager 停用自動更新、並在安裝更新之前檢視更新。 
+---
+= 在ASA r2 儲存系統上復原ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA r2 系統的ONTAP軟體復原遵循與其他ONTAP系統的復原相同的流程。
+
+還原ONTAP叢集會造成中斷。還原期間，您必須將叢集處於離線狀態。您不應在沒有技術支援協助的情況下還原生產集群。您可以自行還原新的或測試的叢集。如果新系統或測試系統的還原失敗，或還原成功完成，但您對生產環境中的叢集效能不滿意，請聯絡技術支援尋求協助。
+
+link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["還原ONTAP集群"] 。
+
+
+
+== ASA r2 系統的恢復需求
+
+某些ASA r2 叢集設定要求您在開始ONTAP軟體復原之前採取特定操作。
+
+
+
+=== 從ONTAP 9.17.1 還原
+
+如果要在ASA r2 系統上從ONTAP 9.17.1 恢復，則在開始恢復之前應執行下列操作：
+
+[cols="2"]
+|===
+| 如果您有... | 在恢復之前您應該... 
+
+
+| SnapMirror主動同步關係中的分層一致性組 | 刪除SnapMirror主動同步關係 
+
+
+| 積極的進口關係 | 刪除活動的匯入關係 
+
+
+| 已啟用反勒索軟體保護 | 禁用反勒索軟體保護 
+|===

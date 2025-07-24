@@ -12,3 +12,5 @@ entries:
     url: "/learn-more/cli-support.html"
   - title: REST API支援
     url: "/learn-more/rest-api-support.html"
+  - title: 支援常見的ONTAP功能
+    url: "/learn-more/additional-supported-ontap-features.html"

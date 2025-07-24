@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: learn-more/additional-supported-ontap-features.html 
+keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, comand line interface 
+summary: 由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常見的ONTAP任務和系統管理器功能在ASA r2 系統上的執行方式與在其他ONTAP系統上的執行方式相同。 
+---
+= ASA r2 系統支援的常見ONTAP功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常見的ONTAP任務和系統管理器功能在ASA r2 系統上的執行方式與在其他ONTAP系統上的執行方式相同。
+
+有關常見特性和功能的更多信息，請參閱以下ONTAP文件。
+
+
+
+== ONTAP管理
+
+* link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["學習在ONTAP系統管理員中搜尋、過濾和排序訊息"^] 。
+* link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["組合實體連接埠以建立介面組"^] 。
+* link:https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html["了解 NVMe over Fabrics (NVMe-oF) 配置"^] 。
+
+
+
+
+== 資料安全
+
+* link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["了解 OAuth 2.0 身份驗證"^] 。
+* link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["了解客戶端身份驗證和授權"^] 。
+* link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["學習配置 SAML 身份驗證"^] 。
+* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["管理ONTAP管理員存取權限"^] 。
+
+
+
+
+== 資料保護
+
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["在ONTAP中設定叢集外部金鑰伺服器"^] 。
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["啟用外部金鑰管理（基於硬體）"^] 。
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["啟用外部金鑰管理 (NVE)"^] 。
+

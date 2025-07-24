@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: secure-data/pause-resume-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, pause, resume, suspend 
+summary: 如果您正在規劃不尋常的工作負載事件，您可以暫時暫停 ARP/AI 分析，以防止勒索軟體攻擊的誤報偵測 
+---
+= 在ASA r2 儲存系統上使用 AI 暫停或恢復自主勒索軟體防護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護 (ARP/AI) 來保護ASA r2 系統上的資料。如果您正在規劃異常工作負載事件，可以暫時暫停 ARP/AI 分析，以防止誤報勒索軟體攻擊。工作負載事件完成後，您可以還原 ARP/AI 分析。
+
+
+
+== 暫停ARP/AI
+
+在開始異常工作負載事件之前，您可能需要暫時暫停 ARP/AI 分析，以防止勒索軟體攻擊的誤報偵測。
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 選擇要暫停 ARP/AI 的儲存單元。
+. 選擇*暫停反勒索軟體*。
+
+
+.結果
+所選儲存單元的 ARP/AI 分析已暫停，並且在您恢復 ARP/AI 之前，系統管理員不會向您報告任何可疑活動。
+
+
+
+== 恢復ARP/AI
+
+如果您在異常工作負載期間暫停 ARP/AI，則在工作負載完成後，您應該恢復它以保護您的資料免受勒索軟體攻擊。
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 選擇要復原 ARP/AI 的儲存單元。
+. 選擇*恢復反勒索軟體*。
+
+
+.結果
+對潛在勒索軟體攻擊的分析已恢復，可疑活動將在系統管理員中向您報告。

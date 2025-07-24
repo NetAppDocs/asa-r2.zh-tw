@@ -2,6 +2,14 @@
 section: administer
 title: 管理與監控
 entries:
+- title: 升級和恢復ONTAP
+  entries:
+  - title: 升級ONTAP
+    url: "/administer/upgrade-ontap.html"
+  - title: 恢復ONTAP
+    url: "/administer/revert-ontap.html"
+  - title: 更新韌體
+    url: "/administer/update-firmware.html"
 - title: 管理用戶端對儲存 VM 的存取
   url: "/administer/manage-client-vm-access.html"
 - title: 管理叢集網路
@@ -14,10 +22,6 @@ entries:
     url: "/monitor/monitor-storage.html"
   - title: 增加儲存容量
     url: "/administer/increase-storage-capacity.html"
-- title: 升級ONTAP
-  url: "/administer/upgrade-ontap.html"
-- title: 更新韌體
-  url: "/administer/update-firmware.html"
 - title: 檢視洞見
   url: "/monitor/view-insights.html"
 - title: 檢視叢集事件和工作
@@ -30,6 +34,8 @@ entries:
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: 重新命名節點
     url: "/administer/rename-nodes.html"
+  - title: 重新平衡節點之間的工作負載
+    url: "/administer/rebalance-workloads.html"
 - title: 管理使用者帳戶和角色
   url: "/administer/user-accounts-roles.html"
 - title: 管理安全性憑證

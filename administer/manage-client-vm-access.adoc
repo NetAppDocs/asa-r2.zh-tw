@@ -108,9 +108,6 @@ LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在
 . 選擇 * 網路 > 總覽 * 。
 . 選擇 * Network interfaces （網絡接口） * ；然後選擇image:icon_add_blue_bg.png["藍色矩形加上加號、接著加上白色字母"]。
 . 選取介面類型和傳輸協定、然後選取儲存 VM 。
-+
-若要啟用 iSCSI LIF 容錯移轉，請僅選取 IP 傳輸協定。
-
 . 輸入 LIF 名稱或接受預設名稱。
 . 選取網路介面的主節點、然後輸入 IP 位址和子網路遮罩。
 . 選擇*保存*。
@@ -120,22 +117,81 @@ LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在
 您已建立資料存取的 LIF 。
 
 .接下來呢？
-如果您已為 iSCSI 建立 IP LIF ，則可以使用 ONTAP 命令列介面（ CLI ）來啟用自動 iSCSI LIF 容錯移轉。
+您可以使用ONTAP命令列介面 (CLI) 建立具有自動故障轉移功能的僅 iSCSI LIF。
 
 
 
-=== 啟用自動 iSCSI LIF 容錯移轉
+=== 建立自訂僅 iSCSI LIF 服務策略
 
-如果 SVM 上的 iSCSI 生命期未啟用自動 LIF 容錯移轉、則新建立的生命期也不會啟用自動 LIF 容錯移轉。如果未啟用自動 LIF 容錯移轉、且發生容錯移轉事件、則 iSCSI 生命將不會移轉。
+如果您想要建立具有自動 LIF 故障轉移功能的僅 iSCSI LIF，則必須先建立自訂僅 iSCSI LIF 服務原則。
 
-您必須使用 ONTAP 命令列介面（ CLI ）來啟用自動 iSCSI LIF 容錯移轉。
+您必須使用ONTAP命令列介面 (CLI) 來建立自訂服務策略。
 
 .步驟
-. 啟用自動 iSCSI LIF 容錯移轉：
+. 將權限層級設為進階：
 +
 [source, cli]
 ----
-network interface modify -vserver <SVM_name> -lif <iscsi_lif> -failover-policy sfo-partner-only -auto-revert true
+set -privilege advanced
+----
+. 建立自訂僅 iSCSI LIF 服務策略：
++
+[source, cli]
+----
+network interface service-policy create -vserver <SVM_name> -policy <service_policy_name> -services data-core,data-iscsi
+----
+. 驗證服務策略是否已建立：
++
+[source, cli]
+----
+network interface service-policy show -policy <service_policy_name>
+----
+. 將權限等級傳回管理員：
++
+[source, cli]
+----
+set -privilege admin
+----
+
+
+
+
+=== 建立僅支援 iSCSI 的 LIF，並啟用自動 LIF 故障轉移
+
+如果 SVM 上的 iSCSI 生命期未啟用自動 LIF 容錯移轉、則新建立的生命期也不會啟用自動 LIF 容錯移轉。如果未啟用自動 LIF 容錯移轉、且發生容錯移轉事件、則 iSCSI 生命將不會移轉。
+
+.開始之前
+您必須已建立自訂的僅 iSCSI LIF 服務策略。
+
+.步驟
+. 建立具有自動 LIF 故障轉移功能的僅 iSCSI LIF：
++
+[source, cli]
+----
+network interface create -vserver <SVM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
+----
++
+** 建議您在每個節點上建立兩個 iSCSI LIF，一個用於結構 A，另一個用於結構 B。這為您的 iSCSI 流量提供了冗餘和負載平衡。在以下範例中，總共建立了四個 iSCSI LIF，每個節點上兩個，每個結構一個。
++
+[listing]
+----
+network interface create -vserver svm1 -lif iscsi-lif-01a -service-policy custom-data-iscsi -home-node node1 -home-port e2b -address <node01-iscsi-a–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+
+network interface create -vserver svm1 -lif iscsi-lif-01b -service-policy custom-data-iscsi -home-node node1 -home-port e4b -address <node01-iscsi-b–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+
+network interface create -vserver svm1 -lif iscsi-lif-02a -service-policy custom-data-iscsi -home-node node2 -home-port e2b -address <node02-iscsi-a–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+
+network interface create -vserver svm1 -lif iscsi-lif-02b -service-policy custom-data-iscsi -home-node node2 -home-port e4b -address <node02-iscsi-b–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+----
+** 如果您正在使用 VLAN，請調整 `home-port`參數以包含對應 iSCSI 結構的 VLAN 連接埠資訊，例如，  `-home-port e2b-<iSCSI-A-VLAN>`對於 iSCSI 結構 A 和 `-home-port e4b-<iSCSI-B-VLAN>` 。
+** 如果您使用具有 VLAN 的介面群組 (ifgroups)，請調整 `home-port`參數以包含適當的 VLAN 端口，例如，  `-home-port a0a-<iSCSI-A-VLAN>`對於 iSCSI 結構 A 和 `-home-port a0a-<iSCSI-B-VLAN>`對於 iSCSI 結構 B，其中 `a0a`是 ifgroup，a0a-<iSCSI-A-VLAN> 和 a0a-<iSCSI-B-VLAN> 分別是 iSCSI A 結構和 iSCSI B 結構的 VLAN 連接埠。
+
+
+. 驗證 iSCSI LIF 是否已建立：
++
+[source, cli]
+----
+network interface show -lif iscsi*
 ----
 
 

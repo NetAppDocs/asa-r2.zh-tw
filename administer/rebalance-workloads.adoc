@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: administer/rebalance-workloads.html 
+keywords: rename, node, renaming, asa r2 
+summary: 從ONTAP 9.17.1 開始， ONTAP會自動重新平衡ASA r2 系統 HA 對中節點之間的工作負載，以達到最佳效能。 
+---
+= 重新平衡ASA r2 儲存系統上的節點之間的工作負載
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從ONTAP 9.17.1 開始， ONTAP會自動在ASA r2 系統 HA 對中的節點之間重新平衡工作負載，以達到最佳效能。例如，如果節點的使用率增加到 70%，而其 HA 配對節點的使用率僅為 30%，ONTAP會自動轉移工作負載，以使每個節點的使用率更接近。由於 HA 對中的節點共享相同的儲存可用區，因此工作負載重新平衡是一項無副本操作，不會影響效能。
+
+
+
+== 修改自動工作負載重新平衡的預設評估期
+
+升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天，自動工作負載重新平衡功能預設為啟用。您可以使用ONTAP命令列介面 (CLI) 延長或縮短預設評估期，以滿足您的營運需求。
+
+.步驟
+. 驗證評估期剩餘天數：
++
+[source, cli]
+----
+placement rebalance config show -fields evaluation-window
+----
+. 更改重新平衡評估期：
++
+[source, cli]
+----
+placement rebalance config modify -evaluation-window <number_of_evaluation_days>
+----
++
+以下範例將剩餘評估期設定為 10 天。
+
++
+[listing]
+----
+placement rebalance config modify -evaluation-window 10
+----
+
+
+
+
+== 修改自動工作負載重新平衡設定
+
+升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集 14 天后，自動工作負載重新平衡功能預設為啟用。您可以變更預設設定以停用自動工作負載重新平衡功能，或將其設為建議狀態，以標記不平衡的工作負載但不會自動移動它們。
+
+.步驟
+. 驗證節點上目前設定的重新平衡模式：
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. 修改自動工作負載重新平衡設定：
++
+[source, cli]
+----
+placement rebalance config modify -mode <disabled|advisory|automated>
+----
+. 驗證重新平衡模式是否已修改：
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+
+
+
+
+== 手動觸發工作負載重新平衡
+
+如果您已停用自動工作負載重新平衡，仍可手動觸發工作負載重新平衡。如果您希望在一段時間的手動調整後重新平衡工作負載，或者已將重新平衡模式設為「建議」並希望根據工作負載標誌採取行動，則此功能非常有用。
+
+.步驟
+. 驗證節點上目前設定的重新平衡模式：
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. 如果重新平衡模式未設定為*advisory*，則將其設為*advisory*：
++
+[source, cli]
+----
+placement rebalance config modify -mode advisory
+----
+. 手動觸發工作負載重新平衡：
++
+[source, cli]
+----
+balanced-placement rebalance execute
+----
+. 查看重新平衡操作的狀態：
++
+[source, cli]
+----
+placement rebalance config show-evaluation
+----
+
+
+.接下來呢？
+如果您想要將重新平衡模式設為“自動”或“停用”，則可以使用 `placement rebalance config modify`命令。

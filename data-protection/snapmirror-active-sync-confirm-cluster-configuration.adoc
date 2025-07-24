@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-confirm-cluster-configuration.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, cluster configuration 
+summary: 查看潛在勒索軟體攻擊的警告並在系統管理員中採取行動。 
+---
+= 在設定SnapMirror主動同步之前確認您的ASA r2 叢集配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapMirror主動同步依賴對等集群，以便在發生故障轉移時保護您的資料。在設定SnapMirror主動同步之前，您應該確認您的ASA r2 叢集處於支援的對等關係，並且符合其他設定需求。
+
+.步驟
+. 確認集群之間存在集群對等關係。
++
+
+NOTE: SnapMirror主動同步需要使用預設 IP 空間來建立叢集對等關係。不支援自訂 IP 空間。
+
++
+link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["建立集群對等關係"] 。
+
+. 確認每個叢集上的儲存虛擬機器 (VM) 之間存在對等關係。
++
+link:create-svm-peer-relationship.html["建立叢集間儲存虛擬機器對等關係"^] 。
+
+. 確認叢集中的每個節點上至少建立了一個 LIF。
++
+link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["創建 LIF"]
+
+. 確認必要的儲存單元已建立並對應到主機群組。
++
+link:../manage-data/provision-san-storage.html#create-storage-units["建立儲存單元"]和link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["將儲存單元對應到主機群組"] 。
+
+. 重新掃描應用程式主機以發現任何新的儲存單元。
+
+
+.接下來呢？
+確認叢集配置後，即可link:install-ontap-mediator.html["安裝ONTAP調解器"] 。

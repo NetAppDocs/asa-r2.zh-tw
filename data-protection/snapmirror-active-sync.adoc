@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, zero rpo, zero rto, disaster recovery, symmetric active/active, workflow 
+summary: '使用SnapMirror主動同步，保護需要零復原點目標 (RPO) 和零復原時間目標 (RTO) 的主機應用程式免受意外中斷或網站災難造成的中斷。' 
+---
+= SnapMirror主動同步設定工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP SnapMirror主動同步資料保護功能即使在整個站點發生故障的情況下也能使業務服務繼續運行，並支援應用程式使用輔助副本透明地進行故障轉移。使用SnapMirror主動同步功能觸發故障轉移無需任何手動幹預或自訂腳本。
+
+雖然在ASA r2 系統上設定SnapMirror主動同步的系統管理器程式與執行統一ONTAP個性的NetApp FAS、 AFF和ASA系統不同，但SnapMirror主動同步的需求、架構和操作是相同的。
+
+link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["了解有關SnapMirror主動同步的更多信息"^] 。
+
+在ASA r2 系統上， SnapMirror主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點均可存取本地儲存以進行主動 I/O。
+
+詳細了解link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["對稱主動/主動配置"^] 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]準備配置SnapMirror主動同步。
+[role="quick-margin-para"]
+到link:snapmirror-active-sync-prepare.html["準備配置SnapMirror主動同步"]在您的ASA r2 系統上，您應該檢查配置先決條件，確認對主機作業系統的支持，並注意可能影響特定配置的物件限制。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]確認您的叢集配置。
+[role="quick-margin-para"]
+在配置SnapMirror主動同步之前，您應該link:snapmirror-active-sync-confirm-cluster-configuration.html["確認您的ASA r2 叢集處於正確的對等關係並滿足其他設定需求"] 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]安裝ONTAP調解器。
+[role="quick-margin-para"]
+您可以使用ONTAP Mediator 或ONTAP Cloud Mediator 來監控叢集的運作狀況並實現業務連續性。如果您使用ONTAP Mediator，則必須link:install-ontap-mediator.html["安裝它"]在您的主機上。如果您使用的是ONTAP Cloud Mediator，則可以跳過此步驟。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]使用自簽章憑證設定ONTAP Mediator 或ONTAP Cloud Mediator。
+[role="quick-margin-para"]
+你必須link:configure-ontap-mediator.html["配置ONTAP中介或ONTAP雲中介"]然後才可以開始使用它與SnapMirror主動同步進行叢集監控。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]配置SnapMirror主動同步。
+[role="quick-margin-para"]
+link:configure-snapmirror-active-sync.html["配置SnapMirror主動同步"]在輔助站點建立資料副本，並使主機應用程式能夠在發生災難時自動透明地進行故障轉移。

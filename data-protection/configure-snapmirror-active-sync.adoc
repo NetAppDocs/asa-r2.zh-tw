@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: data-protection/configure-snapmirror-active-sync.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: 了解如何設定SnapMirror主動同步，透過建立輔助資料副本並在災難發生時啟用自動故障轉移來確保業務連續性。 
+---
+= 在ASA r2 系統上設定SnapMirror主動同步
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+配置SnapMirror主動同步以在輔助站點建立資料副本，並使主機應用程式能夠在災難發生時自動、透明地進行故障轉移。
+
+在ASA r2 系統上， SnapMirror主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點均可存取本地儲存以進行主動 I/O。
+
+
+NOTE: 如果您使用 iSCSI 或 FC 協定並使用適用於 VMware Sphere 的ONTAP工具，則可以選擇link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["使用ONTAP Tools for VM ware 設定SnapMirror主動同步"^] 。
+
+.開始之前
+link:create-snapshots.html#step-1-optionally-create-a-consistency-group["建立一致性組"]在主站點上使用新的儲存單元建立一致性群組。如果要建立非統一對稱主動/主動配置，也請在輔助網站上使用新的儲存單元建立一致性群組。
+
+詳細了解 https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/#key-concepts["非均勻"]對稱主動/主動配置。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將滑鼠懸停在要使用SnapMirror活動同步保護的一致性群組的名稱上。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]然後選擇*保護*。
+. 在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。
+. 選擇現有的群集對等體或選擇*新增新的群集對等體*。
+. 選擇儲存虛擬機器。
+. 對於複製策略，選擇*AutomatedFailOverDuplex*。
+. 如果您正在建立非統一對稱主動/主動配置，請選擇*目標設定*；然後在開始此程序之前輸入您建立的新目標一致性群組的名稱。
+. 選擇*保存*。
+
+
+.結果
+SnapMirror主動同步配置為保護您的數據，以便您在發生災難時能夠以零恢復點目標 (RPO) 和零恢復時間目標 (RTO) 繼續操作。

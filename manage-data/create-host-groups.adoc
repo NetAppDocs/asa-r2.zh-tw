@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: manage-data/create-host-groups.html 
+keywords: create host group, map storage units, host access, asa r2 
+summary: 建立主機群組以提供主機對儲存單元的存取並有效地管理儲存映射。 
+---
+= 在ASA r2 系統上建立主機組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 ASA R2 系統上、 _ 主機群組 _ 是用於讓主機存取儲存單元的機制。主機群組是指 SCSI 主機的 igroup 、或 NVMe 主機的 NVMe 子系統。主機只能看到對應至其所屬主機群組的儲存單元。當主機群組對應至儲存單元時、屬於群組成員的主機便能掛載（在上建立目錄和檔案結構）儲存單元。
+
+當您建立儲存單元時、會自動或手動建立主機群組。您可以選擇在建立儲存單元之前或之後、使用下列步驟來建立主機群組。
+
+.步驟
+. 從 System Manager 中選取 * 主機 * 。
+. 選取要新增至主機群組的主機。
++
+選取第一個主機之後、要新增至主機群組的選項會出現在主機清單上方。
+
+. 選取 * 新增至主機群組 * 。
+. 搜尋並選取您要新增主機的主機群組。
+
+
+.接下來呢？
+您已建立主機群組，現在可以link:provision-san-storage.html#map-the-storage-unit-to-a-host["將其映射到儲存單元"] 。

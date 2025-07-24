@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9171.html 
+keywords: 'what"s new, release notes, 9.17.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: 了解ONTAP 9.17.1 中適用於ASA r2 系統的新功能。 
+---
+= 適用於ASA r2 系統的ONTAP 9.17.1 的新功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解ONTAP 9.17.1 中適用於ASA r2 系統的新功能。
+
+
+
+== SAN資料遷移
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["支援從第三方儲存系統遷移數據"] | ASA r2 系統支援使用外部 LUN 匯入 (FLI) 進行 SAN 資料遷移。 FLI可讓您將資料從第三方儲存系統上的 LUN 遷移到ASA r2 系統。 
+|===
+
+
+== 資料保護
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../secure-data/enable-anti-ransomware-protection.html["支援利用人工智慧 (ARP/AI) 進行自主勒索軟體防護"] | ARP/AI 可在ASA r2 儲存單元上啟用。 ARP/AI 無需學習期，即可偵測並報告潛在的勒索軟體攻擊，從而提供額外的資料保護。 
+
+
+| link:../data-protection/snapmirror-active-sync.html["SnapMirror主動同步"] | SnapMirror Active Sync 新增了對 VMware 工作負載的支持，支援 NVMe/TCP 和 NVMe/FC 主機訪問，適用於雙節點ONTAP叢集。 VMware工作負載對 NVMe/TCP 的支援取決於 VMware 錯誤 ID：TR1049746 的解決。 
+|===
+
+
+== 儲存效率
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../learn-more/hardware-comparison.html["支援自動工作負載平衡"] | 工作負載在 HA 對的節點之間自動平衡，以優化效能和資源利用率。 
+|===

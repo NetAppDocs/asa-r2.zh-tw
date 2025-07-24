@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: manage-data/delete-host-groups.html 
+keywords: delete host groups, remove host groups, igroup, nvme subsystem, asa r2 
+summary: 刪除主機群組以刪除主機對ASA r2 系統上儲存單元的存取權限。 
+---
+= 刪除ASA r2 系統上的主機群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在ASA r2 系統上，主機群組是用來授予主機存取儲存單元的機制。主機群組是指 SCSI 主機的 igroup 或 NVMe 主機的 NVMe 子系統。主機只能看到已對應到其所屬主機群組的儲存單元。如果您不再希望群組中的主機存取會對應到該群組的儲存單元，則可能需要刪除主機群組。
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 在「*主機映射*」下選擇要刪除的主機群組。
+. 選擇*映射儲存*。
+. 選擇*更多*；然後選擇*刪除*。
+. 選擇確認您是否要繼續；然後選擇*刪除*。
+
+
+.接下來呢？
+主機群組已刪除。該群組中的主機不再具有對應到該主機群組的儲存單元的存取權。
