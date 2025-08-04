@@ -2318,4 +2318,7 @@
   <block id="521fe9d2abe779913bdc56fbd86e8714" category="inline-link-macro">SnapMirror Active Sync 對 NVMe 協定的支持</block>
   <block id="e06d24391fbc504b412b98e695d20dac" category="cell"><block ref="e06d24391fbc504b412b98e695d20dac" category="inline-link-macro-rx"></block></block>
   <block id="dea3a75107d7790747be36ffd87dfafd" category="sidebar">配置ONTAP調解器或ONTAP Cloud 調解器</block>
+  <block id="ff84680c6870c10f3e11228ef86a9955" category="sidebar">NetApp ASA的最佳實踐</block>
+  <block id="0a297cc4d1df6ddee9072cd47dca7791" category="sidebar">NetApp ASA上的FlexPod</block>
+  <block id="03e4aa0349d001bf969e3c9a3664119c" category="sidebar">RestfulAPI 從ASA/ AFF到ASA r2 的過渡指南</block>
 </blocks>
