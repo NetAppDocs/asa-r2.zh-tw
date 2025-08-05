@@ -51,3 +51,9 @@ indexpage:
     links:
     - title: 適用於其他 ONTAP 系統的文件
       url: https://docs.netapp.com/us-en/ontap-family/
+    - title: 了解使用ONTAP for vSphere 的優勢
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html
+    - title: 使用ONTAP 的VMware Live Site Recovery
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html
+    - title: 了解 vSphere 環境的持續可用性解決方案
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html

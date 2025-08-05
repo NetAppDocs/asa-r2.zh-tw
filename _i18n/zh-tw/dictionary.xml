@@ -2332,4 +2332,6 @@
   <block id="e329498f3b3980715382d5109b4ea79a" category="sidebar">ASA r2 系統的SnapCenter操作</block>
   <block id="5eecc97c2d6bc1539840b90a30464e26" category="sidebar">NetApp ASA上的 Oracle 資料庫效能</block>
   <block id="bf50aa40e09203b6bd2725746556edee" category="sidebar">帶有 FCP 的NetApp ASA系統上的 SAP HANA</block>
+  <block id="d7542c1281d95fd9eabd52424689de9a" category="sidebar">了解使用ONTAP for vSphere 的優勢</block>
+  <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">了解 vSphere 環境的持續可用性解決方案</block>
 </blocks>
