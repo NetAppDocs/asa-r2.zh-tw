@@ -17,6 +17,8 @@ ONTAP SnapMirror主動同步資料保護功能即使在整個站點發生故障�
 
 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["了解有關SnapMirror主動同步的更多信息"^] 。
 
+link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["了解有關在ASA r2 系統上使用SnapMirror主動同步進行災難復原的更多信息"^]
+
 在ASA r2 系統上， SnapMirror主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點均可存取本地儲存以進行主動 I/O。
 
 詳細了解link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["對稱主動/主動配置"^] 。

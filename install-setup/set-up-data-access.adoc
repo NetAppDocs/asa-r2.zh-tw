@@ -27,6 +27,12 @@ summary:
 
 如果您需要將 VM 工作負載從 ASA 儲存系統移轉至 ASA R2 儲存系統、 NetApp 建議您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere VMotion"^]執行即時且不中斷營運的資料移轉。
 
+.相關資訊
+* 詳細了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["使用ONTAP for vSphere 的優勢"^] 。
+* 了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["使用ONTAP 的VMware Live Site Recovery"^]。
+* 了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html#continuous-availability-solutions-for-vsphere-environments["適用於 vSphere 環境的持續可用性解決方案"^]。
+
+
 
 
 == 從第三方儲存系統遷移數據

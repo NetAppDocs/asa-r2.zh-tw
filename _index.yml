@@ -41,6 +41,12 @@ indexpage:
       url: https://www.netapp.com/pdf.html?item=/media/135828-flexpod-san-ucs-xdirect-asa-nva-deploy-guide.pdf
     - title: RestfulAPI 從ASA/ AFF到ASA r2 的過渡指南
       url: https://www.netapp.com/media/136585-tr-5008-restfulapi-transition-guide-asa-r2.pdf
+    - title: ASA r2 系統的SnapCenter操作
+      url: https://docs.netapp.com/us-en/snapcenter/get-started/learn-about-snapcenter-support-for-asa-r2-systems.html
+    - title: NetApp ASA上的 Oracle 資料庫效能
+      url: https://www.netapp.com/pdf.html?item=/media/138087-tr-5015-oracle-perf-on-asa.pdf
+    - title: 帶有 FCP 的NetApp ASA系統上的 SAP HANA
+      url: https://docs.netapp.com/us-en/netapp-solutions-sap/bp/hana-asa-fc-introduction.html
   - title: 其他 ONTAP 資源
     links:
     - title: 適用於其他 ONTAP 系統的文件

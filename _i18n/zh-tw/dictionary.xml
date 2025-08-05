@@ -2321,4 +2321,15 @@
   <block id="ff84680c6870c10f3e11228ef86a9955" category="sidebar">NetApp ASA的最佳實踐</block>
   <block id="0a297cc4d1df6ddee9072cd47dca7791" category="sidebar">NetApp ASA上的FlexPod</block>
   <block id="03e4aa0349d001bf969e3c9a3664119c" category="sidebar">RestfulAPI 從ASA/ AFF到ASA r2 的過渡指南</block>
+  <block id="4ff3b8b9056fdd67969fe5f7de99f262" category="inline-link-macro">了解有關在ASA r2 系統上使用SnapMirror主動同步進行災難復原的更多信息</block>
+  <block id="a4d3fa0a90b98ed30452a119486e6ae3" category="paragraph"><block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
+  <block id="1e96162d7ffea43bde6c07852ffff8cb" category="inline-link-macro">使用ONTAP for vSphere 的優勢</block>
+  <block id="c3650233fcb8a7a607d25a5c0f5a5493" category="list-text">詳細了解<block ref="1b2505f7e592731db42e95f3d10a015e" category="inline-link-macro-rx"></block> 。</block>
+  <block id="05d7c63979cf1697d07b8942ba9871b7" category="inline-link-macro">使用ONTAP 的VMware Live Site Recovery</block>
+  <block id="6992ec4e9dbb069edacb9da04779cc65" category="list-text">了解<block ref="e4b7cce6214d1cb9c0a128e8c1f93d1a" category="inline-link-macro-rx"></block>。</block>
+  <block id="e15cde2137ab01eb246b245d05797051" category="inline-link-macro">適用於 vSphere 環境的持續可用性解決方案</block>
+  <block id="4a9af0008866f0dfb6b455c0aa5b5735" category="list-text">了解<block ref="8d6ade06576bd8b6a1b8374eb5aa72d4" category="inline-link-macro-rx"></block>。</block>
+  <block id="e329498f3b3980715382d5109b4ea79a" category="sidebar">ASA r2 系統的SnapCenter操作</block>
+  <block id="5eecc97c2d6bc1539840b90a30464e26" category="sidebar">NetApp ASA上的 Oracle 資料庫效能</block>
+  <block id="bf50aa40e09203b6bd2725746556edee" category="sidebar">帶有 FCP 的NetApp ASA系統上的 SAP HANA</block>
 </blocks>
