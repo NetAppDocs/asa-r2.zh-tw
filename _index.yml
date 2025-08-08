@@ -35,11 +35,11 @@ indexpage:
     links:
     - title: ASA 資料表
       url: https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf
-    - title: NetApp ASA的最佳實踐
+    - title: NetApp ASA系統的最佳實踐
       url: https://www.netapp.com/pdf.html?item=/media/137426-tr-5009-best-practices-for-netapp-asa.pdf
     - title: NetApp ASA上的FlexPod
       url: https://www.netapp.com/pdf.html?item=/media/135828-flexpod-san-ucs-xdirect-asa-nva-deploy-guide.pdf
-    - title: RestfulAPI 從ASA/ AFF到ASA r2 的過渡指南
+    - title: REST API 轉換指南
       url: https://www.netapp.com/media/136585-tr-5008-restfulapi-transition-guide-asa-r2.pdf
     - title: ASA r2 系統的SnapCenter操作
       url: https://docs.netapp.com/us-en/snapcenter/get-started/learn-about-snapcenter-support-for-asa-r2-systems.html
