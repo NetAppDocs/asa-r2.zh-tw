@@ -2327,4 +2327,7 @@
   <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">了解 vSphere 環境的持續可用性解決方案</block>
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系統的最佳實踐</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 轉換指南</block>
+  <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
+  <block id="1d7bf5cce50a0aa006e2b9e2f1d44b49" category="admonition"><block ref="8ec31ee3652bc36cd00ea6f536446af7" category="inline-link-macro-rx"></block>升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天預設為啟用。啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
+  <block id="bbf7c82f4e9f186f627b8c659682a8e1" category="admonition">在ASA r2 系統中，SED 僅支援 NVMe 協定。</block>
 </blocks>
