@@ -539,7 +539,6 @@
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
   <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">_storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。</block>
   <block id="e2969be58319571a8d10cc30d53f9a3b" category="list-text">_A Consistency group_ 是以單一單元管理的儲存單元集合。</block>
-  <block id="db5d2125ba43a68e1d147723a1fd42d2" category="paragraph">ASA R2 系統使用儲存單元和一致性群組來簡化儲存管理和資料保護。例如，假設您的資料庫由一致性群組中的 10 個儲存單元組成，而您需要備份整個資料庫。您可以備份一致性群組來保護整個資料庫、而無需個別備份每個儲存單元。</block>
   <block id="85af1289b342af44c3abb8f8013b47f6" category="paragraph">ASA R2 系統不支援叢集混合搭配目前的 ASA 、 AFF 或 FAS 系統。</block>
   <block id="989f2b4edace5981db8b18b1ad4a385f" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需ASA R2 系統支援與限制的詳細資訊，請參閱。</block>
   <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
@@ -2330,4 +2329,5 @@
   <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
   <block id="1d7bf5cce50a0aa006e2b9e2f1d44b49" category="admonition"><block ref="8ec31ee3652bc36cd00ea6f536446af7" category="inline-link-macro-rx"></block>升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天預設為啟用。啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
   <block id="bbf7c82f4e9f186f627b8c659682a8e1" category="admonition">在ASA r2 系統中，SED 僅支援 NVMe 協定。</block>
+  <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。</block>
 </blocks>
