@@ -2327,7 +2327,7 @@
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系統的最佳實踐</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 轉換指南</block>
   <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
-  <block id="1d7bf5cce50a0aa006e2b9e2f1d44b49" category="admonition"><block ref="8ec31ee3652bc36cd00ea6f536446af7" category="inline-link-macro-rx"></block>升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天預設為啟用。啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
   <block id="bbf7c82f4e9f186f627b8c659682a8e1" category="admonition">在ASA r2 系統中，SED 僅支援 NVMe 協定。</block>
   <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。</block>
+  <block id="85eb2c19fe63353c756dd7a692d4b4f1" category="admonition"><block ref="46c41179928c756a06811404e3a5ce1c" category="inline-link-macro-rx"></block>升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天預設為啟用。啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
 </blocks>
