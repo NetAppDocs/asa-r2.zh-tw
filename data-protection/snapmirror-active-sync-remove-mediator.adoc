@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-remove-mediator.html 
+keywords: asa r2, data protection, business continuity, remove, delete, ontap mediator, ontap cloud mediator 
+summary: 您一次只能使用一種類型的調解器在ASA r2 系統上進行SnapMirror活動同步。如果您選擇變更 Mediator 類型，則必須先刪除目前實例，然後才能安裝另一個實例。 
+---
+= 從ASA r2 系統中刪除ONTAP Mediator 或ONTAP Cloud Mediator
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+您一次只能在ASA r2 系統上為SnapMirror活動同步使用一種類型的中介器。如果您選擇變更中介類型，則必須先刪除目前實例，然後才能安裝另一個實例。
+
+.步驟
+您必須使用ONTAP命令列介面 (CLI) 來刪除ONTAP Mediator 或ONTAP Cloud Mediator。
+
+[role="tabbed-block"]
+====
+.ONTAP調解器
+--
+. 刪除ONTAP調解器：
++
+`snapmirror mediator remove -mediator-address <address> -peer-cluster <peerClusterName>`
+
++
+範例：
+
++
+[listing]
+----
+snapmirror mediator remove -mediator-address 12.345.678.90 -peer-cluster cluster_xyz
+----
+
+
+--
+.ONTAP雲端調解器
+--
+. 刪除ONTAP Cloud Mediator：
++
+`snapmirror mediator remove -peer-cluster <peerClusterName> -type cloud`
+
++
+範例：
+
++
+[listing]
+----
+snapmirror mediator remove -peer-cluster cluster_xyz -type cloud
+----
+
+
+--
+====
+.相關資訊
+* link:https://docs.netapp.com/us-en/ontap-cli/snapmirror-mediator-remove.html["SnapMirror 中介器刪除"^]
+

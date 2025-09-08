@@ -15,9 +15,13 @@ searchtitle: 使用 ONTAP System Manager| ASA R2 將快照複寫到遠端叢集
 Snapshot 複寫是將 ASA R2 系統上的一致性群組複製到地理位置遠端位置的程序。初始複寫之後、一致性群組的變更會根據複寫原則複製到遠端位置。複寫一致性群組可用於災難恢復或資料移轉。
 
 
-NOTE: ASA R2 儲存系統的 Snapshot 複寫僅支援與其他 ASA R2 儲存系統之間的快照複寫。您無法將快照從 ASA R2 系統複寫到目前的 ASA 、 AFF 或 FAS 系統、或從目前的 ASA 、 AFF 或 FAS 系統複寫到 ASA R2 系統。
+NOTE: 僅支援與ASA r2 儲存系統進行快照複製。您無法將快照從ASA r2 系統複製到ASA、 AFF或FAS系統，也無法從ASA、 AFF或FAS系統複製到ASA r2 系統。
 
 若要設定 Snapshot 複寫、您需要在 ASA R2 系統和遠端位置之間建立複寫關係。複寫關係是由複寫原則所管理。叢集設定期間會建立複寫所有快照的預設原則。您可以使用預設原則、也可以選擇性地建立新原則。
+
+從ONTAP 9.17.1 開始，您可以將非同步複製策略套用至具有層次結構關係的一致性群組。  ONTAP 9.16.1 中的層次結構關係中的一致性群組不支援非同步複製。
+
+link:manage-hierarchical-consistency-groups.html["了解有關分層（父/子）一致性組的更多信息"] 。
 
 
 
@@ -42,9 +46,11 @@ ASA r2 系統與其他ONTAP系統的叢集對等先決條件相同。link:https:
 
 
 
-== 步驟 2 ：選擇性地建立複寫原則
+== 步驟 2：（可選）建立自訂複製策略
 
-Snapshot 複寫原則定義何時將 ASA R2 叢集上執行的更新複寫到遠端站台。
+複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。 ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。如果預定義策略無法滿足您的需求，您可以建立自訂複製策略。
+
+了解link:pre-defined-protection-policies.html["預先定義的ONTAP資料保護策略"]。
 
 .步驟
 . 在 System Manager 中、選取 * 保護 > 原則 * 、然後選取 * 複寫原則 * 。
@@ -93,7 +99,12 @@ Snapshot 複寫原則定義何時將 ASA R2 叢集上執行的更新複寫到遠
 為了防範勒索軟體攻擊、當您設定複寫關係時、可以選擇鎖定目的地快照。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。
 
 .開始之前
-如果您想要鎖定目的地快照、必須link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["初始化 Snapshot 相容時鐘"]先建立複寫關係。
+* link:pre-defined-protection-policies.html["了解複製策略"] 。
++
+在建立複製關係時，必須為複製關係選擇適當的複製策略。您可以使用預定義策略或建立自訂策略。
+
+* 如果您想要鎖定目的地快照、必須link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["初始化 Snapshot 相容時鐘"]先建立複寫關係。
+
 
 建立具有或不具有鎖定目的地快照的複寫關係。
 
@@ -149,9 +160,6 @@ _sourc_ 一致性群組是指您要複寫的本機叢集上的一致性群組。
 | 本機來源  a| 
 .. 選擇 * 本地來源 * ，然後選擇image:icon_replicate_blue_bg.png["背景為藍色的矩形、文字會以白色字母複寫"]。
 .. 搜尋並選取來源一致性群組。
-+
-_sourc_ 一致性群組是指您要複寫的本機叢集上的一致性群組。
-
 .. 在 * 複寫目的地 * 下、選取要複寫的叢集、然後選取儲存 VM 。
 
 

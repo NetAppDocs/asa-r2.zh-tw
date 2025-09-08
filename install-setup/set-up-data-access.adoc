@@ -25,7 +25,7 @@ summary:
 
 == 移轉 VMware 虛擬機器
 
-如果您需要將 VM 工作負載從 ASA 儲存系統移轉至 ASA R2 儲存系統、 NetApp 建議您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere VMotion"^]執行即時且不中斷營運的資料移轉。
+如果您需要將虛擬機器工作負載從ASA儲存系統遷移到ASA r2 儲存系統， NetApp建議您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere-foundation["VMware vSphere VMotion"^]執行即時、無中斷的資料遷移。
 
 .相關資訊
 * 詳細了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["使用ONTAP for vSphere 的優勢"^] 。

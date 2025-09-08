@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-delete-relationship.html 
+keywords: asa r2, data protection, business continuity, delete, snapmirror active sync, disaster recovery 
+summary: 如果您不再需要業務應用程式接近零的 RPO 和 RTO，則可以透過刪除關聯的SnapMirror活動同步關係來刪除SnapMirror活動同步保護。 
+---
+= 刪除ASA r2 系統上的SnapMirror活動同步關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不再需要業務應用程式接近零的 RPO 和 RTO，則應透過刪除關聯的SnapMirror活動同步關係來刪除SnapMirror活動同步保護。如果您在ASA r2 系統上執行ONTAP 9.16.1，則可能還需要先刪除SnapMirror活動同步關係，然後才能對SnapMirror同步關係中的一致性群組進行某些幾何變更。
+
+
+
+== 步驟 1：終止主機複製
+
+如果將來源叢集中的主機群組複製到目標叢集，並將目標一致性群組對應到複製的主機群組，則必須先終止來源叢集上的主機複製，然後才能刪除SnapMirror主動同步關係。
+
+.步驟
+. 在 System Manager 中、選取 * 主機 * 。
+. 在包含要停止複製的主機群組的主機旁邊，選擇image:icon_kabob.gif["三個垂直藍點"]，然後選擇“*編輯*”。
+. 取消選擇*複製主機配置*，然後選擇*更新*。
+
+
+
+
+== 步驟 2：刪除SnapMirror主動同步關係
+
+若要從一致性群組中刪除SnapMirror活動同步保護，必須刪除SnapMirror同步關係。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 複寫 * 。
+. 選擇*本地目的地*或*本地來源*。
+. 在要刪除的SnapMirror活動同步關係旁邊，選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇*刪除*。
+. 選擇*發布來源一致性群組基礎快照*。
+. 選擇*刪除*。
+
+
+.結果
+SnapMirror活動同步關係被刪除，且來源一致性群組基礎快照被發布。一致性組中的儲存單元不再受SnapMirror活動同步的保護。
+
+.接下來呢？
+link:snapshot-replication.html["設定快照複寫"]將一致性組複製到地理位置較遠的位置以進行備份和災難復原。

@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-hierarchical-consistency-groups.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: 使用一致性群組同時對多個儲存單元執行各種操作，而不是對每個單元單獨執行操作。在層次結構中，一個或多個一致性組被配置為父一致性組下的子組。 
+---
+= 管理ASA r2 系統上的分層一致性群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從ONTAP 9.16.1 開始，您可以使用系統管理員在ASA r2 系統上建立分層一致性群組。在層次結構中，一個或多個一致性組被配置為父一致性組下的子組。您可以將單獨的快照策略套用至每個子一致性群組，並透過複製父群組將所有子一致性群組的快照作為單一單元複製到遠端叢集。這簡化了複雜資料結構的資料保護和管理。
+
+
+
+== 將現有一致性組提升為父一致性組
+
+如果將現有一致性群組提升為父級，則會建立新的子一致性群組，並且屬於提升的一致性群組的儲存單元將會移至新的子一致性群組。儲存單元不能直接與父一致性群組關聯。
+
+.開始之前
+如果您正在執行ONTAP 9.16.1，並且要提升的一致性群組處於SnapMirror主動同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]一致性組才能提升。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]然後才可以提升一致性組。在ONTAP 9.17.1 及更高版本中，不需要在提升一致性組之前刪除SnapMirror活動同步關係或中斷非同步關係。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將游標移到您要轉換成父一致性群組的一致性群組上。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 提升至父一致性群組 * 。
+. 輸入新的子一致性群組的名稱或接受預設名稱；然後選擇一致性群組組件類型。
+. 選擇 * 促銷 * 。
+
+
+.接下來呢？
+您可以在父一致性群組下建立其他子一致性群組。您還可以link:../secure-data/encrypt-data-at-rest.html["設定快照複寫"]將父一致性群組和子一致性群組複製到地理位置較遠的位置，以進行備份和災難復原。
+
+
+
+== 將父一致性群組降級為單一一致性群組
+
+將父一致性群組降級為單一一致性群組時，關聯子一致性群組的儲存單元將會新增至父一致性群組。子一致性群組被刪除，父一致性群組則作為單一一致性群組進行管理。
+
+.開始之前
+如果您正在執行ONTAP 9.16.1，且要降級的一致性群組處於SnapMirror主動同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]一致性組才可以被降級。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]然後才可以降級一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將游標暫留在您要降級的父一致性群組上。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 降級至單一一致性群組 * 。
+. 選擇 * 降級 *
+
+
+.接下來呢？
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["新增快照原則"]移至降級一致性群組，以保護先前由子一致性群組管理的儲存單元。
+
+
+
+== 建立子一致性群組
+
+建立子一致性群組可讓您將單獨的快照原則套用至每個子群組。從ONTAP 9.17.1 開始，您也可以將單獨的複製策略直接套用到每個子項目。在ONTAP 9.16.1 中，複製策略只能套用於父層級。
+
+您可以從新的或現有的一致性群組建立子一致性群組。
+
+[role="tabbed-block"]
+====
+.來自新的一致性群組
+--
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將游標移至您要新增子一致性群組的父一致性群組。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 新增子一致性群組 * 。
+. 輸入子一致性群組的名稱或接受預設名稱，然後選取一致性群組元件類型。
+. 選取以將現有儲存單元新增至子一致性群組，或建立新的儲存單元。
++
+如果您建立新的儲存單元，請輸入您要建立的單元數和每個單元的容量，然後輸入主機資訊。
+
++
+如果您建立多個儲存單元，則每個單元都會建立相同的容量和相同的主機作業系統。若要指派不同容量給每個單位，請選取 * 新增不同容量 * 。
+
+. 選取*「Add*」。
+
+
+--
+.來自現有一致性群組
+--
+.開始之前
+如果您要使用的一致性群組已經是另一個一致性群組的子群組，則必須link:manage-hierarchical-consistency-groups.html#detach-a-child-consistency-group-from-a-parent-consistency-group["將其從現有的父一致性組中分離出來"]然後才可以將其移至新的父一致性群組。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 選取您要建立子一致性群組的現有一致性群組。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 移至不同一致性群組 * 下。
+. 輸入子一致性群組的新名稱或接受預設名稱，然後選取一致性群組元件類型。
+. 選取您想要建立父一致性群組的現有一致性群組，或選取以建立新的父一致性群組。
++
+如果您選擇建立新的父一致性群組，請輸入父一致性群組的名稱或接受預設名稱，然後選取一致性應用程式元件類型。
+
+. 選取 * 移動 * 。
+
+
+--
+====
+.下一步
+建立子一致性群組後，您可以link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["套用個別的快照保護原則"]到每個子一致性組。您還可以link:snapshot-replication.html["設定複製策略"]在父一致性組和子一致性組上將一致性組複製到遠端位置。
+
+
+
+== 將子一致性群組與父一致性群組分離
+
+當您將子一致性群組從父一致性群組分離時，子一致性群組將從父一致性群組中刪除，並作為單一一致性群組進行管理。應用於父級的複製策略不再應用於分離的子一致性群組。
+
+.開始之前
+如果您正在執行ONTAP 9.16.1，並且要分開的一致性群組處於SnapMirror活動同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]才能分離一致性組。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]然後才可以分離一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 選取父一致性群組。
+. 選取您要分離的子一致性群組。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 從父 * 分離。
+. 為您要分離的一致性群組輸入新名稱，或接受預設名稱，然後選取一致性群組應用程式類型。
+. 選取 * 分離 * 。
+
+
+.接下來呢？
+link:snapshot-replication.html["設定複寫原則"]將分離的子一致性群組的快照複製到遠端叢集。

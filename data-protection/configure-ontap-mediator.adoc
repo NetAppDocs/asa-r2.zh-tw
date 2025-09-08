@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: data-protection/configure-ontap-mediator.html 
 keywords: asa r2, data protection, protect data, configure mediator, ontap mediator, cloud mediator, self-signed, ca, certificates 
-summary: 了解如何使用自簽章憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。 
+summary: 了解如何使用自簽章或第三方憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。 
 ---
-= 在ASA r2 系統上使用自簽章憑證設定ONTAP Mediator 或ONTAP Cloud Mediatior
+= 在ASA r2 系統上設定ONTAP Mediator 或ONTAP Cloud Mediatior
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,16 +14,20 @@ summary: 了解如何使用自簽章憑證為ASA r2 系統設定ONTAP Mediator �
 您必須先設定ONTAP調解器或ONTAP Cloud Mediator，然後才能開始使用SnapMirror主動同步功能進行叢集監控。 ONTAPONTAP和ONTAP Cloud Mediator 均提供持久且受保護的存儲，用於儲存SnapMirror主動同步關係中ONTAP叢集使用的高可用性 (HA) 元資料。此外，這兩個調解器都提供同步節點運行狀況查詢功能，以協助確定仲裁數量，並充當控制器活動性偵測的 Ping 代理程式。
 
 .開始之前
-* 如果您正在使用ONTAP Cloud Mediator，請驗證您的ASA r2 系統是否符合必要的link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_mediator_requirements.html["先決條件"^] 。
-
+如果您正在使用ONTAP Cloud Mediator，請驗證您的ASA r2 系統是否符合必要的link:https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/concept_mediator_requirements.html["先決條件"^] 。
 
 .步驟
 . 在系統管理員中，選擇*保護>概覽*。
-. 在右側窗格中，在「*Mediators*」旁選擇image:icon_kabob.gif["三個垂直藍點"] ；然後選擇*新增調解員*。
+. 在右側窗格中的「*調解員*」下，選擇「*新增調解員*」。
 . 選擇*調解員類型*。
 . 對於「雲端」中介，請輸入組織 ID、客戶端 ID 和客戶端金鑰。對於「本地」中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。
 . 從符合條件的群集對等體清單中選擇群集對等體，或選擇「新增群集對等體」來新增新的群集對等體。
-. 複製 `intermediate.crt`文件並將其貼上到“證書”字段，或選擇“導入”以導航到 `intermediate.crt`文件並匯入證書資訊。
+. 新增證書資訊
++
+** 如果您使用的是自簽名證書，請複製 `intermediate.crt`文件並將其貼上到“證書”字段，或選擇“導入”以導航到 `intermediate.crt`文件並匯入證書資訊。
+** 如果您使用第三方證書，請將證書資訊輸入到*證書*欄位中。
+
+
 . 選取*「Add*」。
 
 

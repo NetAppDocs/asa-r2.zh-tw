@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: 建立一致性組的快照以保護一致性組一部分的儲存單元中的資料。如果不再需要保護一致性群組中的任何儲存單元中的數據，則可以刪除快照保護。 
+---
+= 使用快照保護ASA r2 系統上的一致性群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在ASA r2 儲存系統中建立一致性群組的快照，以保護一致性群組一部分的儲存單元中的資料。如果不再需要保護一致性群組中的任何儲存單元中的數據，則可以從一致性群組中刪除快照保護。
+
+如果不再需要保護一致性群組中特定儲存單元的數據，則可以從一致性群組中刪除這些儲存單元。
+
+
+
+== 將 Snapshot 資料保護新增至一致性群組
+
+將快照資料保護新增至一致性群組時、會根據預先定義的排程、定期擷取一致性群組的本機快照。
+
+您可以使用link:restore-data.html["還原資料"]遺失或毀損的快照。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將游標移到您要保護的一致性群組上。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 編輯 * 。
+. 在 * 本機保護 * 下、選取 * 排程快照 * 。
+. 選取快照原則。
++
+接受預設的快照原則、選取現有原則、或建立新原則。
+
++
+[cols="2,6a"]
+|===
+| 選項 | 步驟 
+
+
+| 選取現有的快照原則  a| 
+選取image:icon_dropdown_arrow.gif["向下指向藍色箭頭"]預設原則旁的、然後選取您要使用的現有原則。
+
+
+
+| 建立新的快照原則  a| 
+.. 選擇image:icon_add.gif["藍色加號、接著加上「 ADD 」字樣"]；然後輸入新的原則名稱。
+.. 選取原則範圍。
+.. 在 * 排程 * 下image:icon_add.gif["藍色加號、接著加上「 ADD 」字樣"]、選擇。
+.. 選擇出現在 * 排程名稱 * 下的名稱；
++
+然後選擇。image:icon_dropdown_arrow.gif["藍色箭頭指向向下方向"]
+
+.. 選取原則排程。
+.. 在 * 最大快照數 * 下、輸入您要保留一致性群組的最大快照數。
+.. 或者、在 * SnapMirror label* 下輸入 SnapMirror 標籤。
+.. 選擇*保存*。
+
+
+|===
+. 選擇*保存*。
+
+
+.下一步
+現在您的資料已受到快照保護、您應該link:../secure-data/encrypt-data-at-rest.html["設定快照複寫"]將一致性群組複製到地理位置遠端位置、以便進行備份和災難恢復。
+
+
+
+== 從一致性群組移除快照資料保護
+
+當您從一致性群組移除快照資料保護時、一致性群組中所有儲存單元的快照都會停用。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將游標移到您要停止保護的一致性群組上。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 編輯 * 。
+. 在 * 本機保護 * 下、取消選取排程快照。
+. 選擇*編輯*。
+
+
+.結果
+不會為一致性群組中的任何儲存單元擷取快照。

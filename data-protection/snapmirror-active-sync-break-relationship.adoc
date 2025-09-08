@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-break-relationship.html 
+keywords: asa r2, data protection, business continuity, remove, delete, break, relationship, snapmirror active sync, disaster recovery 
+summary: 在某些情況下，您可能需要中斷非同步複製關係。 
+---
+= 中斷ASA r2 系統上的非同步複製關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情況下，您可能需要中斷非同步複製關係。例如，如果您正在執行ONTAP 9.16.1，並且想要增加處於非同步複製關係的一致性群組的大小，則必須先中斷該關係，然後才能修改一致性群組的大小。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 複寫 * 。
+. 選擇*本地目的地*或*本地來源*。
+. 在您想要中斷的關係旁邊，選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇*中斷*。
+. 選擇“*中斷*”。
+
+
+.結果
+主、輔一致性組之間的非同步關係被破壞。

@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: data-protection/pre-defined-protection-policies.html 
+keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
+summary: 複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。  ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。 
+---
+= 了解預先定義的ONTAP資料保護策略
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。  ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。
+
+如果預先定義的策略無法滿足您的需求，您可以link:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["建立自訂複製策略"]。
+
+ASA r2 系統支援以下預先定義的保護策略。
+
+[cols="3,4,1"]
+|===
+| 政策 | 說明 | 策略類型 
+
+
+| 非同步 | 統一的SnapMirror非同步和保險庫策略，用於鏡像最新的活動文件系統以及按每小時傳輸計劃的每日和每週快照。 | 非同步 
+
+
+| 自動故障轉移雙工 | 具有零 RTO 保證和雙向同步複製的SnapMirror同步策略。 | SnapMirror主動同步 
+
+
+| CloudBackupDefault | 保險庫保單有每日規則。 | 非同步 
+
+
+| 每日備份 | 保險庫保單包含每日規則和每日轉移計劃。 | 非同步 
+
+
+| DPDefault | SnapMirror非同步策略用於鏡像所有快照和最新的活動檔案系統。 | 非同步 
+
+
+| 鏡像所有快照 | SnapMirror非同步策略用於鏡像所有快照和最新的活動檔案系統。 | 非同步 
+
+
+| 鏡像所有快照丟棄網絡 | SnapMirror非同步策略，用於鏡像所有快照和最新的活動檔案系統（不包括網路設定）。 | 非同步 
+
+
+| MirrorAndVault | 統一的SnapMirror非同步和保險庫策略，用於鏡像最新的活動文件系統以及每日和每週快照。 | 非同步 
+
+
+| MirrorAndVaultDiscard網絡 | 統一的SnapMirror非同步和保險庫策略，用於鏡像最新的活動檔案系統以及不包括網路配置的每日和每週快照。 | 非同步 
+
+
+| Mirror最新 | SnapMirror非同步策略用於鏡像最新的活動檔案系統。 | 非同步 
+
+
+| Unified7year | 統一的SnapMirror策略，保留期為 7 年。 | 非同步 
+
+
+| XDP預設 | 保險庫保單包含每日和每週規則。 | 非同步 
+|===

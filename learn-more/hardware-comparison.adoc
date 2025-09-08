@@ -34,8 +34,10 @@ ASA r2 系統為基於全快閃平台建置的純 SAN 環境提供硬體和軟�
 您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。
 
 * 從 System Manager （系統管理器）菜單中，選擇 *Cluster （羣集） > Overview （概述） * 。
-* 在 CLI 中輸入： `san config show`
+* 從 CLI 輸入： `system node show -personality -is-disaggregated`
 
+
+對於ASA r2 系統，_personality_ 為 _ASA r2_，且 _is-disaggregated_ 的狀態為 _true_。
 
 ONTAP 儲存系統的特性設定無法變更。
 

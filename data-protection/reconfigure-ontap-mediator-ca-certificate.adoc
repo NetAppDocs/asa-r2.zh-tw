@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: data-protection/reconfigure-ontap-mediator-ca-certificate.html 
+keywords: asa r2, data protection, protect data, configure mediator, reconfigure, reinitialize, ontap mediator, cloud mediator, self-signed, ca, certificates 
+summary: 如果您使用自簽名憑證設定ONTAP調解器或ONTAP Cloud 調解器，則可以將調解器重新配置為使用第三方憑證。出於安全原因，您的組織可能優先考慮或要求使用第三方憑證。 
+---
+= 重新設定ONTAP Mediator 或ONTAP Cloud Mediator 以在ASA r2 系統上使用第三方憑證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用自簽名憑證設定ONTAP調解器或ONTAP Cloud 調解器，則可以將調解器重新配置為使用第三方憑證。出於安全原因，您的組織可能優先考慮或要求使用第三方憑證。
+
+
+
+== 步驟 1：刪除中介配置
+
+若要重新配置調解器，您必須先從叢集中刪除其目前配置。
+
+.步驟
+. 在系統管理員中，選擇*保護>概覽*。
+. 在右側窗格中的「*Mediators*」下，選擇image:icon_kabob.gif["三個垂直藍點"]在具有要刪除的中介配置的群集對等體旁邊；然後選擇*刪除*。
++
+如果您安裝了多個中介器，並且想要刪除所有配置，請選擇image:icon_kabob.gif["三個垂直藍點"]在*Mediators*旁邊；然後選擇*Remove*。
+
+. 選擇“*刪除*”以確認您要刪除中介配置。
+
+
+
+
+== 步驟 2：刪除自簽名證書
+
+移除中介配置後，您應該會從叢集中刪除相關的自簽名憑證。
+
+.步驟
+. 選擇*叢集>設定*。
+. 在“*安全*”下，選擇“*證書*”。
+. 選擇要刪除的證書。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 刪除 * 。
+
+
+
+
+== 步驟 3：使用第三方憑證重新安裝中介
+
+刪除關聯的自簽名憑證後，您可以使用第三方憑證重新設定中介。
+
+.步驟
+. 選擇*保護>概覽*。
+. 在右側窗格中的「*調解員*」下，選擇「*新增調解員*」。
+. 選擇*調解員類型*。
+. 對於「雲端」中介，請輸入組織 ID、客戶端 ID 和客戶端金鑰。對於*本地*中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。
+. 從符合條件的群集對等體清單中選擇一個群集對等體，或選擇「新增群集對等體」來新增一個新的群集對等體。
+. 在*證書*下，輸入第三方證書資訊。
+. 選取*「Add*」。
+
+
+.結果
+ONTAP調解器或ONTAP Cloud 調解器已重新配置為使用第三方憑證。現在您可以使用中介器來管理SnapMirror主動同步關係。

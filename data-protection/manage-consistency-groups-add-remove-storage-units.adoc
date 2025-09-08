@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-storage-units.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity, shrink 
+summary: 透過修改一致性組中的儲存單元數量來增加或減少一致性組的大小。 
+---
+= 修改ASA r2 系統上一致性群組的大小
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過修改一致性組中的儲存單元數量來增加或減少一致性組的大小。
+
+
+
+== 將儲存單元新增至一致性群組
+
+將儲存單元新增至一致性群組、以擴充由一致性群組管理的儲存容量。
+
+您可以將現有的儲存單元新增至一致性群組、或是建立新的儲存單元以新增至一致性群組。
+
+.開始之前
+如果您正在執行ONTAP 9.16.1，且要擴充的一致性群組處於SnapMirror主動同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]然後才可以新增儲存單元。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]然後才可以擴充一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。
+
+[role="tabbed-block"]
+====
+.新增現有的儲存單元
+--
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將游標移至您要擴充的一致性群組上方。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 展開 * 。
+. 選擇 * 使用現有的儲存單元 * 。
+. 選取要新增至一致性群組的儲存單元、然後選取 * 展開 * 。
+
+
+--
+.新增儲存單元
+--
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 將游標移至您要擴充的一致性群組上方。
+. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 展開 * 。
+. 選擇 * 使用新的儲存單元 * 。
+. 輸入您要建立的單位數量、以及每單位的容量。
++
+如果您建立一個以上的單元、則每個單元都會建立相同的容量和相同的主機作業系統。若要為每個單位指派不同的容量、請選取 * 新增不同容量 * 、為每個單位指派不同的容量。
+
+. 選取 * 展開 * 。
+
+
+.下一步
+建立新的儲存單元之後link:../manage-data/provision-san-storage.html#add-host-initiators["新增主機啟動器"]、您應該和link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["將新建立的儲存單元對應至主機"]。新增主機啟動器可讓主機符合存取儲存單元和執行資料作業的資格。將儲存單元對應至主機可讓儲存單元開始將資料提供給對應的主機。
+
+--
+====
+.接下來呢？
+一致性群組的現有快照不會包含新增的儲存單元。link:create-snapshots.html#step-2-create-a-snapshot["建立即時快照"]在自動建立下一個排程快照之前、您應該是一致性群組的成員、以保護新增的儲存單元。
+
+
+
+== 從一致性群組中移除儲存單元
+
+如果您想要刪除儲存單元、想要將其視為不同一致性群組的一部分進行管理、或是不再需要保護其所包含的資料、則應該從一致性群組中移除儲存單元。從一致性群組移除儲存單元會中斷儲存單元與一致性群組之間的關係、但不會刪除儲存單元。
+
+.步驟
+. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
+. 按兩下您要從中移除儲存單元的一致性群組。
+. 在 * 總覽 * 區段的 * 儲存單元 * 下、選取您要移除的儲存單元、然後選取 * 從一致性群組移除 * 。
+
+
+.結果
+儲存單元不再是一致性群組的成員。
+
+.下一步
+如果您需要繼續保護儲存單元的資料、請將儲存單元新增至另一個一致性群組。

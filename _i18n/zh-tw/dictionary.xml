@@ -301,8 +301,6 @@
   <block id="7a9a61ee2297500e102394139e96e623" category="inline-link-macro">設定快照複寫</block>
   <block id="a63371f95cb6727e19c23f03f570df80" category="paragraph">現在您的資料已受到快照保護、您應該<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>將一致性群組複製到地理位置遠端位置、以便進行備份和災難恢復。</block>
   <block id="28e240e6173e34f1942b6fae18eece4d" category="summary">使用一致性群組同時對多個儲存單元執行各種動作、而非在每個單元上個別執行動作。</block>
-  <block id="940cbe886b23355545e54a8e670dccf2" category="doc">在 ASA R2 儲存系統上管理 ONTAP 一致性群組</block>
-  <block id="3ec3496fc24d43fe7d9be310975cd088" category="paragraph">一致性群組是以單一單元管理的儲存單元集合。使用一致性群組來簡化儲存管理。例如，假設您的資料庫由一致性群組中的 10 個儲存單元組成，而您需要備份整個資料庫。您只需將快照資料保護新增至一致性群組、即可備份整個資料庫、而無需備份每個儲存單元。將儲存單元備份為一致性群組、而非個別備份、也能為所有單元提供一致的備份、而個別備份單元則可能會造成不一致的情況。</block>
   <block id="756274998bfddb9ee5aca3ce09a0d910" category="section-title">將 Snapshot 資料保護新增至一致性群組</block>
   <block id="ef96230e3fb35067c9001214ca84a12c" category="paragraph">將快照資料保護新增至一致性群組時、會根據預先定義的排程、定期擷取一致性群組的本機快照。</block>
   <block id="e96ea80e31853245a2bf947241dc2cee" category="inline-link-macro">還原資料</block>
@@ -350,8 +348,6 @@
   <block id="c7908abb23b7065aef5b318dd60abe7b" category="list-text">在 * 總覽 * 區段的 * 儲存單元 * 下、選取您要移除的儲存單元、然後選取 * 從一致性群組移除 * 。</block>
   <block id="f3a864061c7c167216cb7e02d3f90cf4" category="paragraph">儲存單元不再是一致性群組的成員。</block>
   <block id="9c09f709a9761f564907022b7331dbb1" category="paragraph">如果您需要繼續保護儲存單元的資料、請將儲存單元新增至另一個一致性群組。</block>
-  <block id="793fd1e28f15d34822702f9d70403404" category="section-title">刪除一致性群組</block>
-  <block id="2cd894b6ee2553a527a03b1a9086238b" category="paragraph">如果不再需要將一致性群組的成員當作單一單位來管理、您可以刪除一致性群組。刪除一致性群組之後、群組中先前的儲存單元仍會在叢集上保持作用中。</block>
   <block id="3e905f617938aef0b388912bce87f2e2" category="list-text">將游標移至您要刪除的一致性群組上方。</block>
   <block id="b32275e0392f5cbab8806c7ce85e42f5" category="list-text">接受警告、然後選取 * 刪除 * 。</block>
   <block id="dde86492e27a0d7b75963e7c4b928397" category="paragraph">刪除一致性群組之後、先前位於一致性群組中的儲存單元將不再受到快照保護。請考慮將這些儲存單元新增至另一個一致性群組、以防止資料遺失。</block>
@@ -438,8 +434,6 @@
   <block id="c48a364bcfea9942c880a707be66baf8" category="list-text">選擇<block ref="750f4f104efd8460cc9c38b724a23fe2" category="inline-image-macro-rx" type="image"></block>；然後輸入叢集間網路介面 IP 位址。</block>
   <block id="8c0b8a980a5fccf0d26e14839c9636e5" category="list-text">選取 * 起始叢集對等 * 。</block>
   <block id="128a86d6606d71775364b984ff92953c" category="paragraph">您已使用遠端叢集來連接本機 ASA R2 叢集。您現在可以建立複寫關係。</block>
-  <block id="20a02863b5c5716bf567035b35c78ac6" category="section-title">步驟 2 ：選擇性地建立複寫原則</block>
-  <block id="55a0affd4bb6a25bd38b35691abd1df0" category="paragraph">Snapshot 複寫原則定義何時將 ASA R2 叢集上執行的更新複寫到遠端站台。</block>
   <block id="99ce99ecf863ff8fe2a9cbb3426c1e80" category="list-text">在 System Manager 中、選取 * 保護 &gt; 原則 * 、然後選取 * 複寫原則 * 。</block>
   <block id="b03db2a30a32c3ac8c0f123bffb1ece4" category="list-text">輸入複寫原則的名稱或接受預設名稱、然後輸入說明。</block>
   <block id="ca8308195da9e8f1aaa6981179fa1910" category="list-text">選取 * 原則範圍 * 。</block>
@@ -539,7 +533,6 @@
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
   <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">_storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。</block>
   <block id="e2969be58319571a8d10cc30d53f9a3b" category="list-text">_A Consistency group_ 是以單一單元管理的儲存單元集合。</block>
-  <block id="85af1289b342af44c3abb8f8013b47f6" category="paragraph">ASA R2 系統不支援叢集混合搭配目前的 ASA 、 AFF 或 FAS 系統。</block>
   <block id="989f2b4edace5981db8b18b1ad4a385f" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需ASA R2 系統支援與限制的詳細資訊，請參閱。</block>
   <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
   <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">深入瞭解<block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>。</block>
@@ -826,7 +819,6 @@
   <block id="d27cce4a42b7ea8d15ff3f8607643e33" category="paragraph">請參閱的 ONTAP SAN 主機文件<block ref="68f9f8f8e616f0e7ec59af9e1234ec7e" category="inline-link-macro-rx"></block>、<block ref="f2d6116a997a68be72ff8c2617977350" category="inline-link-macro-rx"></block>並<block ref="0066ce7dad22194ab05b9b3e8c713a35" category="inline-link-macro-rx"></block>將主機正確設定為連線至 ASA R2 系統。</block>
   <block id="5d17193df18fedb451e3f5b9f064ef2f" category="section-title">移轉 VMware 虛擬機器</block>
   <block id="112622c85a9cbee01c13e67b0b568c78" category="inline-link-macro">VMware vSphere VMotion</block>
-  <block id="36b30e26ad350b193fa96577b859aa6b" category="paragraph">如果您需要將 VM 工作負載從 ASA 儲存系統移轉至 ASA R2 儲存系統、 NetApp 建議您使用<block ref="97ce748bde1d0df326ab308ffcedbe79" category="inline-link-macro-rx"></block>執行即時且不中斷營運的資料移轉。</block>
   <block id="d76fc5ee6d641846e5835d32d7f85b4f" category="inline-link-macro">配置儲存設備</block>
   <block id="e397caa258e5d83ec68542ada3868a88" category="paragraph">您已準備好<block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>讓 SAN 主機讀取資料並將資料寫入儲存單元。</block>
   <block id="504d463c80199fc8015db827acb89c07" category="doc">ONTAP CLI 支援 ASA R2 儲存系統</block>
@@ -933,7 +925,6 @@
   <block id="b8d343a2d9dfd7386b6b373e6050b930" category="searchtitle">比較 ASA R2 系統與其他 ONTAP 系統</block>
   <block id="cf4ae521a2a16cdd073860fee0fbab96" category="paragraph">您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。</block>
   <block id="c3e4be39d2ab89664b205dd7d0bb6510" category="list-text">從 System Manager （系統管理器）菜單中，選擇 *Cluster （羣集） &gt; Overview （概述） * 。</block>
-  <block id="8fb6b6206aca4aa491419e270ea3424d" category="list-text">在 CLI 中輸入：<block ref="9228fcbc2cb846682f56e98989045eaa" prefix=" " category="inline-code"></block></block>
   <block id="8369fc694deadf80f5d106ef41b6e7b2" category="paragraph">ONTAP 儲存系統的特性設定無法變更。</block>
   <block id="df5b8332c344a8d1a2ca6124ea06defe" category="cell">ASA r2</block>
   <block id="b7b46ce5d1a547db89c0bc615ff272a5" category="cell">ASA</block>
@@ -1078,7 +1069,6 @@
   <block id="130d99f3155a9524fbcee1b66d372637" category="doc">刪除 ASA R2 儲存系統上的儲存單元</block>
   <block id="a43d503903bc397cb05151409b4aa0ee" category="paragraph">如果不再需要維護單元中包含的資料、請刪除儲存單元。刪除不再需要的儲存單元、有助於釋放其他主機應用程式所需的空間。</block>
   <block id="149f67073e73a0379b210512f9ae9b34" category="inline-link-macro">從一致性群組中移除儲存單元</block>
-  <block id="e2401ad7b6793e511075543831eaf193" category="paragraph">如果您要刪除的儲存單元位於複寫關係中的一致性群組中、則必須<block ref="1bfd409ef7a0e58efec5d57a46fff2f5" category="inline-link-macro-rx"></block>先刪除它。</block>
   <block id="3b82021e0930da2e3b1fe1bfe2aa2f70" category="list-text">將游標移至您要刪除的儲存單元名稱上方。</block>
   <block id="a04511306488004fe2e50b58479b8bc6" category="list-text">確認刪除動作無法復原。</block>
   <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">選擇*刪除*。</block>
@@ -1206,7 +1196,6 @@
   <block id="cbb4ea3ae0ace3dd5cedae78f9d2a805" category="paragraph">您已完成資源配置程序、準備好開始提供資料。您現在可以<block ref="13282ab1c43cc291d62099de29c76969" category="inline-link-macro-rx"></block>保護 ASA R2 系統上的資料。</block>
   <block id="94751ffa48a4135b11ac22ac2dae643e" category="inline-link-macro">ONTAP SAN 主機文件</block>
   <block id="88e865c72412e4a1327806858c6d2784" category="paragraph">如需主機端組態的詳細資訊、請參閱<block ref="5045572e3d187366935cbd2a743bcd07" category="inline-link-macro-rx"></block>適用於您特定主機的。</block>
-  <block id="1baa07f2ade9c6d963643a794d4825f3" category="summary">ASA R2 組態支援每個執行 FC 、 iSCSI 、 NVMe / FC 或 NVMe / TCP 通訊協定的叢集最多 2 個節點。</block>
   <block id="b6e8a44e2a75e79622ab8bca1270a5ce" category="doc">ASA R2 儲存限制</block>
   <block id="abe1583ce937db07d8d0619331789f3c" category="paragraph">為了獲得最佳效能、組態和支援、您應該注意 ASA R2 儲存限制。</block>
   <block id="d0bb632fcdb31cf3c729c1c59f826d4f" category="cell">128TB</block>
@@ -1458,7 +1447,6 @@
   <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">* 部分連線 * ：表示部分啟動器並未同時連接兩個節點。</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">* 無連線 * ：表示未連線任何啟動器。</block>
   <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。</block>
-  <block id="6913e721908f172fd672e46e9459c4ad" category="paragraph">如果您要刪除的一致性群組位於複寫關係中、則必須先中斷關聯、然後再刪除一致性群組。刪除複寫一致性群組之後、一致性群組中的儲存單元會在叢集上保持作用中、而其複寫複本則會保留在遠端叢集上。</block>
   <block id="22a4c2b7564a7f7d551ab23d23fbcac8" category="paragraph">您已確認技術支援人員可以從 ASA R2 系統接收 AutoSupport 訊息、確保他們擁有必要的資料、在發生任何問題時能提供協助。</block>
   <block id="3ae7feb5d9cb2335f10922aa1130319d" category="paragraph">ASA R2 儲存系統上的儲存單元一律會精簡佈建。不支援完整資源配置。</block>
   <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA R2 維護文件</block>
@@ -1474,7 +1462,6 @@
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">ASA R2 系統與 ASA 系統的比較</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">深入瞭解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
-  <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">ASA R2 儲存系統的 Snapshot 複寫僅支援與其他 ASA R2 儲存系統之間的快照複寫。您無法將快照從 ASA R2 系統複寫到目前的 ASA 、 AFF 或 FAS 系統、或從目前的 ASA 、 AFF 或 FAS 系統複寫到 ASA R2 系統。</block>
   <block id="3f808654ebfed6aae875b71a402ac91b" category="inline-link-macro">ONTAP 9 注意事項。 16.1</block>
   <block id="ccde34ed9a96a11b25c1db2a8c9acb87" category="paragraph"><block ref="ccde34ed9a96a11b25c1db2a8c9acb87" category="inline-link-macro-rx"></block></block>
   <block id="82f8a3cbf0a93791bbbfc70a1b650bcf" category="paragraph">快照可以隨需建立、也可以根據自動建立<block ref="83bfa2dc5e6407223dca634141b43309" category="inline-link-macro-rx"></block>、以固定的時間間隔建立。Snapshot 原則和排程會指定何時建立快照、要保留多少份複本、如何命名快照、以及如何標記快照以供複寫。例如，系統可能每天在上午 12 ： 10 建立一個快照，保留兩個最新的複本，將其命名為「每日」（附加時間戳記），並將其標示為「每日」以供複寫。</block>
@@ -1534,7 +1521,6 @@
   <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">在 ASA R2 系統中，預設的網路 LIF 會在 NVMe 和 SCSI 主機之間共用，因此不支援自動容錯移轉。若要啟用自動 iSCSI LIF 容錯移轉<block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>，您必須。依預設，自動容錯移轉僅在 iSCSI 上啟用。</block>
   <block id="22f4d4e3ef9ad886ae95608e10f828cb" category="paragraph">啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點的健全連接埠，然後在連接埠再次正常運作時，再移回原始連接埠。</block>
   <block id="e51f73897cef482e683893c74ad0aebf" category="doc">將 ASA R2 節點新增至 ONTAP 叢集</block>
-  <block id="be36547b484c259b8e39cb4b17bdac83" category="paragraph">從 ONTAP 9.16.1 開始， ASA R2 儲存系統每個叢集最多可支援 12 個節點。在 HA 配對的新節點連接纜線並開啟電源之後，您需要將它們加入叢集。</block>
   <block id="97a5a9f5366a279a2160c428ad458079" category="list-text">節點 IP 位址</block>
   <block id="d08cd309dd95d7aa27f8f977cf1a060e" category="list-text">叢集間網路介面 IP 位址</block>
   <block id="20f5ca91f6dbeac15890f67c9a4cb751" category="list-text">叢集間網路子網路遮罩</block>
@@ -1565,16 +1551,10 @@
   <block id="fe36b3d0747e41e736245b1f2f016f37" category="paragraph">在 * 效能服務層級 * 下，選取不同的服務層級。</block>
   <block id="e39fb54244b4e7e5902cf86f104eae5f" category="paragraph">建立子一致性群組</block>
   <block id="df30ab788ddab119f1a9a52f397c1578" category="paragraph">選取 * 新增子一致性群組 * 。</block>
-  <block id="47f30cf1dbc386b695e587c89d934679" category="paragraph">從 ONTAP 9.16.1 開始，您可以使用系統管理員在 ASA R2 系統上建立階層式一致性群組。在階層式結構中，一個或多個一致性群組會設定為父一致性群組下的子群組。</block>
   <block id="accc48ba80dae134714334f9974f857c" category="paragraph">階層式一致性群組可讓您將個別的快照原則套用到每個子一致性群組，並透過複寫父叢集，將所有子一致性群組的快照複寫到單一單元的遠端叢集。如此可簡化複雜資料結構的資料保護與管理。例如，假設您建立一個父一致性群組，稱為<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>，其中包含兩個子一致性群組：<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>應用程式資料和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>應用程式記錄。每 15 分鐘拍攝一次的快照<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>，每小時拍攝一次的快照<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>。父一致性群組具有 SnapMirror 原則，<block ref="d6faa7ca58e81c6f13095e4f9ff20e81" prefix=" " category="inline-code"></block>可每 24 小時將和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>的快照複寫<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>到遠端叢集。父一致性群組<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>是以單一單位來管理，子一致性群組則以個別單位來管理。</block>
-  <block id="5c31d135ad789e411ad759e0c134e359" category="section-title">將現有的一致性群組轉換成父一致性群組</block>
-  <block id="ab5220486193aa4a04c53d18e19056fc" category="paragraph">儲存單元不能直接與父一致性群組相關聯。如果您將現有的一致性群組轉換為父群組，則會建立新的子一致性群組，並將屬於轉換一致性群組的儲存單元移至新的子一致性群組。</block>
   <block id="9bb9a0458dabe990942bf493592cb497" category="list-text">將游標移到您要轉換成父一致性群組的一致性群組上。</block>
   <block id="ec57f29bebbe66441595e764308d00a6" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 提升至父一致性群組 * 。</block>
-  <block id="e0e1d719c3169a36adccf812d315cc3d" category="list-text">輸入父一致性群組的名稱或接受預設名稱，然後選取一致性群組元件類型。</block>
   <block id="3073e32eb6f2f0cb69e9248a5f0c848c" category="list-text">選擇 * 促銷 * 。</block>
-  <block id="f61d709beaccfca851c4fd737b049a61" category="paragraph">您可以在父一致性群組下建立其他子一致性群組。您也可以<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>將父一致性群組複製到地理位置遠端位置，以進行備份和災難恢復。</block>
-  <block id="f28898d3cd8988ff697e782c8449eb18" category="paragraph">建立子一致性群組可讓您將個別的快照原則套用至每個子層級，同時將複寫原則套用至父層級的所有子一致性群組。</block>
   <block id="34dd18f2c196dd45fa9dfab7e7517350" category="paragraph">您可以從新的或現有的一致性群組建立子一致性群組。</block>
   <block id="643328739ada7596678f9066cec81be9" category="open-title">來自新的一致性群組</block>
   <block id="d7c5fedb6bb1501de8279366644bdd86" category="list-text">將游標移至您要新增子一致性群組的父一致性群組。</block>
@@ -1586,30 +1566,24 @@
   <block id="3fb56bc224d2a0ac3d902de4d323e71a" category="open-title">來自現有一致性群組</block>
   <block id="9e532008425c88c7f9f600e01feb942c" category="list-text">選取您要建立子一致性群組的現有一致性群組。</block>
   <block id="7ab1a538b156a84c113e1b25aa016aef" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 移至不同一致性群組 * 下。</block>
-  <block id="f50d0d6201337aee6a17962f21e42153" category="paragraph">如果您想將一致性群組當作另一個一致性群組的子群組使用，則必須先將其與現有父一致性群組分離，才能將其移至新的父一致性群組。</block>
   <block id="b13aafb46acdbda66ede2f929c14fff7" category="list-text">輸入子一致性群組的新名稱或接受預設名稱，然後選取一致性群組元件類型。</block>
   <block id="767e4528802b2fbd53126bfeffbfbb47" category="list-text">選取您想要建立父一致性群組的現有一致性群組，或選取以建立新的父一致性群組。</block>
   <block id="36a7554cab29967611589d7eefa20c88" category="paragraph">如果您選擇建立新的父一致性群組，請輸入父一致性群組的名稱或接受預設名稱，然後選取一致性應用程式元件類型。</block>
   <block id="c3eb9435da3ee7c0ac02ef30983ba9d2" category="list-text">選取 * 移動 * 。</block>
   <block id="1aebd2565785840796b5b11c1362918f" category="inline-link-macro">套用個別的快照保護原則</block>
-  <block id="27f6c159b783eaece3b27009d252861f" category="inline-link-macro">設定複寫原則</block>
-  <block id="5584e5580824a6a612aaebc7cae0dc13" category="paragraph">建立子一致性群組之後，您可以<block ref="b20e7e9a535f6a3244da85f4587a0502" category="inline-link-macro-rx"></block>移至每個子一致性群組。您也可以<block ref="cbc7b65bc979a0ca08aaa98e2dc63eda" category="inline-link-macro-rx"></block>在父一致性群組上，將所有子一致性群組的快照複寫到單一單位的遠端叢集。</block>
   <block id="4aafb19b9676db4e8aa85eb3131ac5f4" category="section-title">將父一致性群組降級為單一一致性群組</block>
-  <block id="5837ba118b622a1f9ee732410e451284" category="paragraph">當您將父一致性群組降級為單一一致性群組時，相關子一致性群組的儲存單元會新增至父一致性群組。子一致性群組會被刪除，然後將父一致性群組管理為單一一致性群組。</block>
   <block id="dd487eacf1aba6e2726ce73064acff7b" category="list-text">將游標暫留在您要降級的父一致性群組上。</block>
   <block id="d26a37885a1db03d1d33fa1b32e74c25" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 降級至單一一致性群組 * 。</block>
   <block id="0b886822f169d28b04dc34a1cb55c402" category="list-text">選擇 * 降級 *</block>
   <block id="8eea35138709fe7cf5caaf5b5fb53a4d" category="inline-link-macro">新增快照原則</block>
   <block id="a4cc38b952e58f7fac916d3297d86f9f" category="paragraph"><block ref="9b6117933a7d1c9745a65ab485bb26f2" category="inline-link-macro-rx"></block>移至降級一致性群組，以保護先前由子一致性群組管理的儲存單元。</block>
   <block id="e8289e36e948e36d5aeb9297cf2c6712" category="section-title">將子一致性群組與父一致性群組分離</block>
-  <block id="a98e8367b6b0b1bc6b9fdb2658c07a83" category="paragraph">當您將子一致性群組與父一致性群組分離時，子一致性群組會從父一致性群組中移除，並以單一一致性群組來管理。套用至父項的複寫原則不再套用至分離的子項一致性群組。</block>
   <block id="94db0ec67f710fec5c7f775e299a2d6e" category="list-text">選取父一致性群組。</block>
   <block id="77b355d4c3903a5367febffb1d5fb080" category="list-text">選取您要分離的子一致性群組。</block>
   <block id="baffc5619c6b92cfb8bd0f06efe69615" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 從父 * 分離。</block>
   <block id="43faed766403b7432cc59c42e8d49ebf" category="list-text">為您要分離的一致性群組輸入新名稱，或接受預設名稱，然後選取一致性群組應用程式類型。</block>
   <block id="f9e81700c82de44e7b8b9b6bfcfbba80" category="list-text">選取 * 分離 * 。</block>
   <block id="3fe9697b148df0f9994a0c38ed482555" category="inline-link-macro">設定複寫原則</block>
-  <block id="ee498a1797cb05156ed6a63b8ff17543" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>將分離子一致性群組的快照複寫到遠端叢集，做為單一一致性群組。</block>
   <block id="e5c51f544e69319bec042113911e203e" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>您的 ASA R2 系統，並將其部署在 ONTAP 環境中。</block>
   <block id="9a5e67864d1a0cbd6f43034e561f51a2" category="summary">開始安裝和設定 ASA R2 儲存系統，並將其部署在 ONTAP 環境中。</block>
   <block id="bf0f6aa21aec3e349179a68aa2cb89e0" category="section-title">分割一致性群組複本</block>
@@ -1829,7 +1803,6 @@
   <block id="676b7066692787a119854c062d5f6c05" category="list-text">在每個控制器或某些系統上，位於每個控制器的系統管理模組上</block>
   <block id="3b2136486adac3ad66275a45c07c6ebf" category="image-alt">系統序號範例</block>
   <block id="6b127ae60215df1a5f77bc62deb0fa41" category="list-text">如果序號未列出，請遵循適用於新 NetApp 客戶的指示。</block>
-  <block id="d4b904a6ceddca0805b85998f1946d36" category="paragraph">從 ONTAP 9.16.1 開始支援下列 NetApp ASA R2 系統。這些平台提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
   <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">支援金鑰管理員之間的加密金鑰移轉</block>
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。</block>
@@ -1980,7 +1953,6 @@
   <block id="b3c7be37f134696368fa3ec257e47dca" category="cell">如果您有...</block>
   <block id="4c018311b80f4cb91ab6f57f2e32f309" category="cell">在恢復之前您應該...</block>
   <block id="e270dd0b11b4d60d2faa3a4912f99f8e" category="cell">SnapMirror主動同步關係中的分層一致性組</block>
-  <block id="43d42e4f9f1f7ec46c3863b8a0151f7b" category="cell">刪除SnapMirror主動同步關係</block>
   <block id="5ac0fbbc053ed720aacdf3f3af276820" category="cell">積極的進口關係</block>
   <block id="2a8a59c901b916190a5f0c2fc9db590e" category="cell">刪除活動的匯入關係</block>
   <block id="2d1eaa6efdb3bbcbeddb0390177c033f" category="cell">已啟用反勒索軟體保護</block>
@@ -1989,11 +1961,9 @@
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">先決條件</block>
   <block id="e67055b6d8c65ffeed652e0147459791" category="list-text">如果您正在使用ONTAP Cloud Mediator，請驗證您的ASA r2 系統是否符合必要的<block ref="efcd0c458e1c451926dd33228d1c1e37" category="inline-link-macro-rx"></block> 。</block>
   <block id="8d8b639ec8160491c90dea5c1c1c3da9" category="list-text">在系統管理員中，選擇*保護&gt;概覽*。</block>
-  <block id="51b848336c7f7b6646ffd4f9bac5fba0" category="list-text">在右側窗格中，在「*Mediators*」旁選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ；然後選擇*新增調解員*。</block>
   <block id="7656aa254dd0e2eeb0bb2b5791fc4ce9" category="list-text">選擇*調解員類型*。</block>
   <block id="d9bdcb07b569b6e25edbe03768dae198" category="list-text">對於「雲端」中介，請輸入組織 ID、客戶端 ID 和客戶端金鑰。對於「本地」中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。</block>
   <block id="8645f14d86ca95088f9677a7ab1aa3db" category="list-text">從符合條件的群集對等體清單中選擇群集對等體，或選擇「新增群集對等體」來新增新的群集對等體。</block>
-  <block id="b949fce785965e8564d56844e56492e6" category="list-text">複製<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>文件並將其貼上到“證書”字段，或選擇“導入”以導航到<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>文件並匯入證書資訊。</block>
   <block id="30b5aba1e43ab775f5ea2145687df2a6" category="inline-link-macro">配置SnapMirror主動同步</block>
   <block id="dc159caf94b39eeebe38d89cea963f19" category="paragraph">初始化中介後，您可以<block ref="972d16674ae44824ac2ebd5c1f400dda" category="inline-link-macro-rx"></block>在輔助站點建立資料副本，並使主機應用程式能夠在發生災難時自動透明地進行故障轉移。</block>
   <block id="ac467f776ee651744b052418ba147ac6" category="summary">了解如何設定SnapMirror主動同步，透過建立輔助資料副本並在災難發生時啟用自動故障轉移來確保業務連續性。</block>
@@ -2186,11 +2156,7 @@
   <block id="6fc817dfbe9e8303d43dd345dfc8d0a6" category="list-text">選擇*更多*；然後選擇*刪除*。</block>
   <block id="d1dde57285c34e792a5945a2584acc2e" category="list-text">選擇確認您是否要繼續；然後選擇*刪除*。</block>
   <block id="d8c055944ceedab265fa23bd4dac431a" category="paragraph">主機群組已刪除。該群組中的主機不再具有對應到該主機群組的儲存單元的存取權。</block>
-  <block id="40082e45e855dbdb3de68aec6ef1aa78" category="cell">每個叢集的最大節點數</block>
-  <block id="a3df4c04a46b1ebef6ac5fcea3ddb66f" category="cell">每個叢集的最大儲存單元數</block>
   <block id="8487699fb65ed58bf886a609cc850b23" category="cell">30,000</block>
-  <block id="b20d291d0592458b40c373636c7571ef" category="cell">最大儲存單元大小</block>
-  <block id="68a0ea87389f1222fb3b843ccfd2c0fb" category="cell">最大儲存可用區域大小</block>
   <block id="4d1d2462172575416e653835e7623c79" category="cell">2 PB</block>
   <block id="246838e6a2baa5417bc2bb181dffaefd" category="cell"><block ref="246838e6a2baa5417bc2bb181dffaefd" category="inline-link-macro-rx"></block></block>
   <block id="b41dd2df01d053ae559a639dee1a223a" category="summary">了解ONTAP 9.17.1 中適用於ASA r2 系統的新功能。</block>
@@ -2299,8 +2265,6 @@
   <block id="2a1d671c971c0af470fbdc7401172b0f" category="sidebar">回應 ARP/AI 警報</block>
   <block id="65af6614b420bd97b9cd190dea5aea32" category="sidebar">暫停或恢復 ARP/AI</block>
   <block id="db63e5e7d34efa3840098020c2d030bc" category="sidebar">ONTAP 9.17.1 的新增功能</block>
-  <block id="7d456ea58781d907d2b20d5b2aca677d" category="summary">了解如何使用自簽章憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。</block>
-  <block id="851790a9f21b5ff71a9331c624658b8f" category="doc">在ASA r2 系統上使用自簽章憑證設定ONTAP Mediator 或ONTAP Cloud Mediatior</block>
   <block id="3d1a9a8962bb1e463a972fd3eef1a2d7" category="paragraph">SnapMirror主動同步配置為保護您的數據，以便您在發生災難時能夠以接近零的恢復點目標 (RPO) 和接近零的恢復時間目標 (RTO) 繼續操作。</block>
   <block id="19e274092e78148b7f8f40a16e4e4b47" category="summary">在不同叢集上的儲存虛擬機器之間建立對等關係，以便使用SnapMirror實現資料保護和災難復原。</block>
   <block id="e7a712b62a3b9917efcf632c95771bf8" category="summary">在設定SnapMirror主動同步之前，您應該確認您的ASA r2 叢集處於支援的對等關係，並且符合其他設定需求。</block>
@@ -2329,5 +2293,217 @@
   <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
   <block id="bbf7c82f4e9f186f627b8c659682a8e1" category="admonition">在ASA r2 系統中，SED 僅支援 NVMe 協定。</block>
   <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。</block>
-  <block id="85eb2c19fe63353c756dd7a692d4b4f1" category="admonition"><block ref="46c41179928c756a06811404e3a5ce1c" category="inline-link-macro-rx"></block>升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天預設為啟用。啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
+  <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">從ONTAP 9.16.1 開始， ASA r2 儲存系統每個叢集最多支援 12 個節點。在 HA 對的新節點連接電纜並打開電源後，您需要將它們加入到叢集中。</block>
+  <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系統的ONTAP軟體復原遵循與其他ONTAP系統的復原相同的流程。還原ONTAP叢集會造成中斷。</block>
+  <block id="4145a02c95a799fdae111c620990d210" category="admonition"><block ref="78cd7e79034e394d9b3e1aacaa777a70" category="inline-link-macro-rx"></block>升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天預設為啟用。啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
+  <block id="b4a4e19f8caa5675ed75c7e4c2f95379" category="inline-link-macro">刪除SnapMirror主動同步關係</block>
+  <block id="3151003a976b1d39b8d92ef0ca3c387c" category="cell"><block ref="3151003a976b1d39b8d92ef0ca3c387c" category="inline-link-macro-rx"></block></block>
+  <block id="79bc5a42c0ce5e77f02d040d055dfae3" category="summary">ASA r2 系統的ONTAP軟體升級遵循與其他ONTAP系統升級相同的流程。當您在ASA r2 系統上升級ONTAP軟體時，您可以利用新的和增強的ONTAP功能。</block>
+  <block id="676b55575e438300a6a0242a0e2d75e1" category="summary">了解如何使用自簽章或第三方憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。</block>
+  <block id="891f36b135a18ccbdefecd4dd19a3c84" category="doc">在ASA r2 系統上設定ONTAP Mediator 或ONTAP Cloud Mediatior</block>
+  <block id="97bae85f844627b195ba9e949527cd8e" category="list-text">在右側窗格中的「*調解員*」下，選擇「*新增調解員*」。</block>
+  <block id="42d4a1ca1a8c97aaab863879660365c9" category="list-text">新增證書資訊</block>
+  <block id="d766068c7f16a578ba3f54cfb9431541" category="list-text">如果您使用的是自簽名證書，請複製<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>文件並將其貼上到“證書”字段，或選擇“導入”以導航到<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>文件並匯入證書資訊。</block>
+  <block id="063f94639a5aabb84156e8516de0cab6" category="list-text">如果您使用第三方證書，請將證書資訊輸入到*證書*欄位中。</block>
+  <block id="305f7299b1b227306c97e175ddfb373e" category="summary">建立一致性組的快照以保護一致性組一部分的儲存單元中的資料。如果不再需要保護一致性群組中的任何儲存單元中的數據，則可以刪除快照保護。</block>
+  <block id="8536e4b244760f25ededb010c00effa2" category="doc">使用快照保護ASA r2 系統上的一致性群組</block>
+  <block id="4b4f911a862c022d119e438c44aa0a17" category="paragraph">在ASA r2 儲存系統中建立一致性群組的快照，以保護一致性群組一部分的儲存單元中的資料。如果不再需要保護一致性群組中的任何儲存單元中的數據，則可以從一致性群組中刪除快照保護。</block>
+  <block id="d48c07ef0c202dfbe8cb1a9f0d858fd3" category="paragraph">如果不再需要保護一致性群組中特定儲存單元的數據，則可以從一致性群組中刪除這些儲存單元。</block>
+  <block id="41711fcdbb5f638e0c8240940a59ef75" category="summary">透過修改一致性組中的儲存單元數量來增加或減少一致性組的大小。</block>
+  <block id="c27a5962c7e7ec66189a305a5f5ad38b" category="doc">修改ASA r2 系統上一致性群組的大小</block>
+  <block id="833a4354cb68f3cdd7ed3c7ae637dd10" category="inline-link-macro">刪除SnapMirror活動同步關係</block>
+  <block id="02fe6464a41941805587a0bb0fd6bc1b" category="inline-link-macro">斷絕關係</block>
+  <block id="befe4ba543ef5becd7b16f7e36af9a30" category="paragraph">如果您正在執行ONTAP 9.16.1，且要擴充的一致性群組處於SnapMirror主動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>然後才可以新增儲存單元。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>然後才可以擴充一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。</block>
+  <block id="7ac95df708e1e6c23d71cd9393b3bc84" category="summary">如果您不再需要將一致性群組的成員作為單一單元進行管理，則可以刪除該一致性群組。</block>
+  <block id="fad786d01c26418babfb8f46c9213322" category="doc">刪除ASA r2 系統上的一致性群組</block>
+  <block id="6488fd27ab28c1a614285c0fcab40be4" category="paragraph">如果您不再需要將一致性群組的成員作為單一單元進行管理，則可以刪除該一致性群組。刪除一致性群組後，群組中先前的儲存單元在叢集上仍保持活動狀態。如果一致性群組處於複製關係，則複製的副本將保留在遠端叢集上。</block>
+  <block id="d6b9eb2d38523b60202862949d11678f" category="paragraph">如果您正在執行ONTAP 9.16.1，並且要刪除的一致性群組處於SnapMirror活動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>在刪除一致性組之前。在ONTAP 9.17.1 及更高版本中，不需要在修改一致性群組之前刪除此關係。</block>
+  <block id="fded2ecb467047cfa87cd2389472c754" category="doc">了解ASA r2 儲存系統上的ONTAP一致性組</block>
+  <block id="89a3dbc1e61db3375313b0a46b8b2d38" category="paragraph">一致性組是作為單一單元進行管理的儲存單元的集合。使用一致性組簡化儲存管理。</block>
+  <block id="209c4e104de4e93b212390238bb51b0c" category="paragraph">例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需備份每個儲存單元，只需在一致性群組中新增快照資料保護即可備份整個資料庫。將儲存單元作為一致性群組而不是單獨備份也可以提供所有單元的一致備份，而單獨備份單元可能會造成不一致。</block>
+  <block id="a50d9fbff117cd678c55c63a5bb02d0e" category="paragraph">從ONTAP 9.16.1 開始，您可以使用系統管理員在ASA r2 系統上建立分層一致性群組。在層次結構中，一個或多個一致性組被配置為父一致性組下的子組。</block>
+  <block id="b677e3124d6e40579970e7053d53c4e0" category="section-title">複製關係中的一致性組</block>
+  <block id="e2b2e30a32098f6916a6a7a2d004a136" category="paragraph">從ONTAP 9.17.1 開始，您可以對非同步複製關係或SnapMirror活動同步關係中的一致性群組進行以下幾何更改，而無需破壞或刪除該關係。當主一致性組上發生幾何變化時，該變化將複製到輔助一致性組。</block>
+  <block id="118a76b2a17ade397c36b94ff6a5a4f9" category="inline-link-macro">修改儲存單元的大小</block>
+  <block id="fde8c58298e02019969dd954b97dda6d" category="list-text"><block ref="ecd9b37bb6564d4b0eaac3a523e99149" category="inline-link-macro-rx"></block>透過新增或刪除儲存單元。</block>
+  <block id="0d6c55064bffe94e0d38693f932c9d03" category="inline-link-macro">提升單一一致性組</block>
+  <block id="318e50939b290a8ad26496081e4b79f3" category="list-text"><block ref="0e09b761b21c40af56c936feefb34032" category="inline-link-macro-rx"></block>到父一致性組。</block>
+  <block id="2ddce4766410ba2d023ff2601b6035e1" category="inline-link-macro">降級父一致性群組</block>
+  <block id="76596c109755e8f490e1a34e3fca97eb" category="list-text"><block ref="031a438e26bd812ae216f241f1df7f63" category="inline-link-macro-rx"></block>到單一一致性組。</block>
+  <block id="a797d8d67c33e2518148fc6832aec727" category="inline-link-macro">分離子一致性組</block>
+  <block id="85e66a81f7243f5fed3876c39ee88b00" category="list-text"><block ref="a0f6fb7e18585da27ebd1469c65b0bf0" category="inline-link-macro-rx"></block>來自父一致性群組。</block>
+  <block id="fbc1e4537d7272daa084d09b0b6518c9" category="list-text"><block ref="49d09aacb53e588992bf3059e10179a4" category="inline-link-macro-rx"></block>使用現有的一致性組。</block>
+  <block id="4b5530f7d3ae98b0b72f47ff0f799d71" category="inline-link-macro">打破非同步複製關係</block>
+  <block id="a04062ef828580f220b683895b5ff7f0" category="paragraph">在ONTAP 9.16.1 中，您必須<block ref="a469377170b905c6c9ecc6ebb0e09607" category="inline-link-macro-rx"></block>和<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>在對一致性組進行幾何變更之前。</block>
+  <block id="9a00996d223c374eb701de258a3d4762" category="summary">使用一致性群組同時對多個儲存單元執行各種操作，而不是對每個單元單獨執行操作。在層次結構中，一個或多個一致性組被配置為父一致性組下的子組。</block>
+  <block id="cfb33d071831c4697b80956e95fabe77" category="doc">管理ASA r2 系統上的分層一致性群組</block>
+  <block id="12f83c4c3fb13a965f88dab1ae3eb2c0" category="paragraph">從ONTAP 9.16.1 開始，您可以使用系統管理員在ASA r2 系統上建立分層一致性群組。在層次結構中，一個或多個一致性組被配置為父一致性組下的子組。您可以將單獨的快照策略套用至每個子一致性群組，並透過複製父群組將所有子一致性群組的快照作為單一單元複製到遠端叢集。這簡化了複雜資料結構的資料保護和管理。</block>
+  <block id="3ac8299c6e8aa389c4671969717ba58f" category="section-title">將現有一致性組提升為父一致性組</block>
+  <block id="66ee6561a99b073d54f9e83ee7b09dac" category="paragraph">如果將現有一致性群組提升為父級，則會建立新的子一致性群組，並且屬於提升的一致性群組的儲存單元將會移至新的子一致性群組。儲存單元不能直接與父一致性群組關聯。</block>
+  <block id="12cda3c54df5ed8c4eb98ffac475155b" category="paragraph">如果您正在執行ONTAP 9.16.1，並且要提升的一致性群組處於SnapMirror主動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>一致性組才能提升。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>然後才可以提升一致性組。在ONTAP 9.17.1 及更高版本中，不需要在提升一致性組之前刪除SnapMirror活動同步關係或中斷非同步關係。</block>
+  <block id="9301bf3266067cf2800be3bd2bfaa3de" category="list-text">輸入新的子一致性群組的名稱或接受預設名稱；然後選擇一致性群組組件類型。</block>
+  <block id="f8caf636e3b8fa0f56119352de2f4e4f" category="paragraph">您可以在父一致性群組下建立其他子一致性群組。您還可以<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>將父一致性群組和子一致性群組複製到地理位置較遠的位置，以進行備份和災難復原。</block>
+  <block id="488eb097613bea3d7193264b5d8bde4f" category="paragraph">將父一致性群組降級為單一一致性群組時，關聯子一致性群組的儲存單元將會新增至父一致性群組。子一致性群組被刪除，父一致性群組則作為單一一致性群組進行管理。</block>
+  <block id="38f17853f3794e07578f727204a0dbe3" category="paragraph">如果您正在執行ONTAP 9.16.1，且要降級的一致性群組處於SnapMirror主動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>一致性組才可以被降級。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>然後才可以降級一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。</block>
+  <block id="648ef31970ca0486a78c62c1ba3d6ea4" category="paragraph">建立子一致性群組可讓您將單獨的快照原則套用至每個子群組。從ONTAP 9.17.1 開始，您也可以將單獨的複製策略直接套用到每個子項目。在ONTAP 9.16.1 中，複製策略只能套用於父層級。</block>
+  <block id="55544ce2458cf41daf84e717a42e7150" category="inline-link-macro">將其從現有的父一致性組中分離出來</block>
+  <block id="61ea9d980857627872f7e7b8d57a7e3b" category="paragraph">如果您要使用的一致性群組已經是另一個一致性群組的子群組，則必須<block ref="669756fc250d6dea21366c7b25a2790e" category="inline-link-macro-rx"></block>然後才可以將其移至新的父一致性群組。</block>
+  <block id="7e337096e80859cb6898cfb8384f18f6" category="inline-link-macro">設定複製策略</block>
+  <block id="ff18feea12af53720295342101080588" category="paragraph">建立子一致性群組後，您可以<block ref="b20e7e9a535f6a3244da85f4587a0502" category="inline-link-macro-rx"></block>到每個子一致性組。您還可以<block ref="4b00dbe31f77fc04f4dbf5d9b3e1fca3" category="inline-link-macro-rx"></block>在父一致性組和子一致性組上將一致性組複製到遠端位置。</block>
+  <block id="a0a49d94e214fa3e16bbaffb341668c7" category="paragraph">當您將子一致性群組從父一致性群組分離時，子一致性群組將從父一致性群組中刪除，並作為單一一致性群組進行管理。應用於父級的複製策略不再應用於分離的子一致性群組。</block>
+  <block id="85bef1d1a49cbb3a5a043ae91ac899f5" category="paragraph">如果您正在執行ONTAP 9.16.1，並且要分開的一致性群組處於SnapMirror活動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>才能分離一致性組。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>然後才可以分離一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。</block>
+  <block id="8e735c2c6a3f530bcf5ec1e68dcead8d" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>將分離的子一致性群組的快照複製到遠端叢集。</block>
+  <block id="69476e145701ec47dd0e3181118ad91d" category="summary">複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。  ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。</block>
+  <block id="3de0089e51a9f451f4891a9694b94d7e" category="doc">了解預先定義的ONTAP資料保護策略</block>
+  <block id="9f69e96ba899e0e31a6aada411ff602e" category="paragraph">複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。  ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。</block>
+  <block id="ed8bdaffa7dc68cc8c956646c4e8fe55" category="inline-link-macro">建立自訂複製策略</block>
+  <block id="cd84790f97e4e9beb448a5f86dfdf828" category="paragraph">如果預先定義的策略無法滿足您的需求，您可以<block ref="780c8d0d6612638332edd501d17289ee" category="inline-link-macro-rx"></block>。</block>
+  <block id="80ff29be3d84d7435018e866ecd124a6" category="paragraph">ASA r2 系統支援以下預先定義的保護策略。</block>
+  <block id="51359e8b51c63b87d50cb1bab73380e2" category="cell">政策</block>
+  <block id="551e9178cd3ea95d0d7df735e2e30c6f" category="cell">策略類型</block>
+  <block id="288aae25bc408055f50c21c991903a44" category="cell">非同步</block>
+  <block id="ecffab924c73081f7a5daa0fcf137bcc" category="cell">統一的SnapMirror非同步和保險庫策略，用於鏡像最新的活動文件系統以及按每小時傳輸計劃的每日和每週快照。</block>
+  <block id="ab82ab1ac857305b532ae893c6df13b1" category="cell">自動故障轉移雙工</block>
+  <block id="5fbde80869a5354222f418b5f3af46dd" category="cell">具有零 RTO 保證和雙向同步複製的SnapMirror同步策略。</block>
+  <block id="c0b79db5f258f0c991a383cbdbf001dd" category="cell">SnapMirror主動同步</block>
+  <block id="3fc99abc5dee77df7e706bb391cf7258" category="cell">CloudBackupDefault</block>
+  <block id="eb6c3e84822f94714c7eb065c30117b0" category="cell">保險庫保單有每日規則。</block>
+  <block id="4e4df311376e4a403b9614c810b7a3b9" category="cell">每日備份</block>
+  <block id="c69f7c05d06e3e478b8e5ff198ac35b2" category="cell">保險庫保單包含每日規則和每日轉移計劃。</block>
+  <block id="7e09f5121e9c61e839183558ddb0f17d" category="cell">DPDefault</block>
+  <block id="5272b9b0c5ca7c95f915c2080fe8946d" category="cell">SnapMirror非同步策略用於鏡像所有快照和最新的活動檔案系統。</block>
+  <block id="549e9a8369377ab9bda71541111ca2f9" category="cell">鏡像所有快照</block>
+  <block id="60bf0a8329b28f710536d60850cb1ad2" category="cell">鏡像所有快照丟棄網絡</block>
+  <block id="3b60626161332cd48fe2f9fe9c41de1f" category="cell">SnapMirror非同步策略，用於鏡像所有快照和最新的活動檔案系統（不包括網路設定）。</block>
+  <block id="37e459201e5691c90f616e05271f4ba3" category="cell">MirrorAndVault</block>
+  <block id="41f889b90a2417e1c56ca295730ea1dc" category="cell">統一的SnapMirror非同步和保險庫策略，用於鏡像最新的活動文件系統以及每日和每週快照。</block>
+  <block id="5f79bf5ea1c4cd25b49cd8a7fb4f5455" category="cell">MirrorAndVaultDiscard網絡</block>
+  <block id="6ee73deec679305aa1494717fbf9a5a6" category="cell">統一的SnapMirror非同步和保險庫策略，用於鏡像最新的活動檔案系統以及不包括網路配置的每日和每週快照。</block>
+  <block id="e162cfb3e9ccdaa06cb8c6b686825bee" category="cell">Mirror最新</block>
+  <block id="c76de16c1b3ed0faebadf362f3a06ca9" category="cell">SnapMirror非同步策略用於鏡像最新的活動檔案系統。</block>
+  <block id="4403b8bed8329a1a1ba838d590fec221" category="cell">Unified7year</block>
+  <block id="e2f3a8e2d9dbebebccfd5c2dd674a96c" category="cell">統一的SnapMirror策略，保留期為 7 年。</block>
+  <block id="a56c1780b810accc7f0bc23193dc16aa" category="cell">XDP預設</block>
+  <block id="6b56815783be20f0a82bd8f4880fefa5" category="cell">保險庫保單包含每日和每週規則。</block>
+  <block id="83d91de2f52b22872c66e363d396d82b" category="summary">如果您使用自簽名憑證設定ONTAP調解器或ONTAP Cloud 調解器，則可以將調解器重新配置為使用第三方憑證。出於安全原因，您的組織可能優先考慮或要求使用第三方憑證。</block>
+  <block id="8212aa9e3969d005df60d6c0a8d03da9" category="doc">重新設定ONTAP Mediator 或ONTAP Cloud Mediator 以在ASA r2 系統上使用第三方憑證</block>
+  <block id="6fa9fd24f49ecdb135d0af635134c226" category="section-title">步驟 1：刪除中介配置</block>
+  <block id="1b017ccd17d10e80ac7e3b702a530790" category="paragraph">若要重新配置調解器，您必須先從叢集中刪除其目前配置。</block>
+  <block id="d76107f3fb2c3c33ee326f5ddecf626e" category="list-text">在右側窗格中的「*Mediators*」下，選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>在具有要刪除的中介配置的群集對等體旁邊；然後選擇*刪除*。</block>
+  <block id="191ff56bf6dbd5b81a76ca16a571530b" category="paragraph">如果您安裝了多個中介器，並且想要刪除所有配置，請選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>在*Mediators*旁邊；然後選擇*Remove*。</block>
+  <block id="e39086306b3ce16632ca22b3d751ea42" category="list-text">選擇“*刪除*”以確認您要刪除中介配置。</block>
+  <block id="5bcb93f5956975bda7762923600a7fde" category="section-title">步驟 2：刪除自簽名證書</block>
+  <block id="8a9aa417ea3834cc47269177f63df38a" category="paragraph">移除中介配置後，您應該會從叢集中刪除相關的自簽名憑證。</block>
+  <block id="de4a13d9c204bbdf4795aff9b1aea3de" category="list-text">在“*安全*”下，選擇“*證書*”。</block>
+  <block id="edb693006e34a8858ad03c5f33e98d9d" category="list-text">選擇要刪除的證書。</block>
+  <block id="9199037ebac20c4a4b4df287b49db254" category="section-title">步驟 3：使用第三方憑證重新安裝中介</block>
+  <block id="18ef85a2d2a7cbed5f82df9e88cd62b5" category="paragraph">刪除關聯的自簽名憑證後，您可以使用第三方憑證重新設定中介。</block>
+  <block id="cf57dce9dd33d0745f81c3a98ac4cebd" category="list-text">選擇*保護&gt;概覽*。</block>
+  <block id="86e6674acae395f5cc81d371bae88908" category="list-text">在右側窗格中的「*調解員*」下，選擇「*新增調解員*」。</block>
+  <block id="c1b9b64ffaa32827ddafe986795b3948" category="list-text">對於「雲端」中介，請輸入組織 ID、客戶端 ID 和客戶端金鑰。對於*本地*中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。</block>
+  <block id="2048f18acbfe9e97f51562432ae87b1b" category="list-text">從符合條件的群集對等體清單中選擇一個群集對等體，或選擇「新增群集對等體」來新增一個新的群集對等體。</block>
+  <block id="530a7053200e8c038cc3768f24cad13a" category="list-text">在*證書*下，輸入第三方證書資訊。</block>
+  <block id="8c7c5e0c07d872b6c139a5f526a70088" category="paragraph">ONTAP調解器或ONTAP Cloud 調解器已重新配置為使用第三方憑證。現在您可以使用中介器來管理SnapMirror主動同步關係。</block>
+  <block id="9c12112fa6fe43d99a3e32f651b5372b" category="summary">在某些情況下，您可能需要中斷非同步複製關係。</block>
+  <block id="3c5ec2c1f45c326c6c3f48f99f51c4a6" category="doc">中斷ASA r2 系統上的非同步複製關係</block>
+  <block id="b8d7df6139bf4421b2174362465b943b" category="paragraph">在某些情況下，您可能需要中斷非同步複製關係。例如，如果您正在執行ONTAP 9.16.1，並且想要增加處於非同步複製關係的一致性群組的大小，則必須先中斷該關係，然後才能修改一致性群組的大小。</block>
+  <block id="e8105e55290d2bd97b66e26bffa52344" category="list-text">選擇*本地目的地*或*本地來源*。</block>
+  <block id="6f88a4bfa275f474fcb3cb724356e219" category="list-text">在您想要中斷的關係旁邊，選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇*中斷*。</block>
+  <block id="750c75545b932eb3b3f834231bf644fa" category="list-text">選擇“*中斷*”。</block>
+  <block id="bcde3b1cf285960c73a0e8d33b54f7a4" category="paragraph">主、輔一致性組之間的非同步關係被破壞。</block>
+  <block id="773d72c5baf92c9f6d2eab4f0c78e8d5" category="summary">如果您不再需要業務應用程式接近零的 RPO 和 RTO，則可以透過刪除關聯的SnapMirror活動同步關係來刪除SnapMirror活動同步保護。</block>
+  <block id="c420820f889b469c295427f98993af3d" category="doc">刪除ASA r2 系統上的SnapMirror活動同步關係</block>
+  <block id="bdf6db955e768b925afda0bf17928432" category="paragraph">如果您不再需要業務應用程式接近零的 RPO 和 RTO，則應透過刪除關聯的SnapMirror活動同步關係來刪除SnapMirror活動同步保護。如果您在ASA r2 系統上執行ONTAP 9.16.1，則可能還需要先刪除SnapMirror活動同步關係，然後才能對SnapMirror同步關係中的一致性群組進行某些幾何變更。</block>
+  <block id="fc3507abe06965431063d14ce7c02644" category="section-title">步驟 1：終止主機複製</block>
+  <block id="236e942ee46ff6fdc6429108dfa6b2a8" category="paragraph">如果將來源叢集中的主機群組複製到目標叢集，並將目標一致性群組對應到複製的主機群組，則必須先終止來源叢集上的主機複製，然後才能刪除SnapMirror主動同步關係。</block>
+  <block id="e46872dc43cf698a1767ad4ee94efd72" category="list-text">在包含要停止複製的主機群組的主機旁邊，選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇“*編輯*”。</block>
+  <block id="ff17da9c94bc0fe522b8188aa4a849e5" category="list-text">取消選擇*複製主機配置*，然後選擇*更新*。</block>
+  <block id="5c6cc670a07524f68c4bab921db44b89" category="section-title">步驟 2：刪除SnapMirror主動同步關係</block>
+  <block id="ba6cf398b50069e6a0c7728e584724e7" category="paragraph">若要從一致性群組中刪除SnapMirror活動同步保護，必須刪除SnapMirror同步關係。</block>
+  <block id="bae21a909697b1407238dcd4402f4a23" category="list-text">在要刪除的SnapMirror活動同步關係旁邊，選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇*刪除*。</block>
+  <block id="fde1120f73c8605556947918e93e79f8" category="list-text">選擇*發布來源一致性群組基礎快照*。</block>
+  <block id="4df02675ad049e30b90413ee776f8ecb" category="paragraph">SnapMirror活動同步關係被刪除，且來源一致性群組基礎快照被發布。一致性組中的儲存單元不再受SnapMirror活動同步的保護。</block>
+  <block id="f6163f963e9e2a3c70abc5c5c501ae0a" category="paragraph"><block ref="ac7c9d4c42447f2eb78cd56bb53dad12" category="inline-link-macro-rx"></block>將一致性組複製到地理位置較遠的位置以進行備份和災難復原。</block>
+  <block id="66b12cace5672f234227566918c5b83b" category="summary">您一次只能使用一種類型的調解器在ASA r2 系統上進行SnapMirror活動同步。如果您選擇變更 Mediator 類型，則必須先刪除目前實例，然後才能安裝另一個實例。</block>
+  <block id="8cef0304e7896be7e19b0be0728e810a" category="doc">從ASA r2 系統中刪除ONTAP Mediator 或ONTAP Cloud Mediator</block>
+  <block id="a12e1fb016d3f58ba251d00fbf0dbac9" category="paragraph">您一次只能在ASA r2 系統上為SnapMirror活動同步使用一種類型的中介器。如果您選擇變更中介類型，則必須先刪除目前實例，然後才能安裝另一個實例。</block>
+  <block id="99127984a5c3d7bef01ffcbab958d63d" category="paragraph">您必須使用ONTAP命令列介面 (CLI) 來刪除ONTAP Mediator 或ONTAP Cloud Mediator。</block>
+  <block id="58dc7db50a2e11a9de9e6cc092c59d4d" category="open-title">ONTAP調解器</block>
+  <block id="4022346be332d2c49a8fdee2c2bed18b" category="list-text">刪除ONTAP調解器：</block>
+  <block id="b922d3d8c6c03b28bb6f684f1ae2ed3c" category="paragraph"><block ref="d6493b8beb28940749572984cf77c520" prefix="" category="inline-code"></block></block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">範例：</block>
+  <block id="b3aa67ea8b077eb2b67ff9a0651b5426" category="open-title">ONTAP雲端調解器</block>
+  <block id="e60a33e3338ad246ad4ab11727141276" category="list-text">刪除ONTAP Cloud Mediator：</block>
+  <block id="08fb4ffca88bc0f6461c362f968d394f" category="paragraph"><block ref="6fa56bfab318c33e6446a2520c50c09f" prefix="" category="inline-code"></block></block>
+  <block id="913e3fb6005d79d1e7e5eb2046a6fa4c" category="inline-link-macro">SnapMirror 中介器刪除</block>
+  <block id="55394a49231c00367e205c42b064e980" category="list-text"><block ref="55394a49231c00367e205c42b064e980" category="inline-link-macro-rx"></block></block>
+  <block id="7827b7923d6e45ba19022ef0a9878628" category="inline-link-macro">詳細了解ONTAP人物</block>
+  <block id="67cc47e8f050e98e23b1a714f17238ec" category="paragraph"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block> 。</block>
+  <block id="e9afa2f162b90f572cc67d4d4b43b24f" category="admonition">對於ASA r2 系統， SnapMirror主動同步僅在雙節點叢集配置上支援。</block>
+  <block id="2e50e3f8a8554bd854e544e6dc52462d" category="admonition">僅支援與ASA r2 儲存系統進行快照複製。您無法將快照從ASA r2 系統複製到ASA、 AFF或FAS系統，也無法從ASA、 AFF或FAS系統複製到ASA r2 系統。</block>
+  <block id="8e0a212a3ccb8f506b309ea2b6cbd1f7" category="paragraph">從ONTAP 9.17.1 開始，您可以將非同步複製策略套用至具有層次結構關係的一致性群組。  ONTAP 9.16.1 中的層次結構關係中的一致性群組不支援非同步複製。</block>
+  <block id="de095ac7880431e9449dcced8cecbd9a" category="inline-link-macro">了解有關分層（父/子）一致性組的更多信息</block>
+  <block id="9bd28dad99082e4759b37cc288641beb" category="paragraph"><block ref="2c27991fbdb899d0303dcd6d776c47a4" category="inline-link-macro-rx"></block> 。</block>
+  <block id="823690d53f135eca513f93c93a174cb1" category="section-title">步驟 2：（可選）建立自訂複製策略</block>
+  <block id="202f82422187107b48c76b4f1093f37b" category="paragraph">複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。 ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。如果預定義策略無法滿足您的需求，您可以建立自訂複製策略。</block>
+  <block id="9e0b9f51445e376b8e8b748e02d479d5" category="inline-link-macro">預先定義的ONTAP資料保護策略</block>
+  <block id="f68cabc6603a5173a52adc0789172ad3" category="paragraph">了解<block ref="7807ad443b4479d6979a7fffa34492fb" category="inline-link-macro-rx"></block>。</block>
+  <block id="87531525c3b816a3a29dbbcbcd9e58b1" category="inline-link-macro">了解複製策略</block>
+  <block id="3014b2db79594ac1202cd88300196335" category="list-text"><block ref="143654464f8325f80e4706e133fabf02" category="inline-link-macro-rx"></block> 。</block>
+  <block id="820e745f4ceb298ff41836e6ae6e0376" category="paragraph">在建立複製關係時，必須為複製關係選擇適當的複製策略。您可以使用預定義策略或建立自訂策略。</block>
+  <block id="39f2cc2c7247fe111861f8e1e350fca5" category="paragraph">ASA r2 系統不支援與ASA、 AFF或FAS系統混合叢集。</block>
+  <block id="bec1e41aa312239c590ea19d2cd648e2" category="paragraph">如果您需要將虛擬機器工作負載從ASA儲存系統遷移到ASA r2 儲存系統， NetApp建議您使用<block ref="5e3823885235dce61c55802a90e4bf09" category="inline-link-macro-rx"></block>執行即時、無中斷的資料遷移。</block>
+  <block id="8472fc4ccb1079c9fe1f338f10dae548" category="list-text">從 CLI 輸入：<block ref="f0af09467abded8f889764e0118fc371" prefix=" " category="inline-code"></block></block>
+  <block id="6e3ec6c33e748e95fcc9a00b80c75047" category="paragraph">對於ASA r2 系統，_personality_ 為 _ASA r2_，且 _is-disaggregated_ 的狀態為 _true_。</block>
+  <block id="0212dda5b736d4e3ac685d52c9fe59e3" category="paragraph">如果要刪除的儲存單元位於具有複製關係的一致性群組中，則必須<block ref="741fafaed1397e844d655f1c5d2c2470" category="inline-link-macro-rx"></block>刪除之前。</block>
+  <block id="c2870e89f5360d8c60cf537f2608a42a" category="paragraph">ASA r2 系統支援以下儲存限制：</block>
+  <block id="6d6dc550f66f75893e42478842ea745f" category="cell">限制最大值</block>
+  <block id="690fbea35c70c2451fa2a171900ea6a7" category="cell">每個 HA 對</block>
+  <block id="dd1714009b4f40cdf1943390ef2782eb" category="cell">每個集群</block>
+  <block id="ae9e13b66877a85be97724063f459ec2" category="cell">一致性組</block>
+  <block id="f718499c1c8cef6730f9fd03c8125cab" category="cell">256</block>
+  <block id="b0dae11b82e63781abdc8f893c41b3c0" category="cell">企業應用程式</block>
+  <block id="f899139df5e1059396431415e770c6dd" category="cell">100</block>
+  <block id="9de6d14fff9806d4bcd1ef555be766cd" category="cell">350</block>
+  <block id="187c6ad3a74cc93ac6c2229d398e383e" category="cell">節點</block>
+  <block id="c81e728d9d4c2f636f067f89cc14862c" category="cell">2</block>
+  <block id="d5fbc4c880281f3e9c4fff78066996a5" category="cell">複製群組</block>
+  <block id="c0c7c76d30bd3dcaefc96f40275bdc0a" category="cell">50</block>
+  <block id="8ee7e496c0e2a65e2ee8666fe7de92f0" category="cell">儲存可用區域大小</block>
+  <block id="76a4dd9b098f9a8877b8b79d0c80c5d3" category="cell">2PB</block>
+  <block id="04207e7bb62b9b5d14bdb603f74e683c" category="cell">10,000</block>
+  <block id="40b9cfa6016513b4c254ea34fe34198c" category="cell">儲存單元大小</block>
+  <block id="9afb5dac442eac92e8a891cc81c846f3" category="cell">每個一致性組的儲存單元</block>
+  <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
+  <block id="137f19e6e2dc1219f33553b812627bc2" category="cell">虛擬機</block>
+  <block id="7a53928fa4dd31e82c6ef826f341daec" category="cell">800</block>
+  <block id="fe2d010308a6b3799a3d9c728ee74244" category="cell">1200</block>
+  <block id="e935f176337f588ca3f944c87464e3be" category="section-title">SnapMirror非同步關係的限制</block>
+  <block id="9148fad1f9a8b37e9527a1f329b82af2" category="paragraph">以下限制適用於SnapMirror非同步複製關係中的儲存單元和一致性群組。</block>
+  <block id="6165c4352e1504dbaeef34d0cc50c187" category="cell">一致性組</block>
+  <block id="6c9882bbac1c7093bd25041881277658" category="cell">250</block>
+  <block id="b137fdd1f79d56c7edf3365fea7520f2" category="cell">750</block>
+  <block id="a078c2a6f2d4313df0b942ebf9d6b940" category="cell">4,000</block>
+  <block id="3339aa4f121546a4cdc082621ff25a06" category="cell">6,000</block>
+  <block id="2500434603f5238c62790336bd12c2b3" category="section-title">SnapMirror主動同步關係的限制</block>
+  <block id="a4f389e6acbb4e2e523aabcd827ac730" category="paragraph">以下限制適用於SnapMirror主動同步複製關係中的儲存單元和一致性群組。從ONTAP 9.17.1 開始，僅在雙節點叢集上支援SnapMirror主動同步。</block>
+  <block id="18d8042386b79e2c279fd162df0205c8" category="cell">400</block>
+  <block id="520d35e96fb17bcc138fb02a60b18935" category="paragraph">從ONTAP 9.16.1 開始支援以下NetApp ASA r2 系統。這些平台提供統一的硬體和軟體解決方案，為僅使用 SAN 的客戶帶來簡化的體驗。</block>
+  <block id="b50f5f8469f7f4269e80570d419c9f8e" category="inline-link-macro">支援複製關係中一致性組的幾何變化</block>
+  <block id="42071aa0f3867fbd6baf2685ca27c2ff" category="cell"><block ref="42071aa0f3867fbd6baf2685ca27c2ff" category="inline-link-macro-rx"></block></block>
+  <block id="65476b287593ea7b99cab3c73a759847" category="cell">ASA r2 系統支援對SnapMirror活動同步或非同步複製關係中的一致性群組進行幾何更改，而無需刪除SnapMirror活動同步關係或破壞非同步關係。當主一致性組上發生幾何變化時，該變化將複製到輔助一致性組。</block>
+  <block id="40a82e39058981afc99290ca5e2fabbc" category="inline-link-macro">支援子一致性組的非同步複製</block>
+  <block id="4c8a5f5490ffb0c0214d67b43bb5c57d" category="cell"><block ref="4c8a5f5490ffb0c0214d67b43bb5c57d" category="inline-link-macro-rx"></block></block>
+  <block id="f003fc5d30b5290d37cac05051c256e6" category="cell">非同步複製策略可以應用於層級關係中的一致性群組。</block>
+  <block id="91715b561990cbfd9ba4178d340cb226" category="sidebar">將快照複製到遠端集群</block>
+  <block id="92f555951e4f6a083cb57b83ec67f682" category="sidebar">了解預定義的保護策略</block>
+  <block id="daaf076f14b6b8c90addc214d8626a42" category="sidebar">中斷複製關係</block>
+  <block id="e346ab9201083b9d1dfbd7c4e0aee470" category="sidebar">重新配置ONTAP Mediator 或ONTAP Cloud Mediator 以使用第三方憑證</block>
+  <block id="32c34e31139f2f25d0497ef8291abcdd" category="sidebar">刪除SnapMirror主動同步關係</block>
+  <block id="f1b05804c01daada2fa93ccd165477c1" category="sidebar">刪除ONTAP調解器或ONTAP Cloud 調解器</block>
+  <block id="644c01b44d0b7cd48a350e168c66653e" category="sidebar">了解一致性組</block>
+  <block id="ae3acb91b5af425bf5d85275f018efe4" category="sidebar">使用快照保護一致性群組</block>
+  <block id="f9e11d9c895b9f2de1a25a03e810d34d" category="sidebar">在一致性群組中新增或刪除儲存單元</block>
+  <block id="5a0dfc6f986e17a79c038bc9a2aeec2d" category="sidebar">刪除一致性群組</block>
+  <block id="36bed646725e085252916c3131fbf1b2" category="sidebar">管理分層一致性組</block>
 </blocks>
