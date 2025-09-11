@@ -201,6 +201,9 @@ network interface show -lif iscsi*
 
 您可以視需要停用或重新命名救生。您也可以變更 LIF IP 位址和子網路遮罩。
 
+.關於這項工作
+ONTAP利用網路時間協定 (NTP) 來同步整個叢集的時間。變更 LIF IP 位址後，您可能需要更新 NTP 設定以防止同步失敗。欲了解更多信息，請參閱知識庫文章link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-Issues/CONTAP-500629["LIF IP 變更後 NTP 同步失敗"]。
+
 .步驟
 . 選擇 * 網路 > 總覽 * 、然後選擇 * 網路介面 * 。
 . 將游標移至您要編輯的網路介面上方image:icon_kabob.gif["三個垂直藍點"]、然後選取。
