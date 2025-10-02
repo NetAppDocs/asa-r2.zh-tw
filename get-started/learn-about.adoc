@@ -25,7 +25,7 @@ NetApp ASA R2 系統提供統一化的硬體與軟體解決方案，可針對僅
 * ASA C30
 
 
-ASA R2 系統支援所有 SAN 傳輸協定（ iSCSI ， FC ， NVMe / FC ， NVMe / TCP ）。iSCSI ， FC ， NVMe / FC 和 NVMe / TCP 傳輸協定支援對稱的雙主動式架構，可執行多重路徑，讓主機和儲存設備之間的所有路徑都處於主動 / 最佳化狀態。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。
+ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 協定支援多路徑對稱主動-主動架構，以便主機和儲存之間的所有路徑都處於活動/最佳化狀態。 iSCSI 和 NVMe/TCP 協定支援主機和儲存之間的直接連線。對於光纖通道和 NVMe/FC 協議，不支援直接連接。
 
 在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。
 

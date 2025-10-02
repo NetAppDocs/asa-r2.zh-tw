@@ -1630,7 +1630,6 @@
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理儲存單元</block>
   <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">移動儲存單元</block>
   <block id="ffb5ca95f1d59040ebadb90640b1970b" category="cell"><block ref="ffb5ca95f1d59040ebadb90640b1970b" category="inline-link-macro-rx"></block></block>
-  <block id="07f2a299db43ab53ccb5d7b05918e3fc" category="paragraph">ASA R2 系統支援所有 SAN 傳輸協定（ iSCSI ， FC ， NVMe / FC ， NVMe / TCP ）。iSCSI ， FC ， NVMe / FC 和 NVMe / TCP 傳輸協定支援對稱的雙主動式架構，可執行多重路徑，讓主機和儲存設備之間的所有路徑都處於主動 / 最佳化狀態。iSCSI 和 NVMe / TCP 傳輸協定支援主機和儲存設備之間的直接路徑。</block>
   <block id="30388d1a3ab1a01f6930553a577eb80b" category="section-title">傳輸協定支援</block>
   <block id="de67fc8f6fb798124dcbf65615888af5" category="inline-link-macro">NVMe 支援對稱式主動 / 主動式多重路徑</block>
   <block id="ac187c37acbb455a3ec9ef006a79fdf8" category="cell"><block ref="ac187c37acbb455a3ec9ef006a79fdf8" category="inline-link-macro-rx"></block></block>
@@ -2508,4 +2507,5 @@
   <block id="36bed646725e085252916c3131fbf1b2" category="sidebar">管理分層一致性組</block>
   <block id="e130096a0ace158c7893eedbd19e7115" category="inline-link-macro">LIF IP 變更後 NTP 同步失敗</block>
   <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP利用網路時間協定 (NTP) 來同步整個叢集的時間。變更 LIF IP 位址後，您可能需要更新 NTP 設定以防止同步失敗。欲了解更多信息，請參閱知識庫文章<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
+  <block id="5971035c0734629ac0d154a4b60ca9e9" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 協定支援多路徑對稱主動-主動架構，以便主機和儲存之間的所有路徑都處於活動/最佳化狀態。 iSCSI 和 NVMe/TCP 協定支援主機和儲存之間的直接連線。對於光纖通道和 NVMe/FC 協議，不支援直接連接。</block>
 </blocks>
