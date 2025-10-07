@@ -1106,7 +1106,6 @@
   <block id="3d7c12f3e6019c2627798720f2876385" category="paragraph">如果您建立一個以上的儲存單元、則會以相同的容量、主機作業系統和主機對應來建立每個單元。</block>
   <block id="4ce211e7f3238dc2a7e5fc38f7096d99" category="list-text">輸入儲存單元容量、然後選取主機作業系統。</block>
   <block id="4a12fcafc1a3c4f57a718c8ca92efc50" category="list-text">接受自動選取的 * 主機對應 * 、或選取要對應儲存單元的不同主機群組。</block>
-  <block id="3a880a9aa73ca2acefaaddbfcdb6e4e5" category="paragraph">* 主機對應 * 是指將新儲存單元對應至的主機群組。如果您為新儲存單元選取的主機類型有預先存在的主機群組、則會自動為主機對應選取預先存在的主機群組。您可以接受自動為主機對應選取的主機群組、也可以選取不同的主機群組。</block>
   <block id="ec00cac618e2a8983fc71ca2a711519c" category="list-text">如果您想執行下列任何一項、請選取 * 更多選項 * 、然後完成所需步驟。</block>
   <block id="7e8304ed8a1d7b1d5ea3d023833084ac" category="paragraph">變更預設的服務品質（ QoS ）原則</block>
   <block id="670420248bfae86c26e9659cd428df4a" category="paragraph">如果先前未在要建立儲存單元的儲存虛擬機器（ VM ）上設定預設 QoS 原則、則無法使用此選項。</block>
@@ -1600,10 +1599,8 @@
   <block id="75c802412c81363d98f12df3afdd41ee" category="list-text">在 System Manager 中，選取 * Storage* ，然後選取您要移動的儲存單元。</block>
   <block id="d5ea13be4cb9332cce8fc578618d94de" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 移動 * 。</block>
   <block id="fdc877319615730d39477cdaa8dc7207" category="list-text">選取您要將儲存單元移至的儲存可用區域，然後選取 * 移動 * 。</block>
-  <block id="a48688c54c854235d38fe4b42f162152" category="paragraph">如果在您指定的作業系統上執行的主機沒有預先存在的主機群組， ONTAP 會自動建立新的主機群組。</block>
   <block id="12a1557d26fa34ac5e904bc3e60b0bf4" category="list-text">在 * 儲存與最佳化 * 下，在 * 服務品質（ QoS ） * 旁<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>，選擇。</block>
   <block id="2cb253331363d78b30ad71dd5d7edd19" category="paragraph">變更預設效能服務層級。</block>
-  <block id="550794613b3e2574a3e7ea8c2b3d0529" category="paragraph">ASA R2 系統提供兩種效能等級。預設效能等級為 * 極致 * ，這是最高可用等級。您可以將效能層級降至 * 效能 * 。</block>
   <block id="337c483d117ff7e78ed214b1799b666f" category="list-text">在 * 儲存與最佳化 * 下，在 * 效能服務層級 * 旁<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>，選擇。</block>
   <block id="06a4e0373e144570a83a3fcfaa55ff46" category="list-text">選擇 * 效能 * 。</block>
   <block id="c20ad4d76fe97759aa27a0c99bff6710" category="cell">12</block>
@@ -2508,4 +2505,7 @@
   <block id="e130096a0ace158c7893eedbd19e7115" category="inline-link-macro">LIF IP 變更後 NTP 同步失敗</block>
   <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP利用網路時間協定 (NTP) 來同步整個叢集的時間。變更 LIF IP 位址後，您可能需要更新 NTP 設定以防止同步失敗。欲了解更多信息，請參閱知識庫文章<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
   <block id="5971035c0734629ac0d154a4b60ca9e9" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 協定支援多路徑對稱主動-主動架構，以便主機和儲存之間的所有路徑都處於活動/最佳化狀態。 iSCSI 和 NVMe/TCP 協定支援主機和儲存之間的直接連線。對於光纖通道和 NVMe/FC 協議，不支援直接連接。</block>
+  <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主機映射*是指新儲存單元將映射到的主機群組。如果您為新儲存單元選擇的主機類型已存在一個主機群組，則會自動選擇該主機群組進行主機對應。您可以接受自動選擇的主機群組，也可以選擇其他主機群組。</block>
+  <block id="abeb4ea342287af6fb99335900add67e" category="paragraph">如果您指定的作業系統上執行的主機沒有預先存在的主機群組，ONTAP會自動建立新的主機群組。</block>
+  <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系統提供兩種效能等級。預設效能等級為*極限*，這是可用的最高等級。您可以將等級降低至*效能*。</block>
 </blocks>
