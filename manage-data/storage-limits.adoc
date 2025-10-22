@@ -68,12 +68,15 @@ ASA r2 系統支援以下儲存限制：
 
 以下限制適用於SnapMirror主動同步複製關係中的儲存單元和一致性群組。從ONTAP 9.17.1 開始，僅在雙節點叢集上支援SnapMirror主動同步。
 
-[cols="3"]
+[cols="2"]
 |===
-| 限制最大值 | 每個 HA 對 | 一致性組 
+| 限制最大值 | 每個 HA 對 
 
 
-| 50 | 儲存單元 | 400 
+| 一致性組 | 50 
+
+
+| 儲存單元 | 400 
 |===
 .以取得更多資訊
 如需最新 ASA R2 儲存限制的完整清單，請參閱link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
