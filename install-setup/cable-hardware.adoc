@@ -147,6 +147,13 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[將叢集連�
 --
 建立 ONTAP 叢集連線。對於無交換器叢集，請將控制器彼此連接。對於交換式叢集，請將控制器連接至叢集網路交換器。
 
+[NOTE]
+====
+叢集/HA 佈線範例展示了常見的配置。
+
+如果您在此處沒有看到您的配置，請前往 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 取得有關儲存系統佈線的全面配置和插槽優先權資訊。
+
+====
 * 無交換器叢集佈線 *
 
 將控制器彼此連接，以建立 ONTAP 叢集連線。
@@ -329,6 +336,13 @@ image::../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg[使用一�
 --
 建立 ONTAP 叢集連線。對於無交換器叢集，請將控制器彼此連接。對於交換式叢集，請將控制器連接至叢集網路交換器。
 
+[NOTE]
+====
+叢集/HA 佈線範例展示了常見的配置。
+
+如果您在此處沒有看到您的配置，請前往 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 取得有關儲存系統佈線的全面配置和插槽優先權資訊。
+
+====
 * 無交換器叢集佈線 *
 
 將控制器彼此連接，以建立 ONTAP 叢集連線。
@@ -537,6 +551,13 @@ image::../media/drw_70-90_network_cabling2_ieops-1655.svg[連接至 100Gb 乙太
 --
 將乙太網路模組連接埠或光纖通道（ FC ）模組連接埠連接至主機網路。
 
+[NOTE]
+====
+主機網路佈線範例展示了常見的配置。
+
+如果您在此處沒有看到您的配置，請前往 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 取得有關儲存系統佈線的全面配置和插槽優先權資訊。
+
+====
 * 乙太網路主機纜線 *
 
 .ASA A30 和 ASA A50 ，含兩個雙埠 40/100 GbE I/O 模組
@@ -585,6 +606,13 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[連接至
 --
 將乙太網路模組連接埠或光纖通道（ FC ）模組連接埠連接至主機網路。
 
+[NOTE]
+====
+主機網路佈線範例展示了常見的配置。
+
+如果您在此處沒有看到您的配置，請前往 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 取得有關儲存系統佈線的全面配置和插槽優先權資訊。
+
+====
 * 乙太網路主機纜線 *
 
 .配備兩個 2 連接埠 40/100 GbE I/O 模組的 ASA C30

@@ -2470,7 +2470,6 @@
   <block id="04207e7bb62b9b5d14bdb603f74e683c" category="cell">10,000</block>
   <block id="40b9cfa6016513b4c254ea34fe34198c" category="cell">儲存單元大小</block>
   <block id="9afb5dac442eac92e8a891cc81c846f3" category="cell">每個一致性組的儲存單元</block>
-  <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
   <block id="137f19e6e2dc1219f33553b812627bc2" category="cell">虛擬機</block>
   <block id="7a53928fa4dd31e82c6ef826f341daec" category="cell">800</block>
   <block id="fe2d010308a6b3799a3d9c728ee74244" category="cell">1200</block>
@@ -2508,4 +2507,7 @@
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主機映射*是指新儲存單元將映射到的主機群組。如果您為新儲存單元選擇的主機類型已存在一個主機群組，則會自動選擇該主機群組進行主機對應。您可以接受自動選擇的主機群組，也可以選擇其他主機群組。</block>
   <block id="abeb4ea342287af6fb99335900add67e" category="paragraph">如果您指定的作業系統上執行的主機沒有預先存在的主機群組，ONTAP會自動建立新的主機群組。</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系統提供兩種效能等級。預設效能等級為*極限*，這是可用的最高等級。您可以將等級降低至*效能*。</block>
+  <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">叢集/HA 佈線範例展示了常見的配置。</block>
+  <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此處沒有看到您的配置，請前往 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 取得有關儲存系統佈線的全面配置和插槽優先權資訊。</block>
+  <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">主機網路佈線範例展示了常見的配置。</block>
 </blocks>
