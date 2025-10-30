@@ -438,14 +438,9 @@
   <block id="b03db2a30a32c3ac8c0f123bffb1ece4" category="list-text">輸入複寫原則的名稱或接受預設名稱、然後輸入說明。</block>
   <block id="ca8308195da9e8f1aaa6981179fa1910" category="list-text">選取 * 原則範圍 * 。</block>
   <block id="ba8e129c41029b7f9087dd518b733282" category="paragraph">如果要將複寫原則套用至整個叢集、請選取 * 叢集 * 。如果您只想將複寫原則套用至特定儲存 VM 中的儲存單元、請選取 * 儲存 VM* 。</block>
-  <block id="cc4bd2e3882617e7952e21c6edcf0f70" category="list-text">選取 * 原則類型 * 。</block>
-  <block id="94474bfd74d528818aa33385a7ef01b1" category="cell">將資料寫入來源後、複製到遠端站台。</block>
-  <block id="5b9740e84ea801d163925a0b1f33b1c2" category="list-text">選取 * 非同步 * 。</block>
   <block id="ca4245a2767798f81970db32d522e7cf" category="list-text">在 * 從來源 * 傳輸快照 * 下、接受預設傳輸排程或選取不同的傳輸排程。</block>
   <block id="63abd2a127bdae4f4eaf9ca003d89ab3" category="list-text">選取以傳輸所有快照、或建立規則以決定要傳輸哪些快照。</block>
   <block id="0527fa3e946de1ec8c471d2c7cae3688" category="list-text">也可以啟用網路壓縮。</block>
-  <block id="a06950db009f1d0449acff1c4c0993e3" category="cell">同時將資料寫入來源和遠端站台。</block>
-  <block id="2ea2e8a2b83fdeb4e03eb89a3c69ea7a" category="list-text">選擇 * 同步 * 。</block>
   <block id="caf0e8401f3720e2547947582afb98ff" category="paragraph">您已建立複寫原則、現在已準備好在 ASA R2 系統和遠端位置之間建立複寫關係。</block>
   <block id="5e1ce6bacb63e4397cf8fa4bbd6cafc8" category="inline-link-macro">用於用戶端存取的儲存 VM</block>
   <block id="308d9e6951d14df38557244f728d31ec" category="paragraph">深入瞭解 <block ref="b2f7d76a0b614957304f0bebec8320f7" category="inline-link-macro-rx"></block>。</block>
@@ -1482,8 +1477,6 @@
   <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">如此可大幅提升整體儲存效率，尤其是在資料週轉率高的檔案系統上。</block>
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1 的新功能</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">變更為 ONTAP 預設值和限制</block>
-  <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror （非同步與同步）移轉至雲端</block>
-  <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror （非同步和同步）至非 ASA R2 系統</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">資料減量比率代表儲存效率所節省的空間量。</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">ASA R2 儲存系統快速入門</block>
   <block id="465ce601131c87fafd3a4a3da5836246" category="summary">ASA R2 系統遵循與所有其他 ONTAP 系統相同的 SAN 主機組態建議與準則。</block>
@@ -2510,4 +2503,14 @@
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此處沒有看到您的配置，請前往 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 取得有關儲存系統佈線的全面配置和插槽優先權資訊。</block>
   <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">主機網路佈線範例展示了常見的配置。</block>
   <block id="47209a3f622b3d093f126e58491097c5" category="paragraph">從ONTAP 9.17.1 開始， ONTAP會自動在ASA r2 系統 HA 對中的節點之間重新平衡工作負載，以達到最佳效能。例如，如果一個節點上的空間利用率增加到 70%，而其 HA 夥伴節點上的使用率僅為 30%，則ONTAP會自動轉移工作負載，以便每個節點的空間利用率更加匹配。由於 HA 對中的節點共享相同的儲存可用區，因此工作負載重新平衡是一種無副本操作，不會對效能產生任何影響。</block>
+  <block id="19b78e8ad6af7cf1ea82e76fdac1aa7f" category="admonition">ASA r2 系統不支援同步複製。</block>
+  <block id="2e360c76c16280fe84148c9706ad34d6" category="list-text">對於“策略類型”，選擇“非同步”。</block>
+  <block id="f1f7f77e02139ed937613a8043556351" category="admonition">採用非同步策略時，資料在寫入來源之後才會複製到遠端站點。ASA r2 系統不支援同步複製。</block>
+  <block id="ea67212f425c599ae5520184dd5dea87" category="section-title">支援SnapMirror複製</block>
+  <block id="078f057957ee3112500c8f235bb0352f" category="paragraph">SnapMirror複製在ASA r2 系統上受支持，但有以下限制：</block>
+  <block id="387dae8bc04454e56a9780e8507821e5" category="list-text">不支援SnapMirror同步複製。</block>
+  <block id="74618c54a0d6a05f0dbccbfa9f4bc480" category="list-text">SnapMirror主動同步僅支援在兩個ASA r2 系統之間進行。</block>
+  <block id="c274f3c7bf5ff5013941b9ff06a2dfdc" category="list-text">SnapMirror非同步複製僅支援在兩個ASA r2系統之間進行。SnapMirror非同步複製不支援在ASA r2 系統與ASA、 AFF或FAS系統或雲端之間進行。</block>
+  <block id="91986d95992f1ad825d4163f8cc66a27" category="inline-link-macro">ASA r2 系統支援SnapMirror複製策略</block>
+  <block id="8d722ac0b9aa4a6e8eaeefc6381bdc0e" category="paragraph">詳細了解<block ref="d1292e0977d41506a87f914ff1c78817" category="inline-link-macro-rx"></block>。</block>
 </blocks>

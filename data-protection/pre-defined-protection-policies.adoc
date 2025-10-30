@@ -15,6 +15,9 @@ summary: 複製策略定義何時將在ASA r2 叢集上執行的更新複製到�
 
 如果預先定義的策略無法滿足您的需求，您可以link:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["建立自訂複製策略"]。
 
+
+NOTE: ASA r2 系統不支援同步複製。
+
 ASA r2 系統支援以下預先定義的保護策略。
 
 [cols="3,4,1"]
