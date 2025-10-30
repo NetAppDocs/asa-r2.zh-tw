@@ -2512,5 +2512,7 @@
   <block id="74618c54a0d6a05f0dbccbfa9f4bc480" category="list-text">SnapMirror主動同步僅支援在兩個ASA r2 系統之間進行。</block>
   <block id="c274f3c7bf5ff5013941b9ff06a2dfdc" category="list-text">SnapMirror非同步複製僅支援在兩個ASA r2系統之間進行。SnapMirror非同步複製不支援在ASA r2 系統與ASA、 AFF或FAS系統或雲端之間進行。</block>
   <block id="91986d95992f1ad825d4163f8cc66a27" category="inline-link-macro">ASA r2 系統支援SnapMirror複製策略</block>
-  <block id="8d722ac0b9aa4a6e8eaeefc6381bdc0e" category="paragraph">詳細了解<block ref="d1292e0977d41506a87f914ff1c78817" category="inline-link-macro-rx"></block>。</block>
+  <block id="5ebade231442483b3d9dd2848baa6ccc" category="inline-link-macro">ASA r2 系統上的SnapMirror主動同步</block>
+  <block id="423f4fe0f55d76e8fcf2a8817bd3ae34" category="paragraph">詳細了解<block ref="53c394728f3be1f907f95f13ec9262d9" category="inline-link-macro-rx"></block>。</block>
+  <block id="458b57297f8e6e4338182adf0156897b" category="paragraph">詳細了解<block ref="d17aeaf6b3cbd3580129852f8106bfe6" category="inline-link-macro-rx"></block>。</block>
 </blocks>

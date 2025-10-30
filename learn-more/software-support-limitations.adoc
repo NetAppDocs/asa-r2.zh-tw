@@ -47,9 +47,12 @@ SnapMirror複製在ASA r2 系統上受支持，但有以下限制：
 
 * 不支援SnapMirror同步複製。
 * SnapMirror主動同步僅支援在兩個ASA r2 系統之間進行。
++
+詳細了解link:../data-protection/snapmirror-active-sync.html["ASA r2 系統上的SnapMirror主動同步"]。
+
 * SnapMirror非同步複製僅支援在兩個ASA r2系統之間進行。SnapMirror非同步複製不支援在ASA r2 系統與ASA、 AFF或FAS系統或雲端之間進行。
 +
-詳細了解link:data-protection/pre-defined-protection-policies.html["ASA r2 系統支援SnapMirror複製策略"]。
+詳細了解link:../data-protection/pre-defined-protection-policies.html["ASA r2 系統支援SnapMirror複製策略"]。
 
 
 
