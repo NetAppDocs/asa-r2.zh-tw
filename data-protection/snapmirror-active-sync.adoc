@@ -18,7 +18,7 @@ ONTAP SnapMirror主動同步資料保護功能即使在整個站點發生故障�
 link:../learn-more/hardware-comparison.html#personality-differences["詳細了解ONTAP人物"] 。
 
 
-NOTE: 對於ASA r2 系統， SnapMirror主動同步僅在雙節點叢集配置上支援。
+NOTE: 從ONTAP 9.18.1 開始， SnapMirror主動同步在四節點配置中得到支援。在ONTAP 9.17.1 中， SnapMirror主動同步僅在雙節點配置上支援。
 
 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["了解有關SnapMirror主動同步的更多信息"^] 。
 

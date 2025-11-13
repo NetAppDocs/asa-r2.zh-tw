@@ -2,6 +2,8 @@
 section: release-notes
 title: 版本資訊
 entries:
+- title: ONTAP 9.18.1 的新增功能
+  url: "/release-notes/whats-new-9181.html"
 - title: ONTAP 9.17.1 的新增功能
   url: "/release-notes/whats-new-9171.html"
 - title: ONTAP 9.16.1 的新功能

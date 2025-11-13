@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
 keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20,asa c30 
-summary: 為了獲得最佳效能、組態和支援、您應該注意 ASA R2 儲存限制。 
+summary: 為了獲得最佳效能、配置和支持，您應該了解ASA r2 的儲存限制。 
 ---
 = ASA R2 儲存限制
 :allow-uri-read: 
@@ -11,13 +11,15 @@ summary: 為了獲得最佳效能、組態和支援、您應該注意 ASA R2 儲
 
 
 [role="lead"]
-為了獲得最佳效能、組態和支援、您應該注意 ASA R2 儲存限制。
+為了獲得最佳效能、配置和支持，您應該了解 ASA r2 的儲存限制。
+
+如需最新 ASA R2 儲存限制的完整清單，請參閱link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
 
 ASA r2 系統支援以下儲存限制：
 
 [cols="3"]
 |===
-| 限制最大值 | 每個 HA 對 | 每個集群 
+|  | 每對HA的最大數量 | 每個集群的最大值 
 
 
 | 一致性組 | 256 | 256 
@@ -32,7 +34,7 @@ ASA r2 系統支援以下儲存限制：
 | 複製群組 | 50 | 50 
 
 
-| 儲存可用區域大小 | 2PB | 2 PB 
+| 儲存可用區域大小 | 2 PB | 2 PB 
 
 
 | 儲存單元 | 10,000 | 30,000 
@@ -44,13 +46,24 @@ ASA r2 系統支援以下儲存限制：
 | 每個一致性組的儲存單元 | 256 | 256 
 
 
+| 儲存虛擬機  a| 
+* 256（ONTAP 9.18.1 及更高版本）
+* 32（ONTAP 9.17.1 及更早版本）
+
+ a| 
+* 256（ONTAP 9.18.1 及更高版本）
+* 32（ONTAP 9.17.1 及更早版本）
+
+
+
+
 | 虛擬機 | 800 | 1200 
 |===
 
 
 == SnapMirror非同步關係的限制
 
-以下限制適用於SnapMirror非同步複製關係中的儲存單元和一致性群組。
+以下限制適用於SnapMirror非同步複製關係中的儲存單元和一致性群組。如需查看最新的ASA r2 儲存限製完整列表，link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 。
 
 [cols="3"]
 |===
@@ -66,7 +79,9 @@ ASA r2 系統支援以下儲存限制：
 
 == SnapMirror主動同步關係的限制
 
-以下限制適用於SnapMirror主動同步複製關係中的儲存單元和一致性群組。從ONTAP 9.17.1 開始，僅在雙節點叢集上支援SnapMirror主動同步。
+以下限制適用於SnapMirror主動同步複製關係中的儲存單元和一致性群組。從ONTAP 9.17.1 開始， SnapMirror主動同步僅在雙節點叢集上支援。從ONTAP 9.18.1 開始， SnapMirror主動同步功能在四節點叢集上得到支援。
+
+如需查看最新的ASA r2 儲存限製完整列表，link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 。
 
 [cols="2"]
 |===
@@ -78,5 +93,3 @@ ASA r2 系統支援以下儲存限制：
 
 | 儲存單元 | 400 
 |===
-.以取得更多資訊
-如需最新 ASA R2 儲存限制的完整清單，請參閱link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。

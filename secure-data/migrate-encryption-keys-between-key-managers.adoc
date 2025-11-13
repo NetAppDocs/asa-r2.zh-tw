@@ -23,11 +23,11 @@ summary: 您可以使用 ASA R2 系統上的 ONTAP 內建金鑰管理程式，�
 
 
 
-| 僅 SVM 層級 | 僅限外部金鑰管理員 
+| 僅限儲存虛擬機器級別 | 僅限外部金鑰管理員 
 
 
  a| 
-叢集和 SVM 層級
+叢集和儲存虛擬機器級別
  a| 
 下列其中一個按鍵管理器組合：
 
@@ -36,14 +36,14 @@ summary: 您可以使用 ASA R2 系統上的 ONTAP 內建金鑰管理程式，�
 叢集層級：內建金鑰管理程式
 
 +
-SVM 層級：外部金鑰管理程式
+儲存虛擬機器等級：外部金鑰管理器
 
 * 選項2
 +
 叢集層級：外部金鑰管理程式
 
 +
-SVM 層級：外部金鑰管理程式
+儲存虛擬機器等級：外部金鑰管理器
 
 
 
@@ -75,13 +75,13 @@ security key-manager external create-config
 +
 [source, cli]
 ----
-security key-manager keystore enable -vserver <svm_name> -type KMIP
+security key-manager keystore enable -vserver <storage_vm_name> -type KMIP
 ----
 . 刪除機載金鑰管理程式組態：
 +
 [source, cli]
 ----
-security key-manager keystore delete-config -vserver <svm_name> -type OKM
+security key-manager keystore delete-config -vserver <storage_vm_name> -type OKM
 ----
 . 將權限等級設為admin：
 +
@@ -111,13 +111,13 @@ security key-manager onboard create-config
 +
 [source, cli]
 ----
-security key-manager keystore enable -vserver <svm_name> -type OKM
+security key-manager keystore enable -vserver <storage_vm_name> -type OKM
 ----
 . 刪除外部金鑰管理程式組態
 +
 [source, cli]
 ----
-security key-manager keystore delete-config -vserver <svm_name> -type KMIP
+security key-manager keystore delete-config -vserver <storage_vm_name> -type KMIP
 ----
 . 將權限等級設為admin：
 +
@@ -146,7 +146,7 @@ set -privilege advanced
 +
 [source, cli]
 ----
-security key-manager key migrate -from-vserver <svm_name> -to-vserver <svm_name>
+security key-manager key migrate -from-vserver <storage_vm_name> -to-vserver <storage_vm_name>
 ----
 . 將權限等級設為admin：
 +

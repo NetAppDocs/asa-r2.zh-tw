@@ -18,15 +18,15 @@ summary: 瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.1 中提供的新功能
 
 
 
-== 平台
+== 系統
 
 [cols="2,4"]
 |===
 | 更新 | 說明 
 
 
-| 平台  a| 
-從ONTAP 9.16.1 開始支援以下NetApp ASA r2 系統。這些平台提供統一的硬體和軟體解決方案，為僅使用 SAN 的客戶帶來簡化的體驗。
+| 系統  a| 
+從ONTAP 9.16.1 開始支援以下NetApp ASA r2 系統。這些系統提供統一的硬體和軟體解決方案，為僅使用 SAN 的客戶創造簡化的體驗。
 
 * ASA A50
 * ASA A30
@@ -72,7 +72,7 @@ summary: 瞭解適用於 ASA R2 系統的 ONTAP 9 。 16.1 中提供的新功能
 | link:../learn-more/hardware-comparison.html["支援儲存單元的自動重新平衡"] | ONTAP 會自動重新平衡儲存可用區域中的儲存單元，以達到最佳效能和容量使用率。 
 
 
-| NVMe 空間取消分配預設為啟用  a| 
+| link:../learn-more/additional-supported-ontap-features.html#san-protocols["NVMe 空間取消分配預設為啟用"]  a| 
 根據預設， NVMe 命名空間會啟用空間分配（也稱為「打孔」和「取消對應」）。空間取消分配可讓主機從命名空間取消分配未使用的區塊，以回收空間。
 
 如此可大幅提升整體儲存效率，尤其是在資料週轉率高的檔案系統上。

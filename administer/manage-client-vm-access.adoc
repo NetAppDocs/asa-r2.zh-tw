@@ -138,7 +138,7 @@ set -privilege advanced
 +
 [source, cli]
 ----
-network interface service-policy create -vserver <SVM_name> -policy <service_policy_name> -services data-core,data-iscsi
+network interface service-policy create -vserver <storage_VM_name> -policy <service_policy_name> -services data-core,data-iscsi
 ----
 . 驗證服務策略是否已建立：
 +
@@ -158,7 +158,7 @@ set -privilege admin
 
 === 建立僅支援 iSCSI 的 LIF，並啟用自動 LIF 故障轉移
 
-如果 SVM 上的 iSCSI 生命期未啟用自動 LIF 容錯移轉、則新建立的生命期也不會啟用自動 LIF 容錯移轉。如果未啟用自動 LIF 容錯移轉、且發生容錯移轉事件、則 iSCSI 生命將不會移轉。
+如果儲存虛擬機器上存在未啟用自動 LIF 故障轉移的 iSCSI LIF，則您新建立的 LIF 也不會啟用自動 LIF 故障轉移。如果未啟用自動 LIF 故障轉移，且發生故障轉移事件，則您的 iSCSI LIF 將不會遷移。
 
 .開始之前
 您必須已建立自訂的僅 iSCSI LIF 服務策略。
@@ -168,7 +168,7 @@ set -privilege admin
 +
 [source, cli]
 ----
-network interface create -vserver <SVM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
+network interface create -vserver <storage_VM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
 ----
 +
 ** 建議您在每個節點上建立兩個 iSCSI LIF，一個用於結構 A，另一個用於結構 B。這為您的 iSCSI 流量提供了冗餘和負載平衡。在以下範例中，總共建立了四個 iSCSI LIF，每個節點上兩個，每個結構一個。

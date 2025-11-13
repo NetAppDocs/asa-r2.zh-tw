@@ -37,11 +37,11 @@ NOTE: link:rebalance-workloads.html["自動工作負載重新平衡"]升級到ON
 | 如果您有... | 在恢復之前您應該... 
 
 
-| SnapMirror主動同步關係中的分層一致性組 | link:../data-protection/snapmirror-active-sync-delete-relationship.html["刪除SnapMirror主動同步關係"] 
+| SnapMirror主動同步關係中的分層一致性組 | link:../data-protection/snapmirror-active-sync-delete-relationship.html["刪除SnapMirror主動同步關係"]。 
 
 
-| 積極的進口關係 | 刪除活動的匯入關係 
+| 積極的進口關係 | 刪除已啟動的導入關係。link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["了解進口關係"]。 
 
 
-| 已啟用反勒索軟體保護 | 禁用反勒索軟體保護 
+| 已啟用反勒索軟體保護 | link:../secure-data/pause-resume-anti-ransomware-protection.html["暫停反勒索軟體保護"]。 
 |===

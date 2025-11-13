@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9181.html 
+keywords: 'what"s new, release notes, 9.18.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: 了解ONTAP 9.18.1 中適用於ASA r2 系統的新功能。 
+---
+= 適用於ASA r2 系統的ONTAP 9.18.1 的新功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解ONTAP 9.18.1 中適用於ASA r2 系統的新功能。
+
+
+
+== 資料保護
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../data-protection/snapmirror-active-sync.html["增強對SnapMirror主動同步配置的支持"] | SnapMirror主動同步的支援從雙節點叢集增加到四節點叢集。 
+|===
+
+
+== 聯網
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../secure-data/iscsi-nvme-tcp-connections.html["IPsec 硬體卸載 IPv6 支持"] | IPsec硬體卸載支援已擴展到IPv6。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#fips-compliance["OpenSSL PQC 演算法"] | ONTAP支援用於 SSL 的後量子計算加密演算法。這些演算法可針對未來潛在的量子運算攻擊提供額外保護，並且在 SSL FIPS 模式停用時可用。 
+|===
+
+
+== SAN資料遷移
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../manage-data/migrate-svm.html["支援儲存虛擬機器遷移"] | 您可以將儲存虛擬機器 (VM) 從ASA叢集無中斷地遷移到ASA r2 叢集。這使得區塊級工作負載能夠遷移到ASA r2 系統，同時保持資料完整性並確保不會對應用程式造成影響。遷移過程旨在維護現有的主機映射和 LUN 配置，從而減少遷移過程中的操作工作量和風險。 
+|===
+
+
+== 儲存效率
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#san-protocols["支援 NVMe 複製卸載"] | NVMe 複製卸載功能可讓 NVMe 主機將複製作業從其 CPU 解除安裝至ONTAP儲存控制器的 CPU。主機可以將資料從一個 NVMe 命名空間複製到另一個 NVMe 命名空間，同時將其 CPU 資源保留給應用程式工作負載。 
+
+
+| link:../data-protection/snapshot-reserve-modify.html["支援修改快照保留和自動刪除快照"] | 您可以修改快照預留空間並啟用自動快照刪除功能，以限制ASA r2 儲存單元中快照所佔用的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。這樣可以防止快照佔用儲存用戶資料所需的儲存單元空間，從而避免應用程式中斷。 
+|===

@@ -12,9 +12,9 @@ searchtitle: 比較 ASA R2 系統與其他 ONTAP 系統
 
 
 [role="lead"]
-ASA r2 系統為基於全快閃平台建置的純 SAN 環境提供硬體和軟體解決方案。 ASAr2 系統與其他ONTAP系統（ ASA 、 AFF和FAS）在ONTAP特性、儲存層和支援協定的實作方面有所不同。
+ASA r2 系統為基於全快閃解決方案的純 SAN 環境提供硬體和軟體解決方案。r2 系統與其他ONTAP系統（ ASA 、 AFF和FAS）在ONTAP特性、儲存層和支援協定的實作方面有所不同。
 
-下列 ASA 平台歸類為 ASA R2 系統：
+以下系統被歸類為ASA r2 系統：
 
 * ASA A1K
 * ASA A90
@@ -99,8 +99,8 @@ ASA r2 系統與FAS、 AFF和ASA系統有以下不同：
 
 以下說明 ASA R2 系統與 ONTAP 、 AFF 和 ASA 系統之間與 FAS 命令列介面（ CLI ）和 REST API 相關的主要差異。
 
-.使用傳輸協定服務建立預設 SVM
-新叢集會自動包含已啟用 SAN 傳輸協定的預設資料 SVM 。IP 資料生命安全裝置支援 iSCSI 和 NVMe / TCP 傳輸協定、並 `default-data-blocks`依預設使用服務原則。
+.使用協定服務建立預設儲存虛擬機
+新叢集會自動包含一個預設資料儲存虛擬機器 (VM)，並啟用 SAN 協定。  IP 資料 LIF 支援 iSCSI 和 NVMe/TCP 協議，並使用 `default-data-blocks`預設服務策略。
 
 .自動建立 Volume
 建立儲存單元（ LUN 或命名空間）會自動從儲存可用區域建立磁碟區。這會產生一個簡化且通用的命名空間。刪除儲存單元會自動刪除相關的磁碟區。

@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: manage-data/migrate-svm.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
+summary: 如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。 
+---
+= 將儲存虛擬機器從ASA集群遷移到ASA r2 集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從ONTAP 9.18.1 開始，您可以將儲存虛擬機器 (VM) 從任何ASA叢集無中斷地遷移到任何ASA r2 叢集。從ASA叢集遷移到ASA r2 叢集，您可以為僅限 SAN 的環境採用ASA r2 系統的簡化和精簡架構。
+
+ASA和ASA r2 儲存系統之間支援儲存虛擬機器遷移，具體方式如下：
+
+[cols="2"]
+|===
+| 從以下任何ASA系統： | 適用於下列任何ASA r2 系統： 
+
+
+ a| 
+* ASA C800
+* ASA C400
+* ASA C250
+* ASA A900
+* ASA A800
+* ASA A400
+* ASA A250
+* ASA A150
+* ASA AFF A800
+* ASA AFF A700
+* ASA AFF A400
+* ASA AFF A250
+* ASA AFF A220
+
+ a| 
+* ASA A1K
+* ASA C30
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
+
+NOTE: 有關ASA和ASA r2 系統的最新列表，請參閱link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。  ASA r2 系統在NetAppHardware Universe中被列為「ASA A 系列/C 系列（新）」。
+
+您只能將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。不支援從任何其他類型的ONTAP系統遷移。
+
+.開始之前
+ASA r2 叢集和ASA叢集中的所有節點必須執行ONTAP 9.18.1 或更高版本。叢集節點上的ONTAP 9.18.1 修補程式版本可能有所不同。
+
+
+
+== 步驟 1：驗證ASA儲存虛擬機器的狀態
+
+在將儲存 VM 從ASA系統遷移之前，不應存在 NVMe 命名空間或vVols ，且儲存 VM 中的每個磁碟區應僅包含一個 LUN。不支援遷移 NVMe 命名空間和vVols。  ASA r2 系統的架構要求磁碟區包含單一 LUN。
+
+.步驟
+. 確認儲存虛擬機器中不存在 NVMe 命名空間：
++
+[source, cli]
+----
+vserver nvme namespace show -vserver <storage_VM>
+----
++
+如果顯示條目，則 NVMe 物件必須是link:https://docs.netapp.com/us-en/ontap/nvme/convert-namespace-to-lun-task.html["轉換"^]新增到 LUN 或移除。參見 `vserver nvme namespace delete`以及 `vserver nvme subsystem delete`命令link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP 命令參照"^]了解更多。
+
+. 確認儲存虛擬機器中不存在vVols：
++
+[source, cli]
+----
+lun show -verser <storage_VM> -class protocol-endpoint,vvol
+----
++
+如果存在任何vVols ，則應將其複製到另一個儲存 VM，然後從要遷移的儲存 VM 中刪除。參見 `lun copy`和 `lun delete`命令link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP 命令參照"^]了解更多。
+
+. 確認儲存虛擬機器中的每個磁碟區都包含一個 LUN：
++
+[source, cli]
+----
+lun show -verser <storage_VM>
+----
++
+如果一個磁碟區包含多個 LUN，請使用 `volume create`和 `lun move`建立 1:1 磁碟區與 LUN 比例的指令。查看link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP 命令參照"^]了解更多。
+
+
+
+.接下來呢？
+您已準備好在ASA和ASA r2 叢集之間建立叢集對等關係。
+
+
+
+== 步驟 2：在您的ASA和ASA r2 叢集之間建立叢集對等關係
+
+在將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集之前，需要建立對等關係。對等關係定義了網路連接，使ONTAP叢集和儲存虛擬機器能夠安全地交換資料。
+
+.開始之前
+您必須使用下列方法之一在被對等連接的叢集中的每個節點上建立叢集間 LIF。
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["在共用資料連接埠上配置集群間 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["在專用資料連接埠上配置集群間 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["在自訂 IP 空間中設定叢集間 LIF"^]
+
+
+.步驟
+. 在ASA r2 叢集上，與ASA叢集建立對等關係並產生密碼短語：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_cluster_LIF_IPs> -generate-passphrase
+----
++
+以下範例在叢集 1 和叢集 2 之間建立叢集對等關係，並建立系統產生的密碼短語：
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. 複製產生的密碼短語。
+. 在ASA叢集上，與ASA r2 叢集建立對等關係：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_r2_LIF_IPs>
+----
+. 輸入在ASA r2 叢集上產生的密碼短語。
+. 驗證叢集對等關係是否已建立：
++
+[source, cli]
+----
+cluster peer show
+----
++
+以下範例顯示了成功建立對等連接叢集的預期輸出。
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+
+
+.結果
+ASA和ASA r2 叢集已建立對等連接，儲存 VM 資料可以安全傳輸。
+
+.接下來呢？
+您已準備好為ASA儲存虛擬機器進行遷移。
+
+
+
+== 步驟 3：準備將儲存虛擬機器從ASA遷移到ASA r2 集群
+
+在將儲存虛擬機器 (VM) 從ASA叢集遷移到ASA r2 叢集之前，必須執行遷移預檢查並修復任何必要的問題。預檢查必須成功通過才能執行遷移。
+
+.步驟
+. 從您的ASA r2 叢集執行遷移預檢查：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
+----
++
+如果您需要修復任何問題以準備ASA叢集進行遷移，則會顯示該問題和修正措施。修復問題後，重複預檢查至成功完成。
+
+
+
+.接下來呢？
+您已準備好將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。
+
+
+
+== 步驟 4：將ASA儲存虛擬機器遷移到ASA R2 集群
+
+在您準備好ASA叢集並與ASA r2 叢集建立必要的叢集對等關係後，即可開始儲存 VM 遷移。
+
+執行儲存 VM 遷移時，最佳實務是在ASA叢集和ASA r2 叢集上都留出 30% 的 CPU 餘裕，以便 CPU 工作負載能夠執行。
+
+.關於這項工作
+儲存虛擬機器遷移後，用戶端將自動切換到ASA r2 集群， ASA集群上的儲存虛擬機器將自動刪除。預設啟用自動切換和自動儲存虛擬機器移除功能。您也可以選擇停用它們，然後手動執行切換和儲存虛擬機器刪除操作。
+
+.開始之前
+* ASA r2 叢集必須有足夠的可用空間來容納遷移的儲存虛擬機器。
+* 如果ASA儲存 VM 包含加密磁碟區，則必須在叢集層級設定ASA r2 系統上的板載金鑰管理員或外部金鑰管理員。
+* 下列操作不能在來源ASA叢集上運作：
++
+** 故障轉移操作
+** 華夫餅
+** 指紋
+** 卷遷移、重新託管、複製、建立、轉換或分析
+
+
+
+
+.步驟
+. 從ASA r2 叢集啟動儲存虛擬機器遷移：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
+----
++
+若要停用自動切換，請使用 `-auto-cutover false`範圍。若要停用ASA儲存 VM 的自動刪除，請使用下列方法： `-auto-source-cleanup false`範圍。
+
+. 監控遷移狀態
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+遷移完成後，*狀態*將顯示為*遷移完成*。
+
+
+
+
+NOTE: 如果在自動切換開始前需要暫停或取消遷移，請使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必須先暫停遷移，然後才能取消遷移。切換開始後，您將無法取消遷移。
+
+.結果
+儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。儲存虛擬機器的名稱和 UUID、資料 LIF 名稱、IP 位址以及物件名稱（例如磁碟區名稱）保持不變。儲存虛擬機器中已移轉物件的 UUID 已更新。
+
+.接下來呢？
+如果您停用了自動切換和自動儲存虛擬機器移除功能，link:svm-post-migrate-cutover-cleanup.html["手動將ASA客戶端切換到ASA R2 集群，並從ASA集群中移除儲存虛擬機器。"] 。

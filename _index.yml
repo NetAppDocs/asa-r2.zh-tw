@@ -21,6 +21,8 @@ indexpage:
       url: "/manage-data/data-cloning.html"
     - title: 修改儲存單元
       url: "/manage-data/modify-storage-units.html"
+    - title: 遷移儲存虛擬機
+      url: "/manage-data/migrate-svm.html"
   - title: 保護及保護資料安全
     links:
     - title: 建立快照
@@ -31,6 +33,8 @@ indexpage:
       url: "/data-protection/snapmirror-active-sync.html"
     - title: 加密靜態資料
       url: "/secure-data/encrypt-data-at-rest.html"
+    - title: 啟用 ARP/AI
+      url: "/secure-data/enable-anti-ransomware-protection.html"
   - title: 更多 ASA R2 資源
     links:
     - title: ASA 資料表

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: manage-data/svm-post-migrate-cutover-cleanup.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine, manual cutover, manual cleanup, remove source svm 
+summary: 如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。 
+---
+= 遷移到ASA r2 系統後，切換客戶端並清理來源儲存虛擬機器。
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將儲存虛擬機器 (VM) 從ASA叢集遷移到ASA r2 叢集後，預設情況下，用戶端會自動切換到ASA r2 集群，且ASA叢集上的儲存 VM 會自動刪除。如果您選擇在遷移期間停用ASA儲存 VM 的自動切換和移除，則需要在遷移完成後手動執行這些步驟。
+
+
+
+== 儲存虛擬機器遷移後，手動將客戶端切換到ASA r2 系統。
+
+如果在將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集期間停用自動用戶端切換，則在遷移成功完成後，請手動執行切換，以便ASA r2 儲存虛擬機器可以為用戶端提供資料。
+
+.步驟
+. 在ASA r2 叢集上，手動執行客戶端切換：
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. 確認切換操作已完成：
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.結果
+資料正從ASA r2 叢集上的儲存虛擬機器提供給您的客戶端。
+
+.接下來呢？
+現在您可以從來源ASA叢集中刪除儲存虛擬機器。
+
+
+
+== 遷移到ASA r2 叢集後，手動刪除ASA儲存虛擬機
+
+如果在將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集期間停用自動來源清理，則在遷移完成後，請從ASA叢集中刪除儲存虛擬機器以釋放儲存空間。
+
+.開始之前
+您的客戶端應該從ASA r2 叢集提供資料。
+
+.步驟
+. 從ASA叢集中，驗證ASA儲存 VM 的狀態是否為「*準備進行來源清理*」：
++
+[source, cli]
+----
+vserver migrate show
+----
+. 移除ASA儲存虛擬機器：
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.結果
+您的ASA叢集上的儲存虛擬機器已移除。

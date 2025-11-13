@@ -14,7 +14,7 @@ searchtitle: 了解 ASA A1K、A90、A70、A50、A30 A20 和 C30 系統
 [role="lead"]
 NetApp ASA R2 系統提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。
 
-下列 ASA 平台歸類為 ASA R2 系統：
+以下系統被歸類為ASA r2 系統：
 
 * ASA A1K
 * ASA A90
@@ -44,5 +44,5 @@ ASA r2 系統不支援與ASA、 AFF或FAS系統混合叢集。
 .以取得更多資訊
 * 如link:https://hwu.netapp.com/["NetApp Hardware Universe"^]需ASA R2 系統支援與限制的詳細資訊，請參閱。
 * 深入瞭解 link:../learn-more/hardware-comparison.html["ASA R2 系統與 ASA 系統的比較"]。
-* 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"]。
+* 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^]。
 

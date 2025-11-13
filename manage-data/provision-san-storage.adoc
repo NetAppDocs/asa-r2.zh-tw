@@ -18,11 +18,15 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 來配置 SAN 儲存設備
 
 == 建立儲存單元
 
-在 ASA R2 系統上、儲存單元可為 SAN 主機提供儲存空間、以供資料作業使用。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。如果您的叢集設定為支援 SCSI 主機、系統會提示您建立 LUN 。如果您的叢集設定為支援 NVMe 主機、系統會提示您建立 NVMe 命名空間。ASA R2 儲存單元的最大容量為 128TB 。
+在ASA r2 系統中，儲存單元為 SAN 主機提供儲存空間，用於資料操作。儲存單元指的是 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。如果您的叢集配置為支援 SCSI 主機，系統會提示您建立 LUN。如果您的叢集配置為支援 NVMe 主機，系統會提示您建立 NVMe 命名空間。  ASA r2 儲存單元的最大容量為 128 TB。
 
 如link:https://hwu.netapp.com/["NetApp Hardware Universe"^]需 ASA R2 系統的最新儲存限制、請參閱。
 
 主機啟動器會在儲存單元建立程序中新增並對應至儲存單元。您也可以link:provision-san-storage.html#add-host-initiators["新增主機啟動器"] link:provision-san-storage.html#map-the-storage-unit-to-a-host["地圖"]在建立儲存單元之後、將其儲存至儲存單元。
+
+從ONTAP 9.18.1 開始，您可以修改快照保留，並在建立儲存單元時啟用自動快照刪除。快照預留空間是指儲存單元中專門為快照保留的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。
+
+link:../data-protection/snapshot-reserve.html["了解更多關於ASA r2 系統快照保留的信息"]。
 
 .步驟
 . 在 System Manager 中，選擇 *Storage* ；然後選擇image:icon_add_blue_bg.png["藍色背景的矩形圖示、文字會以白色字母為中心"]。
@@ -63,7 +67,7 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 來配置 SAN 儲存設備
 .. 在 * 儲存與最佳化 * 下、在 * 服務品質（ QoS ） * 旁image:icon_dropdown_arrow.gif["指向下方向的藍色箭頭圖示"]、選擇。
 .. 選取 * 定義新原則 * 。
 .. 輸入新 QoS 原則的名稱。
-.. 設定 QoS 限制、 QoS 保證或兩者。
+.. 設定服務品質限制、服務品質保證或兩者都設定。
 +
 ... 或者、在 * 限制 * 下、輸入最大處理量限制、最大 IOPS 限制或兩者。
 +
@@ -88,6 +92,15 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 來配置 SAN 儲存設備
 +
 ASA r2 系統提供兩種效能等級。預設效能等級為*極限*，這是可用的最高等級。您可以將等級降低至*效能*。
 
+
+
+
+
+ a| 
+修改預設快照保留設定並啟用自動快照刪除功能。
+ a| 
+.. 在「快照預留 %」下，輸入要指派給快照的儲存單元空間百分比的數值。
+.. 選擇“自動刪除較舊的快照”。
 
 
 
