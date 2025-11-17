@@ -101,7 +101,7 @@ balanced-placement rebalance execute
 +
 [source, cli]
 ----
-placement rebalance config show-evaluation
+placement rebalance show-evaluation
 ----
 
 
