@@ -27,10 +27,13 @@ summary:
 
 如果您需要將虛擬機器工作負載從ASA儲存系統遷移到ASA r2 儲存系統， NetApp建議您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere-foundation["VMware vSphere VMotion"^]執行即時、無中斷的資料遷移。
 
+ASA r2 儲存單元預設採用精簡配置。遷移虛擬機器工作負載時，虛擬磁碟（VMDK）也應該進行精簡配置。
+
 .相關資訊
 * 詳細了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["使用ONTAP for vSphere 的優勢"^] 。
 * 了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["使用ONTAP 的VMware Live Site Recovery"^]。
 * 了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html#continuous-availability-solutions-for-vsphere-environments["適用於 vSphere 環境的持續可用性解決方案"^]。
+* 詳細了解link:https://kb.netapp.com/on-prem/ontap/da/SAN/SAN-KBs/How_to_setup_Broadcom_VMware_ESXi_iSCSI_MPIO_with_ONTAP_SAN_ASA["如何將 Broadcom VMware ESXi iSCSI MPIO 與ONTAP SAN ASA儲存系統集成"^]。
 
 
 

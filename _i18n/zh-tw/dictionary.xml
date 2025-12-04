@@ -1076,9 +1076,7 @@
   <block id="21ba50dbf4007619e7e1e3d1d4890d04" category="doc">在 ASA R2 系統上配置 ONTAP SAN 儲存設備</block>
   <block id="5130efcbab54e3de0826ab521946e46d" category="paragraph">在配置儲存設備時、您可以讓 SAN 主機從 ASA R2 儲存系統讀取資料並將資料寫入其中。若要配置儲存設備、您可以使用 ONTAP 系統管理員來建立儲存單元、新增主機啟動器、以及將主機對應至儲存單元。您也需要在主機上執行步驟、以啟用讀取 / 寫入作業。</block>
   <block id="765e871d79c6c686febb0d212efcee42" category="section-title">建立儲存單元</block>
-  <block id="2c9e1fb1b8b3b0713d51e8ae575f96cf" category="paragraph">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需 ASA R2 系統的最新儲存限制、請參閱。</block>
   <block id="1d78dc8ed51214e518b5114fe24490ae" category="inline-link-macro">地圖</block>
-  <block id="07de3115f268ee32f824fa17392a0fcc" category="paragraph">主機啟動器會在儲存單元建立程序中新增並對應至儲存單元。您也可以<block ref="8a23e2c4e7cc30673e8b314a4ba4f4ed" category="inline-link-macro-rx"></block> <block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>在建立儲存單元之後、將其儲存至儲存單元。</block>
   <block id="b6ef92a5067caea07262eb16524826b6" category="inline-image-macro">藍色背景的矩形圖示、文字會以白色字母為中心</block>
   <block id="b5f594084b71d3aa55abadbedf670f86" category="list-text">在 System Manager 中，選擇 *Storage* ；然後選擇<block ref="da7582bfb005458d3066421df78a060d" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="51a192101931ecb5b57cbe0c93814a0f" category="list-text">輸入新儲存單元的名稱。</block>
@@ -1117,7 +1115,6 @@
   <block id="86d44c7101e25ca99d38670a1efa356e" category="paragraph">頻內驗證可在 NVMe 主機和 ASA R2 系統之間進行安全的雙向單向驗證。</block>
   <block id="a56968accba6c23d9088678742dc323d" category="paragraph">TLS 會加密透過網路在您的 NVMe / TCP 主機和 ASA R2 系統之間傳送的所有資料。</block>
   <block id="b2006a7dcb49ba27d412bf7c975d494e" category="list-text">選取 * 新增啟動器 * 以新增更多啟動器。</block>
-  <block id="5d009b24bd2dd29f315f5549d323dd20" category="paragraph">主機 NQN 應格式化為 &lt;nqn.yyyy-mm&gt; 、後面接著完整網域名稱。年應等於或晚於 1970 年。總長度應為 223 。有效的 NVMe 啟動器範例是 nqn.2014-08.com.example:string</block>
   <block id="22d9ca4f3f9229c260ae1d1236d3d11c" category="paragraph">系統會建立儲存單元、並將其對應至主機。您現在可以<block ref="13282ab1c43cc291d62099de29c76969" category="inline-link-macro-rx"></block>保護 ASA R2 系統上的資料。</block>
   <block id="87c964622ab29664363b4b2888f1b356" category="inline-link-macro">ASA R2 系統如何使用儲存虛擬機器</block>
   <block id="6afbcb648aad0c257ca7905b9d403b79" category="paragraph">深入瞭解 <block ref="f6474162100d04c74dacf0c12cf75d7f" category="inline-link-macro-rx"></block>。</block>
@@ -1158,7 +1155,6 @@
   <block id="b7a9ab8dab2826ab36bbf1a3559850cc" category="list-text">選取 * 新增至主機群組 * 。</block>
   <block id="0f53db9803696214ded0a88c8b0f7339" category="list-text">搜尋並選取您要新增主機的主機群組。</block>
   <block id="e4588db94d1d12fcf26071d43abfb9c8" category="section-title">將儲存單元對應至主機</block>
-  <block id="62ce85edaaef586187e6e1454db66f3c" category="paragraph">建立 ASA R2 儲存單元並新增主機啟動器之後、您必須將主機對應至儲存單元、才能開始提供資料服務。儲存單元會在儲存單元建立程序中對應至主機。您也可以隨時將現有的儲存單元對應至新的或現有的主機。</block>
   <block id="8de000c670cb75a778efcd7807338e06" category="list-text">選擇 * 儲存 * 。</block>
   <block id="1b9ba9248585970cf009d0cea53f480c" category="list-text">將游標移至您要對應的儲存單元名稱上方。</block>
   <block id="d966085aed4aa82e0f344d0a574996c4" category="list-text">選取<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選取 * 對應至主機 * 。</block>
@@ -2440,7 +2436,6 @@
   <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP利用網路時間協定 (NTP) 來同步整個叢集的時間。變更 LIF IP 位址後，您可能需要更新 NTP 設定以防止同步失敗。欲了解更多信息，請參閱知識庫文章<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
   <block id="5971035c0734629ac0d154a4b60ca9e9" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 協定支援多路徑對稱主動-主動架構，以便主機和儲存之間的所有路徑都處於活動/最佳化狀態。 iSCSI 和 NVMe/TCP 協定支援主機和儲存之間的直接連線。對於光纖通道和 NVMe/FC 協議，不支援直接連接。</block>
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主機映射*是指新儲存單元將映射到的主機群組。如果您為新儲存單元選擇的主機類型已存在一個主機群組，則會自動選擇該主機群組進行主機對應。您可以接受自動選擇的主機群組，也可以選擇其他主機群組。</block>
-  <block id="abeb4ea342287af6fb99335900add67e" category="paragraph">如果您指定的作業系統上執行的主機沒有預先存在的主機群組，ONTAP會自動建立新的主機群組。</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系統提供兩種效能等級。預設效能等級為*極限*，這是可用的最高等級。您可以將等級降低至*效能*。</block>
   <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">叢集/HA 佈線範例展示了常見的配置。</block>
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此處沒有看到您的配置，請前往 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 取得有關儲存系統佈線的全面配置和插槽優先權資訊。</block>
@@ -2641,8 +2636,6 @@
   <block id="903547f07fd29a1a471a450bf6698e9a" category="paragraph">儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。儲存虛擬機器的名稱和 UUID、資料 LIF 名稱、IP 位址以及物件名稱（例如磁碟區名稱）保持不變。儲存虛擬機器中已移轉物件的 UUID 已更新。</block>
   <block id="8dc31ca5dc4646efeb787bf14002d2d0" category="inline-link-macro">手動將ASA客戶端切換到ASA R2 集群，並從ASA集群中移除儲存虛擬機器。</block>
   <block id="9577daaa5fbfbab99b56d58ee2c172df" category="paragraph">如果您停用了自動切換和自動儲存虛擬機器移除功能，<block ref="76ae15ac4a72520ba2cd15274463fca3" category="inline-link-macro-rx"></block> 。</block>
-  <block id="9582e4c48479798f4f4f9ce46d09c93b" category="paragraph">在ASA r2 系統中，儲存單元為 SAN 主機提供儲存空間，用於資料操作。儲存單元指的是 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。如果您的叢集配置為支援 SCSI 主機，系統會提示您建立 LUN。如果您的叢集配置為支援 NVMe 主機，系統會提示您建立 NVMe 命名空間。  ASA r2 儲存單元的最大容量為 128 TB。</block>
-  <block id="c9c3efe2f110833ad53d587066554d58" category="paragraph">從ONTAP 9.18.1 開始，您可以修改快照保留，並在建立儲存單元時啟用自動快照刪除。快照預留空間是指儲存單元中專門為快照保留的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。</block>
   <block id="7501352b37c8930919c10e645c388272" category="inline-link-macro">了解更多關於ASA r2 系統快照保留的信息</block>
   <block id="7fdd4a506c158d387464fd16f4e65f8e" category="paragraph"><block ref="614a34b4f7a807cea02dd4507adb351a" category="inline-link-macro-rx"></block>。</block>
   <block id="819b58028cbb8d32e35c5a6d2a9ed247" category="list-text">設定服務品質限制、服務品質保證或兩者都設定。</block>
@@ -2726,4 +2719,19 @@
   <block id="343eac7cd99cc683c46468c5b11af7ac" category="sidebar">修改快照儲備</block>
   <block id="d36af7beb354a2c45f47821d695da277" category="sidebar">建立儲存虛擬機器對等關係</block>
   <block id="d529398546b94e10169c1e6f6f8aed12" category="sidebar">ONTAP 9.18.1 的新增功能</block>
+  <block id="5aa793bbbd0a039a24351b96f67f0529" category="paragraph">ASA r2 儲存單元預設採用精簡配置。遷移虛擬機器工作負載時，虛擬磁碟（VMDK）也應該進行精簡配置。</block>
+  <block id="7b848eb8039379df12baae059a9ee8ea" category="inline-link-macro">如何將 Broadcom VMware ESXi iSCSI MPIO 與ONTAP SAN ASA儲存系統集成</block>
+  <block id="b91b0ae22fa5ae9c0dedfb1c2ea0123d" category="list-text">詳細了解<block ref="a32ebc6e0510ec3f73b137570cd9df09" category="inline-link-macro-rx"></block>。</block>
+  <block id="f1391ddb40293878f5f1aec84cd95a9d" category="paragraph">在ASA r2 系統中，儲存單元為 SAN 主機提供儲存空間，用於資料操作。儲存單元指的是 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。如果您的叢集配置為支援 SCSI 主機，系統會提示您建立 LUN。如果您的叢集配置為支援 NVMe 主機，系統會提示您建立 NVMe 命名空間。</block>
+  <block id="4314cb010b84f564860a7b2fee2cb4ab" category="paragraph">ASA r2 儲存單元的最大容量為 128 TB。參見<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>針對ASA r2 系統的最新儲存限制。</block>
+  <block id="34ec78fcc91ffb1e54cd85e4a0924332" category="inline-link-macro">添加</block>
+  <block id="48e33f950546e0f98a6cda6ec059d508" category="paragraph">在建立儲存單元的過程中，您需要將主機啟動器新增至儲存單元並將其對應到儲存單元。你也可以<block ref="7d43bd55c0467bfd35b09864ee6c0663" category="inline-link-macro-rx"></block>和<block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>建立儲存單元後，主機啟動器。</block>
+  <block id="daacdfe6a9c965f99bb919daaf922d41" category="paragraph">從ONTAP 9.18.1 開始，您可以修改快照保留，並在建立儲存單元時啟用自動快照刪除。快照預留空間是指儲存單元中專門為快照保留的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。</block>
+  <block id="cd70e38e090afe4dfe68269857720d8c" category="inline-link-macro">精簡配置</block>
+  <block id="6afea9ca1f178aea254d3f9ac79d8dbc" category="paragraph">儲存單元預設採用精簡配置。精簡配置允許儲存單元擴展到分配的大小，但不會預先預留空間。空間會根據需要從可用空間動態分配。這樣，您可以透過超額配置可用空間來實現更高的儲存效率。例如，假設您有 1 TB 的可用空間，並且您需要建立四個 1 TB 的儲存單元。您可以建立儲存單元，監控空間利用率，並隨著儲存單元實際佔用空間而增加儲存容量，而不是立即在系統中新增 3 TB 的額外儲存容量。詳細了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
+  <block id="235edd79b1fce1af069d9278c91366b9" category="paragraph">為了優化儲存可用區內的工作負載平衡，請建立偶數個儲存單元。</block>
+  <block id="c82bffc1986369b2cd4e0c02a3eb4336" category="admonition">如果建立多個儲存單元，則每個單元的容量都相同。將你要建立的儲存單元數量乘以所需的容量，以確保你有足夠的可用空間。如果可用空間不足，而你又選擇了過度配置，請密切監控使用情況，以避免空間不足和資料遺失。</block>
+  <block id="574d314c515cf3a8473a1e97b72f3409" category="paragraph">如果不存在執行您指定的作業系統的主機的預先存在的主機群組， ONTAP將自動建立一個新的主機群組。</block>
+  <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">將主機 NQN 格式化為 &lt;nqn.yyyy-mm&gt;，後面接著完全限定網域名稱。年份應等於或晚於 1970 年。總最大長度應為 223。一個有效的 NVMe 發起程序範例是 nqn.2014-08.com.example:string</block>
+  <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">建立ASA r2 儲存單元並新增主機啟動器後，將主機對應到儲存單元以開始提供資料服務。儲存單元在建立儲存單元的過程中會被對應到主機。您也可以隨時將現有儲存單元對應到新的或現有的主機。</block>
 </blocks>
