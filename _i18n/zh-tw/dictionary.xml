@@ -2225,7 +2225,6 @@
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系統的最佳實踐</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 轉換指南</block>
   <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
-  <block id="bbf7c82f4e9f186f627b8c659682a8e1" category="admonition">在ASA r2 系統中，SED 僅支援 NVMe 協定。</block>
   <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。</block>
   <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">從ONTAP 9.16.1 開始， ASA r2 儲存系統每個叢集最多支援 12 個節點。在 HA 對的新節點連接電纜並打開電源後，您需要將它們加入到叢集中。</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系統的ONTAP軟體復原遵循與其他ONTAP系統的復原相同的流程。還原ONTAP叢集會造成中斷。</block>
@@ -2734,4 +2733,5 @@
   <block id="574d314c515cf3a8473a1e97b72f3409" category="paragraph">如果不存在執行您指定的作業系統的主機的預先存在的主機群組， ONTAP將自動建立一個新的主機群組。</block>
   <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">將主機 NQN 格式化為 &lt;nqn.yyyy-mm&gt;，後面接著完全限定網域名稱。年份應等於或晚於 1970 年。總最大長度應為 223。一個有效的 NVMe 發起程序範例是 nqn.2014-08.com.example:string</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">建立ASA r2 儲存單元並新增主機啟動器後，將主機對應到儲存單元以開始提供資料服務。儲存單元在建立儲存單元的過程中會被對應到主機。您也可以隨時將現有儲存單元對應到新的或現有的主機。</block>
+  <block id="e5e9f89a4e81cd1c64531c80eba2e77e" category="admonition">在ASA r2 系統中，SED 僅支援基於 NVMe 的 SSD。</block>
 </blocks>
