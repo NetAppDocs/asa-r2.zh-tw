@@ -929,7 +929,6 @@
   <block id="850bd7b0cfd54017b4835ee80bcd19d6" category="list-text">深入瞭解 <block ref="87818029f41349444777fa70fdbcf742" category="inline-link-macro-rx"></block>。</block>
   <block id="9d6bd9c6a911bce1e19d13baf3547790" category="list-text">請參閱中有關 ASA 和 ASA R2 系統的完整組態支援和限制<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
   <block id="2734568aee16bf6e5d8b1dae1295b6bd" category="list-text">深入瞭解<block ref="b827a6cff8052295f0cbdcb7ea0abba2" category="inline-link-macro-rx"></block>。</block>
-  <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA R2 系統差異摘要</block>
   <block id="396a0ea87d82ffa45a3a3dc95544f118" category="paragraph">以下說明 ASA R2 系統與 ONTAP 、 AFF 和 ASA 系統之間與 FAS 命令列介面（ CLI ）和 REST API 相關的主要差異。</block>
   <block id="363188350b1fe2b934c479c977a89ece" category="paragraph-title">自動建立 Volume</block>
   <block id="eee98269dcd20c90abcc0a7bfb22f37c" category="paragraph">建立儲存單元（ LUN 或命名空間）會自動從儲存可用區域建立磁碟區。這會產生一個簡化且通用的命名空間。刪除儲存單元會自動刪除相關的磁碟區。</block>
@@ -1879,24 +1878,6 @@
   <block id="b6a739813709f83018659fdbc27b2de8" category="list-text">如果您正在使用 VLAN，請調整<block ref="dd051c084bc8cc988e9de14f3c9ad878" prefix=" " category="inline-code"></block>參數以包含對應 iSCSI 結構的 VLAN 連接埠資訊，例如， <block ref="2a05b28bd19c3a98e46d07aa6695c6a5" prefix=" " category="inline-code"></block>對於 iSCSI 結構 A 和<block ref="f245070e2a8ef7b028d5d95112386767" prefix=" " category="inline-code"></block> 。</block>
   <block id="7500a4db61e9b72fce1ef4eabd1edd15" category="list-text">如果您使用具有 VLAN 的介面群組 (ifgroups)，請調整<block ref="dd051c084bc8cc988e9de14f3c9ad878" prefix=" " category="inline-code"></block>參數以包含適當的 VLAN 端口，例如， <block ref="5baba6f6f316f2dc9483d868f8e2f435" prefix=" " category="inline-code"></block>對於 iSCSI 結構 A 和<block ref="4bf48c896b4c0cd30e6f90e2d1f1e320" prefix=" " category="inline-code"></block>對於 iSCSI 結構 B，其中<block ref="a108b2b9a0c27dd07bed32945c011a40" prefix=" " category="inline-code"></block>是 ifgroup，a0a-&lt;iSCSI-A-VLAN&gt; 和 a0a-&lt;iSCSI-B-VLAN&gt; 分別是 iSCSI A 結構和 iSCSI B 結構的 VLAN 連接埠。</block>
   <block id="35e215d46dc9e9777b80a47726a059fc" category="list-text">驗證 iSCSI LIF 是否已建立：</block>
-  <block id="504efdae1b6cba4150ef59f621aedab1" category="summary">從ONTAP 9.17.1 開始， ONTAP會自動重新平衡ASA r2 系統 HA 對中節點之間的工作負載，以達到最佳效能。</block>
-  <block id="83d0ebaee455b02e3b225c751a3ddb60" category="doc">重新平衡ASA r2 儲存系統上的節點之間的工作負載</block>
-  <block id="705b08e838354472c2696f058ccf7e63" category="section-title">修改自動工作負載重新平衡的預設評估期</block>
-  <block id="e5c17665820b0729109c666d990f8a03" category="paragraph">升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天，自動工作負載重新平衡功能預設為啟用。您可以使用ONTAP命令列介面 (CLI) 延長或縮短預設評估期，以滿足您的營運需求。</block>
-  <block id="bdba97a2c63e362302c1c6b384c83f50" category="list-text">驗證評估期剩餘天數：</block>
-  <block id="47c4fbd6e93d1e42f5ed98ed6e9897a9" category="list-text">更改重新平衡評估期：</block>
-  <block id="2aeea1d601c1c29400c1ac4f0b641df5" category="paragraph">以下範例將剩餘評估期設定為 10 天。</block>
-  <block id="221b2ec9a9d74f3d4810006ec104bfa1" category="section-title">修改自動工作負載重新平衡設定</block>
-  <block id="ebfec0592da7265f7973f73b2dc160da" category="paragraph">升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集 14 天后，自動工作負載重新平衡功能預設為啟用。您可以變更預設設定以停用自動工作負載重新平衡功能，或將其設為建議狀態，以標記不平衡的工作負載但不會自動移動它們。</block>
-  <block id="14bfbf2d04d9013e7a9edb0226f54087" category="list-text">驗證節點上目前設定的重新平衡模式：</block>
-  <block id="fdbbdd0a5deb0085fa132d70020cb33d" category="list-text">修改自動工作負載重新平衡設定：</block>
-  <block id="1bd7679b4e94a7911e37582f39ee8212" category="list-text">驗證重新平衡模式是否已修改：</block>
-  <block id="3805d8dfd7d464318b9d12002a6b1842" category="section-title">手動觸發工作負載重新平衡</block>
-  <block id="c5b01858a0fece49cc222e8c80b1f31b" category="paragraph">如果您已停用自動工作負載重新平衡，仍可手動觸發工作負載重新平衡。如果您希望在一段時間的手動調整後重新平衡工作負載，或者已將重新平衡模式設為「建議」並希望根據工作負載標誌採取行動，則此功能非常有用。</block>
-  <block id="29065a2328da344d0150753626c42a0b" category="list-text">如果重新平衡模式未設定為*advisory*，則將其設為*advisory*：</block>
-  <block id="9a6a7c8a5139babc093f33b751b142b8" category="list-text">手動觸發工作負載重新平衡：</block>
-  <block id="0e7e739045db63c06316acc714c7b9e8" category="list-text">查看重新平衡操作的狀態：</block>
-  <block id="f21fbdfcbf369be102f035a4584da46c" category="paragraph">如果您想要將重新平衡模式設為“自動”或“停用”，則可以使用<block ref="66582a46bd2789990bf4e736485e72a5" prefix=" " category="inline-code"></block>命令。</block>
   <block id="605100eb6736883e31c6d1e4fad51f01" category="doc">在ASA r2 儲存系統上復原ONTAP</block>
   <block id="6c4ad6bab2c371edfa0398af05e34073" category="paragraph">ASA r2 系統的ONTAP軟體復原遵循與其他ONTAP系統的復原相同的流程。</block>
   <block id="358f72dc9423c70c64ee3062d2194875" category="paragraph">還原ONTAP叢集會造成中斷。還原期間，您必須將叢集處於離線狀態。您不應在沒有技術支援協助的情況下還原生產集群。您可以自行還原新的或測試的叢集。如果新系統或測試系統的還原失敗，或還原成功完成，但您對生產環境中的叢集效能不滿意，請聯絡技術支援尋求協助。</block>
@@ -2075,12 +2056,7 @@
   <block id="ed71343ae4e4dcf121be11ff1628e50c" category="paragraph-title">FAS、 AFF和ASA系統</block>
   <block id="825933c4d860e3660e8c98f0e7eab2b8" category="paragraph">FAS、 AFF和ASA系統的儲存層使用聚合作為基本儲存單元。聚合擁有儲存系統中可用的一組特定磁碟。聚合將其擁有的磁碟上的空間分配給 LUN 和命名空間的磁碟區。使用這些系統， ONTAP使用者可以建立和修改聚合、磁碟區、LUN 和命名空間。</block>
   <block id="d0ee8f6d42e445ccb3b6cf2ca2eda848" category="paragraph">ASA r2 系統中的儲存層使用儲存可用區，而非聚合。儲存可用區是單一 HA 對的兩個節點均可存取的公共儲存池。 HA對中的兩個節點均可存取其共享儲存可用區中的所有可用磁碟。例如，在雙節點ASA r2 系統ONTAP叢集中，有一個儲存可用區，叢集中的兩個節點均可存取。在四節點ASA r2 系統ONTAP叢集中，有兩個儲存可用區。叢集中的每個 HA 對都可以存取其中一個儲存可用區。</block>
-  <block id="7e0e6d0b54f1d3e43011949edcedf558" category="paragraph">建立儲存單元（基於 LUN 或 NVMe 命名空間）時， ONTAP會自動在對應的儲存可用區中建立一個磁碟區來容納該儲存單元。新建立的磁碟區將自動放置在該儲存可用區內，以實現最佳效能和均衡的容量利用率。根據您的ONTAP版本， ASA r2 系統還支援跨儲存可用區自動重新平衡儲存單元，以及在 HA 對中的節點之間自動重新平衡工作負載。</block>
-  <block id="74701f9abdc762e4db1ffc78445e9260" category="list-text">自動儲存單元重新平衡</block>
-  <block id="8cd9f35b6c3dc031600dea6f3fc6cb0a" category="paragraph">從ONTAP 9.16.1 開始，如果儲存單元的增加或減少導致整個儲存可用區域的儲存利用率不平衡，則ONTAP會根據需要自動移動儲存單元以重新平衡利用率並最佳化效能。</block>
   <block id="21d7850248698429a3bafb9997a15a87" category="list-text">自動工作負載重新平衡</block>
-  <block id="3bfef144a44ee705d6606481010950f4" category="inline-link-macro">更改預設設定</block>
-  <block id="46f7fb5395b739874d38cda9682d3b9b" category="paragraph">從ONTAP 9.17.1 開始， ONTAP會自動在ASA r2 系統 HA 對中的節點之間重新平衡工作負載，以達到最佳效能。例如，如果節點的使用率增加到 70%，而其 HA 配對節點的使用率僅為 30%，則ONTAP會自動調整工作負載，以使每個節點的使用率更接近。由於 HA 對中的節點共享相同的儲存可用區，因此工作負載重新平衡是一種無副本操作，不會對效能產生任何影響。升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集 14 天后，預設啟用自動工作負載重新平衡功能。您可以<block ref="ad613c4047c21221600808d09601f36b" category="inline-link-macro-rx"></block>啟用或停用自動工作負載重新平衡，或將其設為建議狀態以標記不平衡的工作負載而不自動移動它們。</block>
   <block id="25afba57f81c57e27978071d59c7fb4c" category="paragraph">ASA r2 系統與FAS、 AFF和ASA系統有以下不同：</block>
   <block id="fc647b716005682fb47d07737c88ef5f" category="inline-link-macro">了解有關不受支援的ASA r2 命令的更多信息</block>
   <block id="a9bf379b64b6d61f1e4ce19d0d6e0c25" category="paragraph">由於這種自動化且簡化的儲存管理方法，某些 System Manager 選項、 ONTAP指令和 REST API 端點在ASA r2 系統上不可用或使用受限。例如，由於ASA r2 系統的磁碟區建立和管理是自動化的，因此「磁碟區」功能表不會顯示在 System Manager 中，且<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block>命令不受支援。<block ref="876b47d727ef9cdbe213f90a9ae9f200" category="inline-link-macro-rx"></block> 。</block>
@@ -2181,7 +2157,6 @@
   <block id="51fdbcd0db2c1872dd7cebbf0001c027" category="list-text">選擇*標記為誤報*或選擇*標記為潛在勒索軟體攻擊*。</block>
   <block id="01075bb2e4cdf943e1489ac725c74870" category="sidebar">升級和恢復ONTAP</block>
   <block id="3522b68140325fa7c5d18729fa204677" category="sidebar">恢復ONTAP</block>
-  <block id="4367988913c0c31461d7e173b575ab73" category="sidebar">重新平衡節點之間的工作負載</block>
   <block id="861a3dc8d4cd1ed4472591f4c462b0ee" category="sidebar">支援常見的ONTAP功能</block>
   <block id="fd2b7af0b1efe7980f890d1f7de70549" category="sidebar">管理主機群組</block>
   <block id="ed3e0c3253c203840c9491b3d4651269" category="sidebar">刪除主機群組</block>
@@ -2224,7 +2199,6 @@
   <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">了解 vSphere 環境的持續可用性解決方案</block>
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系統的最佳實踐</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 轉換指南</block>
-  <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
   <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。</block>
   <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">從ONTAP 9.16.1 開始， ASA r2 儲存系統每個叢集最多支援 12 個節點。在 HA 對的新節點連接電纜並打開電源後，您需要將它們加入到叢集中。</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系統的ONTAP軟體復原遵循與其他ONTAP系統的復原相同的流程。還原ONTAP叢集會造成中斷。</block>
@@ -2439,7 +2413,6 @@
   <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">叢集/HA 佈線範例展示了常見的配置。</block>
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此處沒有看到您的配置，請前往 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 取得有關儲存系統佈線的全面配置和插槽優先權資訊。</block>
   <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">主機網路佈線範例展示了常見的配置。</block>
-  <block id="47209a3f622b3d093f126e58491097c5" category="paragraph">從ONTAP 9.17.1 開始， ONTAP會自動在ASA r2 系統 HA 對中的節點之間重新平衡工作負載，以達到最佳效能。例如，如果一個節點上的空間利用率增加到 70%，而其 HA 夥伴節點上的使用率僅為 30%，則ONTAP會自動轉移工作負載，以便每個節點的空間利用率更加匹配。由於 HA 對中的節點共享相同的儲存可用區，因此工作負載重新平衡是一種無副本操作，不會對效能產生任何影響。</block>
   <block id="19b78e8ad6af7cf1ea82e76fdac1aa7f" category="admonition">ASA r2 系統不支援同步複製。</block>
   <block id="2e360c76c16280fe84148c9706ad34d6" category="list-text">對於“策略類型”，選擇“非同步”。</block>
   <block id="f1f7f77e02139ed937613a8043556351" category="admonition">採用非同步策略時，資料在寫入來源之後才會複製到遠端站點。ASA r2 系統不支援同步複製。</block>
@@ -2734,4 +2707,5 @@
   <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">將主機 NQN 格式化為 &lt;nqn.yyyy-mm&gt;，後面接著完全限定網域名稱。年份應等於或晚於 1970 年。總最大長度應為 223。一個有效的 NVMe 發起程序範例是 nqn.2014-08.com.example:string</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">建立ASA r2 儲存單元並新增主機啟動器後，將主機對應到儲存單元以開始提供資料服務。儲存單元在建立儲存單元的過程中會被對應到主機。您也可以隨時將現有儲存單元對應到新的或現有的主機。</block>
   <block id="e5e9f89a4e81cd1c64531c80eba2e77e" category="admonition">在ASA r2 系統中，SED 僅支援基於 NVMe 的 SSD。</block>
+  <block id="0195aa02a40fea888f627303a4327d5b" category="paragraph">建立儲存單元（基於 LUN 或 NVMe 命名空間）時， ONTAP會自動在對應的儲存可用區中建立一個磁碟區來容納該儲存單元。新建立的磁碟區將自動放置在該儲存可用區內，以實現最佳效能和均衡的容量利用率。== ASA r2 系統差異概述</block>
 </blocks>
