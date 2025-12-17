@@ -2056,7 +2056,6 @@
   <block id="ed71343ae4e4dcf121be11ff1628e50c" category="paragraph-title">FAS、 AFF和ASA系統</block>
   <block id="825933c4d860e3660e8c98f0e7eab2b8" category="paragraph">FAS、 AFF和ASA系統的儲存層使用聚合作為基本儲存單元。聚合擁有儲存系統中可用的一組特定磁碟。聚合將其擁有的磁碟上的空間分配給 LUN 和命名空間的磁碟區。使用這些系統， ONTAP使用者可以建立和修改聚合、磁碟區、LUN 和命名空間。</block>
   <block id="d0ee8f6d42e445ccb3b6cf2ca2eda848" category="paragraph">ASA r2 系統中的儲存層使用儲存可用區，而非聚合。儲存可用區是單一 HA 對的兩個節點均可存取的公共儲存池。 HA對中的兩個節點均可存取其共享儲存可用區中的所有可用磁碟。例如，在雙節點ASA r2 系統ONTAP叢集中，有一個儲存可用區，叢集中的兩個節點均可存取。在四節點ASA r2 系統ONTAP叢集中，有兩個儲存可用區。叢集中的每個 HA 對都可以存取其中一個儲存可用區。</block>
-  <block id="21d7850248698429a3bafb9997a15a87" category="list-text">自動工作負載重新平衡</block>
   <block id="25afba57f81c57e27978071d59c7fb4c" category="paragraph">ASA r2 系統與FAS、 AFF和ASA系統有以下不同：</block>
   <block id="fc647b716005682fb47d07737c88ef5f" category="inline-link-macro">了解有關不受支援的ASA r2 命令的更多信息</block>
   <block id="a9bf379b64b6d61f1e4ce19d0d6e0c25" category="paragraph">由於這種自動化且簡化的儲存管理方法，某些 System Manager 選項、 ONTAP指令和 REST API 端點在ASA r2 系統上不可用或使用受限。例如，由於ASA r2 系統的磁碟區建立和管理是自動化的，因此「磁碟區」功能表不會顯示在 System Manager 中，且<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block>命令不受支援。<block ref="876b47d727ef9cdbe213f90a9ae9f200" category="inline-link-macro-rx"></block> 。</block>
@@ -2092,7 +2091,6 @@
   <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">在ASA r2 儲存系統上利用 AI 實現自主勒索軟體防護</block>
   <block id="e8b71c667f5920e249288a672ea7f999" category="paragraph">從ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護 (ARP/AI) 來保護ASA r2 系統上的資料。 ARP/AI 可以快速偵測潛在的勒索軟體威脅，自動建立 ARP 快照來保護您的數據，並在系統管理員中顯示警告訊息，提醒您注意可疑活動。</block>
   <block id="7331e9472b69421ea7995df5df0b5754" category="inline-link-macro">學習期</block>
-  <block id="36d9aa26c54df45c1444d8d8c87f223b" category="paragraph">從ONTAP 9.17.1 開始，ARP 採用機器學習模型進行反勒索軟體分析，從而提高了網路彈性，該模型能夠以 98% 的準確率檢測 SAN 環境中不斷演變的勒索軟體形式。 ARP的機器學習模型在模擬勒索軟體攻擊前後都基於大量文件資料集進行了預訓練。這種資源密集型訓練在ONTAP之外進行，並且由此訓練產生的預訓練模型包含在ONTAP中。此模型無法透過 CLI 或 API 存取或修改。因此，ARP/AI 在啟用後立即生效；無需<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block> 。</block>
   <block id="c23c5941acca34f7955743c2115ef87e" category="admonition">沒有任何勒索軟體偵測或預防系統能夠完全保證免受勒索軟體攻擊。雖然攻擊可能未被發現，但如果防毒軟體未能偵測到入侵，ARP/AI 可以充當重要的額外防禦層。</block>
   <block id="ad09d4f074e5e7f7524d8960ed675311" category="inline-link-macro">ONTAP One 許可證</block>
   <block id="4098ab2b124dfc2ac9a7199398f039bf" category="paragraph">ARP/AI 支援包含在<block ref="eac36fc822e433078e178d83ea6ed140" category="inline-link-macro-rx"></block> 。</block>
@@ -2202,7 +2200,6 @@
   <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。</block>
   <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">從ONTAP 9.16.1 開始， ASA r2 儲存系統每個叢集最多支援 12 個節點。在 HA 對的新節點連接電纜並打開電源後，您需要將它們加入到叢集中。</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系統的ONTAP軟體復原遵循與其他ONTAP系統的復原相同的流程。還原ONTAP叢集會造成中斷。</block>
-  <block id="4145a02c95a799fdae111c620990d210" category="admonition"><block ref="78cd7e79034e394d9b3e1aacaa777a70" category="inline-link-macro-rx"></block>升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集後 14 天預設為啟用。啟用自動工作負載重新平衡後，您無法在ASA r2 系統上從ONTAP 9.17.1 復原。</block>
   <block id="b4a4e19f8caa5675ed75c7e4c2f95379" category="inline-link-macro">刪除SnapMirror主動同步關係</block>
   <block id="79bc5a42c0ce5e77f02d040d055dfae3" category="summary">ASA r2 系統的ONTAP軟體升級遵循與其他ONTAP系統升級相同的流程。當您在ASA r2 系統上升級ONTAP軟體時，您可以利用新的和增強的ONTAP功能。</block>
   <block id="676b55575e438300a6a0242a0e2d75e1" category="summary">了解如何使用自簽章或第三方憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。</block>
@@ -2486,7 +2483,6 @@
   <block id="43b8a9db5392b7dee9842cb0e7e1155d" category="paragraph">下面圖示是一個 FC 配置範例，其中多個主機使用兩個光纖通道來存取單一 HA 對。 FC 目標連接埠號碼（0c、0d、1a、1b）也是範例。實際連接埠號碼會因係統型號以及是否使用擴充適配器而有所不同。</block>
   <block id="7ae21cadd263178648c997416019850c" category="paragraph">了解更多關於ASA r2 系統支援的常見資料保護功能。</block>
   <block id="ce42c71243f06fc614542e0e55a275e8" category="section-title">叢集外部密鑰伺服器</block>
-  <block id="5f7c44cb2c8485bb82150a336201223d" category="paragraph">您可以設定在儲存虛擬機器上與叢集外部金鑰管理伺服器的連線。使用叢集金鑰伺服器，您可以在儲存虛擬機器上指定主密鑰伺服器和輔助密鑰伺服器。註冊金鑰時， ONTAP將首先嘗試存取主金鑰伺服器，然後再依序嘗試存取輔助伺服器，直到操作成功完成，從而防止金鑰重複。</block>
   <block id="d45192a9dbc8a2cb6e487c863af22bbb" category="inline-link-macro">學習如何配置叢集式外部金鑰伺服器</block>
   <block id="b5fde6611f98dcb7f68f83b340b778b9" category="paragraph"><block ref="774d74de870375f3b6eceda1ffb399f2" category="inline-link-macro-rx"></block>。</block>
   <block id="398ff0a12bc1e99d6ac1e3b9a33d9ed1" category="section-title">靜態加密的外部金鑰管理</block>
@@ -2665,11 +2661,8 @@
   <block id="c65375b9e9461021110e7878164c1353" category="inline-link-macro">支援修改快照保留和自動刪除快照</block>
   <block id="74bb636063257a476aa70d6beb1b78a0" category="cell"><block ref="74bb636063257a476aa70d6beb1b78a0" category="inline-link-macro-rx"></block></block>
   <block id="bb6f2042d7b561ef22513dcacc071c68" category="cell">您可以修改快照預留空間並啟用自動快照刪除功能，以限制ASA r2 儲存單元中快照所佔用的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。這樣可以防止快照佔用儲存用戶資料所需的儲存單元空間，從而避免應用程式中斷。</block>
-  <block id="d5dbf89be96c1d99854bd0585a1c44fb" category="section-title">在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI</block>
   <block id="05e7e1680bf144077a0c95dc04ecfe70" category="paragraph">您可以在 Storage Virtual Machine (VM) 中建立的所有儲存單元上預設啟用 ARP/AI。這表示在儲存虛擬機器中建立的任何新儲存單元都將自動啟用 ARP/AI。您也可以將 ARP/AI 套用到儲存 VM 中的現有儲存單元。</block>
   <block id="afc9ff5f825988208f6c59ba04c2c2d2" category="paragraph">預設情況下，您在儲存 VM 上建立的所有新儲存單元都受到保護，免受勒索軟體攻擊，可疑活動會在系統管理員中報告給您。</block>
-  <block id="239fd0403ac267048794a15cbef5b1dc" category="section-title">在儲存虛擬機器中的特定儲存單元上啟用 ARP/AI</block>
-  <block id="62700fbbbfe12bea2a0aa0890f568f6d" category="paragraph">如果您不想在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI，您可以選擇要啟用的特定單元。</block>
   <block id="8ae754caf3a2f6cacd2c696b8292a020" category="paragraph">從ONTAP 9.18.1 開始，IPsec 硬體卸載支援擴展到 IPv6 流量。</block>
   <block id="39fa9e9872335fa886f58deacacdaf75" category="paragraph">以下網路卡支援在以下ASA r2 系統和ONTAP版本上進行硬體卸載：</block>
   <block id="e8467e9b509c4924668c01eb7ab2adde" category="cell">ONTAP版本</block>
@@ -2689,7 +2682,6 @@
   <block id="17dd0aa64fbdd042489b5c0fffcd25bb" category="sidebar">管理快照儲備</block>
   <block id="3c0f4fa7666b61f86ab42a6f65750f20" category="sidebar">了解快照儲備</block>
   <block id="343eac7cd99cc683c46468c5b11af7ac" category="sidebar">修改快照儲備</block>
-  <block id="d36af7beb354a2c45f47821d695da277" category="sidebar">建立儲存虛擬機器對等關係</block>
   <block id="d529398546b94e10169c1e6f6f8aed12" category="sidebar">ONTAP 9.18.1 的新增功能</block>
   <block id="5aa793bbbd0a039a24351b96f67f0529" category="paragraph">ASA r2 儲存單元預設採用精簡配置。遷移虛擬機器工作負載時，虛擬磁碟（VMDK）也應該進行精簡配置。</block>
   <block id="7b848eb8039379df12baae059a9ee8ea" category="inline-link-macro">如何將 Broadcom VMware ESXi iSCSI MPIO 與ONTAP SAN ASA儲存系統集成</block>
@@ -2707,5 +2699,40 @@
   <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">將主機 NQN 格式化為 &lt;nqn.yyyy-mm&gt;，後面接著完全限定網域名稱。年份應等於或晚於 1970 年。總最大長度應為 223。一個有效的 NVMe 發起程序範例是 nqn.2014-08.com.example:string</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">建立ASA r2 儲存單元並新增主機啟動器後，將主機對應到儲存單元以開始提供資料服務。儲存單元在建立儲存單元的過程中會被對應到主機。您也可以隨時將現有儲存單元對應到新的或現有的主機。</block>
   <block id="e5e9f89a4e81cd1c64531c80eba2e77e" category="admonition">在ASA r2 系統中，SED 僅支援基於 NVMe 的 SSD。</block>
-  <block id="0195aa02a40fea888f627303a4327d5b" category="paragraph">建立儲存單元（基於 LUN 或 NVMe 命名空間）時， ONTAP會自動在對應的儲存可用區中建立一個磁碟區來容納該儲存單元。新建立的磁碟區將自動放置在該儲存可用區內，以實現最佳效能和均衡的容量利用率。== ASA r2 系統差異概述</block>
+  <block id="e6129943cc99a13d8c697c60264ba016" category="inline-link-macro">動態空間平衡</block>
+  <block id="8c43a655da0b70a36ef0f72c6b39d432" category="admonition"><block ref="f3838dd89a924b4e0ebc50e64aa2b719" category="inline-link-macro-rx"></block>預設情況下，升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集 14 天後啟用。在ASA r2 系統上啟用動態空間平衡後，您無法從ONTAP 9.17.1 版本回溯。</block>
+  <block id="166a84d4b4570b597bcb3a30d4252d65" category="doc">了解ASA r2 叢集中的ONTAP容量均衡</block>
+  <block id="0eabbb2a15c52c4ca21e3d1a32f8a437" category="paragraph">對於ASA r2 系統， ONTAP使用 _均衡放置_ 將新建立的儲存單元自動放置在最佳儲存可用區，以實現最佳效能和均衡的儲存利用率。如果您執行的是ONTAP 9.17.1 或更高版本，則現有儲存單元所佔用的空間將使用_動態空間平衡_進行平衡。如果您正在執行ONTAP 9.16.1，則現有儲存單元所佔用的空間將使用基於副本的工作負載重新平衡進行平衡。</block>
+  <block id="0378d558dcd0562ad67f6e96ad981dde" category="cell">得到支持…</block>
+  <block id="037e39315c9955da8fb128aa756cd46e" category="cell">均衡佈局</block>
+  <block id="3b5c971fe265309c78554a126187a02b" category="cell">動態空間平衡</block>
+  <block id="b357fa1cac46cc202ec05fcda6bb8345" category="cell">基於副本的工作負載重新平衡</block>
+  <block id="ca5e84f0aed2658b5025cc94ecf226e3" category="cell">僅限ONTAP 9.16.1</block>
+  <block id="cdf4362de9950bde8f5ebc0f7e20c7e0" category="paragraph">透過_均衡放置_，新建立的儲存單元會自動放置在最佳儲存可用區內，以達到最佳效能和均衡的儲存利用率。  ONTAP 9.16.1 及更高版本預設啟用均衡放置。</block>
+  <block id="558429cf36a4f5c8c0960e6bd8efd1df" category="paragraph">透過動態空間平衡， ONTAP會主動監控叢集中的可用空間，並自動在儲存可用區內移動儲存單元，以維持空間利用率的平衡。如果群集範圍內的容量利用率達到 80%，則會自動發出 EMS 警告；如果達到 90%，則會自動發出 EMS 警報。</block>
+  <block id="c6a005b97c2f2846aa679b95c6025d92" category="paragraph">升級到ONTAP 9.17.1 或更高版本後 14 天，動態空間平衡功能將預設為啟用。如果您需要修改預設的 14 天啟用期，請聯絡NetApp支援。啟用動態空間平衡後，無法從ONTAP 9.17.1 回溯。</block>
+  <block id="46a255963b960d8b5876c25f4de05d2a" category="paragraph">動態空間平衡根據叢集中所有節點可用空間的總體平均值（全域平均值）以_正常模式_或_低空間模式_運行。</block>
+  <block id="025d18661b268d39b7e3eaaddcbc28d7" category="list-text">*普通模式*</block>
+  <block id="1e2b165e104c3720ed3eae401de85f1d" category="paragraph">在正常模式下， ONTAP每三分鐘檢查一次，以確定是否需要動態空間平衡。當滿足以下條件時，動態空間平衡功能以正常模式運作：</block>
+  <block id="21785288675631645ce1e84d8015b73c" category="list-text">全球平均空隙率為 10% 或更高。</block>
+  <block id="08b87c5a5faec00b9261df150c92a32b" category="list-text">叢集中至少有一個節點的可用空間比全局平均水準要多。</block>
+  <block id="1452275c17d530e5bf7907bf8036547a" category="list-text">叢集中至少有一個節點的可用空間比全域平均少 20%。</block>
+  <block id="8a46d383f6569301a603e54b4418ce55" category="list-text">*低空間模式*</block>
+  <block id="7f6dc71b0f98b16a0db647450cc99a3e" category="paragraph">在低空間模式下， ONTAP每分鐘檢查一次，以確定是否需要動態空間平衡。當滿足以下條件時，動態空間均衡以低空間模式運作：</block>
+  <block id="3277f61f156841253c20ed4c96e6c0a2" category="list-text">全球平均自由空間不足10%。</block>
+  <block id="87e3450ba7653f98d10dc2803138c7bf" category="list-text">叢集中至少有一個節點的可用空間少於全域平均水準。</block>
+  <block id="6dfd63ffb4710564042f8d26eb17a0af" category="paragraph">透過基於複製的工作負載重新平衡，如果儲存可用區內出現儲存利用率不平衡的情況， ONTAP會自動將造成不平衡的儲存單元複製到具有更大可用空間的儲存可用區。如果目標儲存可用區沒有足夠的可用空間， ONTAP將不會執行任何平衡操作。基於副本的工作負載重新平衡僅適用於執行ONTAP 9.16.1 的ASA r2 系統，並且預設在這些系統上啟用。在ONTAP 9.17.1 及更高版本中，它被動態空間平衡所取代。</block>
+  <block id="625927359c6ff98754dcdfda6d0f8d77" category="paragraph">如果您需要修改基於副本的工作負載重新平衡的預設設置，請聯絡NetApp支援。</block>
+  <block id="299c5db3cbde057ebd5a919711b1d2e1" category="paragraph">您可以設定與儲存虛擬機器上的叢集外部金鑰管理伺服器的連線。使用叢集金鑰伺服器，您可以在儲存虛擬機器上指定主密鑰伺服器和輔助密鑰伺服器。註冊金鑰時， ONTAP將首先嘗試存取主金鑰伺服器，然後再依序嘗試存取輔助伺服器，直到操作成功完成，從而防止金鑰重複。</block>
+  <block id="9f71ddf310db058a3a89122693392a68" category="inline-link-macro">了解ASA r2 叢集中的容量均衡</block>
+  <block id="be2bfcecf308b1d3a417456024096c75" category="paragraph">建立儲存單元（基於 LUN 或 NVMe 命名空間）時， ONTAP會自動在對應的儲存可用區中建立一個磁碟區來容納該儲存單元。新建立的磁碟區將自動放置在該儲存可用區內，以實現最佳效能和均衡的容量利用率。儲存可用區內的容量利用率會根據您的ONTAP版本進行平衡。<block ref="9689a3d9a5cc82eb930985adacfe9343" category="inline-link-macro-rx"></block>。</block>
+  <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA r2 系統差異概述</block>
+  <block id="2be27a1e2f13957646665cd7fef8000d" category="cell">每個父母一致性組下的子一致性組</block>
+  <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
+  <block id="d24ed4821c2e547301d0c31d918da4ea" category="paragraph">從ONTAP 9.17.1 開始，ARP 採用機器學習模型進行反勒索軟體分析，從而提高了網路彈性，該模型能夠以 98% 的準確率檢測 SAN 環境中不斷演變的勒索軟體形式。 ARP的機器學習模型在模擬勒索軟體攻擊前後都基於大量文件資料集進行了預訓練。這種資源密集型訓練在ONTAP之外進行，並且由此訓練產生的預訓練模型包含在ONTAP中。此模型不可存取或修改。  ARP/AI 在啟用後立即生效；沒有<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
+  <block id="542b4f4e36f442f64960052e5e90dc97" category="section-title">在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI</block>
+  <block id="4a8ba6399b21b6bd034b8e0eaf51d276" category="section-title">在儲存虛擬機器中的特定儲存單元上啟用 ARP/AI</block>
+  <block id="354d3bc6178c825e83ed9c7eb99644cb" category="paragraph">如果您不想在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI，您可以選擇要啟用的特定單元。</block>
+  <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">了解空間平衡</block>
+  <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">建立儲存虛擬機器對等關係</block>
 </blocks>
