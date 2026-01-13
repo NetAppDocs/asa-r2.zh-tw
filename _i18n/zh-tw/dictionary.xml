@@ -2085,7 +2085,6 @@
   <block id="ab3721eb6cf69168eba216763f76f9d8" category="cell">ARP/AI 可在ASA r2 儲存單元上啟用。 ARP/AI 無需學習期，即可偵測並報告潛在的勒索軟體攻擊，從而提供額外的資料保護。</block>
   <block id="f231c7e641e6d267354740a6c9850600" category="cell">SnapMirror Active Sync 新增了對 VMware 工作負載的支持，支援 NVMe/TCP 和 NVMe/FC 主機訪問，適用於雙節點ONTAP叢集。 VMware工作負載對 NVMe/TCP 的支援取決於 VMware 錯誤 ID：TR1049746 的解決。</block>
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">支援自動工作負載平衡</block>
-  <block id="c33e823e9a93260b53fe781334bf0f34" category="cell"><block ref="c33e823e9a93260b53fe781334bf0f34" category="inline-link-macro-rx"></block></block>
   <block id="f5f208592c87b0ba3e87b3ad6fad7fa6" category="cell">工作負載在 HA 對的節點之間自動平衡，以優化效能和資源利用率。</block>
   <block id="cc9afe53172875d5c9c85e52f0ecbf07" category="summary">啟用 ARP/AI 來偵測潛在的勒索軟體威脅，自動採取行動保護您的數據，並在系統管理員中顯示警告訊息以提醒您可疑活動。</block>
   <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">在ASA r2 儲存系統上利用 AI 實現自主勒索軟體防護</block>
@@ -2735,4 +2734,5 @@
   <block id="354d3bc6178c825e83ed9c7eb99644cb" category="paragraph">如果您不想在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI，您可以選擇要啟用的特定單元。</block>
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">了解空間平衡</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">建立儲存虛擬機器對等關係</block>
+  <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
 </blocks>
