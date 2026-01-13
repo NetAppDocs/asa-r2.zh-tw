@@ -17,7 +17,7 @@ entries:
 - title: 監控使用量並增加容量
   entries:
   - title: 了解空間平衡
-    url: administer/space-balancing.html
+    url: "/administer/space-balancing.html"
   - title: 監控儲存效能
     url: "/monitor/monitor-performance.html"
   - title: 監控儲存使用率
