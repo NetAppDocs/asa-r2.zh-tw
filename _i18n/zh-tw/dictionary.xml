@@ -2004,7 +2004,6 @@
   <block id="5d356c397f5a143daadc1597a8fd7a34" category="list-text">選擇您需要重新建立的SnapMirror活動同步關係。</block>
   <block id="9f4215830573390fcfe4dab1715a643e" category="list-text">等待關係狀態顯示*InSync*。</block>
   <block id="a1f13cb349233b9c7d0b9e95fdff569e" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ；然後選擇*故障轉移*以在原始主集群上恢復操作。</block>
-  <block id="b69b57f7782b4b37cff72f353a59ac84" category="paragraph">為了防止遺失主機的 I/O 路徑，您需要在主集群上恢復操作後重新掃描主機路徑。</block>
   <block id="4e815228ca61a1f75181e7efe619c495" category="summary">使用SnapMirror主動同步，保護需要零復原點目標 (RPO) 和零復原時間目標 (RTO) 的主機應用程式免受意外中斷或網站災難造成的中斷。</block>
   <block id="497c72a2f611a19c23299b5daea37215" category="doc">SnapMirror主動同步設定工作流程</block>
   <block id="c0da5a4756d4ac1721f7418cfa0145da" category="paragraph">ONTAP SnapMirror主動同步資料保護功能即使在整個站點發生故障的情況下也能使業務服務繼續運行，並支援應用程式使用輔助副本透明地進行故障轉移。使用SnapMirror主動同步功能觸發故障轉移無需任何手動幹預或自訂腳本。</block>
@@ -2735,4 +2734,7 @@
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">了解空間平衡</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">建立儲存虛擬機器對等關係</block>
   <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
+  <block id="91d54d0d46ef33d2bbd727e59b537fee" category="list-text">若要恢復遺失的 I/O 路徑或更新主機上的 I/O 路徑狀態，需要在主儲存叢集復原運作後對主機執行儲存/適配器重新掃描。</block>
+  <block id="682aa2cee69ce16837ee717d9beba117" category="inline-link-macro">使用ONTAP命令列介面 (CLI) 設定集群</block>
+  <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">在某些情況下，你可能需要 <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>。例如，如果您的安全協定不允許您將筆記型電腦連接到管理交換機，或者如果您使用的是非 Windows 作業系統，則應使用 CLI。</block>
 </blocks>
