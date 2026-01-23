@@ -1999,7 +1999,6 @@
   <block id="de03dfd1ae9f6be9d8b9a3908591e8b8" category="paragraph">完成啟用SnapMirror主動同步所需的準備後，您應該<block ref="04df4bf09ed66e3358600cfc6c24fb99" category="inline-link-macro-rx"></block> 。</block>
   <block id="d611938cbbf8e09d8cffb8d50d6f69d7" category="summary">了解如何在ASA r2 叢集發生計劃外故障轉移後重新建立SnapMirror主動同步關係。</block>
   <block id="d9f4c40f0a9837797bd436d8c81aa4aa" category="doc">在ASA r2 叢集發生計劃外故障轉移後重新建立SnapMirror主動同步關係</block>
-  <block id="0e0d0122b629fb0e54343aa34c487fc4" category="paragraph">當主集群宕機或隔離時，會觸發自動非計劃故障轉移 (AUFO) 操作。中介會偵測故障轉移的發生時間，並執行自動非計劃故障轉移，轉移到輔助叢集。輔助集群將轉換為主集群並開始為客戶端提供服務。</block>
   <block id="4e85ef85cff46642712b0ee2dcf46ebb" category="list-text">ONTAP調解器必須已配置、已連線且處於法定人數。</block>
   <block id="5d356c397f5a143daadc1597a8fd7a34" category="list-text">選擇您需要重新建立的SnapMirror活動同步關係。</block>
   <block id="9f4215830573390fcfe4dab1715a643e" category="list-text">等待關係狀態顯示*InSync*。</block>
@@ -2737,4 +2736,6 @@
   <block id="91d54d0d46ef33d2bbd727e59b537fee" category="list-text">若要恢復遺失的 I/O 路徑或更新主機上的 I/O 路徑狀態，需要在主儲存叢集復原運作後對主機執行儲存/適配器重新掃描。</block>
   <block id="682aa2cee69ce16837ee717d9beba117" category="inline-link-macro">使用ONTAP命令列介面 (CLI) 設定集群</block>
   <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">在某些情況下，你可能需要 <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>。例如，如果您的安全協定不允許您將筆記型電腦連接到管理交換機，或者如果您使用的是非 Windows 作業系統，則應使用 CLI。</block>
+  <block id="f216ce14a016872d4ebd01d56ac0f6c4" category="paragraph">在 ASA r2 系統上，SnapMirror 主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點都可以存取本地儲存以進行主動 I/O 操作。如果來源叢集發生故障或隔離，中介程式將觸發自動計劃外故障轉移（AUFO），並從目標叢集處理所有 I/O 操作，直到來源叢集恢復為止。</block>
+  <block id="5f163ae9655a06ffcd7d72f99c857efa" category="paragraph">如果您的 SnapMirror 活動同步關係發生 AUFO，則應在原始來源叢集復原聯機後重新建立該關係並復原作業。</block>
 </blocks>
