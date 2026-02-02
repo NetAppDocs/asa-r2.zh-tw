@@ -510,7 +510,6 @@
   <block id="095767130effe9a44b7d3ff367eda1fa" category="doc">提交及檢視 ASA R2 儲存系統的支援案例</block>
   <block id="98c449686f1bb755fdc3ec64c1f3ea2e" category="paragraph">如果您遇到需要協助的問題、可以使用 ONTAP 系統管理員將案例提交給技術支援部門。您也可以使用 ONTAP 系統管理員來檢視已結案或進行中的案例。</block>
   <block id="ce04aba89455a6f59cf366030c2056ab" category="inline-link-macro">已向 Active IQ 註冊</block>
-  <block id="871826e1588c93437ae23af0a8c5c29e" category="paragraph">您必須<block ref="2d57bedaf7449221ca7cf6e2da6e5236" category="inline-link-macro-rx"></block>檢視 ASA R2 系統的支援案例。</block>
   <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">若要提交支援案例、請在系統管理員中選取 * 叢集 &gt; 支援 * 、然後選取 * 前往 NetApp 支援 * 。</block>
   <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">若要檢視先前提交的案例、請在 System Manager 中選取 * 叢集 &gt; 支援 * 、然後選取 * 檢視我的案例 * 。</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">瞭解 ASA R2 儲存系統</block>
@@ -2088,7 +2087,6 @@
   <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">在ASA r2 儲存系統上利用 AI 實現自主勒索軟體防護</block>
   <block id="e8b71c667f5920e249288a672ea7f999" category="paragraph">從ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護 (ARP/AI) 來保護ASA r2 系統上的資料。 ARP/AI 可以快速偵測潛在的勒索軟體威脅，自動建立 ARP 快照來保護您的數據，並在系統管理員中顯示警告訊息，提醒您注意可疑活動。</block>
   <block id="7331e9472b69421ea7995df5df0b5754" category="inline-link-macro">學習期</block>
-  <block id="c23c5941acca34f7955743c2115ef87e" category="admonition">沒有任何勒索軟體偵測或預防系統能夠完全保證免受勒索軟體攻擊。雖然攻擊可能未被發現，但如果防毒軟體未能偵測到入侵，ARP/AI 可以充當重要的額外防禦層。</block>
   <block id="ad09d4f074e5e7f7524d8960ed675311" category="inline-link-macro">ONTAP One 許可證</block>
   <block id="4098ab2b124dfc2ac9a7199398f039bf" category="paragraph">ARP/AI 支援包含在<block ref="eac36fc822e433078e178d83ea6ed140" category="inline-link-macro-rx"></block> 。</block>
   <block id="7c5c3f99ed72f08e7f6f630c025f7421" category="inline-link-macro">為您的安全文件啟用自動更新</block>
@@ -2658,7 +2656,6 @@
   <block id="c65375b9e9461021110e7878164c1353" category="inline-link-macro">支援修改快照保留和自動刪除快照</block>
   <block id="74bb636063257a476aa70d6beb1b78a0" category="cell"><block ref="74bb636063257a476aa70d6beb1b78a0" category="inline-link-macro-rx"></block></block>
   <block id="bb6f2042d7b561ef22513dcacc071c68" category="cell">您可以修改快照預留空間並啟用自動快照刪除功能，以限制ASA r2 儲存單元中快照所佔用的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。這樣可以防止快照佔用儲存用戶資料所需的儲存單元空間，從而避免應用程式中斷。</block>
-  <block id="05e7e1680bf144077a0c95dc04ecfe70" category="paragraph">您可以在 Storage Virtual Machine (VM) 中建立的所有儲存單元上預設啟用 ARP/AI。這表示在儲存虛擬機器中建立的任何新儲存單元都將自動啟用 ARP/AI。您也可以將 ARP/AI 套用到儲存 VM 中的現有儲存單元。</block>
   <block id="afc9ff5f825988208f6c59ba04c2c2d2" category="paragraph">預設情況下，您在儲存 VM 上建立的所有新儲存單元都受到保護，免受勒索軟體攻擊，可疑活動會在系統管理員中報告給您。</block>
   <block id="8ae754caf3a2f6cacd2c696b8292a020" category="paragraph">從ONTAP 9.18.1 開始，IPsec 硬體卸載支援擴展到 IPv6 流量。</block>
   <block id="39fa9e9872335fa886f58deacacdaf75" category="paragraph">以下網路卡支援在以下ASA r2 系統和ONTAP版本上進行硬體卸載：</block>
@@ -2726,10 +2723,8 @@
   <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA r2 系統差異概述</block>
   <block id="2be27a1e2f13957646665cd7fef8000d" category="cell">每個父母一致性組下的子一致性組</block>
   <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
-  <block id="d24ed4821c2e547301d0c31d918da4ea" category="paragraph">從ONTAP 9.17.1 開始，ARP 採用機器學習模型進行反勒索軟體分析，從而提高了網路彈性，該模型能夠以 98% 的準確率檢測 SAN 環境中不斷演變的勒索軟體形式。 ARP的機器學習模型在模擬勒索軟體攻擊前後都基於大量文件資料集進行了預訓練。這種資源密集型訓練在ONTAP之外進行，並且由此訓練產生的預訓練模型包含在ONTAP中。此模型不可存取或修改。  ARP/AI 在啟用後立即生效；沒有<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
   <block id="542b4f4e36f442f64960052e5e90dc97" category="section-title">在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI</block>
   <block id="4a8ba6399b21b6bd034b8e0eaf51d276" category="section-title">在儲存虛擬機器中的特定儲存單元上啟用 ARP/AI</block>
-  <block id="354d3bc6178c825e83ed9c7eb99644cb" category="paragraph">如果您不想在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI，您可以選擇要啟用的特定單元。</block>
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">了解空間平衡</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">建立儲存虛擬機器對等關係</block>
   <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
@@ -2738,4 +2733,39 @@
   <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">在某些情況下，你可能需要 <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>。例如，如果您的安全協定不允許您將筆記型電腦連接到管理交換機，或者如果您使用的是非 Windows 作業系統，則應使用 CLI。</block>
   <block id="f216ce14a016872d4ebd01d56ac0f6c4" category="paragraph">在 ASA r2 系統上，SnapMirror 主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點都可以存取本地儲存以進行主動 I/O 操作。如果來源叢集發生故障或隔離，中介程式將觸發自動計劃外故障轉移（AUFO），並從目標叢集處理所有 I/O 操作，直到來源叢集恢復為止。</block>
   <block id="5f163ae9655a06ffcd7d72f99c857efa" category="paragraph">如果您的 SnapMirror 活動同步關係發生 AUFO，則應在原始來源叢集復原聯機後重新建立該關係並復原作業。</block>
+  <block id="329e726c526800c2f75bf6d3e2260fe6" category="paragraph">您必須是<block ref="f1b69e50633569a9d4ff998335d87123" category="inline-link-macro-rx"></block>才能查看 ASA r2 系統的支援案例。</block>
+  <block id="2fae32629d4ef4fc6341f1751b405e45" category="section-title">安全性</block>
+  <block id="560b852910a0e98466ea0bc41a896549" category="inline-link-macro">支援自動啟用 ARP/AI</block>
+  <block id="e9a88c72c24e4398f874d2f4af5b49e8" category="cell"><block ref="e9a88c72c24e4398f874d2f4af5b49e8" category="inline-link-macro-rx"></block></block>
+  <block id="689aa35f9f1eec56b70643199a8682d8" category="cell">當您初始化新的 9.18.1 ASA r2 叢集或將叢集升級到 9.18.1 時，ARP/AI 會在 12 小時的寬限期後預設在所有新建的儲存單元上自動啟用。如果您在寬限期內未停用 ARP/AI，則在寬限期結束後，ARP/AI 將在整個叢集範圍內對所有新建的儲存單元啟用。</block>
+  <block id="1a96b0b4e7eeb5c869def87fe1b46270" category="summary">如果您在 ASA r2 叢集上安裝了 Autonomous Ransomware Protection（ARP）授權，則在升級至 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 叢集 12 小時後，ARP 將預設在所有現有和新建立的儲存單元上啟用。</block>
+  <block id="47db8421e482de0cb387c25e02ac95ad" category="doc">停用 ASA r2 儲存系統上的預設自主勒索軟體防護</block>
+  <block id="ada9a568ab6a5d18c006a2f881dad45e" category="paragraph">當您初始化新的 ONTAP 9.18.1 ASA r2 叢集或將叢集升級到 ONTAP 9.18.1 時，ARP/AI 會在 12 小時的寬限期後，預設在所有新儲存單元上自動啟用。如果您在寬限期內未停用 ARP/AI，則在寬限期結束時，新儲存單元會在整個叢集範圍內啟用。</block>
+  <block id="15a35bbf98ecdf50ebbe830c9150b1fa" category="inline-link-macro">手動啟用</block>
+  <block id="2c5bf6d23c3b237a161f10e7a30084bf" category="paragraph">在 ONTAP 9.17.1 中建立的儲存單元必須<block ref="e30e679666ce4b86d4d0fe351918a7bf" category="inline-link-macro-rx"></block>用於 ARP/AI。</block>
+  <block id="89282cacdaeec6ad949d1fee8ef83b96" category="paragraph">您可以在最初的 12 小時寬限期內或之後停用預設啟用功能。</block>
+  <block id="06f738cd9e1ffd61cee9f2f7298af898" category="list-text">禁用 ARP：</block>
+  <block id="9aa3a30140e694c88ae8dc5d1d6baeb9" category="list-text">在 12 小時寬限期內停用：</block>
+  <block id="3f89c840d19029a97a24bc85a1f4bc2a" category="list-text">在 *Anti-ransomware* 下，選擇 *Don't enable*，然後選擇 *Disable*。</block>
+  <block id="8a142e162a74e2269d6374226b8deab8" category="list-text">若要在 12 小時寬限期過後停用：</block>
+  <block id="7dce122004969d56ae2e0245cb754d35" category="inline-image-macro">編輯</block>
+  <block id="3506bfed41b9e706367e09a6ee264e4a" category="list-text">在 *Anti-ransomware* 下，選取 <block ref="cd4fada87571e8da586532fce60b382a" category="inline-image-macro-rx" type="image"></block>，然後取消選取 *Enable for new storage units*。</block>
+  <block id="969d795be0732afa7c8d6bc59c89a090" category="list-text">選擇 *Save*</block>
+  <block id="91af5705f16502125e8b2187e64202c0" category="open-title">CLI</block>
+  <block id="2789285c59c5d3b50b0af44eb0af9d83" category="list-text">檢查預設啟用狀態：</block>
+  <block id="51ea13505527485e8ad1964193e9ac5d" category="list-text">停用現有磁碟區和新磁碟區的預設啟用功能：</block>
+  <block id="8dec9eba7de20cf1b8ccafba1cfae901" category="paragraph">ARP 透過採用機器學習模式進行反勒索軟體分析，提升網路彈性，該模式能夠以 98% 的準確率檢測不斷演變的勒索軟體，尤其適用於 SAN 環境。ARP 的機器學習模型在模擬勒索軟體攻擊前後，均使用大型檔案資料集進行預訓練。這種資源密集訓練在 ONTAP 外部進行，訓練產生的預訓練模型已整合到 ONTAP 中。該模型不可存取或修改。ARP/AI 在啟用後立即生效；無需<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
+  <block id="f2927aad75b0aa15b973bf19aae3a066" category="admonition">沒有任何勒索軟體偵測或防禦系統能夠完全保證免受勒索軟體攻擊。即使攻擊可能無法被偵測到，ARP/AI 也能在防毒軟體未能偵測到入侵時，作為重要的額外防禦層。</block>
+  <block id="613dcccc80c6c70a2f7f3bbba3e85635" category="list-text">受 SnapMirror 活動同步、SnapMirror 同步或 SnapLock 保護的儲存單元不支援 ARP/AI。</block>
+  <block id="d818371e54d5db7f0b123dad9f0741fa" category="list-text">從 ONTAP 9.18.1 開始，升級到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 叢集 12 小時後，所有新建立的儲存單元預設會啟用 ARP/AI。</block>
+  <block id="4ebb5f6bb42f5000c86113152e6fc7b8" category="section-title">在叢集中的所有儲存單元上啟用 ARP/AI</block>
+  <block id="4a30706558af49bc475c9076f39c5043" category="paragraph">如果您執行的是 ONTAP 9.17.1，則可以預設在叢集中建立的所有儲存單元上啟用 ARP/AI。</block>
+  <block id="b3d26117cd7cf369132a7f5c1b0e1b21" category="paragraph">在 ONTAP 9.18.1 及更高版本中，所有新建儲存單元預設為啟用 ARP/AI。如果您在 ONTAP 9.17.1 中建立了未啟用 ARP/AI 的儲存單元，則可以手動啟用它。</block>
+  <block id="1ce5b5693fce06d8eab0db104f812a23" category="inline-image-macro">編輯反勒索軟體設定</block>
+  <block id="50d605f03d486d36ef3d11420980afa9" category="list-text">在 *Anti-ransomware* 旁邊，選擇 <block ref="09996779530a0566a9742876e9ffd4f1" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Enable on all existing storage units*。</block>
+  <block id="1d6ca6ff92e87645e0e1be4c8c4254c1" category="paragraph">如果您執行的是 ONTAP 9.17.1，則可以預設在儲存虛擬機器（VM）中建立的所有儲存單元上啟用 ARP/AI。這表示在儲存 VM 中建立的任何新儲存單元都將自動啟用 ARP/AI。您也可以將 ARP/AI 套用到儲存 VM 中現有的儲存單元。</block>
+  <block id="f3a115988cb09dfd534467f2d9511859" category="paragraph">如果您正在執行 ONTAP 9.17.1，且不想在儲存 VM 中的所有儲存單元上啟用 ARP/AI，則可以選擇要啟用的特定單元。</block>
+  <block id="b86583f9a9fc89f434a369308432e10e" category="inline-link-macro">報告已知的 ARP/AI 激增</block>
+  <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">如果您發現儲存單元活動出現激增，無論是單次激增還是某種新常態下的激增，都應將其報告為安全狀態。手動將這些激增報告為安全狀態有助於提高 ARP 威脅評估的準確性。了解如何<block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>。</block>
+  <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">停用預設 ARP/AI 啟用</block>
 </blocks>

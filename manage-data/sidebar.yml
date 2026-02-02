@@ -106,6 +106,8 @@ entries:
       url: "/secure-data/ransomware-protection.html"
     - title: 啟用 ARP/AI
       url: "/secure-data/enable-anti-ransomware-protection.html"
+    - title: 停用預設 ARP/AI 啟用
+      url: "/secure-data/disable-default-anti-ransomware-protection.html"
     - title: 修改 ARP/AI 快照保留期
       url: "/secure-data/modify-arp-snapshot-retention-period.html"
     - title: 回應 ARP/AI 警報

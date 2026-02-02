@@ -13,21 +13,39 @@ summary: 啟用 ARP/AI 來偵測潛在的勒索軟體威脅，自動採取行動
 [role="lead"]
 從ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護 (ARP/AI) 來保護ASA r2 系統上的資料。 ARP/AI 可以快速偵測潛在的勒索軟體威脅，自動建立 ARP 快照來保護您的數據，並在系統管理員中顯示警告訊息，提醒您注意可疑活動。
 
-從ONTAP 9.17.1 開始，ARP 採用機器學習模型進行反勒索軟體分析，從而提高了網路彈性，該模型能夠以 98% 的準確率檢測 SAN 環境中不斷演變的勒索軟體形式。 ARP的機器學習模型在模擬勒索軟體攻擊前後都基於大量文件資料集進行了預訓練。這種資源密集型訓練在ONTAP之外進行，並且由此訓練產生的預訓練模型包含在ONTAP中。此模型不可存取或修改。  ARP/AI 在啟用後立即生效；沒有link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["學習期"^]。
+ARP 透過採用機器學習模式進行反勒索軟體分析，提升網路彈性，該模式能夠以 98% 的準確率檢測不斷演變的勒索軟體，尤其適用於 SAN 環境。ARP 的機器學習模型在模擬勒索軟體攻擊前後，均使用大型檔案資料集進行預訓練。這種資源密集訓練在 ONTAP 外部進行，訓練產生的預訓練模型已整合到 ONTAP 中。該模型不可存取或修改。ARP/AI 在啟用後立即生效；無需link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["學習期"^]。
 
 
-NOTE: 沒有任何勒索軟體偵測或預防系統能夠完全保證免受勒索軟體攻擊。雖然攻擊可能未被發現，但如果防毒軟體未能偵測到入侵，ARP/AI 可以充當重要的額外防禦層。
+NOTE: 沒有任何勒索軟體偵測或防禦系統能夠完全保證免受勒索軟體攻擊。即使攻擊可能無法被偵測到，ARP/AI 也能在防毒軟體未能偵測到入侵時，作為重要的額外防禦層。
 
 .關於這項工作
-ARP/AI 支援包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["ONTAP One 許可證"] 。
+* ARP/AI 支援包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["ONTAP One 許可證"] 。
+* 受 SnapMirror 活動同步、SnapMirror 同步或 SnapLock 保護的儲存單元不支援 ARP/AI。
+* 從 ONTAP 9.18.1 開始，升級到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 叢集 12 小時後，所有新建立的儲存單元預設會啟用 ARP/AI。
+* 啟用 ARP/AI 後，您應該link:../administer/update-firmware.html#enable-automatic-updates["為您的安全文件啟用自動更新"]自動接收新的安全性更新。
 
-啟用 ARP/AI 後，您應該link:../administer/update-firmware.html#enable-automatic-updates["為您的安全文件啟用自動更新"]自動接收新的安全性更新。
+
+
+
+== 在叢集中的所有儲存單元上啟用 ARP/AI
+
+如果您執行的是 ONTAP 9.17.1，則可以預設在叢集中建立的所有儲存單元上啟用 ARP/AI。
+
+在 ONTAP 9.18.1 及更高版本中，所有新建儲存單元預設為啟用 ARP/AI。如果您在 ONTAP 9.17.1 中建立了未啟用 ARP/AI 的儲存單元，則可以手動啟用它。
+
+.步驟
+. 在System Manager中、選取*叢集>設定*。
+. 在 *Anti-ransomware* 旁邊，選擇 image:icon_kabob.gif["編輯反勒索軟體設定"]，然後選擇 *Enable on all existing storage units*。
+. 選擇*啟用*。
+
 
 
 
 == 在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI
 
-您可以在 Storage Virtual Machine (VM) 中建立的所有儲存單元上預設啟用 ARP/AI。這表示在儲存虛擬機器中建立的任何新儲存單元都將自動啟用 ARP/AI。您也可以將 ARP/AI 套用到儲存 VM 中的現有儲存單元。
+如果您執行的是 ONTAP 9.17.1，則可以預設在儲存虛擬機器（VM）中建立的所有儲存單元上啟用 ARP/AI。這表示在儲存 VM 中建立的任何新儲存單元都將自動啟用 ARP/AI。您也可以將 ARP/AI 套用到儲存 VM 中現有的儲存單元。
+
+在 ONTAP 9.18.1 及更高版本中，所有新建儲存單元預設為啟用 ARP/AI。如果您在 ONTAP 9.17.1 中建立了未啟用 ARP/AI 的儲存單元，則可以手動啟用它。
 
 .步驟
 . 在系統管理員中，選擇「叢集」>「儲存虛擬機器」。
@@ -48,7 +66,9 @@ ARP/AI 支援包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_an
 
 == 在儲存虛擬機器中的特定儲存單元上啟用 ARP/AI
 
-如果您不想在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI，您可以選擇要啟用的特定單元。
+如果您正在執行 ONTAP 9.17.1，且不想在儲存 VM 中的所有儲存單元上啟用 ARP/AI，則可以選擇要啟用的特定單元。
+
+在 ONTAP 9.18.1 及更高版本中，所有新建儲存單元預設為啟用 ARP/AI。如果您在 ONTAP 9.17.1 中建立了未啟用 ARP/AI 的儲存單元，則可以手動啟用它。
 
 .步驟
 . 在 System Manager 中、選取 * Storage* 。

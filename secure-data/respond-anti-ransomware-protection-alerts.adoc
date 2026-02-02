@@ -43,3 +43,6 @@ summary: 查看潛在勒索軟體攻擊的警告並在系統管理員中採取�
 . 選擇“*選擇一個操作*”。
 . 選擇*標記為誤報*或選擇*標記為潛在勒索軟體攻擊*。
 
+
+.接下來呢？
+如果您發現儲存單元活動出現激增，無論是單次激增還是某種新常態下的激增，都應將其報告為安全狀態。手動將這些激增報告為安全狀態有助於提高 ARP 威脅評估的準確性。了解如何link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["報告已知的 ARP/AI 激增"^]。

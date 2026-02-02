@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: secure-data/disable-default-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, disable 
+summary: 如果您在 ASA r2 叢集上安裝了 Autonomous Ransomware Protection（ARP）授權，則在升級至 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 叢集 12 小時後，ARP 將預設在所有現有和新建立的儲存單元上啟用。 
+---
+= 停用 ASA r2 儲存系統上的預設自主勒索軟體防護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您初始化新的 ONTAP 9.18.1 ASA r2 叢集或將叢集升級到 ONTAP 9.18.1 時，ARP/AI 會在 12 小時的寬限期後，預設在所有新儲存單元上自動啟用。如果您在寬限期內未停用 ARP/AI，則在寬限期結束時，新儲存單元會在整個叢集範圍內啟用。
+
+在 ONTAP 9.17.1 中建立的儲存單元必須link:enable-anti-ransomware-protection.html["手動啟用"]用於 ARP/AI。
+
+.步驟
+您可以在最初的 12 小時寬限期內或之後停用預設啟用功能。
+
+[role="tabbed-block"]
+====
+.系統管理員
+--
+. 選擇*叢集>設定*。
+. 禁用 ARP：
++
+** 在 12 小時寬限期內停用：
++
+... 在 *Anti-ransomware* 下，選擇 *Don't enable*，然後選擇 *Disable*。
+
+
+** 若要在 12 小時寬限期過後停用：
++
+... 在 *Anti-ransomware* 下，選取 image:icon_pencil.gif["編輯"]，然後取消選取 *Enable for new storage units*。
+... 選擇 *Save*
+
+
+
+
+
+
+--
+.CLI
+--
+. 檢查預設啟用狀態：
++
+[source, cli]
+----
+security anti-ransomware auto-enable show
+----
+. 停用現有磁碟區和新磁碟區的預設啟用功能：
++
+[source, cli]
+----
+security anti-ransomware auto-enable modify -default-existing-volume-state false -default-new-volume-state false
+----
+
+
+--
+====

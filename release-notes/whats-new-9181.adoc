@@ -54,6 +54,17 @@ summary: 了解ONTAP 9.18.1 中適用於ASA r2 系統的新功能。
 |===
 
 
+== 安全性
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../secure-data/disable-default-anti-ransomware-protection.html["支援自動啟用 ARP/AI"] | 當您初始化新的 9.18.1 ASA r2 叢集或將叢集升級到 9.18.1 時，ARP/AI 會在 12 小時的寬限期後預設在所有新建的儲存單元上自動啟用。如果您在寬限期內未停用 ARP/AI，則在寬限期結束後，ARP/AI 將在整個叢集範圍內對所有新建的儲存單元啟用。 
+|===
+
+
 == 儲存效率
 
 [cols="2,4"]
