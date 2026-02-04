@@ -28,7 +28,7 @@ summary: 瞭解影響 ASA R2 系統的限制和預設值變更。
 | 每個叢集的儲存虛擬機 | 每個 HA 對支援的最大儲存虛擬機器 (VM) 數量從 32 增加到 256。 | ONTAP 9.18.1 
 
 
-| SnapMirror啟用同步 | SnapMirror主動同步的支援從雙節點叢集增加到四節點叢集。 | ONTAP 9.18.1 
+| SnapMirror啟用同步 | SnapMirror 主動同步的支援範圍從雙節點叢集擴大到四節點叢集。 | ONTAP 9.18.1 
 
 
 | 每個叢集的節點數  a| 

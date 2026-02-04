@@ -2768,4 +2768,5 @@
   <block id="b86583f9a9fc89f434a369308432e10e" category="inline-link-macro">報告已知的 ARP/AI 激增</block>
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">如果您發現儲存單元活動出現激增，無論是單次激增還是某種新常態下的激增，都應將其報告為安全狀態。手動將這些激增報告為安全狀態有助於提高 ARP 威脅評估的準確性。了解如何<block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>。</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">停用預設 ARP/AI 啟用</block>
+  <block id="74c34cd79314b0b0543df58dce891912" category="cell">SnapMirror 主動同步的支援範圍從雙節點叢集擴大到四節點叢集。</block>
 </blocks>
