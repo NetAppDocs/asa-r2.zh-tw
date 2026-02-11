@@ -28,7 +28,7 @@ link:create-svm-peer-relationship.html["建立叢集間儲存虛擬機器對等�
 
 . 確認叢集中的每個節點上至少建立了一個 LIF。
 +
-link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["創建 LIF"]
+link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["創建 LIF"]。
 
 . 確認必要的儲存單元已建立並對應到主機群組。
 +

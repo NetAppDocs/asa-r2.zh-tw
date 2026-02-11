@@ -184,7 +184,6 @@
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">選取以確認您的更新修改將套用至所有目前和未來的更新。</block>
   <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">根據您的更新選擇、建議的更新會自動下載並安裝在您的 ASA R2 系統上。</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">停用自動更新</block>
-  <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">如果您想要在安裝前靈活檢視建議的更新、請停用自動更新。如果停用自動更新、您需要手動執行韌體和系統檔案更新。</block>
   <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">自動更新已停用。您應該定期檢查建議的更新、並決定是否要執行手動安裝。</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">檢視自動更新</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">檢視已下載至叢集且排定自動安裝的韌體和系統檔案更新清單。同時檢視先前自動安裝的更新。</block>
@@ -1943,7 +1942,6 @@
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">建立叢集間儲存虛擬機器對等關係</block>
   <block id="0a1048623dcc4bf6a07e4f070c75b99a" category="list-text">確認叢集中的每個節點上至少建立了一個 LIF。</block>
   <block id="f0a8f8a4710c7aff45926e4c429a8cc0" category="inline-link-macro">創建 LIF</block>
-  <block id="d57b4f0ac425b878d2f45da8c8c89d8d" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block></block>
   <block id="b04d1fe353930783cf68fb978624b212" category="list-text">確認必要的儲存單元已建立並對應到主機群組。</block>
   <block id="12aa04a968692be25285a9fc7234d0d5" category="inline-link-macro">建立儲存單元</block>
   <block id="0dcd2c45a0db6a5c91ed22efb559bd29" category="inline-link-macro">將儲存單元對應到主機群組</block>
@@ -2769,4 +2767,6 @@
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">如果您發現儲存單元活動出現激增，無論是單次激增還是某種新常態下的激增，都應將其報告為安全狀態。手動將這些激增報告為安全狀態有助於提高 ARP 威脅評估的準確性。了解如何<block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>。</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">停用預設 ARP/AI 啟用</block>
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">SnapMirror 主動同步的支援範圍從雙節點叢集擴大到四節點叢集。</block>
+  <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">只有當您希望完全自行管理更新時，才應停用自動更新。停用自動更新後，系統將不會通知、下載或安裝更新。您需要負責手動監控、下載、排程和安裝所有更新。</block>
+  <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>。</block>
 </blocks>
