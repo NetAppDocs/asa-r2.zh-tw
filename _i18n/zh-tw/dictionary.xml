@@ -1054,7 +1054,6 @@
   <block id="4af5b851dfcd374944ce285278985595" category="paragraph">您可以使用從刪除的<block ref="f623a169728c03b0e232ffad71f851b4" category="inline-link-macro-rx"></block>儲存單元釋出到需要額外容量的儲存單元的空間。</block>
   <block id="d144ceb11715b5ffc74a8293d3aa8303" category="summary">透過編輯儲存單元來增加容量、更新服務品質（ QoS ）原則或變更主機對應、來回應儲存系統效能和資料的變更。</block>
   <block id="ceff03bfa1a8dafc5e617407d14564d3" category="doc">修改 ASA R2 儲存系統上的儲存單元</block>
-  <block id="e6f1f5b43dd2b3e740c42c5f1623750d" category="paragraph">若要最佳化 ASA R2 系統的效能、您可能需要修改儲存單元、以增加儲存單元的容量、更新 QoS 原則或變更對應至單元的主機。例如、如果將新的關鍵應用程式工作負載新增至現有的儲存單元、您可能需要變更套用至儲存單元的服務品質（ QoS ）原則、以支援新應用程式所需的效能等級。</block>
   <block id="261c95ed5d454ef55df25657c605d472" category="paragraph-title">增加容量</block>
   <block id="9c4dfedb8190eb2128e8185aff1c8e51" category="paragraph">在儲存單元達到完整容量之前、請先增加儲存單元的大小、以避免在儲存單元的可寫入空間不足時遺失資料存取。儲存單元的容量可增加至 128 TB 、這是 ONTAP 允許的最大容量。</block>
   <block id="e2bcdafb5edd46c07debdaff4977f47e" category="paragraph-title">修改主機對應</block>
@@ -2334,7 +2333,6 @@
   <block id="913e3fb6005d79d1e7e5eb2046a6fa4c" category="inline-link-macro">SnapMirror 中介器刪除</block>
   <block id="55394a49231c00367e205c42b064e980" category="list-text"><block ref="55394a49231c00367e205c42b064e980" category="inline-link-macro-rx"></block></block>
   <block id="7827b7923d6e45ba19022ef0a9878628" category="inline-link-macro">詳細了解ONTAP人物</block>
-  <block id="67cc47e8f050e98e23b1a714f17238ec" category="paragraph"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block> 。</block>
   <block id="2e50e3f8a8554bd854e544e6dc52462d" category="admonition">僅支援與ASA r2 儲存系統進行快照複製。您無法將快照從ASA r2 系統複製到ASA、 AFF或FAS系統，也無法從ASA、 AFF或FAS系統複製到ASA r2 系統。</block>
   <block id="8e0a212a3ccb8f506b309ea2b6cbd1f7" category="paragraph">從ONTAP 9.17.1 開始，您可以將非同步複製策略套用至具有層次結構關係的一致性群組。  ONTAP 9.16.1 中的層次結構關係中的一致性群組不支援非同步複製。</block>
   <block id="de095ac7880431e9449dcced8cecbd9a" category="inline-link-macro">了解有關分層（父/子）一致性組的更多信息</block>
@@ -2684,10 +2682,7 @@
   <block id="48e33f950546e0f98a6cda6ec059d508" category="paragraph">在建立儲存單元的過程中，您需要將主機啟動器新增至儲存單元並將其對應到儲存單元。你也可以<block ref="7d43bd55c0467bfd35b09864ee6c0663" category="inline-link-macro-rx"></block>和<block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>建立儲存單元後，主機啟動器。</block>
   <block id="daacdfe6a9c965f99bb919daaf922d41" category="paragraph">從ONTAP 9.18.1 開始，您可以修改快照保留，並在建立儲存單元時啟用自動快照刪除。快照預留空間是指儲存單元中專門為快照保留的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。</block>
   <block id="cd70e38e090afe4dfe68269857720d8c" category="inline-link-macro">精簡配置</block>
-  <block id="6afea9ca1f178aea254d3f9ac79d8dbc" category="paragraph">儲存單元預設採用精簡配置。精簡配置允許儲存單元擴展到分配的大小，但不會預先預留空間。空間會根據需要從可用空間動態分配。這樣，您可以透過超額配置可用空間來實現更高的儲存效率。例如，假設您有 1 TB 的可用空間，並且您需要建立四個 1 TB 的儲存單元。您可以建立儲存單元，監控空間利用率，並隨著儲存單元實際佔用空間而增加儲存容量，而不是立即在系統中新增 3 TB 的額外儲存容量。詳細了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
   <block id="235edd79b1fce1af069d9278c91366b9" category="paragraph">為了優化儲存可用區內的工作負載平衡，請建立偶數個儲存單元。</block>
-  <block id="c82bffc1986369b2cd4e0c02a3eb4336" category="admonition">如果建立多個儲存單元，則每個單元的容量都相同。將你要建立的儲存單元數量乘以所需的容量，以確保你有足夠的可用空間。如果可用空間不足，而你又選擇了過度配置，請密切監控使用情況，以避免空間不足和資料遺失。</block>
-  <block id="574d314c515cf3a8473a1e97b72f3409" category="paragraph">如果不存在執行您指定的作業系統的主機的預先存在的主機群組， ONTAP將自動建立一個新的主機群組。</block>
   <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">將主機 NQN 格式化為 &lt;nqn.yyyy-mm&gt;，後面接著完全限定網域名稱。年份應等於或晚於 1970 年。總最大長度應為 223。一個有效的 NVMe 發起程序範例是 nqn.2014-08.com.example:string</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">建立ASA r2 儲存單元並新增主機啟動器後，將主機對應到儲存單元以開始提供資料服務。儲存單元在建立儲存單元的過程中會被對應到主機。您也可以隨時將現有儲存單元對應到新的或現有的主機。</block>
   <block id="e5e9f89a4e81cd1c64531c80eba2e77e" category="admonition">在ASA r2 系統中，SED 僅支援基於 NVMe 的 SSD。</block>
@@ -2769,4 +2764,9 @@
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">SnapMirror 主動同步的支援範圍從雙節點叢集擴大到四節點叢集。</block>
   <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">只有當您希望完全自行管理更新時，才應停用自動更新。停用自動更新後，系統將不會通知、下載或安裝更新。您需要負責手動監控、下載、排程和安裝所有更新。</block>
   <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>。</block>
+  <block id="889dd2634c57a80d5ff345be8b87b394" category="list-text"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block>.*</block>
+  <block id="330a40ed2b3f8affc9b2ba9dda95e7d2" category="paragraph">為了最佳化 ASA r2 系統的效能，您可能需要修改儲存單元以增加其容量、更新 QoS 策略或變更對應到這些單元的主機。例如，如果將新的關鍵應用程式工作負載新增至現有儲存單元，則可能需要變更套用於該儲存單元的服務品質（QoS）策略，以支援新應用程式所需的效能等級。</block>
+  <block id="3fda8ce05b50b72371c5f4cb65657861" category="paragraph">儲存單元預設採用精簡配置。精簡配置可讓儲存單元根據分配的大小逐步成長，但不會預先預留空間。空間會根據需要從可用空間動態分配。這樣，您可以透過_超額配置_可用空間來提高儲存效率。例如，假設您有 1 TB 的可用空間，需要建立四個 1 TB 的儲存單元。您無需立即為系統添加 3 TB 的額外儲存容量，而是可以先建立儲存單元，監控空間利用率，然後根據儲存單元實際佔用的空間來增加儲存容量。了解更多有關 <block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block> 的資訊。</block>
+  <block id="d6e1856d58417da15c8f45bb5225a284" category="admonition">如果您要建立多個儲存單元，則每個單元的容量都相同。請將要建立的儲存單元數量乘以所需容量，以確保有足夠的可用空間。如果您沒有足夠的可用空間並選擇超額配置，請密切監控使用率，以避免空間耗盡和資料遺失。</block>
+  <block id="aa716862002e83866a499a0f5aaa467f" category="paragraph">如果不存在執行您指定作業系統的主機群組，ONTAP 將自動建立新的主機群組。</block>
 </blocks>
