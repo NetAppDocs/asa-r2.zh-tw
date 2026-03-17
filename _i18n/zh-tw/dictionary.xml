@@ -1500,9 +1500,6 @@
   <block id="a5f04ac5782b3b4db001475a2ce8f1f8" category="paragraph">將新的 HA 配對新增至叢集之後，您就可以新增<block ref="180fb7c364ff620a7da1de634e394af5" category="inline-link-macro-rx"></block>節點。</block>
   <block id="f142a152601a952c440aa742ae54d56c" category="doc">升級 ASA R2 儲存系統上的 ONTAP</block>
   <block id="f46c905b973360f57c509a5dac0d6aca" category="paragraph">當您在 ASA R2 系統上升級 ONTAP 軟體時，您可以利用新的增強 ONTAP 功能，協助您降低成本，加速關鍵工作負載，改善安全性，並擴大組織可用的資料保護範圍。</block>
-  <block id="1609fb0c876b70bfae98d1cafa399784" category="inline-link-macro">準備使用 Upgrade Advisor 升級</block>
-  <block id="e4b24f4689bdc8358c4d409b6a9d4103" category="inline-link-macro">準備升級而不使用 Upgrade Advisor</block>
-  <block id="715a6cc9b89f202d46f87d2b8ae93e8e" category="paragraph">ASA R2 系統的 ONTAP 軟體升級程序與其他 ONTAP 系統的升級程序相同。如果您有 Active IQ 數位顧問（也稱為數位顧問）的有效 SupportEdge 合約、您應該<block ref="1117d34674fd91a6ee3c7506ddc3a8f0" category="inline-link-macro-rx"></block>。升級顧問提供的智慧功能可協助您評估叢集並建立專屬組態的升級計畫、以將不確定性和風險降至最低。如果您沒有適用於 Active IQ 數位顧問的有效 SupportEdge 合約<block ref="66ecb4b248d940ec34981282ad334ce1" category="inline-link-macro-rx"></block>，您應該。</block>
   <block id="46629b819dff531a5a2a49fcda5443dd" category="inline-link-macro">從 System Manager 自動進行不中斷升級（ andu ）</block>
   <block id="d351531ad851e21d1ccbc812e54540ff" category="paragraph">準備升級之後，建議您使用執行升級<block ref="a93595527d1144b0b27a701c939efa63" category="inline-link-macro-rx"></block>。ANDU 利用 ONTAP 的高可用度（ HA ）容錯移轉技術、確保叢集在升級期間能持續提供資料、而不會中斷。</block>
   <block id="8b7f4f92636306e034e67a0098393065" category="inline-link-macro">ONTAP 軟體升級</block>
@@ -2769,4 +2766,7 @@
   <block id="3fda8ce05b50b72371c5f4cb65657861" category="paragraph">儲存單元預設採用精簡配置。精簡配置可讓儲存單元根據分配的大小逐步成長，但不會預先預留空間。空間會根據需要從可用空間動態分配。這樣，您可以透過_超額配置_可用空間來提高儲存效率。例如，假設您有 1 TB 的可用空間，需要建立四個 1 TB 的儲存單元。您無需立即為系統添加 3 TB 的額外儲存容量，而是可以先建立儲存單元，監控空間利用率，然後根據儲存單元實際佔用的空間來增加儲存容量。了解更多有關 <block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block> 的資訊。</block>
   <block id="d6e1856d58417da15c8f45bb5225a284" category="admonition">如果您要建立多個儲存單元，則每個單元的容量都相同。請將要建立的儲存單元數量乘以所需容量，以確保有足夠的可用空間。如果您沒有足夠的可用空間並選擇超額配置，請密切監控使用率，以避免空間耗盡和資料遺失。</block>
   <block id="aa716862002e83866a499a0f5aaa467f" category="paragraph">如果不存在執行您指定作業系統的主機群組，ONTAP 將自動建立新的主機群組。</block>
+  <block id="a8e81b2ccd42d59459e94b66c7e93b33" category="inline-link-macro">使用 Active IQ Digital Advisor 或 Upgrade Health Checker 中的 Upgrade Advisor 為您的升級做好準備</block>
+  <block id="3bd021c9fab6ece4503050272dff524d" category="paragraph">ASA r2 系統的 ONTAP 軟體升級流程與其他 ONTAP 系統的升級流程相同。建議您先<block ref="a44687563e089a36f625493635099b07" category="inline-link-macro-rx"></block>。</block>
+  <block id="8e06442a81408e5b3d9d881ee34604d9" category="list-text">將連接埠 e10b 連接至機櫃 1 NSM B 連接埠 e0b。</block>
 </blocks>
