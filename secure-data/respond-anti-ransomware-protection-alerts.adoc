@@ -4,7 +4,7 @@ permalink: secure-data/respond-anti-ransomware-protection-alerts.html
 keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
 summary: 查看潛在勒索軟體攻擊的警告並在系統管理員中採取行動。 
 ---
-= 使用ASA r2 儲存系統上的 AI 警報來回應自主勒索軟體防護
+= 利用 ASA r2 儲存系統上的 AI 警報來回應 Autonomous Ransomware Protection
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
