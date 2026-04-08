@@ -1692,7 +1692,6 @@
   <block id="3e42ab3fbc066a1e09943ca314bf3205" category="paragraph">在每個控制器上，將連接埠 E2A ， e2b ， e2c 和 e2d 連接至乙太網路主機網路交換器。</block>
   <block id="c053ea984f8ec26545ef5a0f8e3c516b" category="paragraph">*10/25 GbE 纜線 *</block>
   <block id="b8382f91ab365521fe8568f720b6ddd4" category="paragraph">* FC 主機纜線 *</block>
-  <block id="945fde23e0c7ac9dc52f131c48ef5861" category="paragraph">在每個控制器上，將連接埠 1a ， 1b ， 1c 和 1D 連接至 FC 主機網路交換器。</block>
   <block id="241c17a1be2cc4feae5c8c6007f8aed3" category="paragraph">* 64 Gb/s FC 纜線 *</block>
   <block id="176084e0e3d1d8b98919ade28704bd7b" category="inline-image-macro">64 GB 光纖通道纜線，寬度 = 100px</block>
   <block id="0174aef3c6edce25256f90638a06bdca" category="paragraph"><block ref="0174aef3c6edce25256f90638a06bdca" category="inline-image-macro-rx" type="image"></block></block>
@@ -1819,7 +1818,6 @@
   <block id="7358d22f4186a5e126b0fada0a666115" category="example-title">具有 1 個 4 連接埠 10/25 GbE I/O 模組的 ASA C30</block>
   <block id="baae66b5065d8c53c84d82ba2175779d" category="list-text">在每個控制器上，將連接埠 E2A ， e2b ， e2c 和 e2d 連接至乙太網路主機網路交換器。</block>
   <block id="84f30e54db618597e0548b01a8f9bb23" category="example-title">配備 4 埠 64 Gb/s FC I/O 模組的 ASA C30</block>
-  <block id="8f03269dbdbab70bab244893051fb6ec" category="list-text">在每個控制器上，將連接埠 1a ， 1b ， 1c 和 1D 連接至 FC 主機網路交換器。</block>
   <block id="02b0ddc9c51a6fd3d072763fb5b859f3" category="paragraph">如需儲存系統支援的最大機櫃數量，以及所有纜線選項（例如光纖和交換器連接），請參閱<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
   <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">AFF A1K 儲存系統支援具有 NSM100 或 NSM100B 模組的 NS224 架。模組之間的主要區別是：</block>
   <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">NSM100 機架模組使用內建連接埠 e0a 和 e0b。</block>
@@ -2706,7 +2704,6 @@
   <block id="625927359c6ff98754dcdfda6d0f8d77" category="paragraph">如果您需要修改基於副本的工作負載重新平衡的預設設置，請聯絡NetApp支援。</block>
   <block id="299c5db3cbde057ebd5a919711b1d2e1" category="paragraph">您可以設定與儲存虛擬機器上的叢集外部金鑰管理伺服器的連線。使用叢集金鑰伺服器，您可以在儲存虛擬機器上指定主密鑰伺服器和輔助密鑰伺服器。註冊金鑰時， ONTAP將首先嘗試存取主金鑰伺服器，然後再依序嘗試存取輔助伺服器，直到操作成功完成，從而防止金鑰重複。</block>
   <block id="9f71ddf310db058a3a89122693392a68" category="inline-link-macro">了解ASA r2 叢集中的容量均衡</block>
-  <block id="be2bfcecf308b1d3a417456024096c75" category="paragraph">建立儲存單元（基於 LUN 或 NVMe 命名空間）時， ONTAP會自動在對應的儲存可用區中建立一個磁碟區來容納該儲存單元。新建立的磁碟區將自動放置在該儲存可用區內，以實現最佳效能和均衡的容量利用率。儲存可用區內的容量利用率會根據您的ONTAP版本進行平衡。<block ref="9689a3d9a5cc82eb930985adacfe9343" category="inline-link-macro-rx"></block>。</block>
   <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA r2 系統差異概述</block>
   <block id="2be27a1e2f13957646665cd7fef8000d" category="cell">每個父母一致性組下的子一致性組</block>
   <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
@@ -2769,4 +2766,8 @@
   <block id="8a7cfb8fa6ea38ee5f0146687bddcd42" category="doc">在您的 ASA r2 儲存系統上啟用基於 AI 的自主勒索軟體防護</block>
   <block id="a9adededf161bd5d8bb9db9309976ce3" category="doc">暫停或恢復 ASA r2 儲存系統上的 AI 自主勒索軟體防護</block>
   <block id="bd38f3869f7e640b90d83fffd4208955" category="doc">利用 ASA r2 儲存系統上的 AI 警報來回應 Autonomous Ransomware Protection</block>
+  <block id="7c9f18ab5a6d9bddcd86839795bbf631" category="paragraph">在每個控制器上，將連接埠 2a、2b、2c 和 2d 連接到 FC 主機網路交換器。</block>
+  <block id="e075a310e0208871f253ed1786f7aa85" category="list-text">在每個控制器上，將連接埠 2a、2b、2c 和 2d 連接到 FC 主機網路交換器。</block>
+  <block id="3e43f7eeca64d5c830b0064870a6156b" category="admonition">在安裝和維護過程中，請務必配戴連接至已驗證接地點的接地腕帶。未採取正確的 ESD 防護措施可能會對控制器節點、儲存架和網路交換器造成永久性損壞。</block>
+  <block id="fc4a9f6cd00df6dfa4d8144f15b57af3" category="paragraph">建立儲存單元（基於 LUN 或 NVMe 命名空間）時，ONTAP 會自動在對應的儲存可用區中建立一個磁碟區來存放該儲存單元。新建立的磁碟區會自動放置在儲存可用區內，以達到最佳效能和均衡的容量利用率。儲存可用區內的容量利用率均衡取決於您的 ONTAP 版本。<block ref="44cab674f8c9e72d3dcaedde750c6695" category="inline-link-macro-rx"></block>。</block>
 </blocks>
