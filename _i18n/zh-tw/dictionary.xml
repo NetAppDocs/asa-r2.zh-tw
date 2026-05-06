@@ -536,9 +536,7 @@
   <block id="416d7b4fb13f7595b6b5ae10eaf0da2e" category="paragraph"><block ref="24caf631dc8d0b7a958c2b39e9826f66" category="inline-link-macro-rx"></block>開始為您的 SAN 用戶端提供資料。</block>
   <block id="e9b1c7305928c9a53874abbfc70aef12" category="inline-link-macro">建立快照</block>
   <block id="f5f65ef11468147132736611aa414b0c" category="paragraph">您現在可以使用 System Manager 來保護資料<block ref="f2e8d78709894f634f64266a64a6a5f1" category="inline-link-macro-rx"></block>、方法是：</block>
-  <block id="4effe079c1a641bd05cf0513a1eaf8c6" category="summary">瞭解如何將 ASA R2 控制器纜線連接至網路、並將控制器纜線連接至機櫃。</block>
   <block id="db8640dafbf216593610b43870a62e8d" category="doc">為 ASA R2 儲存系統連接硬體纜線</block>
-  <block id="08f29f426eac8bb0b1cef738430fac57" category="paragraph">為 ASA R2 儲存系統安裝機架硬體後、請安裝控制器的網路纜線、並將纜線連接到控制器和儲存櫃。</block>
   <block id="5d6a7459a3583d9e29f4b486d809b6a1" category="open-title">ASA A1K</block>
   <block id="ee6c90ad735c4fc892e900202d6ff034" category="list-text">使用叢集 /HA 互連纜線將連接埠 e1a 連接至 e1a 、並將連接埠 e7a 連接至 e7a 。</block>
   <block id="883f8ccaa3b7bb186f5d85df551292e7" category="admonition">叢集互連流量和 HA 流量共用相同的實體連接埠。</block>
@@ -546,28 +544,14 @@
   <block id="29b62d617481485649ea2d5b54fca512" category="image-alt">叢集 HA 纜線</block>
   <block id="3e86dd6511e223ecedd044d86cd934bf" category="image-alt">雙節點無交換器叢集佈線圖</block>
   <block id="8637ca13eb3c1a10bb4383130268c950" category="list-text">將乙太網路模組連接埠連接到主機網路。</block>
-  <block id="e5878ec206640d3f0489cbe562e56856" category="paragraph">以下是一些典型的主機網路纜線範例。如需特定系統組態的詳細資訊、請參閱 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 。</block>
-  <block id="b1a78b15892ed366f203ff3009cb08d9" category="admonition">為了讓叢集和 HA 流量發揮最大的系統效能、請勿使用連接埠 e1b 和 e7b 連接埠進行主機網路連線。請使用獨立的主機卡來發揮最大效能。</block>
   <block id="d2163ed76fe91108f8a1e58f08924448" category="paragraph">*100 GbE 纜線 *</block>
-  <block id="dca4917cf460ca0094ae46e8d7178c17" category="image-alt">100Gb 乙太網路纜線</block>
-  <block id="63498c78e69ef7b5cc7cd5a1c0c3b724" category="image-alt">連接至 100Gb 乙太網路的纜線</block>
-  <block id="1cddeaef0a0b08b7178f9023a157d0fc" category="list-text">連接 10/25 GbE 主機網路交換器。</block>
-  <block id="fbb2ead6e1dba22c64b785b1864b9809" category="paragraph">*10/25 GbE 主機 *</block>
-  <block id="e6db43427a500d394f1d34dcfecf3b50" category="image-alt">10/25Gb 乙太網路纜線</block>
-  <block id="204d53c0ad48ec9abe6f3cde34241579" category="image-alt">連接到 10/25Gb 乙太網路的纜線</block>
   <block id="1107155d6b0c900a6485f06681854862" category="image-alt">RJ-45 纜線</block>
   <block id="9c29eb35e98929529d99ca71cd855f4e" category="paragraph">* 1000BASE-T RJ-45 纜線 *</block>
   <block id="a8536d671676b42d7c49328e04123a96" category="image-alt">連線至您的管理網路</block>
   <block id="38821947dff053760f4c97b648ca454a" category="admonition">請勿插入電源線。</block>
-  <block id="d4f534f2d370cb0f29178f31331b3536" category="image-alt">連接至 100 Gb 乙太網路的纜線</block>
-  <block id="5a8b74659281e9e3495bfc29767b645c" category="paragraph">*4 個連接埠、 10/25 GbE 主機 *</block>
-  <block id="06d20f31fccdd7b31221a7b1e1ed37d1" category="image-alt">10/25 GB 纜線</block>
-  <block id="95b007a39e5ec5c4d9b8e17f2ec0424d" category="image-alt">RJ45 纜線</block>
-  <block id="b3623f40c8ee8913ca5a6a7756d97ce9" category="paragraph">請選擇符合您設定的下列其中一個纜線選項。</block>
   <block id="46d73bd828c75397e5f3cca81c4236e1" category="paragraph">將每個控制器連接至 NS224 機櫃上的 NSM 模組。圖形顯示每個控制器的纜線：控制器 A 纜線以藍色顯示、控制器 B 纜線則以黃色顯示。</block>
   <block id="cdc609c675d24b2fff8b5acc2e37e89e" category="list-text">在控制器 A 上、連接下列連接埠：</block>
   <block id="f316f1854f33785f42807636a3284714" category="list-text">將連接埠 e11a 連接至 NSM A 連接埠 e0a 。</block>
-  <block id="7fd21be5068998e5aac33f1cffcff76c" category="list-text">將連接埠 e11b 連接至連接埠 NSM B 連接埠 e0b 。</block>
   <block id="2bc2dbfb240bdfb79a6c1bb80f34be8a" category="inline-image-macro">將控制器 A e11a 和 e11b 移至單一 NS224 機櫃</block>
   <block id="e8e2e70664d58c738dc5f3e73dd79bbb" category="paragraph"><block ref="e8e2e70664d58c738dc5f3e73dd79bbb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ab7ef1e990b02e4f310f950e86665f24" category="list-text">在控制器 B 上、連接下列連接埠：</block>
@@ -588,22 +572,12 @@
   <block id="bfe3957a11dab27de6793691acba1b94" category="paragraph">*100 GbE QSFP28 銅線 *</block>
   <block id="59850ec6ce706547c89ff81eb99141db" category="image-alt">100 GbE QSFP28 銅線</block>
   <block id="9dcc8dc3a558729dc61c31c84e00c3e4" category="list-text">將控制器 A 連接埠 e11a 連接至 NSM A 連接埠 e0a 。</block>
-  <block id="918349807746744597338bfd03ce241f" category="list-text">將控制器 A 連接埠 e11b 連接至連接埠 NSM B 連接埠 e0b 。</block>
   <block id="956aab6b8733f2140ed524c12e37f4bd" category="paragraph"><block ref="956aab6b8733f2140ed524c12e37f4bd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a8861b3a8d06aef3022e3d2cfa014512" category="list-text">將控制器 B 連接埠 e11a 連接至 NSM B 連接埠 e0A 。</block>
   <block id="6a5052a8c54e3e46dc1452dcb9c98eaa" category="list-text">將控制器 B 連接埠 e11b 連接至 NSM A 連接埠 e0b 。</block>
   <block id="a35e9f25f382abbe5abcfeab4b53167c" category="inline-image-macro">控制器 B e11a 和 e11b 至單一 NS224 機櫃</block>
   <block id="7f958fb1f7822d334698802022ec3956" category="paragraph"><block ref="7f958fb1f7822d334698802022ec3956" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e934f6c11392ce362b9b522d3905e905" category="list-text">在控制器 A 上、連接下列連接埠：</block>
-  <block id="622567f759d81c4e71f74d57546ee33a" category="list-text">將連接埠 e11a 連接至機櫃 1 、 NSM A 連接埠 e0a 。</block>
-  <block id="fa65b92c92e4c6583d514be0324b7aae" category="list-text">將連接埠 e11b 連接至機櫃 2 、 NSM B 連接埠 e0b 。</block>
-  <block id="884b219f88a01bf8fe5bf55db135e450" category="list-text">將連接埠 e8a 連接至機櫃 2 、 NSM A 連接埠 e0a 。</block>
-  <block id="3d76afb25e68cbf6ec448ba97c8d77a4" category="list-text">將連接埠 e8b 連接至機櫃 1 、 NSM B 連接埠 e0b 。</block>
   <block id="f574117739b3e8dc40831cbb75e78d7f" category="paragraph"><block ref="f574117739b3e8dc40831cbb75e78d7f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7c74d901dd29a71ee51992bf6462dd04" category="list-text">將連接埠 e11a 連接至機櫃 1 、 NSM B 連接埠 e0A 。</block>
-  <block id="1e063e8299a01fcdf8268f46edf62dfe" category="list-text">將連接埠 e11b 連接至機櫃 2 、 NSM A 連接埠 e0b 。</block>
-  <block id="a032a8830d9e7689c545a9f5d436568b" category="list-text">將連接埠 e8a 連接至機櫃 2 、 NSM B 連接埠 e0a 。</block>
-  <block id="a7ac225913423b42ae7801d894de31c8" category="list-text">將連接埠 e8b 連接至機櫃 1 、 NSM A 連接埠 e0b 。</block>
   <block id="bf1f9977d76210449a57d0b526df80f9" category="paragraph"><block ref="bf1f9977d76210449a57d0b526df80f9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4757f88150e08258ea28951d40a936cf" category="inline-link-macro">開啟 ASA R2 儲存系統電源</block>
   <block id="b5d10bcdc319c3ca8d1fb925a5259701" category="paragraph">將儲存控制器連線至網路、然後將控制器連線至儲存櫃之後<block ref="9e913a1648528438a924ea21dfe1e70d" category="inline-link-macro-rx"></block>、您就可以了。</block>
@@ -1632,25 +1606,15 @@
   <block id="c486d43df45ffe41cde84a1b0fa45aa0" category="paragraph"><block ref="c486d43df45ffe41cde84a1b0fa45aa0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e3eb777419d46f8ec20ca944795a4d26" category="list-text">如果要將纜線連接至光纖交換器，請先將光纖收發器插入控制器連接埠，再將纜線連接至交換器連接埠。</block>
   <block id="d16a227aab66041a81c6f88b290eb486" category="section-title">步驟 1 ：連接叢集 / HA 連線</block>
-  <block id="e5f780ef73bd41c1dd64af7a1a1a31ac" category="paragraph">將控制器連接至 ONTAP 叢集。此程序會因您的儲存系統機型和 I/O 模組組組態而異。</block>
   <block id="cc462bbdb3b8d9369a4c3f67dcc8095c" category="open-title">A1K</block>
-  <block id="fde22ae5f3a1cc39c61853ffe9a68675" category="paragraph">建立 ONTAP 叢集連線。對於無交換器叢集，請將控制器彼此連接。對於交換式叢集，請將控制器連接至叢集網路交換器。</block>
   <block id="134e0586a0879fa097abfb47d5e64dbe" category="example-title">無交換器叢集纜線</block>
   <block id="c4cbbd77402de8c27a0e7a305bcd7a83" category="list-text">將控制器 A 上的連接埠 e1a 連接至控制器 B 上的連接埠 e1a</block>
-  <block id="0990249c3bba6596b74be9af46837266" category="list-text">將控制器 A 上的連接埠 e7a 連接至控制器 B 上的連接埠 e1a</block>
   <block id="666ce5251c9c6f25db5da3d713f9b34a" category="example-title">交換式叢集纜線</block>
-  <block id="18695b824b22d82a916970e4903bf31d" category="paragraph">使用 100 GbE 纜線將連接埠 e1a 連接至 e1a ，並將連接埠 e7a 連接至 e7a 。</block>
-  <block id="698b27a4b40df61ad4e02a808f16defc" category="admonition">9.16.1 及更新版本均支援交換式叢集組態。</block>
   <block id="bf419afe8104f0626b8c6f35d7546f54" category="list-text">將控制器 A 上的連接埠 e1a 和控制器 B 上的連接埠 e1a 連接至叢集網路交換器 A</block>
   <block id="cf5e5d4912cff0cbaa590fc1ae9ce6d7" category="list-text">將控制器 A 上的連接埠 e7a 和控制器 B 上的連接埠 e7a 連接至叢集網路交換器 B</block>
-  <block id="b222cca23840b6a495e76b8c300b08f2" category="image-alt">100 GB 纜線</block>
   <block id="f1d133e33e29362e931a34312a961d0b" category="image-alt">將叢集連線連接至叢集網路</block>
   <block id="b1f39e4d9956723a4e80ea4844651e57" category="open-title">A70 和 A90</block>
-  <block id="45078e841660b01dec689a55423c0ad7" category="paragraph">使用叢集 /HA 互連纜線將連接埠 e1a 連接至 e1a ，並將連接埠 e7a 連接至 e7a 。</block>
   <block id="4c4c88c42c8601a756bccea16c845e74" category="open-title">A20、A30和A50</block>
-  <block id="fd58de99944e8efb194dd7978a910460" category="paragraph">* 無交換器叢集佈線 *</block>
-  <block id="27414c133f108cf7a16f5284d6f30c1c" category="paragraph">將控制器彼此連接，以建立 ONTAP 叢集連線。</block>
-  <block id="ae385fd98cef8d5576799c3e17b37de5" category="example-title">ASA A30 和 ASA A50 ，含兩個雙埠 40/100 GbE I/O 模組</block>
   <block id="3020ab19ecc6bea34da86a75211a1480" category="list-text">連接叢集 / HA 互連連：</block>
   <block id="6780657f10ef4bbe5e784f3b1e7777e3" category="admonition">叢集互連流量和 HA 流量共用相同的實體連接埠（位於插槽 2 和 4 的 I/O 模組上）。連接埠為 40/100 GbE 。</block>
   <block id="81d3b176c84d195465a42037b378be34" category="list-text">將控制器 A 連接埠 E2A 連接至控制器 B 連接埠 E2A 。</block>
@@ -1658,53 +1622,26 @@
   <block id="c2f3dca1342038cc2e96405818f97fc1" category="admonition">I/O 模組連接埠 e2b 和 e4b 未使用，可供主機網路連線使用。</block>
   <block id="29225cb045b4ca6180b60163acf195c6" category="paragraph">*100 GbE 叢集 / HA 互連纜線 *</block>
   <block id="11156b406be2310dbc7ea0be9d4c50ed" category="image-alt">叢集 HA 100 GbE 纜線</block>
-  <block id="9cfa3d116e4d078fb40d2bc893df02d3" category="image-alt">使用兩個 100GbE IO 模組的 A30 和 A50 無交換器叢集佈線圖</block>
-  <block id="a4f83d44ddc4f1d9024cb358c68b9839" category="example-title">ASA A30 和 ASA A50 ，搭配一個雙埠 40/100 GbE I/O 模組</block>
   <block id="fe9b088094e89f3bfca3ca399c7b0db3" category="admonition">叢集互連流量和 HA 流量共用相同的實體連接埠（位於插槽 4 的 I/O 模組上）。連接埠為 40/100 GbE 。</block>
   <block id="106e367c9573abf49a09d94f19c1bfc1" category="list-text">將控制器 A 連接埠 e4b 連接至控制器 B 連接埠 e4b 。</block>
-  <block id="8664dd7c786c742954653ce492e9658d" category="image-alt">使用一個 100GbE IO 模組的 A30 和 A50 無交換器叢集佈線圖</block>
   <block id="41e7c843565f888c45e00de3fb7efbb7" category="example-title">ASA A20 搭配一個雙連接埠 10/25 GbE I/O 模組</block>
   <block id="12c884ae6ab63449a58d2a6afa1e2e37" category="admonition">叢集互連流量和 HA 流量共用相同的實體連接埠（位於插槽 4 的 I/O 模組上）。連接埠為 10/25 GbE 。</block>
   <block id="1d26f858cfe843b7c2ef97cec62fa3e4" category="paragraph">*25 GbE 叢集 / HA 互連纜線 *</block>
-  <block id="7068e62ae38501c78d2ab15da6f10b16" category="inline-image-macro">GbE SFP 銅線連接器，寬度 = 100px</block>
-  <block id="6fb39f4b9d1de8f2f3a463d3f9eedd52" category="paragraph"><block ref="6fb39f4b9d1de8f2f3a463d3f9eedd52" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7e04550968face4eb31df851171941f8" category="image-alt">使用一個 25 GbE IO 模組的無交換器叢集佈線圖</block>
-  <block id="151c289f37f59079c337dd0b4878c201" category="paragraph">* 交換式叢集佈線 *</block>
-  <block id="fa02cdb8515e1cd51b4eadba9fd50080" category="paragraph">將控制器連接至叢集網路交換器，以建立 ONTAP 叢集連線。</block>
-  <block id="a8d16746fb80901317600cba36862a10" category="list-text">連接叢集 / HA 互連連線：</block>
   <block id="b53a4effb80334f95a8d3a106ebd8d78" category="paragraph">*40/100 GbE 叢集 / HA 互連纜線 *</block>
   <block id="b0f68808f5130fe93780d063d5a249ef" category="image-alt">叢集 HA 40/100 GbE 纜線</block>
-  <block id="fdf9561d280feaca372af24a497c913c" category="image-alt">使用兩個 100GbE IO 模組的 A30 和 A50 交換式叢集佈線圖</block>
-  <block id="03b14fd60bbaa553460ca8bf5858ac71" category="list-text">將控制器連接至叢集網路交換器：</block>
   <block id="9d14c26ccbbb0d65a3b5d05e2013404b" category="paragraph">*10/25 GbE 叢集 / HA 互連纜線 *</block>
-  <block id="3488ff918c31f4a57e74bbab6ef9bcc9" category="inline-image-macro">使用一個 25GbE IO 模組的 A20 交換式叢集佈線圖</block>
   <block id="7f99cbc2aa28ab9fed6e99fa94242b4a" category="section-title">步驟 2 ：連接主機網路連線</block>
-  <block id="11b5e1f572906bdd8b96e6f22d885cd4" category="paragraph">將控制器連接到主機網路。</block>
-  <block id="40a36b0ffd7a648bae61167d750303ae" category="paragraph">此程序會因您的儲存系統機型和 I/O 模組組組態而異。</block>
-  <block id="3b29102e499249644dff327644d96081" category="list-text">將連接埠 e9a 和 e9b 連接至乙太網路資料網路交換器。</block>
   <block id="4f3114ccf1048d4ddc64a6a3b00212c0" category="paragraph">將乙太網路模組連接埠或光纖通道（ FC ）模組連接埠連接至主機網路。</block>
-  <block id="fa60bebf26c9f26f466d33f766281ef9" category="paragraph">* 乙太網路主機纜線 *</block>
   <block id="3202c4ba4b5ac6113c606ef9bb3c50cf" category="paragraph">在每個控制器上，將連接埠 e2b 和 e4b 連接至乙太網路主機網路交換器。</block>
   <block id="e827a0600a7ebd00f36ea855012f66a1" category="admonition">插槽 2 和插槽 4 中 I/O 模組的連接埠為 40/100 GbE （主機連線為 40/100 GbE ）。</block>
   <block id="7329bfa51dec924de206ced093bea600" category="paragraph">*40/100 GbE 纜線 *</block>
-  <block id="8f31147c7cfeb7520dc9739e31dedc90" category="image-alt">40/100 GB 纜線</block>
-  <block id="ec83c89c1bfd1fa2fe72db4df75b0e43" category="image-alt">連接至 40/100GbE 乙太網路主機網路交換器的纜線</block>
-  <block id="3e42ab3fbc066a1e09943ca314bf3205" category="paragraph">在每個控制器上，將連接埠 E2A ， e2b ， e2c 和 e2d 連接至乙太網路主機網路交換器。</block>
   <block id="c053ea984f8ec26545ef5a0f8e3c516b" category="paragraph">*10/25 GbE 纜線 *</block>
-  <block id="b8382f91ab365521fe8568f720b6ddd4" category="paragraph">* FC 主機纜線 *</block>
   <block id="241c17a1be2cc4feae5c8c6007f8aed3" category="paragraph">* 64 Gb/s FC 纜線 *</block>
-  <block id="176084e0e3d1d8b98919ade28704bd7b" category="inline-image-macro">64 GB 光纖通道纜線，寬度 = 100px</block>
-  <block id="0174aef3c6edce25256f90638a06bdca" category="paragraph"><block ref="0174aef3c6edce25256f90638a06bdca" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="53b32e6926c94a5a2ab06b2fe3836135" category="image-alt">連接至 64GB 光纖信道主機網路交換器的纜線</block>
   <block id="945babbf23a8741321d27a1c4a0c4200" category="section-title">步驟 3 ：連接管理網路連線</block>
   <block id="81c5a35ebe94a71ec0440d955458f3b2" category="paragraph">將控制器連接到管理網路。</block>
-  <block id="606df56893b9539a0efef8ec28ae5b04" category="paragraph">如需將儲存系統連線至管理網路交換器的相關資訊，請聯絡您的網路管理員。</block>
   <block id="c7900e3ee1f4eb935f449465b57ad5c1" category="paragraph">使用 1000BASE-T RJ-45 纜線，將每個控制器上的管理（扳手）連接埠連接到管理網路交換器。</block>
   <block id="827e1151fb167c880355e4177a701fcc" category="paragraph">將每個控制器上的管理（扳手）連接埠連接到管理網路交換器。</block>
   <block id="cc9dc8ff5d926a2f202e16be7619d147" category="section-title">步驟 4 ：連接機櫃連接線</block>
-  <block id="0d76e0793ffa0c020fcde5112f3ab0ac" category="paragraph">以下佈線程序說明如何將控制器連接至儲存櫃。</block>
-  <block id="11f69ba457c92cc85e478b022d6fe27d" category="example-title">選項 1 ：一個 NS224 儲存櫃</block>
-  <block id="dbc80d316683c8c8fbd51c4f53c57169" category="example-title">選項 2 ：兩個 NS224 儲存櫃</block>
   <block id="302158186d4e933e7fd1df5cef7e5e27" category="paragraph">圖形顯示控制器 A 的藍色纜線和控制器 B 的黃色纜線。</block>
   <block id="43f628d39f94658277cbd1d5e2ec5913" category="list-text">將控制器 A 連接至機櫃：</block>
   <block id="6c7c671b8bb322ab01af1c161215e3d7" category="list-text">將控制器 A 連接埠 e3a 連接至 NSM A 連接埠 e1a 。</block>
@@ -1793,10 +1730,6 @@
   <block id="b1481e6f17d8c80e8f17d881ac08a5a1" category="paragraph">您已建立儲存 VM 。您現在可以將儲存 VM 用於<block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>。</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">步驟</block>
   <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="list-text">這些程序顯示一般組態。具體的佈線取決於您的儲存系統所訂購的元件。如需完整的組態和插槽優先順序詳細資料、請參閱 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
-  <block id="ce48b5f9c255c35e0431b311322885fc" category="list-text">叢集 / HA 和主機網路纜線程序顯示一般組態。</block>
-  <block id="ce72f54a68f16b1880e22ca0324ba2d3" category="paragraph">如果在佈線過程中沒有看到您的配置，請前往<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>獲得全面的配置和插槽優先級信息，以便正確連接儲存系統。</block>
-  <block id="b3f5957e8d13865a2baa9be1f21f2f26" category="list-text">如果您有 ASA A1K、ASA A70 或 ASA A90 儲存系統，則 I/O 插槽編號為 1 到 11。</block>
-  <block id="280b4844865d828381a08cf7c5fa9403" category="image-alt">ASA A1K ASA A70 和 ASA A90 控制器上的插槽編號</block>
   <block id="f6380d621a082c0c194a242b5559335c" category="example-title">ASA A30 或 ASA A50 ，含兩個雙埠 40/100 GbE I/O 模組</block>
   <block id="9408328695e123555b17c0ac4d57eecd" category="list-text">將控制器 A 連接埠 e4a 連接到叢集網路交換器 A。</block>
   <block id="815f2582bceacb80e5133f54d18837f2" category="list-text">將控制器 A 連接埠 e2a 連接到叢集網路交換器 B。</block>
@@ -1809,28 +1742,17 @@
   <block id="9c5fd388a2ee6ceb65d30336d2fec257" category="open-title">C30</block>
   <block id="bc136eeedee4f222909ef4dc89936e65" category="example-title">配備兩個 2 連接埠 40/100 GbE I/O 模組的 ASA C30</block>
   <block id="d10c45e8f7beef65a96450aa447c2f06" category="example-title">ASA C30 搭配一個雙連接埠 40/100 GbE I/O 模組</block>
-  <block id="34976d581bae1d7b284bd3eaaebbf5da" category="image-alt">使用 100GBE I/O 模組的 C30 無交換器叢集佈線圖</block>
-  <block id="756127cf1c5d9fc6c88b92bfd2c43c60" category="image-alt">使用兩個 100gbe io 模組的 c30 交換集群佈線圖</block>
-  <block id="5c1af8c9ab8e0295670deef7823e8b23" category="list-text">將控制器連接到叢集網路交換器：</block>
-  <block id="2a95db36543b0ed49d140f26d5c68cde" category="example-title">帶有一個 4 埠 10/25 GbE I/O 模組的 ASA A20、A30 和 A50</block>
-  <block id="41b996c4b4ae97eb30c867757090ffc8" category="example-title">配備 4 埠 64 Gb/s FC I/O 模組的 ASA A20、A30 和 A50</block>
   <block id="8246042d23ca859d83185957ac9c4044" category="list-text">在每個控制器上，使用纜線連接埠 e2b 和 e4b 連接乙太網路主機網路交換器。</block>
   <block id="7358d22f4186a5e126b0fada0a666115" category="example-title">具有 1 個 4 連接埠 10/25 GbE I/O 模組的 ASA C30</block>
-  <block id="baae66b5065d8c53c84d82ba2175779d" category="list-text">在每個控制器上，將連接埠 E2A ， e2b ， e2c 和 e2d 連接至乙太網路主機網路交換器。</block>
   <block id="84f30e54db618597e0548b01a8f9bb23" category="example-title">配備 4 埠 64 Gb/s FC I/O 模組的 ASA C30</block>
   <block id="02b0ddc9c51a6fd3d072763fb5b859f3" category="paragraph">如需儲存系統支援的最大機櫃數量，以及所有纜線選項（例如光纖和交換器連接），請參閱<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
-  <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">AFF A1K 儲存系統支援具有 NSM100 或 NSM100B 模組的 NS224 架。模組之間的主要區別是：</block>
-  <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">NSM100 機架模組使用內建連接埠 e0a 和 e0b。</block>
   <block id="1d18f8f4fb2168d48bce60e13139f7da" category="list-text">NSM100B 架模組使用插槽 1 中的連接埠 e1a 和 e1b。</block>
-  <block id="cc71e1eb20bbf56ae364562c6769007c" category="paragraph">以下佈線範例顯示了 NS224 機架中的 NSM100 模組（涉及機架模組連接埠）。</block>
   <block id="bf3082f44633e623761fac0a042bfa3f" category="inline-image-macro">將控制器 B 連接埠 e11a 和 e11b 連接到單一 NS224 架</block>
   <block id="68b3b4b28307463a871642d9f01ab048" category="paragraph"><block ref="68b3b4b28307463a871642d9f01ab048" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="01bd09c5271f772a108914f35e7efcd3" category="paragraph">AFF A70 和 90 儲存系統支援具有 NSM100 或 NSM100B 模組的 NS224 架。模組之間的主要區別是：</block>
   <block id="2486a91e78743df4d0cc635c5b8b51c8" category="list-text">NSM100 機架模組使用內建連接埠 e0a 和 e0b。</block>
   <block id="a93a7a45b049b849ed9c03ad1c596615" category="paragraph">NS224 架佈線程式顯示 NSM100B 模組而非 NSM100 模組。無論使用哪種類型的 NSM 模組，佈線都是相同的，只有連接埠名稱不同：</block>
   <block id="30898d03a4ca37450e8ab2be81f38dd5" category="list-text">NSM100B 模組使用插槽 1 中 I/O 模組上的連接埠 e1a 和 e1b。</block>
   <block id="e6c68585977f6b3e8b2b4ced88ca3d4d" category="list-text">NSM100 模組使用內建（板載）連接埠 e0a 和 e0b。</block>
-  <block id="215caa644827ccfb864125e557ed29f2" category="paragraph">使用儲存系統隨附的儲存電纜將每個控制器連接到 NS224 架上的每個 NSM 模組，儲存電纜可以是以下電纜類型：</block>
   <block id="6c69c43899171bbdeff48b0407169a1e" category="list-text">確保機櫃或電信機架上的導引銷牢固地插入儲存系統導引槽。</block>
   <block id="260e26066a84ba8b3722b386796dd177" category="image-alt">ASA A90 ASA A70 重量注意圖示</block>
   <block id="430f612bc8e82ffd0dfe48278467d55e" category="image-alt">ASA A20 A30 A50 重量注意圖標</block>
@@ -2390,9 +2312,6 @@
   <block id="5971035c0734629ac0d154a4b60ca9e9" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 協定支援多路徑對稱主動-主動架構，以便主機和儲存之間的所有路徑都處於活動/最佳化狀態。 iSCSI 和 NVMe/TCP 協定支援主機和儲存之間的直接連線。對於光纖通道和 NVMe/FC 協議，不支援直接連接。</block>
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主機映射*是指新儲存單元將映射到的主機群組。如果您為新儲存單元選擇的主機類型已存在一個主機群組，則會自動選擇該主機群組進行主機對應。您可以接受自動選擇的主機群組，也可以選擇其他主機群組。</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系統提供兩種效能等級。預設效能等級為*極限*，這是可用的最高等級。您可以將等級降低至*效能*。</block>
-  <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">叢集/HA 佈線範例展示了常見的配置。</block>
-  <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此處沒有看到您的配置，請前往 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 取得有關儲存系統佈線的全面配置和插槽優先權資訊。</block>
-  <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">主機網路佈線範例展示了常見的配置。</block>
   <block id="19b78e8ad6af7cf1ea82e76fdac1aa7f" category="admonition">ASA r2 系統不支援同步複製。</block>
   <block id="2e360c76c16280fe84148c9706ad34d6" category="list-text">對於“策略類型”，選擇“非同步”。</block>
   <block id="f1f7f77e02139ed937613a8043556351" category="admonition">採用非同步策略時，資料在寫入來源之後才會複製到遠端站點。ASA r2 系統不支援同步複製。</block>
@@ -2766,8 +2685,112 @@
   <block id="8a7cfb8fa6ea38ee5f0146687bddcd42" category="doc">在您的 ASA r2 儲存系統上啟用基於 AI 的自主勒索軟體防護</block>
   <block id="a9adededf161bd5d8bb9db9309976ce3" category="doc">暫停或恢復 ASA r2 儲存系統上的 AI 自主勒索軟體防護</block>
   <block id="bd38f3869f7e640b90d83fffd4208955" category="doc">利用 ASA r2 儲存系統上的 AI 警報來回應 Autonomous Ransomware Protection</block>
-  <block id="7c9f18ab5a6d9bddcd86839795bbf631" category="paragraph">在每個控制器上，將連接埠 2a、2b、2c 和 2d 連接到 FC 主機網路交換器。</block>
-  <block id="e075a310e0208871f253ed1786f7aa85" category="list-text">在每個控制器上，將連接埠 2a、2b、2c 和 2d 連接到 FC 主機網路交換器。</block>
   <block id="3e43f7eeca64d5c830b0064870a6156b" category="admonition">在安裝和維護過程中，請務必配戴連接至已驗證接地點的接地腕帶。未採取正確的 ESD 防護措施可能會對控制器節點、儲存架和網路交換器造成永久性損壞。</block>
   <block id="fc4a9f6cd00df6dfa4d8144f15b57af3" category="paragraph">建立儲存單元（基於 LUN 或 NVMe 命名空間）時，ONTAP 會自動在對應的儲存可用區中建立一個磁碟區來存放該儲存單元。新建立的磁碟區會自動放置在儲存可用區內，以達到最佳效能和均衡的容量利用率。儲存可用區內的容量利用率均衡取決於您的 ONTAP 版本。<block ref="44cab674f8c9e72d3dcaedde750c6695" category="inline-link-macro-rx"></block>。</block>
+  <block id="862cd7ba2a996f4f7baaf919aeabdaa3" category="summary">將 ASA A1K 儲存系統連接到您的網路和儲存架，以啟用叢集通訊、管理存取和 SAN 主機連線。</block>
+  <block id="243e327ffdfe8adbe580156b7693e7c6" category="doc">為 ASA A1K 儲存系統連接硬體電纜</block>
+  <block id="5cd2c89ebc8dcbd5218b6f7fb0ad4ced" category="paragraph">將 ASA A1K 儲存系統連接到您的網路和儲存機櫃，以啟用叢集通訊、管理存取和 SAN 主機連線。此程序包括叢集 / HA 互連、管理網路、主機網路和儲存機櫃連接的佈線。</block>
+  <block id="dec0566087f1a4e29282436402b0c0f9" category="list-text">ASA A1K 上的 I/O 插槽編號為 1 到 11。</block>
+  <block id="4d7f3bf998f11ec51e5b1d5c5c650e48" category="image-alt">ASA A1K 控制器上的插槽編號</block>
+  <block id="20873e3ed1a53a60cc84a9ced0e5add7" category="paragraph">連接控制器以建立 ONTAP 叢集連線。對於無交換器叢集，將控制器彼此連接。對於有交換器叢集，將控制器連接到叢集網路交換器。</block>
+  <block id="9f111fc1eda18bc0e82125c03d816b62" category="paragraph">當兩個控制器直接相互連接而不使用叢集網路交換器時，請使用此佈線選項。</block>
+  <block id="e2e054e25b28fb3d74a683482ef337a6" category="list-text">將控制器 A 上的連接埠 e7a 連接到控制器 B 上的連接埠 e7a。</block>
+  <block id="d5029cecd62f8760a4e59f4e1ded8188" category="paragraph">當控制器連接到叢集網路交換器而不是直接相互連接時，請使用此佈線選項。</block>
+  <block id="7a09619ddfce9fb4229b642ddf64e42d" category="paragraph">使用 100 GbE 纜線將連接埠 e1a 和 e7a 連接至叢集網路交換器。</block>
+  <block id="b0687668e131daffb55e72096ae511f6" category="admonition">ONTAP 9.16.1 及更新版本支援交換式叢集組態。</block>
+  <block id="6c2f5875cec2a33db9d2ba4133823107" category="image-alt">100 GbE 電纜</block>
+  <block id="e827146f835b35a49ebac185b3e71933" category="paragraph">以下是一些典型的主機網路佈線範例。請參閱 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 以瞭解您的特定系統組態。</block>
+  <block id="ee852d44863a0f18931d31e1304f2a30" category="open-title">100 GbE 主機網路</block>
+  <block id="53df37fe27945fce0099f4a1f6643aac" category="paragraph">將連接埠 e9a 和 e9b 連接至您的 100 GbE 乙太網路資料網路交換器。</block>
+  <block id="9824c042102d15c7405ef541ce9da532" category="admonition">為了最大限度地提高叢集和 HA 流量的系統效能，請勿將連接埠 e1b 和 e7b 用於主機網路連線。請使用單獨的主機卡以最大程度地提高效能。</block>
+  <block id="c35657f2a0ca762b2dc834e59706d0a0" category="list-text">將控制器 A 連接埠 e9a 和控制器 B 連接埠 e9a 連接至乙太網路資料網路交換器。</block>
+  <block id="06c93ea240456c0c48f36b272e2c416e" category="list-text">將控制器 A 連接埠 e9b 和控制器 B 連接埠 e9b 連接至乙太網路資料網路交換器。</block>
+  <block id="c3d5867afb4085374d620d010f87f316" category="image-alt">100 GbE 乙太網路纜線</block>
+  <block id="6b31d403fdbc13c9617aa8a3eeda38f4" category="image-alt">連接至 100 GbE 乙太網路</block>
+  <block id="4ec2ff0cb52dcf4c928e898140a8c8ca" category="open-title">10/25 GbE 主機網路</block>
+  <block id="26810ea54c16c859b23f39ec729c8745" category="paragraph">將每個控制器上的 10/25 GbE I/O 模組連接埠連接至主機網路交換器。</block>
+  <block id="29f6e33bbed30159ab79780d6b858f8c" category="paragraph">*10/25 GbE 纜線*</block>
+  <block id="b2dcf1497f8fc9020bb6cf45fb4b0850" category="image-alt">10/25 GbE 乙太網路纜線</block>
+  <block id="0def4e1bc077b8bac52bb8ee6178c9e0" category="image-alt">連接至 10/25 GbE 乙太網路</block>
+  <block id="dd7645608af2345a9fe5b05b22c693a9" category="list-text">將控制器 A 上的管理（扳手）連接埠連接至管理網路交換器。</block>
+  <block id="81638cb65b5d99708ba3a0196539da59" category="list-text">將控制器 B 上的管理（扳手）連接埠連接至管理網路交換器。</block>
+  <block id="0e11d4e750e8b8e49b4cac74a5856795" category="paragraph">ASA A1K 儲存系統支援配備 NSM100 或 NSM100B 模組的 NS224 機架。這些模組之間的主要差異為：</block>
+  <block id="54af42a641b3277d4b8630d8f034e2cf" category="paragraph">以下佈線範例顯示參照機架模組連接埠時 NS224 機架中的 NSM100 模組。</block>
+  <block id="912743bd08bcab72dfd73b51801833af" category="open-title">一個 NS224 儲存櫃</block>
+  <block id="6e289945211fa664e31883bec0349db4" category="paragraph">當您只有一個 NS224 機架時，請使用此佈線選項。</block>
+  <block id="fff62239bbf7b8e4f913dd0c94d3de2f" category="list-text">將連接埠 e11b 連接至 NSM B 連接埠 e0b。</block>
+  <block id="bf2c3c8e7dee152193e278089e3f63af" category="open-title">兩個 NS224 儲存櫃</block>
+  <block id="f9bd49e07d331e9532f7494edf12f7f9" category="paragraph">當您有兩個 NS224 機架時，請使用此佈線選項。</block>
+  <block id="4b3da06fa271f6bbc5f5ccba49e0787c" category="summary">將 ASA A20、ASA A30 或 ASA A50 儲存系統連接到您的網路和儲存架，以啟用叢集通訊、管理存取和 SAN 主機連線。</block>
+  <block id="3585571af28e1fcc61f466b3f250321b" category="doc">為 ASA A20、ASA A30 和 ASA A50 儲存系統連接硬體線纜</block>
+  <block id="e785ca427bd575fee475b5a411399441" category="paragraph">將 ASA A20、ASA A30 或 ASA A50 儲存系統連接到您的網路和儲存機櫃，以啟用叢集通訊、管理存取和 SAN 主機連線。此程序包括叢集 / HA 互連、管理網路、主機網路和儲存機櫃連線的佈線。</block>
+  <block id="5580d6ef55888e18898368c925aa8e52" category="paragraph">將插槽 2 和 4 中 I/O 模組上的叢集 / HA 互連連接埠接上纜線。</block>
+  <block id="064e186439f62e18ea3e9f0bef51eaaa" category="image-alt">使用兩個 100 GbE I/O 模組的無交換器叢集佈線圖</block>
+  <block id="97946d7a89e89a736323c25878b34550" category="paragraph">將插槽 4 中 I/O 模組上的叢集 / HA 互連連接埠接上纜線。</block>
+  <block id="b5cdde2311f14ccefb46f3dc3ad532e1" category="image-alt">使用單一 100 GbE I/O 模組的無交換器叢集佈線圖</block>
+  <block id="697b7e9025bfe4610da6f8249d87b66b" category="inline-image-macro">GbE SFP 銅纜連接器，寬度 = 100 像素</block>
+  <block id="9bf086f7264946cb697b39facc91abee" category="paragraph"><block ref="9bf086f7264946cb697b39facc91abee" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd821b717f94aca553e793789f8e216b" category="image-alt">使用一個 25 GbE I/O 模組的 ASA A20 無交換器叢集佈線圖</block>
+  <block id="78cf93b0fe428a0be986a2c28a10216f" category="paragraph">將插槽 2 和 4 中 I/O 模組上的叢集 / HA 互連連接埠透過纜線連接至叢集網路交換器。</block>
+  <block id="f721c8d8c1b0d59653b1468361111bc6" category="image-alt">使用兩個 100 GbE I/O 模組的交換式叢集佈線圖</block>
+  <block id="8c36cb2a1e1d7f5dc821ce32ab2aad17" category="paragraph">將插槽 4 中 I/O 模組上的叢集 / HA 互連連接埠連接至叢集網路交換器。</block>
+  <block id="0545e89ee4f5c26014a670e1d7950b99" category="image-alt">使用一個 25 GbE I/O 模組的 ASA A20 交換式叢集佈線圖</block>
+  <block id="bb8661c49545cac68358046e25b8f950" category="open-title">乙太網路主機佈線</block>
+  <block id="108e7b770dea3f3fb9b6db30c0e7b0f6" category="paragraph">根據 I/O 模組組態，使用適當的連接埠將控制器連接至乙太網路主機網路。</block>
+  <block id="4ffe44ab6e9b264ea42606360355c7e7" category="paragraph">使用每個控制器上的連接埠 e2b 和 e4b 連接到 Ethernet 主機網路交換器。</block>
+  <block id="5440f83ac0f1961b9718b16cbbee71c5" category="image-alt">40/100 GbE 纜線</block>
+  <block id="695fe1cf5e6a0640d9c0a580e896afcf" category="image-alt">連接至 40/100 GbE 乙太網路主機網路交換器的纜線</block>
+  <block id="90f6b993966ca9d1033178ef14f217fb" category="paragraph-title">ASA A20、A30 或 A50，附一個 4 埠 10/25 GbE I/O 模組</block>
+  <block id="8bb3d2a21a34485e6db2b74185cd17f0" category="paragraph">使用插槽 2 中 I/O 模組上的所有四個連接埠來連線至乙太網路主機網路交換器。</block>
+  <block id="61b8eb0daf4df7a3dc287c5643e9d749" category="paragraph">在每個控制器上，將連接埠 e2a、e2b、e2c 和 e2d 連接至乙太網路主機網路交換器。</block>
+  <block id="5b8fc167e0e357c3db2b01cd7f4e9a66" category="image-alt">纜線連接至 10/25 GbE 乙太網路主機網路交換器</block>
+  <block id="91ca13b03c277f557b91f705d4455de5" category="open-title">FC 主機佈線</block>
+  <block id="1c1b2907a48ad79cead7728a563058b8" category="paragraph">使用系統中的 FC I/O 模組將控制器連接至光纖通道主機網路。</block>
+  <block id="399ae3aedef43d8aa96b108b34ceca9e" category="paragraph-title">ASA A20、A30 或 A50，配備一個 4 埠 64 Gb/s FC I/O 模組</block>
+  <block id="d37574f05151bd7354077f01388f11f0" category="paragraph">使用插槽 2 中 FC I/O 模組上的所有四個連接埠來連線至 FC 主機網路交換器。</block>
+  <block id="ec4257d147313d17ed5ddcd446fdbc33" category="paragraph">在每個控制器上，將連接埠 2a、2b、2c 和 2d 連接至 FC 主機網路交換器。</block>
+  <block id="7f72a14fb0277ced8589a77f5ba89016" category="inline-image-macro">64 Gb/s FC 纜線，寬度 = 100px</block>
+  <block id="a0cbf5cd6c250cfc98469733988e93c3" category="paragraph"><block ref="a0cbf5cd6c250cfc98469733988e93c3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be722354c7b27fd84abe13cbfcd8436a" category="image-alt">連接至 64 Gb/s FC 主機網路交換器的纜線</block>
+  <block id="585b6140492ddd4e1c24943c91ede82e" category="paragraph">使用儲存系統隨附的儲存纜線，將每個控制器連接到 NS224 機櫃上的每個 NSM 模組。</block>
+  <block id="e635d58cc8b96a471dabf545b06e7765" category="summary">將 ASA A70 或 ASA A90 儲存系統連接到您的網路和儲存架，以啟用叢集通訊、管理存取和 SAN 主機連線。</block>
+  <block id="45e8e93122b765edf18a80b301112d2a" category="doc">為 ASA A70 和 ASA A90 儲存系統連接硬體電纜</block>
+  <block id="eed9495d2a3e16e10e83299ab2ed30cd" category="paragraph">將 ASA A70 或 ASA A90 儲存系統連接至您的網路和儲存櫃，以啟用叢集通訊、管理存取和 SAN 主機連線。此程序包括叢集 / HA 互連、管理網路、主機網路和儲存櫃連線的佈線。</block>
+  <block id="eace96eebffb4ec4e1f967721335d20b" category="list-text">ASA A70 和 ASA A90 上的 I/O 插槽編號為 1 至 11。</block>
+  <block id="b468f81f152c7442341a7a0b4476cd28" category="image-alt">ASA A70 和 ASA A90 控制器上的插槽編號</block>
+  <block id="573ed0ba8090b5ab41a8b79b2d80dd01" category="image-alt">10/25 GbE 纜線</block>
+  <block id="41be252845b471322d13eb0900bef895" category="paragraph">ASA A70 和 ASA A90 儲存系統支援配備 NSM100 或 NSM100B 模組的 NS224 機架。這兩個模組的主要差異在於：</block>
+  <block id="c385525fc45151e02ea60146533c3edf" category="list-text">將控制器 A 連接埠 e11b 連接至 NSM B 連接埠 e0b。</block>
+  <block id="b9d91673e9711b3a8a3667915e8cb65f" category="list-text">將連接埠 e8a 連接至機櫃 2 NSM A 連接埠 e0a。</block>
+  <block id="04979b05df402808972b3f92d35925ec" category="list-text">將連接埠 e8b 連接至機櫃 1 NSM B 連接埠 e0b。</block>
+  <block id="06a70b647822e90992f0c7eea9bd0794" category="list-text">將連接埠 e8a 連接至機櫃 2 NSM B 連接埠 e0a。</block>
+  <block id="ae896612727d08f4ea14287d42d8405e" category="list-text">將連接埠 e8b 連接至機櫃 1 NSM A 連接埠 e0b。</block>
+  <block id="add9ef06566aa747a568d6c949a2a3da" category="summary">將 ASA C30 儲存系統連接到您的網路和儲存架，以啟用叢集通訊、管理存取和 SAN 主機連線。</block>
+  <block id="343b661758507e0376b2c0cb2fc8dad3" category="doc">為 ASA C30 儲存系統連接硬體</block>
+  <block id="e2b05032e011686997ce56657ec674f1" category="paragraph">將 ASA C30 儲存系統連接到您的網路和儲存機櫃，以啟用叢集通訊、管理存取和 SAN 主機連線。此程序包括叢集 / HA 互連、管理網路、主機網路和儲存機櫃連接的佈線。</block>
+  <block id="8bd55d3efe3b89db8134189ae01028ac" category="paragraph">在每個控制器上，將連接埠 e2a、e2b、e2c 和 e2d 連接到乙太網路主機網路交換器。</block>
+  <block id="468f12b5d04ca9e1620ef5e528cdfe38" category="paragraph">在每個控制器上，將連接埠 2a、2b、2c 和 2d 連接到 FC 主機網路交換器。</block>
+  <block id="96a4d3e4d0abeb2f84c09f72871def22" category="summary">為 ASA r2 儲存系統連接電纜，以啟用叢集通訊、主機網路存取、管理連線和儲存架連線。</block>
+  <block id="0aa4c55023cfd65ba65d97611d40fbff" category="section-title">硬體佈線總覽</block>
+  <block id="41c6f5f51d5694a6c5d185a9ff4a08dc" category="paragraph">由於每款 ASA r2 型號的插槽位置、連接埠指派和 I/O 模組配置各不相同，因此不同平台型號的佈線方式也不同。請選擇適用於您的 ASA r2 型號的程序：</block>
+  <block id="d51f85ee8109354c7c5378e98196c644" category="inline-link-macro">Cable ASA A1K</block>
+  <block id="35d7c47540ce0b2b4d147996fb2f5190" category="list-text"><block ref="35d7c47540ce0b2b4d147996fb2f5190" category="inline-link-macro-rx"></block></block>
+  <block id="ffcdaaf5b5c4e40fbb6df596a03a9a33" category="inline-link-macro">纜線 ASA A70 和 ASA A90</block>
+  <block id="22781eddfb086c405b1920a5872bdcf4" category="list-text"><block ref="22781eddfb086c405b1920a5872bdcf4" category="inline-link-macro-rx"></block></block>
+  <block id="d9005041601129a7a20d625852a036fb" category="inline-link-macro">纜線 ASA A20、A30 和 A50</block>
+  <block id="1a8acbbea4e00356717af5c39fdd877c" category="list-text"><block ref="1a8acbbea4e00356717af5c39fdd877c" category="inline-link-macro-rx"></block></block>
+  <block id="ef0c7254a0e7acd500a0855ded9774be" category="inline-link-macro">Cable ASA C30</block>
+  <block id="e1356514455fb0efed1c11efd12d834a" category="list-text"><block ref="e1356514455fb0efed1c11efd12d834a" category="inline-link-macro-rx"></block></block>
+  <block id="a0ba1d004ed721e7e3f5750088cae041" category="paragraph">在硬體佈線期間，您將連接四種類型的線纜：</block>
+  <block id="3d702a0ee0de15cb1babf450141b5c80" category="list-text">*叢集 / HA 連線*</block>
+  <block id="7510d822641a5af564a8eb3127645a5b" category="paragraph">將兩個控制器相互連接（無交換器叢集）或連接到叢集網路交換器（有交換器叢集）。這些連接可實現叢集通訊以及控制器配對之間的高可用性容錯移轉。叢集互連流量和 HA 流量共用相同的實體連接埠。</block>
+  <block id="d95df3a36e17b29735e3dcf84c1ac8cc" category="list-text">*主機網路連線*</block>
+  <block id="1820f2a3a2a2a5ff76e8f7d1a4c2e2be" category="paragraph">根據主機組態，使用乙太網路（iSCSI、NVMe/TCP）或光纖通道（FC、NVMe/FC）將控制器連接到 SAN 主機。這些連線可為您的儲存工作負載提供資料存取。</block>
+  <block id="d2f34cf269bc245bae005db8bed6ddbc" category="list-text">*管理網路連線*</block>
+  <block id="2f7570bf2ff6faba37c89a5527992afd" category="paragraph">將控制器連接至您的管理網路，以便透過 ONTAP System Manager 和 CLI 進行系統管理存取。</block>
+  <block id="13010f83748e76a39c5e73252589f134" category="list-text">*儲存櫃連線*</block>
+  <block id="5e085fc3df0cbeed345ceb2834c11d72" category="paragraph">將控制器連接至 NS224 儲存櫃，為您的系統提供儲存容量。</block>
+  <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="section-title">其他資源</block>
+  <block id="e8a159e2ff115b18e83ff77937ef6345" category="paragraph">佈線程序顯示常見的組態。具體的佈線取決於您為儲存系統訂購的元件。如需完整的組態和插槽優先順序詳細資訊，請參閱 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="3b1d6e6330ca5bf54a0c22beaa407de9" category="sidebar">佈線概覽</block>
 </blocks>

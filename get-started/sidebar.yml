@@ -17,7 +17,17 @@ entries:
   - title: 安裝硬體
     url: "/install-setup/deploy-hardware.html"
   - title: 纜線硬體
-    url: "/install-setup/cable-hardware.html"
+    entries:
+    - title: 佈線概覽
+      url: "/install-setup/cable-hardware.html"
+    - title: Cable ASA A1K
+      url: "/install-setup/cable-hardware-a1k.html"
+    - title: 纜線 ASA A70 和 ASA A90
+      url: "/install-setup/cable-hardware-a70-90.html"
+    - title: 纜線 ASA A20、A30 和 A50
+      url: "/install-setup/cable-hardware-a20-30-50.html"
+    - title: Cable ASA C30
+      url: "/install-setup/cable-hardware-c30.html"
   - title: 開啟系統電源
     url: "/install-setup/power-on-hardware.html"
 - title: 設定 ASA R2 系統
