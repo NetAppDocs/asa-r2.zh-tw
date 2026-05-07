@@ -2797,11 +2797,9 @@
   <block id="f6948bd1b416e70ac7297904c89918c2" category="inline-link-macro">準備 AIX 主機</block>
   <block id="9f3699fb5ae95cc656437f0d40316b3a" category="paragraph">如果您執行的是 ONTAP 9.19.1 或更新版本，並且為 AIX 主機啟用 SnapMirror 主動同步，則應該<block ref="a1eb09700bb6039b09944ad4a8beb294" category="inline-link-macro-rx"></block>。</block>
   <block id="d844604326e9cd2c315729a7379f2f39" category="paragraph">從 ONTAP 9.19.1 開始,FLI 支援 iSCSI 協定進行後端連線。</block>
-  <block id="01ec680b4387bb404e72e15247c25cc6" category="list-text">深入瞭解 https://docs.netapp.com/us-en/ontap-fli/get-started/learn-about-data-migration.html[ONTAP FLI 移轉^]。</block>
   <block id="2f99f456cfdb820f75a7c3148365f63b" category="section-title">TLS 硬體卸載</block>
   <block id="0cb676b13f3e5b88d1d96f6dc967fbf0" category="paragraph">您可以將整個叢集的傳輸層安全性（TLS）加密和解密任務卸載到支援的乙太網路卡上。這可以降低 CPU 開銷，並提高使用 TLS 的系統的效能。</block>
   <block id="6fa5dce098144939c83d2d3fe4ca7e8d" category="inline-link-macro">瞭解如何設定 TLS 硬體卸載</block>
-  <block id="9433af924bd16d2b5d6282d91d613926" category="paragraph"><block ref="669de2e9a90723c75d4b935770e4df97" category="inline-link-macro-rx"></block>。</block>
   <block id="9446a98ad14416153cc4d45ab8b531bf" category="section-title">效能</block>
   <block id="2f7da8b0d24f58aae7a1dc8db2ca277d" category="paragraph">深入瞭解 ASA r2 系統支援的常見效能功能。</block>
   <block id="61dd3b29ebbda633eaa5595a4948d71f" category="section-title">修改控制自動 QoS 吞吐量上限增加的預設設定</block>
@@ -2867,4 +2865,7 @@
   <block id="4cc34abbf04951a48585b5548e80ee6b" category="summary">如果您打算進行異常工作負載活動，可以暫時中止具有 AI 分析的 ARP，以防止勒索軟體攻擊誤報。</block>
   <block id="f89ff085af9a8e3382e45dfd5fc7eead" category="sidebar">準備 AIX 主機</block>
   <block id="7ceef35284e2093e2f3f2e17a1256628" category="sidebar">ONTAP 9.19.1 的新增功能</block>
+  <block id="f7686fa2365fefd1997978c89bc02784" category="inline-link-macro">ONTAP FLI 遷移</block>
+  <block id="6be3407e36219b0795158b00b3dff0ca" category="list-text">深入瞭解<block ref="ca933b90c89fa23c09167e20b9cccb24" category="inline-link-macro-rx"></block>。</block>
+  <block id="8b046b3216eeb1b646506eacab8f767f" category="paragraph"><block ref="ca9cf0fa026ed1f702f811d5351a5f40" category="inline-link-macro-rx"></block>.</block>
 </blocks>

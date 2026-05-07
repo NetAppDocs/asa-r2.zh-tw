@@ -84,7 +84,7 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 您可以將整個叢集的傳輸層安全性（TLS）加密和解密任務卸載到支援的乙太網路卡上。這可以降低 CPU 開銷，並提高使用 TLS 的系統的效能。
 
-link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["瞭解如何設定 TLS 硬體卸載"^]。
+link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["瞭解如何設定 TLS 硬體卸載"^].
 
 
 
