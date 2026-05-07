@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: data-protection/prepare-aix-snapmirror-active-sync.html 
+keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active, prepare, aix 
+summary: 在為執行 ONTAP 9.19.1 或更高版本的 AIX 主機啟用 SnapMirror 主動式同步之前，必須將主機存取模式設定為本機。 
+---
+= 為 ASA r2 系統上的 SnapMirror 主動同步保護準備 AIX 主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從 ONTAP 9.19.1 開始，AIX 的透明應用程式容錯移轉功能在對稱主動/主動組態中透過 SnapMirror 主動同步獲得支援。SnapMirror 主動同步資料保護功能可確保即使在站台完全故障的情況下，業務服務也能繼續運作，並支援應用程式使用次要複本進行透明容錯移轉。
+
+在為執行 ONTAP 9.19.1 或更高版本的 AIX 主機啟用 SnapMirror 主動式同步之前，必須將主機存取模式設定為本機。其他主機類型無需選擇存取模式。深入瞭解link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/interoperability-reference.html["SnapMirror 主動同步的互通性"^]。
+
+.開始之前
+您必須執行 ONTAP 9.19.1 或更高版本。如果您執行的是 ONTAP 9.18.1 或更早版本，則需要提交功能性原則變更請求（FPVR）才能在 AIX 主機上獲得 SnapMirror active sync 支援。
+
+.步驟
+. 在 System Manager 中、選取 * Storage* 。
+. 將滑鼠懸停在要準備啟用 SnapMirror 主動同步保護的 AIX 儲存單元的名稱上。
+. 選取 image:icon_kabob.gif["功能表選取圖示"] 後，再選擇 *Edit*。
+. 在 *Host information* 下，針對 *Access mode* 選取 *local*，然後選取 *Edit*。
+
+
+.接下來呢？
+AIX 主機的儲存單元已準備好進行 SnapMirror 主動同步保護。

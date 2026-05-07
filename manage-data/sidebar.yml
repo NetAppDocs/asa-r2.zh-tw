@@ -56,6 +56,8 @@ entries:
     entries:
     - title: 工作流程
       url: "/data-protection/snapmirror-active-sync.html"
+    - title: 準備 AIX 主機
+      url: "/data-protection/prepare-aix-snapmirror-active-sync.html"
     - title: 準備配置SnapMirror主動同步
       url: "/data-protection/snapmirror-active-sync-prepare.html"
     - title: 確認叢集配置

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/pause-resume-anti-ransomware-protection.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, pause, resume, suspend 
-summary: 如果您正在規劃不尋常的工作負載事件，您可以暫時暫停 ARP/AI 分析，以防止勒索軟體攻擊的誤報偵測 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, pause, resume, suspend 
+summary: 如果您打算進行異常工作負載活動，可以暫時中止具有 AI 分析的 ARP，以防止勒索軟體攻擊誤報。 
 ---
 = 暫停或恢復 ASA r2 儲存系統上的 AI 自主勒索軟體防護
 :allow-uri-read: 

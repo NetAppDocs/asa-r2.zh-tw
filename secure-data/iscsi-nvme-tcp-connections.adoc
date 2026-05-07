@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/iscsi-nvme-tcp-connections.html 
-keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, iscsi, nvme/tcp, ipsec, data-in-flight, ip security, secure connections, secure data connections, hardware offload 
-summary: 如果您在 ASA R2 系統上使用 IP 傳輸協定，您可以設定 IP 安全性（ IPsec ）來增強資料安全性。 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, iscsi, nvme, tcp, ipsec, data-in-flight, ip security, secure connections, secure data connections, hardware offload 
+summary: 如果您在 ASA r2 系統上使用 IP 協定，則可以設定 IP 安全性來增強資料安全性。 
 ---
 = 保護 ASA R2 儲存系統上的 IP 連線安全
 :allow-uri-read: 

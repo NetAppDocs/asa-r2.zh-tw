@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/enable-anti-ransomware-protection.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, enable 
-summary: 啟用 ARP/AI 來偵測潛在的勒索軟體威脅，自動採取行動保護您的數據，並在系統管理員中顯示警告訊息以提醒您可疑活動。 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, enable 
+summary: 啟用 ARP 和 AI 來偵測潛在的勒索軟體威脅、自動採取措施保護您的資料，並在 System Manager 中顯示警告訊息，提醒您注意可疑活動。 
 ---
 = 在您的 ASA r2 儲存系統上啟用基於 AI 的自主勒索軟體防護
 :allow-uri-read: 
@@ -13,15 +13,16 @@ summary: 啟用 ARP/AI 來偵測潛在的勒索軟體威脅，自動採取行動
 [role="lead"]
 從ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護 (ARP/AI) 來保護ASA r2 系統上的資料。 ARP/AI 可以快速偵測潛在的勒索軟體威脅，自動建立 ARP 快照來保護您的數據，並在系統管理員中顯示警告訊息，提醒您注意可疑活動。
 
-ARP 透過採用機器學習模式進行反勒索軟體分析，提升網路彈性，該模式能夠以 98% 的準確率檢測不斷演變的勒索軟體，尤其適用於 SAN 環境。ARP 的機器學習模型在模擬勒索軟體攻擊前後，均使用大型檔案資料集進行預訓練。這種資源密集訓練在 ONTAP 外部進行，訓練產生的預訓練模型已整合到 ONTAP 中。該模型不可存取或修改。ARP/AI 在啟用後立即生效；無需link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["學習期"^]。
+ARP 透過採用機器學習模式進行反勒索軟體分析，進而提升網路彈性，該模式能夠偵測 SAN 環境中不斷演變的勒索軟體。ARP 的機器學習模型在模擬勒索軟體攻擊前後，均使用大型檔案資料集進行預訓練。這種資源密集型訓練在 ONTAP 外部進行，訓練產生的預訓練模型已整合到 ONTAP 系統中。該模型不可存取或修改。ARP/AI 在啟用後立即生效；無需link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["學習期"^]。
 
 
 NOTE: 沒有任何勒索軟體偵測或防禦系統能夠完全保證免受勒索軟體攻擊。即使攻擊可能無法被偵測到，ARP/AI 也能在防毒軟體未能偵測到入侵時，作為重要的額外防禦層。
 
 .關於這項工作
 * ARP/AI 支援包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["ONTAP One 許可證"] 。
-* 受 SnapMirror 活動同步、SnapMirror 同步或 SnapLock 保護的儲存單元不支援 ARP/AI。
+* 從 ONTAP 9.19.1 RC 版本開始，基於人工智慧的自主勒索軟體防護（ARP/AI）支援 ASA r2 系統上處於 SnapMirror 活動同步 SAN 關係中的主讀寫儲存單元。ARP/AI 在活動主儲存單元上運行，建立僅針對主儲存單元的 ARP 快照，並為這些儲存單元提供基於機器學習的勒索軟體偵測。
 * 從 ONTAP 9.18.1 開始，升級到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 叢集 12 小時後，所有新建立的儲存單元預設會啟用 ARP/AI。
+* 受 SnapLock 保護的儲存單元不支援 ARP/AI。
 * 啟用 ARP/AI 後，您應該link:../administer/update-firmware.html#enable-automatic-updates["為您的安全文件啟用自動更新"]自動接收新的安全性更新。
 
 

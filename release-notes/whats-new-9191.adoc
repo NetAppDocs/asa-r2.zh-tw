@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9191.html 
+keywords: 'what"s new, release notes, 9.19.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。 
+---
+= ASA r2 系統的 ONTAP 9.19.1 新增功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
+
+
+
+== 資料保護
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../data-protection/prepare-aix-snapmirror-active-sync.html["AIX 主機對 SnapMirror 主動同步的支援"] | AIX 的透明應用程式容錯移轉在對稱主動 / 主動組態中透過 SnapMirror 主動同步獲得支援。 
+|===
+
+
+== SAN資料遷移
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["ONTAP 外部 LUN 匯入（FLI）對 iSCSI 傳輸協定的支援"] | ONTAP 外部 LUN 導入（FLI）支援 iSCSI 協定進行後端連線。 
+|===
+
+
+== SAN 組態
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#san-direct-attachment["支援直接連接 FC 組態"] | 建立 FC 和 FC-NVMe 主機與 ONTAP 儲存設備之間的連線時、不需要 FC 交換器。主機可直接連接至 ASA r2 系統上的 FC 介面卡連接埠。直接連接功能在遠端站台和混合式環境中特別有價值、因為在這些環境中、簡易性是關鍵。 
+|===
+
+
+== 安全性
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../secure-data/enable-anti-ransomware-protection.html["支援具有 SnapMirror 主動式同步關係的 ARP/AI"] | 人工智慧自主勒索軟體防護（ARP/AI）支援 ASA r2 系統上處於 SnapMirror 活動同步關係的主讀寫儲存單元。ARP/AI 在活動主儲存單元上運行，建立僅針對主儲存單元的 ARP 快照，並為這些儲存單元提供基於機器學習的勒索軟體偵測。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#tls-hardware-offload["支援 TLS 硬體卸載"] | 您可以將整個叢集的傳輸層安全性（TLS）加密和解密任務卸載到支援的乙太網路卡上。這可以降低 CPU 開銷，並提高使用 TLS 的系統的效能。 
+|===
+
+
+== 儲存效率
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#global-deduplication["支援全域重複資料刪除"] | 全域重複資料刪除功能將現有的 ONTAP 重複資料刪除空間節省範圍擴展到整個儲存可用區（SAZ）。透過消除 SAZ 中所有儲存單元的重複資料區塊，它可以顯著提高儲存效率並降低整體擁有成本。全域重複資料刪除功能預設為啟用，無需任何管理配置即可透明運行。 
+|===
+
+
+== 儲存資源管理
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../monitor/monitor-storage.html#monitor-storage-availability-zone-utilization["System Manager 中支援儲存可用性區域容量警示"] | 如果 ASA r2 系統中的儲存可用區接近容量上限，System Manager 中將顯示警報。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases["支援修改控制自動 QoS 吞吐量上限增加的預設設定"] | 您可以修改預設設定，這些設定控制 QoS 原則群組如何根據短期效能需求自動提高 QoS 處理量上限。這些設定在 ONTAP 9.18.1 及更早版本中無法修改。 
+|===
+
+
+== 升級
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../administer/upgrade-ontap.html["增強自動升級前檢查的報告功能"] | 執行自動升級前檢查時，錯誤和警告會分別顯示，以協助您輕鬆識別升級前必須解決的問題。 
+|===

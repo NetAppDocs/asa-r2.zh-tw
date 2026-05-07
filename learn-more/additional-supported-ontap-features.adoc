@@ -80,6 +80,14 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 
 
+=== TLS 硬體卸載
+
+您可以將整個叢集的傳輸層安全性（TLS）加密和解密任務卸載到支援的乙太網路卡上。這可以降低 CPU 開銷，並提高使用 TLS 的系統的效能。
+
+link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["瞭解如何設定 TLS 硬體卸載"^]。
+
+
+
 == 聯網
 
 了解更多關於ASA r2 系統支援的常見網路功能。
@@ -105,6 +113,35 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+== 效能
+
+深入瞭解 ASA r2 系統支援的常見效能功能。
+
+
+
+=== 修改控制自動 QoS 吞吐量上限增加的預設設定
+
+預設情況下，自適應和非自適應 QoS 原則群組會自動啟用，以便在短期內將工作負載的處理量上限暫時提高 50%，持續 1 秒，從而回應對更高效能的短期需求。從 ONTAP 9.19.1 開始，您可以修改這些預設設定。在 ONTAP 9.18.1 及更早版本中，這些設定無法變更。
+
+link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["深入瞭解 QoS 處理量上限"^]。
+
+
+
+== SAN 組態
+
+儲存區域網路（SAN）由儲存解決方案和透過 SAN 傳輸協定（例如 iSCSI 或 FC）連接到主機所組成。您可以設定 SAN，使儲存解決方案透過一個或多個交換器連接到主機。如果您使用 iSCSI，也可以設定 SAN，使儲存解決方案直接連接到主機，而無需使用交換器。
+
+
+
+=== SAN 直接附加
+
+從 ONTAP 9.19.1 版本開始，無需使用 FC 交換器即可在 FC 和 FC-NVMe 主機與 ONTAP 儲存之間建立連線。主機可以直接連接到 ASA r2 系統上的 FC 適配器連接埠。這種直接連接功能在遠端站點和混合環境中尤其重要，因為在這些環境中，簡單性至關重要。
+
+* link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html#direct-attach-fc-and-fc-nvme-configurations["深入瞭解 SAN 直接附加"^]。
+
+
+
+
 == SAN協定
 
 ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。
@@ -124,6 +161,22 @@ ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。
 
 
 
+
+
+
+== 儲存效率
+
+儲存效率是衡量儲存系統如何透過最佳化儲存資源、最小化浪費的空間以及減少寫入資料的實體佔用空間，來有效使用可用空間的指標。
+
+ONTAP 提供多種儲存效率技術，可協助您最佳化儲存使用並降低成本。
+
+link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.html["深入瞭解 ONTAP 儲存效率技術"]。
+
+
+
+=== 全域重複資料刪除
+
+從 ONTAP 9.19.1 開始，_全域重複資料刪除_ 將 link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["現有 ONTAP 重複資料刪除空間節省"^] 儲存單元層級擴展到整個儲存可用區（SAZ）。透過消除 SAZ 中所有儲存單元的重複資料區塊，可以顯著提高儲存效率並降低整體擁有成本。全域重複資料刪除無需功能授權，預設啟用，可與現有儲存效率技術無縫整合，並以極低的效能影響透明運作，無需任何管理組態設定。
 
 
 
