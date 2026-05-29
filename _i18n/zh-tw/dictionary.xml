@@ -857,7 +857,6 @@
   <block id="c3c96ea806ac83498c365d5180661ba3" category="list-text"><block ref="9b82d4f814395730025ab1c7b269e56e" prefix="" category="inline-code"></block></block>
   <block id="4dae76cd6e28c01554edf8f2fb2ff842" category="list-text"><block ref="ec9655721b41e06c690354a032042fc1" prefix="" category="inline-code"></block></block>
   <block id="f3497351aae46692e603fedb2f2cd146" category="inline-link-macro">ONTAP 命令參照</block>
-  <block id="e9631e93a04d798bea6710be4a2f5da3" category="paragraph">如<block ref="585532baa3876b6b8281302459d86312" category="inline-link-macro-rx"></block>需支援命令的完整清單、請參閱</block>
   <block id="7b25c381c7fe8ec42f4be59e49b01ffa" category="section-title">使用 CLI 設定 ONTAP ASA R2 叢集</block>
   <block id="8770069e8d7e75b723f2a51c7a6e2e49" category="inline-link-macro">使用系統管理員來設定 ONTAP ASA R2 叢集</block>
   <block id="36b66e7ec3e638a1c0d5532a210a47a1" category="paragraph">建議您<block ref="df4559a5b62289a9d3564a01abc04ba8" category="inline-link-macro-rx"></block>。System Manager 提供快速且簡單的引導式工作流程、讓您的叢集能夠正常運作。不過、如果您習慣使用 ONTAP 命令、則可以選用 ONTAP 命令列介面（ CLI ）來進行叢集設定。使用 CLI 進行叢集設定、除了使用 System Manager 設定叢集之外、沒有其他選項或優點。</block>
@@ -2868,4 +2867,5 @@
   <block id="f7686fa2365fefd1997978c89bc02784" category="inline-link-macro">ONTAP FLI 遷移</block>
   <block id="6be3407e36219b0795158b00b3dff0ca" category="list-text">深入瞭解<block ref="ca933b90c89fa23c09167e20b9cccb24" category="inline-link-macro-rx"></block>。</block>
   <block id="8b046b3216eeb1b646506eacab8f767f" category="paragraph"><block ref="ca9cf0fa026ed1f702f811d5351a5f40" category="inline-link-macro-rx"></block>.</block>
+  <block id="44fb59de1e9bca7d7d33dee185838ea7" category="paragraph">除非列為不受支援，否則 <block ref="585532baa3876b6b8281302459d86312" category="inline-link-macro-rx"></block> 中的所有其他命令均受 ASA r2 系統支援。</block>
 </blocks>

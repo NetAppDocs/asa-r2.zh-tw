@@ -41,12 +41,8 @@ indexpage:
       url: https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf
     - title: NetApp ASA系統的最佳實踐
       url: https://www.netapp.com/pdf.html?item=/media/137426-tr-5009-best-practices-for-netapp-asa.pdf
-    - title: NetApp ASA上的FlexPod
-      url: https://www.netapp.com/pdf.html?item=/media/135828-flexpod-san-ucs-xdirect-asa-nva-deploy-guide.pdf
     - title: REST API 轉換指南
       url: https://www.netapp.com/media/136585-tr-5008-restfulapi-transition-guide-asa-r2.pdf
-    - title: ASA r2 系統的SnapCenter操作
-      url: https://docs.netapp.com/us-en/snapcenter/get-started/learn-about-snapcenter-support-for-asa-r2-systems.html
     - title: NetApp ASA上的 Oracle 資料庫效能
       url: https://www.netapp.com/pdf.html?item=/media/138087-tr-5015-oracle-perf-on-asa.pdf
     - title: 帶有 FCP 的NetApp ASA系統上的 SAP HANA
@@ -55,6 +51,10 @@ indexpage:
     links:
     - title: 適用於其他 ONTAP 系統的文件
       url: https://docs.netapp.com/us-en/ontap-family/
+    - title: NetApp ASA上的FlexPod
+      url: https://www.netapp.com/pdf.html?item=/media/135828-flexpod-san-ucs-xdirect-asa-nva-deploy-guide.pdf
+    - title: ASA r2 系統的SnapCenter操作
+      url: https://docs.netapp.com/us-en/snapcenter/get-started/learn-about-snapcenter-support-for-asa-r2-systems.html
     - title: 了解使用ONTAP for vSphere 的優勢
       url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html
     - title: 使用ONTAP 的VMware Live Site Recovery
