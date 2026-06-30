@@ -852,7 +852,6 @@
   <block id="a75bf2b9e1da63b60510e670e13280f5" category="example-title">不支援的 &lt;code&gt; &lt;/code&gt; 命令</block>
   <block id="96e3e25ced73cbc3087692d33e698dfc" category="list-text"><block ref="c1391c72a0f399cab63e0f906219eba1" prefix="" category="inline-code"></block></block>
   <block id="db03a3b1b5e9221c407a3226384456b7" category="list-text"><block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix="" category="inline-code"></block></block>
-  <block id="cb493146003b5096fb9dbce0cf86abad" category="list-text"><block ref="f0f37fae9d089110c4fb0245013845fb" prefix="" category="inline-code"></block></block>
   <block id="2134111bb81c1ada4be502decedecb30" category="list-text"><block ref="3c698d76925a2f101122edd72990fc94" prefix="" category="inline-code"></block></block>
   <block id="c3c96ea806ac83498c365d5180661ba3" category="list-text"><block ref="9b82d4f814395730025ab1c7b269e56e" prefix="" category="inline-code"></block></block>
   <block id="4dae76cd6e28c01554edf8f2fb2ff842" category="list-text"><block ref="ec9655721b41e06c690354a032042fc1" prefix="" category="inline-code"></block></block>
@@ -950,7 +949,6 @@
   <block id="4428c7556a1eea23721f907d8d23eb21" category="inline-link-macro">瞭解如何鎖定快照</block>
   <block id="19deecdd8b763ce6f48eadb0070d24cd" category="list-text"><block ref="f5c7881d0f64c83ae31bbc947dffd4c1" category="inline-link-macro-rx"></block>在您的 ASA R2 系統上。</block>
   <block id="a45dbe7c067a9974c8fca40e2b212fd6" category="inline-link-macro">瞭解如何套用雙層加密</block>
-  <block id="bcdcf9cfaaa690edc9d618403dd65057" category="list-text"><block ref="285ab21de69619aa33a3697c0850e834" category="inline-link-macro-rx"></block>ASA R2 系統上的資料。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律聲明</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律聲明提供版權聲明、商標、專利等存取權限。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版權</block>
@@ -1235,7 +1233,6 @@
   <block id="2906636dbf4e4249f5399e9553d745b9" category="paragraph">當您加密靜止資料時、如果儲存媒體被重新規劃、退回、放錯位置或遭竊、則無法讀取該資料。您可以使用 ONTAP 系統管理員、在硬體和軟體層級加密資料、以提供雙層保護。</block>
   <block id="7b51e981529660667d1414c7a37e2172" category="paragraph">NetApp 儲存加密（ NSE ）支援使用自我加密磁碟機（ SED ）進行硬體加密。SED 會在資料寫入時加密資料。每個 SED 都包含唯一的加密金鑰。如果沒有 SED 的加密金鑰、則無法讀取儲存在 SED 上的加密資料。嘗試從 SED 讀取的節點必須通過驗證、才能存取 SED 的加密金鑰。透過從金鑰管理程式取得驗證金鑰、然後將驗證金鑰呈現給 SED 來驗證節點。如果驗證金鑰有效、 SED 會提供節點加密金鑰來存取其中包含的資料。</block>
   <block id="97453174e9fea59b5b73518b257f2785" category="paragraph">使用 ASA R2 內建金鑰管理程式或外部金鑰管理程式、為節點提供驗證金鑰。</block>
-  <block id="2a1bd1bede081db0130e4d43abfae163" category="paragraph">除了 NSE 之外、您也可以啟用軟體加密、為資料增添另一層安全性。</block>
   <block id="c3895fd1cc061addf95194af9659baa6" category="list-text">在系統管理器中，選擇 * 叢集 &gt; 設定 * 。</block>
   <block id="b59449d4094d1449f93a0de73791997c" category="list-text">在 * 安全性 * 區段的 * 加密 * 下、選取 * 設定 * 。</block>
   <block id="9bd21eab9d09006d0846084b0f1b970d" category="list-text">設定金鑰管理程式。</block>
@@ -2868,4 +2865,11 @@
   <block id="6be3407e36219b0795158b00b3dff0ca" category="list-text">深入瞭解<block ref="ca933b90c89fa23c09167e20b9cccb24" category="inline-link-macro-rx"></block>。</block>
   <block id="8b046b3216eeb1b646506eacab8f767f" category="paragraph"><block ref="ca9cf0fa026ed1f702f811d5351a5f40" category="inline-link-macro-rx"></block>.</block>
   <block id="44fb59de1e9bca7d7d33dee185838ea7" category="paragraph">除非列為不受支援，否則 <block ref="585532baa3876b6b8281302459d86312" category="inline-link-macro-rx"></block> 中的所有其他命令均受 ASA r2 系統支援。</block>
+  <block id="a809a3f67f68e189b93c920155d8f362" category="list-text">NetApp Aggregate Encryption （NAE）</block>
+  <block id="2b115325b25b8f67f05803e840eb1b7c" category="paragraph">ASA r2 系統支援使用自加密磁碟機 (SED) 的硬體加密和使用 NetApp 磁碟區加密 (NVE) 技術的軟體加密。<block ref="285ab21de69619aa33a3697c0850e834" category="inline-link-macro-rx"></block> 以保護 ASA r2 系統上的資料。</block>
+  <block id="f5c9d4c28f92d0b49036a87f3b949ecc" category="paragraph">除了 NSE 之外，您還可以啟用軟體加密，為資料增加一層額外的安全性。ASA r2 系統使用 NetApp Volume Encryption （NVE） 技術在軟體層面加密資料。NetApp Aggregate Encryption （NAE） 不支援 ASA r2 系統，因為 ASA r2 系統的儲存層使用儲存可用區而非聚合。</block>
+  <block id="c4b8c29f448328e82ce27062b5fd9c28" category="inline-link-macro">NetApp 磁碟區加密</block>
+  <block id="3b02d77db56f5837a4003247043c2394" category="paragraph">深入瞭解<block ref="31c33696bbbaa92dffde7abe3995709d" category="inline-link-macro-rx"></block>。</block>
+  <block id="a77592aaf5c220b3ff9f169a775bd853" category="inline-link-macro">ASA r2 系統與其他 ONTAP 系統的差異</block>
+  <block id="a3516695dad8c94bdcdc3a67a8d5dd34" category="paragraph">深入瞭解<block ref="539f35f6411ebaaeab190de38a065f4e" category="inline-link-macro-rx"></block>。</block>
 </blocks>

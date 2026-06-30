@@ -21,7 +21,11 @@ NOTE: 在ASA r2 系統中，SED 僅支援基於 NVMe 的 SSD。
 
 使用 ASA R2 內建金鑰管理程式或外部金鑰管理程式、為節點提供驗證金鑰。
 
-除了 NSE 之外、您也可以啟用軟體加密、為資料增添另一層安全性。
+除了 NSE 之外，您還可以啟用軟體加密，為資料增加一層額外的安全性。ASA r2 系統使用 NetApp Volume Encryption （NVE） 技術在軟體層面加密資料。NetApp Aggregate Encryption （NAE） 不支援 ASA r2 系統，因為 ASA r2 系統的儲存層使用儲存可用區而非聚合。
+
+深入瞭解link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["NetApp 磁碟區加密"^]。
+
+深入瞭解link:https://docs.netapp.com/us-en/asa-r2/learn-more/hardware-comparison.html["ASA r2 系統與其他 ONTAP 系統的差異"]。
 
 .步驟
 . 在系統管理器中，選擇 * 叢集 > 設定 * 。

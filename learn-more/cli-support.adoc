@@ -40,7 +40,6 @@ NOTE: 這 `lun move-in-volume`命令被替換為 `lun rename`和 `vserver nvme n
 ====
 * `storage failover show-takeover`
 * `storage failover show-giveback`
-* `storage aggregate relocation`
 * `storage disk assign`
 * `storage disk partition`
 * `storage disk reassign`
