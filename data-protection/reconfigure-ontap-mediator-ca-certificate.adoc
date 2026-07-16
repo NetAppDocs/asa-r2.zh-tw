@@ -15,6 +15,7 @@ summary: 如果您使用自簽名憑證設定ONTAP調解器或ONTAP Cloud 調解
 
 
 
+[[step-1-remove-the-mediator-configuration]]
 == 步驟 1：刪除中介配置
 
 若要重新配置調解器，您必須先從叢集中刪除其目前配置。
@@ -30,6 +31,7 @@ summary: 如果您使用自簽名憑證設定ONTAP調解器或ONTAP Cloud 調解
 
 
 
+[[step-2-remove-the-self-signed-certificate]]
 == 步驟 2：刪除自簽名證書
 
 移除中介配置後，您應該會從叢集中刪除相關的自簽名憑證。
@@ -43,6 +45,7 @@ summary: 如果您使用自簽名憑證設定ONTAP調解器或ONTAP Cloud 調解
 
 
 
+[[step-3-reinstall-the-mediator-with-a-third-party-certificate]]
 == 步驟 3：使用第三方憑證重新安裝中介
 
 刪除關聯的自簽名憑證後，您可以使用第三方憑證重新設定中介。

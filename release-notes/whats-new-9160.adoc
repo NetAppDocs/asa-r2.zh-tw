@@ -18,6 +18,7 @@ summary: 瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。
 
 
 
+[[systems]]
 == 系統
 
 [cols="2,4"]
@@ -36,6 +37,7 @@ summary: 瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。
 |===
 
 
+[[system-manager]]
 == 系統管理員
 
 [cols="2,4"]
@@ -47,6 +49,7 @@ summary: 瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。
 |===
 
 
+[[storage-management]]
 == 儲存管理
 
 [cols="2,4"]
@@ -64,6 +67,7 @@ ASA R2 系統採用一致性群組的儲存單元、以簡化儲存管理。
 |===
 
 
+[[data-security]]
 == 資料安全
 
 [cols="2,4"]

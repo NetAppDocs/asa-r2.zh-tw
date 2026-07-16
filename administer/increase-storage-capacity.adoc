@@ -15,6 +15,7 @@ summary: 將磁碟機新增至節點或機櫃、以增加 ASA R2 儲存單元的
 
 
 
+[[use-netapp-hardware-universe-to-prepare-for-installation-of-a-new-drive]]
 == 使用 NetApp Hardware Universe 準備安裝新磁碟機
 
 在向節點或機架安裝新驅動器之前，請使用NetAppHardware Universe來確認要新增的驅動器是否受ASA r2 系統支持，並確定新驅動器的正確插槽。根據系統型號和ONTAP版本不同，新增磁碟機的正確插槽也會有所不同。在某些情況下，您需要按順序將硬碟機新增至指定的插槽。
@@ -33,6 +34,7 @@ summary: 將磁碟機新增至節點或機櫃、以增加 ASA R2 儲存單元的
 
 
 
+[[install-a-new-drive-on-the-asa-r2]]
 == 在 ASA R2 上安裝新磁碟機
 
 在單一程序中應新增的磁碟機數量下限為六個。新增單一磁碟機可能會降低效能。

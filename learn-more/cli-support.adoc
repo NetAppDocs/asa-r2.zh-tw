@@ -142,6 +142,7 @@ NOTE: 這 `lun move-in-volume`命令被替換為 `lun rename`和 `vserver nvme n
 ====
 
 
+[[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == 使用 CLI 設定 ONTAP ASA R2 叢集
 
 建議您link:../install-setup/initialize-ontap-cluster.html["使用系統管理員來設定 ONTAP ASA R2 叢集"]。System Manager 提供快速且簡單的引導式工作流程、讓您的叢集能夠正常運作。不過、如果您習慣使用 ONTAP 命令、則可以選用 ONTAP 命令列介面（ CLI ）來進行叢集設定。使用 CLI 進行叢集設定、除了使用 System Manager 設定叢集之外、沒有其他選項或優點。

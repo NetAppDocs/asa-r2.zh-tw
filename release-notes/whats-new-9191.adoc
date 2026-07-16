@@ -18,6 +18,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 
 
 
+[[data-protection]]
 == 資料保護
 
 [cols="2,4"]
@@ -29,6 +30,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 |===
 
 
+[[san-data-migration]]
 == SAN資料遷移
 
 [cols="2,4"]
@@ -40,6 +42,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 |===
 
 
+[[san-configuration]]
 == SAN 組態
 
 [cols="2,4"]
@@ -51,6 +54,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 |===
 
 
+[[security]]
 == 安全性
 
 [cols="2,4"]
@@ -65,6 +69,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 |===
 
 
+[[storage-efficiency]]
 == 儲存效率
 
 [cols="2,4"]
@@ -76,6 +81,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 |===
 
 
+[[storage-resource-management]]
 == 儲存資源管理
 
 [cols="2,4"]
@@ -90,6 +96,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 |===
 
 
+[[upgrade]]
 == 升級
 
 [cols="2,4"]

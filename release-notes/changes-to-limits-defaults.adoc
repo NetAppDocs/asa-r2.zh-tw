@@ -18,6 +18,7 @@ summary: 瞭解影響 ASA R2 系統的限制和預設值變更。
 
 
 
+[[changes-to-ontap-limits]]
 == ONTAP 限制變更
 
 [cols="2,4,4"]

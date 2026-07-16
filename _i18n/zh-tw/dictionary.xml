@@ -1272,14 +1272,12 @@
   <block id="9e9e90703a7077203260b19a3af9704a" category="doc">在 ASA R2 系統上設定 SAN 通訊協定</block>
   <block id="21d3b12a5a9f6ff0d25b8b5e5e00b7ff" category="paragraph">以下是影片的記錄<block ref="1ef61309a2d73f2fc4d83b527ce1790e" prefix=" " category="inline-code"></block>。</block>
   <block id="d0bbf471679ba0e6e7c8d0868d538ded" category="inline-link-macro">返回頁面</block>
-  <block id="8ec987fa6675a860245dc712f3312c0e" category="paragraph"><block ref="8ec987fa6675a860245dc712f3312c0e" category="inline-link-macro-rx"></block></block>
   <block id="d5f2b6c9f6f10c18aaa16451b892f918" category="paragraph">您可以使用 ONTAP 系統管理員來快速輕鬆地設定 SAN 通訊協定。在此範例中、我們將為 iSCSI 網路介面設定 IP 位址。</block>
   <block id="fb5c0f9ac1d7ca64f515441ac68af5b9" category="paragraph">從 System Manager 儀表板選取 * 設定通訊協定 * 。</block>
   <block id="9e0acd2071d8ef683d886a96a243f9cc" category="paragraph">在 *IP* 下，選擇 * 配置 IP 接口 * ，然後選擇 * 添加子網 * 。</block>
   <block id="75d7e21ebd9ad6b23f1103cbbb28fd31" category="paragraph">您只需輕鬆快速地為 iSCSI 網路介面設定 IP 位址即可。</block>
   <block id="d41e8dd34fef54160816dae4105416f6" category="doc">在 ASA R2 系統上設定 SAN 儲存設備</block>
   <block id="501a74ab6e17a226c7db107b0b362ce4" category="paragraph">以下是影片的記錄<block ref="c4c3ae1c600a410ad0a77c184a6ed22d" prefix=" " category="inline-code"></block>。</block>
-  <block id="cd4306b1f40c20342606f6ebe1b9b132" category="paragraph"><block ref="cd4306b1f40c20342606f6ebe1b9b132" category="inline-link-macro-rx"></block></block>
   <block id="a74447cd194e6886256748db76e9ae46" category="paragraph">您可以使用 ONTAP 系統管理員、快速輕鬆地為 ASA R2 儲存系統上的主機配置儲存單元。</block>
   <block id="eb691c0f91c8f9367dcb6c9f06318778" category="paragraph">在此範例中、我們將為 VMware 主機建立六個新的儲存單元。</block>
   <block id="9edc34b4ab80212df9e7c8ff995825c4" category="paragraph">從 System Manager （系統管理器）菜單中，選擇 *Storage* （存儲），然後選擇 *Add* （添加 * ）。</block>
@@ -1294,7 +1292,6 @@
   <block id="57518dcb41d6ac90666f3d8a3543cbf1" category="paragraph">您已為 VMware 主機快速輕鬆地配置 6 個儲存單元、並提供本機和遠端資料保護。</block>
   <block id="ecb75446a7c4cfdf2386be49b4717f5e" category="doc">從 ASA R2 儲存系統將資料複寫到遠端叢集</block>
   <block id="8572d98fea3b161eff979b45162c34a4" category="paragraph">以下是影片的記錄<block ref="ecb75446a7c4cfdf2386be49b4717f5e" prefix=" " category="inline-code"></block>。</block>
-  <block id="95735d0c5c7e1f277a6dc2f6343eafd2" category="paragraph"><block ref="95735d0c5c7e1f277a6dc2f6343eafd2" category="inline-link-macro-rx"></block></block>
   <block id="7712dd1d9094f2df5051142ff1326fcf" category="paragraph">您可以使用 ONTAP 系統管理員來保護資料、方法是排程儲存單元或一致性群組的快照、並複寫到遠端位置。</block>
   <block id="570740fdd385f21db680dfb9ac6e188c" category="paragraph">在此範例中、我們將為現有的儲存單元排程快照。</block>
   <block id="7bf7b432cb3f092a1b6c4190957cb728" category="paragraph">從 System Manager （系統管理器）菜單中，選擇 * Storage* （存儲）。</block>
@@ -1309,7 +1306,6 @@
   <block id="5ef28dca4765c2062298d598ab026d26" category="paragraph"><block ref="5ef28dca4765c2062298d598ab026d26" category="inline-link-macro-rx"></block></block>
   <block id="7ebbd6cd31821e10ac13f968ef34335c" category="video-title">在 ASA R2 系統上配置 SAN 儲存設備</block>
   <block id="defcb9fd853d367bd660700f47c024f5" category="paragraph"><block ref="defcb9fd853d367bd660700f47c024f5" category="inline-link-macro-rx"></block></block>
-  <block id="df0ea0d9c07aa4c309c871e15407f287" category="video-title">從 ASA R2 系統將資料複寫到遠端叢集</block>
   <block id="c36a662a0d118eeb7f481b5322c5ea40" category="paragraph"><block ref="c36a662a0d118eeb7f481b5322c5ea40" category="inline-link-macro-rx"></block></block>
   <block id="1bb71df56b7ae979d57d7cedfffe49f5" category="sidebar">ASA R2 說明文件</block>
   <block id="594032ab8be72e6b6adc8b69d77df644" category="sidebar">NetApp ASA R2 系統提供統一化的硬體與軟體解決方案、可針對僅限 SAN 的客戶需求、提供簡化的體驗。</block>
@@ -2412,7 +2408,6 @@
   <block id="5c1b41ebe7dbb796571241a2573537df" category="paragraph-title">使用協定服務建立預設儲存虛擬機</block>
   <block id="23b1f43da700200258ce094b112f1151" category="paragraph">新叢集會自動包含一個預設資料儲存虛擬機器 (VM)，並啟用 SAN 協定。  IP 資料 LIF 支援 iSCSI 和 NVMe/TCP 協議，並使用<block ref="6ee97f4349d48b4c53372dfd08835169" prefix=" " category="inline-code"></block>預設服務策略。</block>
   <block id="5394908cf8d6f0ebb49c495b8cb4d0dd" category="doc">將儲存虛擬機器從ASA集群遷移到ASA r2 集群</block>
-  <block id="8130504a4a07dbee2f22de1dad3dd3b8" category="paragraph">從ONTAP 9.18.1 開始，您可以將儲存虛擬機器 (VM) 從任何ASA叢集無中斷地遷移到任何ASA r2 叢集。從ASA叢集遷移到ASA r2 叢集，您可以為僅限 SAN 的環境採用ASA r2 系統的簡化和精簡架構。</block>
   <block id="ec8bccf423bcef2e309e4956040ccb3f" category="paragraph">ASA和ASA r2 儲存系統之間支援儲存虛擬機器遷移，具體方式如下：</block>
   <block id="42327235fd87e6d620f2ee816e9d6149" category="cell">從以下任何ASA系統：</block>
   <block id="275e0eab272c57c148cc1d5c3b82d7b7" category="cell">適用於下列任何ASA r2 系統：</block>
@@ -2872,4 +2867,10 @@
   <block id="3b02d77db56f5837a4003247043c2394" category="paragraph">深入瞭解<block ref="31c33696bbbaa92dffde7abe3995709d" category="inline-link-macro-rx"></block>。</block>
   <block id="a77592aaf5c220b3ff9f169a775bd853" category="inline-link-macro">ASA r2 系統與其他 ONTAP 系統的差異</block>
   <block id="a3516695dad8c94bdcdc3a67a8d5dd34" category="paragraph">深入瞭解<block ref="539f35f6411ebaaeab190de38a065f4e" category="inline-link-macro-rx"></block>。</block>
+  <block id="ea03cb347c7ee0097cb3e671367a977c" category="paragraph">從 ONTAP 9.18.1 開始，您可以將儲存虛擬機器 （VM） 從任何標準 ASA 叢集無中斷地移轉到任何 ASA r2 叢集。從標準 ASA 叢集移轉到 ASA r2 叢集，讓您能夠在純 SAN 環境中採用 ASA r2 系統簡化且精簡的架構。</block>
+  <block id="b5242c12e4e4dddc0b06b882bba4d38b" category="admonition">您無法將儲存 VM 從 ASA MetroCluster 移轉至 ASA r2 叢集。ASA r2 系統不支援 MetroCluster 組態。</block>
+  <block id="196eeaa68e9fe706e49dda770e2601a9" category="paragraph"><block ref="196eeaa68e9fe706e49dda770e2601a9" category="inline-link-macro-rx"></block></block>
+  <block id="a40044a10e4010bd1fcc3bb2a5acd96f" category="paragraph">您可以使用 ONTAP System Manager 快速輕鬆地設定 SAN 協定。在本範例中，我們將為 iSCSI 網路介面設定 IP 位址。</block>
+  <block id="fa3b2d5f55592e57d1efa4cfd44b807d" category="paragraph">您可以使用 ONTAP System Manager 快速輕鬆地為 ASA r2 儲存系統上的主機資源配置儲存設備單元。在本範例中，我們將為 VMware 主機建立六個新的儲存設備單元。</block>
+  <block id="1de3d3f8e9212838f0341d59efab31fa" category="paragraph">您可以使用 ONTAP System Manager，透過安排儲存單元或一致性群組的快照並將其複製到遠端位置來保護您的資料。在本範例中，我們將為現有儲存單元安排快照。</block>
 </blocks>

@@ -19,12 +19,14 @@ link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.
 
 
 
+[[revert-requirements-for-asa-r2-systems]]
 == ASA r2 系統的恢復需求
 
 某些ASA r2 叢集設定要求您在開始ONTAP軟體復原之前採取特定操作。
 
 
 
+[[reverting-from-ontap-9-17-1]]
 === 從ONTAP 9.17.1 還原
 
 如果要在ASA r2 系統上從ONTAP 9.17.1 恢復，則在開始恢復之前應執行下列操作：

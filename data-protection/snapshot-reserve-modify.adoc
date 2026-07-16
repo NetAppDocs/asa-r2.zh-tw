@@ -17,6 +17,7 @@ link:snapshot-reserve.html["了解更多關於ASA r2 儲存系統的快照保留
 
 
 
+[[modify-snapshot-reserve-on-storage-units]]
 == 修改儲存單元的快照預留
 
 若要設定不同的快照保留值，請分別配置每個儲存單元。若要對所有儲存單元使用相同的值，請修改儲存 VM 上的快照預留。
@@ -35,6 +36,7 @@ link:snapshot-reserve.html["了解更多關於ASA r2 儲存系統的快照保留
 
 
 
+[[modify-snapshot-reserve-on-a-storage-vm]]
 == 修改儲存虛擬機器上的快照預留
 
 若要為儲存虛擬機器中的所有儲存單元設定相同的快照保留，請將所需的百分比套用至儲存虛擬機器。。當快照預留應用於儲存虛擬機器時，它將套用於儲存虛擬機器內所有新建立的儲存單元。此設定不適用於修改設定之前建立的儲存單元。

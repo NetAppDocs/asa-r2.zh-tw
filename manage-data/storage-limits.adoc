@@ -64,6 +64,7 @@ ASA r2 系統支援以下儲存限制：
 |===
 
 
+[[limits-for-snapmirror-asynchronous-relationships]]
 == SnapMirror非同步關係的限制
 
 以下限制適用於SnapMirror非同步複製關係中的儲存單元和一致性群組。如需查看最新的ASA r2 儲存限製完整列表，link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 。
@@ -80,6 +81,7 @@ ASA r2 系統支援以下儲存限制：
 |===
 
 
+[[limits-for-snapmirror-active-sync-relationship]]
 == SnapMirror主動同步關係的限制
 
 以下限制適用於SnapMirror主動同步複製關係中的儲存單元和一致性群組。從ONTAP 9.17.1 開始， SnapMirror主動同步僅在雙節點叢集上支援。從ONTAP 9.18.1 開始， SnapMirror主動同步功能在四節點叢集上得到支援。

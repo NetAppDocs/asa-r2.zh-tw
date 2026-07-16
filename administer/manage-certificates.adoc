@@ -17,6 +17,7 @@ summary: 使用數位安全性憑證來驗證遠端伺服器的身分識別。
 
 
 
+[[generate-a-certificate-signing-request]]
 == 產生憑證簽署要求
 
 產生憑證簽署要求（ CSR ）以建立可用於產生公開憑證的私密金鑰。
@@ -34,6 +35,7 @@ summary: 使用數位安全性憑證來驗證遠端伺服器的身分識別。
 
 
 
+[[add-a-trusted-certificate-authority]]
 == 新增信任的憑證授權單位
 
 ONTAP 為使用傳輸層安全性（ TLS ）的應用程式提供一組預設的信任根憑證。您可以視需要新增其他信任的憑證授權單位。
@@ -50,6 +52,7 @@ ONTAP 為使用傳輸層安全性（ TLS ）的應用程式提供一組預設的
 
 
 
+[[renew-or-delete-a-trusted-certificate-authority]]
 == 續約或刪除信任的憑證授權單位
 
 信任的憑證授權單位必須每年續約。如果您不想續約過期的憑證、您應該將其刪除。
@@ -83,6 +86,7 @@ ONTAP 為使用傳輸層安全性（ TLS ）的應用程式提供一組預設的
 
 
 
+[[add-a-clientserver-certificate-or-local-certificate-authorities]]
 == 新增用戶端 / 伺服器憑證或本機憑證授權單位
 
 新增用戶端 / 伺服器憑證或本機憑證授權單位、以啟用安全的 Web 服務。
@@ -99,6 +103,7 @@ ONTAP 為使用傳輸層安全性（ TLS ）的應用程式提供一組預設的
 
 
 
+[[renew-or-delete-a-clientserver-certificate-or-local-certificate-authorities]]
 == 續約或刪除用戶端 / 伺服器憑證或本機憑證授權單位
 
 用戶端 / 伺服器憑證和本機憑證授權單位必須每年續約。如果您不想續約過期的憑證或本機憑證授權單位、您應該將其刪除。

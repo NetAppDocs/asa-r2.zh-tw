@@ -19,6 +19,7 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 進行資料複製
 
 
 
+[[clone-storage-units]]
 == 複製儲存單元
 
 當您複製儲存單元時、您會在 ASA R2 系統上建立新的儲存單元、這是您複製的儲存單元的時間點可寫入複本。
@@ -74,6 +75,7 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 進行資料複製
 
 
 
+[[clone-consistency-groups]]
 == 複製一致性群組
 
 當您複製一致性群組時、您會建立一個新的一致性群組、該群組在結構、儲存單元和資料上與您所複製的一致性群組相同。使用一致性群組複製來執行應用程式測試或移轉資料。例如、假設您需要將正式作業工作負載移出一致性群組。您可以複製一致性群組、建立正式作業工作負載的複本、以維持備份、直到移轉完成為止。
@@ -153,6 +155,7 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 進行資料複製
 
 
 
+[[split-consistency-group-clone]]
 == 分割一致性群組複本
 
 分割一致性群組複本時，您會將複本與來源一致性群組分離，並為複本分配磁碟空間。該複本會變成獨立的一致性群組，可獨立於來源一致性群組使用。

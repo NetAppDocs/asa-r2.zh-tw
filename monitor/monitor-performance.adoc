@@ -18,6 +18,7 @@ searchtitle: 使用 ONTAP System Manager| ASA R2 監控叢集效能
 
 
 
+[[monitor-cluster-performance]]
 == 監控叢集效能
 
 使用叢集效能指標來判斷您是否需要移轉工作負載、以將延遲降至最低、並將關鍵應用程式的 IOPS 和處理量最大化。
@@ -33,6 +34,7 @@ searchtitle: 使用 ONTAP System Manager| ASA R2 監控叢集效能
 
 
 
+[[monitor-storage-unit-performance]]
 == 監控儲存單元效能
 
 使用儲存單元效能指標來判斷特定應用程式對延遲、 IOPS 和處理量的影響。

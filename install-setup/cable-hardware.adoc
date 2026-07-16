@@ -15,6 +15,7 @@ summary: 為 ASA r2 儲存系統連接電纜，以啟用叢集通訊、主機網
 
 
 
+[[overview-of-hardware-cabling]]
 == 硬體佈線總覽
 
 由於每款 ASA r2 型號的插槽位置、連接埠指派和 I/O 模組配置各不相同，因此不同平台型號的佈線方式也不同。請選擇適用於您的 ASA r2 型號的程序：
@@ -47,6 +48,7 @@ summary: 為 ASA r2 儲存系統連接電纜，以啟用叢集通訊、主機網
 
 
 
+[[additional-resources]]
 == 其他資源
 
 佈線程序顯示常見的組態。具體的佈線取決於您為儲存系統訂購的元件。如需完整的組態和插槽優先順序詳細資訊，請參閱 link:https://hwu.netapp.com["NetApp Hardware Universe"^]。
