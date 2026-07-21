@@ -2770,7 +2770,6 @@
   <block id="7dadbaefb3cf1bd5b8a86802fac0839a" category="inline-link-macro">執行 ONTAP 自動升級前檢查</block>
   <block id="c240788f59668332d5c171cbe489376a" category="paragraph">了解如何<block ref="9c7fdd39bc5019d6cec3e908fec6a772" category="inline-link-macro-rx"></block>。</block>
   <block id="9917a58904f13efdde588f2978fd93b9" category="inline-link-macro">利用 AI 啟用自主勒索軟體保護</block>
-  <block id="fb1b02686213ed6e031c1f039708270a" category="admonition">從 ONTAP 9.19.1 RC 版本開始，人工智慧自主勒索軟體防護（ARP/AI）支援 ASA r2 系統上處於 SnapMirror 活動同步 SAN 關係中的主讀寫儲存單元。ARP/AI 在活動主儲存單元上運行，建立僅針對主儲存單元的 ARP 快照，並為這些儲存單元提供基於機器學習的勒索軟體偵測。若要啟用 ARP/AI，請參閱<block ref="1ee41ad3123e5db18e6fae76e28afe9f" category="inline-link-macro-rx"></block>。</block>
   <block id="b71329b670dac542862012007751fd6f" category="summary">在為執行 ONTAP 9.19.1 或更高版本的 AIX 主機啟用 SnapMirror 主動式同步之前，必須將主機存取模式設定為本機。</block>
   <block id="e7afd2cc385e151dc252f52489678be6" category="doc">為 ASA r2 系統上的 SnapMirror 主動同步保護準備 AIX 主機</block>
   <block id="16624daae6b7659680047c4fc428fec2" category="paragraph">從 ONTAP 9.19.1 開始，AIX 的透明應用程式容錯移轉功能在對稱主動/主動組態中透過 SnapMirror 主動同步獲得支援。SnapMirror 主動同步資料保護功能可確保即使在站台完全故障的情況下，業務服務也能繼續運作，並支援應用程式使用次要複本進行透明容錯移轉。</block>
@@ -2784,7 +2783,6 @@
   <block id="6d33f82590752283d027e2c7394ab829" category="paragraph">AIX 主機的儲存單元已準備好進行 SnapMirror 主動同步保護。</block>
   <block id="55aa696f6eeaf20f8cd5f18a42f214dd" category="paragraph">雖然在 ASA r2 系統上設定 SnapMirror 主動式同步的 System Manager 程序與在執行統一 ONTAP 特性的 NetApp FAS、AFF 和 ASA 系統上的程序不同，但 SnapMirror 主動式同步的需求、架構和操作是相同的。<block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
   <block id="1783622f273954ab75caf352332b94b9" category="paragraph">在 ASA r2 系統上、SnapMirror 主動式同步支援對稱主動 / 主動組態。在對稱主動 / 主動組態中、兩個站台都可以存取本機儲存設備以進行主動式 I/O。深入瞭解<block ref="cd08e89ddecf5772544f56e955b2d721" category="inline-link-macro-rx"></block>。</block>
-  <block id="98c953c1bb66d85c490522bafc5c85b5" category="list-text">從 ONTAP 9.19.1 RC 版本開始，人工智慧自主勒索軟體防護（ARP/AI）支援 ASA r2 系統上處於 SnapMirror 活動同步 SAN 關係中的主讀寫儲存單元。ARP/AI 在活動主儲存單元上運行，建立僅針對主儲存單元的 ARP 快照，並為這些儲存單元提供基於機器學習的勒索軟體偵測。有關 ARP/AI 啟用步驟，請參閱<block ref="1ee41ad3123e5db18e6fae76e28afe9f" category="inline-link-macro-rx"></block>。</block>
   <block id="f6948bd1b416e70ac7297904c89918c2" category="inline-link-macro">準備 AIX 主機</block>
   <block id="9f3699fb5ae95cc656437f0d40316b3a" category="paragraph">如果您執行的是 ONTAP 9.19.1 或更新版本，並且為 AIX 主機啟用 SnapMirror 主動同步，則應該<block ref="a1eb09700bb6039b09944ad4a8beb294" category="inline-link-macro-rx"></block>。</block>
   <block id="d844604326e9cd2c315729a7379f2f39" category="paragraph">從 ONTAP 9.19.1 開始,FLI 支援 iSCSI 協定進行後端連線。</block>
@@ -2829,7 +2827,6 @@
   <block id="9d255f8061d2c26397587d57452560a3" category="cell">建立 FC 和 FC-NVMe 主機與 ONTAP 儲存設備之間的連線時、不需要 FC 交換器。主機可直接連接至 ASA r2 系統上的 FC 介面卡連接埠。直接連接功能在遠端站台和混合式環境中特別有價值、因為在這些環境中、簡易性是關鍵。</block>
   <block id="1c1e4bbac513ca426ea459850a27cf80" category="inline-link-macro">支援具有 SnapMirror 主動式同步關係的 ARP/AI</block>
   <block id="06c698f9402b1596702afca5eb290c16" category="cell"><block ref="06c698f9402b1596702afca5eb290c16" category="inline-link-macro-rx"></block></block>
-  <block id="ae5b88290cbba1c2143301d124dcbbbf" category="cell">人工智慧自主勒索軟體防護（ARP/AI）支援 ASA r2 系統上處於 SnapMirror 活動同步關係的主讀寫儲存單元。ARP/AI 在活動主儲存單元上運行，建立僅針對主儲存單元的 ARP 快照，並為這些儲存單元提供基於機器學習的勒索軟體偵測。</block>
   <block id="281fd14262fa7c1793e3c18dfd336f7f" category="inline-link-macro">支援 TLS 硬體卸載</block>
   <block id="1c03eaa9510cac0323e8851def881c41" category="cell"><block ref="1c03eaa9510cac0323e8851def881c41" category="inline-link-macro-rx"></block></block>
   <block id="856d2008511fbcc3fde42bc9df07cc74" category="inline-link-macro">支援全域重複資料刪除</block>
@@ -2849,7 +2846,6 @@
   <block id="064aa1a0e3e542c891816ff0102a8eca" category="summary">如果您在 ASA r2 叢集上安裝了 Autonomous Ransomware Protection 授權，則在升級至 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 叢集 12 小時後，所有現有和新建立的儲存單元將預設為啟用 ARP。</block>
   <block id="c21e619b6e99a5ee7d89c9b052f96fb0" category="summary">啟用 ARP 和 AI 來偵測潛在的勒索軟體威脅、自動採取措施保護您的資料，並在 System Manager 中顯示警告訊息，提醒您注意可疑活動。</block>
   <block id="99705e545197778e8e90edce81239e6b" category="paragraph">ARP 透過採用機器學習模式進行反勒索軟體分析，進而提升網路彈性，該模式能夠偵測 SAN 環境中不斷演變的勒索軟體。ARP 的機器學習模型在模擬勒索軟體攻擊前後，均使用大型檔案資料集進行預訓練。這種資源密集型訓練在 ONTAP 外部進行，訓練產生的預訓練模型已整合到 ONTAP 系統中。該模型不可存取或修改。ARP/AI 在啟用後立即生效；無需<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
-  <block id="32993ed903bc1884ece0b04175a7a552" category="list-text">從 ONTAP 9.19.1 RC 版本開始，基於人工智慧的自主勒索軟體防護（ARP/AI）支援 ASA r2 系統上處於 SnapMirror 活動同步 SAN 關係中的主讀寫儲存單元。ARP/AI 在活動主儲存單元上運行，建立僅針對主儲存單元的 ARP 快照，並為這些儲存單元提供基於機器學習的勒索軟體偵測。</block>
   <block id="0da4b61d19faba4a01242d2539243538" category="list-text">受 SnapLock 保護的儲存單元不支援 ARP/AI。</block>
   <block id="df2caa7829ca66f49ae2621799defacd" category="summary">如果您在 ASA r2 系統上使用 IP 協定，則可以設定 IP 安全性來增強資料安全性。</block>
   <block id="51e4b174c948dff20235dc02acc443e7" category="summary">透過設定 NVMe TCP over TLS 來增強資料安全性，以加密 NVMe TCP 主機和 ONTAP 之間透過網路傳送的所有資料。</block>
@@ -2873,4 +2869,15 @@
   <block id="a40044a10e4010bd1fcc3bb2a5acd96f" category="paragraph">您可以使用 ONTAP System Manager 快速輕鬆地設定 SAN 協定。在本範例中，我們將為 iSCSI 網路介面設定 IP 位址。</block>
   <block id="fa3b2d5f55592e57d1efa4cfd44b807d" category="paragraph">您可以使用 ONTAP System Manager 快速輕鬆地為 ASA r2 儲存系統上的主機資源配置儲存設備單元。在本範例中，我們將為 VMware 主機建立六個新的儲存設備單元。</block>
   <block id="1de3d3f8e9212838f0341d59efab31fa" category="paragraph">您可以使用 ONTAP System Manager，透過安排儲存單元或一致性群組的快照並將其複製到遠端位置來保護您的資料。在本範例中，我們將為現有儲存單元安排快照。</block>
+  <block id="f43f4b6bc588a7f61fa9daea46159573" category="admonition">從 ONTAP 9.19.1 開始，具備人工智慧的自主勒索軟體防護 （ARP/AI） 支援 ASA r2 系統上 SnapMirror 主動同步 SAN 關係中的主讀寫儲存設備單元。ARP/AI 在作用中的主儲存設備單元上執行，建立僅限主儲存設備的 ARP 快照，並為這些儲存設備單元提供以機器學習為基礎的勒索軟體偵測。若要啟用 ARP/AI，請參閱 <block ref="1ee41ad3123e5db18e6fae76e28afe9f" category="inline-link-macro-rx"></block>。</block>
+  <block id="eda51543caac7ba0656479493808f25e" category="list-text">從 ONTAP 9.19.1 開始，具備人工智慧的自主勒索軟體防護 （ARP/AI） 支援 ASA r2 系統上 SnapMirror 主動同步 SAN 關係中的主讀寫儲存設備單元。ARP/AI 在作用中的主儲存設備單元上執行，建立僅限主要的 ARP 快照，並為這些儲存設備單元提供以機器學習為基礎的勒索軟體偵測。如需 ARP/AI 能力開發步驟，請參閱 <block ref="1ee41ad3123e5db18e6fae76e28afe9f" category="inline-link-macro-rx"></block>。</block>
+  <block id="67de111be220e704fc0fcaa510ec0b92" category="section-title">IPspace TCP 效能</block>
+  <block id="d3e53b85a4d88cd5e122ce8261a4169a" category="paragraph">從 ONTAP 9.19.1 版本開始，ONTAP 透過在 ONTAP TCP 堆疊中整合 PRR 和 RACK 兩項丟包恢復功能，提升了在丟包率高、延遲高的 WAN 連結上的 TCP 資料傳輸效能。PRR 適用於所有網路，預設為啟用。RACK 適用於連結速度約為 25 Gigabits/second 的擁塞網路，預設為停用。</block>
+  <block id="895bf8811e3cb07ceb13e94fad59a963" category="inline-link-macro">了解更多關於如何使用 PRR 和 RACK 提升 TCP WAN 效能</block>
+  <block id="e0246ce94795c8bf02a28b9de49fbc5d" category="paragraph"><block ref="619e9e74d549309a1b0c41bc76031498" category="inline-link-macro-rx"></block>。</block>
+  <block id="1d3f2716111de88760369111858eeee2" category="inline-link-macro">TCP 效能提升</block>
+  <block id="4dc45270721fefe8db171547732b5405" category="cell"><block ref="4dc45270721fefe8db171547732b5405" category="inline-link-macro-rx"></block></block>
+  <block id="17ff1a352874a1bd5fb7c4707117cd86" category="cell">ONTAP 透過將 PRR 和 RACK 這兩個丟包復原功能整合到 ONTAP TCP 堆疊中，提升在高丟包率、高延遲 WAN 連結上的 TCP 資料傳輸效能。</block>
+  <block id="4910573cab7d204a834f1ef33d28e6aa" category="cell">人工智慧自主勒索軟體防護 (ARP/AI) 支援 ASA r2 系統上處於 SnapMirror 主動同步關係中的主讀寫儲存設備單元。ARP/AI 在活動主儲存設備單元上運行，建立僅針對主儲存設備單元的 ARP 快照，並為這些儲存設備單元提供基於機器學習的勒索軟體偵測。先前因同步複寫關係而導致預設 ARP 能力開發受到抑制的叢集升級至 ONTAP 9.19.1 後，ARP 將自動恢復。更新前警告會通知管理員，並提供停用 ARP 的選項。</block>
+  <block id="43711203668248fcdb2737c0b52f163a" category="list-text">從 ONTAP 9.19.1 開始，具備人工智慧的自主勒索軟體防護 (ARP/AI) 支援 ASA r2 系統上 SnapMirror 主動同步 SAN 關係中的主讀寫儲存設備單元。ARP/AI 在作用中的主儲存設備單元上執行，建立僅限主要的 ARP 快照，並為這些儲存設備單元提供以機器學習為基礎的勒索軟體偵測。</block>
 </blocks>

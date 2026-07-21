@@ -30,6 +30,18 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 |===
 
 
+[[performance]]
+== 效能
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#performance["TCP 效能提升"] | ONTAP 透過將 PRR 和 RACK 這兩個丟包復原功能整合到 ONTAP TCP 堆疊中，提升在高丟包率、高延遲 WAN 連結上的 TCP 資料傳輸效能。 
+|===
+
+
 [[san-data-migration]]
 == SAN資料遷移
 
@@ -62,7 +74,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 | 更新 | 說明 
 
 
-| link:../secure-data/enable-anti-ransomware-protection.html["支援具有 SnapMirror 主動式同步關係的 ARP/AI"] | 人工智慧自主勒索軟體防護（ARP/AI）支援 ASA r2 系統上處於 SnapMirror 活動同步關係的主讀寫儲存單元。ARP/AI 在活動主儲存單元上運行，建立僅針對主儲存單元的 ARP 快照，並為這些儲存單元提供基於機器學習的勒索軟體偵測。 
+| link:../secure-data/enable-anti-ransomware-protection.html["支援具有 SnapMirror 主動式同步關係的 ARP/AI"] | 人工智慧自主勒索軟體防護 (ARP/AI) 支援 ASA r2 系統上處於 SnapMirror 主動同步關係中的主讀寫儲存設備單元。ARP/AI 在活動主儲存設備單元上運行，建立僅針對主儲存設備單元的 ARP 快照，並為這些儲存設備單元提供基於機器學習的勒索軟體偵測。先前因同步複寫關係而導致預設 ARP 能力開發受到抑制的叢集升級至 ONTAP 9.19.1 後，ARP 將自動恢復。更新前警告會通知管理員，並提供停用 ARP 的選項。 
 
 
 | link:../learn-more/additional-supported-ontap-features.html#tls-hardware-offload["支援 TLS 硬體卸載"] | 您可以將整個叢集的傳輸層安全性（TLS）加密和解密任務卸載到支援的乙太網路卡上。這可以降低 CPU 開銷，並提高使用 TLS 的系統的效能。 

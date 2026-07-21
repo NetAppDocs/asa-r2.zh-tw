@@ -141,6 +141,15 @@ link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-
 
 
 
+[[ipspace-tcp-performance]]
+=== IPspace TCP 效能
+
+從 ONTAP 9.19.1 版本開始，ONTAP 透過在 ONTAP TCP 堆疊中整合 PRR 和 RACK 兩項丟包恢復功能，提升了在丟包率高、延遲高的 WAN 連結上的 TCP 資料傳輸效能。PRR 適用於所有網路，預設為啟用。RACK 適用於連結速度約為 25 Gigabits/second 的擁塞網路，預設為停用。
+
+link:https://docs.netapp.com/us-en/ontap/networking/improve-tcp-wan-performance.html["了解更多關於如何使用 PRR 和 RACK 提升 TCP WAN 效能"^]。
+
+
+
 [[san-configuration]]
 == SAN 組態
 
