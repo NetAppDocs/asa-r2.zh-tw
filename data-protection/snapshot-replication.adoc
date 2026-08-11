@@ -86,53 +86,27 @@ NOTE: 採用非同步策略時，資料在寫入來源之後才會複製到遠�
 
 快照複寫關係會在 ASA R2 系統和遠端位置之間建立連線、以便將一致性群組複寫到遠端叢集。複寫一致性群組可用於災難恢復或資料移轉。
 
-為了防範勒索軟體攻擊、當您設定複寫關係時、可以選擇鎖定目的地快照。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。
+為了增強抵禦勒索軟體攻擊的安全性，請建立 SnapLock for SnapVault 複寫關係。
 
 .開始之前
 * link:pre-defined-protection-policies.html["了解複製策略"] 。
 +
 在建立複製關係時，必須為複製關係選擇適當的複製策略。您可以使用預定義策略或建立自訂策略。
 
-* 如果您想要鎖定目的地快照、必須link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["初始化 Snapshot 相容時鐘"]先建立複寫關係。
 
 
-建立具有或不具有鎖定目的地快照的複寫關係。
-
-[role="tabbed-block"]
-====
-.使用鎖定的快照
---
-.步驟
-. 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
-. 選取一致性群組。
-. 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 保護 * 。
-. 在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。
-. 選取 * 複寫原則 * 。
-+
-您必須選取 _Vault_ 複寫原則。
-
-. 選取 * 目的地設定 * 。
-. 選取 * 鎖定目的地快照以防止刪除 *
-. 輸入資料保留期間上限和下限。
-. 若要延遲資料傳輸的開始、請取消選取 * 立即開始傳輸 * 。
-+
-根據預設、初始資料傳輸會立即開始。
-
-. 或者、若要覆寫預設傳輸排程、請選取 * 目的地設定 * 、然後選取 * 覆寫傳輸排程 * 。
-+
-您的傳輸排程必須至少 30 分鐘才能獲得支援。
-
-. 選擇*保存*。
 
 
---
-.沒有鎖定的快照
---
+[[create-a-relationship-to-replicate-snapshots-to-a-remote-cluster]]
+=== 建立關係以將快照複寫到遠端叢集
+
+透過將快照複寫到遠端叢集來保護您的資料。一致性群組的複寫快照可用於災難恢復或資料移轉。
+
 .步驟
 . 在 System Manager 中、選取 * 保護 > 複寫 * 。
 . 選取以建立與本機目的地或本機來源的複寫關係。
 +
-[cols="2,2"]
+[cols="1,2"]
 |===
 | 選項 | 步驟 
 
@@ -150,24 +124,59 @@ _sourc_ 一致性群組是指您要複寫的本機叢集上的一致性群組。
 | 本機來源  a| 
 .. 選擇 * 本地來源 * ，然後選擇image:icon_replicate_blue_bg.png["背景為藍色的矩形、文字會以白色字母複寫"]。
 .. 搜尋並選取來源一致性群組。
-.. 在 * 複寫目的地 * 下、選取要複寫的叢集、然後選取儲存 VM 。
+.. 在「複寫目的地」下，選擇要複寫到的叢集，然後選擇儲存設備虛擬機器。
 
 
 |===
 . 選取複寫原則。
-. 若要延遲資料傳輸的開始、請選取 * 目的地設定 * 、然後取消選取 * 立即開始傳輸 * 。
+. 若要延遲資料傳輸的開始，請選擇 *Destination settings*，然後取消選擇 *Start transfer immediately*。
 +
 根據預設、初始資料傳輸會立即開始。
 
-. 或者、若要覆寫預設傳輸排程、請選取 * 目的地設定 * 、然後選取 * 覆寫傳輸排程 * 。
+. （可選）若要置換預設傳輸排程，請選擇 *Destination settings*，然後選擇 *Override transfer schedule*。
 +
 您的傳輸排程必須至少 30 分鐘才能獲得支援。
 
 . 選擇*保存*。
 
 
---
-====
+.接下來呢？
+建立複寫原則和關係後，初始資料傳輸將按照複寫原則中的定義開始。您可以選擇測試複寫容錯移轉，以驗證在 ASA r2 系統離線時是否能成功執行容錯移轉。
+
+
+
+[[create-a-relationship-to-replicate-snapshots-with-snaplock-for-snapvault]]
+=== 建立關係以使用 SnapLock for SnapVault 複寫快照
+
+為了防範勒索軟體攻擊，在設定複寫關係時，您可以選擇保存庫複寫原則，然後選擇鎖定目的地快照，藉此啟用 SnapLock for SnapVault。受 SnapLock for SnapVault 保護的快照不會遭到意外或惡意刪除。
+
+
+NOTE: ASA r2 系統不支援 SnapLock Compliance 模式或 SnapLock Enterprise 模式。建立 SnapLock for SnapVault 複寫關係僅能鎖定目的地快照。並不能啟用 SnapLock Compliance 或 Enterprise 模式。
+
+.開始之前
+您必須 link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["初始化 SnapLock Compliance 時鐘"]。
+
+.步驟
+. 在 System Manager 中，選擇 *Protection > Consistency groups* ，然後選擇一致性群組。
+. 選擇 image:icon_kabob.gif["三個垂直藍點"]，然後選擇 *保護*。
+. 在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。
+. 選取 * 複寫原則 * 。
++
+您必須選取 _Vault_ 複寫原則。
+
+. 選擇「目的地設定」，然後選擇「鎖定目的地快照以防止刪除」。
+. 輸入資料保留期間上限和下限。
+. 若要延遲資料傳輸的開始、請取消選取 * 立即開始傳輸 * 。
++
+根據預設、初始資料傳輸會立即開始。
+
+. （可選）若要置換預設傳輸排程，請選擇 *Destination settings*，然後選擇 *Override transfer schedule*。
++
+您的傳輸排程必須至少 30 分鐘才能獲得支援。
+
+. 選擇*保存*。
+
+
 .接下來呢？
 建立複寫原則和關係之後、就會依照複寫原則中的定義、開始進行初始資料傳輸。您可以選擇性地測試複寫容錯移轉、以驗證 ASA R2 系統離線時是否能成功進行容錯移轉。
 

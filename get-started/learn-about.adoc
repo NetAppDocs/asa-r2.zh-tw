@@ -12,7 +12,7 @@ searchtitle: 了解 ASA A1K、A90、A70、A50、A30 A20 和 C30 系統
 
 
 [role="lead"]
-NetApp ASA R2 系統提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。
+NetApp ASA r2 系統交付統一的硬體和軟體解決方案，為僅使用 SAN 的客戶打造簡化的使用體驗。在 ASA r2 系統上，ONTAP 軟體和 System Manager 經過精簡，僅支援必要的 SAN 功能，同時移除了 SAN 環境不支援的特性和功能。
 
 以下系統被歸類為ASA r2 系統：
 
@@ -25,10 +25,7 @@ NetApp ASA R2 系統提供統一化的硬體與軟體解決方案，可針對僅
 * ASA C30
 
 
-ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 協定支援多路徑對稱主動-主動架構，以便主機和儲存之間的所有路徑都處於活動/最佳化狀態。 iSCSI 和 NVMe/TCP 協定支援主機和儲存之間的直接連線。對於光纖通道和 NVMe/FC 協議，不支援直接連接。
-
-在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。
-
+.儲存單元和一致性群組
 ASA R2 系統採用一致性群組的儲存單元：
 
 * _storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。
@@ -37,7 +34,15 @@ ASA R2 系統採用一致性群組的儲存單元：
 
 ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。
 
-為了保護您的資料免受盜竊或勒索軟體等惡意攻擊，ASA r2 系統支援板載金鑰管理器、雙層加密、多因素身份驗證和多管理員驗證。輔助 ASA r2 系統也支援防篡改快照。
+為了協助保護您的資料免受惡意攻擊（例如盜竊或勒索軟體）， ASA r2 系統支援內建金鑰管理程式、雙層加密、多因素驗證和多管理員驗證。您也可以將快照複寫到二線系統位置，並使用 SnapLock for SnapVault 來保護目的地快照免遭意外或惡意刪除。
+
+.支援的協定、多重路徑和組態
+ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有協定均支援對稱雙主動式架構的多重路徑，確保主機與儲存設備之間的所有路徑均處於作用中/最佳化的狀態。iSCSI 和 NVMe/TCP 協定支援所有受支援 ONTAP 版本的網路和直接連接組態。FC 和 NVMe/FC 協定支援所有受支援 ONTAP 版本的網路組態，並且從 ONTAP 9.19.1 開始，也支援直接連接組態。
+
+* 深入瞭解link:https://docs.netapp.com/us-en/ontap/san-admin/multipath-automatic-lif-failover-support.html["SAN 多重路徑支援"^]。
+* 深入瞭解link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-san-hosts-ha-pairs-reference.html["iSCSI 和 NVMe/TCP 協定的組態"^]。
+* 深入瞭解link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html["FC 和 NVMe/FC 協定的組態"^]。
+
 
 ASA r2 系統不支援與ASA、 AFF或FAS系統混合叢集。
 

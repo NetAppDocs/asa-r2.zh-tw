@@ -2,15 +2,15 @@
 section: learn-more
 title: 深入瞭解
 entries:
-- title: 適用於 ONTAP 超級使用者的 ASA R2
+- title: 比較硬體系統
+  url: "/learn-more/hardware-comparison.html"
+- title: 支援常見的ONTAP功能
+  url: "/learn-more/additional-supported-ontap-features.html"
+- title: 軟體支援與限制
+  url: "/learn-more/software-support-limitations.html"
+- title: ASA r2 CLI 和 REST API 支援 ONTAP 進階用戶
   entries:
-  - title: 比較硬體系統
-    url: "/learn-more/hardware-comparison.html"
-  - title: 軟體支援與限制
-    url: "/learn-more/software-support-limitations.html"
   - title: CLI 支援
     url: "/learn-more/cli-support.html"
   - title: REST API支援
     url: "/learn-more/rest-api-support.html"
-- title: 支援常見的ONTAP功能
-  url: "/learn-more/additional-supported-ontap-features.html"

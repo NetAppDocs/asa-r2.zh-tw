@@ -95,11 +95,14 @@ IPspace 名稱不能為「 ALL 」、因為「 ALL 」是系統保留的名稱�
 [[create-a-lif-network-interface]]
 == 建立 LIF （網路介面）
 
-LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在您要用來存取資料的連接埠上建立生命。儲存 VM 會透過一或多個生命負載、將資料提供給用戶端。如果發生元件故障、 LIF 可能會容錯移轉或移轉至不同的實體連接埠、因此不會中斷網路通訊。
+LIF （網路介面）是與實體或邏輯連接埠關聯的 IP 位址。在您希望用於存取資料的連接埠上建立 LIF。儲存虛擬機器透過一個或多個 LIF 向用戶端提供資料。在 ASA r2 系統上，您可以建立 IP、FC 和 NVMe/FC LIF。預設情況下，IP 資料 LIF 可以同時處理 iSCSI 和 NVMe/TCP 流量。必須為 FC 和 NVMe/FC 流量建立個別的資料 LIF。
 
-在 ASA R2 系統上，您可以建立 IP ， FC 和 NVMe / FC 生命。根據預設， IP 資料 LIF 可同時服務 iSCSI 和 NVMe / TCP 流量。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。
+.ASA r2 系統上的 LIF 容錯移轉
+如果某個元件發生故障，LIF 可以容錯移轉或移轉至不同的實體連接埠，從而避免網路通訊中斷。從 ONTAP 9.19.1 開始，預設支援 iSCSI、NVMe/TCP 和共享的 IP LIF 的自動 LIF 容錯移轉。啟用自動 LIF 容錯移轉後，如果發生儲存設備容錯移轉，LIF 將自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，並在容錯移轉完成後移轉回來。或者，如果連接埠發生故障，LIF 將自動移轉至其目前主節點中狀態正常的連接埠，並在該連接埠恢復正常後移轉回原始連接埠。
 
-如果您想要啟用自動 iSCSI LIF 容錯移轉，則必須為僅 iSCSI 流量建立 IP LIF 。啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， IP iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 IP iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點中的健全連接埠，然後在連接埠再次正常運作後，再返回其原始連接埠。
+在 ONTAP 9.18.1 及更早版本中，NVMe/TCP LIF 或共享的 IP LIF 不支援自動 LIF 容錯移轉。建立僅 iSCSI 的 LIF 時，預設會啟用自動 LIF 容錯移轉，除非儲存設備虛擬機器上已存在未啟用自動 LIF 容錯移轉的 iSCSI LIF。如果儲存設備虛擬機器上存在未啟用自動 LIF 容錯移轉的僅 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。在這種情況下，您必須先刪除現有的僅 iSCSI LIF，然後重新建立並啟用自動 LIF 容錯移轉。了解如何link:https://docs.netapp.com/us-en/ontap/san-admin/delete-lif-san-environment-task.html["在 SAN 環境中刪除 LIF"^]。
+
+持久性連接埠用於 FC 和 NVMe/FC LIF 的容錯移轉。深入瞭解 ONTAP 文件中的 link:https://docs.netapp.com/us-en/ontap/san-config/asa-support-limitations.html#support-for-persistent-ports["持續連接埠"^]。
 
 .開始之前
 * 您必須是叢集管理員才能執行此工作。
@@ -120,15 +123,12 @@ LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在
 .結果
 您已建立資料存取的 LIF 。
 
-.接下來呢？
-您可以使用ONTAP命令列介面 (CLI) 建立具有自動故障轉移功能的僅 iSCSI LIF。
-
 
 
 [[create-a-custom-iscsi-only-lif-service-policy]]
 === 建立自訂僅 iSCSI LIF 服務策略
 
-如果您想要建立具有自動 LIF 故障轉移功能的僅 iSCSI LIF，則必須先建立自訂僅 iSCSI LIF 服務原則。
+如果要在 ONTAP 9.18.1 或更早版本中啟用自動 iSCSI LIF 容錯移轉，則必須先建立自訂的僅 iSCSI LIF 服務原則。
 
 您必須使用ONTAP命令列介面 (CLI) 來建立自訂服務策略。
 
@@ -159,12 +159,15 @@ set -privilege admin
 ----
 
 
+.接下來呢？
+您可以使用ONTAP命令列介面 (CLI) 建立具有自動故障轉移功能的僅 iSCSI LIF。
+
 
 
 [[create-iscsi-only-lifs-with-automatic-lif-failover]]
 === 建立僅支援 iSCSI 的 LIF，並啟用自動 LIF 故障轉移
 
-如果儲存虛擬機器上存在未啟用自動 LIF 故障轉移的 iSCSI LIF，則您新建立的 LIF 也不會啟用自動 LIF 故障轉移。如果未啟用自動 LIF 故障轉移，且發生故障轉移事件，則您的 iSCSI LIF 將不會遷移。
+在 ONTAP 9.18.1 及更早版本中，如果儲存 VM 上的所有其他 iSCSI LIF 也啟用了自動 LIF 容錯移轉，則建立僅 iSCSI LIF 時預設啟用自動 LIF 容錯移轉。如果儲存 VM 上存在未啟用自動 LIF 容錯移轉的僅 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。
 
 .開始之前
 您必須已建立自訂的僅 iSCSI LIF 服務策略。
@@ -221,3 +224,8 @@ ONTAP利用網路時間協定 (NTP) 來同步整個叢集的時間。變更 LIF 
 
 .結果
 您的 LIF 已修改。
+
+.相關資訊
+* link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["移動 SAN LIF"]。
+* link:https://docs.netapp.com/us-en/ontap/san-admin/remove-lif-from-portset-task.html["從 PortSet 移除 SAN LIF"]。
+

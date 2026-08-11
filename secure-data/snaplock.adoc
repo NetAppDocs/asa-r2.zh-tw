@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: secure-data/snaplock.html 
+keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection, snaplock, snaplock compliance, snaplock enterprise, snaplock compliance clock 
+summary: 使用防竄改快照來保護資料安全。防竄改快照無法刪除、也可用於恢復因勒索軟體攻擊而洩漏的資料。 
+---
+= 了解適用於 ASA r2 儲存設備系統的 SnapLock 資料保護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP SnapLock 是一款高效能法規遵循解決方案，適用於使用 WORM 儲存設備以未修改形式保留文件用於監管和治理目的的組織。您可以在合規模式或企業模式下執行 SnapLock，這兩種模式提供不同等級的 WORM 資料保護。SnapLock Compliance 和 Enterprise 模式在 SAN 環境中的主叢集上不受支援，但您可以在二線系統上啟用 SnapLock for SnapVault，以保護次要快照免遭意外或惡意刪除。
+
+必須初始化 SnapLock Compliance Clock，才能使用 SnapLock for SnapVault 保護二線系統上的快照。
+
+.相關資訊
+* 深入瞭解link:https://docs.netapp.com/us-en/ontap/san-admin/configure-backup-vaults-san-environment-concept.html["SnapLock for SnapVault 在 SAN 環境中"^]。
+* 深入瞭解link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^]。
+
+
+
+
+[[initialize-the-snaplock-compliance-clock]]
+== 初始化 SnapLock Compliance 時鐘
+
+如果要使用 SnapLock for SnapVault 來保護二線系統上的目的地快照，則必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance Clock。
+
+.步驟
+. 選擇*叢集>總覽*。
+. 在 * 節點 * 區段中、選取 * 初始化 SnapLock Compliance 時鐘 * 。
+. 選擇 * 初始化 * 。
+. 確認合規時鐘已初始化。
++
+.. 選擇*叢集>總覽*。
+.. 在 * 節點 * 區段中image:icon_show_hide.png["白色背景上的三個藍色欄"]、選取；然後選取 * SnapLock Compliance 時鐘 * 。
+
+
+
+
+.接下來呢？
+在本機和目的地叢集上初始化 SnapLock Compliance Clock 後，即可準備好 link:../data-protection/snapshot-replication.html["建立與 SnapLock for SnapVault 的複寫關係"]。

@@ -29,7 +29,7 @@ link:create-snapshots.html#step-1-optionally-create-a-consistency-group["建立�
 .步驟
 . 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
 . 將滑鼠懸停在要使用SnapMirror活動同步保護的一致性群組的名稱上。
-. 選擇image:icon_kabob.gif["三個垂直藍點"]然後選擇*保護*。
+. 選擇 image:icon_kabob.gif["三個垂直藍點"]，然後選擇 *保護*。
 . 在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。
 . 選擇現有的群集對等體或選擇*新增新的群集對等體*。
 . 選擇儲存虛擬機器。

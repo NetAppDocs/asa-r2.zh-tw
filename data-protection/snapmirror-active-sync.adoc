@@ -17,9 +17,11 @@ ONTAP SnapMirror主動同步資料保護功能即使在整個站點發生故障�
 
 在 ASA r2 系統上、SnapMirror 主動式同步支援對稱主動 / 主動組態。在對稱主動 / 主動組態中、兩個站台都可以存取本機儲存設備以進行主動式 I/O。深入瞭解link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["對稱主動/主動配置"^]。
 
+SnapLock Enterprise 和 Compliance 模式不支援在 ASA r2 系統上使用 SnapMirror 作用中同步。
+
 .關於這項工作
-* 從ONTAP 9.18.1 開始， SnapMirror主動同步在四節點配置中得到支援。在ONTAP 9.17.1 中， SnapMirror主動同步僅在雙節點配置上支援。
 * 從 ONTAP 9.19.1 開始，具備人工智慧的自主勒索軟體防護 （ARP/AI） 支援 ASA r2 系統上 SnapMirror 主動同步 SAN 關係中的主讀寫儲存設備單元。ARP/AI 在作用中的主儲存設備單元上執行，建立僅限主要的 ARP 快照，並為這些儲存設備單元提供以機器學習為基礎的勒索軟體偵測。如需 ARP/AI 能力開發步驟，請參閱 link:../secure-data/enable-anti-ransomware-protection.html["利用 AI 啟用自主勒索軟體保護"]。
+* 從ONTAP 9.18.1 開始， SnapMirror主動同步在四節點配置中得到支援。在ONTAP 9.17.1 中， SnapMirror主動同步僅在雙節點配置上支援。
 
 
 .開始之前

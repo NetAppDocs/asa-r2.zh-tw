@@ -14,7 +14,6 @@
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
   <block id="185a1f8fef7e6cf81a581dd2a40a152d" category="paragraph">您已確認新磁碟機受到支援、而且您知道適當的安裝插槽。</block>
   <block id="eff30216681f42753f0004bfaa72a1d8" category="section-title">在 ASA R2 上安裝新磁碟機</block>
-  <block id="4305fddb87da90a117081f11c31b97be" category="paragraph">在單一程序中應新增的磁碟機數量下限為六個。新增單一磁碟機可能會降低效能。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
   <block id="ab8d4a8595207b62032f838aac5d0ec5" category="paragraph">您應該針對每個磁碟機重複本程序中的步驟。</block>
   <block id="42fceed144d93d382eb9bdcc9b1254d2" category="list-text">請妥善接地。</block>
@@ -108,7 +107,6 @@
   <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">選取*「Add*」。</block>
   <block id="ed7898c08720b7f938fd473f200d7f27" category="paragraph">您已經建立了子網路、現在您可以使用它來簡化建立您的生命。</block>
   <block id="753ad49162ca6621affe67bf28ce6a1e" category="section-title">建立 LIF （網路介面）</block>
-  <block id="be23cf7af156de0532411edfa91f3361" category="paragraph">LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。在您要用來存取資料的連接埠上建立生命。儲存 VM 會透過一或多個生命負載、將資料提供給用戶端。如果發生元件故障、 LIF 可能會容錯移轉或移轉至不同的實體連接埠、因此不會中斷網路通訊。</block>
   <block id="21f332db2a0aeb6d30c08d58804c1f1a" category="list-text">基礎實體或邏輯網路連接埠必須設定為管理<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>狀態。</block>
   <block id="0b7a56152c376f386379636394d6eee1" category="list-text">如果您打算使用子網路名稱來配置LIF的IP位址和網路遮罩值、則該子網路必須已經存在。</block>
   <block id="9ad4be6eef992b371fa173aecc5c7bd0" category="list-text">處理節點之間叢集內流量的LIF、不應與處理管理流量的LIF或處理資料流量的LIF位於相同的子網路上。</block>
@@ -435,24 +433,13 @@
   <block id="308d9e6951d14df38557244f728d31ec" category="paragraph">深入瞭解 <block ref="b2f7d76a0b614957304f0bebec8320f7" category="inline-link-macro-rx"></block>。</block>
   <block id="ce587252d09bb3dfb2d53f154ba81d93" category="section-title">步驟 3 ：建立複寫關係</block>
   <block id="1ff21cfe2a98ae8b4a02a199611aa91d" category="paragraph">快照複寫關係會在 ASA R2 系統和遠端位置之間建立連線、以便將一致性群組複寫到遠端叢集。複寫一致性群組可用於災難恢復或資料移轉。</block>
-  <block id="620ffa86718c6f06b66b158b0a4bab51" category="paragraph">為了防範勒索軟體攻擊、當您設定複寫關係時、可以選擇鎖定目的地快照。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。</block>
-  <block id="bf5d4ab274f571d57107a348e35cb081" category="inline-link-macro">初始化 Snapshot 相容時鐘</block>
-  <block id="a2070fe1416691eeb91c53762fd2a74c" category="paragraph">如果您想要鎖定目的地快照、必須<block ref="27d9d0ff36409c51abdcd0a6f30da304" category="inline-link-macro-rx"></block>先建立複寫關係。</block>
-  <block id="f07148b3f2fd0f0a23b807626916df29" category="paragraph">建立具有或不具有鎖定目的地快照的複寫關係。</block>
-  <block id="b581751404702669bf568b5f9581e76c" category="open-title">使用鎖定的快照</block>
-  <block id="02934a3c9c75bfb962ac39201fdf6f3d" category="list-text">選取一致性群組。</block>
-  <block id="15217bdc015a8a108f980bdb8c2e1a23" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 保護 * 。</block>
   <block id="ac59bb95e3695bc7bee3aef9c11cc7ec" category="list-text">在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。</block>
   <block id="7e1e6a3712eae4789ecd885097e5a4e7" category="list-text">選取 * 複寫原則 * 。</block>
   <block id="7d4ac3ed3440432276ca5b8085ed49e5" category="paragraph">您必須選取 _Vault_ 複寫原則。</block>
-  <block id="fcb838cd8f6e32d4a616ee3de4983333" category="list-text">選取 * 目的地設定 * 。</block>
-  <block id="b554adedaaae05384ba07663a14834e4" category="list-text">選取 * 鎖定目的地快照以防止刪除 *</block>
   <block id="c4c50145f9cafae0b0fd638f59da1c0b" category="list-text">輸入資料保留期間上限和下限。</block>
   <block id="9e3c1427208e1336b5583fb9b78c3cc4" category="list-text">若要延遲資料傳輸的開始、請取消選取 * 立即開始傳輸 * 。</block>
   <block id="9625f43e1bf117d60569d5ad051c6f03" category="paragraph">根據預設、初始資料傳輸會立即開始。</block>
-  <block id="84a616a14078ce4e20513888ef5be141" category="list-text">或者、若要覆寫預設傳輸排程、請選取 * 目的地設定 * 、然後選取 * 覆寫傳輸排程 * 。</block>
   <block id="eb9b31e6e7ba2bbd9f868ff108f65a0c" category="paragraph">您的傳輸排程必須至少 30 分鐘才能獲得支援。</block>
-  <block id="b89eff40453beaa28eca7c9de402f85f" category="open-title">沒有鎖定的快照</block>
   <block id="656858cfe23bc7754225f82e6331e77e" category="list-text">選取以建立與本機目的地或本機來源的複寫關係。</block>
   <block id="8edc642197b3fad6a6bfff2ea0a3c89d" category="cell">本機目的地</block>
   <block id="eb46393253f3ac3c5696c2c6245f4718" category="inline-image-macro">背景為藍色的矩形、文字會以白色字母複寫</block>
@@ -461,9 +448,7 @@
   <block id="d93ef2e9c8bf5236698bd94aa380ccdf" category="paragraph">_sourc_ 一致性群組是指您要複寫的本機叢集上的一致性群組。</block>
   <block id="f731460115898cdd49151a66d75556b6" category="cell">本機來源</block>
   <block id="5833acf9cb6206654194780dbf5bb4e0" category="list-text">選擇 * 本地來源 * ，然後選擇<block ref="08a74c2de12fbe2628462227f788ae6a" category="inline-image-macro-rx" type="image"></block>。</block>
-  <block id="5a5499e4c4ae6b36a67583b6af81a9c3" category="list-text">在 * 複寫目的地 * 下、選取要複寫的叢集、然後選取儲存 VM 。</block>
   <block id="a18a6418cfbf231c4bb22f6553628bd0" category="list-text">選取複寫原則。</block>
-  <block id="9572d425e8b443dcc7db3f94da93573b" category="list-text">若要延遲資料傳輸的開始、請選取 * 目的地設定 * 、然後取消選取 * 立即開始傳輸 * 。</block>
   <block id="7ab1f0b2182b6c6f36937d583dfeac9c" category="paragraph">建立複寫原則和關係之後、就會依照複寫原則中的定義、開始進行初始資料傳輸。您可以選擇性地測試複寫容錯移轉、以驗證 ASA R2 系統離線時是否能成功進行容錯移轉。</block>
   <block id="55af8fe36cb88367588d3f92024db64d" category="section-title">步驟 4 ：測試複寫容錯移轉</block>
   <block id="920b6f48db05908e2d7fdde6821a89e3" category="paragraph">或者、驗證來源叢集離線時、您是否能成功提供來自遠端叢集上複寫儲存單元的資料。</block>
@@ -512,7 +497,6 @@
   <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">若要提交支援案例、請在系統管理員中選取 * 叢集 &gt; 支援 * 、然後選取 * 前往 NetApp 支援 * 。</block>
   <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">若要檢視先前提交的案例、請在 System Manager 中選取 * 叢集 &gt; 支援 * 、然後選取 * 檢視我的案例 * 。</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">瞭解 ASA R2 儲存系統</block>
-  <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體和系統管理員經過簡化、可支援基本的 SAN 功能、同時移除 SAN 環境中不支援的功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2 系統採用一致性群組的儲存單元：</block>
   <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">_storage unit_ 可為 SAN 主機提供儲存空間以進行資料作業。儲存單元是指 SCSI 主機的 LUN 或 NVMe 主機的 NVMe 命名空間。</block>
   <block id="e2969be58319571a8d10cc30d53f9a3b" category="list-text">_A Consistency group_ 是以單一單元管理的儲存單元集合。</block>
@@ -621,7 +605,6 @@
   <block id="7e043f500d316c07931a265899f256e5" category="paragraph">系統管理程式隨即開啟。</block>
   <block id="c34c9f445f071064b5ad57fa56a4966a" category="list-text">在 * 密碼 * 下、為管理帳戶建立強式密碼。</block>
   <block id="94b83670319c428bbd5d0731ec0a776c" category="paragraph">密碼長度必須至少八個字元、且必須包含至少一個字母和一個數字。</block>
-  <block id="2bb39a27652ab0bfe0f806e7eb0a69da" category="list-text">重新輸入密碼以確認、然後選擇 * 繼續 * 。</block>
   <block id="2e7cdddcc85c09e4ce2bbc7e09e8e9b7" category="list-text">在 * 網路位址 * 下、輸入儲存系統名稱或接受預設名稱。</block>
   <block id="d6103bdebb0cdea1f299898bf5aa537c" category="paragraph">如果您變更預設的儲存系統名稱、新名稱必須以字母開頭、而且必須少於 44 個字元。您可以在名稱中使用句點（ . ）、連字號（ - ）或底線（ _ ）。</block>
   <block id="70f6758d7d964f49a57485250ec5f376" category="list-text">輸入叢集管理 IP 位址、子網路遮罩、閘道 IP 位址和合作夥伴節點的 IP 位址、然後選取 * 繼續 * 。</block>
@@ -943,11 +926,8 @@
   <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">物件傳輸協定</block>
   <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">ONTAP S3 SnapMirror 和 S3 API</block>
   <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">ASA R2 系統支援下列項目：</block>
-  <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">SnapLock</block>
   <block id="272175c607c14852d532cd2cf2304f90" category="list-text">雙層加密</block>
   <block id="fcaf713648f48750892f53f60d9c5578" category="list-text">如<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>需 ASA R2 硬體支援與限制的詳細資訊、請參閱。</block>
-  <block id="4428c7556a1eea23721f907d8d23eb21" category="inline-link-macro">瞭解如何鎖定快照</block>
-  <block id="19deecdd8b763ce6f48eadb0070d24cd" category="list-text"><block ref="f5c7881d0f64c83ae31bbc947dffd4c1" category="inline-link-macro-rx"></block>在您的 ASA R2 系統上。</block>
   <block id="a45dbe7c067a9974c8fca40e2b212fd6" category="inline-link-macro">瞭解如何套用雙層加密</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律聲明</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律聲明提供版權聲明、商標、專利等存取權限。</block>
@@ -1137,9 +1117,6 @@
   <block id="cbb4ea3ae0ace3dd5cedae78f9d2a805" category="paragraph">您已完成資源配置程序、準備好開始提供資料。您現在可以<block ref="13282ab1c43cc291d62099de29c76969" category="inline-link-macro-rx"></block>保護 ASA R2 系統上的資料。</block>
   <block id="94751ffa48a4135b11ac22ac2dae643e" category="inline-link-macro">ONTAP SAN 主機文件</block>
   <block id="88e865c72412e4a1327806858c6d2784" category="paragraph">如需主機端組態的詳細資訊、請參閱<block ref="5045572e3d187366935cbd2a743bcd07" category="inline-link-macro-rx"></block>適用於您特定主機的。</block>
-  <block id="b6e8a44e2a75e79622ab8bca1270a5ce" category="doc">ASA R2 儲存限制</block>
-  <block id="d0bb632fcdb31cf3c729c1c59f826d4f" category="cell">128TB</block>
-  <block id="bebabfeb2bb62750bf38ee33a0e54982" category="paragraph">如需最新 ASA R2 儲存限制的完整清單，請參閱<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
   <block id="fcfb17e140eb359d2e4bf0ffb8fc90f2" category="summary">監控叢集和儲存單元的效能、以判斷延遲、 IOPS 和處理量對關鍵業務應用程式的影響。</block>
   <block id="7210645d4515e7cb96d5b26a294a9f25" category="searchtitle">使用 ONTAP System Manager| ASA R2 監控叢集效能</block>
   <block id="064023636601914c7dfacc81fa4e3b57" category="doc">監控 ASA R2 儲存系統上的叢集與儲存單元效能</block>
@@ -1261,13 +1238,10 @@
   <block id="47d36da0620e65d065bfa9c8dd0f9034" category="list-text">如果您使用的是 NVMe / TCP 傳輸協定、請選取 * 需要傳輸層安全性（ TLS ） * 。</block>
   <block id="24e39c7cf4f63ba3319caf3373485701" category="paragraph">透過頻內驗證和 / 或 TLS 來增強資料的安全性。</block>
   <block id="f82f9abf9d39b3ea7e9931fe0ec02989" category="summary">使用防竄改快照來保護資料安全。防竄改快照無法刪除、也可用於恢復因勒索軟體攻擊而洩漏的資料。</block>
-  <block id="bb09a1295cce99402c216baed3c2b937" category="paragraph">為了加強防範勒索軟體攻擊、請將快照複寫到遠端叢集、然後鎖定目的地快照、使其防竄改。鎖定的快照無法意外或惡意刪除。如果儲存單元遭到勒索軟體攻擊、您可以使用鎖定的快照來恢復資料。</block>
   <block id="7e59070af3e4cd3a421461f7774f3c87" category="list-text">選擇*叢集&gt;總覽*。</block>
   <block id="045e8ceb02be472a9bc3e54ba6f1d811" category="list-text">在 * 節點 * 區段中、選取 * 初始化 SnapLock Compliance 時鐘 * 。</block>
-  <block id="2012a4286c3a1864d4fa11ba1cb42b1c" category="list-text">確認規範時鐘已初始化。</block>
   <block id="2bc6e7414d5cb75e3addfdeb234222a1" category="inline-image-macro">白色背景上的三個藍色欄</block>
   <block id="ff632b6925cddc0c770d38368ff3755e" category="list-text">在 * 節點 * 區段中<block ref="db89dee19aae8a41518f426597d8cb6e" category="inline-image-macro-rx" type="image"></block>、選取；然後選取 * SnapLock Compliance 時鐘 * 。</block>
-  <block id="c19a0c09a1a9acec430b36accfdb5ac8" category="inline-link-macro">使用鎖定的快照建立複寫關係</block>
   <block id="25abedf12d26e4bc8960557833ebe68d" category="summary">觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。</block>
   <block id="9e9e90703a7077203260b19a3af9704a" category="doc">在 ASA R2 系統上設定 SAN 通訊協定</block>
   <block id="21d3b12a5a9f6ff0d25b8b5e5e00b7ff" category="paragraph">以下是影片的記錄<block ref="1ef61309a2d73f2fc4d83b527ce1790e" prefix=" " category="inline-code"></block>。</block>
@@ -1356,7 +1330,6 @@
   <block id="658c5031b9786c4f9023925fcf23cf70" category="sidebar">設定 ASA R2 系統</block>
   <block id="e23243448b3ec49d7f5b13275d7f6335" category="sidebar">設定叢集</block>
   <block id="27e94778a46e91ef4cb224d22fc1b5e1" category="sidebar">設定資料存取</block>
-  <block id="6561e9a6669528b215c28d49379cb719" category="sidebar">適用於 ONTAP 超級使用者的 ASA R2</block>
   <block id="979756fd032c6ae260ffff6ed788d4cd" category="sidebar">比較硬體系統</block>
   <block id="7e2ea756a457a94ace36e49a65d26ac5" category="sidebar">軟體支援與限制</block>
   <block id="f554b6d60fa8d0d2c734310ba3e4bea6" category="sidebar">CLI 支援</block>
@@ -1388,9 +1361,6 @@
   <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">資料壓縮的變更</block>
   <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">對溫度敏感的儲存效率不適用於 ASA R2 系統。在 ASA R2 系統上、壓縮並非以 _hot_ （經常存取）資料或 _cold （不常存取）資料為基礎。壓縮開始時、不會等到資料變冷。</block>
   <block id="e9dac8f777563b18c14aec6d0406e876" category="list-text">在 System Manager 中、選取 * 叢集 &gt; 設定 * 。</block>
-  <block id="b16351f807fbda6965666255eef268dd" category="section-title">初始化 SnapLock Compliance 時鐘</block>
-  <block id="6f7e58f2fc20167d69dc971955e6bb11" category="paragraph">在建立防竄改快照之前、您必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance 時鐘。</block>
-  <block id="71c1cda56d6fad5ca8b28cabd1f98042" category="paragraph">在本地和目標叢集上初始化 SnapLock Compliance 時鐘之後<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>、您就可以開始使用了。</block>
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">ASA R2 系統與 ASA 系統的比較</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">深入瞭解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
@@ -1445,10 +1415,6 @@
   <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
   <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
   <block id="8027cf82d29e89bcd72c0f7ae984c222" category="paragraph">ASA R2 系統受及更新版本支援<block ref="6a0b5c767b375da41f0e7140f5d8129e" category="inline-link-macro-rx"></block>。</block>
-  <block id="f08b07b736a8c5201accc4549e8a0762" category="list-text">預設自動 iSCSI LIF 容錯移轉</block>
-  <block id="4b3d6eefe10e552e93669e44e3908ab2" category="inline-link-macro">建立僅 iSCSI LIF</block>
-  <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">在 ASA R2 系統中，預設的網路 LIF 會在 NVMe 和 SCSI 主機之間共用，因此不支援自動容錯移轉。若要啟用自動 iSCSI LIF 容錯移轉<block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>，您必須。依預設，自動容錯移轉僅在 iSCSI 上啟用。</block>
-  <block id="22f4d4e3ef9ad886ae95608e10f828cb" category="paragraph">啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點的健全連接埠，然後在連接埠再次正常運作時，再移回原始連接埠。</block>
   <block id="e51f73897cef482e683893c74ad0aebf" category="doc">將 ASA R2 節點新增至 ONTAP 叢集</block>
   <block id="97a5a9f5366a279a2160c428ad458079" category="list-text">節點 IP 位址</block>
   <block id="d08cd309dd95d7aa27f8f977cf1a060e" category="list-text">叢集間網路介面 IP 位址</block>
@@ -1527,7 +1493,6 @@
   <block id="2cb253331363d78b30ad71dd5d7edd19" category="paragraph">變更預設效能服務層級。</block>
   <block id="337c483d117ff7e78ed214b1799b666f" category="list-text">在 * 儲存與最佳化 * 下，在 * 效能服務層級 * 旁<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>，選擇。</block>
   <block id="06a4e0373e144570a83a3fcfaa55ff46" category="list-text">選擇 * 效能 * 。</block>
-  <block id="c20ad4d76fe97759aa27a0c99bff6710" category="cell">12</block>
   <block id="455f024d5e786170a224f947b09bd74a" category="section-title">監控儲存可用性區域使用率</block>
   <block id="c54830fa97aef91a8bc830d439dc004a" category="paragraph">如果叢集中有 4 個以上的節點，您可以檢視每個 HA 配對的儲存可用性區域所使用的空間量。此度量不適用於雙節點叢集。</block>
   <block id="dd7cd8aba78024bcc6ec1c67f3987760" category="list-text">在 System Manager 中，選擇 *Cluster* ；然後選擇 *Overview * 。</block>
@@ -1581,7 +1546,6 @@
   <block id="cc1a9524f9ddd8574a5553ccd90ee9c3" category="paragraph">您可以使用 ONTAP 命令列介面（ CLI ），在叢集層級的金鑰管理程式與儲存 VM 層級的金鑰管理程式之間移轉金鑰。</block>
   <block id="5efbf2392161773688bf42568dd2c8c6" category="list-text">移轉金鑰：</block>
   <block id="f7d82610ce1c76769575f4a95bb11e80" category="sidebar">在金鑰管理員之間移轉資料加密金鑰</block>
-  <block id="feb8007866385642b73ef1e6524ba327" category="paragraph">NetApp ASA R2 系統提供統一化的硬體與軟體解決方案，可針對僅限 SAN 的客戶需求，提供簡化的體驗。</block>
   <block id="3ee9bc9a210bd85fa921ca63bdeef612" category="list-text">ASA A50</block>
   <block id="e21bdbd552261278be0a5ad02fbc6fa7" category="list-text">ASA A30</block>
   <block id="3c609b480f1311eaec9774146ac50e79" category="list-text">ASA A20</block>
@@ -1684,11 +1648,9 @@
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">當您從 ONTAP 板載金鑰管理程式切換到叢集層級的外部金鑰管理程式時，可以使用 ONTAP 命令列介面（ CLI ），輕鬆地將加密金鑰從一個金鑰管理程式移轉到另一個金鑰管理程式。</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">探索叢集網路</block>
   <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在 ASA 系統上執行的 ONTAP 會識別為 ASA ONTAP 特性設定 _ 。在 AFF 和 FAS ONTAP 系統上執行的 ONTAP 被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。</block>
-  <block id="fda16306cdb213cc2a2b4bf98efbf826" category="paragraph">如果您想要啟用自動 iSCSI LIF 容錯移轉，則必須為僅 iSCSI 流量建立 IP LIF 。啟用自動 iSCSI LIF 容錯移轉時，如果發生儲存容錯移轉， IP iSCSI LIF 會自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，然後在容錯移轉完成後再移回。或者，如果 IP iSCSI LIF 的連接埠變得不正常， LIF 會自動移轉至目前主節點中的健全連接埠，然後在連接埠再次正常運作後，再返回其原始連接埠。</block>
   <block id="bca36b0a086865a5988c326bd3a3c6ef" category="list-text">系統會啟動開機程序。初始開機順序最多可能需要八分鐘。</block>
   <block id="f3e09817ba15a4f8685cb156fe2ade6f" category="list-text">在開機過程中，您將觀察 LED 閃爍，風扇啟動，表示控制器正在開機。</block>
   <block id="86450f6a6524d00aefa9dda44e7aee80" category="list-text">請注意，風扇第一次啟動時，可能會發出很大的噪音。啟動時風扇發出噪音是正常現象。</block>
-  <block id="c8aaa99aa53241360c3c889fc0ceba93" category="paragraph">在 ASA R2 系統上，您可以建立 IP ， FC 和 NVMe / FC 生命。根據預設， IP 資料 LIF 可同時服務 iSCSI 和 NVMe / TCP 流量。必須為 FC 和 NVMe / FC 流量建立個別的資料生命量。</block>
   <block id="f137f93169cc0e3caf4322bfd35b3f03" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="90572de4b12061d10d3adbe91dd02ace" category="inline-link-macro-rx"></block></block>
   <block id="9938ec4aaa5e9affe1e87bdd3406a54f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="364d625567d09103e7911f1934bc8d24" category="inline-link-macro-rx"></block></block>
   <block id="0b226b2a00795026190da142779bab13" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="65a058a30efdac510219d9d7c74f3657" category="inline-link-macro-rx"></block></block>
@@ -1760,12 +1722,10 @@
   <block id="434872b119bd955476c150025f7da4b2" category="searchtitle">安裝和設定 ASA A1K、A90、A70、A50、A30、A20 和 C30 儲存系統</block>
   <block id="c3993bfac3ec8dac794fe31c3a3f3195" category="summary">ASA r2 系統（ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20、ASA C30）不支援某些 ONTAP 指令。</block>
   <block id="13af08b425d55aad64c53d60ae2a530a" category="sidebar">NetApp ASA r2 系統（ASA A1K、ASA A90、ASA A70、ASA A50、ASA A30、ASA A20、ASA C30）提供統一的硬體和軟體解決方案，可根據僅使用 SAN 的客戶的需求建立簡化的體驗。</block>
-  <block id="3087fbc39029f766e18398db33407a03" category="paragraph">為了保護您的資料免受盜竊或勒索軟體等惡意攻擊，ASA r2 系統支援板載金鑰管理器、雙層加密、多因素身份驗證和多管理員驗證。輔助 ASA r2 系統也支援防篡改快照。</block>
   <block id="80b47f1753b3cb7e47c4279f47da1cd4" category="admonition">這<block ref="787f67886dcefe1e2ad298992552116f" prefix=" " category="inline-code"></block>命令被替換為<block ref="80d8c5e05b7dc47d7d3de5d888476621" prefix=" " category="inline-code"></block>和<block ref="53707b9f629f540e205f4dfa772722ca" prefix=" " category="inline-code"></block>命令。</block>
   <block id="80c0eacc1ee22ae50cd37d4e7eaf12a0" category="paragraph">這<block ref="9f9fc58b577820fbcd41ff15739ed6f0" prefix=" " category="inline-code"></block>與以下參數一起使用時命令不可用：</block>
   <block id="faa3fdb36806e35e16c52a72aae6308a" category="paragraph">您可以使用ONTAP命令列介面 (CLI) 建立具有自動故障轉移功能的僅 iSCSI LIF。</block>
   <block id="9551e06ebe54ea44317c627f8c2826c8" category="section-title">建立自訂僅 iSCSI LIF 服務策略</block>
-  <block id="570b2b21a29be6a88b3740541a9eb85d" category="paragraph">如果您想要建立具有自動 LIF 故障轉移功能的僅 iSCSI LIF，則必須先建立自訂僅 iSCSI LIF 服務原則。</block>
   <block id="c3d907ed0368d8bf0168908898f88bc6" category="paragraph">您必須使用ONTAP命令列介面 (CLI) 來建立自訂服務策略。</block>
   <block id="4cd29e77b3bfa0af4a0bd555e4fdcc60" category="list-text">建立自訂僅 iSCSI LIF 服務策略：</block>
   <block id="318d3e69df3e554645af42601afb06e0" category="list-text">驗證服務策略是否已建立：</block>
@@ -1811,7 +1771,6 @@
   <block id="ff87f3496332b96a8889cb81479a38fa" category="inline-link">非均勻</block>
   <block id="e76f9f952d4ae03cbdf70a44d35aa24e" category="paragraph">詳細了解<block ref="935fe0cb90646c70dc96a5e0cb47b577" category="inline-link-rx"></block>對稱主動/主動配置。</block>
   <block id="630834f0748c8b7f280bfe47e1587403" category="list-text">將滑鼠懸停在要使用SnapMirror活動同步保護的一致性群組的名稱上。</block>
-  <block id="67dd4a232a8f494f5bc9d4741af70d11" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>然後選擇*保護*。</block>
   <block id="1dc72651a61ba43cf6bc85d4753c47e8" category="list-text">選擇現有的群集對等體或選擇*新增新的群集對等體*。</block>
   <block id="842dcef5223aaf88ec80c981db6281af" category="list-text">選擇儲存虛擬機器。</block>
   <block id="533fb0f30c2a24bf44c7a68b00aed588" category="list-text">對於複製策略，選擇*AutomatedFailOverDuplex*。</block>
@@ -1960,8 +1919,6 @@
   <block id="6fc817dfbe9e8303d43dd345dfc8d0a6" category="list-text">選擇*更多*；然後選擇*刪除*。</block>
   <block id="d1dde57285c34e792a5945a2584acc2e" category="list-text">選擇確認您是否要繼續；然後選擇*刪除*。</block>
   <block id="d8c055944ceedab265fa23bd4dac431a" category="paragraph">主機群組已刪除。該群組中的主機不再具有對應到該主機群組的儲存單元的存取權。</block>
-  <block id="8487699fb65ed58bf886a609cc850b23" category="cell">30,000</block>
-  <block id="4d1d2462172575416e653835e7623c79" category="cell">2 PB</block>
   <block id="246838e6a2baa5417bc2bb181dffaefd" category="cell"><block ref="246838e6a2baa5417bc2bb181dffaefd" category="inline-link-macro-rx"></block></block>
   <block id="b41dd2df01d053ae559a639dee1a223a" category="summary">了解ONTAP 9.17.1 中適用於ASA r2 系統的新功能。</block>
   <block id="31fb0b1f6028acebe178d193a0d4e57e" category="doc">適用於ASA r2 系統的ONTAP 9.17.1 的新功能</block>
@@ -2016,7 +1973,6 @@
   <block id="5cda9545c48d9b6f5f36b4ce856eaf47" category="list-text">選擇要復原 ARP/AI 的儲存單元。</block>
   <block id="8e1667e545dde536a2a34599f2a208a4" category="list-text">選擇*恢復反勒索軟體*。</block>
   <block id="18a871e39c4db6e8fdaffd71c7141248" category="paragraph">對潛在勒索軟體攻擊的分析已恢復，可疑活動將在系統管理員中向您報告。</block>
-  <block id="0dd10bd0f2a6a0ae25f679d61fe6376d" category="doc">建立防篡改快照，以防止對ASA r2 儲存系統的勒索軟體攻擊</block>
   <block id="a779502493c8672d764e9893228ff604" category="paragraph">如果人工智慧自主勒索軟體防護 (ARP/AI) 偵測到您的一個或多個ASA r2 系統儲存單元存在異常活動，系統管理員儀表板上會產生警告。您應該查看警告，驗證活動，並在必要時採取措施阻止任何對您資料的潛在威脅。</block>
   <block id="c0e52aa291208452d8e4daf52f19e352" category="paragraph">如果顯示 ARP/AI 警告訊息，在採取措施之前，您應該使用適當的應用程式完整性檢查器來驗證儲存單元上資料的完整性。驗證儲存單元的資料完整性有助於您確定該活動是否可接受，或是否為潛在的勒索軟體攻擊。</block>
   <block id="d72f2cfc4586d8ec238fbb54c4e19dfb" category="cell">如果出現異常活動...</block>
@@ -2048,7 +2004,6 @@
   <block id="9f2970594362084647462609d4b2d054" category="sidebar">管理SnapMirror主動同步</block>
   <block id="e39b47ff21b06cf5168c2115e34abb73" category="sidebar">使用SnapMirror主動同步執行計劃內故障轉移</block>
   <block id="e9a1e0623ef8495e8c5eb4f577eebc56" category="sidebar">在計劃外故障轉移後重新建立SnapMirror活動同步</block>
-  <block id="df725f855f8b01777334f385329956d1" category="sidebar">建立防篡改快照</block>
   <block id="fe18efbe14ea4b4efa0f9218d380a795" category="sidebar">啟用 ARP/AI</block>
   <block id="46f622f33eeac9bf018664dde7a317f2" category="sidebar">修改 ARP/AI 快照保留期</block>
   <block id="2a1d671c971c0af470fbdc7401172b0f" category="sidebar">回應 ARP/AI 警報</block>
@@ -2237,33 +2192,6 @@
   <block id="8472fc4ccb1079c9fe1f338f10dae548" category="list-text">從 CLI 輸入：<block ref="f0af09467abded8f889764e0118fc371" prefix=" " category="inline-code"></block></block>
   <block id="6e3ec6c33e748e95fcc9a00b80c75047" category="paragraph">對於ASA r2 系統，_personality_ 為 _ASA r2_，且 _is-disaggregated_ 的狀態為 _true_。</block>
   <block id="0212dda5b736d4e3ac685d52c9fe59e3" category="paragraph">如果要刪除的儲存單元位於具有複製關係的一致性群組中，則必須<block ref="741fafaed1397e844d655f1c5d2c2470" category="inline-link-macro-rx"></block>刪除之前。</block>
-  <block id="c2870e89f5360d8c60cf537f2608a42a" category="paragraph">ASA r2 系統支援以下儲存限制：</block>
-  <block id="6d6dc550f66f75893e42478842ea745f" category="cell">限制最大值</block>
-  <block id="690fbea35c70c2451fa2a171900ea6a7" category="cell">每個 HA 對</block>
-  <block id="dd1714009b4f40cdf1943390ef2782eb" category="cell">每個集群</block>
-  <block id="f718499c1c8cef6730f9fd03c8125cab" category="cell">256</block>
-  <block id="b0dae11b82e63781abdc8f893c41b3c0" category="cell">企業應用程式</block>
-  <block id="f899139df5e1059396431415e770c6dd" category="cell">100</block>
-  <block id="9de6d14fff9806d4bcd1ef555be766cd" category="cell">350</block>
-  <block id="187c6ad3a74cc93ac6c2229d398e383e" category="cell">節點</block>
-  <block id="c81e728d9d4c2f636f067f89cc14862c" category="cell">2</block>
-  <block id="d5fbc4c880281f3e9c4fff78066996a5" category="cell">複製群組</block>
-  <block id="c0c7c76d30bd3dcaefc96f40275bdc0a" category="cell">50</block>
-  <block id="8ee7e496c0e2a65e2ee8666fe7de92f0" category="cell">儲存可用區域大小</block>
-  <block id="04207e7bb62b9b5d14bdb603f74e683c" category="cell">10,000</block>
-  <block id="40b9cfa6016513b4c254ea34fe34198c" category="cell">儲存單元大小</block>
-  <block id="9afb5dac442eac92e8a891cc81c846f3" category="cell">每個一致性組的儲存單元</block>
-  <block id="137f19e6e2dc1219f33553b812627bc2" category="cell">虛擬機</block>
-  <block id="7a53928fa4dd31e82c6ef826f341daec" category="cell">800</block>
-  <block id="fe2d010308a6b3799a3d9c728ee74244" category="cell">1200</block>
-  <block id="e935f176337f588ca3f944c87464e3be" category="section-title">SnapMirror非同步關係的限制</block>
-  <block id="6165c4352e1504dbaeef34d0cc50c187" category="cell">一致性組</block>
-  <block id="6c9882bbac1c7093bd25041881277658" category="cell">250</block>
-  <block id="b137fdd1f79d56c7edf3365fea7520f2" category="cell">750</block>
-  <block id="a078c2a6f2d4313df0b942ebf9d6b940" category="cell">4,000</block>
-  <block id="3339aa4f121546a4cdc082621ff25a06" category="cell">6,000</block>
-  <block id="2500434603f5238c62790336bd12c2b3" category="section-title">SnapMirror主動同步關係的限制</block>
-  <block id="18d8042386b79e2c279fd162df0205c8" category="cell">400</block>
   <block id="b50f5f8469f7f4269e80570d419c9f8e" category="inline-link-macro">支援複製關係中一致性組的幾何變化</block>
   <block id="42071aa0f3867fbd6baf2685ca27c2ff" category="cell"><block ref="42071aa0f3867fbd6baf2685ca27c2ff" category="inline-link-macro-rx"></block></block>
   <block id="65476b287593ea7b99cab3c73a759847" category="cell">ASA r2 系統支援對SnapMirror活動同步或非同步複製關係中的一致性群組進行幾何更改，而無需刪除SnapMirror活動同步關係或破壞非同步關係。當主一致性組上發生幾何變化時，該變化將複製到輔助一致性組。</block>
@@ -2283,13 +2211,11 @@
   <block id="36bed646725e085252916c3131fbf1b2" category="sidebar">管理分層一致性組</block>
   <block id="e130096a0ace158c7893eedbd19e7115" category="inline-link-macro">LIF IP 變更後 NTP 同步失敗</block>
   <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP利用網路時間協定 (NTP) 來同步整個叢集的時間。變更 LIF IP 位址後，您可能需要更新 NTP 設定以防止同步失敗。欲了解更多信息，請參閱知識庫文章<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
-  <block id="5971035c0734629ac0d154a4b60ca9e9" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 協定支援多路徑對稱主動-主動架構，以便主機和儲存之間的所有路徑都處於活動/最佳化狀態。 iSCSI 和 NVMe/TCP 協定支援主機和儲存之間的直接連線。對於光纖通道和 NVMe/FC 協議，不支援直接連接。</block>
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主機映射*是指新儲存單元將映射到的主機群組。如果您為新儲存單元選擇的主機類型已存在一個主機群組，則會自動選擇該主機群組進行主機對應。您可以接受自動選擇的主機群組，也可以選擇其他主機群組。</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系統提供兩種效能等級。預設效能等級為*極限*，這是可用的最高等級。您可以將等級降低至*效能*。</block>
   <block id="19b78e8ad6af7cf1ea82e76fdac1aa7f" category="admonition">ASA r2 系統不支援同步複製。</block>
   <block id="2e360c76c16280fe84148c9706ad34d6" category="list-text">對於“策略類型”，選擇“非同步”。</block>
   <block id="f1f7f77e02139ed937613a8043556351" category="admonition">採用非同步策略時，資料在寫入來源之後才會複製到遠端站點。ASA r2 系統不支援同步複製。</block>
-  <block id="ea67212f425c599ae5520184dd5dea87" category="section-title">支援SnapMirror複製</block>
   <block id="078f057957ee3112500c8f235bb0352f" category="paragraph">SnapMirror複製在ASA r2 系統上受支持，但有以下限制：</block>
   <block id="387dae8bc04454e56a9780e8507821e5" category="list-text">不支援SnapMirror同步複製。</block>
   <block id="74618c54a0d6a05f0dbccbfa9f4bc480" category="list-text">SnapMirror主動同步僅支援在兩個ASA r2 系統之間進行。</block>
@@ -2301,7 +2227,6 @@
   <block id="1aa27e548926ddcd6302762a8969ac70" category="paragraph">在向節點或機架安裝新驅動器之前，請使用NetAppHardware Universe來確認要新增的驅動器是否受ASA r2 系統支持，並確定新驅動器的正確插槽。根據系統型號和ONTAP版本不同，新增磁碟機的正確插槽也會有所不同。在某些情況下，您需要按順序將硬碟機新增至指定的插槽。</block>
   <block id="8166ee61f44dadb1490d12e6d19db8d1" category="list-text">選擇您的ASA r2 系統。</block>
   <block id="14118424a52e5faf27de83ea1ae0b462" category="list-text">輕輕地將面板從主機正面取下。</block>
-  <block id="667f84288468da12d93807057967a3d5" category="paragraph">如果儲存虛擬機器上存在未啟用自動 LIF 故障轉移的 iSCSI LIF，則您新建立的 LIF 也不會啟用自動 LIF 故障轉移。如果未啟用自動 LIF 故障轉移，且發生故障轉移事件，則您的 iSCSI LIF 將不會遷移。</block>
   <block id="9a44429a1187d19af63f6055071c6f51" category="cell"><block ref="3151003a976b1d39b8d92ef0ca3c387c" category="inline-link-macro-rx"></block>。</block>
   <block id="612e15a252b552b4f1a691dcf559bd2f" category="inline-link-macro">了解進口關係</block>
   <block id="aac7492833a857a8b4c5206032836546" category="cell">刪除已啟動的導入關係。<block ref="a36e5e6c083c81494c70601f299e7a00" category="inline-link-macro-rx"></block>。</block>
@@ -2485,15 +2410,6 @@
   <block id="5ae2b91104e852585ddf073635450cf8" category="paragraph">修改預設快照保留設定並啟用自動快照刪除功能。</block>
   <block id="715a6e64eed03295b4e2bc3df4da2dc6" category="list-text">在「快照預留 %」下，輸入要指派給快照的儲存單元空間百分比的數值。</block>
   <block id="162edb1432d7c690ed0b5b42fa399a29" category="summary">為了獲得最佳效能、配置和支持，您應該了解ASA r2 的儲存限制。</block>
-  <block id="fd846e358dfb9fb7815602e30d94cc0e" category="paragraph">為了獲得最佳效能、配置和支持，您應該了解 ASA r2 的儲存限制。</block>
-  <block id="7c7efee58e6438c6a2c454a7ad4f04a8" category="cell">每對HA的最大數量</block>
-  <block id="28cd6ded3f5c67ae3840cefeae4e70b9" category="cell">每個集群的最大值</block>
-  <block id="4d2caccc34711835f6ff99da411ac04e" category="cell">儲存虛擬機</block>
-  <block id="420472b5a3fa74ab8271c101fdf7bf31" category="list-text">256（ONTAP 9.18.1 及更高版本）</block>
-  <block id="153ab40caa18652c7730f5cfc37c32f7" category="list-text">32（ONTAP 9.17.1 及更早版本）</block>
-  <block id="43d910e74e713c9754f63f6931e45d1b" category="paragraph">以下限制適用於SnapMirror非同步複製關係中的儲存單元和一致性群組。如需查看最新的ASA r2 儲存限製完整列表，<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 。</block>
-  <block id="4272202cbf36ae010c1042426026ae36" category="paragraph">以下限制適用於SnapMirror主動同步複製關係中的儲存單元和一致性群組。從ONTAP 9.17.1 開始， SnapMirror主動同步僅在雙節點叢集上支援。從ONTAP 9.18.1 開始， SnapMirror主動同步功能在四節點叢集上得到支援。</block>
-  <block id="37b8b62a5ecb1339bc961c051f24141d" category="paragraph">如需查看最新的ASA r2 儲存限製完整列表，<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 。</block>
   <block id="9027c61cfac0613d2e6d2a3e9f8dce46" category="doc">遷移到ASA r2 系統後，切換客戶端並清理來源儲存虛擬機器。</block>
   <block id="a36422a2f9f3777ca6a112c936b8ffc7" category="paragraph">將儲存虛擬機器 (VM) 從ASA叢集遷移到ASA r2 叢集後，預設情況下，用戶端會自動切換到ASA r2 集群，且ASA叢集上的儲存 VM 會自動刪除。如果您選擇在遷移期間停用ASA儲存 VM 的自動切換和移除，則需要在遷移完成後手動執行這些步驟。</block>
   <block id="b1a60764d65e294c75af5b4d8f70838b" category="section-title">儲存虛擬機器遷移後，手動將客戶端切換到ASA r2 系統。</block>
@@ -2597,8 +2513,6 @@
   <block id="299c5db3cbde057ebd5a919711b1d2e1" category="paragraph">您可以設定與儲存虛擬機器上的叢集外部金鑰管理伺服器的連線。使用叢集金鑰伺服器，您可以在儲存虛擬機器上指定主密鑰伺服器和輔助密鑰伺服器。註冊金鑰時， ONTAP將首先嘗試存取主金鑰伺服器，然後再依序嘗試存取輔助伺服器，直到操作成功完成，從而防止金鑰重複。</block>
   <block id="9f71ddf310db058a3a89122693392a68" category="inline-link-macro">了解ASA r2 叢集中的容量均衡</block>
   <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA r2 系統差異概述</block>
-  <block id="2be27a1e2f13957646665cd7fef8000d" category="cell">每個父母一致性組下的子一致性組</block>
-  <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
   <block id="542b4f4e36f442f64960052e5e90dc97" category="section-title">在儲存虛擬機器中的所有儲存單元上啟用 ARP/AI</block>
   <block id="4a8ba6399b21b6bd034b8e0eaf51d276" category="section-title">在儲存虛擬機器中的特定儲存單元上啟用 ARP/AI</block>
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">了解空間平衡</block>
@@ -2620,7 +2534,6 @@
   <block id="89282cacdaeec6ad949d1fee8ef83b96" category="paragraph">您可以在最初的 12 小時寬限期內或之後停用預設啟用功能。</block>
   <block id="06f738cd9e1ffd61cee9f2f7298af898" category="list-text">禁用 ARP：</block>
   <block id="9aa3a30140e694c88ae8dc5d1d6baeb9" category="list-text">在 12 小時寬限期內停用：</block>
-  <block id="3f89c840d19029a97a24bc85a1f4bc2a" category="list-text">在 *Anti-ransomware* 下，選擇 *Don't enable*，然後選擇 *Disable*。</block>
   <block id="8a142e162a74e2269d6374226b8deab8" category="list-text">若要在 12 小時寬限期過後停用：</block>
   <block id="7dce122004969d56ae2e0245cb754d35" category="inline-image-macro">編輯</block>
   <block id="3506bfed41b9e706367e09a6ee264e4a" category="list-text">在 *Anti-ransomware* 下，選取 <block ref="cd4fada87571e8da586532fce60b382a" category="inline-image-macro-rx" type="image"></block>，然後取消選取 *Enable for new storage units*。</block>
@@ -2634,7 +2547,6 @@
   <block id="4a30706558af49bc475c9076f39c5043" category="paragraph">如果您執行的是 ONTAP 9.17.1，則可以預設在叢集中建立的所有儲存單元上啟用 ARP/AI。</block>
   <block id="b3d26117cd7cf369132a7f5c1b0e1b21" category="paragraph">在 ONTAP 9.18.1 及更高版本中，所有新建儲存單元預設為啟用 ARP/AI。如果您在 ONTAP 9.17.1 中建立了未啟用 ARP/AI 的儲存單元，則可以手動啟用它。</block>
   <block id="1ce5b5693fce06d8eab0db104f812a23" category="inline-image-macro">編輯反勒索軟體設定</block>
-  <block id="50d605f03d486d36ef3d11420980afa9" category="list-text">在 *Anti-ransomware* 旁邊，選擇 <block ref="09996779530a0566a9742876e9ffd4f1" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Enable on all existing storage units*。</block>
   <block id="1d6ca6ff92e87645e0e1be4c8c4254c1" category="paragraph">如果您執行的是 ONTAP 9.17.1，則可以預設在儲存虛擬機器（VM）中建立的所有儲存單元上啟用 ARP/AI。這表示在儲存 VM 中建立的任何新儲存單元都將自動啟用 ARP/AI。您也可以將 ARP/AI 套用到儲存 VM 中現有的儲存單元。</block>
   <block id="f3a115988cb09dfd534467f2d9511859" category="paragraph">如果您正在執行 ONTAP 9.17.1，且不想在儲存 VM 中的所有儲存單元上啟用 ARP/AI，則可以選擇要啟用的特定單元。</block>
   <block id="b86583f9a9fc89f434a369308432e10e" category="inline-link-macro">報告已知的 ARP/AI 激增</block>
@@ -2778,7 +2690,6 @@
   <block id="13cf50fcf318293df5a3adeadda4221c" category="paragraph">您必須執行 ONTAP 9.19.1 或更高版本。如果您執行的是 ONTAP 9.18.1 或更早版本，則需要提交功能性原則變更請求（FPVR）才能在 AIX 主機上獲得 SnapMirror active sync 支援。</block>
   <block id="49c7424b52c7ec83e7da5d72f7f13764" category="list-text">將滑鼠懸停在要準備啟用 SnapMirror 主動同步保護的 AIX 儲存單元的名稱上。</block>
   <block id="89b5596dc218f237904b988c0f8904cc" category="inline-image-macro">功能表選取圖示</block>
-  <block id="21a7f37e0aaf9ac924df65177afb8228" category="list-text">選取 <block ref="2bf8f430922192bda6865bad87ff2a74" category="inline-image-macro-rx" type="image"></block> 後，再選擇 *Edit*。</block>
   <block id="02b80ac4962fa1aa89a11e655a3bd996" category="list-text">在 *Host information* 下，針對 *Access mode* 選取 *local*，然後選取 *Edit*。</block>
   <block id="6d33f82590752283d027e2c7394ab829" category="paragraph">AIX 主機的儲存單元已準備好進行 SnapMirror 主動同步保護。</block>
   <block id="55aa696f6eeaf20f8cd5f18a42f214dd" category="paragraph">雖然在 ASA r2 系統上設定 SnapMirror 主動式同步的 System Manager 程序與在執行統一 ONTAP 特性的 NetApp FAS、AFF 和 ASA 系統上的程序不同，但 SnapMirror 主動式同步的需求、架構和操作是相同的。<block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
@@ -2880,4 +2791,77 @@
   <block id="17ff1a352874a1bd5fb7c4707117cd86" category="cell">ONTAP 透過將 PRR 和 RACK 這兩個丟包復原功能整合到 ONTAP TCP 堆疊中，提升在高丟包率、高延遲 WAN 連結上的 TCP 資料傳輸效能。</block>
   <block id="4910573cab7d204a834f1ef33d28e6aa" category="cell">人工智慧自主勒索軟體防護 (ARP/AI) 支援 ASA r2 系統上處於 SnapMirror 主動同步關係中的主讀寫儲存設備單元。ARP/AI 在活動主儲存設備單元上運行，建立僅針對主儲存設備單元的 ARP 快照，並為這些儲存設備單元提供基於機器學習的勒索軟體偵測。先前因同步複寫關係而導致預設 ARP 能力開發受到抑制的叢集升級至 ONTAP 9.19.1 後，ARP 將自動恢復。更新前警告會通知管理員，並提供停用 ARP 的選項。</block>
   <block id="43711203668248fcdb2737c0b52f163a" category="list-text">從 ONTAP 9.19.1 開始，具備人工智慧的自主勒索軟體防護 (ARP/AI) 支援 ASA r2 系統上 SnapMirror 主動同步 SAN 關係中的主讀寫儲存設備單元。ARP/AI 在作用中的主儲存設備單元上執行，建立僅限主要的 ARP 快照，並為這些儲存設備單元提供以機器學習為基礎的勒索軟體偵測。</block>
+  <block id="20290ba3bc660a6b1ec6d46adf0b0974" category="paragraph">單一操作中至少應新增三個硬碟。新增單一磁碟機可能會降低效能。</block>
+  <block id="38964f69af54ac13a49e3e0955441258" category="paragraph">LIF （網路介面）是與實體或邏輯連接埠關聯的 IP 位址。在您希望用於存取資料的連接埠上建立 LIF。儲存虛擬機器透過一個或多個 LIF 向用戶端提供資料。在 ASA r2 系統上，您可以建立 IP、FC 和 NVMe/FC LIF。預設情況下，IP 資料 LIF 可以同時處理 iSCSI 和 NVMe/TCP 流量。必須為 FC 和 NVMe/FC 流量建立個別的資料 LIF。</block>
+  <block id="0da4b7c484f1bfa3f71126ddd8e221ce" category="paragraph-title">ASA r2 系統上的 LIF 容錯移轉</block>
+  <block id="b7f8c7f57cc6cf3263d927fa39301bbe" category="paragraph">如果某個元件發生故障，LIF 可以容錯移轉或移轉至不同的實體連接埠，從而避免網路通訊中斷。從 ONTAP 9.19.1 開始，預設支援 iSCSI、NVMe/TCP 和共享的 IP LIF 的自動 LIF 容錯移轉。啟用自動 LIF 容錯移轉後，如果發生儲存設備容錯移轉，LIF 將自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，並在容錯移轉完成後移轉回來。或者，如果連接埠發生故障，LIF 將自動移轉至其目前主節點中狀態正常的連接埠，並在該連接埠恢復正常後移轉回原始連接埠。</block>
+  <block id="2f510f91f88e7ad0b5faca1d650d5c46" category="inline-link-macro">在 SAN 環境中刪除 LIF</block>
+  <block id="773288d84a800e3b1d7803ab90036215" category="paragraph">在 ONTAP 9.18.1 及更早版本中，NVMe/TCP LIF 或共享的 IP LIF 不支援自動 LIF 容錯移轉。建立僅 iSCSI 的 LIF 時，預設會啟用自動 LIF 容錯移轉，除非儲存設備虛擬機器上已存在未啟用自動 LIF 容錯移轉的 iSCSI LIF。如果儲存設備虛擬機器上存在未啟用自動 LIF 容錯移轉的僅 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。在這種情況下，您必須先刪除現有的僅 iSCSI LIF，然後重新建立並啟用自動 LIF 容錯移轉。了解如何<block ref="bd7be76bcbb9f56b8521a7457373f6cc" category="inline-link-macro-rx"></block>。</block>
+  <block id="16bbf9f716eb1b1f397ecd56fea6a475" category="inline-link-macro">持續連接埠</block>
+  <block id="3ee1e150b971acda14b2f412bb3b363a" category="paragraph">持久性連接埠用於 FC 和 NVMe/FC LIF 的容錯移轉。深入瞭解 ONTAP 文件中的 <block ref="f05616066afed51c38bb80daf2d2c177" category="inline-link-macro-rx"></block>。</block>
+  <block id="77fb55c5f214bb33b9bd943baa52258c" category="paragraph">如果要在 ONTAP 9.18.1 或更早版本中啟用自動 iSCSI LIF 容錯移轉，則必須先建立自訂的僅 iSCSI LIF 服務原則。</block>
+  <block id="2a3ee0bdebde6bb4f90001e2d1ff5518" category="paragraph">在 ONTAP 9.18.1 及更早版本中，如果儲存 VM 上的所有其他 iSCSI LIF 也啟用了自動 LIF 容錯移轉，則建立僅 iSCSI LIF 時預設啟用自動 LIF 容錯移轉。如果儲存 VM 上存在未啟用自動 LIF 容錯移轉的僅 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。</block>
+  <block id="c7e321fca2a8f7e1f3ab296539b0195c" category="inline-link-macro">移動 SAN LIF</block>
+  <block id="061c16b0ed3909e672bb167f666657d2" category="list-text"><block ref="84859be9a33e5a2046d8b8f65121e08b" category="inline-link-macro-rx"></block>。</block>
+  <block id="a56c83faed28c1bd9c232e9aad91422d" category="inline-link-macro">從 PortSet 移除 SAN LIF</block>
+  <block id="39475d761f36ea805bf52bd0d85cd6fa" category="list-text"><block ref="6ee35dee3ff81a58e64cd1105fa8d841" category="inline-link-macro-rx"></block>。</block>
+  <block id="ca9419cb261d1f542e7ca3641ce02a6c" category="list-text">選擇 <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 *保護*。</block>
+  <block id="f033c9cc89aa0606022393d542e81b55" category="list-text">選擇 <block ref="2bf8f430922192bda6865bad87ff2a74" category="inline-image-macro-rx" type="image"></block>，然後選擇*編輯*。</block>
+  <block id="0ca961272103b716d585866f80eab6e3" category="paragraph">SnapLock Enterprise 和 Compliance 模式不支援在 ASA r2 系統上使用 SnapMirror 作用中同步。</block>
+  <block id="67cef1b4fac3e04a2534e5c24d6ff1d8" category="paragraph">為了增強抵禦勒索軟體攻擊的安全性，請建立 SnapLock for SnapVault 複寫關係。</block>
+  <block id="2fbfff714da6fe67fdc80642e3dbe374" category="section-title">建立關係以將快照複寫到遠端叢集</block>
+  <block id="e28ba81635d48007b3a993a09de5d664" category="paragraph">透過將快照複寫到遠端叢集來保護您的資料。一致性群組的複寫快照可用於災難恢復或資料移轉。</block>
+  <block id="369a5e64a49330b47ee668f619b9209e" category="list-text">在「複寫目的地」下，選擇要複寫到的叢集，然後選擇儲存設備虛擬機器。</block>
+  <block id="605557b77df27b9cdb03cffdebc2fba5" category="list-text">若要延遲資料傳輸的開始，請選擇 *Destination settings*，然後取消選擇 *Start transfer immediately*。</block>
+  <block id="e8e8037cb49cfcc6b569476d4158d28c" category="list-text">（可選）若要置換預設傳輸排程，請選擇 *Destination settings*，然後選擇 *Override transfer schedule*。</block>
+  <block id="71cceacf2c6ce13c5632fc36b682d4e3" category="paragraph">建立複寫原則和關係後，初始資料傳輸將按照複寫原則中的定義開始。您可以選擇測試複寫容錯移轉，以驗證在 ASA r2 系統離線時是否能成功執行容錯移轉。</block>
+  <block id="a8e32fb8d0ed5e3f28397b61c26e653c" category="section-title">建立關係以使用 SnapLock for SnapVault 複寫快照</block>
+  <block id="69ac66d3ac16aaaef512ba01ab59771d" category="paragraph">為了防範勒索軟體攻擊，在設定複寫關係時，您可以選擇保存庫複寫原則，然後選擇鎖定目的地快照，藉此啟用 SnapLock for SnapVault。受 SnapLock for SnapVault 保護的快照不會遭到意外或惡意刪除。</block>
+  <block id="d9533db08c814beff57a00219adeb0a9" category="admonition">ASA r2 系統不支援 SnapLock Compliance 模式或 SnapLock Enterprise 模式。建立 SnapLock for SnapVault 複寫關係僅能鎖定目的地快照。並不能啟用 SnapLock Compliance 或 Enterprise 模式。</block>
+  <block id="2234b105b0921f9b4ac94d71ce9a7939" category="inline-link-macro">初始化 SnapLock Compliance 時鐘</block>
+  <block id="e4b174c97062b84b94de5aec8d72c08f" category="paragraph">您必須 <block ref="7f38abb4db0b33676ee7cc43f021c5dd" category="inline-link-macro-rx"></block>。</block>
+  <block id="881033f035c68f8afca68971d7048cb7" category="list-text">在 System Manager 中，選擇 *Protection &gt; Consistency groups* ，然後選擇一致性群組。</block>
+  <block id="85908df832c10b0c1e39e90d02578829" category="list-text">選擇「目的地設定」，然後選擇「鎖定目的地快照以防止刪除」。</block>
+  <block id="1bbad3d34588dd1bc3c0367825d25780" category="paragraph">NetApp ASA r2 系統交付統一的硬體和軟體解決方案，為僅使用 SAN 的客戶打造簡化的使用體驗。在 ASA r2 系統上，ONTAP 軟體和 System Manager 經過精簡，僅支援必要的 SAN 功能，同時移除了 SAN 環境不支援的特性和功能。</block>
+  <block id="c6032ff25210fd8264d5f370b7924a96" category="paragraph-title">儲存單元和一致性群組</block>
+  <block id="e13d282f1b6dc4032c4acd77d766ee11" category="paragraph">為了協助保護您的資料免受惡意攻擊（例如盜竊或勒索軟體）， ASA r2 系統支援內建金鑰管理程式、雙層加密、多因素驗證和多管理員驗證。您也可以將快照複寫到二線系統位置，並使用 SnapLock for SnapVault 來保護目的地快照免遭意外或惡意刪除。</block>
+  <block id="4c78514417b4a0942051bcf756b5e689" category="paragraph-title">支援的協定、多重路徑和組態</block>
+  <block id="e5dcf60b35d63934d42e3aac7f00c836" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有協定均支援對稱雙主動式架構的多重路徑，確保主機與儲存設備之間的所有路徑均處於作用中/最佳化的狀態。iSCSI 和 NVMe/TCP 協定支援所有受支援 ONTAP 版本的網路和直接連接組態。FC 和 NVMe/FC 協定支援所有受支援 ONTAP 版本的網路組態，並且從 ONTAP 9.19.1 開始，也支援直接連接組態。</block>
+  <block id="46fe1d288c9a0f1af878fd298319c1f5" category="inline-link-macro">SAN 多重路徑支援</block>
+  <block id="0e8a99bad4b792a0f1d2b26bca172d70" category="list-text">深入瞭解<block ref="e49bc3d33674d3c62051d808bc03b9aa" category="inline-link-macro-rx"></block>。</block>
+  <block id="e8010ed5357d34c65bda392b1759dc21" category="inline-link-macro">iSCSI 和 NVMe/TCP 協定的組態</block>
+  <block id="6a1c4a513168d2f956d3f60fd9a646fc" category="list-text">深入瞭解<block ref="1a8fd18116e09e5d15a17c026c705315" category="inline-link-macro-rx"></block>。</block>
+  <block id="ae8cecffd19eda1a3adfa78172bc6f93" category="inline-link-macro">FC 和 NVMe/FC 協定的組態</block>
+  <block id="8640f17f2139bac0467c18eee85556a3" category="list-text">深入瞭解<block ref="178fbdc7331e9c809820fe8dbccf3884" category="inline-link-macro-rx"></block>。</block>
+  <block id="c9de3246d61399dca0b1426ae4785aae" category="list-text">重新輸入密碼進行確認，然後選擇「繼續」。</block>
+  <block id="acdc6b4f6edd40f37bce01247a32ff86" category="list-text">SnapLock</block>
+  <block id="bc18555a4dceebd83eed97dc0d55e738" category="paragraph">SnapLock Compliance 和 Enterprise 模式不支援 SAN 環境中的主叢集。SnapLock for SnapVault 支援二線系統叢集。</block>
+  <block id="884db16daad09820adcdd9f12c2233d6" category="doc">確定您的 ASA r2 系統儲存設備限制</block>
+  <block id="0983f226fe7663bd6c4c28ac46840c50" category="paragraph">限制可能會因您的 ASA r2 系統和 ONTAP 版本而異。請參閱 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 以取得適用於您特定系統的最新限制完整清單。</block>
+  <block id="eedddce7629b34be6de6734237a6001d" category="admonition">ASA r2 系統在 NetApp Hardware Universe 的*產品*下列為「ASA」平台。</block>
+  <block id="ee2a8ad10ddae704cf49a89278c0d539" category="list-text">前往 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="f6c082e1c2313aca303adada02fafd4b" category="list-text">選擇*產品*。</block>
+  <block id="dadde3afb7480982ae18c09c676e02ef" category="list-text">在「平台」下，選擇「ASA」作為系統類型。</block>
+  <block id="ce263b9d5d590d134bdd1e5ed705c998" category="list-text">選擇您的特定系統，然後選擇您的 ONTAP 版本。</block>
+  <block id="1276ca5f3c6a655be9a9622777bffe0d" category="list-text">選擇 *Show Results*。</block>
+  <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">結果</block>
+  <block id="e76b5069871e2a0c42b0b2e86e9e5d0b" category="paragraph">此處顯示您的特定 ASA r2 系統和 ONTAP 版本支援的限制。</block>
+  <block id="e0f4fdf47233f69304e680fd1923eb88" category="cell">增強對 SAN LIF 自動容錯移轉的支援</block>
+  <block id="8a9840e8547ff441eef956289166e3cc" category="cell">預設支援 iSCSI 和 NVMe/TCP LIF 的自動 LIF 容錯移轉。</block>
+  <block id="443ddb7ca2bd07f5946e8a824feee453" category="list-text">在 *Anti-ransomware* 下，選擇 *Don't enable*，然後選擇 *Disable*。</block>
+  <block id="882422644d0036961f2ef9aed07712d6" category="list-text">在 *Anti-ransomware* 旁邊，選擇 <block ref="09996779530a0566a9742876e9ffd4f1" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Enable on all existing storage units*。</block>
+  <block id="6dc61dbf62f6b39ca07f06ff22297587" category="doc">了解適用於 ASA r2 儲存設備系統的 SnapLock 資料保護</block>
+  <block id="b28c237eff548aecf479a239a22f815e" category="paragraph">ONTAP SnapLock 是一款高效能法規遵循解決方案，適用於使用 WORM 儲存設備以未修改形式保留文件用於監管和治理目的的組織。您可以在合規模式或企業模式下執行 SnapLock，這兩種模式提供不同等級的 WORM 資料保護。SnapLock Compliance 和 Enterprise 模式在 SAN 環境中的主叢集上不受支援，但您可以在二線系統上啟用 SnapLock for SnapVault，以保護次要快照免遭意外或惡意刪除。</block>
+  <block id="d518b6c93614020b83f8ca34dcf03ca0" category="paragraph">必須初始化 SnapLock Compliance Clock，才能使用 SnapLock for SnapVault 保護二線系統上的快照。</block>
+  <block id="bd89ef986499f4ff1572bd4a4fa483d9" category="inline-link-macro">SnapLock for SnapVault 在 SAN 環境中</block>
+  <block id="5294938468fdefd1f2310e6e7293cb9b" category="list-text">深入瞭解<block ref="d75f88da20f7788e820767a9d46ee9a2" category="inline-link-macro-rx"></block>。</block>
+  <block id="af30d81f9a8c2c0f5b25d08da7858ddc" category="inline-link-macro">ONTAP SnapLock</block>
+  <block id="d86efdfbe80038867c854904dc8bfc91" category="list-text">深入瞭解<block ref="e5be20e426588130203bae7a7e597f79" category="inline-link-macro-rx"></block>。</block>
+  <block id="1aa5198de03ad6ef316bf6ea29a004a5" category="section-title">初始化 SnapLock Compliance 時鐘</block>
+  <block id="92cc3b2a1d05f3fe426bdf43e298f42c" category="paragraph">如果要使用 SnapLock for SnapVault 來保護二線系統上的目的地快照，則必須先在本機叢集和目的地叢集上初始化 SnapLock Compliance Clock。</block>
+  <block id="bdb3c62480d4e3e45e23afa7944d222f" category="list-text">確認合規時鐘已初始化。</block>
+  <block id="0f45969bf7bc3472106c4a23173a35bb" category="inline-link-macro">建立與 SnapLock for SnapVault 的複寫關係</block>
+  <block id="1c455b71b9a6a19b8ab5534d9dd3545f" category="paragraph">在本機和目的地叢集上初始化 SnapLock Compliance Clock 後，即可準備好 <block ref="716f8ed67937d4ffe779f9f204ed103b" category="inline-link-macro-rx"></block>。</block>
+  <block id="53ba0b0af13871c9c1e7a43da8f40ede" category="sidebar">ASA r2 CLI 和 REST API 支援 ONTAP 進階用戶</block>
+  <block id="56487b0f66d25f7027042188a0b85f01" category="sidebar">了解 SnapLock</block>
 </blocks>
