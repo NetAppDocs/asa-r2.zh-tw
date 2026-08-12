@@ -38,7 +38,7 @@ summary: 了解 ONTAP 9.19.1 中為 ASA r2 系統提供的新功能。
 | 更新 | 說明 
 
 
-| 增強對 SAN LIF 自動容錯移轉的支援 | 預設支援 iSCSI 和 NVMe/TCP LIF 的自動 LIF 容錯移轉。 
+| link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["增強對 SAN LIF 自動容錯移轉的支援"] | IP 和 NVMe/TCP LIF 預設支援自動 LIF 容錯移轉。 
 |===
 
 

@@ -34,19 +34,18 @@ ASA R2 系統採用一致性群組的儲存單元：
 
 ASA r2 系統使用具有一致性群組的儲存單元來簡化儲存管理和資料保護。例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需單獨備份每個儲存單元，而是可以透過備份一致性群組來保護整個資料庫。
 
+.資料保護與安全性
 為了協助保護您的資料免受惡意攻擊（例如盜竊或勒索軟體）， ASA r2 系統支援內建金鑰管理程式、雙層加密、多因素驗證和多管理員驗證。您也可以將快照複寫到二線系統位置，並使用 SnapLock for SnapVault 來保護目的地快照免遭意外或惡意刪除。
 
 .支援的協定、多重路徑和組態
-ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有協定均支援對稱雙主動式架構的多重路徑，確保主機與儲存設備之間的所有路徑均處於作用中/最佳化的狀態。iSCSI 和 NVMe/TCP 協定支援所有受支援 ONTAP 版本的網路和直接連接組態。FC 和 NVMe/FC 協定支援所有受支援 ONTAP 版本的網路組態，並且從 ONTAP 9.19.1 開始，也支援直接連接組態。
+ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有協定均支援對稱雙主動式架構的多路徑，確保主機與儲存設備之間的所有路徑均處於作用中/最佳化的狀態。iSCSI 和 NVMe/TCP 協定支援所有受支援 ONTAP 版本的網路和直連組態。FC 和 NVMe/FC 協定支援所有受支援 ONTAP 版本的網路組態，並且從 ONTAP 9.19.1 開始，也支援直連組態。ASA r2 系統不支援與 ASA、AFF 或 FAS 系統混合叢集。
 
 * 深入瞭解link:https://docs.netapp.com/us-en/ontap/san-admin/multipath-automatic-lif-failover-support.html["SAN 多重路徑支援"^]。
 * 深入瞭解link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-san-hosts-ha-pairs-reference.html["iSCSI 和 NVMe/TCP 協定的組態"^]。
 * 深入瞭解link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html["FC 和 NVMe/FC 協定的組態"^]。
 
 
-ASA r2 系統不支援與ASA、 AFF或FAS系統混合叢集。
-
-.以取得更多資訊
+.相關資訊
 * 如link:https://hwu.netapp.com/["NetApp Hardware Universe"^]需ASA R2 系統支援與限制的詳細資訊，請參閱。
 * 深入瞭解 link:../learn-more/hardware-comparison.html["ASA R2 系統與 ASA 系統的比較"]。
 * 深入瞭解link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^]。

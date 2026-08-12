@@ -449,7 +449,6 @@
   <block id="f731460115898cdd49151a66d75556b6" category="cell">本機來源</block>
   <block id="5833acf9cb6206654194780dbf5bb4e0" category="list-text">選擇 * 本地來源 * ，然後選擇<block ref="08a74c2de12fbe2628462227f788ae6a" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="a18a6418cfbf231c4bb22f6553628bd0" category="list-text">選取複寫原則。</block>
-  <block id="7ab1f0b2182b6c6f36937d583dfeac9c" category="paragraph">建立複寫原則和關係之後、就會依照複寫原則中的定義、開始進行初始資料傳輸。您可以選擇性地測試複寫容錯移轉、以驗證 ASA R2 系統離線時是否能成功進行容錯移轉。</block>
   <block id="55af8fe36cb88367588d3f92024db64d" category="section-title">步驟 4 ：測試複寫容錯移轉</block>
   <block id="920b6f48db05908e2d7fdde6821a89e3" category="paragraph">或者、驗證來源叢集離線時、您是否能成功提供來自遠端叢集上複寫儲存單元的資料。</block>
   <block id="a2640285f2f549a8106a0b1aa4d9fbd1" category="list-text">將游標暫留在您要測試的複寫關係上<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>、然後選取。</block>
@@ -2187,7 +2186,6 @@
   <block id="87531525c3b816a3a29dbbcbcd9e58b1" category="inline-link-macro">了解複製策略</block>
   <block id="3014b2db79594ac1202cd88300196335" category="list-text"><block ref="143654464f8325f80e4706e133fabf02" category="inline-link-macro-rx"></block> 。</block>
   <block id="820e745f4ceb298ff41836e6ae6e0376" category="paragraph">在建立複製關係時，必須為複製關係選擇適當的複製策略。您可以使用預定義策略或建立自訂策略。</block>
-  <block id="39f2cc2c7247fe111861f8e1e350fca5" category="paragraph">ASA r2 系統不支援與ASA、 AFF或FAS系統混合叢集。</block>
   <block id="bec1e41aa312239c590ea19d2cd648e2" category="paragraph">如果您需要將虛擬機器工作負載從ASA儲存系統遷移到ASA r2 儲存系統， NetApp建議您使用<block ref="5e3823885235dce61c55802a90e4bf09" category="inline-link-macro-rx"></block>執行即時、無中斷的資料遷移。</block>
   <block id="8472fc4ccb1079c9fe1f338f10dae548" category="list-text">從 CLI 輸入：<block ref="f0af09467abded8f889764e0118fc371" prefix=" " category="inline-code"></block></block>
   <block id="6e3ec6c33e748e95fcc9a00b80c75047" category="paragraph">對於ASA r2 系統，_personality_ 為 _ASA r2_，且 _is-disaggregated_ 的狀態為 _true_。</block>
@@ -2794,17 +2792,12 @@
   <block id="20290ba3bc660a6b1ec6d46adf0b0974" category="paragraph">單一操作中至少應新增三個硬碟。新增單一磁碟機可能會降低效能。</block>
   <block id="38964f69af54ac13a49e3e0955441258" category="paragraph">LIF （網路介面）是與實體或邏輯連接埠關聯的 IP 位址。在您希望用於存取資料的連接埠上建立 LIF。儲存虛擬機器透過一個或多個 LIF 向用戶端提供資料。在 ASA r2 系統上，您可以建立 IP、FC 和 NVMe/FC LIF。預設情況下，IP 資料 LIF 可以同時處理 iSCSI 和 NVMe/TCP 流量。必須為 FC 和 NVMe/FC 流量建立個別的資料 LIF。</block>
   <block id="0da4b7c484f1bfa3f71126ddd8e221ce" category="paragraph-title">ASA r2 系統上的 LIF 容錯移轉</block>
-  <block id="b7f8c7f57cc6cf3263d927fa39301bbe" category="paragraph">如果某個元件發生故障，LIF 可以容錯移轉或移轉至不同的實體連接埠，從而避免網路通訊中斷。從 ONTAP 9.19.1 開始，預設支援 iSCSI、NVMe/TCP 和共享的 IP LIF 的自動 LIF 容錯移轉。啟用自動 LIF 容錯移轉後，如果發生儲存設備容錯移轉，LIF 將自動從其主節點或連接埠移轉至其 HA 合作夥伴節點或連接埠，並在容錯移轉完成後移轉回來。或者，如果連接埠發生故障，LIF 將自動移轉至其目前主節點中狀態正常的連接埠，並在該連接埠恢復正常後移轉回原始連接埠。</block>
   <block id="2f510f91f88e7ad0b5faca1d650d5c46" category="inline-link-macro">在 SAN 環境中刪除 LIF</block>
-  <block id="773288d84a800e3b1d7803ab90036215" category="paragraph">在 ONTAP 9.18.1 及更早版本中，NVMe/TCP LIF 或共享的 IP LIF 不支援自動 LIF 容錯移轉。建立僅 iSCSI 的 LIF 時，預設會啟用自動 LIF 容錯移轉，除非儲存設備虛擬機器上已存在未啟用自動 LIF 容錯移轉的 iSCSI LIF。如果儲存設備虛擬機器上存在未啟用自動 LIF 容錯移轉的僅 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。在這種情況下，您必須先刪除現有的僅 iSCSI LIF，然後重新建立並啟用自動 LIF 容錯移轉。了解如何<block ref="bd7be76bcbb9f56b8521a7457373f6cc" category="inline-link-macro-rx"></block>。</block>
   <block id="16bbf9f716eb1b1f397ecd56fea6a475" category="inline-link-macro">持續連接埠</block>
   <block id="3ee1e150b971acda14b2f412bb3b363a" category="paragraph">持久性連接埠用於 FC 和 NVMe/FC LIF 的容錯移轉。深入瞭解 ONTAP 文件中的 <block ref="f05616066afed51c38bb80daf2d2c177" category="inline-link-macro-rx"></block>。</block>
   <block id="77fb55c5f214bb33b9bd943baa52258c" category="paragraph">如果要在 ONTAP 9.18.1 或更早版本中啟用自動 iSCSI LIF 容錯移轉，則必須先建立自訂的僅 iSCSI LIF 服務原則。</block>
-  <block id="2a3ee0bdebde6bb4f90001e2d1ff5518" category="paragraph">在 ONTAP 9.18.1 及更早版本中，如果儲存 VM 上的所有其他 iSCSI LIF 也啟用了自動 LIF 容錯移轉，則建立僅 iSCSI LIF 時預設啟用自動 LIF 容錯移轉。如果儲存 VM 上存在未啟用自動 LIF 容錯移轉的僅 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。</block>
   <block id="c7e321fca2a8f7e1f3ab296539b0195c" category="inline-link-macro">移動 SAN LIF</block>
-  <block id="061c16b0ed3909e672bb167f666657d2" category="list-text"><block ref="84859be9a33e5a2046d8b8f65121e08b" category="inline-link-macro-rx"></block>。</block>
   <block id="a56c83faed28c1bd9c232e9aad91422d" category="inline-link-macro">從 PortSet 移除 SAN LIF</block>
-  <block id="39475d761f36ea805bf52bd0d85cd6fa" category="list-text"><block ref="6ee35dee3ff81a58e64cd1105fa8d841" category="inline-link-macro-rx"></block>。</block>
   <block id="ca9419cb261d1f542e7ca3641ce02a6c" category="list-text">選擇 <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇 *保護*。</block>
   <block id="f033c9cc89aa0606022393d542e81b55" category="list-text">選擇 <block ref="2bf8f430922192bda6865bad87ff2a74" category="inline-image-macro-rx" type="image"></block>，然後選擇*編輯*。</block>
   <block id="0ca961272103b716d585866f80eab6e3" category="paragraph">SnapLock Enterprise 和 Compliance 模式不支援在 ASA r2 系統上使用 SnapMirror 作用中同步。</block>
@@ -2826,7 +2819,6 @@
   <block id="c6032ff25210fd8264d5f370b7924a96" category="paragraph-title">儲存單元和一致性群組</block>
   <block id="e13d282f1b6dc4032c4acd77d766ee11" category="paragraph">為了協助保護您的資料免受惡意攻擊（例如盜竊或勒索軟體）， ASA r2 系統支援內建金鑰管理程式、雙層加密、多因素驗證和多管理員驗證。您也可以將快照複寫到二線系統位置，並使用 SnapLock for SnapVault 來保護目的地快照免遭意外或惡意刪除。</block>
   <block id="4c78514417b4a0942051bcf756b5e689" category="paragraph-title">支援的協定、多重路徑和組態</block>
-  <block id="e5dcf60b35d63934d42e3aac7f00c836" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有協定均支援對稱雙主動式架構的多重路徑，確保主機與儲存設備之間的所有路徑均處於作用中/最佳化的狀態。iSCSI 和 NVMe/TCP 協定支援所有受支援 ONTAP 版本的網路和直接連接組態。FC 和 NVMe/FC 協定支援所有受支援 ONTAP 版本的網路組態，並且從 ONTAP 9.19.1 開始，也支援直接連接組態。</block>
   <block id="46fe1d288c9a0f1af878fd298319c1f5" category="inline-link-macro">SAN 多重路徑支援</block>
   <block id="0e8a99bad4b792a0f1d2b26bca172d70" category="list-text">深入瞭解<block ref="e49bc3d33674d3c62051d808bc03b9aa" category="inline-link-macro-rx"></block>。</block>
   <block id="e8010ed5357d34c65bda392b1759dc21" category="inline-link-macro">iSCSI 和 NVMe/TCP 協定的組態</block>
@@ -2847,7 +2839,6 @@
   <block id="fd69c5cf902969e6fb71d043085ddee6" category="paragraph-title">結果</block>
   <block id="e76b5069871e2a0c42b0b2e86e9e5d0b" category="paragraph">此處顯示您的特定 ASA r2 系統和 ONTAP 版本支援的限制。</block>
   <block id="e0f4fdf47233f69304e680fd1923eb88" category="cell">增強對 SAN LIF 自動容錯移轉的支援</block>
-  <block id="8a9840e8547ff441eef956289166e3cc" category="cell">預設支援 iSCSI 和 NVMe/TCP LIF 的自動 LIF 容錯移轉。</block>
   <block id="443ddb7ca2bd07f5946e8a824feee453" category="list-text">在 *Anti-ransomware* 下，選擇 *Don't enable*，然後選擇 *Disable*。</block>
   <block id="882422644d0036961f2ef9aed07712d6" category="list-text">在 *Anti-ransomware* 旁邊，選擇 <block ref="09996779530a0566a9742876e9ffd4f1" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Enable on all existing storage units*。</block>
   <block id="6dc61dbf62f6b39ca07f06ff22297587" category="doc">了解適用於 ASA r2 儲存設備系統的 SnapLock 資料保護</block>
@@ -2864,4 +2855,15 @@
   <block id="1c455b71b9a6a19b8ab5534d9dd3545f" category="paragraph">在本機和目的地叢集上初始化 SnapLock Compliance Clock 後，即可準備好 <block ref="716f8ed67937d4ffe779f9f204ed103b" category="inline-link-macro-rx"></block>。</block>
   <block id="53ba0b0af13871c9c1e7a43da8f40ede" category="sidebar">ASA r2 CLI 和 REST API 支援 ONTAP 進階用戶</block>
   <block id="56487b0f66d25f7027042188a0b85f01" category="sidebar">了解 SnapLock</block>
+  <block id="479de3f7ce60040c78f3aea05b661d3d" category="paragraph">如果某個元件發生故障，LIF 可以容錯移轉或遷移到不同的實體連接埠，從而避免網路通訊中斷。從 ONTAP 9.19.1 開始，IP LIF 預設支援自動 LIF 容錯移轉。啟用自動 LIF 容錯移轉後，如果發生儲存設備容錯移轉，LIF 將自動從其主節點或連接埠遷移到其 HA 合作夥伴節點或連接埠，並在容錯移轉完成後返回。或者，如果連接埠發生故障，LIF 將自動遷移到其當前主節點中一個運作正常的連接埠，並在該連接埠恢復正常後返回其原始連接埠。</block>
+  <block id="d26b171679a151dddcf0f77ce05e7dd3" category="paragraph">在 ONTAP 9.18.1 及更早版本中，同時包含 iSCSI 和 NVMe/TCP 流量的 IP LIF 不支援自動 LIF 容錯移轉。建立僅包含 iSCSI 流量的 LIF 時，預設會啟用自動 LIF 容錯移轉，除非儲存設備 VM 上已存在未啟用自動 LIF 容錯移轉的 iSCSI LIF。如果儲存設備 VM 上存在未啟用自動 LIF 容錯移轉的 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。在這種情況下，您必須先刪除現有的 iSCSI LIF，然後重新建立並啟用自動 LIF 容錯移轉。了解如何<block ref="bd7be76bcbb9f56b8521a7457373f6cc" category="inline-link-macro-rx"></block>。</block>
+  <block id="f6cd95bfbbfa8cfbf33805948f9e02ab" category="paragraph">在 ONTAP 9.18.1 及更早版本中，如果儲存設備虛擬機器上的所有其他 iSCSI LIF 也啟用了自動 LIF 容錯移轉，則建立僅 iSCSI LIF 時預設啟用自動 LIF 容錯移轉。如果儲存設備虛擬機器上存在未啟用自動 LIF 容錯移轉的 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。</block>
+  <block id="a52cb55bc715199db0a2c89f5628463a" category="paragraph">您必須使用 ONTAP 命令列介面 （CLI） 來建立僅支援 iSCSI 的 LIF。</block>
+  <block id="5fe25a30e97a2bdf4a723672ff4742c0" category="list-text"><block ref="27c75436a238633e1d18ab51a23477b5" category="inline-link-macro-rx"></block>。</block>
+  <block id="92a1cbd4a70feecdf2052aa1fa356bcb" category="list-text"><block ref="7a7f88f43b7074f5986625bfd88c1f41" category="inline-link-macro-rx"></block>。</block>
+  <block id="586d267f3f13eb8c297cb08d2d97ab3e" category="paragraph">建立複寫關係後，初始資料傳輸將按照複寫原則中的定義開始。您可以選擇測試複寫容錯移轉，以驗證在 ASA r2 系統離線時是否能成功進行容錯移轉。</block>
+  <block id="da0717e9287d2101d9333f2031bca9aa" category="paragraph-title">資料保護與安全性</block>
+  <block id="794d2058bfa0143a6c722eb0d40f6fa2" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有協定均支援對稱雙主動式架構的多路徑，確保主機與儲存設備之間的所有路徑均處於作用中/最佳化的狀態。iSCSI 和 NVMe/TCP 協定支援所有受支援 ONTAP 版本的網路和直連組態。FC 和 NVMe/FC 協定支援所有受支援 ONTAP 版本的網路組態，並且從 ONTAP 9.19.1 開始，也支援直連組態。ASA r2 系統不支援與 ASA、AFF 或 FAS 系統混合叢集。</block>
+  <block id="5cdfe0a12dbe0154513cd399f4ebb394" category="cell"><block ref="5cdfe0a12dbe0154513cd399f4ebb394" category="inline-link-macro-rx"></block></block>
+  <block id="79e8ff3b299a4fcb9f7a7eaedd4a6306" category="cell">IP 和 NVMe/TCP LIF 預設支援自動 LIF 容錯移轉。</block>
 </blocks>
