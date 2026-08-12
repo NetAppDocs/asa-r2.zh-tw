@@ -2866,4 +2866,5 @@
   <block id="794d2058bfa0143a6c722eb0d40f6fa2" category="paragraph">ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有協定均支援對稱雙主動式架構的多路徑，確保主機與儲存設備之間的所有路徑均處於作用中/最佳化的狀態。iSCSI 和 NVMe/TCP 協定支援所有受支援 ONTAP 版本的網路和直連組態。FC 和 NVMe/FC 協定支援所有受支援 ONTAP 版本的網路組態，並且從 ONTAP 9.19.1 開始，也支援直連組態。ASA r2 系統不支援與 ASA、AFF 或 FAS 系統混合叢集。</block>
   <block id="5cdfe0a12dbe0154513cd399f4ebb394" category="cell"><block ref="5cdfe0a12dbe0154513cd399f4ebb394" category="inline-link-macro-rx"></block></block>
   <block id="79e8ff3b299a4fcb9f7a7eaedd4a6306" category="cell">IP 和 NVMe/TCP LIF 預設支援自動 LIF 容錯移轉。</block>
+  <block id="f4a196522bd29f2dc617b123e426fca8" category="admonition">Hardware Universe 中未列出虛擬機器 （VM） 數量限制。根據 ASA r2 系統 Volume 限制，建議每個 HA 配對最多支援 800 個 VM，每個叢集最多支援 1200 個 VM。此限制不適用於駐留在 VMFS 資料儲存中的 VM。VMFS 資料儲存沒有 VM 數量上限。</block>
 </blocks>

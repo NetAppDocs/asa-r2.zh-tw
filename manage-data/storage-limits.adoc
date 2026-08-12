@@ -16,7 +16,10 @@ summary: 為了獲得最佳效能、配置和支持，您應該了解ASA r2 的�
 限制可能會因您的 ASA r2 系統和 ONTAP 版本而異。請參閱 link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 以取得適用於您特定系統的最新限制完整清單。
 
 
-NOTE: ASA r2 系統在 NetApp Hardware Universe 的*產品*下列為「ASA」平台。
+NOTE: Hardware Universe 中未列出虛擬機器 （VM） 數量限制。根據 ASA r2 系統 Volume 限制，建議每個 HA 配對最多支援 800 個 VM，每個叢集最多支援 1200 個 VM。此限制不適用於駐留在 VMFS 資料儲存中的 VM。VMFS 資料儲存沒有 VM 數量上限。
+
+.關於這項工作
+ASA r2 系統在 NetApp Hardware Universe 的*產品*下列為「ASA」平台。
 
 .步驟
 . 前往 link:https://hwu.netapp.com["NetApp Hardware Universe"^]。
