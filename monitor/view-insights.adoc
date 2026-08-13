@@ -4,7 +4,7 @@ permalink: monitor/view-insights.html
 keywords: view, insights, optimize, cluster, performance, best practices, configuration, security 
 summary: 在 ONTAP System Manager 中檢視 Insights 、找出最佳實務做法和組態修改、以便在 ASA R2 系統上實作、以最佳化叢集安全性和效能。 
 ---
-= 透過 ASA R2 儲存系統洞見、最佳化叢集安全性與效能
+= 利用 ASA r2 系統 Insights 優化叢集安全性與效能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

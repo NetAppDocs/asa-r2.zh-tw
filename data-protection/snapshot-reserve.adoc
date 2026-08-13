@@ -4,7 +4,7 @@ permalink: data-protection/snapshot-reserve.html
 keywords: asa r2, snapshot reserve, percentage 
 summary: 快照預留空間是指儲存單元中專門為快照保留的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。 
 ---
-= 了解ASA r2 儲存上的ONTAP快照保留
+= 了解 ASA r2 儲存設備系統上的 ONTAP 快照保留
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

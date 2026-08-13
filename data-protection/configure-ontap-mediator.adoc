@@ -4,7 +4,7 @@ permalink: data-protection/configure-ontap-mediator.html
 keywords: asa r2, data protection, protect data, configure mediator, ontap mediator, cloud mediator, self-signed, ca, certificates 
 summary: 了解如何使用自簽章或第三方憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。 
 ---
-= 在ASA r2 系統上設定ONTAP Mediator 或ONTAP Cloud Mediatior
+= 在 ASA r2 系統上設定 ONTAP Mediator 或 ONTAP Cloud Mediator
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

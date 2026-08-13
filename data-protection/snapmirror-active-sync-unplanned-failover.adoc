@@ -4,7 +4,7 @@ permalink: data-protection/snapmirror-active-sync-unplanned-failover.html
 keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
 summary: 了解如何在ASA r2 叢集發生計劃外故障轉移後重新建立SnapMirror主動同步關係。 
 ---
-= 在ASA r2 叢集發生計劃外故障轉移後重新建立SnapMirror主動同步關係
+= 在 ASA r2 發生計劃外故障切換後重新建立 SnapMirror 作用中同步
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

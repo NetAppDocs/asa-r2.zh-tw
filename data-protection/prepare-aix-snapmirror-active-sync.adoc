@@ -4,7 +4,7 @@ permalink: data-protection/prepare-aix-snapmirror-active-sync.html
 keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active, prepare, aix 
 summary: 在為執行 ONTAP 9.19.1 或更高版本的 AIX 主機啟用 SnapMirror 主動式同步之前，必須將主機存取模式設定為本機。 
 ---
-= 為 ASA r2 系統上的 SnapMirror 主動同步保護準備 AIX 主機
+= 為 ASA r2 系統上的 SnapMirror 作用中同步準備 AIX 主機
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

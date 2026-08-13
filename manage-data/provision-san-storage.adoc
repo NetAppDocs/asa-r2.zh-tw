@@ -5,7 +5,7 @@ keywords: provision storage,san, create storage units, luns, namespaces, nvme, a
 summary: 在 ASA R2 上佈建 ONTAP 儲存設備、讓 SAN （ SCSI 和 NVMe ）主機能夠讀寫資料至指定的儲存單元（ LUN 和 NVMe 命名空間）。 
 searchtitle: 使用 ONTAP System Manager | ASA R2 來配置 SAN 儲存設備 
 ---
-= 在 ASA R2 系統上配置 ONTAP SAN 儲存設備
+= 在 ASA r2 系統上設定 ONTAP SAN 儲存設備
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

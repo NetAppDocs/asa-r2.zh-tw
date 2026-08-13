@@ -4,7 +4,7 @@ permalink: videos/video_transcript_provision_san_storage.html
 keywords: frontmatter, front matter 
 summary: 觀看簡短影片、示範如何使用 ONTAP 系統管理員快速輕鬆地在 ASA R2 儲存系統上執行一般工作。 
 ---
-= 在 ASA R2 系統上設定 SAN 儲存設備
+= 在 ASA R2 系統上配置 SAN 儲存設備
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

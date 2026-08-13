@@ -4,7 +4,7 @@ permalink: manage-data/svm-post-migrate-cutover-cleanup.html
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine, manual cutover, manual cleanup, remove source svm 
 summary: 如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。 
 ---
-= 遷移到ASA r2 系統後，切換客戶端並清理來源儲存虛擬機器。
+= ASA r2 儲存 VM 移轉後的轉換與清理
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

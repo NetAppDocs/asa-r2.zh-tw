@@ -4,7 +4,7 @@ permalink: data-protection/pre-defined-protection-policies.html
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
 summary: 複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。  ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。 
 ---
-= 了解預先定義的ONTAP資料保護策略
+= 了解 ASA r2 系統的預先定義資料保護原則
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
