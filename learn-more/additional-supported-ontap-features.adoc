@@ -11,7 +11,7 @@ summary: 由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常�
 
 
 [role="lead"]
-由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常見的ONTAP任務和系統管理器功能在ASA r2 系統上的執行方式與在其他ONTAP系統上的執行方式相同。
+由於 ASA r2 系統運作的是 ONTAP 的簡化版本，因此您可以像在其他 ONTAP 系統上一樣執行許多常見的 ONTAP 工作和 System Manager 功能。
 
 有關常見特性和功能的更多信息，請參閱以下ONTAP文件。
 
@@ -27,7 +27,7 @@ summary: 由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常�
 [[clustered-external-key-servers]]
 === 叢集外部密鑰伺服器
 
-您可以設定與儲存虛擬機器上的叢集外部金鑰管理伺服器的連線。使用叢集金鑰伺服器，您可以在儲存虛擬機器上指定主密鑰伺服器和輔助密鑰伺服器。註冊金鑰時， ONTAP將首先嘗試存取主金鑰伺服器，然後再依序嘗試存取輔助伺服器，直到操作成功完成，從而防止金鑰重複。
+您可以在儲存 VM 上設定與叢集式外部金鑰管理伺服器的連線。使用叢集式金鑰伺服器，您可以在儲存 VM 上指定主要金鑰伺服器和次要金鑰伺服器。註冊金鑰時，ONTAP 會先嘗試主要金鑰伺服器，然後依序嘗試次要金鑰伺服器，直到操作成功為止，以防止產生重複金鑰。
 
 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["學習如何配置叢集式外部金鑰伺服器"^]。
 
@@ -107,7 +107,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["
 [[fips-compliance]]
 === FIPS 合規性
 
-ONTAP符合聯邦資訊處理標準 (FIPS) 140-2 的所有 SSL 連線要求。您可以開啟和關閉 SSL FIPS 模式，全域設定 SSL 協議，並關閉ONTAP中的任何弱密碼，例如 RC4。
+ONTAP 的所有 SSL 連線均符合聯邦資訊處理標準 (FIPS) 140-2。您可以在 ONTAP 中啟用或停用 SSL FIPS 模式、全域設定 SSL 協議，以及停用任何弱加密演算法，例如 RC4。
 
 從ONTAP 9.18.1 開始，SSL 支援後量子計算加密演算法。這些演算法可針對未來潛在的量子運算攻擊提供額外保護，並且在 SSL FIPS 模式停用時可用。
 
@@ -135,7 +135,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 [[modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases]]
 === 修改控制自動 QoS 吞吐量上限增加的預設設定
 
-預設情況下，自適應和非自適應 QoS 原則群組會自動啟用，以便在短期內將工作負載的處理量上限暫時提高 50%，持續 1 秒，從而回應對更高效能的短期需求。從 ONTAP 9.19.1 開始，您可以修改這些預設設定。在 ONTAP 9.18.1 及更早版本中，這些設定無法變更。
+自適應和非自適應 QoS 原則群組預設會暫時將工作負載的處理量上限提高 50%，持續 1 秒，以回應短期內對更高效能的需求。從 ONTAP 9.19.1 開始，您可以修改這些設定。在 ONTAP 9.18.1 及更早版本中，您無法變更這些設定。
 
 link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["深入瞭解 QoS 處理量上限"^]。
 
@@ -204,13 +204,13 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 [[global-deduplication]]
 === 全域重複資料刪除
 
-從 ONTAP 9.19.1 開始，_全域重複資料刪除_ 將 link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["現有 ONTAP 重複資料刪除空間節省"^] 儲存單元層級擴展到整個儲存可用區（SAZ）。透過消除 SAZ 中所有儲存單元的重複資料區塊，可以顯著提高儲存效率並降低整體擁有成本。全域重複資料刪除無需功能授權，預設啟用，可與現有儲存效率技術無縫整合，並以極低的效能影響透明運作，無需任何管理組態設定。
+從 ONTAP 9.19.1 開始，_全域重複資料刪除_ 將link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["現有 ONTAP 重複資料刪除空間節省"^]儲存單元層級的重複資料刪除擴展到整個儲存可用度區域 (SAZ)。透過消除 SAZ 中所有儲存單元的重複資料區塊，可以顯著提高儲存效率並降低整體擁有成本。全域重複資料刪除無需功能授權，預設為啟用狀態，可與現有儲存效率技術無縫地整合，並以極低的效能影響透明運行，無需任何管理組態。
 
 
 
 [[system-manager]]
 == 系統管理員
 
-您可以在系統管理員中搜尋各種操作、物件和資訊主題。您也可以搜尋表格資料中的特定條目。
+您可以在 System Manager 中搜尋各種行動、物件和資訊主題。您也可以搜尋表格資料中的特定條目。
 
 link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["學習如何在系統管理員中搜尋、篩選和排序訊息"^]。

@@ -15,7 +15,7 @@ summary: 透過設定 NVMe TCP over TLS 來增強資料安全性，以加密 NVM
 
 .步驟
 . 選取 * 主機 * 、然後選取 * NVMe * 。
-. 選擇。image:icon_add_blue_bg.png["藍色方塊加上加號、接著加上新增白色字母"]
+. 選擇 image:icon_add_blue_bg.png["藍色方塊加上加號、接著加上新增白色字母"]。
 . 輸入主機名稱、然後選取主機作業系統。
 . 輸入主機說明、然後選取要連線到主機的儲存 VM 。
 . 選取image:icon_dropdown_arrow.gif["藍色向下箭頭"]主機名稱旁的。

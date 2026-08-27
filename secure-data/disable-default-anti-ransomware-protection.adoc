@@ -11,7 +11,7 @@ summary: 如果您在 ASA r2 叢集上安裝了 Autonomous Ransomware Protection
 
 
 [role="lead"]
-當您初始化新的 ONTAP 9.18.1 ASA r2 叢集或將叢集升級到 ONTAP 9.18.1 時，ARP/AI 會在 12 小時的寬限期後，預設在所有新儲存單元上自動啟用。如果您在寬限期內未停用 ARP/AI，則在寬限期結束時，新儲存單元會在整個叢集範圍內啟用。
+當您初始化新的 ONTAP 9.18.1 ASA r2 叢集或將叢集升級至 ONTAP 9.18.1 時，所有新儲存單元在 12 小時寬限期後預設啟用 ARP/AI。如果您在此期間未停用 ARP/AI，則在寬限期結束後，ONTAP 將在叢集範圍內為新儲存單元啟用 ARP/AI。
 
 在 ONTAP 9.17.1 中建立的儲存單元必須link:enable-anti-ransomware-protection.html["手動啟用"]用於 ARP/AI。
 
@@ -49,7 +49,7 @@ summary: 如果您在 ASA r2 叢集上安裝了 Autonomous Ransomware Protection
 ----
 security anti-ransomware auto-enable show
 ----
-. 停用現有磁碟區和新磁碟區的預設啟用功能：
+. 停用現有和新建儲存設備單元的預設能力開發：
 +
 [source, cli]
 ----

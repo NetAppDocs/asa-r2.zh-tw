@@ -37,7 +37,7 @@ summary: 透過修改一致性組中的儲存單元數量來增加或減少一�
 link:snapshot-reserve.html["了解更多關於ASA r2 儲存系統的快照保留信息"]。
 
 .開始之前
-如果您正在執行ONTAP 9.16.1，且要擴充的一致性群組處於SnapMirror主動同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]然後才可以新增儲存單元。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]然後才可以擴充一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。
+如果您執行的是 ONTAP 9.16.1，且要擴充的一致性群組處於 SnapMirror 作用中同步關係中，則必須先link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]才能新增儲存設備單元。如果您執行的是 ONTAP 9.16.1，且一致性群組處於非同步複寫關係中，則必須先link:snapmirror-active-sync-break-relationship.html["斷絕關係"]才能擴充該一致性群組。在 ONTAP 9.17.1 及更新版本中，擴充一致性群組前無需刪除 SnapMirror 作用中同步關係或中斷非同步關係。
 
 [role="tabbed-block"]
 ====
@@ -66,8 +66,8 @@ link:snapshot-reserve.html["了解更多關於ASA r2 儲存系統的快照保留
 . 選取 * 展開 * 。
 
 
-.下一步
-建立新的儲存單元之後link:../manage-data/provision-san-storage.html#add-host-initiators["新增主機啟動器"]、您應該和link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["將新建立的儲存單元對應至主機"]。新增主機啟動器可讓主機符合存取儲存單元和執行資料作業的資格。將儲存單元對應至主機可讓儲存單元開始將資料提供給對應的主機。
+.接下來呢？
+建立新儲存設備單元後，您應該link:../manage-data/provision-san-storage.html#add-host-initiators["新增主機啟動器"]和link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["將新建立的儲存單元對應至主機"]。新增主機啟動器可讓主機存取儲存設備單元並執行資料操作。將儲存設備單元對應至主機，可讓儲存設備單元開始向其對應的主機提供資料服務。
 
 --
 ====
@@ -90,5 +90,5 @@ link:snapshot-reserve.html["了解更多關於ASA r2 儲存系統的快照保留
 .結果
 儲存單元不再是一致性群組的成員。
 
-.下一步
+.接下來呢？
 如果您需要繼續保護儲存單元的資料、請將儲存單元新增至另一個一致性群組。

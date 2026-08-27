@@ -12,7 +12,7 @@ searchtitle: 安裝和設定 ASA A1K、A90、A70、A50、A30、A20 和 C30 儲�
 
 
 [role="lead"]
-若要使用 ASA R2 系統開始運作、請安裝硬體元件、設定叢集、設定從主機存取儲存系統的資料、以及配置儲存設備。
+要啟動並運行您的 ASA r2 系統，您需要安裝硬體元件、設定叢集、設定從 SAN 用戶端到儲存系統的資料存取，並進行儲存設備的資源配置。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]安裝及設定您的硬體
 [role="quick-margin-para"]

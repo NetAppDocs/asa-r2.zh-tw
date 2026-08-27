@@ -17,5 +17,5 @@ summary: 若要在ASA r2 系統上安裝ONTAP Mediator，您應該遵循在所�
 
 若要安裝ONTAP調解器，請依照link:https://docs.netapp.com/us-en/ontap/mediator/workflow-summary.html["此工作流程"^]
 
-.下一步
+.接下來呢？
 安裝ONTAP Mediator 後，您應該link:configure-ontap-mediator.html["使用自簽名憑證設定ONTAP調解器"] 。

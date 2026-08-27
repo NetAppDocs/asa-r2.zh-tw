@@ -21,7 +21,7 @@ ASA R2 REST API 是以統一化 ONTAP 特性設定所提供的 REST API 為基�
 [[types-of-api-changes]]
 == API 變更類型
 
-ASA R2 系統 REST API 和 FAS 、 AFF 和 ASA 系統所提供的統一化 ONTAP REST API 之間有多種不同類型。瞭解變更類型將有助於您更好地利用線上 API 參考文件。
+ASA r2 REST API 與 FAS、AFF 和 ASA 系統通用的 ONTAP REST API 之間存在若干差異。了解這些差異將有助於您更有效地使用線上 API 參考文件。
 
 .統一化 ONTAP 不支援新的 ASA R2 端點
 ASA R2 REST API 中新增了數個端點、但統一化 ONTAP 無法使用這些端點。
@@ -34,7 +34,7 @@ ASA R2 REST API 中新增了數個端點、但統一化 ONTAP 無法使用這些
 ASA R2 提供的多個端點都有限制、可與統一化 ONTAP 相比、使用哪些 HTTP 方法。例如、在 `/api/protocols/nvme/services` ASA R2 系統上使用端點時、不允許進行 POST 和 DELETE 。
 
 .端點和 HTTP 方法的內容變更
-某些 ASA R2 系統端點和方法組合不支援統一化 ONTAP 特性設定中所有可用的已定義屬性。例如、當使用修補程式搭配端點 `/api/storage/volumes/{uuid}`時、 ASA R2 不支援多個屬性、包括：
+某些 ASA r2 端點和方法組合不支援為統一 ONTAP 個性化設定所定義的所有屬性。例如，當使用 PATCH 方法搭配端點 `/api/storage/volumes/{uuid}`時，ASA r2 不支援下列幾個屬性：
 
 * `autosize.maximum`
 * `autosize.minimum`
@@ -49,7 +49,7 @@ ASA R2 處理某些 REST API 要求的方式有幾項變更。例如、使用端
 [[enhanced-security-with-oauth-2-0]]
 == 使用 OAuth 2.0 增強安全性
 
-OAuth 2.0 是業界標準授權架構。它用於根據簽署的存取權杖來限制及控制受保護資源的存取。您可以使用系統管理員來設定 OAuth 2.0 、以保護 ASA R2 系統資源。
+OAuth 2.0 是產業標準授權架構。它用於根據簽署的存取權杖來限制和控制對受保護資源的存取。您可以使用 System Manager 設定 OAuth 2.0 來保護 ASA r2 系統資源。
 
 使用 System Manager 設定 OAuth 2.0 之後、即可控制其餘 API 用戶端的存取。您必須先從授權伺服器取得存取權杖。然後 REST 用戶端會使用 HTTP 授權要求標頭、將權杖以承載權杖的形式傳送至 ASA R2 叢集。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["使用 OAuth 2.0 進行驗證與授權"^] 。
 

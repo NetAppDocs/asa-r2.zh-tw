@@ -11,13 +11,13 @@ summary: ASA r2 系統（ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20
 
 
 [role="lead"]
-ASA r2 系統中的儲存層使用儲存可用區，而不是聚合。儲存可用區是單一 HA 對可用的公共儲存池。 HA對中的兩個節點都可以存取其共享儲存可用區中的所有可用磁碟。建立儲存單元（LUN 或 NVMe 命名空間）時， ONTAP會自動在對應的儲存可用區中建立一個磁碟區來容納該儲存單元。
+ASA r2 系統使用儲存可用度區而非彙總，因此某些 ONTAP CLI 命令和參數不受支援。如果您偏好使用 CLI 而非 System Manager，也可以使用 CLI 設定叢集。
 
 由於這種簡化的儲存管理方法，  `storage aggregate` ASA r2 系統不支援 `lun` ，  `storage`和 `volume`命令和參數也受到限制。
 
 除非列為不受支援，否則 link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP 命令參照"] 中的所有其他命令均受 ASA r2 系統支援。
 
-R2 上的 ASA 不支援下列命令和命令集：
+ASA r2 不支援以下命令和命令集：
 
 .不支援的 <code> </code> 命令
 [%collapsible]
@@ -145,9 +145,9 @@ NOTE: 這 `lun move-in-volume`命令被替換為 `lun rename`和 `vserver nvme n
 [[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == 使用 CLI 設定 ONTAP ASA R2 叢集
 
-建議您link:../install-setup/initialize-ontap-cluster.html["使用系統管理員來設定 ONTAP ASA R2 叢集"]。System Manager 提供快速且簡單的引導式工作流程、讓您的叢集能夠正常運作。不過、如果您習慣使用 ONTAP 命令、則可以選用 ONTAP 命令列介面（ CLI ）來進行叢集設定。使用 CLI 進行叢集設定、除了使用 System Manager 設定叢集之外、沒有其他選項或優點。
+建議您link:../install-setup/initialize-ontap-cluster.html["使用系統管理員來設定 ONTAP ASA R2 叢集"]。System Manager 提供快速簡單的引導式工作流程，協助您快速啟動並執行叢集。但是，如果您習慣使用 ONTAP 命令，也可以選擇使用 ONTAP 命令列介面 （CLI） 進行叢集設定。使用 CLI 設定叢集，與使用 System Manager 相比，並無任何額外的選項或優勢。
 
-在叢集設定期間、會建立預設的資料儲存虛擬機器（ VM ）、建立初始儲存單元、並自動探索資料生命。您也可以選擇啟用網域名稱系統（ DNS ）來解析主機名稱、將叢集設定為使用網路時間傳輸協定（ NTS ）進行時間同步、以及啟用靜態資料的加密。
+在叢集設定過程中，ONTAP 會建立預設資料儲存設備虛擬機器 （VM）、建立初始儲存單元，並自動探索資料 LIF。您也可以選擇啟用網域名稱系統 （DNS） 以解析主機名稱、將叢集設定為使用網路時間協定 （NTP） 進行時間同步，以及啟用靜態資料加密。
 
 .開始之前
 收集下列資訊：

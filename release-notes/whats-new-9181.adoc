@@ -26,7 +26,7 @@ summary: 了解ONTAP 9.18.1 中適用於ASA r2 系統的新功能。
 | 更新 | 說明 
 
 
-| link:../data-protection/snapmirror-active-sync.html["增強對SnapMirror主動同步配置的支持"] | SnapMirror主動同步的支援從雙節點叢集增加到四節點叢集。 
+| link:../data-protection/snapmirror-active-sync.html["增強對SnapMirror主動同步配置的支持"] | SnapMirror 主動同步的支援範圍從雙節點叢集擴大到四節點叢集。 
 |===
 
 

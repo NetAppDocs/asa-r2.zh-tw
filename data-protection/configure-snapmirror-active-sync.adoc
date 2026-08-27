@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/configure-snapmirror-active-sync.html 
-keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active 
+keywords: asa r2, data protection, protect data, configure, snapmirror active sync, disaster recovery, symmetric active active 
 summary: 了解如何設定SnapMirror主動同步，透過建立輔助資料副本並在災難發生時啟用自動故障轉移來確保業務連續性。 
 ---
 = 在ASA r2 系統上設定SnapMirror主動同步

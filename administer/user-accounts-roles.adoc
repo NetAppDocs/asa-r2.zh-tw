@@ -11,14 +11,14 @@ summary: 使用 System Manager 為您的使用者帳戶設定 Active Directory �
 
 
 [role="lead"]
-使用 System Manager 為您的使用者帳戶設定 Active Directory 網域控制站存取、 LDAP 和 SAML 驗證。建立使用者帳戶角色、以定義指派給角色的使用者可在叢集上執行的特定功能。
+使用 System Manager 設定使用者帳戶的 Active Directory 網域控制器存取、LDAP 和 SAML 驗證。建立使用者帳戶角色，以定義指派給這些角色的使用者可以在叢集上執行的特定功能。
 
 
 
 [[configure-active-directory-domain-controller-access]]
-== 設定 Active Directory 網域控制站存取
+== 設定 Active Directory 網域控制器存取
 
-設定 Active Directory （ AD ）網域控制器存取叢集或儲存 VM 、以便啟用 AD 帳戶存取。
+設定 Active Directory (AD) 網域控制器對叢集或儲存 VM 的存取，以便啟用 AD 帳戶存取。
 
 .步驟
 . 在System Manager中、選取*叢集>設定*。
@@ -64,7 +64,7 @@ summary: 使用 System Manager 為您的使用者帳戶設定 Active Directory �
 
 .步驟
 . 在System Manager中、選取*叢集>設定*。
-. 在 * 安全 * 下，在 * SAML 驗證 * 旁邊，選擇image:icon_gear_white_bg.png["機械齒輪的藍色輪廓"]。
+. 在 *安全性* 下，在 *SAML 驗證* 旁邊，選擇 image:icon_gear_white_bg.png["機械齒輪的藍色輪廓"]。
 . 選取 * 啟用 SAML 驗證 * 。
 . 輸入 IDP URL 和主機系統 IP 位址、然後選取 * 儲存 * 。
 +
@@ -115,7 +115,7 @@ IDP系統會顯示驗證畫面。
 . 在 *Users* 下，選擇image:icon_add_blue_bg.png["包含加號的藍色矩形、後面接著以白色字母加上字詞"]。
 . 輸入使用者名稱、然後選取要指派給使用者的角色。
 . 選取使用者登入方法和驗證方法。
-. 若要啟用 MFA 、請選取image:icon_add.gif["加號後加上藍色字母"]；然後選取次要登入方法和驗證方法
+. 若要啟用 MFA，請選擇 image:icon_add.gif["加號後加上藍色字母"]；然後選擇輔助登入方法和身分驗證方法。
 . 輸入使用者的密碼。
 . 選擇*保存*。
 

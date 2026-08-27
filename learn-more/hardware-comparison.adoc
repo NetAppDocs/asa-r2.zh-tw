@@ -12,7 +12,7 @@ searchtitle: ASA r2 與其他 ONTAP 系統的差異
 
 
 [role="lead"]
-ASA r2 系統為基於全快閃解決方案的純 SAN 環境提供硬體和軟體解決方案。r2 系統與其他ONTAP系統（ ASA 、 AFF和FAS）在ONTAP特性、儲存層和支援協定的實作方面有所不同。
+ASA r2 系統是基於 All Flash 系統建構的、適用於純 SAN 環境的硬體和軟體解決方案。它們與其他 ONTAP 系統（ASA、AFF 和 FAS）在 ONTAP 特性、儲存層和支援的協定方面有所不同。
 
 以下系統被歸類為ASA r2 系統：
 
@@ -30,7 +30,7 @@ ASA r2 系統為基於全快閃解決方案的純 SAN 環境提供硬體和軟�
 [[personality-differences]]
 == 性格差異
 
-在 ASA R2 系統上、 ONTAP 軟體經過簡化、可支援重要的 SAN 功能、同時限制非 SAN 相關功能的可見度和可用度。例如、在 ASA R2 系統上執行的系統管理員不會顯示為 NAS 用戶端建立主目錄的選項。此精簡版的 ONTAP 被識別為 ASA R2 特性 _ 。在 ASA 系統上執行的 ONTAP 會識別為 ASA ONTAP 特性設定 _ 。在 AFF 和 FAS ONTAP 系統上執行的 ONTAP 被識別為 _ 統一化 ONTAP 特性 _ 。ONTAP 命令參考（手冊頁）、 REST API 規格和 EMS 訊息（若適用）中會參考 ONTAP 特性之間的差異。
+在 ASA r2 系統上，ONTAP 軟體經過精簡，旨在提供對基本 SAN 功能的支援，同時限制非 SAN 相關特性和功能的可見度和可用度。例如，執行在 ASA r2 系統上的 System Manager 不會顯示為 NAS 用戶端建立主目錄的選項。這種精簡版的 ONTAP 被識別為 _ASA r2 personality_。運作在 ASA 系統上的 ONTAP 被識別為 _ASA ONTAP personality_。運作在 AFF 和 FAS ONTAP 系統上的 ONTAP 被識別為 _unified ONTAP personality_。ONTAP personality 之間的差異在 ONTAP 命令參考手冊（man pages）、REST API 規格以及相關的 EMS 訊息中均有說明。
 
 您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。
 
@@ -50,7 +50,7 @@ ONTAP 儲存系統的特性設定無法變更。
 ASA r2 系統使用簡化的儲存層，該儲存層與FAS、 AFF和ASA系統所使用的儲存層不同。
 
 .FAS、 AFF和ASA系統
-FAS、 AFF和ASA系統的儲存層使用聚合作為基本儲存單元。聚合擁有儲存系統中可用的一組特定磁碟。聚合將其擁有的磁碟上的空間分配給 LUN 和命名空間的磁碟區。使用這些系統， ONTAP使用者可以建立和修改聚合、磁碟區、LUN 和命名空間。
+FAS、AFF 和 ASA 系統的儲存層使用彙總作為基本儲存設備單元。一個彙總擁有儲存系統中一組特定的磁碟機。彙總會將自身擁有的磁碟機空間指派給 LUN 和命名空間的磁碟區。借助這些系統，ONTAP 使用者可以建立和修改彙總、磁碟區、LUN 和命名空間。
 
 .ASA r2 系統
 ASA r2 系統中的儲存層使用儲存可用區，而非聚合。儲存可用區是單一 HA 對的兩個節點均可存取的公共儲存池。 HA對中的兩個節點均可存取其共享儲存可用區中的所有可用磁碟。例如，在雙節點ASA r2 系統ONTAP叢集中，有一個儲存可用區，叢集中的兩個節點均可存取。在四節點ASA r2 系統ONTAP叢集中，有兩個儲存可用區。叢集中的每個 HA 對都可以存取其中一個儲存可用區。
@@ -93,7 +93,7 @@ ASA r2 系統與FAS、 AFF和ASA系統有以下不同：
 以下說明 ASA R2 系統與 ONTAP 、 AFF 和 ASA 系統之間與 FAS 命令列介面（ CLI ）和 REST API 相關的主要差異。
 
 .使用協定服務建立預設儲存虛擬機
-新叢集會自動包含一個預設資料儲存虛擬機器 (VM)，並啟用 SAN 協定。  IP 資料 LIF 支援 iSCSI 和 NVMe/TCP 協議，並使用 `default-data-blocks`預設服務策略。
+新建叢集會自動包含一個啟用了 SAN 協定的預設資料儲存設備虛擬機器。IP 資料 LIF 支援 iSCSI 和 NVMe/TCP 協定，並預設使用 `default-data-blocks`服務原則。
 
 .自動建立 Volume
 建立儲存單元（ LUN 或命名空間）會自動從儲存可用區域建立磁碟區。這會產生一個簡化且通用的命名空間。刪除儲存單元會自動刪除相關的磁碟區。

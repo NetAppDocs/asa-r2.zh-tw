@@ -4,14 +4,14 @@ permalink: secure-data/migrate-encryption-keys-between-key-managers.html
 keywords: onboard key manager, external key manager, configure, migrate keys, store keys, authentication keys, encryption keys, asa r2 
 summary: 您可以使用 ASA R2 系統上的 ONTAP 內建金鑰管理程式，或是外部金鑰管理程式，或兩者（在某種情況下）來管理資料加密金鑰。 
 ---
-= 在 ASA R2 系統上的金鑰管理員之間移轉 ONTAP 資料加密金鑰
+= 在 ASA r2 系統上的金鑰管理程式之間移轉 ONTAP 資料加密金鑰
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-您可以使用 ASA R2 系統上的 ONTAP 機載金鑰管理程式或外部金鑰管理程式（或兩者）來管理資料加密金鑰。外部金鑰管理員只能在儲存 VM 層級啟用。在 ONTAP 叢集層級，您可以啟用內建金鑰管理程式或外部金鑰管理程式。
+您可以使用 ASA r2 系統上的 ONTAP 就職金鑰管理程式、外部金鑰管理程式，或在支援的組態中同時使用兩者來管理資料加密金鑰。外部金鑰管理程式僅在儲存設備 VM 層級受到支援。在 ONTAP 叢集層級，您可以使用就職金鑰管理程式或外部金鑰管理程式。
 
 [cols="2,2"]
 |===
@@ -53,11 +53,11 @@ summary: 您可以使用 ASA R2 系統上的 ONTAP 內建金鑰管理程式，�
 [[migrate-keys-between-key-managers-at-the-ontap-cluster-level]]
 == 在 ONTAP 叢集層級的關鍵管理員之間移轉金鑰
 
-從 ONTAP 9.16.1 開始，您可以使用 ONTAP 命令列介面（ CLI ）在叢集層級的關鍵管理員之間移轉金鑰。
+從 ONTAP 9.16.1 開始，您可以使用 ONTAP 命令列介面 （CLI） 在叢集層級移轉金鑰管理程式之間的金鑰。
 
 [role="tabbed-block"]
 ====
-.從內建到外接
+.從就職金鑰管理程式到外部金鑰管理程式
 --
 .步驟
 . 將權限層級設為進階：
@@ -93,7 +93,7 @@ set -privilege admin
 
 
 --
-.從外部到內建
+.從外部金鑰管理程式到內建金鑰管理程式
 --
 .步驟
 . 將權限層級設為進階：
@@ -135,7 +135,7 @@ set -privilege admin
 [[migrate-keys-between-key-managers-across-ontap-cluster-and-storage-vm-levels]]
 == 在 ONTAP 叢集和儲存 VM 層級的關鍵管理程式之間移轉金鑰
 
-您可以使用 ONTAP 命令列介面（ CLI ），在叢集層級的金鑰管理程式與儲存 VM 層級的金鑰管理程式之間移轉金鑰。
+您可以使用 ONTAP 命令列介面 （CLI） 在叢集和儲存設備 VM 層級的金鑰管理程式之間移轉金鑰。
 
 .步驟
 . 將權限層級設為進階：

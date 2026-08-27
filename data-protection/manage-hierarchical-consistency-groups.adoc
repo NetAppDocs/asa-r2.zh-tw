@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: 使用一致性群組同時對多個儲存單元執行各種操作，而不是對每個單元單獨執行操作。在層次結構中，一個或多個一致性組被配置為父一致性組下的子組。 
+summary: 使用一致性群組可以同時對多個儲存設備單元執行各種動作，而無需對每個單元個別執行動作。在分層結構中，一個或多個一致性群組設定為父一致性群組的子群組。 
 ---
 = 管理ASA r2 系統上的分層一致性群組
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 使用一致性群組同時對多個儲存單元執行各種操作，�
 
 
 [role="lead"]
-從ONTAP 9.16.1 開始，您可以使用系統管理員在ASA r2 系統上建立分層一致性群組。在層次結構中，一個或多個一致性組被配置為父一致性組下的子組。您可以將單獨的快照策略套用至每個子一致性群組，並透過複製父群組將所有子一致性群組的快照作為單一單元複製到遠端叢集。這簡化了複雜資料結構的資料保護和管理。
+從 ONTAP 9.16.1 開始，您可以使用 System Manager 在 ASA r2 系統上建立分層一致性群組。在分層結構中，一個或多個一致性群組會設定為父一致性群組下的子一致性群組。您可以為每個子一致性群組套用個別的快照原則，並透過複寫父一致性群組，將所有子一致性群組的快照以單一單元複寫至遠端叢集。這可簡化複雜資料結構的資料保護與管理。
 
 
 
@@ -25,14 +25,14 @@ summary: 使用一致性群組同時對多個儲存單元執行各種操作，�
 
 .步驟
 . 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
-. 將游標移到您要轉換成父一致性群組的一致性群組上。
+. 將滑鼠懸停在要轉換為父一致性群組的一致性群組上。
 . 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 提升至父一致性群組 * 。
 . 輸入新的子一致性群組的名稱或接受預設名稱；然後選擇一致性群組組件類型。
 . 選擇 * 促銷 * 。
 
 
 .接下來呢？
-您可以在父一致性群組下建立其他子一致性群組。您還可以link:../secure-data/encrypt-data-at-rest.html["設定快照複寫"]將父一致性群組和子一致性群組複製到地理位置較遠的位置，以進行備份和災難復原。
+您可以在父一致性群組下建立其他子一致性群組。您也可以link:snapshot-replication.html["設定快照複寫"]將父一致性群組和子一致性群組複寫到地理位置偏遠的地方，以進行備份和災難恢復。
 
 
 
@@ -102,7 +102,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["新
 
 --
 ====
-.下一步
+.接下來呢？
 建立子一致性群組後，您可以link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["套用個別的快照保護原則"]到每個子一致性組。您還可以link:snapshot-replication.html["設定複製策略"]在父一致性組和子一致性組上將一致性組複製到遠端位置。
 
 
@@ -118,7 +118,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["新
 .步驟
 . 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
 . 選取父一致性群組。
-. 選取您要分離的子一致性群組。
+. 將滑鼠懸停在要分離的子一致性群組上。
 . 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 從父 * 分離。
 . 為您要分離的一致性群組輸入新名稱，或接受預設名稱，然後選取一致性群組應用程式類型。
 . 選取 * 分離 * 。
