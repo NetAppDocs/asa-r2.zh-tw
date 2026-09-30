@@ -32,6 +32,8 @@ entries:
   entries:
   - title: 新增節點
     url: "/administer/add-nodes.html"
+  - title: 移除節點
+    url: "/administer/remove-nodes.html"
   - title: 重新開機、接管及回饋節點
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: 重新命名節點

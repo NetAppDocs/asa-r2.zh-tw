@@ -123,12 +123,9 @@
   <block id="f3833c816c6fe5b26b4e4266ccfed699" category="paragraph">您的 LIF 已修改。</block>
   <block id="092a2a219a66f53ad918ecfca02a40cb" category="summary">使用 ONTAP 系統管理員在 ASA R2 系統上執行基本儲存網路管理。</block>
   <block id="7727ebf2fbdb4d8c5b88383f3872253c" category="doc">管理 ASA R2 儲存系統上的叢集網路</block>
-  <block id="dce69090c45af3d113621dac45bca7fb" category="paragraph">您可以使用 ONTAP 系統管理員在 ASA R2 系統上執行基本的儲存網路管理。例如、您可以新增廣播網域或將連接埠重新指派給不同的廣播網域。</block>
   <block id="142e63ab347e5afebe1ee3eddeb82dc4" category="section-title">新增廣播網域</block>
   <block id="18021c31fe204f4bcb54336f24bb7958" category="paragraph">使用廣播網域將屬於同一層 2 網路的網路連接埠分組、以簡化叢集網路的管理。然後、儲存虛擬機器（ VM ）就可以使用群組中的連接埠來處理資料或管理流量。</block>
   <block id="4d00d5474a9eac58d3c8b5a5efd05a9a" category="paragraph">「預設」廣播網域和「叢集」廣播網域是在叢集設定期間建立的。「預設」廣播網域包含位於「預設」 IPspace 的連接埠。這些連接埠主要用於提供資料。叢集管理和節點管理連接埠也位於此廣播網域中。「叢集」廣播網域包含位於「叢集」 IPspace 中的連接埠。這些連接埠用於叢集通訊、並包含叢集中所有節點的所有叢集連接埠。</block>
-  <block id="98436b7b9537997727c62df8cd1c5b4b" category="paragraph">您可以在叢集初始化之後建立其他廣播網域。當您建立廣播網域時、會自動建立包含相同連接埠的容錯移轉群組。</block>
-  <block id="67484e42ec7ef0f9c6081b26a7966a3f" category="paragraph">新增至廣播網域之連接埠的最大傳輸單元（MTU）會更新為廣播網域中設定的MTU值。</block>
   <block id="5be487237484d4edf568d618438fb533" category="list-text">在 System Manager 中、選取 * 網路 &gt; 總覽 * 。</block>
   <block id="6169050a4730f8d024d60e5e811d6085" category="list-text">在 * 廣播 * 網域下、選擇<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="01b73cca64689dc46d9d7ff592613e09" category="list-text">輸入廣播網域的名稱或接受預設名稱。</block>
@@ -1931,7 +1928,6 @@
   <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">了解 vSphere 環境的持續可用性解決方案</block>
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系統的最佳實踐</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 轉換指南</block>
-  <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">從ONTAP 9.16.1 開始， ASA r2 儲存系統每個叢集最多支援 12 個節點。在 HA 對的新節點連接電纜並打開電源後，您需要將它們加入到叢集中。</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系統的ONTAP軟體復原遵循與其他ONTAP系統的復原相同的流程。還原ONTAP叢集會造成中斷。</block>
   <block id="b4a4e19f8caa5675ed75c7e4c2f95379" category="inline-link-macro">刪除SnapMirror主動同步關係</block>
   <block id="79bc5a42c0ce5e77f02d040d055dfae3" category="summary">ASA r2 系統的ONTAP軟體升級遵循與其他ONTAP系統升級相同的流程。當您在ASA r2 系統上升級ONTAP軟體時，您可以利用新的和增強的ONTAP功能。</block>
@@ -2859,4 +2855,77 @@
   <block id="e7e7921d40004de3413b2feb5d015c04" category="paragraph">如果您發現儲存單元活動出現激增，無論是單次激增還是某種新常態下的激增，都應將其報告為安全狀態。手動將這些激增報告為安全狀態有助於提高 ARP 威脅評估的準確性。了解如何<block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>。</block>
   <block id="200e37440690270fcdf5d35f1f9f63c6" category="paragraph">ONTAP SnapLock 是一款高效能的法規遵循解決方案，適用於使用 WORM 儲存設備以未修改形式保留檔案，以達到法規監管和治理目的之組織。您可以在 SnapLock Compliance 或 Enterprise 模式下執行 SnapLock，這兩種模式提供不同層級的 WORM 資料保護。SAN 環境中的主要叢集不支援 SnapLock Compliance 和 Enterprise 模式，但您可以在次要系統上啟用 SnapLock for SnapVault，以保護次要快照免受意外或惡意刪除。</block>
   <block id="44ed1558e28022693124a32e31d67183" category="paragraph">在本機和目的地叢集上初始化 SnapLock Compliance Clock 後，即可準備好 <block ref="716f8ed67937d4ffe779f9f204ed103b" category="inline-link-macro-rx"></block>。</block>
+  <block id="e237bf865e87bbdfd26ab56b61fc4b9e" category="summary">ASA r2 儲存設備系統每個叢集最多支援 12 個節點。HA 配對的新節點完成佈線與通電後，您需要將其參加叢集。</block>
+  <block id="cc7c52d2eca1519912be5504b86923e5" category="paragraph">ONTAP System Manager 可讓您對 ASA r2 系統執行基本的儲存網路管理，例如新增廣播網域或在廣播網域之間重新指派連接埠，以便您可以組織網路流量以符合您的基礎架構需求。</block>
+  <block id="ba9a7a46c6bc7f943d070bcccd364153" category="paragraph">叢集初始化後，您可以建立額外的廣播網域。建立廣播網域時，系統會自動建立包含相同連接埠的容錯移轉群組。</block>
+  <block id="8b32050d3c96b6bd0a885f98eb1416ea" category="paragraph">新增至廣播網域的連接埠的最大傳輸單元（MTU）更新為廣播網域中設定的 MTU 值。</block>
+  <block id="81cbd40cd8660cff0ad2a901db8d929f" category="section-title">刪除 VLAN</block>
+  <block id="e6a55391d40a820f0fb96c2886a44b1b" category="paragraph">在從插槽移除 NIC 或從叢集移除節點之前，您可能需要刪除 VLAN。刪除 VLAN 時，它會自動從所有使用它的容錯移轉規則和群組中移除。</block>
+  <block id="dc4d5090d51115b6ed8141aa254c3b32" category="paragraph">確保沒有與 VLAN 關聯的 LIF。</block>
+  <block id="dd5e47c75e64cbe3996c8133e894e247" category="paragraph">從連接埠刪除最後一個 VLAN 可能會導致該連接埠的網路暫時斷開連線。</block>
+  <block id="ac7d09a665b758116e45c0e4113cc186" category="paragraph">您可以使用 System Manager 或 CLI 刪除 VLAN。</block>
+  <block id="cea11a3fe22277f7f45d6feb4b7f56bf" category="list-text">在 System Manager 中，選擇 *網路 &gt; 乙太網路連接埠 &gt; VLAN*。</block>
+  <block id="1aae6a12505549a87c2e3ea5f5464f0f" category="list-text">選擇要移除的 VLAN。</block>
+  <block id="feb83dac816796145feb86b7475c73f5" category="list-text">查看您的 VLAN：</block>
+  <block id="0f39a6bacc3fe5756c2bc83081df6c3a" category="list-text">刪除 VLAN：</block>
+  <block id="ac309ab0be86396fc6a66899780ddf5b" category="list-text">確認 VLAN 已刪除：</block>
+  <block id="8bd15b309bcdb0c15b1b0e6adeb166d0" category="doc">從 ONTAP 叢集移除 ASA r2 節點</block>
+  <block id="f46b886aa665a8d7c7a7a4c7aa9c6346" category="paragraph">出於維護、更換或除役的目的，您可能需要從叢集中移除節點。節點必須逐一移除。如果您移除節點，也必須移除其 HA 合作夥伴。</block>
+  <block id="e0236ccc281e8e954020151e28594361" category="section-title">步驟 1：準備從 ASA r2 叢集移除節點</block>
+  <block id="71b734249d4ab321665fcafc817c1579" category="paragraph">在從 ASA r2 叢集移除節點之前，應先驗證叢集運作狀況。然後，應從該節點移轉或刪除儲存設備單元、VLAN 和 LIF，並停用儲存設備容錯移轉。</block>
+  <block id="1715d07a24988d9207de94794a6f01cc" category="list-text">驗證叢集是否運作正常：</block>
+  <block id="6bc362dbf494c61ea117fe3c71ca48a5" category="inline-link-macro">移動</block>
+  <block id="099af53f601532dbd31e0ea99ffdeb64" category="inline-link-macro">刪除</block>
+  <block id="cd6171fad4b783d0411b357a70e025b9" category="list-text"><block ref="103126b24482021bd492866bc35410e7" category="inline-link-macro-rx"></block> 或 <block ref="397d82cf73bd33098ee8615a2f9e95f3" category="inline-link-macro-rx"></block> 來自該節點的所有儲存設備單元。</block>
+  <block id="09a776ad2b6e83e1b754e6f7ebfafba3" category="inline-link-macro">從選擇性 LUN 對應（SLM）報告節點清單中刪除該節點及其 HA 合作夥伴</block>
+  <block id="ae6f4389297774f1a5988f7c44c7db66" category="list-text">如果您在要移除的節點上有 SCSI 儲存設備單元（LUN），<block ref="2df19a9598282fc5088ade88859e3e79" category="inline-link-macro-rx"></block>。</block>
+  <block id="e84ba10869a172504b256da9f24370e6" category="paragraph">如果您沒有從 SLM 報告節點清單中移除節點及其 HA 合作夥伴，即使 LUN 已移至另一個節點，也可能遺失先前位於該節點上的 LUN 的存取。</block>
+  <block id="f2a6c498fb90ee345d997f888fce3b18" category="inline-link-macro">刪除</block>
+  <block id="f183fde1c1f409b21fc8463052ca49e5" category="inline-link-macro">移轉</block>
+  <block id="39b0e3c1790c5d7e62d9065fac6449c0" category="list-text"><block ref="a406326f89a3bbce30953ad7824da1f0" category="inline-link-macro-rx"></block> 或 <block ref="7991084d788264d2f8515724f03312a6" category="inline-link-macro-rx"></block> 來自該節點的所有網路介面（LIF）。</block>
+  <block id="a1d06a7b7bc7900c0dc19460251f84e1" category="list-text">資料 LIF 應移至其他節點或刪除。</block>
+  <block id="eea3b175d0f6393f8f1dbd8d7bdc392e" category="paragraph">iSCSI LIF 移轉僅限於主節點或 HA 合作夥伴上的連接埠，因此必須將其刪除。</block>
+  <block id="2155c348c0a765e1cbd1204177de8f6b" category="list-text">應刪除叢集間 LIF。</block>
+  <block id="a9702b3847949399c05d5c3540819764" category="paragraph">刪除叢集間 LIF 時，會顯示一則可忽略的警告。</block>
+  <block id="284480082b3f00fd5851296324820748" category="list-text">叢集管理 LIF 應該移至另一個節點。</block>
+  <block id="c2031112d335614e483a8e73e8f0e80e" category="inline-link-macro">刪除所有 VLAN</block>
+  <block id="40f77f5330ce09a02647bfff9d2b11a1" category="list-text"><block ref="13cea30368888692a0a04edaddc87489" category="inline-link-macro-rx"></block> 在節點上。</block>
+  <block id="7da250e00cfaee667a1544bb30473c35" category="list-text">停用節點的儲存設備容錯移轉：</block>
+  <block id="df17f0e15b00039cb79f8c73233345dc" category="paragraph">從叢集中移除 HA 配對的第一個節點，然後移除它的 HA 合作夥伴。</block>
+  <block id="400f2bdb4ba287bc175bb483c502645d" category="section-title">步驟 2：從 ASA r2 叢集移除節點</block>
+  <block id="47560f69aa17b178f049071f943efdc3" category="paragraph">只有在完成準備移除節點所需的步驟後，才能從 ASA r2 叢集移除節點。從叢集中移除節點後，您必須接著移除其 HA 合作夥伴。</block>
+  <block id="ff13cd92e9c877582383685ad84e1408" category="inline-link-macro">發出 AutoSupport 訊息</block>
+  <block id="c742d6b26a30fa446c7ef8b5dab2c732" category="paragraph">建議您<block ref="82761e960f0e30a8f5a0b51f2de27c3a" category="inline-link-macro-rx"></block>，以通知 NetApp 技術支援您正在從叢集中移除節點。</block>
+  <block id="add39e8e05dc6feabb5680336ff42056" category="admonition">在自動 ONTAP 升級進行期間，請勿從叢集中移除節點或重新命名節點。</block>
+  <block id="8b7e38ab7ab942e33ee9b58f43906ab5" category="list-text">如果從四節點叢集中移除兩個節點，則剩餘兩個節點上的叢集 HA 將自動啟用。</block>
+  <block id="ba20c2b3b00275ac5d310648e6ff4a27" category="list-text">在將節點從叢集中移除之前，必須使連接到該節點的所有磁碟上的所有系統和使用者資料對使用者無法存取。</block>
+  <block id="2e926e0f22616c9494cae63cff92b8f5" category="list-text">如果節點被錯誤地從叢集中移除，請聯絡 NetApp 支援以取得恢復選項的協助。</block>
+  <block id="8a3e1e55cf4f3f7698b5923333b44f7a" category="list-text">將權限等級變更為進階：</block>
+  <block id="1e6d712b266f8755c066ccc30bde9fdc" category="list-text">識別叢集中持有 epsilon 的節點：</block>
+  <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">在以下範例中、「node0」目前持有 epsilon：</block>
+  <block id="b32cb3a5af2992203383db7140663697" category="list-text">如果要移除的節點持有 epsilon，請將 epsilon 移至存活的節點。</block>
+  <block id="a688ab20f94fae358a349cab6d019da3" category="list-text">從節點中移除 epsilon：</block>
+  <block id="c7a7b8bd7c37d4318c7e769f4286f17b" category="list-text">將 epsilon 移到另一個節點：</block>
+  <block id="49e8d819c7a12b23ca983a3bc99e1bdf" category="list-text">確定當前主節點：</block>
+  <block id="7a76ce80b9cd6059ed18dca9be6af204" category="paragraph">主節點是包含 mgmt、vldb、vifmgr、bcomd 和 crs 等程序的節點。</block>
+  <block id="a4fdc400f1c7bb92f441328b2a58ab2c" category="list-text">如果您要移除的節點是目前的主要節點，請啟用叢集中的另一個節點，使其被選為主要節點。</block>
+  <block id="1f915321f7e8155e5ee88f538eca12b5" category="list-text">取消目前主節點參與叢集的資格：</block>
+  <block id="b774483fd19fa8acb4407780df5d4d87" category="paragraph">當主節點不再符合資格時，叢集仲裁會從剩餘節點中選出一個作為新的主節點。如果您在 HA 配對的第一個節點上執行此步驟，則只需將該節點標記為不符合資格。在對 HA 合作夥伴重複這些步驟之前，請勿變更該合作夥伴的狀態。</block>
+  <block id="0d4121decd846754730f2b08483bac20" category="paragraph">如果合作夥伴節點被選為新的主節點並持有 epsilon，則在將合作夥伴標記為不合格之前，必須將 epsilon 轉移到另一個節點。</block>
+  <block id="bbbdda94513cf5e245680f89dc7113d5" category="list-text">使之前的主節點再次有資格參與叢集：</block>
+  <block id="2c3337f10b57ece73ad05be4f4418e0d" category="list-text">登入您不會從叢集中移除之節點上的遠端節點管理 LIF 或叢集管理 LIF。</block>
+  <block id="cd61023a75b13d7ddd81a51dd5fd5bad" category="list-text">使用節點名稱或節點 IP 位址從叢集中移除節點：</block>
+  <block id="c660a1ebe622089157d033f8e00d3b45" category="paragraph">如果您有一個混合版本叢集，並且要移除最後一個較低版本節點，請在這些命令中使用 -skip-last-low-version-node-check 參數。</block>
+  <block id="6d2290891d47080550b5fed55fbf344f" category="list-text">使用節點名稱移除節點：</block>
+  <block id="2935c03696a9fc643ed379f7af4ea5bf" category="list-text">使用節點 IP 位址移除節點：</block>
+  <block id="8a1cd083e3f95f4585c2102d6c2b05bf" category="paragraph">如果存在必須在移除節點之前解決的條件，則會產生故障訊息。如果發生這種情況，請解決這些條件並重新執行 <block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="ee3943d184071eb8b00fa718413c59da" category="paragraph">節點從叢集中成功移除後會自動重新開機。</block>
+  <block id="01d5d2ace7126b43c6c161bd5ee9a875" category="paragraph">重複這些步驟，從叢集中移除容錯移轉合作夥伴。</block>
+  <block id="b592ef8b0e17ac31ab55e93e7c1d10e1" category="inline-link-macro">cluster remove-node</block>
+  <block id="07e709e4a23132b1e1dd12b1fd7fee71" category="paragraph">了解更多關於該 <block ref="700df13594259d61712a860f23f94890" category="inline-link-macro-rx"></block> 命令的資訊。</block>
+  <block id="6d554e0c9ffc1fe9e00235aea8dd5770" category="section-title">步驟 3：（可選）清除節點組態並初始化所有磁碟</block>
+  <block id="9cba5ce5176add967894dfbbc6536a52" category="paragraph">如果您要重新利用已從 ASA r2 叢集中移除的節點，則必須先清除節點組態並初始化所有磁碟，然後才能將其重新加入叢集。</block>
+  <block id="895863970f247b187f4fcbba3ee248c3" category="list-text">開機過程中，出現提示時，按 *Ctrl-C* 顯示開機功能表。</block>
+  <block id="7d12381790ebb192cc4ad1b88892635d" category="list-text">選擇開機功能表選項 *(4) 清除組態並初始化所有磁碟* 或選項 *(9) 設定進階磁碟分割* 以清除節點的組態並初始化所有磁碟。</block>
+  <block id="93fa60c43fe67fdb72ad8e06d21cbed0" category="sidebar">移除節點</block>
 </blocks>

@@ -1,0 +1,197 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: remove, node, removing, asa r2 
+summary: 您可能需要重新命名節點、以符合組織的命名慣例或其他管理理由。 
+---
+= 從 ONTAP 叢集移除 ASA r2 節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+出於維護、更換或除役的目的，您可能需要從叢集中移除節點。節點必須逐一移除。如果您移除節點，也必須移除其 HA 合作夥伴。
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-asa-r2-cluster]]
+== 步驟 1：準備從 ASA r2 叢集移除節點
+
+在從 ASA r2 叢集移除節點之前，應先驗證叢集運作狀況。然後，應從該節點移轉或刪除儲存設備單元、VLAN 和 LIF，並停用儲存設備容錯移轉。
+
+.步驟
+. 驗證叢集是否運作正常：
++
+[source, cli]
+----
+cluster show
+----
+. link:../manage-data/move-storage-units.html["移動"] 或 link:../manage-data/delete-storage-units.html["刪除"] 來自該節點的所有儲存設備單元。
+. 如果您在要移除的節點上有 SCSI 儲存設備單元（LUN），link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["從選擇性 LUN 對應（SLM）報告節點清單中刪除該節點及其 HA 合作夥伴"^]。
++
+如果您沒有從 SLM 報告節點清單中移除節點及其 HA 合作夥伴，即使 LUN 已移至另一個節點，也可能遺失先前位於該節點上的 LUN 的存取。
+
+. link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["刪除"^] 或 link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["移轉"^] 來自該節點的所有網路介面（LIF）。
++
+** 資料 LIF 應移至其他節點或刪除。
++
+iSCSI LIF 移轉僅限於主節點或 HA 合作夥伴上的連接埠，因此必須將其刪除。
+
+** 應刪除叢集間 LIF。
++
+刪除叢集間 LIF 時，會顯示一則可忽略的警告。
+
+** 叢集管理 LIF 應該移至另一個節點。
+
+
+. link:../administer/manage-cluster-networking.html#delete-a-vlan["刪除所有 VLAN"] 在節點上。
+. 停用節點的儲存設備容錯移轉：
++
+[source, cli]
+----
+storage failover modify -enabled false -node <nodename>
+----
+
+
+.接下來呢？
+從叢集中移除 HA 配對的第一個節點，然後移除它的 HA 合作夥伴。
+
+
+
+[[step-2-remove-a-node-from-an-asa-r2-cluster]]
+== 步驟 2：從 ASA r2 叢集移除節點
+
+只有在完成準備移除節點所需的步驟後，才能從 ASA r2 叢集移除節點。從叢集中移除節點後，您必須接著移除其 HA 合作夥伴。
+
+.開始之前
+建議您link:../get-help/manage-autosupport.html#send-autosupport-data["發出 AutoSupport 訊息"]，以通知 NetApp 技術支援您正在從叢集中移除節點。
+
+
+NOTE: 在自動 ONTAP 升級進行期間，請勿從叢集中移除節點或重新命名節點。
+
+.關於這項工作
+* 如果從四節點叢集中移除兩個節點，則剩餘兩個節點上的叢集 HA 將自動啟用。
+* 在將節點從叢集中移除之前，必須使連接到該節點的所有磁碟上的所有系統和使用者資料對使用者無法存取。
+* 如果節點被錯誤地從叢集中移除，請聯絡 NetApp 支援以取得恢復選項的協助。
+
+
+.步驟
+. 將權限等級變更為進階：
++
+[source, cli]
+----
+set -privilege advanced
+----
+. 識別叢集中持有 epsilon 的節點：
++
+[source, cli]
+----
+cluster show
+----
++
+在以下範例中、「node0」目前持有 epsilon：
+
++
+[listing]
+----
+cluster::*> cluster show
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. 如果要移除的節點持有 epsilon，請將 epsilon 移至存活的節點。
++
+.. 從節點中移除 epsilon：
++
+[source, cli]
+----
+cluster modify -node <name_of_node_to_be_removed> -epsilon false
+----
+.. 將 epsilon 移到另一個節點：
++
+[source, cli]
+----
+cluster modify -node <node_name> -epsilon true
+----
+
+
+. 確定當前主節點：
++
+[source, cli]
+----
+cluster ring show
+----
++
+主節點是包含 mgmt、vldb、vifmgr、bcomd 和 crs 等程序的節點。
+
+. 如果您要移除的節點是目前的主要節點，請啟用叢集中的另一個節點，使其被選為主要節點。
++
+.. 取消目前主節點參與叢集的資格：
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility false
+----
++
+當主節點不再符合資格時，叢集仲裁會從剩餘節點中選出一個作為新的主節點。如果您在 HA 配對的第一個節點上執行此步驟，則只需將該節點標記為不符合資格。在對 HA 合作夥伴重複這些步驟之前，請勿變更該合作夥伴的狀態。
+
++
+如果合作夥伴節點被選為新的主節點並持有 epsilon，則在將合作夥伴標記為不合格之前，必須將 epsilon 轉移到另一個節點。
+
+.. 使之前的主節點再次有資格參與叢集：
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility true
+----
+
+
+. 登入您不會從叢集中移除之節點上的遠端節點管理 LIF 或叢集管理 LIF。
+. 使用節點名稱或節點 IP 位址從叢集中移除節點：
++
+如果您有一個混合版本叢集，並且要移除最後一個較低版本節點，請在這些命令中使用 -skip-last-low-version-node-check 參數。
+
++
+** 使用節點名稱移除節點：
++
+[source, cli]
+----
+cluster remove-node -node <node_name>
+----
+** 使用節點 IP 位址移除節點：
++
+[source, cli]
+----
+cluster remove-node -cluster_ip <node_ip>
+----
++
+如果存在必須在移除節點之前解決的條件，則會產生故障訊息。如果發生這種情況，請解決這些條件並重新執行  `cluster remove-node` 命令。
+
++
+節點從叢集中成功移除後會自動重新開機。
+
+
+
+
+
+.接下來呢？
+重複這些步驟，從叢集中移除容錯移轉合作夥伴。
+
+.相關資訊
+了解更多關於該 link:https://docs.netapp.com/us-en/ontap-cli/cluster-remove-node.html["cluster remove-node"] 命令的資訊。
+
+
+
+[[step-3-optionally-erase-the-node-configuration-and-initialize-all-disks]]
+== 步驟 3：（可選）清除節點組態並初始化所有磁碟
+
+如果您要重新利用已從 ASA r2 叢集中移除的節點，則必須先清除節點組態並初始化所有磁碟，然後才能將其重新加入叢集。
+
+.步驟
+. 開機過程中，出現提示時，按 *Ctrl-C* 顯示開機功能表。
+. 選擇開機功能表選項 *(4) 清除組態並初始化所有磁碟* 或選項 *(9) 設定進階磁碟分割* 以清除節點的組態並初始化所有磁碟。
+

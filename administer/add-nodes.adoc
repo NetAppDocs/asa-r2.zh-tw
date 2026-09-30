@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: administer/add-nodes.html 
-keywords: rename, node, renaming, asa r2 
-summary: 您可能需要重新命名節點、以符合組織的命名慣例或其他管理理由。 
+keywords: add, node, adding, asa r2, expand cluster 
+summary: ASA r2 儲存設備系統每個叢集最多支援 12 個節點。HA 配對的新節點完成佈線與通電後，您需要將其參加叢集。 
 ---
 = 將 ASA R2 節點新增至 ONTAP 叢集
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可能需要重新命名節點、以符合組織的命名慣例或�
 
 
 [role="lead"]
-從ONTAP 9.16.1 開始， ASA r2 儲存系統每個叢集最多支援 12 個節點。在 HA 對的新節點連接電纜並打開電源後，您需要將它們加入到叢集中。
+ASA r2 儲存設備系統每個叢集最多支援 12 個節點。HA 配對的新節點完成佈線與通電後，您需要將其參加叢集。
 
 .開始之前
 收集下列資訊：
