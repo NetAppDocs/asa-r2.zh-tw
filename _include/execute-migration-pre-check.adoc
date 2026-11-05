@@ -1,0 +1,15 @@
+= 
+:allow-uri-read: 
+
+
+.步驟
+. 從目的地叢集執行移轉預檢查：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
+----
++
+若移轉前需要解決任何問題，系統會顯示問題及修正行動。請修復問題並重複預檢查，直至成功完成。
+
+

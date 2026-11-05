@@ -1,0 +1,64 @@
+= 儲存設備 VM 移轉後手動切換用戶端
+:allow-uri-read: 
+
+
+在叢集間儲存設備虛擬機器移轉期間，用戶端 I/O 會切換到目的地叢集，來源叢集上的儲存設備虛擬機器將自動移除。如果您選擇在移轉期間停用來源儲存設備虛擬機器的自動切換和移除，則需要在移轉狀態達到 *準備清理來源* 後手動執行這些步驟。
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== 儲存設備 VM 移轉後手動切換用戶端
+
+如果在儲存設備 VM 的叢集間移轉期間停用自動用戶端切換，則在移轉關係準備好進行切換後，請手動執行切換，以便目的地儲存設備 VM 可以向用戶端提供資料。
+
+.關於這項工作
+從目的地叢集執行此工作。
+
+.步驟
+. 手動執行用戶端切換：
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. 確認切換操作已完成：
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.結果
+資料正從目的地叢集上的儲存 VM 提供給您的用戶端。
+
+.接下來呢？
+您現在已準備好從來源叢集移除儲存 VM。
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== 移轉後手動移除儲存 VM
+
+如果在叢集間儲存設備 VM 移轉期間停用自動來源清理，則在移轉完成後，請從來源叢集移除儲存設備 VM 以釋放儲存空間。
+
+.開始之前
+您的用戶端應該從目的地叢集提供資料。
+
+.步驟
+. 從來源叢集，驗證來源儲存設備虛擬機器的狀態是否為 *準備進行來源清理*：
++
+[source, cli]
+----
+vserver migrate show
+----
+. 移除來源儲存設備 VM：
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.結果
+來源叢集上的儲存 VM 已移除。

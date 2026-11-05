@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/install-ontap-mediator.html 
 keywords: asa r2, data protection, business continuity, install, ontap mediator, installation 
-summary: 若要在ASA r2 系統上安裝ONTAP Mediator，您應該遵循在所有其他ONTAP系統上安裝ONTAP Mediator 的相同步驟。 
+summary: 依照與其他 ONTAP 系統相同的工作流程，在您的 ASA r2 系統上安裝 ONTAP Mediator。 
 ---
 = 在ASA r2 系統上安裝ONTAP調解器
 :allow-uri-read: 
@@ -15,7 +15,7 @@ summary: 若要在ASA r2 系統上安裝ONTAP Mediator，您應該遵循在所�
 
 安裝ONTAP Mediator 包括準備安裝、啟用儲存庫存取、下載ONTAP Mediator 軟體包、驗證程式碼簽章、在主機上安裝軟體包以及執行安裝後任務。
 
-若要安裝ONTAP調解器，請依照link:https://docs.netapp.com/us-en/ontap/mediator/workflow-summary.html["此工作流程"^]
+若要安裝 ONTAP Mediator，請依照 link:https://docs.netapp.com/us-en/ontap/mediator/workflow-summary.html["此工作流程"^] 操作。
 
 .接下來呢？
 安裝ONTAP Mediator 後，您應該link:configure-ontap-mediator.html["使用自簽名憑證設定ONTAP調解器"] 。

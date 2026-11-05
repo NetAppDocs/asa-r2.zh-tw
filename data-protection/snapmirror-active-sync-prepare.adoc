@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-prepare.html 
 keywords: asa r2, data protection, business continuity, snapmirror active sync, protocol support, object limits, NVMe protocol limitations, prerequisites, interoperability, limits 
-summary: 若要準備在ASA r2 系統上設定SnapMirror主動同步，您應該檢查設定前提條件、確認是否支援您的主機作業系統，並注意可能影響特定設定的物件限制。 
+summary: 若要準備在 ASA r2 系統上設定 SnapMirror 作用中同步，請先審查先決條件、主機作業系統支援、物件限制和 NVMe 限制。 
 ---
 = 準備在ASA r2 系統上設定SnapMirror主動同步
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 若要準備在ASA r2 系統上設定SnapMirror主動同步，您應該
 
 
 [role="lead"]
-若要準備在ASA r2 系統上設定SnapMirror主動同步，您應該檢查設定前提條件、確認是否支援您的主機作業系統，並注意可能影響特定設定的物件限制。
+在 ASA r2 系統上設定 SnapMirror 作用中同步之前，請審查組態先決條件，確認主機作業系統的支援，並檢查可能影響組態的物件限制。
 
 .步驟
 . 查看SnapMirror活動同步link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/prerequisites-reference.html["先決條件"^] 。
@@ -19,7 +19,7 @@ summary: 若要準備在ASA r2 系統上設定SnapMirror主動同步，您應該
 . 回顧link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/limits-reference.html["對象限制"^]這可能會影響您的配置。
 . 驗證ASA r2 系統上主機協定是否支援SnapMirror主動同步。
 +
-ASA r2 系統上對SnapMirror主動同步的支援因ONTAP版本和主機協定而異。
+ASA r2 系統對 SnapMirror 作用中同步的支援因 ONTAP 版本和主機協定而異。
 
 +
 [cols="2,2"]
@@ -49,13 +49,13 @@ ASA r2 系統上對SnapMirror主動同步的支援因ONTAP版本和主機協定�
 [[nvme-protocol-limitations-with-snapmirror-active-sync-on-asa-r2-systems]]
 == ASA r2 系統上SnapMirror主動同步的 NVMe 協定限制
 
-在具有 NVMe 主機的ASA r2 系統上設定SnapMirror主動同步之前，您應該了解某些 NVMe 協定限制。
+在具有 NVMe 主機的 ASA r2 系統上設定 SnapMirror 作用中同步之前，請審查適用的 NVMe 協定限制。
 
 NVMe 子系統中的所有 NVMe 儲存單元必須是相同一致性群組的成員，且必須全部屬於相同SnapMirror活動同步關係。
 
 SnapMirror主動同步支援 NVMe/FC 和 NVMe/TCP 協議，如下所示：
 
-* 僅限雙節點集群
+* 僅適用於雙節點叢集
 * 僅在 ESXi 主機上
 * 僅適用於對稱主動/主動配置
 +
@@ -77,4 +77,4 @@ SnapMirror與 NVMe 主動同步不支援以下內容：
 
 
 .接下來呢？
-完成啟用SnapMirror主動同步所需的準備後，您應該link:snapmirror-active-sync-confirm-cluster-configuration.html["確認叢集配置"] 。
+完成啟用 SnapMirror 作用中同步的準備工作後，link:snapmirror-active-sync-confirm-cluster-configuration.html["確認叢集配置"]。

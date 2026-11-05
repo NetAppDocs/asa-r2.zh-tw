@@ -1,0 +1,27 @@
+= 
+:allow-uri-read: 
+
+
+.步驟
+. 從目的地叢集，開始儲存 VM 移轉：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
+----
++
+若要停用自動切換，請使用  `-auto-cutover false` 參數。若要停用自動移除來源儲存設備 VM，請使用  `-auto-source-cleanup false` 參數。
+
+. 監控遷移狀態
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+如果在自動切換開始前需要暫停或取消遷移，請使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必須先暫停遷移，然後才能取消遷移。切換開始後，您將無法取消遷移。
+
++
+如果啟用自動切換，移轉完成後，*狀態* 將顯示為 *移轉完成*。如果停用自動切換，*狀態* 將顯示為 *準備清理來源*。
+
+

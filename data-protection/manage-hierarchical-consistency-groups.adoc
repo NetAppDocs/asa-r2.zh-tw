@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: 使用一致性群組可以同時對多個儲存設備單元執行各種動作，而無需對每個單元個別執行動作。在分層結構中，一個或多個一致性群組設定為父一致性群組的子群組。 
+summary: 在 ASA r2 系統上，您可以提升、降級、建立和分離階層式一致性群組，以管理多個儲存設備單元的快照和複寫。 
 ---
 = 管理ASA r2 系統上的分層一致性群組
 :allow-uri-read: 
@@ -42,13 +42,13 @@ summary: 使用一致性群組可以同時對多個儲存設備單元執行各�
 將父一致性群組降級為單一一致性群組時，關聯子一致性群組的儲存單元將會新增至父一致性群組。子一致性群組被刪除，父一致性群組則作為單一一致性群組進行管理。
 
 .開始之前
-如果您正在執行ONTAP 9.16.1，且要降級的一致性群組處於SnapMirror主動同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]一致性組才可以被降級。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]然後才可以降級一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。
+如果您執行的是 ONTAP 9.16.1 ，且要降級的一致性群組處於 SnapMirror 作用中同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]，才能降級該一致性群組。如果您執行的是 ONTAP 9.16.1 ，且一致性群組處於非同步複寫關係中，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]，才能降級該一致性群組。在 ONTAP 9.17.1 及更新版本中，降級一致性群組之前，不需要刪除 SnapMirror 作用中同步關係或中斷非同步關係。
 
 .步驟
 . 在 System Manager 中、選取 * 保護 > 一致性群組 * 。
 . 將游標暫留在您要降級的父一致性群組上。
 . 選擇image:icon_kabob.gif["三個垂直藍點"]；然後選擇 * 降級至單一一致性群組 * 。
-. 選擇 * 降級 *
+. 選取 *降級*。
 
 
 .接下來呢？
@@ -113,7 +113,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["新
 當您將子一致性群組從父一致性群組分離時，子一致性群組將從父一致性群組中刪除，並作為單一一致性群組進行管理。應用於父級的複製策略不再應用於分離的子一致性群組。
 
 .開始之前
-如果您正在執行ONTAP 9.16.1，並且要分開的一致性群組處於SnapMirror活動同步關係中，則必須link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]才能分離一致性組。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須link:snapmirror-active-sync-break-relationship.html["斷絕關係"]然後才可以分離一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。
+如果您執行的是 ONTAP 9.16.1，且要分離的一致性群組處於 SnapMirror 作用中同步關係中，則必須先 link:snapmirror-active-sync-delete-relationship.html["刪除SnapMirror活動同步關係"]，才能分離一致性群組。如果您執行的是 ONTAP 9.16.1，且一致性群組處於非同步複寫關係中，則必須先 link:snapmirror-active-sync-break-relationship.html["斷絕關係"]，才能分離一致性群組。在 ONTAP 9.17.1 及更新版本中，分離一致性群組之前，不需要刪除 SnapMirror 作用中同步關係或中斷非同步關係。
 
 .步驟
 . 在 System Manager 中、選取 * 保護 > 一致性群組 * 。

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-consistency-groups-add-remove-storage-units.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity, shrink 
-summary: 透過修改一致性組中的儲存單元數量來增加或減少一致性組的大小。 
+summary: 透過在一致性群組中新增儲存設備單元或從中移除儲存設備單元來增加或減少一致性群組的大小。 
 ---
 = 修改ASA r2 系統上一致性群組的大小
 :allow-uri-read: 
@@ -61,7 +61,7 @@ link:snapshot-reserve.html["了解更多關於ASA r2 儲存系統的快照保留
 . 選擇 * 使用新的儲存單元 * 。
 . 輸入您要建立的單位數量、以及每單位的容量。
 +
-如果建立多個單元，則每個單元具有相同的容量和相同的主機作業系統。若要為每個單元分配不同的容量，請選擇「新增不同的容量」為每個單元分配不同的容量。
+如果建立多個單元，每個單元將具有相同的容量和相同的主機作業系統。若要為每個單元分配不同的容量，請選取 *新增不同的容量*。
 
 . 選取 * 展開 * 。
 

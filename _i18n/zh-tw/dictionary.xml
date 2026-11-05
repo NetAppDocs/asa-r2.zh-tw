@@ -6,16 +6,13 @@
   <block id="d1566cdda155967b81fd9a70bd3c4fb5" category="section-title">使用 NetApp Hardware Universe 準備安裝新磁碟機</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
   <block id="e5e09031843479ef9ef8cbbd4c2f404c" category="inline-link-macro">NetApp Hardware Universe</block>
-  <block id="71ce934da626f129b18da1d468eb6ec0" category="list-text">前往<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
   <block id="df9551630bd3ed1534543645b69f8c03" category="list-text">在 * 產品 * 下、選取您的硬體組態。</block>
   <block id="38df0ee5fe54dd6c758252b6c0d10ca2" category="list-text">選取您的 ONTAP 版本、然後選取 * 顯示結果 * 。</block>
   <block id="2a1ce808a258d214a002629c6379e420" category="list-text">在圖形下方、選取 * 按一下此處以查看替代檢視 * 、然後選擇符合您組態的檢視。</block>
-  <block id="8879ae602a103ebb018f02c741b13bc6" category="list-text">使用組態檢視來確認新磁碟機是否受支援、以及安裝的正確插槽。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
   <block id="185a1f8fef7e6cf81a581dd2a40a152d" category="paragraph">您已確認新磁碟機受到支援、而且您知道適當的安裝插槽。</block>
   <block id="eff30216681f42753f0004bfaa72a1d8" category="section-title">在 ASA R2 上安裝新磁碟機</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
-  <block id="ab8d4a8595207b62032f838aac5d0ec5" category="paragraph">您應該針對每個磁碟機重複本程序中的步驟。</block>
   <block id="42fceed144d93d382eb9bdcc9b1254d2" category="list-text">請妥善接地。</block>
   <block id="80177dc7bdbbbc02b9ce8afc2b88ec50" category="list-text">將新磁碟機插入正確的插槽。</block>
   <block id="e0c83787dff0404e30c533312ac6d655" category="list-text">在CAM握把處於開啟位置時、請用手插入新的磁碟機。</block>
@@ -25,7 +22,6 @@
   <block id="914880e8c4c1f2d863426d9fdb26e63d" category="list-text">確認磁碟機的活動LED（綠色）亮起。</block>
   <block id="b976d1eaf63b1cc64a0aefb8ee074737" category="list-text">如果 LED 閃爍、表示磁碟機已通電、而且 I/O 正在進行中。如果磁碟機韌體正在更新、 LED 也會閃爍。</block>
   <block id="23e334f05e952b9ff19da92642272c97" category="paragraph">磁碟機韌體會在沒有目前韌體版本的新磁碟機上自動更新（不中斷營運）。</block>
-  <block id="ddd3f2f8d2c30dd30d7f438baa0b344c" category="list-text">如果您的節點已設定為磁碟機自動指派、您可以等待 ONTAP 自動將新磁碟機指派給節點。如果您的節點未設定為磁碟機自動指派、或是偏好的、您可以手動指派磁碟機。</block>
   <block id="897b38142b945434cc4786647c86d6fe" category="paragraph">新磁碟機必須指派給節點、才能被辨識。</block>
   <block id="3f297ef15cde0668e93b35f2752fd4fd" category="paragraph-title">接下來呢？</block>
   <block id="6dec1c0e8c179a7aac02c43bb607e9b4" category="paragraph">識別新磁碟機之後、請確認已新增磁碟機、並正確指定其擁有權。</block>
@@ -33,14 +29,12 @@
   <block id="8d8c4ed3c573517cf85c6f9774611682" category="doc">管理 ASA R2 儲存系統上的安全性憑證</block>
   <block id="54fabbb7eaa4284fd9879cc6800e1c23" category="paragraph">線上憑證狀態傳輸協定（OCSP）會使用ONTAP SSL和傳輸層安全（TLS）連線、驗證來自支援服務的數位憑證要求狀態。</block>
   <block id="14f2e941537be0af0ffcf0eb92638474" category="section-title">產生憑證簽署要求</block>
-  <block id="d9c581beaaa3f252519c2349b498df50" category="paragraph">產生憑證簽署要求（ CSR ）以建立可用於產生公開憑證的私密金鑰。</block>
   <block id="9c2cdad0235d8d361f21c8343ef95363" category="list-text">在System Manager中、選取*叢集&gt;設定*。</block>
   <block id="09ef944219bc98d60bb63812176764b8" category="inline-image-macro">指向右側的藍色箭頭</block>
   <block id="036b8359968029867c0f53398c973b67" category="inline-image-macro">藍色矩形、包含加號、後面接著字詞「 generate CSR 」</block>
   <block id="08a546dbc12b2c85cddd39198968436b" category="list-text">在 * 安全 * 下，在 * 證書 * 旁邊選擇<block ref="5f3155aaa1f70c7a47a7d47ad66cef2b" category="inline-image-macro-rx" type="image"></block>；然後選擇<block ref="98f8645ac2524866a7d14024818586c1" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="a37fbf5e4cab39699059b543072a0a58" category="list-text">輸入主旨一般名稱、然後選取國家 / 地區。</block>
   <block id="763c4b735ed893cd16a51bd04983ace0" category="inline-image-macro">兩個箭頭朝對角方向、接著是更多選項</block>
-  <block id="0e7abfbe7afd6a026db3f74641f7c1dc" category="list-text">如果您要變更 GSR 預設值、請選取擴充金鑰使用方式、或新增主旨替代名稱、<block ref="ca3389cd4e212742391c26eb7cfeb92f" category="inline-image-macro-rx" type="image"></block>然後選取、再進行所需的更新。</block>
   <block id="c67e909aabe72e49f90ee7cbe67386f3" category="list-text">選取*產生*。</block>
   <block id="d2239394e4657f1d0e7710610d913ea0" category="section-title">新增信任的憑證授權單位</block>
   <block id="969be7a147de5a36fce282a68b738f12" category="paragraph">ONTAP 為使用傳輸層安全性（ TLS ）的應用程式提供一組預設的信任根憑證。您可以視需要新增其他信任的憑證授權單位。</block>
@@ -52,7 +46,6 @@
   <block id="81d4d87b5a2c0e5a67346b0cfa7715e1" category="paragraph">您已將新的信任憑證授權單位新增至 ASA R2 系統。</block>
   <block id="4d9d4efe062f0dfb4b9fb363303ccde7" category="section-title">續約或刪除信任的憑證授權單位</block>
   <block id="752c3bde22d3e32e3d58a63e896456e5" category="paragraph">信任的憑證授權單位必須每年續約。如果您不想續約過期的憑證、您應該將其刪除。</block>
-  <block id="c222bab7c055dc9c80c22cac62d053ec" category="list-text">選取您要續約或刪除的信任憑證授權單位。</block>
   <block id="59c982eff32f42adfa29c968a5c566b6" category="list-text">續約或刪除憑證授權單位。</block>
   <block id="b2df3cf3b115278e9974b518ddd73e7b" category="cell">若要更新憑證授權單位、請執行此動作 ...</block>
   <block id="4d391a8815f477c0b5b3acf7eabb40a8" category="cell">若要刪除憑證授權單位、請執行此動作 ...</block>
@@ -75,7 +68,6 @@
   <block id="3ca515fb766423ca1b5e2902ae912cbd" category="list-text">選取 * 用戶端 / 伺服器憑證 * 或 * 本機憑證授權單位 * 。</block>
   <block id="d593b3417192fbc0105a1cb4d0666e38" category="list-text">選取您要續約或刪除的憑證。</block>
   <block id="9541193538215beddec4d0ff4179c02b" category="paragraph">您已在 ASA R2 系統上更新或刪除現有的用戶端 / 伺服器憑證或本機憑證授權單位。</block>
-  <block id="a08a1d658815d18af06f0f984093e1c8" category="summary">建立 LIF 以存取 ASA R2 上儲存單元中的資料。使用子網路來簡化 LIF 建立和 IPspace 、以提供安全的管理和路由。</block>
   <block id="308b265e371a9880b0bd42bdd3062ea8" category="searchtitle">使用 ONTAP 系統管理員 | ASA R2 管理用戶端對儲存設備的存取</block>
   <block id="aae1b867cf5c5c13dcc8b8e70c18c738" category="doc">管理用戶端存取 ASA R2 儲存系統上的儲存 VM</block>
   <block id="921172c97bf93779d120cfbe016a6ce1" category="paragraph">ASA R2 系統上的儲存單元包含在儲存虛擬機器（ VM ）內。儲存 VM 可用來為 SAN 用戶端提供資料。使用 ONTAP System Manager 為 SAN 用戶端建立 LIF （網路介面）、以連線至儲存 VM 並存取儲存單元中的資料。您可以選擇性地使用子網路來簡化 LIF 建立和 IPspace 、為儲存 VM 提供自己的安全儲存、管理和路由。</block>
@@ -90,7 +82,6 @@
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">接下來呢？</block>
   <block id="79e6c5b282864befd0059c0b9507a94d" category="paragraph">現在您已建立 IPspace 、您可以使用它來建立子網路。</block>
   <block id="e076d116ada24bf1c0b0893d53e30abe" category="section-title">建立子網路</block>
-  <block id="15c63fd73320216c99cdc2294d7f3cbc" category="paragraph">子網路可讓您分配特定的 IPv4 或 IPv6 位址區塊、以便在建立 LIF （網路介面）時使用。子網路可讓您指定子網路名稱、而非每個 LIF 的特定 IP 位址和網路遮罩、進而簡化 LIF 的建立。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">開始之前</block>
   <block id="ddaa39224424042ba35394afbe714a70" category="list-text">您必須是叢集管理員才能執行此工作。</block>
   <block id="e16a6d9491427cd66f2caf8e459cb6d8" category="inline-link-macro">廣播網域</block>
@@ -137,7 +128,6 @@
   <block id="c7adbe343adefa9627ff949dd3db0f69" category="list-text">選取所需的連接埠、然後選取 * 儲存 * 。</block>
   <block id="31862e129b6cb07a60ddbee086f0cfb3" category="paragraph">您已新增廣播網域。</block>
   <block id="79a445b13af94b222b8d21958b843d49" category="section-title">將連接埠重新指派給不同的廣播網域</block>
-  <block id="6da4a5f96d583bb97bbeb1eae5fc8e0f" category="paragraph">連接埠只能屬於一個廣播網域。如果您想要變更連接埠所屬的廣播網域、您需要將連接埠從現有的廣播網域重新指派給新的廣播網域。</block>
   <block id="c258df26dcfb02d55a6b3c661938ad69" category="list-text">在 * 廣播網域 * 下、選取<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>網域名稱旁的、然後選取 * 編輯 * 。</block>
   <block id="f91ac93e51b19237caea22ba4c2ef5ae" category="list-text">取消選取您要重新指派給其他網域的乙太網路連接埠。</block>
   <block id="368198c9cdf4ab26f2c4bc3162cd610e" category="list-text">選取您要重新指派連接埠的廣播網域、然後選取 * 重新指派 * 。</block>
@@ -170,7 +160,6 @@
   <block id="531a0a7558ea49516e00375fc7a7c6c1" category="doc">更新 ASA R2 儲存系統上的韌體</block>
   <block id="9543e3c5ee671be608b8d7358d2905b4" category="section-title">啟用自動更新</block>
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">選取以確認您的更新修改將套用至所有目前和未來的更新。</block>
-  <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">根據您的更新選擇、建議的更新會自動下載並安裝在您的 ASA R2 系統上。</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">停用自動更新</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">檢視自動更新</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">檢視已下載至叢集且排定自動安裝的韌體和系統檔案更新清單。同時檢視先前自動安裝的更新。</block>
@@ -178,7 +167,6 @@
   <block id="820669251a6d9aa8a265e4aa20459cdf" category="list-text">更新自動更新的選項。</block>
   <block id="aed3f23a5ce94e81514a2da9dce9b2ef" category="paragraph">自動更新會根據您的選擇進行修改。</block>
   <block id="d51f54f2a9182b10cea278ae35000b46" category="section-title">手動更新韌體</block>
-  <block id="bc1104446ea3d0b83abd00c11e939335" category="paragraph">如果您想要在下載和安裝建議的更新之前、能夠靈活地檢視這些更新、您可以停用自動更新並手動更新韌體。</block>
   <block id="bf48a37237272ddc300e21b45b8971dc" category="list-text">將韌體更新檔案下載至伺服器或本機用戶端。</block>
   <block id="70bd8d7d7e01ac7ceebd8e8ba2be8da6" category="paragraph">您的韌體已更新。</block>
   <block id="a8d696bbc3e0da20e552c1bb59ce8581" category="doc">管理 ASA R2 儲存系統上的使用者帳戶和角色</block>
@@ -204,7 +192,6 @@
   <block id="a3159db686c1d366e5f2b352a66feac1" category="list-text">前往您指定的 IDP 系統、然後從剪貼簿複製中繼資料以更新系統中繼資料。</block>
   <block id="7710ba0aff48fcda71a2abbcc40a4207" category="list-text">返回 System Manager 的確認視窗、然後選取 * 我已使用主機 URI 或中繼資料 * 設定 IDP 。</block>
   <block id="1b15428800637bbda165a70162ae4a38" category="list-text">選取 * 登出 * 以啟用 SAML 型驗證。</block>
-  <block id="46a104f98e1224c5718cc97c759b2595" category="paragraph">IDP系統會顯示驗證畫面。</block>
   <block id="1f5d625fbe13f457c48513ce1e397954" category="paragraph">您現在可以將 SAML 驗證用於使用者帳戶。</block>
   <block id="4374a327e24ea03cc8606ed272d5ab67" category="section-title">建立使用者帳戶角色</block>
   <block id="c30236cf1b83cdb71cdbc959dc102778" category="paragraph">叢集管理員和儲存 VM 管理員的角色會在初始化叢集時自動建立。建立其他使用者帳戶角色、以定義指派給角色的使用者可在叢集上執行的特定功能。</block>
@@ -224,7 +211,6 @@
   <block id="cd5ce84f06573fa36efd7de37fc1e5ba" category="summary">如果主機資料作業發生問題、您可以使用 ONTAP 系統管理員來驗證從主機到 ASA R2 儲存系統的連線是否為作用中。</block>
   <block id="29aef3c4098e0c02a759b7ceeffd7bf5" category="doc">驗證 ASA R2 儲存系統上的主機連線能力</block>
   <block id="2066e94a3e5e94a8e4ebdca7307614e8" category="list-text">在 System Manager 中、選取 * 主機 * 。</block>
-  <block id="7d19a1e7e72002fdb422d749fd4507db" category="paragraph">在主機上進行更新、以修正連線問題。ONTAP 會每十五分鐘重新檢查一次連線狀態。</block>
   <block id="69cb7ab40e4d5787db8003ef13bf1939" category="summary">建立快照以備份 ASA R2 系統上的資料。您可以建立手動快照、也可以使用一致性群組來排程自動快照。</block>
   <block id="a72d39c43f1da3c8e4c29dc1a6cf6185" category="searchtitle">使用 ONTAP System Manager | ASA R2 建立快照以備份資料</block>
   <block id="054d41e4a716977ca191fd8200811262" category="doc">建立快照以備份 ASA R2 儲存系統上的資料</block>
@@ -275,7 +261,6 @@
   <block id="7a9a61ee2297500e102394139e96e623" category="inline-link-macro">設定快照複寫</block>
   <block id="28e240e6173e34f1942b6fae18eece4d" category="summary">使用一致性群組同時對多個儲存單元執行各種動作、而非在每個單元上個別執行動作。</block>
   <block id="756274998bfddb9ee5aca3ce09a0d910" category="section-title">將 Snapshot 資料保護新增至一致性群組</block>
-  <block id="ef96230e3fb35067c9001214ca84a12c" category="paragraph">將快照資料保護新增至一致性群組時、會根據預先定義的排程、定期擷取一致性群組的本機快照。</block>
   <block id="e96ea80e31853245a2bf947241dc2cee" category="inline-link-macro">還原資料</block>
   <block id="e4575afdee40389c50ab951775f50f9e" category="paragraph">您可以使用<block ref="a7f2e382c44a40bb56e9b639352d2592" category="inline-link-macro-rx"></block>遺失或毀損的快照。</block>
   <block id="074d62224d0503ff6087225e736ee539" category="list-text">將游標移到您要保護的一致性群組上。</block>
@@ -289,7 +274,6 @@
   <block id="58a9df332cae92457421a6c743d20c57" category="paragraph">然後選擇。<block ref="ae97822195fab64c57868f45af967727" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2a79371d63ff7c165ee10055e63ddc1a" category="list-text">選取原則排程。</block>
   <block id="a3d38335033dbc3e63c68f76b308e45c" category="list-text">在 * 最大快照數 * 下、輸入您要保留一致性群組的最大快照數。</block>
-  <block id="72c9cc57bd3acc347a45ea0b780c14ab" category="list-text">或者、在 * SnapMirror label* 下輸入 SnapMirror 標籤。</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
   <block id="cf8693d6af83f33c68a196b12cffa29d" category="section-title">從一致性群組移除快照資料保護</block>
   <block id="0e79d9ba3e974f486c0f5945f4e9673a" category="paragraph">當您從一致性群組移除快照資料保護時、一致性群組中所有儲存單元的快照都會停用。</block>
@@ -318,16 +302,12 @@
   <block id="3e905f617938aef0b388912bce87f2e2" category="list-text">將游標移至您要刪除的一致性群組上方。</block>
   <block id="b32275e0392f5cbab8806c7ce85e42f5" category="list-text">接受警告、然後選取 * 刪除 * 。</block>
   <block id="dde86492e27a0d7b75963e7c4b928397" category="paragraph">刪除一致性群組之後、先前位於一致性群組中的儲存單元將不再受到快照保護。請考慮將這些儲存單元新增至另一個一致性群組、以防止資料遺失。</block>
-  <block id="f64372c965917d3f83cea4c8fcaab6e6" category="summary">使用資料保護原則和排程、以自動排程保護資料。</block>
   <block id="d3919acd269a3722bd7dde17248b45a2" category="paragraph">使用快照原則、以自動排程的方式保護一致性群組中的資料。在快照原則中使用原則排程來判斷快照的拍攝頻率。</block>
   <block id="a5d94ffe746cc520a02e27113f7f17f8" category="section-title">建立新的保護原則排程</block>
-  <block id="839eaac1f4b53c683e9bc97157690966" category="paragraph">保護原則排程會定義快照原則的執行頻率。您可以建立排程、根據天數、小時數或分鐘、定期執行。例如、您可以建立每小時執行一次的排程、或每天只執行一次。您也可以建立排程、在特定時間於一週或一月的特定日期執行。例如、您可以建立排程、在每月 20 日上午 12 ： 15 執行。</block>
-  <block id="5602873045e45e073e4b6542b9eaa3bf" category="paragraph">定義各種保護原則排程可讓您靈活地增加或減少不同應用程式的快照頻率。這可讓您為關鍵工作負載提供更高層級的保護、並降低資料遺失風險、而非較不重要的工作負載所需的保護。</block>
   <block id="4dcfd814948491e71a1d9ca23f69c54f" category="list-text">選取 * 保護 &gt; 原則 * ；然後選取 * 排程 * 。</block>
   <block id="3a491464203f4d5c208474ff64bb5049" category="inline-image-macro">包含加號的藍色矩形、後面接著以白色字母加上字詞</block>
   <block id="6410543768483abec88bed0e73b5e7e1" category="list-text">選擇。 <block ref="6ce47eb77e3cf8662282bcd32b9971d1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0269a8ba0e45323cac42de9d59d1de5b" category="list-text">輸入排程名稱、然後選取排程參數。</block>
-  <block id="92d0ab5425be6ef24b32b89b0e003e73" category="paragraph">現在您已建立新的原則排程、您可以使用原則中新建立的排程來定義拍攝快照的時間。</block>
   <block id="e807ebdf213353b8a415f991a2cade81" category="section-title">建立快照原則</block>
   <block id="97fef1670a856044b58543b0bb9c9a6d" category="paragraph">Snapshot 原則定義快照的拍攝頻率、允許的最大快照數、以及保留快照的時間長度。</block>
   <block id="f2e05b7420eb3408f7ef6a05a0733024" category="list-text">在 System Manager 中、選取 * 保護 &gt; 原則 * 、然後選取 * 快照原則 * 。</block>
@@ -335,7 +315,6 @@
   <block id="177883a13692cc6b2a240a9eb176f518" category="list-text">輸入快照原則的名稱。</block>
   <block id="d8ae1f3c2d9915ffcd2b71028c52661a" category="list-text">選取 * 叢集 * 將原則套用至整個叢集。選取 * 儲存 VM* 將原則套用至個別的儲存 VM 。</block>
   <block id="dd7ef557ea392d7d7a8e9ddc3d40487f" category="list-text">選取 * 新增排程 * 、然後輸入快照原則排程。</block>
-  <block id="8bf4ba3f2ed35e1256e452979a821dc8" category="paragraph">現在您已經建立了快照原則、可以將其套用至一致性群組。系統會根據您在快照原則中設定的參數、為一致性群組擷取快照。</block>
   <block id="520f1c3480de74b9674b39b93318fad9" category="section-title">將快照原則套用至一致性群組</block>
   <block id="237fc3d39df5571a9028914f696726ac" category="paragraph">將快照原則套用至一致性群組、以自動建立、保留及標記一致性群組的快照。</block>
   <block id="b9cb249d424007128d7ffbc0823dbe8d" category="list-text">將游標暫留在您要套用的快照原則名稱上。</block>
@@ -344,7 +323,6 @@
   <block id="9a50e1eaf0bb6f5464df0a5ab61d663f" category="inline-link-macro">設定複寫關係</block>
   <block id="77ec3a368c81cec1f2da0fd5c151292f" category="paragraph">現在您的資料已受到快照保護、您應該<block ref="71383d603e2dd10cd99b2edcd612e72c" category="inline-link-macro-rx"></block>將一致性群組複製到地理位置遠端位置、以便進行備份和災難恢復。</block>
   <block id="b9cad560d21e8e44891f35b522094161" category="section-title">編輯、刪除或停用快照原則</block>
-  <block id="55b3098f761e922e4cc46505a05c0b56" category="paragraph">編輯快照原則以修改原則名稱、最大快照數或 SnapMirror 標籤。刪除原則、將其及其相關的備份資料從叢集中移除。停用原則、以暫時停止建立或傳輸原則指定的快照。</block>
   <block id="476aaf01fe137ae82d98a1885545f98b" category="list-text">將游標暫留在您要編輯的快照原則名稱上。</block>
   <block id="b88f843a1498708989c2d5a092e2f732" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 編輯 * 、 * 刪除 * 或 * 停用 * 。</block>
   <block id="535c668fa3441ff5eb5df6f60c734d9c" category="paragraph">您已修改、刪除或停用快照原則。</block>
@@ -356,9 +334,7 @@
   <block id="a5e06406af0ed5340393cd73877c6372" category="list-text">更新原則、然後選取 * 儲存 * 。</block>
   <block id="c3fcac5f888af495cdddd6f927ac06f4" category="paragraph">您已修改複寫原則。</block>
   <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="paragraph-title">以取得更多資訊</block>
-  <block id="8833f2f06409ffe6dc4a7935b76b0754" category="summary">如果一致性群組中的資料毀損或遺失、您可以從遠端快照還原整個一致性群組。</block>
   <block id="042d689a0af446510e1c4b24dd9c2fb3" category="doc">還原 ASA R2 儲存系統上的資料</block>
-  <block id="23f73d35f33960f836b4c972d5d09270" category="paragraph">如果資料遺失或毀損、則可還原受快照保護的一致性群組或儲存單元中的資料。</block>
   <block id="0547aea64f49ba1efcd1fd9f6ef765bd" category="section-title">還原一致性群組</block>
   <block id="a97b0cb07478c4ff127c8ba83a66503f" category="paragraph">您可以從本機或遠端快照還原一致性群組。</block>
   <block id="29deb93ec612425b64c0c477a30824d7" category="open-title">從本機快照還原</block>
@@ -370,7 +346,6 @@
   <block id="dc206050db672fd0973fbd5f55386987" category="open-title">從遠端快照還原</block>
   <block id="ec6646be259e5b1c9af3de1f81da6328" category="list-text">在 System Manager 中、選取 * 保護 &gt; 複寫 * 。</block>
   <block id="ce2d1886747bc6ec7ee4807067a0d292" category="list-text">選取 * 本機目的地 * 。</block>
-  <block id="11c386ccca11e61bf991a0d4d045eac6" category="list-text">選擇要恢復的 * 來源 * ，然後選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="f77361b272ce81d8275727f7b1a756a8" category="list-text">選擇*還原*。</block>
   <block id="b57644e0d335708a67583d0956efbff3" category="list-text">選取您要還原資料的叢集、儲存 VM 和一致性群組。</block>
   <block id="ce4d637f09f1bd2207fae9d16deba844" category="list-text">選取您要還原的快照。</block>
@@ -384,11 +359,9 @@
   <block id="e5bcfe810855bc6fcd167465762bd286" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 *Restore* 。</block>
   <block id="2465c382a833d6fab0be0ac27a1252c7" category="list-text">選取 * 使用此快照來還原儲存單元 * ；然後選取 * 還原 * 。</block>
   <block id="357f5562c118ce8eac8ecbcb73450b9a" category="paragraph">您的儲存單元會還原至用於還原的快照時間點。</block>
-  <block id="cbdc44f9706bda2ed3d7f682a5f396d2" category="summary">使用 ONTAP System Manager 將資料複製到遠端位置、以進行備份和災難恢復。設定需要建立複寫原則和關係。</block>
   <block id="40bf81e755dc73fb04ab21c9f9f5756c" category="searchtitle">使用 ONTAP System Manager| ASA R2 將快照複寫到遠端叢集</block>
   <block id="52e62ad767d46ccf1912124d9b984dd6" category="doc">從 ASA R2 儲存系統將快照複寫到遠端叢集</block>
   <block id="f2b39b01edbe286e89542affc03f6d4f" category="paragraph">Snapshot 複寫是將 ASA R2 系統上的一致性群組複製到地理位置遠端位置的程序。初始複寫之後、一致性群組的變更會根據複寫原則複製到遠端位置。複寫一致性群組可用於災難恢復或資料移轉。</block>
-  <block id="a11f569aa7659d38ad74c3348435869e" category="paragraph">若要設定 Snapshot 複寫、您需要在 ASA R2 系統和遠端位置之間建立複寫關係。複寫關係是由複寫原則所管理。叢集設定期間會建立複寫所有快照的預設原則。您可以使用預設原則、也可以選擇性地建立新原則。</block>
   <block id="bb35c8e1197f3cb1f834baa178f51fdd" category="section-title">步驟 1 ：建立叢集對等關係</block>
   <block id="256483a2b5ed8710e7c8fdf9ce515426" category="paragraph">您必須先在本機叢集和遠端叢集之間建立叢集對等關係、才能透過將資料複寫到遠端叢集來保護資料。</block>
   <block id="53950c8063da261b283bbbda8dcdf670" category="list-text">在本機叢集的 System Manager 中、選取 * 叢集 &gt; 設定 * 。</block>
@@ -411,7 +384,6 @@
   <block id="1ff21cfe2a98ae8b4a02a199611aa91d" category="paragraph">快照複寫關係會在 ASA R2 系統和遠端位置之間建立連線、以便將一致性群組複寫到遠端叢集。複寫一致性群組可用於災難恢復或資料移轉。</block>
   <block id="ac59bb95e3695bc7bee3aef9c11cc7ec" category="list-text">在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。</block>
   <block id="7e1e6a3712eae4789ecd885097e5a4e7" category="list-text">選取 * 複寫原則 * 。</block>
-  <block id="7d4ac3ed3440432276ca5b8085ed49e5" category="paragraph">您必須選取 _Vault_ 複寫原則。</block>
   <block id="c4c50145f9cafae0b0fd638f59da1c0b" category="list-text">輸入資料保留期間上限和下限。</block>
   <block id="9e3c1427208e1336b5583fb9b78c3cc4" category="list-text">若要延遲資料傳輸的開始、請取消選取 * 立即開始傳輸 * 。</block>
   <block id="9625f43e1bf117d60569d5ad051c6f03" category="paragraph">根據預設、初始資料傳輸會立即開始。</block>
@@ -804,7 +776,6 @@
   <block id="4dae76cd6e28c01554edf8f2fb2ff842" category="list-text"><block ref="ec9655721b41e06c690354a032042fc1" prefix="" category="inline-code"></block></block>
   <block id="f3497351aae46692e603fedb2f2cd146" category="inline-link-macro">ONTAP 命令參照</block>
   <block id="7b25c381c7fe8ec42f4be59e49b01ffa" category="section-title">使用 CLI 設定 ONTAP ASA R2 叢集</block>
-  <block id="8770069e8d7e75b723f2a51c7a6e2e49" category="inline-link-macro">使用系統管理員來設定 ONTAP ASA R2 叢集</block>
   <block id="8482ccc845851c74e1babfdb9e5f07ff" category="list-text">開啟 HA 配對的兩個節點。</block>
   <block id="52560e7a62865ac74c44ac6603fc8243" category="list-text">顯示在本機網路上探索到的節點：</block>
   <block id="cc5a41800687f63c8dbcaa7e401c8609" category="list-text">啟動叢集設定精靈：</block>
@@ -812,7 +783,6 @@
   <block id="e893a90ae57229dfac856adac6465299" category="list-text">輸入節點管理介面連接埠、 IP 位址、網路遮罩和預設閘道的值。</block>
   <block id="fda6f1670b78ef61b08576d1471a103a" category="list-text">按 *Enter* 繼續使用命令列介面進行設定；然後輸入 *cre* 以建立新叢集。</block>
   <block id="23e51af4fe58f92e39c0703d397ba59f" category="list-text">接受系統預設值或輸入您自己的值。</block>
-  <block id="3f700d9e97f3e9f6b70bf6dc7cf82fb5" category="list-text">在第一個節點上完成設定後、請登入叢集。</block>
   <block id="275b7a31cf5aeda42b5da56c5563af69" category="list-text">驗證叢集是否為作用中、且第一個節點是否正常：</block>
   <block id="54397080e1c14fad8fd9702ba806ff02" category="list-text">將第二個節點新增至叢集：</block>
   <block id="fd9eecde4b53a516500ff1ac241b95d5" category="list-text">您也可以在叢集之間同步處理系統時間</block>
@@ -820,7 +790,6 @@
   <block id="447e692a660d8bc8988c70b0737302db" category="cell">與對稱驗證同步</block>
   <block id="3c3574a78c74302dbc13bf11e0435275" category="list-text">確認叢集與 NTP 伺服器相關聯：</block>
   <block id="7a15ceb09d1ef08df7b9021f7341e654" category="paragraph">您已準備好<block ref="0675c663575ea5d2004171fa7c4c09af" category="inline-link-macro-rx"></block>從 SAN 用戶端到系統。</block>
-  <block id="e42d5bab0edf2441b75829873e298e1b" category="summary">ASA 系統提供專為僅 SAN 解決方案最佳化的硬體支援。ASA R2 系統提供硬體與軟體的最佳化。</block>
   <block id="cf4ae521a2a16cdd073860fee0fbab96" category="paragraph">您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。</block>
   <block id="c3e4be39d2ab89664b205dd7d0bb6510" category="list-text">從 System Manager （系統管理器）菜單中，選擇 *Cluster （羣集） &gt; Overview （概述） * 。</block>
   <block id="8369fc694deadf80f5d106ef41b6e7b2" category="paragraph">ONTAP 儲存系統的特性設定無法變更。</block>
@@ -1281,8 +1250,6 @@
   <block id="580170da57ca90dca0f62ce9faf29c6e" category="sidebar">安全的 NVMe 連線</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
   <block id="4eae1c6da6a9edad5e5228cf8cfe3cdb" category="sidebar">ONTAP 9.16.0 的新功能</block>
-  <block id="0a57cb4625de2148aa1f3fe6815e78eb" category="paragraph">主機連線狀態會顯示在主機群組名稱旁邊、如下所示：</block>
-  <block id="5b13dc2b1f3390e14daacb1f2f882717" category="list-text">* 確定 * ：表示所有啟動器都已連線至兩個節點。</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">* 無連線 * ：表示未連線任何啟動器。</block>
   <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">瞭解 ONTAP 9 。 16.0 適用於 ASA R2 系統的新功能。</block>
   <block id="22a4c2b7564a7f7d551ab23d23fbcac8" category="paragraph">您已確認技術支援人員可以從 ASA R2 系統接收 AutoSupport 訊息、確保他們擁有必要的資料、在發生任何問題時能提供協助。</block>
@@ -1297,7 +1264,6 @@
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">深入瞭解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
   <block id="3f808654ebfed6aae875b71a402ac91b" category="inline-link-macro">ONTAP 9 注意事項。 16.1</block>
   <block id="ccde34ed9a96a11b25c1db2a8c9acb87" category="paragraph"><block ref="ccde34ed9a96a11b25c1db2a8c9acb87" category="inline-link-macro-rx"></block></block>
-  <block id="82f8a3cbf0a93791bbbfc70a1b650bcf" category="paragraph">快照可以隨需建立、也可以根據自動建立<block ref="83bfa2dc5e6407223dca634141b43309" category="inline-link-macro-rx"></block>、以固定的時間間隔建立。Snapshot 原則和排程會指定何時建立快照、要保留多少份複本、如何命名快照、以及如何標記快照以供複寫。例如，系統可能每天在上午 12 ： 10 建立一個快照，保留兩個最新的複本，將其命名為「每日」（附加時間戳記），並將其標示為「每日」以供複寫。</block>
   <block id="45572a9b40e369d2ef8629844808cced" category="summary">瞭解影響 ASA R2 系統的限制和預設值變更。</block>
   <block id="1103c7c9b683247c76b5f25f9cd64b74" category="doc">ONTAP 限制與預設值的變更會影響 ASA R2 系統</block>
   <block id="1daa1b3cc6e7b6b7a591ba10582085a8" category="paragraph">瞭解影響 ASA R2 系統的限制和預設值變更。NetApp 致力於協助客戶瞭解每個 ONTAP 版本中最重要的預設值、並限制變更。</block>
@@ -1370,7 +1336,6 @@
   <block id="fe36b3d0747e41e736245b1f2f016f37" category="paragraph">在 * 效能服務層級 * 下，選取不同的服務層級。</block>
   <block id="e39fb54244b4e7e5902cf86f104eae5f" category="paragraph">建立子一致性群組</block>
   <block id="df30ab788ddab119f1a9a52f397c1578" category="paragraph">選取 * 新增子一致性群組 * 。</block>
-  <block id="accc48ba80dae134714334f9974f857c" category="paragraph">階層式一致性群組可讓您將個別的快照原則套用到每個子一致性群組，並透過複寫父叢集，將所有子一致性群組的快照複寫到單一單元的遠端叢集。如此可簡化複雜資料結構的資料保護與管理。例如，假設您建立一個父一致性群組，稱為<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>，其中包含兩個子一致性群組：<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>應用程式資料和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>應用程式記錄。每 15 分鐘拍攝一次的快照<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>，每小時拍攝一次的快照<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>。父一致性群組具有 SnapMirror 原則，<block ref="d6faa7ca58e81c6f13095e4f9ff20e81" prefix=" " category="inline-code"></block>可每 24 小時將和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>的快照複寫<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>到遠端叢集。父一致性群組<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>是以單一單位來管理，子一致性群組則以個別單位來管理。</block>
   <block id="ec57f29bebbe66441595e764308d00a6" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 提升至父一致性群組 * 。</block>
   <block id="3073e32eb6f2f0cb69e9248a5f0c848c" category="list-text">選擇 * 促銷 * 。</block>
   <block id="34dd18f2c196dd45fa9dfab7e7517350" category="paragraph">您可以從新的或現有的一致性群組建立子一致性群組。</block>
@@ -1392,7 +1357,6 @@
   <block id="4aafb19b9676db4e8aa85eb3131ac5f4" category="section-title">將父一致性群組降級為單一一致性群組</block>
   <block id="dd487eacf1aba6e2726ce73064acff7b" category="list-text">將游標暫留在您要降級的父一致性群組上。</block>
   <block id="d26a37885a1db03d1d33fa1b32e74c25" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇 * 降級至單一一致性群組 * 。</block>
-  <block id="0b886822f169d28b04dc34a1cb55c402" category="list-text">選擇 * 降級 *</block>
   <block id="8eea35138709fe7cf5caaf5b5fb53a4d" category="inline-link-macro">新增快照原則</block>
   <block id="a4cc38b952e58f7fac916d3297d86f9f" category="paragraph"><block ref="9b6117933a7d1c9745a65ab485bb26f2" category="inline-link-macro-rx"></block>移至降級一致性群組，以保護先前由子一致性群組管理的儲存單元。</block>
   <block id="e8289e36e948e36d5aeb9297cf2c6712" category="section-title">將子一致性群組與父一致性群組分離</block>
@@ -1635,10 +1599,8 @@
   <block id="14a1b02d9ac34f22a362671d392a3852" category="list-text">ASA C30</block>
   <block id="e2c77d4bd35cfd8d81e8af62db4c144b" category="summary">若要開始使用 ASA r2（ASA A1K、A90、A70、A50、A30、A20、C30）系統，請安裝硬體、設定叢集、設定資料存取並設定儲存。</block>
   <block id="434872b119bd955476c150025f7da4b2" category="searchtitle">安裝和設定 ASA A1K、A90、A70、A50、A30、A20 和 C30 儲存系統</block>
-  <block id="c3993bfac3ec8dac794fe31c3a3f3195" category="summary">ASA r2 系統（ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20、ASA C30）不支援某些 ONTAP 指令。</block>
   <block id="13af08b425d55aad64c53d60ae2a530a" category="sidebar">NetApp ASA r2 系統（ASA A1K、ASA A90、ASA A70、ASA A50、ASA A30、ASA A20、ASA C30）提供統一的硬體和軟體解決方案，可根據僅使用 SAN 的客戶的需求建立簡化的體驗。</block>
   <block id="80b47f1753b3cb7e47c4279f47da1cd4" category="admonition">這<block ref="787f67886dcefe1e2ad298992552116f" prefix=" " category="inline-code"></block>命令被替換為<block ref="80d8c5e05b7dc47d7d3de5d888476621" prefix=" " category="inline-code"></block>和<block ref="53707b9f629f540e205f4dfa772722ca" prefix=" " category="inline-code"></block>命令。</block>
-  <block id="80c0eacc1ee22ae50cd37d4e7eaf12a0" category="paragraph">這<block ref="9f9fc58b577820fbcd41ff15739ed6f0" prefix=" " category="inline-code"></block>與以下參數一起使用時命令不可用：</block>
   <block id="faa3fdb36806e35e16c52a72aae6308a" category="paragraph">您可以使用ONTAP命令列介面 (CLI) 建立具有自動故障轉移功能的僅 iSCSI LIF。</block>
   <block id="9551e06ebe54ea44317c627f8c2826c8" category="section-title">建立自訂僅 iSCSI LIF 服務策略</block>
   <block id="c3d907ed0368d8bf0168908898f88bc6" category="paragraph">您必須使用ONTAP命令列介面 (CLI) 來建立自訂服務策略。</block>
@@ -1648,7 +1610,6 @@
   <block id="7bade8b2da4576753960e605a3b14fea" category="section-title">建立僅支援 iSCSI 的 LIF，並啟用自動 LIF 故障轉移</block>
   <block id="5de4ecc2da832f025bdc6932c13e43dc" category="paragraph">您必須已建立自訂的僅 iSCSI LIF 服務策略。</block>
   <block id="3a49705b35d2deb31fa498adf59b88bc" category="list-text">建立具有自動 LIF 故障轉移功能的僅 iSCSI LIF：</block>
-  <block id="137f0d99866f3c5fb380dd6199c186ca" category="list-text">建議您在每個節點上建立兩個 iSCSI LIF，一個用於結構 A，另一個用於結構 B。這為您的 iSCSI 流量提供了冗餘和負載平衡。在以下範例中，總共建立了四個 iSCSI LIF，每個節點上兩個，每個結構一個。</block>
   <block id="b6a739813709f83018659fdbc27b2de8" category="list-text">如果您正在使用 VLAN，請調整<block ref="dd051c084bc8cc988e9de14f3c9ad878" prefix=" " category="inline-code"></block>參數以包含對應 iSCSI 結構的 VLAN 連接埠資訊，例如， <block ref="2a05b28bd19c3a98e46d07aa6695c6a5" prefix=" " category="inline-code"></block>對於 iSCSI 結構 A 和<block ref="f245070e2a8ef7b028d5d95112386767" prefix=" " category="inline-code"></block> 。</block>
   <block id="7500a4db61e9b72fce1ef4eabd1edd15" category="list-text">如果您使用具有 VLAN 的介面群組 (ifgroups)，請調整<block ref="dd051c084bc8cc988e9de14f3c9ad878" prefix=" " category="inline-code"></block>參數以包含適當的 VLAN 端口，例如， <block ref="5baba6f6f316f2dc9483d868f8e2f435" prefix=" " category="inline-code"></block>對於 iSCSI 結構 A 和<block ref="4bf48c896b4c0cd30e6f90e2d1f1e320" prefix=" " category="inline-code"></block>對於 iSCSI 結構 B，其中<block ref="a108b2b9a0c27dd07bed32945c011a40" prefix=" " category="inline-code"></block>是 ifgroup，a0a-&lt;iSCSI-A-VLAN&gt; 和 a0a-&lt;iSCSI-B-VLAN&gt; 分別是 iSCSI A 結構和 iSCSI B 結構的 VLAN 連接埠。</block>
   <block id="35e215d46dc9e9777b80a47726a059fc" category="list-text">驗證 iSCSI LIF 是否已建立：</block>
@@ -1669,16 +1630,11 @@
   <block id="e67055b6d8c65ffeed652e0147459791" category="list-text">如果您正在使用ONTAP Cloud Mediator，請驗證您的ASA r2 系統是否符合必要的<block ref="efcd0c458e1c451926dd33228d1c1e37" category="inline-link-macro-rx"></block> 。</block>
   <block id="8d8b639ec8160491c90dea5c1c1c3da9" category="list-text">在系統管理員中，選擇*保護&gt;概覽*。</block>
   <block id="7656aa254dd0e2eeb0bb2b5791fc4ce9" category="list-text">選擇*調解員類型*。</block>
-  <block id="d9bdcb07b569b6e25edbe03768dae198" category="list-text">對於「雲端」中介，請輸入組織 ID、客戶端 ID 和客戶端金鑰。對於「本地」中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。</block>
   <block id="8645f14d86ca95088f9677a7ab1aa3db" category="list-text">從符合條件的群集對等體清單中選擇群集對等體，或選擇「新增群集對等體」來新增新的群集對等體。</block>
   <block id="30b5aba1e43ab775f5ea2145687df2a6" category="inline-link-macro">配置SnapMirror主動同步</block>
-  <block id="dc159caf94b39eeebe38d89cea963f19" category="paragraph">初始化中介後，您可以<block ref="972d16674ae44824ac2ebd5c1f400dda" category="inline-link-macro-rx"></block>在輔助站點建立資料副本，並使主機應用程式能夠在發生災難時自動透明地進行故障轉移。</block>
   <block id="ac467f776ee651744b052418ba147ac6" category="summary">了解如何設定SnapMirror主動同步，透過建立輔助資料副本並在災難發生時啟用自動故障轉移來確保業務連續性。</block>
   <block id="cb572638faa6dac033ad09bf8b7a3697" category="doc">在ASA r2 系統上設定SnapMirror主動同步</block>
-  <block id="e870f3928f340d8604f1aeca47fd7bc6" category="paragraph">配置SnapMirror主動同步以在輔助站點建立資料副本，並使主機應用程式能夠在災難發生時自動、透明地進行故障轉移。</block>
   <block id="8d018747bea84c9dde4cd9162a2a3fe1" category="paragraph">在ASA r2 系統上， SnapMirror主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點均可存取本地儲存以進行主動 I/O。</block>
-  <block id="0419988efe0ab2020fafa89845a50d66" category="inline-link-macro">使用ONTAP Tools for VM ware 設定SnapMirror主動同步</block>
-  <block id="6dc1796a8eb93a1a7e561360bc06e3fd" category="admonition">如果您使用 iSCSI 或 FC 協定並使用適用於 VMware Sphere 的ONTAP工具，則可以選擇<block ref="72a52b1f83f724b3ab68fc2e145e6ca7" category="inline-link-macro-rx"></block> 。</block>
   <block id="fff84298cd90a613302c98045d7150ab" category="inline-link-macro">建立一致性組</block>
   <block id="97acfef2275511d3b33699c044502ffb" category="paragraph"><block ref="11864c5344456b31f66e65c9694452a8" category="inline-link-macro-rx"></block>在主站點上使用新的儲存單元建立一致性群組。如果要建立非統一對稱主動/主動配置，也請在輔助網站上使用新的儲存單元建立一致性群組。</block>
   <block id="ff87f3496332b96a8889cb81479a38fa" category="inline-link">非均勻</block>
@@ -1687,27 +1643,21 @@
   <block id="1dc72651a61ba43cf6bc85d4753c47e8" category="list-text">選擇現有的群集對等體或選擇*新增新的群集對等體*。</block>
   <block id="842dcef5223aaf88ec80c981db6281af" category="list-text">選擇儲存虛擬機器。</block>
   <block id="533fb0f30c2a24bf44c7a68b00aed588" category="list-text">對於複製策略，選擇*AutomatedFailOverDuplex*。</block>
-  <block id="28dda6c6cd8928858d47bf343ece67f7" category="list-text">如果您正在建立非統一對稱主動/主動配置，請選擇*目標設定*；然後在開始此程序之前輸入您建立的新目標一致性群組的名稱。</block>
-  <block id="2b85569d3702bb2d36113451710361a0" category="paragraph">對等關係定義了允許叢集和儲存虛擬機器 (VM) 安全地交換資料的網路連線。在不同叢集上的儲存虛擬機器之間建立對等關係，以便使用SnapMirror實現資料保護和災難復原。</block>
   <block id="96d54cd4dca11897495ae0700eabe4db" category="inline-link-macro">了解有關同伴關係的更多信息</block>
   <block id="c6729b936e54a0a4447cabb61660a9d4" category="paragraph"><block ref="1dc8c581a19c9273878f4245199fc483" category="inline-link-macro-rx"></block> 。</block>
   <block id="72a7cb3bbba56280bfb0dbf79f420147" category="inline-link-macro">建立集群對等關係</block>
   <block id="9d6602c26d0cc9c4fbb30511812ed132" category="paragraph">您必須先在本機叢集和遠端叢集之間建立叢集對等關係，然後才能建立儲存虛擬機器對等關係。<block ref="524396f856e0b8dc25625395aeecb268" category="inline-link-macro-rx"></block>如果您還沒有這樣做的話。</block>
-  <block id="e3226f7625454b33ff3416d9f07c5a59" category="list-text">在*儲存 VM 對等體*下選擇*新增儲存 VM 對等體*。</block>
   <block id="79e4a006de60736237736ca8b538df48" category="list-text">選擇本地叢集上的儲存虛擬機器；然後選擇遠端叢集上的儲存虛擬機器。</block>
   <block id="23793c8b7aa9aee22a7a7aceb271dcb2" category="list-text">選擇*新增儲存虛擬機器對等體*。</block>
-  <block id="65cb65a0969eee8ab041ed271d4bd5ce" category="summary">若要在ASA r2 系統上安裝ONTAP Mediator，您應該遵循在所有其他ONTAP系統上安裝ONTAP Mediator 的相同步驟。</block>
   <block id="0fb74d2568d6cf20bc19115cdd606402" category="doc">在ASA r2 系統上安裝ONTAP調解器</block>
   <block id="348ee35966a7b6c3421172402e2e9693" category="paragraph">若要為您的ASA r2 系統安裝ONTAP Mediator，您應該遵循為所有其他ONTAP系統安裝ONTAP Mediator 的相同步驟。</block>
   <block id="061335c3997dbcabda35dde0127379e4" category="paragraph">安裝ONTAP Mediator 包括準備安裝、啟用儲存庫存取、下載ONTAP Mediator 軟體包、驗證程式碼簽章、在主機上安裝軟體包以及執行安裝後任務。</block>
   <block id="2750fca314c2c1638adaed4f8779bc87" category="inline-link-macro">此工作流程</block>
-  <block id="62c0f4c22bba3059d9f25e8564fbcaf6" category="paragraph">若要安裝ONTAP調解器，請依照<block ref="282bbe8a51966ce59628339a2fff99b4" category="inline-link-macro-rx"></block></block>
   <block id="6fb5023500d2f772bfda250aee9189e3" category="inline-link-macro">使用自簽名憑證設定ONTAP調解器</block>
   <block id="61ad23b638716bf0a345ab306b490801" category="paragraph">安裝ONTAP Mediator 後，您應該<block ref="32ce91cb98769079c3f189462b53f48e" category="inline-link-macro-rx"></block> 。</block>
   <block id="1d4e19ef25fe54c490c90b84de5b941b" category="summary">查看潛在勒索軟體攻擊的警告並在系統管理員中採取行動。</block>
   <block id="317b640808ec09a0efa427a71506d876" category="paragraph">SnapMirror主動同步依賴對等集群，以便在發生故障轉移時保護您的資料。在設定SnapMirror主動同步之前，您應該確認您的ASA r2 叢集處於支援的對等關係，並且符合其他設定需求。</block>
   <block id="43f3def96f033272abf0478fc4738baf" category="list-text">確認集群之間存在集群對等關係。</block>
-  <block id="f5e7302cb0ac2b00c2d0bbab0782656a" category="admonition">SnapMirror主動同步需要使用預設 IP 空間來建立叢集對等關係。不支援自訂 IP 空間。</block>
   <block id="5ab8d08c17560d60176a3e3a7d40a7b3" category="paragraph"><block ref="524396f856e0b8dc25625395aeecb268" category="inline-link-macro-rx"></block> 。</block>
   <block id="ea0189f809d6b6d584c711fa45f5bd6a" category="list-text">確認每個叢集上的儲存虛擬機器 (VM) 之間存在對等關係。</block>
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">建立叢集間儲存虛擬機器對等關係</block>
@@ -1720,7 +1670,6 @@
   <block id="8375112cc1fe58a75d37661e9ed2a6cf" category="list-text">重新掃描應用程式主機以發現任何新的儲存單元。</block>
   <block id="e615d081056a6324246cc9785367d8c8" category="inline-link-macro">安裝ONTAP調解器</block>
   <block id="229ae8f0472b87ad8714bd265cdb8c32" category="paragraph">確認叢集配置後，即可<block ref="781396984d6963e02a0f354491f1e60f" category="inline-link-macro-rx"></block> 。</block>
-  <block id="050a9798f5e7e652c91062296d549925" category="summary">了解如何執行SnapMirror主動同步關係的計畫故障轉移，以確保業務連續性和災難復原。</block>
   <block id="2a7ca9f182eb13965b41490352a28925" category="paragraph">SnapMirror主動同步功能透過在輔助網站建立資料副本，並支援主機應用程式在災難發生時自動透明地進行故障轉移，為關鍵業務應用程式提供持續可用性。您可能需要對SnapMirror主動同步關係執行計劃內故障轉移，以測試故障轉移程序或在主站點執行維護。</block>
   <block id="36813a25710ff6e6474b3b529511e797" category="list-text">SnapMirror活動同步關係必須同步。</block>
   <block id="9bc690936650c0a86f8a2f0501647f6b" category="list-text">當正在進行非中斷操作（例如儲存單元移動）時，您無法啟動計劃內故障轉移。</block>
@@ -1729,14 +1678,12 @@
   <block id="a8340580855a9021e985ca97280d4b77" category="list-text">選擇要進行故障轉移的SnapMirror活動同步關係。</block>
   <block id="710c976374f48e75aa1c61d27d60d628" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ；然後選擇*故障轉移*。</block>
   <block id="621fcb7ad3e74328181be78761a1b73e" category="paragraph">使用<block ref="89b1a411b9945c3e22fdcbde1e8cdf6c" prefix=" " category="inline-code"></block>命令在ONTAP命令列介面 (CLI) 中監控故障轉移的狀態。</block>
-  <block id="c55607fa61dc671578592e84e6e32e0b" category="summary">若要準備在ASA r2 系統上設定SnapMirror主動同步，您應該檢查設定前提條件、確認是否支援您的主機作業系統，並注意可能影響特定設定的物件限制。</block>
   <block id="543045a675c4fa81c9f7ba7a26be52f4" category="doc">準備在ASA r2 系統上設定SnapMirror主動同步</block>
   <block id="d266abeda476202d0724997fabaa4a43" category="list-text">查看SnapMirror活動同步<block ref="75b273c23b80ecb6356f9130acb7463f" category="inline-link-macro-rx"></block> 。</block>
   <block id="2d137e28030b86348fecb0ac2d1d45bc" category="inline-link-macro">確認您的主機作業系統受支援</block>
   <block id="35257f18ebb7c478bcbdcb1cb37d5a07" category="list-text"><block ref="64203d3afd5f3fdaa90aa5469bd8129b" category="inline-link-macro-rx"></block>用於SnapMirror主動同步。</block>
   <block id="280d8b4f4ce474c32dbebfe78cd8c2c7" category="inline-link-macro">對象限制</block>
   <block id="336e658898dafc01584991f35ca06ff9" category="list-text">驗證ASA r2 系統上主機協定是否支援SnapMirror主動同步。</block>
-  <block id="9d70dd832c82246e1a4170e782c9ee62" category="paragraph">ASA r2 系統上對SnapMirror主動同步的支援因ONTAP版本和主機協定而異。</block>
   <block id="bb946878eac9fb6750d6fedc775d6159" category="cell">從ONTAP開始...</block>
   <block id="3c3fd30ecdb5ccf01d86ff51f402b477" category="cell">SnapMirror主動同步支援...</block>
   <block id="81e76ca235a16e1d875f94529d326de0" category="cell">9.17.1</block>
@@ -1746,10 +1693,8 @@
   <block id="8b7c42123642e2e4ea7dd426aeb2de58" category="list-text">NVMe/TCP</block>
   <block id="3e1af630d847bff0db6fb7d0adc60644" category="cell">9.16.0</block>
   <block id="c9ad8194b26b905065dfbe79c5bfc41e" category="section-title">ASA r2 系統上SnapMirror主動同步的 NVMe 協定限制</block>
-  <block id="ecc611a85fb7fecacc3141e879d1fc22" category="paragraph">在具有 NVMe 主機的ASA r2 系統上設定SnapMirror主動同步之前，您應該了解某些 NVMe 協定限制。</block>
   <block id="fffc0d6063c9d84f532e5baf200f2ca9" category="paragraph">NVMe 子系統中的所有 NVMe 儲存單元必須是相同一致性群組的成員，且必須全部屬於相同SnapMirror活動同步關係。</block>
   <block id="ceda0d0c69d757ff1073d3ffbee6c3bd" category="paragraph">SnapMirror主動同步支援 NVMe/FC 和 NVMe/TCP 協議，如下所示：</block>
-  <block id="ec619841aa56c7d96b65a73f8ddff451" category="list-text">僅限雙節點集群</block>
   <block id="0cccfaad035e6f1262b921ed15bce79f" category="list-text">僅在 ESXi 主機上</block>
   <block id="7ec73035a708050a017b988f1fe26c2c" category="list-text">僅適用於對稱主動/主動配置</block>
   <block id="9cc8975041d606dbeb883e47d32fb5b8" category="paragraph">NVMe 主機不支援非對稱主動/主動配置。</block>
@@ -1763,14 +1708,11 @@
   <block id="13fca977f4741f68ca28bea421b6a874" category="inline-link-macro">Microsoft 卸載資料傳輸 (ODX)</block>
   <block id="a97d67e55b19defc4624408343c7f15d" category="list-text"><block ref="a97d67e55b19defc4624408343c7f15d" category="inline-link-macro-rx"></block></block>
   <block id="2fc36b1a4b7ee19add6fb96fa51e06e8" category="inline-link-macro">確認叢集配置</block>
-  <block id="de03dfd1ae9f6be9d8b9a3908591e8b8" category="paragraph">完成啟用SnapMirror主動同步所需的準備後，您應該<block ref="04df4bf09ed66e3358600cfc6c24fb99" category="inline-link-macro-rx"></block> 。</block>
-  <block id="d611938cbbf8e09d8cffb8d50d6f69d7" category="summary">了解如何在ASA r2 叢集發生計劃外故障轉移後重新建立SnapMirror主動同步關係。</block>
   <block id="4e85ef85cff46642712b0ee2dcf46ebb" category="list-text">ONTAP調解器必須已配置、已連線且處於法定人數。</block>
   <block id="5d356c397f5a143daadc1597a8fd7a34" category="list-text">選擇您需要重新建立的SnapMirror活動同步關係。</block>
   <block id="9f4215830573390fcfe4dab1715a643e" category="list-text">等待關係狀態顯示*InSync*。</block>
   <block id="a1f13cb349233b9c7d0b9e95fdff569e" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ；然後選擇*故障轉移*以在原始主集群上恢復操作。</block>
   <block id="4e815228ca61a1f75181e7efe619c495" category="summary">使用SnapMirror主動同步，保護需要零復原點目標 (RPO) 和零復原時間目標 (RTO) 的主機應用程式免受意外中斷或網站災難造成的中斷。</block>
-  <block id="c0da5a4756d4ac1721f7418cfa0145da" category="paragraph">ONTAP SnapMirror主動同步資料保護功能即使在整個站點發生故障的情況下也能使業務服務繼續運行，並支援應用程式使用輔助副本透明地進行故障轉移。使用SnapMirror主動同步功能觸發故障轉移無需任何手動幹預或自訂腳本。</block>
   <block id="e5aa1050a01e875d0fd4839753c22c3a" category="inline-link-macro">了解有關SnapMirror主動同步的更多信息</block>
   <block id="c42fce7fb66798714860f8785e01c4fd" category="paragraph"><block ref="a408e5a82a63466cbd34839f021414e3" category="inline-link-macro-rx"></block> 。</block>
   <block id="fa2f5b44a6ee8f9c7d43efc8bb1daca1" category="inline-link-macro">對稱主動/主動配置</block>
@@ -1784,8 +1726,6 @@
   <block id="812baedc30c773dd414ccf76834f93c5" category="inline-link-macro">安裝它</block>
   <block id="700abe035c9a2f3e4b75c53be60326f3" category="paragraph">您可以使用ONTAP Mediator 或ONTAP Cloud Mediator 來監控叢集的運作狀況並實現業務連續性。如果您使用ONTAP Mediator，則必須<block ref="eab13b485b3e680f80a22871ef2cee4a" category="inline-link-macro-rx"></block>在您的主機上。如果您使用的是ONTAP Cloud Mediator，則可以跳過此步驟。</block>
   <block id="06486df00d5699437f2fc7f8fc5f62e1" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block>使用自簽章憑證設定ONTAP Mediator 或ONTAP Cloud Mediator。</block>
-  <block id="9b494998b07c9b5c7d0409f59d207d21" category="inline-link-macro">配置ONTAP中介或ONTAP雲中介</block>
-  <block id="9a6da7aad02c45fa32e83da1a27e6cfd" category="paragraph">你必須<block ref="f51cbf06e71c80d1e4d22fbb72b160a7" category="inline-link-macro-rx"></block>然後才可以開始使用它與SnapMirror主動同步進行叢集監控。</block>
   <block id="07be47fe5a21d89cd6b3ac35a564d9f3" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block>配置SnapMirror主動同步。</block>
   <block id="62a4788f7c7724a21bfbeadbf6f4d9c0" category="inline-link-macro">配置SnapMirror主動同步</block>
   <block id="210c669df337d7e9ea8a63eaa073bee9" category="paragraph"><block ref="5732f343d340c87b03b110910fa5222c" category="inline-link-macro-rx"></block>在輔助站點建立資料副本，並使主機應用程式能夠在發生災難時自動透明地進行故障轉移。</block>
@@ -1793,15 +1733,12 @@
   <block id="1546c57263450319fef8d1d8de83e306" category="section-title">從第三方儲存系統遷移數據</block>
   <block id="99657bc66973f189d87f6d702b300b6e" category="paragraph">從ONTAP 9.17.1 開始，您可以使用外部 LUN 匯入 (FLI) 將資料從第三方儲存系統上的 LUN 遷移到ASA r2 系統。使用 FLI 進行資料遷移可以幫助您降低遷移過程中資料遺失和停機的風險。</block>
   <block id="cd7fc10aafbc563ec83b036726716d53" category="paragraph">FLI 支援線上和離線遷移。在線上遷移中，客戶端系統保持在線，同時將資料從第三方儲存系統複製到ONTAP儲存系統。 Windows、Linux 和 ESXi 主機作業系統支援線上遷移。在離線遷移中，客戶端系統處於離線狀態，LUN 資料從第三方儲存系統複製到ONTAP儲存系統，然後客戶端系統重新處於線上狀態。</block>
-  <block id="97deade833d7f54a1cb2037da41d63c5" category="summary">由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常見的ONTAP任務和系統管理器功能在ASA r2 系統上的執行方式與在其他ONTAP系統上的執行方式相同。</block>
   <block id="f01fcb252b22a1393a193f28b22135fc" category="doc">ASA r2 系統支援的常見ONTAP功能</block>
   <block id="8b9b16acd91241c2b1259b842284faa4" category="paragraph">有關常見特性和功能的更多信息，請參閱以下ONTAP文件。</block>
   <block id="5e186296c44faa92e08310523592d277" category="inline-link-macro">了解 OAuth 2.0 身份驗證</block>
   <block id="8775ccec3600b02bc634bcbb8ba5e109" category="list-text"><block ref="ec172948fda0143f24d4db53cd9b14f1" category="inline-link-macro-rx"></block> 。</block>
   <block id="7b29684a24c951f2e44f7a93c7c99fd9" category="inline-link-macro">了解客戶端身份驗證和授權</block>
   <block id="11e319d037d43f26f71069d5289f8ec6" category="list-text"><block ref="aeb46d3470ec900658111632167b8d96" category="inline-link-macro-rx"></block> 。</block>
-  <block id="756155b463dd9147968af2f671375a22" category="inline-link-macro">學習配置 SAML 身份驗證</block>
-  <block id="797e8e388c1c72ea3c94ad3f43cdc0ae" category="list-text"><block ref="0fe1b6a617afbb42e49809656c42af43" category="inline-link-macro-rx"></block> 。</block>
   <block id="45c4115685375f9ea0f373a67af25085" category="inline-link-macro">啟用外部金鑰管理 (NVE)</block>
   <block id="664014ba2ab1dd9087554c403aa6238d" category="list-text"><block ref="e752d6bc9a92f21dbd903e565fda63f7" category="inline-link-macro-rx"></block> 。</block>
   <block id="0ef6451ec8cfc30e01bce69e0bf6efb8" category="paragraph">由於這種簡化的儲存管理方法， <block ref="ba2a83cd4de4eb43c31f434bfb5213e0" prefix=" " category="inline-code"></block> ASA r2 系統不支援<block ref="03628ea331120176369891df319619e8" prefix=" " category="inline-code"></block> ， <block ref="ddecebdea58b5f264d27f1f7909bab74" prefix=" " category="inline-code"></block>和<block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix=" " category="inline-code"></block>命令和參數也受到限制。</block>
@@ -1809,7 +1746,6 @@
   <block id="fcc4b08d8168ca1d956ed17e80bd8724" category="section-title">儲存層差異</block>
   <block id="25c5603af3c40392278c531c778d7240" category="paragraph">ASA r2 系統使用簡化的儲存層，該儲存層與FAS、 AFF和ASA系統所使用的儲存層不同。</block>
   <block id="ed71343ae4e4dcf121be11ff1628e50c" category="paragraph-title">FAS、 AFF和ASA系統</block>
-  <block id="d0ee8f6d42e445ccb3b6cf2ca2eda848" category="paragraph">ASA r2 系統中的儲存層使用儲存可用區，而非聚合。儲存可用區是單一 HA 對的兩個節點均可存取的公共儲存池。 HA對中的兩個節點均可存取其共享儲存可用區中的所有可用磁碟。例如，在雙節點ASA r2 系統ONTAP叢集中，有一個儲存可用區，叢集中的兩個節點均可存取。在四節點ASA r2 系統ONTAP叢集中，有兩個儲存可用區。叢集中的每個 HA 對都可以存取其中一個儲存可用區。</block>
   <block id="25afba57f81c57e27978071d59c7fb4c" category="paragraph">ASA r2 系統與FAS、 AFF和ASA系統有以下不同：</block>
   <block id="fc647b716005682fb47d07737c88ef5f" category="inline-link-macro">了解有關不受支援的ASA r2 命令的更多信息</block>
   <block id="a9bf379b64b6d61f1e4ce19d0d6e0c25" category="paragraph">由於這種自動化且簡化的儲存管理方法，某些 System Manager 選項、 ONTAP指令和 REST API 端點在ASA r2 系統上不可用或使用受限。例如，由於ASA r2 系統的磁碟區建立和管理是自動化的，因此「磁碟區」功能表不會顯示在 System Manager 中，且<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block>命令不受支援。<block ref="876b47d727ef9cdbe213f90a9ae9f200" category="inline-link-macro-rx"></block> 。</block>
@@ -1852,9 +1788,6 @@
   <block id="fae33ee02a26eebefa7a991754dd4784" category="list-text">選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ；然後選擇*啟用反勒索軟體*。</block>
   <block id="71377237946a16cc4981e8007b83be9b" category="list-text">選擇*啟用*。</block>
   <block id="3cec770f1e7e799dfaa881a2536b04d8" category="paragraph">您選擇的儲存單元受到保護，免受勒索軟體攻擊，並且可疑活動會在系統管理員中向您報告。</block>
-  <block id="e4bfa390a2e1efb2d342f4385a4acfde" category="summary">了解如何修改 ARP 快照保留期以滿足您的儲存和業務需求。</block>
-  <block id="ad6ca6c4e592647310494a87323a772f" category="doc">修改ASA r2 儲存系統上的 ARP/AI 快照保留期</block>
-  <block id="0dd298883c6e9bf0cc0d37232ee54e70" category="paragraph">ARP 快照的預設保留期取決於您針對異常活動所採取的措施。</block>
   <block id="097a6ac756aaf3f813f3c988283f0f55" category="cell">如果您採取此行動...</block>
   <block id="b938f1b6c9b2de370aa5f774653ac6a2" category="cell">ARP 快照預設保留...</block>
   <block id="b9865590791cb2515e3677ea5f136e6c" category="cell">標記為誤報</block>
@@ -1934,9 +1867,7 @@
   <block id="676b55575e438300a6a0242a0e2d75e1" category="summary">了解如何使用自簽章或第三方憑證為ASA r2 系統設定ONTAP Mediator 或ONTAP Cloud Mediator。</block>
   <block id="97bae85f844627b195ba9e949527cd8e" category="list-text">在右側窗格中的「*調解員*」下，選擇「*新增調解員*」。</block>
   <block id="42d4a1ca1a8c97aaab863879660365c9" category="list-text">新增證書資訊</block>
-  <block id="d766068c7f16a578ba3f54cfb9431541" category="list-text">如果您使用的是自簽名證書，請複製<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>文件並將其貼上到“證書”字段，或選擇“導入”以導航到<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>文件並匯入證書資訊。</block>
   <block id="063f94639a5aabb84156e8516de0cab6" category="list-text">如果您使用第三方證書，請將證書資訊輸入到*證書*欄位中。</block>
-  <block id="305f7299b1b227306c97e175ddfb373e" category="summary">建立一致性組的快照以保護一致性組一部分的儲存單元中的資料。如果不再需要保護一致性群組中的任何儲存單元中的數據，則可以刪除快照保護。</block>
   <block id="8536e4b244760f25ededb010c00effa2" category="doc">使用快照保護ASA r2 系統上的一致性群組</block>
   <block id="4b4f911a862c022d119e438c44aa0a17" category="paragraph">在ASA r2 儲存系統中建立一致性群組的快照，以保護一致性群組一部分的儲存單元中的資料。如果不再需要保護一致性群組中的任何儲存單元中的數據，則可以從一致性群組中刪除快照保護。</block>
   <block id="d48c07ef0c202dfbe8cb1a9f0d858fd3" category="paragraph">如果不再需要保護一致性群組中特定儲存單元的數據，則可以從一致性群組中刪除這些儲存單元。</block>
@@ -1944,10 +1875,8 @@
   <block id="c27a5962c7e7ec66189a305a5f5ad38b" category="doc">修改ASA r2 系統上一致性群組的大小</block>
   <block id="833a4354cb68f3cdd7ed3c7ae637dd10" category="inline-link-macro">刪除SnapMirror活動同步關係</block>
   <block id="02fe6464a41941805587a0bb0fd6bc1b" category="inline-link-macro">斷絕關係</block>
-  <block id="7ac95df708e1e6c23d71cd9393b3bc84" category="summary">如果您不再需要將一致性群組的成員作為單一單元進行管理，則可以刪除該一致性群組。</block>
   <block id="fad786d01c26418babfb8f46c9213322" category="doc">刪除ASA r2 系統上的一致性群組</block>
   <block id="6488fd27ab28c1a614285c0fcab40be4" category="paragraph">如果您不再需要將一致性群組的成員作為單一單元進行管理，則可以刪除該一致性群組。刪除一致性群組後，群組中先前的儲存單元在叢集上仍保持活動狀態。如果一致性群組處於複製關係，則複製的副本將保留在遠端叢集上。</block>
-  <block id="d6b9eb2d38523b60202862949d11678f" category="paragraph">如果您正在執行ONTAP 9.16.1，並且要刪除的一致性群組處於SnapMirror活動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>在刪除一致性組之前。在ONTAP 9.17.1 及更高版本中，不需要在修改一致性群組之前刪除此關係。</block>
   <block id="fded2ecb467047cfa87cd2389472c754" category="doc">了解ASA r2 儲存系統上的ONTAP一致性組</block>
   <block id="89a3dbc1e61db3375313b0a46b8b2d38" category="paragraph">一致性組是作為單一單元進行管理的儲存單元的集合。使用一致性組簡化儲存管理。</block>
   <block id="209c4e104de4e93b212390238bb51b0c" category="paragraph">例如，假設您有一個由一致性群組中的 10 個儲存單元組成的資料庫，並且您需要備份整個資料庫。您無需備份每個儲存單元，只需在一致性群組中新增快照資料保護即可備份整個資料庫。將儲存單元作為一致性群組而不是單獨備份也可以提供所有單元的一致備份，而單獨備份單元可能會造成不一致。</block>
@@ -1970,14 +1899,12 @@
   <block id="12cda3c54df5ed8c4eb98ffac475155b" category="paragraph">如果您正在執行ONTAP 9.16.1，並且要提升的一致性群組處於SnapMirror主動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>一致性組才能提升。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>然後才可以提升一致性組。在ONTAP 9.17.1 及更高版本中，不需要在提升一致性組之前刪除SnapMirror活動同步關係或中斷非同步關係。</block>
   <block id="9301bf3266067cf2800be3bd2bfaa3de" category="list-text">輸入新的子一致性群組的名稱或接受預設名稱；然後選擇一致性群組組件類型。</block>
   <block id="488eb097613bea3d7193264b5d8bde4f" category="paragraph">將父一致性群組降級為單一一致性群組時，關聯子一致性群組的儲存單元將會新增至父一致性群組。子一致性群組被刪除，父一致性群組則作為單一一致性群組進行管理。</block>
-  <block id="38f17853f3794e07578f727204a0dbe3" category="paragraph">如果您正在執行ONTAP 9.16.1，且要降級的一致性群組處於SnapMirror主動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>一致性組才可以被降級。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>然後才可以降級一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。</block>
   <block id="648ef31970ca0486a78c62c1ba3d6ea4" category="paragraph">建立子一致性群組可讓您將單獨的快照原則套用至每個子群組。從ONTAP 9.17.1 開始，您也可以將單獨的複製策略直接套用到每個子項目。在ONTAP 9.16.1 中，複製策略只能套用於父層級。</block>
   <block id="55544ce2458cf41daf84e717a42e7150" category="inline-link-macro">將其從現有的父一致性組中分離出來</block>
   <block id="61ea9d980857627872f7e7b8d57a7e3b" category="paragraph">如果您要使用的一致性群組已經是另一個一致性群組的子群組，則必須<block ref="669756fc250d6dea21366c7b25a2790e" category="inline-link-macro-rx"></block>然後才可以將其移至新的父一致性群組。</block>
   <block id="7e337096e80859cb6898cfb8384f18f6" category="inline-link-macro">設定複製策略</block>
   <block id="ff18feea12af53720295342101080588" category="paragraph">建立子一致性群組後，您可以<block ref="b20e7e9a535f6a3244da85f4587a0502" category="inline-link-macro-rx"></block>到每個子一致性組。您還可以<block ref="4b00dbe31f77fc04f4dbf5d9b3e1fca3" category="inline-link-macro-rx"></block>在父一致性組和子一致性組上將一致性組複製到遠端位置。</block>
   <block id="a0a49d94e214fa3e16bbaffb341668c7" category="paragraph">當您將子一致性群組從父一致性群組分離時，子一致性群組將從父一致性群組中刪除，並作為單一一致性群組進行管理。應用於父級的複製策略不再應用於分離的子一致性群組。</block>
-  <block id="85bef1d1a49cbb3a5a043ae91ac899f5" category="paragraph">如果您正在執行ONTAP 9.16.1，並且要分開的一致性群組處於SnapMirror活動同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>才能分離一致性組。如果您正在執行ONTAP 9.16.1 且一致性群組處於非同步複製關係，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>然後才可以分離一致性組。在ONTAP 9.17.1 及更高版本中，不需要在擴充一致性群組之前刪除SnapMirror活動同步關係或中斷非同步關係。</block>
   <block id="8e735c2c6a3f530bcf5ec1e68dcead8d" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>將分離的子一致性群組的快照複製到遠端叢集。</block>
   <block id="9f69e96ba899e0e31a6aada411ff602e" category="paragraph">複製策略定義何時將在ASA r2 叢集上執行的更新複製到遠端站台。  ONTAP包含各種預先定義的資料保護策略，您可以將其用於複製關係。</block>
   <block id="ed8bdaffa7dc68cc8c956646c4e8fe55" category="inline-link-macro">建立自訂複製策略</block>
@@ -2023,13 +1950,11 @@
   <block id="18ef85a2d2a7cbed5f82df9e88cd62b5" category="paragraph">刪除關聯的自簽名憑證後，您可以使用第三方憑證重新設定中介。</block>
   <block id="cf57dce9dd33d0745f81c3a98ac4cebd" category="list-text">選擇*保護&gt;概覽*。</block>
   <block id="86e6674acae395f5cc81d371bae88908" category="list-text">在右側窗格中的「*調解員*」下，選擇「*新增調解員*」。</block>
-  <block id="c1b9b64ffaa32827ddafe986795b3948" category="list-text">對於「雲端」中介，請輸入組織 ID、客戶端 ID 和客戶端金鑰。對於*本地*中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。</block>
   <block id="2048f18acbfe9e97f51562432ae87b1b" category="list-text">從符合條件的群集對等體清單中選擇一個群集對等體，或選擇「新增群集對等體」來新增一個新的群集對等體。</block>
   <block id="530a7053200e8c038cc3768f24cad13a" category="list-text">在*證書*下，輸入第三方證書資訊。</block>
   <block id="8c7c5e0c07d872b6c139a5f526a70088" category="paragraph">ONTAP調解器或ONTAP Cloud 調解器已重新配置為使用第三方憑證。現在您可以使用中介器來管理SnapMirror主動同步關係。</block>
   <block id="9c12112fa6fe43d99a3e32f651b5372b" category="summary">在某些情況下，您可能需要中斷非同步複製關係。</block>
   <block id="3c5ec2c1f45c326c6c3f48f99f51c4a6" category="doc">中斷ASA r2 系統上的非同步複製關係</block>
-  <block id="b8d7df6139bf4421b2174362465b943b" category="paragraph">在某些情況下，您可能需要中斷非同步複製關係。例如，如果您正在執行ONTAP 9.16.1，並且想要增加處於非同步複製關係的一致性群組的大小，則必須先中斷該關係，然後才能修改一致性群組的大小。</block>
   <block id="e8105e55290d2bd97b66e26bffa52344" category="list-text">選擇*本地目的地*或*本地來源*。</block>
   <block id="6f88a4bfa275f474fcb3cb724356e219" category="list-text">在您想要中斷的關係旁邊，選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇*中斷*。</block>
   <block id="750c75545b932eb3b3f834231bf644fa" category="list-text">選擇“*中斷*”。</block>
@@ -2039,7 +1964,6 @@
   <block id="bdf6db955e768b925afda0bf17928432" category="paragraph">如果您不再需要業務應用程式接近零的 RPO 和 RTO，則應透過刪除關聯的SnapMirror活動同步關係來刪除SnapMirror活動同步保護。如果您在ASA r2 系統上執行ONTAP 9.16.1，則可能還需要先刪除SnapMirror活動同步關係，然後才能對SnapMirror同步關係中的一致性群組進行某些幾何變更。</block>
   <block id="fc3507abe06965431063d14ce7c02644" category="section-title">步驟 1：終止主機複製</block>
   <block id="236e942ee46ff6fdc6429108dfa6b2a8" category="paragraph">如果將來源叢集中的主機群組複製到目標叢集，並將目標一致性群組對應到複製的主機群組，則必須先終止來源叢集上的主機複製，然後才能刪除SnapMirror主動同步關係。</block>
-  <block id="e46872dc43cf698a1767ad4ee94efd72" category="list-text">在包含要停止複製的主機群組的主機旁邊，選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選擇“*編輯*”。</block>
   <block id="ff17da9c94bc0fe522b8188aa4a849e5" category="list-text">取消選擇*複製主機配置*，然後選擇*更新*。</block>
   <block id="5c6cc670a07524f68c4bab921db44b89" category="section-title">步驟 2：刪除SnapMirror主動同步關係</block>
   <block id="ba6cf398b50069e6a0c7728e584724e7" category="paragraph">若要從一致性群組中刪除SnapMirror活動同步保護，必須刪除SnapMirror同步關係。</block>
@@ -2067,8 +1991,6 @@
   <block id="823690d53f135eca513f93c93a174cb1" category="section-title">步驟 2：（可選）建立自訂複製策略</block>
   <block id="9e0b9f51445e376b8e8b748e02d479d5" category="inline-link-macro">預先定義的ONTAP資料保護策略</block>
   <block id="f68cabc6603a5173a52adc0789172ad3" category="paragraph">了解<block ref="7807ad443b4479d6979a7fffa34492fb" category="inline-link-macro-rx"></block>。</block>
-  <block id="87531525c3b816a3a29dbbcbcd9e58b1" category="inline-link-macro">了解複製策略</block>
-  <block id="3014b2db79594ac1202cd88300196335" category="list-text"><block ref="143654464f8325f80e4706e133fabf02" category="inline-link-macro-rx"></block> 。</block>
   <block id="820e745f4ceb298ff41836e6ae6e0376" category="paragraph">在建立複製關係時，必須為複製關係選擇適當的複製策略。您可以使用預定義策略或建立自訂策略。</block>
   <block id="bec1e41aa312239c590ea19d2cd648e2" category="paragraph">如果您需要將虛擬機器工作負載從ASA儲存系統遷移到ASA r2 儲存系統， NetApp建議您使用<block ref="5e3823885235dce61c55802a90e4bf09" category="inline-link-macro-rx"></block>執行即時、無中斷的資料遷移。</block>
   <block id="8472fc4ccb1079c9fe1f338f10dae548" category="list-text">從 CLI 輸入：<block ref="f0af09467abded8f889764e0118fc371" prefix=" " category="inline-code"></block></block>
@@ -2090,7 +2012,6 @@
   <block id="5a0dfc6f986e17a79c038bc9a2aeec2d" category="sidebar">刪除一致性群組</block>
   <block id="36bed646725e085252916c3131fbf1b2" category="sidebar">管理分層一致性組</block>
   <block id="e130096a0ace158c7893eedbd19e7115" category="inline-link-macro">LIF IP 變更後 NTP 同步失敗</block>
-  <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP利用網路時間協定 (NTP) 來同步整個叢集的時間。變更 LIF IP 位址後，您可能需要更新 NTP 設定以防止同步失敗。欲了解更多信息，請參閱知識庫文章<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主機映射*是指新儲存單元將映射到的主機群組。如果您為新儲存單元選擇的主機類型已存在一個主機群組，則會自動選擇該主機群組進行主機對應。您可以接受自動選擇的主機群組，也可以選擇其他主機群組。</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系統提供兩種效能等級。預設效能等級為*極限*，這是可用的最高等級。您可以將等級降低至*效能*。</block>
   <block id="19b78e8ad6af7cf1ea82e76fdac1aa7f" category="admonition">ASA r2 系統不支援同步複製。</block>
@@ -2133,10 +2054,8 @@
   <block id="5ff3c6978f87d96febfdc8ed3899a97e" category="cell">未改變</block>
   <block id="93ded6168ebc47c61c15d8b37685df65" category="inline-link-macro">改造現有儲存單元</block>
   <block id="35526c34f8127477c026b2b67deba764" category="paragraph">建立儲存單元時，您可以修改新儲存單元的預設設定。你也可以<block ref="f493119830b5759fa0d7548453c60a08" category="inline-link-macro-rx"></block>更新他們當前的設定。</block>
-  <block id="41d75b64e6a2c00028eb1dabb5c07f02" category="paragraph">如果建立多個單元，則每個單元具有相同的容量和相同的主機作業系統。若要為每個單元分配不同的容量，請選擇「新增不同的容量」為每個單元分配不同的容量。</block>
   <block id="43cdcd82eb8e02f0fb7e70bf640bf6d4" category="paragraph">從一致性群組中移除儲存單元即可將其刪除、將其作為其他一致性群組的一部分進行管理，或停止保護其資料。從一致性群組中移除儲存單元會中斷儲存單元與一致性群組之間的關係，但不會刪除儲存單元。</block>
   <block id="65ad4106b926b41e4e7eaf59f9724fa2" category="admonition">從ONTAP 9.18.1 開始， SnapMirror主動同步在四節點配置中得到支援。在ONTAP 9.17.1 中， SnapMirror主動同步僅在雙節點配置上支援。</block>
-  <block id="ab6056636e222ec0ecfe06ed2d78b5c9" category="summary">快照預留空間是指儲存單元中專門為快照保留的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。</block>
   <block id="44f00c9123e1ba441ad6b508c16148bc" category="doc">修改ASA r2 儲存系統上的快照保留</block>
   <block id="2363560224e2306db70c16592ac6ab88" category="paragraph">快照預留空間是指儲存單元中專門為快照保留的空間量。預設情況下，快照保留設定為 0%。從ONTAP 9.18.1 開始，您可以修改儲存單元的預設快照保留，並啟用自動快照刪除。預設情況下，快照自動刪除功能已停用。當設定了快照保留值並啟用了自動快照刪除功能時，如果快照使用的空間超過快照保留值，則較舊的快照將自動刪除。這樣可以防止快照佔用儲存使用者資料所需的儲存單元空間。</block>
   <block id="43f4378854425b13a1ecea1c64746fed" category="section-title">修改儲存單元的快照預留</block>
@@ -2147,12 +2066,9 @@
   <block id="2d18d488f7c75f598e7bcdffd6a28f22" category="list-text">確認已選取「自動刪除舊快照」。</block>
   <block id="6c5e417db087be19663883e38bf05f4a" category="paragraph">快照預留量已設定為您指定的百分比。如果快照佔用的空間達到預留空間，則較舊的快照將自動刪除。</block>
   <block id="39916f9b79d8f4c53d05159f658754f1" category="section-title">修改儲存虛擬機器上的快照預留</block>
-  <block id="64b5cdbfc82b37ad00ec6b1e83ee2b2f" category="paragraph">若要為儲存虛擬機器中的所有儲存單元設定相同的快照保留，請將所需的百分比套用至儲存虛擬機器。。當快照預留應用於儲存虛擬機器時，它將套用於儲存虛擬機器內所有新建立的儲存單元。此設定不適用於修改設定之前建立的儲存單元。</block>
   <block id="bfbfee5b7921da567b4e7f4846f074a4" category="list-text">在系統管理員中，選擇「叢集 &gt; 儲存虛擬機器」；然後選擇「設定」。</block>
-  <block id="82083a09f8e30e28eb5bea2adf44745b" category="list-text">在「策略」下，「快照」旁邊，選擇<block ref="ea08f7a0a99302dbbfd0c8a2575314f3" category="inline-image-macro-rx" type="image"></block>然後選擇*設定/編輯快照保留預設值*。</block>
   <block id="154d9d875cdce0523c156baad6b9aaf9" category="paragraph">新建立的儲存單元的快照預留量將設定為您指定的百分比。如果這些儲存單元中快照佔用的空間達到預留空間，則較舊的快照將自動刪除。</block>
   <block id="b172b37fc1d3aaa39402471d5fe32da8" category="paragraph">快照預留空間是指儲存單元中專門為快照保留的空間量。當快照預留空間設定為自動刪除快照時，如果快照使用的空間超過快照預留空間，則較舊的快照將自動刪除。這樣可以防止快照佔用儲存使用者資料所需的儲存單元空間。</block>
-  <block id="dc4385ccf12373b89768d8f0604ac921" category="paragraph">快照預留量設定為儲存單元總大小的百分比。例如，如果儲存單元為 50 GB，且您將快照保留設定為 10%，則為快照保留的空間量為 5 GB。當快照佔用的空間達到 5 GB 時，較舊的快照會自動刪除，以便為新的快照騰出空間。如果儲存單元大小增加到 100 GB，則快照保留空間增加到 10 GB。您可以設定的最大快照保留量為 200%。如果您的儲存單元成長到最大容量 128 TB，200% 的快照保留可讓您建立 2 個完整的快照。</block>
   <block id="b5c51b506b8606572637075d65d777dd" category="paragraph">預設情況下，快照保留設定為 0%，且未啟用快照自動刪除。</block>
   <block id="1a0ddae726eb7d24b72d457031657247" category="paragraph">從ONTAP 9.18.1 開始，您可以在建立儲存單元期間或之後以及建立一致性群組期間修改預設快照保留。您也可以修改現有儲存虛擬機器 (VM) 上的預設快照保留。在ONTAP 9.17.1 及更早版本中，您無法修改這些設定。</block>
   <block id="3e827502016431e28c410bc498c2a416" category="paragraph">在建立一致性組時，一致性組內所有儲存單元的快照保留率設定為相同的百分比。快照儲備必須針對之後新增的任何儲存單元單獨設定。</block>
@@ -2168,7 +2084,6 @@
   <block id="377613b56706bef7905081d967e14ddf" category="list-text"><block ref="adce0dbb4fcb277fb4cff259fa74595d" category="inline-link-macro-rx"></block>。</block>
   <block id="271424445d10af78588640d9e08d012d" category="paragraph">了解更多關於ASA r2 系統支援的常見資料安全功能。</block>
   <block id="6e2d4f1e836acfa7aced647fb04f49db" category="section-title">管理員存取管理</block>
-  <block id="68dbf042f840056a4fe3495add1d9389" category="paragraph">指派給管理員的角色決定了管理員可以執行哪些功能。系統管理器為叢集管理員和儲存虛擬機器管理員提供了預定義角色。您可以在建立管理員帳戶時指派角色，也可以稍後指派其他角色。</block>
   <block id="8b455aa69a4604903c428960c83af70c" category="inline-link-macro">學習如何使用系統管理員管理管理員存取權限</block>
   <block id="93b9642ff825b1e9b228137a0b5fb196" category="list-text"><block ref="d22715431fadae00173771e8a7c73fdf" category="inline-link-macro-rx"></block>。</block>
   <block id="433ada5728fed24feb793368608d952d" category="section-title">客戶端身份驗證和授權</block>
@@ -2197,7 +2112,6 @@
   <block id="3786242807cfc701e2b8bfc7a3c710d1" category="list-text"><block ref="07694b0698fc87f5a4e626b2490d7e2d" category="inline-link-macro-rx"></block>。</block>
   <block id="8005df3abb230176fa18e1569a8e6353" category="inline-link-macro">學習如何設定 NVMe 複製卸載</block>
   <block id="70c0f02b1e583ccb5a366fbc89dfb4ad" category="list-text"><block ref="307e0cde843c0fbef962be5389b2e20f" category="inline-link-macro-rx"></block>。</block>
-  <block id="c905c19407f1199314c89c0f4d1c41a9" category="paragraph">從ONTAP 9.18.1 開始，支援 NVMe 複製卸載。 NVMe 複製卸載功能可讓 NVMe 主機將複製作業從其 CPU 解除安裝至ONTAP儲存控制器的 CPU。主機可以將資料從一個 NVMe 命名空間複製到另一個 NVMe 命名空間，同時將其 CPU 資源保留給應用程式工作負載。</block>
   <block id="c9b809a8a0be01452bcb4a9a44b9e75d" category="inline-link-macro">了解更多關於 NVMe 空間分配（取消映射）的信息</block>
   <block id="8b12cbcd3cfef46fc75a23bfedc38c3a" category="list-text"><block ref="b0eb582fadc9931c22d97f580dd17d74" category="inline-link-macro-rx"></block>。</block>
   <block id="c4a348629a843b9ec255aeca1b2a216f" category="paragraph">從ONTAP 9.16.1 開始，預設為 NVMe 命名空間啟用空間釋放（也稱為「打孔」和「取消映射」）。空間釋放允許主機從命名空間中釋放未使用的區塊以回收空間。</block>
@@ -2222,7 +2136,6 @@
   <block id="2ce90a39656cd7489bede7894c2a9943" category="list-text">ASA AFF A250</block>
   <block id="9ec4d2132be2cef54f754db806bdc33e" category="list-text">ASA AFF A220</block>
   <block id="16f80895ea6c143faa5ed2f0a2dd2a1c" category="admonition">有關ASA和ASA r2 系統的最新列表，請參閱<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。  ASA r2 系統在NetAppHardware Universe中被列為「ASA A 系列/C 系列（新）」。</block>
-  <block id="e86d997330a5fc79d71bcbfceb252fbc" category="paragraph">您只能將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。不支援從任何其他類型的ONTAP系統遷移。</block>
   <block id="f3f7d7b257c829fffdd303017c736b78" category="paragraph">ASA r2 叢集和ASA叢集中的所有節點必須執行ONTAP 9.18.1 或更高版本。叢集節點上的ONTAP 9.18.1 修補程式版本可能有所不同。</block>
   <block id="e313bd3fa23adcb5b94fa754c82a763b" category="section-title">步驟 1：驗證ASA儲存虛擬機器的狀態</block>
   <block id="4240bb1cf7a5e3c27fc9a174b2a4cb79" category="paragraph">在將儲存 VM 從ASA系統遷移之前，不應存在 NVMe 命名空間或vVols ，且儲存 VM 中的每個磁碟區應僅包含一個 LUN。不支援遷移 NVMe 命名空間和vVols。  ASA r2 系統的架構要求磁碟區包含單一 LUN。</block>
@@ -2243,23 +2156,15 @@
   <block id="d76d013977e56429afb2a4642ddfaa46" category="list-text"><block ref="d76d013977e56429afb2a4642ddfaa46" category="inline-link-macro-rx"></block></block>
   <block id="8fc07dd8ef621693cb81dd87f4f8a88b" category="inline-link-macro">在自訂 IP 空間中設定叢集間 LIF</block>
   <block id="018a1755a4d1c9a377787e1f9f9b98b5" category="list-text"><block ref="018a1755a4d1c9a377787e1f9f9b98b5" category="inline-link-macro-rx"></block></block>
-  <block id="559b5429bf321ef02afb76561f46f6ce" category="list-text">在ASA r2 叢集上，與ASA叢集建立對等關係並產生密碼短語：</block>
   <block id="92d9770068a9793d94318031dc7aa5e2" category="paragraph">以下範例在叢集 1 和叢集 2 之間建立叢集對等關係，並建立系統產生的密碼短語：</block>
   <block id="64d2e8cdc91475f92f026c8033d55fa3" category="list-text">複製產生的密碼短語。</block>
-  <block id="a2545a878e0a20a8628f0c67b4cda706" category="list-text">在ASA叢集上，與ASA r2 叢集建立對等關係：</block>
-  <block id="9e0d0ea7a364534616afc545eee841e6" category="list-text">輸入在ASA r2 叢集上產生的密碼短語。</block>
   <block id="7884d95ebb45087ddd710a8ab4835ba1" category="list-text">驗證叢集對等關係是否已建立：</block>
   <block id="3cf2561ed8bb43ae7dc60cf8af15dd2f" category="paragraph">以下範例顯示了成功建立對等連接叢集的預期輸出。</block>
   <block id="3c499c997fa9259a83a27a6ac107bcda" category="paragraph">ASA和ASA r2 叢集已建立對等連接，儲存 VM 資料可以安全傳輸。</block>
-  <block id="f79751ca905920f2ac9956f10229dc8f" category="paragraph">您已準備好為ASA儲存虛擬機器進行遷移。</block>
-  <block id="216c309570be06e8bf47ded6a9935197" category="section-title">步驟 3：準備將儲存虛擬機器從ASA遷移到ASA r2 集群</block>
-  <block id="e31c0a5dbae02288f83fa6af5bce6ce4" category="paragraph">在將儲存虛擬機器 (VM) 從ASA叢集遷移到ASA r2 叢集之前，必須執行遷移預檢查並修復任何必要的問題。預檢查必須成功通過才能執行遷移。</block>
-  <block id="351e9f339eb79674390af4a3f1c2ff1e" category="list-text">從您的ASA r2 叢集執行遷移預檢查：</block>
   <block id="66bd41748f0136f40140cb32f6ad9ae2" category="paragraph">您已準備好將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。</block>
   <block id="d0d7f20044d1f98b7361cb3e2eaa4369" category="section-title">步驟 4：將ASA儲存虛擬機器遷移到ASA R2 集群</block>
   <block id="4d3190b98843b96e5dfac1c70dab24ad" category="paragraph">在您準備好ASA叢集並與ASA r2 叢集建立必要的叢集對等關係後，即可開始儲存 VM 遷移。</block>
   <block id="acb1a18c0054d21d94b005b415506a83" category="paragraph">執行儲存 VM 遷移時，最佳實務是在ASA叢集和ASA r2 叢集上都留出 30% 的 CPU 餘裕，以便 CPU 工作負載能夠執行。</block>
-  <block id="7e1c22a5100cc31b9fd3868976668461" category="paragraph">儲存虛擬機器遷移後，用戶端將自動切換到ASA r2 集群， ASA集群上的儲存虛擬機器將自動刪除。預設啟用自動切換和自動儲存虛擬機器移除功能。您也可以選擇停用它們，然後手動執行切換和儲存虛擬機器刪除操作。</block>
   <block id="689dc5a79cf019c818438babdab8303e" category="list-text">ASA r2 叢集必須有足夠的可用空間來容納遷移的儲存虛擬機器。</block>
   <block id="fc40bcc5684aef58727ef803557161a5" category="list-text">如果ASA儲存 VM 包含加密磁碟區，則必須在叢集層級設定ASA r2 系統上的板載金鑰管理員或外部金鑰管理員。</block>
   <block id="828fb449d397d082077ea5ccc142971b" category="list-text">下列操作不能在來源ASA叢集上運作：</block>
@@ -2267,33 +2172,16 @@
   <block id="4af87f9a2b73167cc476a4d58173638d" category="list-text">華夫餅</block>
   <block id="536c0c9bcd09855d120989eee2aed942" category="list-text">指紋</block>
   <block id="7ccdca44124c885599f8dfc3d91ecf71" category="list-text">卷遷移、重新託管、複製、建立、轉換或分析</block>
-  <block id="5b98400e72be9e536c92fc37233f2dc2" category="list-text">從ASA r2 叢集啟動儲存虛擬機器遷移：</block>
-  <block id="01c7bd74a415a0aecc42046c56fd2521" category="paragraph">若要停用自動切換，請使用<block ref="c35ffd3cc8ec242fe771b6c8342ff18f" prefix=" " category="inline-code"></block>範圍。若要停用ASA儲存 VM 的自動刪除，請使用下列方法：<block ref="dc1b581de95515eb75905f1d6f9a0871" prefix=" " category="inline-code"></block>範圍。</block>
   <block id="3fb135bc6b75f65e260ed2a579aa59c9" category="list-text">監控遷移狀態</block>
-  <block id="25e1a72b32e724ba03d497aa060fd2c7" category="paragraph">遷移完成後，*狀態*將顯示為*遷移完成*。</block>
   <block id="9bdd71e813734cd91bd9de1eb31f66ca" category="admonition">如果在自動切換開始前需要暫停或取消遷移，請使用以下方法：<block ref="9d6db8b5ee359d175a01a18c98e81144" prefix=" " category="inline-code"></block>以及<block ref="de83f1d008d2f2a17132d73774af6a5a" prefix=" " category="inline-code"></block>命令。必須先暫停遷移，然後才能取消遷移。切換開始後，您將無法取消遷移。</block>
   <block id="903547f07fd29a1a471a450bf6698e9a" category="paragraph">儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。儲存虛擬機器的名稱和 UUID、資料 LIF 名稱、IP 位址以及物件名稱（例如磁碟區名稱）保持不變。儲存虛擬機器中已移轉物件的 UUID 已更新。</block>
-  <block id="8dc31ca5dc4646efeb787bf14002d2d0" category="inline-link-macro">手動將ASA客戶端切換到ASA R2 集群，並從ASA集群中移除儲存虛擬機器。</block>
-  <block id="9577daaa5fbfbab99b56d58ee2c172df" category="paragraph">如果您停用了自動切換和自動儲存虛擬機器移除功能，<block ref="76ae15ac4a72520ba2cd15274463fca3" category="inline-link-macro-rx"></block> 。</block>
   <block id="7501352b37c8930919c10e645c388272" category="inline-link-macro">了解更多關於ASA r2 系統快照保留的信息</block>
   <block id="7fdd4a506c158d387464fd16f4e65f8e" category="paragraph"><block ref="614a34b4f7a807cea02dd4507adb351a" category="inline-link-macro-rx"></block>。</block>
   <block id="819b58028cbb8d32e35c5a6d2a9ed247" category="list-text">設定服務品質限制、服務品質保證或兩者都設定。</block>
   <block id="5ae2b91104e852585ddf073635450cf8" category="paragraph">修改預設快照保留設定並啟用自動快照刪除功能。</block>
   <block id="715a6e64eed03295b4e2bc3df4da2dc6" category="list-text">在「快照預留 %」下，輸入要指派給快照的儲存單元空間百分比的數值。</block>
   <block id="162edb1432d7c690ed0b5b42fa399a29" category="summary">為了獲得最佳效能、配置和支持，您應該了解ASA r2 的儲存限制。</block>
-  <block id="a36422a2f9f3777ca6a112c936b8ffc7" category="paragraph">將儲存虛擬機器 (VM) 從ASA叢集遷移到ASA r2 叢集後，預設情況下，用戶端會自動切換到ASA r2 集群，且ASA叢集上的儲存 VM 會自動刪除。如果您選擇在遷移期間停用ASA儲存 VM 的自動切換和移除，則需要在遷移完成後手動執行這些步驟。</block>
-  <block id="b1a60764d65e294c75af5b4d8f70838b" category="section-title">儲存虛擬機器遷移後，手動將客戶端切換到ASA r2 系統。</block>
-  <block id="aac22a8dfae9665f2f3c5a2f9431abe7" category="paragraph">如果在將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集期間停用自動用戶端切換，則在遷移成功完成後，請手動執行切換，以便ASA r2 儲存虛擬機器可以為用戶端提供資料。</block>
-  <block id="eaf0531ce62bf82545d312620512def9" category="list-text">在ASA r2 叢集上，手動執行客戶端切換：</block>
   <block id="0b0cbd8d0f0d2f28f4334c6a8f47bd98" category="list-text">確認切換操作已完成：</block>
-  <block id="b684044facf39ce4ded9e0026771b555" category="paragraph">資料正從ASA r2 叢集上的儲存虛擬機器提供給您的客戶端。</block>
-  <block id="277b43483075c56785282d8be82da2e4" category="paragraph">現在您可以從來源ASA叢集中刪除儲存虛擬機器。</block>
-  <block id="94d97e684838844cbcfd60feb005f844" category="section-title">遷移到ASA r2 叢集後，手動刪除ASA儲存虛擬機</block>
-  <block id="d8787f4bdadb3cfbeea108ee9f6022e2" category="paragraph">如果在將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集期間停用自動來源清理，則在遷移完成後，請從ASA叢集中刪除儲存虛擬機器以釋放儲存空間。</block>
-  <block id="794e019310a63e0ff6f4a79339fdac75" category="paragraph">您的客戶端應該從ASA r2 叢集提供資料。</block>
-  <block id="18bc71e4ea10925876b400edadda624b" category="list-text">從ASA叢集中，驗證ASA儲存 VM 的狀態是否為「*準備進行來源清理*」：</block>
-  <block id="539ccf8b62b4725c3337acf9f5d3b481" category="list-text">移除ASA儲存虛擬機器：</block>
-  <block id="b65128ffba75bdb9ebe4ab61ff988a88" category="paragraph">您的ASA叢集上的儲存虛擬機器已移除。</block>
   <block id="88b492110e1066f5d49d63281dd0882b" category="cell">每個叢集的儲存虛擬機</block>
   <block id="693b04a116e2728c124dc2e59e7f14c6" category="cell">每個 HA 對支援的最大儲存虛擬機器 (VM) 數量從 32 增加到 256。</block>
   <block id="e48e73e576f724fd4213ab1eca7edb4a" category="cell">ONTAP 9.18.1</block>
@@ -2334,8 +2222,6 @@
   <block id="aa19851350bd897b99389c2d23c0da09" category="paragraph">叢集和儲存虛擬機器級別</block>
   <block id="e1a06c047b1d9008ede9d40260b302fd" category="paragraph">儲存虛擬機器等級：外部金鑰管理器</block>
   <block id="ef2e8350e8588c6113d0cd14bca9aa8e" category="sidebar">遷移儲存虛擬機</block>
-  <block id="ae59590d5e236012182c94f4cbe3d748" category="sidebar">將儲存虛擬機器從ASA叢集遷移</block>
-  <block id="491f64c73a661c61dd8df1715dbe612b" category="sidebar">切換客戶端並清理來源儲存虛擬機</block>
   <block id="17dd0aa64fbdd042489b5c0fffcd25bb" category="sidebar">管理快照儲備</block>
   <block id="3c0f4fa7666b61f86ab42a6f65750f20" category="sidebar">了解快照儲備</block>
   <block id="343eac7cd99cc683c46468c5b11af7ac" category="sidebar">修改快照儲備</block>
@@ -2351,8 +2237,6 @@
   <block id="cd70e38e090afe4dfe68269857720d8c" category="inline-link-macro">精簡配置</block>
   <block id="235edd79b1fce1af069d9278c91366b9" category="paragraph">為了優化儲存可用區內的工作負載平衡，請建立偶數個儲存單元。</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">建立ASA r2 儲存單元並新增主機啟動器後，將主機對應到儲存單元以開始提供資料服務。儲存單元在建立儲存單元的過程中會被對應到主機。您也可以隨時將現有儲存單元對應到新的或現有的主機。</block>
-  <block id="e6129943cc99a13d8c697c60264ba016" category="inline-link-macro">動態空間平衡</block>
-  <block id="8c43a655da0b70a36ef0f72c6b39d432" category="admonition"><block ref="f3838dd89a924b4e0ebc50e64aa2b719" category="inline-link-macro-rx"></block>預設情況下，升級到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 叢集 14 天後啟用。在ASA r2 系統上啟用動態空間平衡後，您無法從ONTAP 9.17.1 版本回溯。</block>
   <block id="166a84d4b4570b597bcb3a30d4252d65" category="doc">了解ASA r2 叢集中的ONTAP容量均衡</block>
   <block id="0378d558dcd0562ad67f6e96ad981dde" category="cell">得到支持…</block>
   <block id="037e39315c9955da8fb128aa756cd46e" category="cell">均衡佈局</block>
@@ -2370,7 +2254,6 @@
   <block id="7f6dc71b0f98b16a0db647450cc99a3e" category="paragraph">在低空間模式下， ONTAP每分鐘檢查一次，以確定是否需要動態空間平衡。當滿足以下條件時，動態空間均衡以低空間模式運作：</block>
   <block id="3277f61f156841253c20ed4c96e6c0a2" category="list-text">全球平均自由空間不足10%。</block>
   <block id="87e3450ba7653f98d10dc2803138c7bf" category="list-text">叢集中至少有一個節點的可用空間少於全域平均水準。</block>
-  <block id="6dfd63ffb4710564042f8d26eb17a0af" category="paragraph">透過基於複製的工作負載重新平衡，如果儲存可用區內出現儲存利用率不平衡的情況， ONTAP會自動將造成不平衡的儲存單元複製到具有更大可用空間的儲存可用區。如果目標儲存可用區沒有足夠的可用空間， ONTAP將不會執行任何平衡操作。基於副本的工作負載重新平衡僅適用於執行ONTAP 9.16.1 的ASA r2 系統，並且預設在這些系統上啟用。在ONTAP 9.17.1 及更高版本中，它被動態空間平衡所取代。</block>
   <block id="625927359c6ff98754dcdfda6d0f8d77" category="paragraph">如果您需要修改基於副本的工作負載重新平衡的預設設置，請聯絡NetApp支援。</block>
   <block id="9f71ddf310db058a3a89122693392a68" category="inline-link-macro">了解ASA r2 叢集中的容量均衡</block>
   <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA r2 系統差異概述</block>
@@ -2382,7 +2265,6 @@
   <block id="91d54d0d46ef33d2bbd727e59b537fee" category="list-text">若要恢復遺失的 I/O 路徑或更新主機上的 I/O 路徑狀態，需要在主儲存叢集復原運作後對主機執行儲存/適配器重新掃描。</block>
   <block id="682aa2cee69ce16837ee717d9beba117" category="inline-link-macro">使用ONTAP命令列介面 (CLI) 設定集群</block>
   <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">在某些情況下，你可能需要 <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>。例如，如果您的安全協定不允許您將筆記型電腦連接到管理交換機，或者如果您使用的是非 Windows 作業系統，則應使用 CLI。</block>
-  <block id="f216ce14a016872d4ebd01d56ac0f6c4" category="paragraph">在 ASA r2 系統上，SnapMirror 主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點都可以存取本地儲存以進行主動 I/O 操作。如果來源叢集發生故障或隔離，中介程式將觸發自動計劃外故障轉移（AUFO），並從目標叢集處理所有 I/O 操作，直到來源叢集恢復為止。</block>
   <block id="5f163ae9655a06ffcd7d72f99c857efa" category="paragraph">如果您的 SnapMirror 活動同步關係發生 AUFO，則應在原始來源叢集復原聯機後重新建立該關係並復原作業。</block>
   <block id="329e726c526800c2f75bf6d3e2260fe6" category="paragraph">您必須是<block ref="f1b69e50633569a9d4ff998335d87123" category="inline-link-macro-rx"></block>才能查看 ASA r2 系統的支援案例。</block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="section-title">安全性</block>
@@ -2532,15 +2414,12 @@
   <block id="c240788f59668332d5c171cbe489376a" category="paragraph">了解如何<block ref="9c7fdd39bc5019d6cec3e908fec6a772" category="inline-link-macro-rx"></block>。</block>
   <block id="9917a58904f13efdde588f2978fd93b9" category="inline-link-macro">利用 AI 啟用自主勒索軟體保護</block>
   <block id="b71329b670dac542862012007751fd6f" category="summary">在為執行 ONTAP 9.19.1 或更高版本的 AIX 主機啟用 SnapMirror 主動式同步之前，必須將主機存取模式設定為本機。</block>
-  <block id="16624daae6b7659680047c4fc428fec2" category="paragraph">從 ONTAP 9.19.1 開始，AIX 的透明應用程式容錯移轉功能在對稱主動/主動組態中透過 SnapMirror 主動同步獲得支援。SnapMirror 主動同步資料保護功能可確保即使在站台完全故障的情況下，業務服務也能繼續運作，並支援應用程式使用次要複本進行透明容錯移轉。</block>
   <block id="ba38f5c107e42f69bfac0d9f7824f8c9" category="inline-link-macro">SnapMirror 主動同步的互通性</block>
   <block id="f80d8776833174e556c56272ce794684" category="paragraph">在為執行 ONTAP 9.19.1 或更高版本的 AIX 主機啟用 SnapMirror 主動式同步之前，必須將主機存取模式設定為本機。其他主機類型無需選擇存取模式。深入瞭解<block ref="987f5b7a840f16d7e10b014311f90ef1" category="inline-link-macro-rx"></block>。</block>
-  <block id="13cf50fcf318293df5a3adeadda4221c" category="paragraph">您必須執行 ONTAP 9.19.1 或更高版本。如果您執行的是 ONTAP 9.18.1 或更早版本，則需要提交功能性原則變更請求（FPVR）才能在 AIX 主機上獲得 SnapMirror active sync 支援。</block>
   <block id="49c7424b52c7ec83e7da5d72f7f13764" category="list-text">將滑鼠懸停在要準備啟用 SnapMirror 主動同步保護的 AIX 儲存單元的名稱上。</block>
   <block id="89b5596dc218f237904b988c0f8904cc" category="inline-image-macro">功能表選取圖示</block>
   <block id="02b80ac4962fa1aa89a11e655a3bd996" category="list-text">在 *Host information* 下，針對 *Access mode* 選取 *local*，然後選取 *Edit*。</block>
   <block id="6d33f82590752283d027e2c7394ab829" category="paragraph">AIX 主機的儲存單元已準備好進行 SnapMirror 主動同步保護。</block>
-  <block id="55aa696f6eeaf20f8cd5f18a42f214dd" category="paragraph">雖然在 ASA r2 系統上設定 SnapMirror 主動式同步的 System Manager 程序與在執行統一 ONTAP 特性的 NetApp FAS、AFF 和 ASA 系統上的程序不同，但 SnapMirror 主動式同步的需求、架構和操作是相同的。<block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
   <block id="1783622f273954ab75caf352332b94b9" category="paragraph">在 ASA r2 系統上、SnapMirror 主動式同步支援對稱主動 / 主動組態。在對稱主動 / 主動組態中、兩個站台都可以存取本機儲存設備以進行主動式 I/O。深入瞭解<block ref="cd08e89ddecf5772544f56e955b2d721" category="inline-link-macro-rx"></block>。</block>
   <block id="f6948bd1b416e70ac7297904c89918c2" category="inline-link-macro">準備 AIX 主機</block>
   <block id="9f3699fb5ae95cc656437f0d40316b3a" category="paragraph">如果您執行的是 ONTAP 9.19.1 或更新版本，並且為 AIX 主機啟用 SnapMirror 主動同步，則應該<block ref="a1eb09700bb6039b09944ad4a8beb294" category="inline-link-macro-rx"></block>。</block>
@@ -2635,7 +2514,6 @@
   <block id="4910573cab7d204a834f1ef33d28e6aa" category="cell">人工智慧自主勒索軟體防護 (ARP/AI) 支援 ASA r2 系統上處於 SnapMirror 主動同步關係中的主讀寫儲存設備單元。ARP/AI 在活動主儲存設備單元上運行，建立僅針對主儲存設備單元的 ARP 快照，並為這些儲存設備單元提供基於機器學習的勒索軟體偵測。先前因同步複寫關係而導致預設 ARP 能力開發受到抑制的叢集升級至 ONTAP 9.19.1 後，ARP 將自動恢復。更新前警告會通知管理員，並提供停用 ARP 的選項。</block>
   <block id="43711203668248fcdb2737c0b52f163a" category="list-text">從 ONTAP 9.19.1 開始，具備人工智慧的自主勒索軟體防護 (ARP/AI) 支援 ASA r2 系統上 SnapMirror 主動同步 SAN 關係中的主讀寫儲存設備單元。ARP/AI 在作用中的主儲存設備單元上執行，建立僅限主要的 ARP 快照，並為這些儲存設備單元提供以機器學習為基礎的勒索軟體偵測。</block>
   <block id="20290ba3bc660a6b1ec6d46adf0b0974" category="paragraph">單一操作中至少應新增三個硬碟。新增單一磁碟機可能會降低效能。</block>
-  <block id="38964f69af54ac13a49e3e0955441258" category="paragraph">LIF （網路介面）是與實體或邏輯連接埠關聯的 IP 位址。在您希望用於存取資料的連接埠上建立 LIF。儲存虛擬機器透過一個或多個 LIF 向用戶端提供資料。在 ASA r2 系統上，您可以建立 IP、FC 和 NVMe/FC LIF。預設情況下，IP 資料 LIF 可以同時處理 iSCSI 和 NVMe/TCP 流量。必須為 FC 和 NVMe/FC 流量建立個別的資料 LIF。</block>
   <block id="0da4b7c484f1bfa3f71126ddd8e221ce" category="paragraph-title">ASA r2 系統上的 LIF 容錯移轉</block>
   <block id="2f510f91f88e7ad0b5faca1d650d5c46" category="inline-link-macro">在 SAN 環境中刪除 LIF</block>
   <block id="16bbf9f716eb1b1f397ecd56fea6a475" category="inline-link-macro">持續連接埠</block>
@@ -2670,7 +2548,6 @@
   <block id="8640f17f2139bac0467c18eee85556a3" category="list-text">深入瞭解<block ref="178fbdc7331e9c809820fe8dbccf3884" category="inline-link-macro-rx"></block>。</block>
   <block id="c9de3246d61399dca0b1426ae4785aae" category="list-text">重新輸入密碼進行確認，然後選擇「繼續」。</block>
   <block id="acdc6b4f6edd40f37bce01247a32ff86" category="list-text">SnapLock</block>
-  <block id="bc18555a4dceebd83eed97dc0d55e738" category="paragraph">SnapLock Compliance 和 Enterprise 模式不支援 SAN 環境中的主叢集。SnapLock for SnapVault 支援二線系統叢集。</block>
   <block id="884db16daad09820adcdd9f12c2233d6" category="doc">確定您的 ASA r2 系統儲存設備限制</block>
   <block id="0983f226fe7663bd6c4c28ac46840c50" category="paragraph">限制可能會因您的 ASA r2 系統和 ONTAP 版本而異。請參閱 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 以取得適用於您特定系統的最新限制完整清單。</block>
   <block id="eedddce7629b34be6de6734237a6001d" category="admonition">ASA r2 系統在 NetApp Hardware Universe 的*產品*下列為「ASA」平台。</block>
@@ -2685,7 +2562,6 @@
   <block id="443ddb7ca2bd07f5946e8a824feee453" category="list-text">在 *Anti-ransomware* 下，選擇 *Don't enable*，然後選擇 *Disable*。</block>
   <block id="882422644d0036961f2ef9aed07712d6" category="list-text">在 *Anti-ransomware* 旁邊，選擇 <block ref="09996779530a0566a9742876e9ffd4f1" category="inline-image-macro-rx" type="image"></block>，然後選擇 *Enable on all existing storage units*。</block>
   <block id="6dc61dbf62f6b39ca07f06ff22297587" category="doc">了解適用於 ASA r2 儲存設備系統的 SnapLock 資料保護</block>
-  <block id="d518b6c93614020b83f8ca34dcf03ca0" category="paragraph">必須初始化 SnapLock Compliance Clock，才能使用 SnapLock for SnapVault 保護二線系統上的快照。</block>
   <block id="bd89ef986499f4ff1572bd4a4fa483d9" category="inline-link-macro">SnapLock for SnapVault 在 SAN 環境中</block>
   <block id="5294938468fdefd1f2310e6e7293cb9b" category="list-text">深入瞭解<block ref="d75f88da20f7788e820767a9d46ee9a2" category="inline-link-macro-rx"></block>。</block>
   <block id="af30d81f9a8c2c0f5b25d08da7858ddc" category="inline-link-macro">ONTAP SnapLock</block>
@@ -2696,7 +2572,6 @@
   <block id="0f45969bf7bc3472106c4a23173a35bb" category="inline-link-macro">建立與 SnapLock for SnapVault 的複寫關係</block>
   <block id="53ba0b0af13871c9c1e7a43da8f40ede" category="sidebar">ASA r2 CLI 和 REST API 支援 ONTAP 進階用戶</block>
   <block id="56487b0f66d25f7027042188a0b85f01" category="sidebar">了解 SnapLock</block>
-  <block id="479de3f7ce60040c78f3aea05b661d3d" category="paragraph">如果某個元件發生故障，LIF 可以容錯移轉或遷移到不同的實體連接埠，從而避免網路通訊中斷。從 ONTAP 9.19.1 開始，IP LIF 預設支援自動 LIF 容錯移轉。啟用自動 LIF 容錯移轉後，如果發生儲存設備容錯移轉，LIF 將自動從其主節點或連接埠遷移到其 HA 合作夥伴節點或連接埠，並在容錯移轉完成後返回。或者，如果連接埠發生故障，LIF 將自動遷移到其當前主節點中一個運作正常的連接埠，並在該連接埠恢復正常後返回其原始連接埠。</block>
   <block id="d26b171679a151dddcf0f77ce05e7dd3" category="paragraph">在 ONTAP 9.18.1 及更早版本中，同時包含 iSCSI 和 NVMe/TCP 流量的 IP LIF 不支援自動 LIF 容錯移轉。建立僅包含 iSCSI 流量的 LIF 時，預設會啟用自動 LIF 容錯移轉，除非儲存設備 VM 上已存在未啟用自動 LIF 容錯移轉的 iSCSI LIF。如果儲存設備 VM 上存在未啟用自動 LIF 容錯移轉的 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。在這種情況下，您必須先刪除現有的 iSCSI LIF，然後重新建立並啟用自動 LIF 容錯移轉。了解如何<block ref="bd7be76bcbb9f56b8521a7457373f6cc" category="inline-link-macro-rx"></block>。</block>
   <block id="f6cd95bfbbfa8cfbf33805948f9e02ab" category="paragraph">在 ONTAP 9.18.1 及更早版本中，如果儲存設備虛擬機器上的所有其他 iSCSI LIF 也啟用了自動 LIF 容錯移轉，則建立僅 iSCSI LIF 時預設啟用自動 LIF 容錯移轉。如果儲存設備虛擬機器上存在未啟用自動 LIF 容錯移轉的 iSCSI LIF，則新建立的 LIF 也不會啟用自動 LIF 容錯移轉。</block>
   <block id="a52cb55bc715199db0a2c89f5628463a" category="paragraph">您必須使用 ONTAP 命令列介面 （CLI） 來建立僅支援 iSCSI 的 LIF。</block>
@@ -2713,24 +2588,20 @@
   <block id="96072d2cdbee5229e27852ec585d56d1" category="doc">重新設定 Mediator 以在 ASA r2 系統上使用第三方憑證</block>
   <block id="b062004dfbb4ad5e82066f96dc686b12" category="doc">確認 ASA r2 叢集組態以進行 SnapMirror 作用中同步</block>
   <block id="198085dfe5a8229e7c749f1dbdf5e4f7" category="doc">故障轉移 ASA r2 SnapMirror 作用中同步關係</block>
-  <block id="c52c6c6622ecbf9a06ed9e2749751ea7" category="doc">在 ASA r2 發生計劃外故障切換後重新建立 SnapMirror 作用中同步</block>
   <block id="5040e8878b6b4047227bf23dfa69ad32" category="doc">SnapMirror ASA r2 系統的作用中同步設定工作流程</block>
   <block id="9a923360fe18ef8d2ab0c152cf8b442b" category="doc">了解 ASA r2 儲存設備系統上的 ONTAP 快照保留</block>
   <block id="d0f9bfc8fd9b34fb299681a49d3c44f2" category="searchtitle">ASA r2 與其他 ONTAP 系統的差異</block>
   <block id="b97444b3293ace41e23cdcd254cb82d6" category="doc">在 ASA r2 系統上設定 ONTAP SAN 儲存設備</block>
-  <block id="3a70164c0ba54edbf03abe9eb4ddcf0f" category="doc">ASA r2 儲存 VM 移轉後的轉換與清理</block>
   <block id="86c0d573069eca002c586264ae1b0211" category="doc">利用 ASA r2 系統 Insights 優化叢集安全性與效能</block>
   <block id="d59a2ca55fba4c918ce94764958c72c4" category="doc">ASA r2 儲存設備系統的 IPsec 與硬體卸載支援</block>
   <block id="58c7744ea9658fb6f86ed215f89056ad" category="doc">暫停或恢復 ASA r2 儲存設備系統上的 ARP/AI 保護</block>
   <block id="a80d92389a122d0641f947975df5f6d2" category="doc">回應 ASA r2 儲存設備系統上的 ARP/AI 警報</block>
   <block id="191bc9661a8209b0a3923f185c6f289c" category="list-text">選擇要參加叢集的節點旁邊的 <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然後選擇「新增節點」。</block>
   <block id="3800406a96ecfafffe5350045e3348a6" category="list-text">如果 LED 指示燈常亮，表示磁碟機已通電。</block>
-  <block id="c66f04fab5f6c81dc4e9ac89698c689e" category="paragraph">您已產生 CSR，可用於產生公鑰憑證。</block>
   <block id="f890ea16b37808f30107186e9a34db25" category="paragraph">在叢集設定過程中，系統會建立預設資料儲存設備虛擬機器 (VM)。除非您建立並選擇其他儲存設備 VM，否則所有新的儲存設備單元都將在預設資料儲存設備 VM 內建立。您可能需要建立額外的儲存設備 VM，以便為不同的應用程式、部門或客戶隔離儲存設備單元。例如，您可以為開發環境建立一個儲存設備 VM，並為正式作業環境建立另一個儲存設備 VM；或者，您可以為財務部門建立一個儲存設備 VM，並為行銷部門建立另一個儲存設備 VM。</block>
   <block id="46f9946828414c98cf9060e07c5d3092" category="paragraph">您可能需要重新開機節點以進行維護、疑難排解、軟體更新或其他管理操作。節點重新開機後，其 HA 合作夥伴會自動執行接管。重新開機後的節點恢復線上後，合作夥伴節點會自動執行歸還。</block>
   <block id="4a330c605bee761c0108a159f6e44e23" category="paragraph">節點重新開機期間，其 HA 合作夥伴會執行接管，以確保資料服務不會中斷。重新開機完成後，HA 合作夥伴會執行歸還。</block>
   <block id="0078c366ca1007a09c1d3806650b2226" category="paragraph">您可以使用 System Manager 重新命名 ASA r2 系統上的節點，以遵守您組織的命名約定或其他管理原因。</block>
-  <block id="adb32774e84399eab9e160ba514b5a7a" category="paragraph">回復 ONTAP 叢集會造成服務中斷。您必須在回復期間將叢集離線。切勿在沒有技術支援協助的情況下回復正式作業叢集。您可以自行回復新建或測試叢集。如果新建或測試系統的回復失敗，或回復成功但您對正式作業環境中的叢集效能不滿意，則應聯絡技術支援尋求協助。</block>
   <block id="b1ba6cba548b9b66e1df5a4a665c88ae" category="paragraph">請參閱<block ref="685dd4f32cb1899994bd1e3c5bb2a9b4" category="inline-link-macro-rx"></block>以取得完整的回復程序。</block>
   <block id="d09ff6b128689591d407e67a13cc82e4" category="summary">對於 ASA r2 系統，ONTAP 使用平衡放置、動態空間平衡或基於複本的工作負載重新平衡，以維持儲存可用度區之間的儲存使用率平衡。</block>
   <block id="f8cdd11f2b5f09f7e688be7ed95d09b7" category="paragraph">對於 ASA r2 系統，ONTAP 使用「均衡放置」功能，自動將新建立的儲存單元放置在最佳儲存可用度區，以達到最佳效能和均衡的儲存使用率。如果您執行的是 ONTAP 9.17.1 或更新版本，現有儲存單元所佔用的空間將使用「動態空間平衡」功能進行平衡。如果您執行的是 ONTAP 9.16.1，現有儲存單元所佔用的空間將使用「複本型工作負載重新平衡」功能進行平衡。</block>
@@ -2739,7 +2610,6 @@
   <block id="cccad7dc513bed4fdb462322d06cbb1a" category="paragraph">ONTAP 預設會自動下載並更新 ASA r2 系統上的韌體和系統檔案。如果您希望在下載和安裝更新之前靈活地查看建議的更新，可以使用 System Manager 停用自動更新，或編輯更新參數，以便在執行任何行動之前收到可用更新的通知。</block>
   <block id="9cb28c3bd53f2c203a659b82d86dee4b" category="paragraph">預設情況下，儲存設備韌體、服務處理器/基板管理控制器 (SP/BMC) 韌體和系統檔案的建議更新會自動下載並安裝到您的 ASA r2 系統上。如果自動更新已停用，您可以啟用它以恢復預設行為。</block>
   <block id="7ed59214bbce1725a79ad9822c174655" category="paragraph">自動更新已停用。您應定期檢查是否有建議的更新，並決定是否要執行手動安裝。</block>
-  <block id="2d06385d115e59ba604b6d5ed36c4d37" category="paragraph">您可以選擇自動下載並安裝叢集上的儲存設備韌體、SP/BMC 韌體和系統檔案的建議更新，也可以選擇自動忽略建議更新。如果您想手動控制更新的安裝或忽略，請選擇在有建議更新可用時接收通知；然後您可以手動選擇安裝或忽略該更新。</block>
   <block id="7f9852dfa5b39ab0803fad00d8651c67" category="paragraph">做好升級準備後，建議使用<block ref="e26ea1c18f478c08bac49629d6c7055f" category="inline-link-macro-rx"></block>執行升級。ANDU 利用 ONTAP 的高可用性 (HA) 故障轉移技術，確保叢集在升級期間能夠持續不間斷地提供資料服務。</block>
   <block id="e5fdf00291b091191289983bd854fe5b" category="paragraph">從 ONTAP 9.19.1 開始，錯誤和警告會分開顯示，協助您輕鬆識別升級前必須解決的問題。</block>
   <block id="aad6dbc9051f9beb8e5cb248bd4a2f2f" category="paragraph">使用 System Manager 設定使用者帳戶的 Active Directory 網域控制器存取、LDAP 和 SAML 驗證。建立使用者帳戶角色，以定義指派給這些角色的使用者可以在叢集上執行的特定功能。</block>
@@ -2748,13 +2618,11 @@
   <block id="df5dd91431b291bedd088ad3f686135d" category="list-text">在 *安全性* 下，在 *SAML 驗證* 旁邊，選擇 <block ref="a9be0719b387789238ea22451afbb122" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="66cdadec4d05083814cc0fca03fdccfa" category="list-text">若要啟用 MFA，請選擇 <block ref="0428df21f8cd0e9a5a515701151394b7" category="inline-image-macro-rx" type="image"></block>；然後選擇輔助登入方法和身分驗證方法。</block>
   <block id="8c19f13592bfe4c6339c1183cd739d9b" category="list-text">*Partially Connected*：表示某些啟動器未連接到兩個節點。</block>
-  <block id="06441b99bd83c34d40425726c4b55a22" category="paragraph">從 ONTAP 9.18.1 開始，您可以在建立含有新儲存單元的一致性群組時，設定快照保留百分比並啟用自動快照刪除功能。快照保留是指儲存單元中專為快照保留的空間量。當快照保留與自動快照刪除功能同時設定時，若快照所使用的空間超過快照保留量，較舊的快照將自動刪除。如果在父一致性群組上啟用快照保留和自動快照刪除功能，則所有現有的子一致性群組也會啟用此功能。若新增子一致性群組，這些群組不會繼承父一致性群組的快照保留和快照刪除設定。</block>
   <block id="d23efcc7e490e713ae34dac1c8aba9c6" category="paragraph">從 ONTAP 9.16.1 開始，使用新的儲存設備單元建立一致性群組時，最多可以設定五個子一致性群組。<block ref="f1a0f4ed0f432768de2b840c9e2d3a9d" category="inline-link-macro-rx"></block>.</block>
   <block id="4e3cf8f43355a1f426896a60e52ae691" category="paragraph">既然您的資料已透過快照受到保護，您應該<block ref="6da619e2e389e2d245017bdc536fe8bb" category="inline-link-macro-rx"></block>將一致性群組複寫至地理位置偏遠的位置，以進行備份和災難恢復。</block>
   <block id="32cfb1f207a804766a081cde8e05641d" category="paragraph">如果您執行的是 ONTAP 9.16.1，且要擴充的一致性群組處於 SnapMirror 作用中同步關係中，則必須先<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>才能新增儲存設備單元。如果您執行的是 ONTAP 9.16.1，且一致性群組處於非同步複寫關係中，則必須先<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>才能擴充該一致性群組。在 ONTAP 9.17.1 及更新版本中，擴充一致性群組前無需刪除 SnapMirror 作用中同步關係或中斷非同步關係。</block>
   <block id="96b6f36515ed900325778800e75c0d06" category="paragraph">建立新儲存設備單元後，您應該<block ref="0b287ca0eb92c7f68147891f3dfb6ead" category="inline-link-macro-rx"></block>和<block ref="8f4058042298bb1cf89c5eaabd6331c6" category="inline-link-macro-rx"></block>。新增主機啟動器可讓主機存取儲存設備單元並執行資料操作。將儲存設備單元對應至主機，可讓儲存設備單元開始向其對應的主機提供資料服務。</block>
   <block id="57aed6c56a2f7178daeb521fb34e7b36" category="paragraph">從 ONTAP 9.16.1 開始，您可以使用 System Manager 在 ASA r2 系統上建立分層一致性群組。在分層結構中，一個或多個一致性群組會設定為父一致性群組下的子群組。</block>
-  <block id="cac1eb36848fed2fb2131d39326975af" category="summary">使用一致性群組可以同時對多個儲存設備單元執行各種動作，而無需對每個單元個別執行動作。在分層結構中，一個或多個一致性群組設定為父一致性群組的子群組。</block>
   <block id="7f4b39493709c290e8903680e162ffc6" category="paragraph">從 ONTAP 9.16.1 開始，您可以使用 System Manager 在 ASA r2 系統上建立分層一致性群組。在分層結構中，一個或多個一致性群組會設定為父一致性群組下的子一致性群組。您可以為每個子一致性群組套用個別的快照原則，並透過複寫父一致性群組，將所有子一致性群組的快照以單一單元複寫至遠端叢集。這可簡化複雜資料結構的資料保護與管理。</block>
   <block id="39d315fe641192ea4a3a49a405763876" category="list-text">將滑鼠懸停在要轉換為父一致性群組的一致性群組上。</block>
   <block id="cb1b079a7e0cce7a45c32d7fced71838" category="paragraph">您可以在父一致性群組下建立其他子一致性群組。您也可以<block ref="6da619e2e389e2d245017bdc536fe8bb" category="inline-link-macro-rx"></block>將父一致性群組和子一致性群組複寫到地理位置偏遠的地方，以進行備份和災難恢復。</block>
@@ -2780,14 +2648,11 @@
   <block id="b79748ccbc52a90a2302e88eb6a413a5" category="paragraph">您可以在儲存 VM 上設定與叢集式外部金鑰管理伺服器的連線。使用叢集式金鑰伺服器，您可以在儲存 VM 上指定主要金鑰伺服器和次要金鑰伺服器。註冊金鑰時，ONTAP 會先嘗試主要金鑰伺服器，然後依序嘗試次要金鑰伺服器，直到操作成功為止，以防止產生重複金鑰。</block>
   <block id="cc83a1b300be6a5f57f96b70b9db1554" category="paragraph">ONTAP 的所有 SSL 連線均符合聯邦資訊處理標準 (FIPS) 140-2。您可以在 ONTAP 中啟用或停用 SSL FIPS 模式、全域設定 SSL 協議，以及停用任何弱加密演算法，例如 RC4。</block>
   <block id="d93cb08b65fd884be72f3bd480fa8e6f" category="paragraph">自適應和非自適應 QoS 原則群組預設會暫時將工作負載的處理量上限提高 50%，持續 1 秒，以回應短期內對更高效能的需求。從 ONTAP 9.19.1 開始，您可以修改這些設定。在 ONTAP 9.18.1 及更早版本中，您無法變更這些設定。</block>
-  <block id="af755d79b67e4b338fec8da14a341168" category="paragraph">從 ONTAP 9.19.1 開始，_全域重複資料刪除_ 將<block ref="c7d4c0ceea3d0bc35cdb8645e84b0be9" category="inline-link-macro-rx"></block>儲存單元層級的重複資料刪除擴展到整個儲存可用度區域 (SAZ)。透過消除 SAZ 中所有儲存單元的重複資料區塊，可以顯著提高儲存效率並降低整體擁有成本。全域重複資料刪除無需功能授權，預設為啟用狀態，可與現有儲存效率技術無縫地整合，並以極低的效能影響透明運行，無需任何管理組態。</block>
   <block id="9349f33d561a2e094950d39f1ed44809" category="paragraph">您可以在 System Manager 中搜尋各種行動、物件和資訊主題。您也可以搜尋表格資料中的特定條目。</block>
   <block id="a34f8041f266253171917874487dbfc2" category="paragraph">ASA r2 系統使用儲存可用度區而非彙總，因此某些 ONTAP CLI 命令和參數不受支援。如果您偏好使用 CLI 而非 System Manager，也可以使用 CLI 設定叢集。</block>
   <block id="dfdb2fd8b33e49fa0714a0035a6583c5" category="paragraph">ASA r2 不支援以下命令和命令集：</block>
-  <block id="354594999c8d0d8ec0e9a4ae56ab00a5" category="paragraph">建議您<block ref="df4559a5b62289a9d3564a01abc04ba8" category="inline-link-macro-rx"></block>。System Manager 提供快速簡單的引導式工作流程，協助您快速啟動並執行叢集。但是，如果您習慣使用 ONTAP 命令，也可以選擇使用 ONTAP 命令列介面 （CLI） 進行叢集設定。使用 CLI 設定叢集，與使用 System Manager 相比，並無任何額外的選項或優勢。</block>
   <block id="1f0ec0ea721d23109883a528c04d5f8f" category="paragraph">在叢集設定過程中，ONTAP 會建立預設資料儲存設備虛擬機器 （VM）、建立初始儲存單元，並自動探索資料 LIF。您也可以選擇啟用網域名稱系統 （DNS） 以解析主機名稱、將叢集設定為使用網路時間協定 （NTP） 進行時間同步，以及啟用靜態資料加密。</block>
   <block id="50d96c70b34fb5262ad81e0fb02c79fb" category="paragraph">ASA r2 系統是基於 All Flash 系統建構的、適用於純 SAN 環境的硬體和軟體解決方案。它們與其他 ONTAP 系統（ASA、AFF 和 FAS）在 ONTAP 特性、儲存層和支援的協定方面有所不同。</block>
-  <block id="33ea2989715916c385e4c46d8f87a8cb" category="paragraph">在 ASA r2 系統上，ONTAP 軟體經過精簡，旨在提供對基本 SAN 功能的支援，同時限制非 SAN 相關特性和功能的可見度和可用度。例如，執行在 ASA r2 系統上的 System Manager 不會顯示為 NAS 用戶端建立主目錄的選項。這種精簡版的 ONTAP 被識別為 _ASA r2 personality_。運作在 ASA 系統上的 ONTAP 被識別為 _ASA ONTAP personality_。運作在 AFF 和 FAS ONTAP 系統上的 ONTAP 被識別為 _unified ONTAP personality_。ONTAP personality 之間的差異在 ONTAP 命令參考手冊（man pages）、REST API 規格以及相關的 EMS 訊息中均有說明。</block>
   <block id="0c53120c0a37aa566bcaabdc3db2c119" category="paragraph">FAS、AFF 和 ASA 系統的儲存層使用彙總作為基本儲存設備單元。一個彙總擁有儲存系統中一組特定的磁碟機。彙總會將自身擁有的磁碟機空間指派給 LUN 和命名空間的磁碟區。借助這些系統，ONTAP 使用者可以建立和修改彙總、磁碟區、LUN 和命名空間。</block>
   <block id="553d57d0cb8254eb12f678c1f627a2f5" category="paragraph">新建叢集會自動包含一個啟用了 SAN 協定的預設資料儲存設備虛擬機器。IP 資料 LIF 支援 iSCSI 和 NVMe/TCP 協定，並預設使用<block ref="6ee97f4349d48b4c53372dfd08835169" prefix=" " category="inline-code"></block>服務原則。</block>
   <block id="eba5488e745840d53a0d26874c057967" category="paragraph">ASA r2 REST API 與 FAS、AFF 和 ASA 系統通用的 ONTAP REST API 之間存在若干差異。了解這些差異將有助於您更有效地使用線上 API 參考文件。</block>
@@ -2805,7 +2670,6 @@
   <block id="7d3f86ef01fb14f6238f2174e6f30bbe" category="paragraph">如果不再需要保留儲存單元中包含的資料，請刪除該儲存單元。刪除不再需要的儲存單元可以幫助您釋放其他主機應用程式所需的空間。</block>
   <block id="2048a5e995446c4d214fc477c176a7ca" category="paragraph">如果要刪除的儲存設備單元位於具有複寫關係的一致性群組中，則必須先<block ref="741fafaed1397e844d655f1c5d2c2470" category="inline-link-macro-rx"></block>再刪除它。</block>
   <block id="cbbf553649c4d498a40f24ec3fec574f" category="paragraph">從 ONTAP 9.18.1 開始，您可以將儲存虛擬機器 （VM） 從任何標準 ASA 叢集無中斷地移轉至任何 ASA r2 叢集，以採用 ASA r2 系統針對純 SAN 環境所提供的簡化、精簡架構。</block>
-  <block id="60c73917b8d3ddecbb72e7e5762083db" category="paragraph">如果您需要修復任何問題才能為 ASA 叢集移轉做好準備，系統將顯示問題及其修正行動。請修復問題並重複預檢查，直至成功完成。</block>
   <block id="d69e3ae5fb7f4d74bb4862c599c903e5" category="paragraph">為了最佳化 ASA r2 系統的效能，您可能需要修改儲存設備單元以增加其容量、更新 QoS 原則或變更對應到這些單元的主機。例如，如果將新的關鍵應用程式工作負載新增至現有儲存設備單元，則可能需要變更套用於該儲存設備單元的服務品質 （QoS） 原則，以支援新應用程式所需的效能層級。</block>
   <block id="b129f6c71702a299debbdda5a2727959" category="paragraph">在儲存單元達到滿容量之前增加其容量，可防止因儲存單元的可寫入空間耗盡而導致的資料存取中斷。儲存單元的容量最多可增加至 128 TB，這是 ONTAP 允許的最大容量。</block>
   <block id="7913f9abc185fbbc272a0be428372b28" category="paragraph">主機 NQN 的格式應為 &lt;nqn.yyyy-mm&gt; 後接完整網域名稱。年份應等於或晚於 1970 年。總長度上限應為 223 個字元。有效的 NVMe 啟動器範例為 nqn.2014-08.com.example:string。</block>
@@ -2826,7 +2690,6 @@
   <block id="f7124b5fb6200087924759772c39094c" category="paragraph">當您初始化新的 ONTAP 9.18.1 ASA r2 叢集或將叢集升級至 ONTAP 9.18.1 時，所有新儲存單元在 12 小時寬限期後預設啟用 ARP/AI。如果您在此期間未停用 ARP/AI，則在寬限期結束後，ONTAP 將在叢集範圍內為新儲存單元啟用 ARP/AI。</block>
   <block id="e78e6c58ff6756a1c49cdcf8a0d90874" category="list-text">停用現有和新建儲存設備單元的預設能力開發：</block>
   <block id="fe0115a9991e894c8d0202acdf464c6b" category="doc">在 ASA r2 儲存設備系統上啟用基於 AI 的自主勒索軟體防護</block>
-  <block id="f286721d39ac98e7c28c07657b53bd23" category="paragraph">從 ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護 （ARP/AI） 來保護 ASA r2 系統上的資料。ARP/AI 可以偵測潛在的勒索軟體威脅，自動建立 ARP 快照，並在偵測到可疑活動時在 System Manager 中顯示警告。</block>
   <block id="06b0252287bc8fc183617b04aace4e0d" category="paragraph">ARP 透過採用用於防範勒索軟體分析的機器學習模型，來偵測 SAN 環境中不斷演變的勒索軟體形式，從而提高網路彈性。ARP 的機器學習模型已在模擬勒索軟體攻擊前後的大型檔案資料集上進行了預先訓練。這種資源密集型訓練發生在 ONTAP 之外，而產生的預先訓練模型已包含在 ONTAP 中。此模型無法存取或修改。ARP/AI 在啟用後立即處於作用中狀態；沒有 <block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
   <block id="9e30ae1056c2dbdd373f380ea70a5640" category="paragraph">如果您執行的是 ONTAP 9.17.1，則可以預設在儲存 VM 中建立的所有儲存單元上啟用 ARP/AI。這表示在儲存 VM 中建立的任何新儲存單元都將自動啟用 ARP/AI。您也可以將 ARP/AI 套用至儲存 VM 中現有的儲存單元。</block>
   <block id="5e944c0995c1fd3e38c53feb2f65de16" category="paragraph">如果您正在執行 ONTAP 9.17.1，且不想在儲存設備 VM 中的所有儲存設備單元上啟用 ARP/AI，則可以選擇要啟用的特定單元。</block>
@@ -2842,7 +2705,6 @@
   <block id="5143c94cc35b04a0bc5566cff8343060" category="open-title">從外部金鑰管理程式到內建金鑰管理程式</block>
   <block id="bafcc6110c41eeea7d61e30e2b8f75c2" category="list-text">刪除外部金鑰管理程式組態</block>
   <block id="ac442a2656f9ae887b9400940ea20224" category="paragraph">您可以使用 ONTAP 命令列介面 （CLI） 在叢集和儲存設備 VM 層級的金鑰管理程式之間移轉金鑰。</block>
-  <block id="4c5a6e56de3300786edc529694b31c59" category="paragraph">如果具備人工智慧的自主勒索軟體防護 (ARP/AI) 偵測到 ASA r2 系統上一個或多個儲存設備單元有異常活動，則會自動建立 ARP 快照以保護資料。根據您的儲存容量和業務需求，您可能需要增加或減少預設的 ARP 快照保留期間。例如，您可以增加關鍵業務應用程式的保留期間，以支援更長的資料恢復窗口，或減少非關鍵應用程式的保留期間，以節省儲存空間。</block>
   <block id="7854516f6713816258e9a83382b2019b" category="paragraph">您可以使用 ONTAP 命令列介面 （CLI） 修改預設保留期間。請參閱<block ref="02f493e3d4b2ac47f6e229a1ce055166" category="inline-link-rx"></block>以取得變更預設保留期間的步驟。</block>
   <block id="82e703fead51284be6a69d68c8a0dfb8" category="list-text">選擇 <block ref="ffae57afd5555ce06187b71385ac5fc4" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="a23bd45f74d44ac5ff58910124ab0d85" category="paragraph">從 ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護 （ARP/AI） 來保護 ASA r2 系統上的資料。如果您正在規劃異常工作負載事件，可以暫時中止 ARP/AI 分析以防止誤報。事件結束後，您可以恢復 ARP/AI 分析。</block>
@@ -2879,14 +2741,12 @@
   <block id="cd6171fad4b783d0411b357a70e025b9" category="list-text"><block ref="103126b24482021bd492866bc35410e7" category="inline-link-macro-rx"></block> 或 <block ref="397d82cf73bd33098ee8615a2f9e95f3" category="inline-link-macro-rx"></block> 來自該節點的所有儲存設備單元。</block>
   <block id="09a776ad2b6e83e1b754e6f7ebfafba3" category="inline-link-macro">從選擇性 LUN 對應（SLM）報告節點清單中刪除該節點及其 HA 合作夥伴</block>
   <block id="ae6f4389297774f1a5988f7c44c7db66" category="list-text">如果您在要移除的節點上有 SCSI 儲存設備單元（LUN），<block ref="2df19a9598282fc5088ade88859e3e79" category="inline-link-macro-rx"></block>。</block>
-  <block id="e84ba10869a172504b256da9f24370e6" category="paragraph">如果您沒有從 SLM 報告節點清單中移除節點及其 HA 合作夥伴，即使 LUN 已移至另一個節點，也可能遺失先前位於該節點上的 LUN 的存取。</block>
   <block id="f2a6c498fb90ee345d997f888fce3b18" category="inline-link-macro">刪除</block>
   <block id="f183fde1c1f409b21fc8463052ca49e5" category="inline-link-macro">移轉</block>
   <block id="39b0e3c1790c5d7e62d9065fac6449c0" category="list-text"><block ref="a406326f89a3bbce30953ad7824da1f0" category="inline-link-macro-rx"></block> 或 <block ref="7991084d788264d2f8515724f03312a6" category="inline-link-macro-rx"></block> 來自該節點的所有網路介面（LIF）。</block>
   <block id="a1d06a7b7bc7900c0dc19460251f84e1" category="list-text">資料 LIF 應移至其他節點或刪除。</block>
   <block id="eea3b175d0f6393f8f1dbd8d7bdc392e" category="paragraph">iSCSI LIF 移轉僅限於主節點或 HA 合作夥伴上的連接埠，因此必須將其刪除。</block>
   <block id="2155c348c0a765e1cbd1204177de8f6b" category="list-text">應刪除叢集間 LIF。</block>
-  <block id="a9702b3847949399c05d5c3540819764" category="paragraph">刪除叢集間 LIF 時，會顯示一則可忽略的警告。</block>
   <block id="284480082b3f00fd5851296324820748" category="list-text">叢集管理 LIF 應該移至另一個節點。</block>
   <block id="c2031112d335614e483a8e73e8f0e80e" category="inline-link-macro">刪除所有 VLAN</block>
   <block id="40f77f5330ce09a02647bfff9d2b11a1" category="list-text"><block ref="13cea30368888692a0a04edaddc87489" category="inline-link-macro-rx"></block> 在節點上。</block>
@@ -2913,12 +2773,10 @@
   <block id="b774483fd19fa8acb4407780df5d4d87" category="paragraph">當主節點不再符合資格時，叢集仲裁會從剩餘節點中選出一個作為新的主節點。如果您在 HA 配對的第一個節點上執行此步驟，則只需將該節點標記為不符合資格。在對 HA 合作夥伴重複這些步驟之前，請勿變更該合作夥伴的狀態。</block>
   <block id="0d4121decd846754730f2b08483bac20" category="paragraph">如果合作夥伴節點被選為新的主節點並持有 epsilon，則在將合作夥伴標記為不合格之前，必須將 epsilon 轉移到另一個節點。</block>
   <block id="bbbdda94513cf5e245680f89dc7113d5" category="list-text">使之前的主節點再次有資格參與叢集：</block>
-  <block id="2c3337f10b57ece73ad05be4f4418e0d" category="list-text">登入您不會從叢集中移除之節點上的遠端節點管理 LIF 或叢集管理 LIF。</block>
   <block id="cd61023a75b13d7ddd81a51dd5fd5bad" category="list-text">使用節點名稱或節點 IP 位址從叢集中移除節點：</block>
   <block id="c660a1ebe622089157d033f8e00d3b45" category="paragraph">如果您有一個混合版本叢集，並且要移除最後一個較低版本節點，請在這些命令中使用 -skip-last-low-version-node-check 參數。</block>
   <block id="6d2290891d47080550b5fed55fbf344f" category="list-text">使用節點名稱移除節點：</block>
   <block id="2935c03696a9fc643ed379f7af4ea5bf" category="list-text">使用節點 IP 位址移除節點：</block>
-  <block id="8a1cd083e3f95f4585c2102d6c2b05bf" category="paragraph">如果存在必須在移除節點之前解決的條件，則會產生故障訊息。如果發生這種情況，請解決這些條件並重新執行 <block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> 命令。</block>
   <block id="ee3943d184071eb8b00fa718413c59da" category="paragraph">節點從叢集中成功移除後會自動重新開機。</block>
   <block id="01d5d2ace7126b43c6c161bd5ee9a875" category="paragraph">重複這些步驟，從叢集中移除容錯移轉合作夥伴。</block>
   <block id="b592ef8b0e17ac31ab55e93e7c1d10e1" category="inline-link-macro">cluster remove-node</block>
@@ -2928,4 +2786,313 @@
   <block id="895863970f247b187f4fcbba3ee248c3" category="list-text">開機過程中，出現提示時，按 *Ctrl-C* 顯示開機功能表。</block>
   <block id="7d12381790ebb192cc4ad1b88892635d" category="list-text">選擇開機功能表選項 *(4) 清除組態並初始化所有磁碟* 或選項 *(9) 設定進階磁碟分割* 以清除節點的組態並初始化所有磁碟。</block>
   <block id="93fa60c43fe67fdb72ad8e06d21cbed0" category="sidebar">移除節點</block>
+  <block id="a580f6be53ea2a801ab65df090bf8ace" category="list-text">在目的地叢集上，與來源叢集建立對等關係並產生密碼短語：</block>
+  <block id="a3d2382f680e3b791745397519225a7d" category="list-text">在來源叢集上，與目的地叢集建立對等關係：</block>
+  <block id="06f49c5a38e5b65ef66afe08d7038a87" category="list-text">輸入在目的地叢集上產生的密碼短語。</block>
+  <block id="2c526fed7b72d283b14161ee4ae4784c" category="list-text">從目的地叢集執行移轉預檢查：</block>
+  <block id="6787d16ca8e09943af8dc735595af4c7" category="paragraph">若移轉前需要解決任何問題，系統會顯示問題及修正行動。請修復問題並重複預檢查，直至成功完成。</block>
+  <block id="418046fcbf0efa87be847a3dbab2e7d2" category="list-text">從目的地叢集，開始儲存 VM 移轉：</block>
+  <block id="6661c044aaa9a47cc687f59a9d3c2490" category="paragraph">若要停用自動切換，請使用 <block ref="c35ffd3cc8ec242fe771b6c8342ff18f" prefix=" " category="inline-code"></block> 參數。若要停用自動移除來源儲存設備 VM，請使用 <block ref="dc1b581de95515eb75905f1d6f9a0871" prefix=" " category="inline-code"></block> 參數。</block>
+  <block id="be468251113b40606526ec37d1188177" category="paragraph">如果啟用自動切換，移轉完成後，*狀態* 將顯示為 *移轉完成*。如果停用自動切換，*狀態* 將顯示為 *準備清理來源*。</block>
+  <block id="e73b6ae7677acae62819e943a776d27e" category="doc">儲存設備 VM 移轉後手動切換用戶端</block>
+  <block id="da3012d249dca6614fcb4cb521e91417" category="paragraph">在叢集間儲存設備虛擬機器移轉期間，用戶端 I/O 會切換到目的地叢集，來源叢集上的儲存設備虛擬機器將自動移除。如果您選擇在移轉期間停用來源儲存設備虛擬機器的自動切換和移除，則需要在移轉狀態達到 *準備清理來源* 後手動執行這些步驟。</block>
+  <block id="6ec3483ccc1bc0657b432f0e4534bc69" category="paragraph">如果在儲存設備 VM 的叢集間移轉期間停用自動用戶端切換，則在移轉關係準備好進行切換後，請手動執行切換，以便目的地儲存設備 VM 可以向用戶端提供資料。</block>
+  <block id="d494959cf5c867d3ac72da9d7a4ab537" category="paragraph">從目的地叢集執行此工作。</block>
+  <block id="d352d9e490f1819c976940f66dc0b79f" category="list-text">手動執行用戶端切換：</block>
+  <block id="90fa7b560f077b77f92a3c1cbfa64c08" category="paragraph">資料正從目的地叢集上的儲存 VM 提供給您的用戶端。</block>
+  <block id="ea71de5b3274729905d79afde72310f0" category="paragraph">您現在已準備好從來源叢集移除儲存 VM。</block>
+  <block id="87a07aa5b25b8e387e0a3558e376d9f8" category="section-title">移轉後手動移除儲存 VM</block>
+  <block id="d87df78aa33b076cea925745ce01cfce" category="paragraph">如果在叢集間儲存設備 VM 移轉期間停用自動來源清理，則在移轉完成後，請從來源叢集移除儲存設備 VM 以釋放儲存空間。</block>
+  <block id="8237f2cd95180ae62c4846769b3fcc47" category="paragraph">您的用戶端應該從目的地叢集提供資料。</block>
+  <block id="a914afbb9a1a17739952e3969cfab650" category="list-text">從來源叢集，驗證來源儲存設備虛擬機器的狀態是否為 *準備進行來源清理*：</block>
+  <block id="2b8e6d8baca329399da3f9bb52e7379b" category="list-text">移除來源儲存設備 VM：</block>
+  <block id="8f6bf63cf8fdf7dca1d8a34b120407c6" category="paragraph">來源叢集上的儲存 VM 已移除。</block>
+  <block id="67ffd47e810fb3fabfe399e0c5ebb5ce" category="list-text">前往 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
+  <block id="d24a33ded890d9bca6f43b41d690b0b7" category="list-text">使用組態檢視確認您的新磁碟機是否受支援，並找出正確的安裝插槽。</block>
+  <block id="22fb6b025b1558293e86a321bb58a6dd" category="paragraph">對每個磁碟機重複此程序中的步驟。</block>
+  <block id="799133cd8ff6affc861d8f925a70ef8c" category="list-text">如果您的節點已設定為磁碟機自動指派，請等待 ONTAP 將新磁碟機指派給節點。如果您的節點未設定為磁碟機自動指派，或者您偏好手動操作，請手動指派磁碟機。</block>
+  <block id="94f4b9226c8fa8992d9c339b413f7727" category="section-title">修改憑證到期警示</block>
+  <block id="286fc0607a24296254d2d0673c9e9027" category="paragraph">從 ONTAP 9.20.1 開始，System Manager 會在叢集或儲存設備虛擬機器（VM）憑證到期前 30 天顯示儀表板健全狀況警報。此警報每日更新，顯示憑證剩餘到期天數。您可以將預設警報臨界值修改為 0 到 90 天之間的任意值，也可以停用警報以完全不顯示任何警報，或抑制已過期憑證的警報，同時繼續接收即將到期憑證的警報。</block>
+  <block id="ad680ca12b8a916c7de0c844b7aa03e0" category="list-text">選擇*用戶端/伺服器憑證*。</block>
+  <block id="60087af7b1668ff8de9110c3333bb745" category="list-text">更新過期警告臨界值、停用或抑制此功能：</block>
+  <block id="2dfdd28e04f7ea0eab42a5458517a243" category="list-text">將*警告臨界值*更新為 0 到 90 之間的任意天數。</block>
+  <block id="ab65fab2a09df41751a7e2eec30c37bb" category="list-text">選取 *停用過期警告* 以停用警示。</block>
+  <block id="3f055304cb48936f2ec94acb1e9f52fb" category="list-text">選取 *抑制過期警示* 以隱藏已過期憑證的警示，同時繼續接收即將過期的警示。</block>
+  <block id="aae052e06f99c15cc28f83050bf84fba" category="paragraph">產生憑證簽署請求（CSR）以建立可用於產生公開憑證的私鑰。</block>
+  <block id="256935b583bebce12708ac542ec28966" category="list-text">如果您要變更 CSR 預設值、選擇擴充金鑰用法，或新增主旨備用名稱，請選擇 <block ref="ca3389cd4e212742391c26eb7cfeb92f" category="inline-image-macro-rx" type="image"></block>；然後進行所需的更新。</block>
+  <block id="c9175b7f13be17966b3ccf17d1ee9c2a" category="paragraph">您已產生可用於產生公開憑證的 CSR。</block>
+  <block id="079df5c5d27242c725d4f92b079c395b" category="list-text">選擇要續約或刪除的受信任憑證授權單位。</block>
+  <block id="dbc51ec21340275925b4e8ae10bd990a" category="summary">建立 LIF 以存取 ASA r2 上儲存設備單元中的資料。使用子網路簡化 LIF 建立，並使用 IPspaces 提供安全的管理與路由。</block>
+  <block id="e2e2dc27211e953234b754978f2e9ab0" category="paragraph">子網路可讓您在建立 LIF（網路介面）時分配特定的 IPv4 或 IPv6 位址區塊。子網路簡化了 LIF 的建立過程，讓您為每個 LIF 指定子網路名稱，而無需指定特定的 IP 位址和網路遮罩。</block>
+  <block id="b520fa82a45e95fc51c97a8cc4d2d5da" category="paragraph">LIF （網路介面）是與實體或邏輯連接埠關聯的 IP 位址。在您希望用於存取資料的連接埠上建立 LIF。儲存虛擬機器透過一個或多個 LIF 向用戶端提供資料。在 ASA r2 系統上，您可以建立 IP、FC 和 NVMe/FC LIF。預設情況下，IP 資料 LIF 可以同時處理 iSCSI 和 NVMe/TCP 流量。您必須為 FC 和 NVMe/FC 流量建立分隔的資料 LIF。</block>
+  <block id="9a4a70d603e4be627411acebc00ba995" category="paragraph">如果某個元件發生故障，LIF 可以容錯移轉或移轉到不同的實體連接埠，從而避免網路通訊中斷。從 ONTAP 9.19.1 開始，IP LIF 預設支援自動 LIF 容錯移轉。啟用自動 LIF 容錯移轉後，如果發生儲存設備容錯移轉，LIF 將自動從其主節點或連接埠移轉到其 HA 合作夥伴節點或連接埠，並在容錯移轉完成後返回。或者，如果連接埠變得不健全，LIF 將自動移轉到其目前主節點中健全的連接埠，並在該連接埠恢復健全後返回到其原始連接埠。</block>
+  <block id="28ff67aa3ff3206dd5f58a85762d9bac" category="list-text">在每個節點上建立兩個 iSCSI LIF，一個用於架構 A，另一個用於架構 B。這為您的 iSCSI 流量提供備援和負載平衡。在以下範例中，總共建立了四個 iSCSI LIF，每個節點上兩個，每個架構一個。</block>
+  <block id="f91c07a9a30c271f5239a811668dacec" category="paragraph">ONTAP 使用網路時間協定（NTP）來同步叢集內的時間。變更 LIF IP 位址後，您可能需要更新 NTP 組態以防止同步故障。如需詳細資訊，請參閱知識庫文章 <block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
+  <block id="5534264a81d62ae2a18abe760f59371d" category="paragraph">連接埠只能屬於一個廣播網域。若要變更連接埠的廣播網域，請將該連接埠從其現有廣播網域重新指派至新的廣播網域。</block>
+  <block id="3473dd80d05c5f235b75b37dceb45e27" category="paragraph">如果您沒有從 SLM 報告節點清單中移除節點及其 HA 合作夥伴，即使 LUN 已移至另一個節點，也可能失去對先前位於該節點上的 LUN 的存取。</block>
+  <block id="02e482d5d92ad5a818ced568daa01164" category="paragraph">刪除叢集間 LIF 時，您可以忽略出現的警告。</block>
+  <block id="7e74929536a8ac4b622a167a83a05008" category="list-text">登入您不會從叢集中移除之節點上的遠端節點管理 LIF 或叢集管理 LIF。</block>
+  <block id="6c57158f46ff63ab69f9419ff8d3ba8e" category="paragraph">如果存在必須先解決才能移除節點的情況， ONTAP 將產生故障訊息。如果發生這種情況，請解決這些情況並重新執行 <block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="a1994e02c95ab28b5ba091ebb41a976a" category="paragraph">回復 ONTAP 叢集會造成中斷。您必須在回復期間將叢集離線。在沒有技術支援協助的情況下，您不應回復正式作業叢集。您可以在沒有協助的情況下回復新的或測試叢集。如果新的或測試系統的回復失敗，或者回復成功但您對正式作業環境中的叢集效能不滿意，請聯絡技術支援以尋求協助。</block>
+  <block id="326e7abffa161e9e2caa5b4cfd548ade" category="admonition">在升級至 ONTAP 9.17.1 或初始化新的 ONTAP 9.17.1 ASA r2 叢集 14 天後，<block ref="4cd38ae4261711af85cb36766d4082e0" category="inline-link-macro-rx"></block> 預設會啟用。啟用動態空間平衡後，您無法在 ASA r2 系統上從 ONTAP 9.17.1 回復。</block>
+  <block id="8e57c461cb577ecb9172e44a6ad0b82e" category="paragraph">使用 _基於複製的工作負載重新平衡_ 時，如果儲存可用度區內出現儲存使用率不平衡的情況， ONTAP 會自動將導致不平衡的儲存設備單元複製到具有更大可用空間的儲存可用度區。如果目的地儲存可用度區沒有足夠的可用空間， ONTAP 將不會執行任何平衡行動。基於複製的工作負載重新平衡僅適用於執行 ONTAP 9.16.1 的 ASA r2 系統，並且在這些系統上預設為啟用。在 ONTAP 9.17.1 及更新版本中，它已被動態空間平衡所取代。</block>
+  <block id="bdad4805babf904155be6db217975f56" category="paragraph">根據您的更新選擇，建議的更新將自動下載並安裝到您的 ASA r2 系統。</block>
+  <block id="1f88298fa42a963d02f688eb662926a2" category="paragraph">您可以選擇自動下載並安裝叢集上的儲存設備韌體、SP/BMC 韌體和系統檔案的建議更新，或自動取消建議更新。若要手動控制安裝或取消，請選擇在有建議更新可用時接收通知，然後自行安裝或取消更新。</block>
+  <block id="d671c4f818aa48c5773977757a1cea44" category="paragraph">若要在下載和安裝之前檢視建議的更新，請停用自動更新並手動更新韌體。</block>
+  <block id="c7fe926934624ea8bd7973b41b055aad" category="paragraph">IdP 系統顯示驗證畫面。</block>
+  <block id="f88b8dd214c3126538d79fc22cec7844" category="paragraph">System Manager 會在主機群組名稱旁顯示主機連線功能狀態：</block>
+  <block id="a7a071a7c6aec86d40f2d9e0dad982fa" category="list-text">*OK*：表示所有啟動器都已連接至兩個節點。</block>
+  <block id="cecba92566203cd0b83db9e525ecbea4" category="paragraph">在主機上進行更新以修正連線問題。ONTAP 將每 15 分鐘重新檢查連線狀態。</block>
+  <block id="74dcc29ce7c46de4333cc2e115963f82" category="list-text">對於 *雲端* 中介，請輸入組織 ID、用戶端 ID 和用戶端機密。對於 *本地部署* 中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。</block>
+  <block id="20f2e5444dad6c21b49349ded17bcbda" category="list-text">如果您使用的是自簽憑證，請複製<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>檔案的內容並將其貼上至 *憑證* 欄位，或選取 *匯入* 以導覽至<block ref="9e1f34d274d54e077ab71c2c0fe0badd" prefix=" " category="inline-code"></block>檔案並匯入憑證資訊。</block>
+  <block id="47074bc4c712a0a00f66ac05b5866bde" category="paragraph">初始化中介器後，您可以<block ref="972d16674ae44824ac2ebd5c1f400dda" category="inline-link-macro-rx"></block>在次要站台建立資料複本，並讓您的主機應用程式在發生災難時自動且透明地進行容錯移轉。</block>
+  <block id="af19ecba891d072b458addfaa34ffb64" category="paragraph">設定 SnapMirror 作用中同步，以在次要站台建立資料複本，並讓您的主機應用程式在發生災難時自動且透明地進行容錯移轉。</block>
+  <block id="eed17d6d059c48f523aa780620bbbb57" category="inline-link-macro">使用 ONTAP tools for VMware vSphere 設定 SnapMirror 作用中同步</block>
+  <block id="946c3cb9fd30df587ff15f89d9688eff" category="paragraph">如果您使用 iSCSI 或 FC 協定，並使用 ONTAP tools for VMware vSphere，您可以選擇<block ref="7c0c9b12e03ec848945938793bddb2a5" category="inline-link-macro-rx"></block>。</block>
+  <block id="c30b455510b068e5246fb85debb3b554" category="list-text">如果您要建立非統一對稱作用中/作用中組態，請選擇 *目的地設定*，然後輸入您在開始此程序之前建立的新目的地一致性群組的名稱。</block>
+  <block id="5e4620b4de87c321c5931d875b60f11d" category="paragraph">從 ONTAP 9.18.1 開始，您可以在建立具有新儲存設備單元的一致性群組時設定快照保留百分比並啟用自動快照刪除。快照保留是指儲存設備單元中專為快照保留的空間量。當快照保留與自動快照刪除一起設定時，如果快照使用的空間超過快照保留，較舊的快照將會自動刪除。如果在父一致性群組上啟用了快照保留和自動快照刪除，則所有現有的子一致性群組也會啟用這些功能。如果新增了子一致性群組，它們不會繼承父群組的快照保留和快照刪除設定。</block>
+  <block id="d19dc7d85270ba11b2e1bb8d1e46b821" category="paragraph">您可以隨需建立快照，或根據 <block ref="83bfa2dc5e6407223dca634141b43309" category="inline-link-macro-rx"></block> 定期自動建立快照。快照原則和排程會指定何時建立快照、要保留多少份複本、如何命名，以及如何標記它們以進行複寫。例如，系統可以每天凌晨 12:10 建立一個快照，保留最近的兩份複本，將它們命名為「daily」（附加時間戳記），並將它們標記為「daily」以進行複寫。</block>
+  <block id="10b938f1d094d46a3d015491d72578dc" category="paragraph">對等關係定義了網路連線，使叢集和儲存設備虛擬機器（VM）能夠安全地交換資料。在不同叢集上的儲存設備 VM 之間建立對等關係，以使用 SnapMirror 啟用資料保護和災難恢復。</block>
+  <block id="89691b5f12ca28f45189bdb3dbaa646b" category="list-text">在 *Storage VM 對等端點* 下，選取 *新增 Storage VM 對等端點*。</block>
+  <block id="25d92f2b18559e48369be62b229bfeb2" category="summary">依照與其他 ONTAP 系統相同的工作流程，在您的 ASA r2 系統上安裝 ONTAP Mediator。</block>
+  <block id="23dd2bdbda51ec8ef2b211d7562f0ec8" category="paragraph">若要安裝 ONTAP Mediator，請依照 <block ref="282bbe8a51966ce59628339a2fff99b4" category="inline-link-macro-rx"></block> 操作。</block>
+  <block id="4334fb3e9bdfe14c48989b5015ed2416" category="summary">為一致性群組新增快照保護，以保護其儲存設備單元中的資料，或在不再需要時移除快照保護。</block>
+  <block id="40dab8442f0ad98de381acbefcf8f11c" category="paragraph">當您將快照資料保護新增至一致性群組時，ONTAP 會根據預先定義的排程，定期為一致性群組建立本機快照。</block>
+  <block id="1fc24b5bf6019eb64aee481a3013db2f" category="list-text">（選用）在 *SnapMirror 標籤* 下，輸入 SnapMirror 標籤。</block>
+  <block id="a738496e978303d7e159f0c947ec08b6" category="summary">透過在一致性群組中新增儲存設備單元或從中移除儲存設備單元來增加或減少一致性群組的大小。</block>
+  <block id="bb9521cf63b052117097cae8b324cca0" category="paragraph">如果建立多個單元，每個單元將具有相同的容量和相同的主機作業系統。若要為每個單元分配不同的容量，請選取 *新增不同的容量*。</block>
+  <block id="012024ed0d609abb8ad882f97fe47cd0" category="summary">當您不再需要將其儲存設備單元作為單一單元來管理時，請刪除 ASA r2 系統上的一致性群組。</block>
+  <block id="64a68581a8de22e18491775723aa0eb5" category="paragraph">如果您執行的是 ONTAP 9.16.1，且要刪除的一致性群組處於 SnapMirror 作用中同步關係中，則必須在刪除一致性群組之前<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>。在 ONTAP 9.17.1 及更新版本中，修改一致性群組之前不需要刪除此關係。</block>
+  <block id="6974b636d25e5c1932ad807e6afebdcf" category="paragraph">階層式一致性群組可讓您將個別的快照原則套用至每個子一致性群組，並透過複寫父一致性群組，將所有子一致性群組的快照作為單一單位複寫至遠端叢集。這簡化了複雜資料結構的資料保護與管理。例如，假設您建立了一個名為<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>的父一致性群組，其中包含兩個子一致性群組：用於應用程式資料的<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>和用於應用程式記錄的<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>。每 15 分鐘會建立一次<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>的快照，每小時會建立一次<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>的快照。父一致性群組<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>具有 SnapMirror 原則，每 24 小時會將<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>的快照複寫至遠端叢集。父一致性群組<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>會作為單一單位進行代管，而子一致性群組則作為分隔的單位進行代管。</block>
+  <block id="e2cb044db4b2872a6b79cab016924638" category="summary">在 ASA r2 系統上，您可以提升、降級、建立和分離階層式一致性群組，以管理多個儲存設備單元的快照和複寫。</block>
+  <block id="71099d51db1698ceb127b512e167e113" category="paragraph">如果您執行的是 ONTAP 9.16.1 ，且要降級的一致性群組處於 SnapMirror 作用中同步關係中，則必須<block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>，才能降級該一致性群組。如果您執行的是 ONTAP 9.16.1 ，且一致性群組處於非同步複寫關係中，則必須<block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>，才能降級該一致性群組。在 ONTAP 9.17.1 及更新版本中，降級一致性群組之前，不需要刪除 SnapMirror 作用中同步關係或中斷非同步關係。</block>
+  <block id="6ecc9bdb9cde40b9f72510969771f6f6" category="list-text">選取 *降級*。</block>
+  <block id="e8e4562de6734af0ec366022cd8b27ca" category="paragraph">如果您執行的是 ONTAP 9.16.1，且要分離的一致性群組處於 SnapMirror 作用中同步關係中，則必須先 <block ref="33d9216c15eaaa9769b5c96c29eb8a4f" category="inline-link-macro-rx"></block>，才能分離一致性群組。如果您執行的是 ONTAP 9.16.1，且一致性群組處於非同步複寫關係中，則必須先 <block ref="34346ff5cca42944a4ed431b70afdf69" category="inline-link-macro-rx"></block>，才能分離一致性群組。在 ONTAP 9.17.1 及更新版本中，分離一致性群組之前，不需要刪除 SnapMirror 作用中同步關係或中斷非同步關係。</block>
+  <block id="5da9a19ce64c5811bf87f35beeda1011" category="summary">建立和管理快照原則、原則排程和複寫原則，以自動保護 ASA r2 系統上的一致性群組。</block>
+  <block id="dc8155be65705a6c7c2ea385bf8162d5" category="paragraph">保護原則排程定義了快照原則的執行頻率。您可以建立排程，根據天數、小時數或分鐘數以固定間隔執行。例如，您可以建立每小時執行一次或每天只執行一次的排程。您也可以建立在每週或每月特定日期的特定時間執行的排程。例如，您可以建立在每個月 20 日凌晨 12:15 執行的排程。</block>
+  <block id="1ac5213e3e0ad49e95a2fdf803c7fbbb" category="paragraph">定義各種保護原則排程可讓您有靈活度來增加或減少不同應用程式的快照頻率。這可讓您為關鍵工作負載提供比較不關鍵的工作負載更佳的保護，並降低資料遺失的風險。</block>
+  <block id="aa8f6cf7835679536111feb8a488b76a" category="paragraph">現在您已建立原則排程，您可以在原則中使用它來定義建立快照的時間。</block>
+  <block id="a84d8c5748489da3c2bed0a562f7ee6e" category="paragraph">建立快照原則後，您可以將其套用至一致性群組。ONTAP 會根據您在快照原則中設定的參數，為一致性群組建立快照。</block>
+  <block id="85697ed4ff4027cfc2bf1a482b569210" category="paragraph">編輯快照原則可修改原則名稱、最大快照數量或 SnapMirror 標籤。刪除原則可將其及其關聯的備份資料從叢集中移除。停用原則可暫時停止建立或傳輸該原則指定的快照。</block>
+  <block id="e8a745fad6837562c1847e88b3f5abd4" category="summary">選擇預先定義的資料保護原則，將 ASA r2 叢集資料複寫到遠端站台，包括非同步原則和 SnapMirror 作用中同步原則。</block>
+  <block id="eb5ea107a483ff75da1d0dbf9bc2b6d7" category="paragraph">從 ONTAP 9.20.1 開始，您可以使用支援的非同步資料保護原則，透過現有的 FC 架構設定後端 SnapMirror 非同步複寫。下列預先定義的保護原則支援後端 FC 複寫：</block>
+  <block id="46d99c83b961ffb6fb02a8a6d0ca0e4e" category="paragraph">從 ONTAP 9.19.1 開始， SnapMirror active sync 支援在對稱式作用中/作用中組態的 AIX 主機上進行透明應用程式容錯移轉。SnapMirror active sync 可將應用程式透明地容錯移轉至次要複本，讓業務服務在發生完全站台故障時仍能繼續運作。</block>
+  <block id="9f68c4f24507d36afbea0c64cbf24305" category="paragraph">您必須執行 ONTAP 9.19.1 或更新版本。如果您執行的是 ONTAP 9.18.1 或更早版本，則需要功能原則變更要求（FPVR），以取得 SnapMirror 主動同步的 AIX 主機支援。</block>
+  <block id="07e5e1e25cc033e9e21e6dcf1cdfa356" category="paragraph">重新設定 ONTAP Mediator 或 ONTAP Cloud Mediator，以使用第三方憑證而非自我簽署憑證。基於安全性考量，您的組織可能偏好或要求使用第三方憑證。</block>
+  <block id="7348d70f8bead4e260fc7e6a42d0a93d" category="list-text">對於 *雲端* 中介，請輸入組織 ID、用戶端 ID 和用戶端機密。對於 *本地部署* 中介，請輸入 IP 位址、連接埠、中介使用者名稱和中介密碼。</block>
+  <block id="cf4c0be9886fa0bb1738e39d32a5ec57" category="summary">當 ASA r2 系統上的資料遺失或損壞時，從本機或遠端快照還原一致性群組或儲存設備單元。</block>
+  <block id="ee4113bbbaaf4ed022a72aae38361117" category="paragraph">如果受快照保護的一致性群組或儲存設備單元中的資料遺失或損壞，請從快照還原資料，將資料還原至建立快照的時間點。</block>
+  <block id="1b26f108fcd3e6e01b002aae7bce724c" category="list-text">選擇要還原的*來源*；然後選擇<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="fa8a5be0398a3d71380b7d3b90f9492b" category="paragraph">當您需要進行需要中斷的變更時，請中斷非同步複寫關係。例如，如果您執行的是 ONTAP 9.16.1，並且想要增加非同步複寫關係中一致性群組的大小，請在修改一致性群組的大小之前中斷該關係。</block>
+  <block id="1be9ef3f72d61759fbb4d7f60ed0c9a0" category="admonition">SnapMirror 作用中同步需要叢集對等端點關係使用預設 IPspace。不支援自訂 IPspace。</block>
+  <block id="b40b3f734a5568fd65c3e77f317b485d" category="list-text">在包含要停止複寫之主機群組的主機旁邊，選取 <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選取 *編輯*。</block>
+  <block id="d0878772b5e0636191e6fd519512dc1d" category="summary">對 SnapMirror 作用中同步關係執行計畫性容錯移轉，以測試容錯移轉程序或對主要站台執行維護。</block>
+  <block id="94bf89c9cb6814f9c0e041f5b31b7083" category="summary">若要準備在 ASA r2 系統上設定 SnapMirror 作用中同步，請先審查先決條件、主機作業系統支援、物件限制和 NVMe 限制。</block>
+  <block id="cda8819719bafed3fa61f40e5b1dc233" category="paragraph">在 ASA r2 系統上設定 SnapMirror 作用中同步之前，請審查組態先決條件，確認主機作業系統的支援，並檢查可能影響組態的物件限制。</block>
+  <block id="bd75c28c4d7a45b5c43f2a3e6c197a63" category="paragraph">ASA r2 系統對 SnapMirror 作用中同步的支援因 ONTAP 版本和主機協定而異。</block>
+  <block id="3cc009c3b8c36051eb9bfab917a653a3" category="paragraph">在具有 NVMe 主機的 ASA r2 系統上設定 SnapMirror 作用中同步之前，請審查適用的 NVMe 協定限制。</block>
+  <block id="6c054e36c0f0ae58f914f8c60193af37" category="list-text">僅適用於雙節點叢集</block>
+  <block id="0cab0be15bb893701803f4ad934aea13" category="paragraph">完成啟用 SnapMirror 作用中同步的準備工作後，<block ref="04df4bf09ed66e3358600cfc6c24fb99" category="inline-link-macro-rx"></block>。</block>
+  <block id="bf73ec44d846e14bc3e6f21b15639116" category="summary">在您的 ASA r2 叢集發生非計畫性容錯移轉後，重新建立 SnapMirror 作用中同步關係。</block>
+  <block id="7d41e4207b27b21bd862823e2bba70e2" category="doc">在 ASA r2 上發生非計畫性容錯移轉後重新建立 SnapMirror 作用中同步</block>
+  <block id="f5bcb3a4f1819e4d137ad0648fb4b8eb" category="paragraph">在發生非計畫性容錯移轉後，重新建立 SnapMirror 作用中同步關係，以恢復原始來源叢集上的作業。在 ASA r2 系統上，SnapMirror 作用中同步支援對稱的作用中/作用中組態。在對稱的作用中/作用中組態中，兩個站台都可以存取本機儲存設備以進行作用中 I/O。如果來源叢集發生故障或是隔離的， ONTAP Mediator 會觸發自動非計畫性容錯移轉（AUFO），並從目的地叢集提供所有 I/O，直到來源叢集恢復為止。</block>
+  <block id="55fa0e255052fbae965747d7ed7217b3" category="list-text">當不中斷營運的操作（例如儲存設備單元移動）正在進行時，您無法啟動計畫性容錯移轉。</block>
+  <block id="e30c022d66003ecd07a355f793f0383e" category="paragraph">ONTAP SnapMirror 作用中同步資料保護可讓業務服務即使在發生完全的站台故障時仍能繼續運作，支援應用程式使用次要複本透明地進行容錯移轉。您不需要手冊介入或自訂指令碼，即可透過 SnapMirror 作用中同步觸發容錯移轉。</block>
+  <block id="3959d414ecb8e4a1d989f23fb92323b6" category="paragraph">雖然在 ASA r2 系統上設定 SnapMirror 作用中同步的 System Manager 程序，與執行統一 ONTAP 特性的 NetApp FAS、AFF 和 ASA 系統不同，但 SnapMirror 作用中同步的需求、架構和運作是相同的。<block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
+  <block id="be04023ce9ba7126321436de82ba154a" category="inline-link-macro">設定 ONTAP Mediator 或 ONTAP Cloud Mediator</block>
+  <block id="6e91c2174cf33d3c04adde7bd3cc34b3" category="paragraph">您必須 <block ref="bff0098eebc719458a54f521d0849865" category="inline-link-macro-rx"></block>，才能開始將其與 SnapMirror 作用中同步搭配使用，以進行叢集監控。</block>
+  <block id="433315bca1e28048a26ad709632edb76" category="summary">使用 ONTAP System Manager 將資料複製到遠端位置以進行備份和災難恢復。建立複寫原則和關係以設定快照複寫。</block>
+  <block id="b9d21daf9ccdb4abc3a836f259949839" category="paragraph">若要設定快照複寫，請在您的 ASA r2 系統和遠端位置之間建立複寫關係。複寫關係由複寫原則控制。叢集設定期間會建立一個預設原則，用於複寫所有快照。您可以使用預設原則，也可以建立新原則。</block>
+  <block id="fd82e44fc4cc77a50e3602f70ebbeff6" category="inline-link-macro">學習如何設定 ONTAP 系統後端以進行 FC 複寫</block>
+  <block id="c1c39dd2279849d83b7174989b66d76f" category="paragraph">從 ONTAP 9.20.1 開始，您可以透過現有的 FC 架構設定後端 SnapMirror 非同步複寫。若要這麼做，您的 ONTAP 系統後端必須設定為 FC 複寫，而且 FC 架構與叢集間 IP 網路都必須正常運作。複寫資料可以透過 FC 架構傳輸，但叢集通訊和複寫管理功能需要叢集間 IP 網路。<block ref="d53671ce523eae4c87fbb11eb829d19c" category="inline-link-macro-rx"></block>。</block>
+  <block id="46173c758c4491d98ab684f2364d8c2c" category="paragraph">在 ONTAP 9.20.1 及更高版本中：</block>
+  <block id="96f2e6d4281d53a3356d6445a7308509" category="inline-link-macro">了解哪些預先定義的複寫原則支援後端 FC 複寫</block>
+  <block id="bafd4db768a0eeb2d9186e1e4efe1c93" category="list-text">若要使用後端 FC 複寫建立 SnapMirror 關係，您必須使用受支援的預先定義非同步資料保護原則，並選取 FC 傳輸協定。後端複寫預設使用 IP 協定。<block ref="04548fffc4488847c3927d91e98f39c4" category="inline-link-macro-rx"></block>。</block>
+  <block id="1cbfb724ceee46cd879df7c7cfbe7dca" category="inline-link-macro">中斷</block>
+  <block id="d9dd53243597302ef6158fc043a3cbd3" category="list-text">建立複寫關係後，若要變更選取的傳輸協定，您必須 <block ref="a1538795f53f8c9072fad637aabc7f23" category="inline-link-macro-rx"></block> 該關係，然後使用所需的傳輸協定重新建立該關係。</block>
+  <block id="887cbd3c0838b189e89fb6946aa2bead" category="list-text">在 ONTAP 9.20.1 及更高版本中，選擇複寫關係的傳輸協定。</block>
+  <block id="35477591d813ae2866fe99b13abfde3b" category="paragraph">您必須選擇一個 _vault_ 複寫原則。在 ONTAP 9.20.1 及更高版本中，您必須選擇 _MirrorAndVault_ 原則來設定後端 FC 複寫。</block>
+  <block id="6118d1cb87a1a9c2223d121294788213" category="list-text">在 ONTAP 9.20.1 及更新版本中，選擇傳輸協定。</block>
+  <block id="37eeed3a65f1247bcbe5daf1d17503fa" category="paragraph"><block ref="455b160b088bc3469661f872d4faa08e" category="inline-link-macro-rx"></block>。</block>
+  <block id="e2074a150a26a194906e800779f56369" category="summary">修改儲存設備單元或儲存 VM 上的 Snapshot 保留，並啟用自動快照刪除，以防止快照佔用用於使用者資料的空間。</block>
+  <block id="744d9261598a97a7e09715d53f9643b9" category="paragraph">若要為儲存設備虛擬機器中的所有儲存設備單元設定相同的 Snapshot 保留，請將所需的百分比套用至該儲存設備虛擬機器。將 Snapshot 保留套用至儲存設備虛擬機器後，它會套用至該儲存設備虛擬機器內所有新建立的儲存設備單元。它不會套用至您修改設定之前建立的儲存設備單元。</block>
+  <block id="7d017c4943f790af41638cc68c05c78c" category="list-text">在 *原則* 下，在 *快照* 旁邊，選取 <block ref="ea08f7a0a99302dbbfd0c8a2575314f3" category="inline-image-macro-rx" type="image"></block>；然後選取 *設定/編輯 Snapshot 保留預設值*。</block>
+  <block id="dbaaa7ba0fc9843a36ef304b84f49da8" category="summary">了解 Snapshot 保留如何為快照預留儲存設備單元空間，以及當 ASA r2 系統上的使用量超過保留時，自動快照刪除功能如何刪除較舊的快照。</block>
+  <block id="d44d8fb5808bbfe0ae1003050f74ced5" category="paragraph">Snapshot 保留是依儲存設備單元總大小的百分比來設定。例如，如果儲存設備單元為 50 GB，且您將 Snapshot 保留設為 10%，則為快照保留的空間為 5 GB。當快照使用的空間成長到 5 GB 時，系統會自動刪除較舊的快照，以便為新快照騰出空間。如果儲存設備單元大小增加到 100 GB，則 Snapshot 保留會增加到 10 GB。您可以設定的最大 Snapshot 保留為 200%。如果您的儲存設備單元成長到最大容量 128 TB，則 200% 的 Snapshot 保留可讓您建立兩個完整的快照。</block>
+  <block id="7df27063e7aa4ef6d77eca0f9483a162" category="summary">了解 ONTAP 的哪些常見功能（包括加密、驗證、連網、SAN 協定和儲存效率）在 ASA r2 系統上以相同的方式運作。</block>
+  <block id="6645e0ebb53d4b6e68be7936af3a8039" category="section-title">AutoSupport</block>
+  <block id="af94719ea883e7b0379061940658c822" category="paragraph">從 ONTAP 9.20.1 開始，如果 AutoSupport 設定為 SMTP 協定而非 HTTPS 協定、如果 AutoSupport 已停用但仍設定了客戶與合作夥伴電子郵件收件者，以及如果 AutoSupport 傳輸因為 DNS 問題而失敗，System Manager 會顯示 AutoSupport 警報。</block>
+  <block id="35db648f0084e285481e1f5897098f5d" category="inline-link-macro">進一步了解 AutoSupport</block>
+  <block id="3ada5c5a0c0e5a5eb54676b45fa34352" category="paragraph"><block ref="4a8107975d314b33cf3a378e0c442832" category="inline-link-macro-rx"></block>。</block>
+  <block id="c1adabbd565037e691cdf47a5da7c2b4" category="paragraph">從 ONTAP 9.20.1 開始，當您在資料儲存設備虛擬機器上啟用外部金鑰管理程式時， ONTAP 會自動將該儲存設備虛擬機器的 Volume 加密金鑰從管理範圍的金鑰管理程式移轉到新的資料儲存設備虛擬機器金鑰管理程式。這簡化了向外部金鑰管理的轉換，並省去了標準工作流程中分隔的手冊移轉步驟。</block>
+  <block id="daca817d086815583b40c047fe60da50" category="paragraph">指派給系統管理員的角色決定了系統管理員可以執行哪些功能。System Manager 為叢集管理員和儲存 VM 管理員提供預先定義的角色。您可以在建立系統管理員帳戶時指派角色，也可以稍後指派不同的角色。</block>
+  <block id="28fd02d1a448a002647597585f410a98" category="section-title">FC-SP-3 驗證和加密</block>
+  <block id="4d64a062ddf6b93d4196005aff84cdfe" category="paragraph">從 ONTAP 9.20.1 開始， ONTAP 支援在配備 ASA r2 系統的 Broadcom 安全 HBA 上使用 Fibre Channel Security Protocol 3 （FC-SP-3）驗證和加密。FC-SP-3 支援可實現硬體層級的端對端加密和裝置驗證，以保護 FC 和 NVMe/FC SAN 主機與 ONTAP 儲存設備系統之間傳輸中的資料，同時符合 T11 Fibre Channel 安全性標準。</block>
+  <block id="ae99e46b2f680219691f0688af339bc4" category="inline-link-macro">了解 FC-SP-3 驗證和加密</block>
+  <block id="9e4b5bca3ba1006921cde73ffe243921" category="list-text"><block ref="4c6d51f668e8b67407dd1b5a418982d2" category="inline-link-macro-rx"></block>。</block>
+  <block id="37c43820ab88f1340855c30955eec330" category="section-title">多重管理員驗證 (MAV)</block>
+  <block id="816972e716bc226e73febe36f7d6b4d3" category="inline-link-macro">進一步了解 MAV</block>
+  <block id="4c0fda522526d79e48dfa0e422450bcd" category="paragraph">從 ONTAP 9.20.1 開始，MAV 核准群組除了包含個別系統管理員外，還可以包含身分供應商（IdP）、Active Directory（AD）和 LDAP（nsswitch）群組作為核准者。支援的群組類型包括 Entra ID、ADFS、AD 網域群組和 LDAP 群組。在 IdP、AD 或 LDAP 目錄中新增或移除使用者，無需變更 MAV 組態。<block ref="1148d10166c955f4a4c5d48c3d9bdb22" category="inline-link-macro-rx"></block>。</block>
+  <block id="809856643dcfaf240132a117b810d4f4" category="inline-link-macro">學習如何設定 SAML 驗證</block>
+  <block id="46ea9ce4cd9dbf11118c40d1e63f01d2" category="paragraph"><block ref="c722311e6958437bdf62117c3351ebb1" category="inline-link-macro-rx"></block>。</block>
+  <block id="305af65222ed3fff91f5c8bcdfe17162" category="section-title">SNMP</block>
+  <block id="43c256a9f3ce6db61ad671d9141fc892" category="paragraph">從 ONTAP 9.20.1 開始，ONTAP 支援對 SNMPv3 使用者使用 SHA-512 驗證。此增強功能可讓您對外部 SNMP 用戶端和交換器監控（包括需要 SHA-512 驗證的交換器）使用更強大的 SNMPv3 驗證。</block>
+  <block id="9f586302fba3f0aafec4e463512e1713" category="inline-link-macro">學習如何設定 SNMPv3 使用者</block>
+  <block id="4b336ed564f9c8c86c468536cf6aed3f" category="list-text"><block ref="b48648bc5c99ae0642769c85b1733bd3" category="inline-link-macro-rx"></block>。</block>
+  <block id="aa71b27ab257a3b660b8b537c7729f1f" category="inline-link-macro">學習如何在交換器上設定 SNMPv3</block>
+  <block id="adbc987904bfbcda3742b9c154f94410" category="list-text"><block ref="f2d3a57fc453638dff1117d7f5d8b457" category="inline-link-macro-rx"></block>。</block>
+  <block id="3b9aad7f93c719edfee782ae0a6e2c7f" category="paragraph">從 ONTAP 9.18.1 開始，ONTAP 支援 NVMe 複本卸載。NVMe 複本卸載可讓 NVMe 主機將複製作業從其 CPU 卸載至 ONTAP 儲存控制器的 CPU。主機可以將資料從一個 NVMe 命名空間複製到另一個命名空間，同時保留其 CPU 資源給應用程式工作負載。</block>
+  <block id="fa23413aa617ad17fbfc108771deb331" category="section-title">資料減量率（DRR）</block>
+  <block id="a9da00ae17709e8a755cfa8d73e6c4dd" category="paragraph">從 ONTAP 9.20.1 開始，儲存效率資料減量率（DRR）僅包含可縮減資料，從而更精確地評估 ONTAP 儲存效率的空間節約效益。在 ONTAP 9.19.1 及更早版本中，DRR 同時包含可縮減資料和不可縮減資料。</block>
+  <block id="0b308d1ab1f28679ee03265d786ba36a" category="inline-link-macro">進一步瞭解 ONTAP 如何報告已使用的儲存設備</block>
+  <block id="93d997d5bda45676d4f31594ddf93868" category="paragraph"><block ref="29bd58d103398043dd13d58b9f6963cd" category="inline-link-macro-rx"></block>。</block>
+  <block id="3888635911d2864994d15bda4fca46e9" category="paragraph">從 ONTAP 9.19.1 開始，全域重複資料刪除將儲存設備單元層級的 <block ref="c7d4c0ceea3d0bc35cdb8645e84b0be9" category="inline-link-macro-rx"></block> 擴展到整個儲存可用度區（SAZ）。透過消除 SAZ 中所有儲存設備單元的複製資料區塊，您可以顯著提高儲存效率並降低總擁有成本。全域重複資料刪除無需功能授權，預設為啟用，可與現有的儲存效率技術無縫地整合，並以極低的效能影響透明地運作，無需進行管理組態。</block>
+  <block id="26731380ca9b46a9f252ab03522696f5" category="section-title">使用者密碼過期警示</block>
+  <block id="5e9c0ded4c59e79c9ecc959680053afc" category="paragraph">從 ONTAP 9.20.1 開始，如果與使用者帳戶關聯的角色已設定密碼過期警示，使用者在登入 System Manager 後，會立即在頁面頂端收到橫幅警示，此警示會在密碼過期前 14 天開始發出。每次使用者登入時，警示都會更新，以顯示密碼過期前剩餘的天數。您可以在新增或編輯系統管理員角色時設定過期警示。</block>
+  <block id="e3e84bf60ba1d306e3e1fcf8a2d6b134" category="inline-link-macro">了解如何在 System Manager 中設定密碼過期警示</block>
+  <block id="a33ee7c0dd29935230dbe221b0d4969e" category="paragraph"><block ref="ef1de8d5ad8cf217b4ca4d938c41b155" category="inline-link-macro-rx"></block>。</block>
+  <block id="cd69caea7c4542be97d181646b286681" category="summary">審查 ASA r2 系統不支援的 ONTAP CLI 命令和參數，並使用 CLI 設定 ASA r2 叢集。</block>
+  <block id="3fde133d464b40713d35b0f649b79c64" category="paragraph">當與下列參數搭配使用時，<block ref="9f9fc58b577820fbcd41ff15739ed6f0" prefix=" " category="inline-code"></block> 命令無法使用：</block>
+  <block id="c2b7f927f6cdfddb6b58c7511d46305d" category="inline-link-macro">System Manager 設定您的 ONTAP ASA r2 叢集</block>
+  <block id="c698704e232b7d66dd7cb4080111220b" category="paragraph">使用 <block ref="53b956db24578af760de9acca067520d" category="inline-link-macro-rx"></block>。System Manager 提供快速簡單的引導式工作流程，讓您的叢集啟動並執行。不過，如果您習慣使用 ONTAP 命令，也可以選擇使用 ONTAP 命令列介面（CLI）來進行叢集設定。使用 CLI 設定叢集與 System Manager 相比，並未提供額外的選項或優勢。</block>
+  <block id="44965d0ab0952b674151c49fe11e10cf" category="list-text">第一個節點設定完成後，登入叢集。</block>
+  <block id="f4f0f8bc5ec41fcd4904492291feda97" category="summary">將 ASA r2 系統與 ASA、AFF 和 FAS 系統進行比較，包括 ONTAP 特性、儲存層和支援的協定。</block>
+  <block id="b466cebb5e6b58c0cc097913d4ed2357" category="paragraph">在 ASA r2 系統上，ONTAP 軟體經過精簡，旨在為必要的 SAN 功能提供支援，同時限制非 SAN 相關特性和功能的可見度和可用度。例如，在 ASA r2 系統上執行的 System Manager 不會顯示為 NAS 用戶端建立主目錄的選項。這種精簡版的 ONTAP 被稱為 _ASA r2 特性_。在 ASA 系統上執行的 ONTAP 被稱為 _ASA ONTAP 特性_。在 AFF 和 FAS 系統上執行的 ONTAP 被稱為 _統一 ONTAP 特性_。ONTAP 特性之間的差異在 ONTAP 命令參考資料（man pages）、REST API 規格以及相關的 EMS 訊息中均有說明。</block>
+  <block id="729560e0c7351a8fcd9434463875bc69" category="paragraph">ASA r2 系統的儲存層不使用 Aggregate，而是使用儲存可用度區域。儲存可用度區域是一個共用的儲存設備資源池，可供單一 HA 配對的兩個節點存取。HA 配對中的兩個節點都可以存取其共享儲存設備可用度區域中的所有可用磁碟。例如，雙節點 ASA r2 叢集擁有一個儲存可用度區域，兩個節點都可以存取。四節點 ASA r2 叢集擁有兩個儲存可用度區域。叢集中的每個 HA 配對都可以存取其中一個儲存可用度區域。</block>
+  <block id="fdbc7801a0cbb1d68ddf207bb70e4113" category="paragraph">SAN 環境中的主要叢集不支援 SnapLock Compliance 與 Enterprise 模式。次要叢集支援 SnapLock for SnapVault。</block>
+  <block id="83a14a73a6cf0a127b671166e9205a2c" category="summary">從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集不中斷營運地移轉到 2 節點 ASA 或 2 節點 AFF 叢集。</block>
+  <block id="e7f0b884aa27db897e76427519599139" category="doc">將儲存設備 VM 從 ASA r2 叢集移轉至 ASA 或 AFF 叢集</block>
+  <block id="13d45fbabe7c6e486bb66a743e158c43" category="paragraph">從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集不中斷營運地移轉到 2 節點 ASA 或 2 節點 AFF 叢集。您可能需要移轉儲存設備 VM 來整合 SAN 和 NAS 工作負載、採用 ASA r2 系統不支援的 ONTAP 功能，或作為環境硬體重新整理的一部分。在移轉期間，現有的主機對映以及 LUN 和命名空間的儲存設備單元組態將保持不變，從而降低維運工作量和風險。</block>
+  <block id="b77db7f524ccde6f40472118970bf6e7" category="list-text">您必須是叢集管理員。</block>
+  <block id="2b65cca8612ad674e315e27b7847569b" category="list-text">兩個叢集中的所有節點都必須執行 ONTAP 9.20.1 或更高版本。</block>
+  <block id="7231412f0681eac811f50cdf01ffc9d9" category="list-text">您只能將 ASA r2 儲存設備 VM 從 2 節點 ASA r2 叢集移轉到 2 節點 AFF 叢集。</block>
+  <block id="e5cc71ce47ac43d19244af2e26bcf54c" category="list-text">您無法將 ASA r2 儲存設備 VM 移轉到 FAS 叢集，或移轉到節點數超過 2 個的 ASA 或 AFF 叢集。</block>
+  <block id="6468ff4aa21a7c593bd3ba7817e11eab" category="list-text">您無法將 ASA r2 儲存 VM 從具有超過 2 個節點的 ASA r2 叢集中移轉。</block>
+  <block id="4a18cc7c726e0c916adb571cec617041" category="list-text">從 ASA r2 叢集到 AFF 叢集的資料移轉是不可逆的。</block>
+  <block id="12ce8a4c292d3f6fdd25970235188e9a" category="paragraph">您可以在切換之前中止移轉，但切換開始後，您無法中斷或回復移轉。移轉完成後，您無法將資料從 AFF 叢集移轉到 ASA r2 叢集。</block>
+  <block id="6a1473017b55673ce16a5386999a2027" category="inline-link-macro">將 SVM 從 ASA 移轉到 ASA r2 叢集</block>
+  <block id="10836fefd7050494b7d5c3c964c69d24" category="paragraph">您可以<block ref="db83eb2165241eb695f260b4a3b4dbc3" category="inline-link-macro-rx"></block>。</block>
+  <block id="265ec665971ca2a5c563db99192288c6" category="list-text">您一次只能移轉一台儲存設備 VM。</block>
+  <block id="03a9b2e64a5e412ccdf6cc35aa677759" category="list-text">儲存設備虛擬機器最多可包含 400 個儲存設備單元。</block>
+  <block id="70966bbff75b197463acdab52d4fdb48" category="list-text">儲存設備虛擬機器不能包含 SnapMirror 目的地儲存設備單元。</block>
+  <block id="e0d4bb453255c34e5463bd365376629c" category="paragraph">在將儲存設備虛擬機器從 ASA r2 叢集移轉之前，您需要建立對等關係。對等關係定義了網路連線，使 ONTAP 叢集和儲存設備虛擬機器能夠安全地交換資料。</block>
+  <block id="72f458480ca4f833a36168f18045ecfc" category="paragraph">在下列程序中， ASA 或 AFF 叢集是 _目的地_ 叢集，而 ASA r2 叢集是 _來源_ 叢集。</block>
+  <block id="0d9ed7b6d8d84f73be3863e1c24d5665" category="paragraph">叢集已建立對等關係。Storage VM 資料可以安全地傳輸。</block>
+  <block id="de6891c5e61df5c402a1d1a50c636200" category="paragraph">您已準備好為 ASA r2 儲存設備 VM 進行移轉。</block>
+  <block id="3869a37f052d6acdf8a28bbb7793674f" category="section-title">步驟 2：準備 ASA r2 儲存 VM 以進行移轉</block>
+  <block id="2d1f591587cc6fd08656b30ff30d1e7a" category="paragraph">在將儲存設備虛擬機器（VM）從 ASA r2 叢集移轉之前，您需要移除複寫和 SnapMirror 作用中同步關係，並執行各種檢查。</block>
+  <block id="0121300b2b3d5b9b10ba6b717b735a46" category="inline-link-macro">移除所有現有的複寫關係</block>
+  <block id="e3a3f96ffd8af6599b0bbf765d427f05" category="list-text"><block ref="edea30fdfa2a16756d76f4fb2dee8417" category="inline-link-macro-rx"></block>。</block>
+  <block id="11a2db8b2f04a6763ae3e3bb96857212" category="inline-link-macro">移除所有現有的 SnapMirrror 作用中同步關係</block>
+  <block id="bad1a1663f4f680a1ed5938a733d4ff3" category="list-text"><block ref="f7456fe5b68d5cce8e31fbdbcdb64e6f" category="inline-link-macro-rx"></block>。</block>
+  <block id="004b8a5a18de4078a445c9d8c58c87e2" category="list-text">檢查 IPsec 是否已啟用：</block>
+  <block id="2600f8b084357006acd99f22dea50a2f" category="list-text">如果啟用了 IPsec，請將其停用：</block>
+  <block id="7e6e83b244ee73c77c0173da76d16bcb" category="inline-link-macro">security ipsec config show</block>
+  <block id="42c7b2c358bdd057559eaca60d270d7c" category="paragraph">了解更多關於該 <block ref="ce3ee4a9ee54c22cd835c93365daa95f" category="inline-link-macro-rx"></block> 命令的資訊。</block>
+  <block id="4cf93e5944cfb760139cd32673fb7eac" category="list-text">檢查 IPv6 和虛擬 IP （VIP） LIF：</block>
+  <block id="a55fb3c6bafa43d8d7dfe05263a82b30" category="paragraph">對於 IPv6 LIF，此<block ref="394e3d9fbb9bb3df0aaebae8396adef4" prefix=" " category="inline-code"></block>為<block ref="cc314cbc6ae71c0724390eb450bb969d" prefix=" " category="inline-code"></block>。對於 VIP LIF，<block ref="7f6b18c24ec308458e40fcc327dcc608" prefix=" " category="inline-code"></block> 參數為<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。</block>
+  <block id="904e87c7e08700e7b4309774a637d246" category="list-text">如果存在任何 IPv6 或 VIP LIF，請將其移除：</block>
+  <block id="193ff8f06cb412bf91a40343323206f4" category="list-text">確認儲存 VM 上沒有剩餘的 IPv6 或 VIP LIF：</block>
+  <block id="16fdd92def5a71313d6535c74ef67b81" category="inline-link-macro">network interface show</block>
+  <block id="942a07c6842a4cc09fa4eee193feccd8" category="inline-link-macro">network interface delete</block>
+  <block id="4fe5faaecc3ff070689dfe30bc22c067" category="paragraph">了解更多關於 <block ref="48a3e41289fffd1f6744873558111271" category="inline-link-macro-rx"></block> 和 <block ref="6a7fee4618cacc48c1e2885b8b0551dc" category="inline-link-macro-rx"></block> 命令的資訊。</block>
+  <block id="b3bd0dfdc57b0ff65d5c1765ace28a79" category="list-text">檢查是否設定了任何介面群組：</block>
+  <block id="c985fd50d111681d711f5f6b81b6f7ec" category="list-text">如果設定了介面群組，請檢查儲存 VM 上是否有任何 LIF 繫結至介面群組：</block>
+  <block id="da6420fa716e6d7155b8848dd7acb09c" category="list-text">如果儲存設備虛擬機器上的 LIF 綁定到介面群組，請將 LIF 移轉到不同的實體連接埠：</block>
+  <block id="21ae3cd30d3faa7f1f8d97766b196a1a" category="inline-link-macro">network port ifgrp show</block>
+  <block id="8f3a0b69d736776b0106c98e67ac8e27" category="paragraph">了解更多關於該 <block ref="22ed94541a54bfaef58c3169877b658e" category="inline-link-macro-rx"></block> 命令的資訊。</block>
+  <block id="4f42b284aaeda228d9b1f9addfac2b56" category="paragraph">您現在已準備好執行移轉預先檢查。</block>
+  <block id="fece1bba775571bcadefe2953c443f8d" category="section-title">步驟 3：執行移轉預檢查</block>
+  <block id="b4e50b0302a917d716eb731915cd9cd8" category="paragraph">在從 ASA r2 叢集移轉儲存設備虛擬機器之前，您必須執行移轉預先檢查並修復任何必要的問題。在預先檢查成功通過之前，您無法執行移轉。</block>
+  <block id="938c2eb10f4bd2fc86b4f5c7cb9f7582" category="paragraph">您已準備好從 ASA r2 叢集移轉儲存 VM。</block>
+  <block id="cd286f2d9c05e7c4ac6d770082b3acf6" category="section-title">步驟 4：從 ASA r2 叢集移轉儲存設備 VM</block>
+  <block id="773c6198a7498253a214dde5a48bbeb8" category="paragraph">在 ASA r2 和 ASA 或 AFF 叢集之間建立必要的叢集對等關係並完成準備兩個叢集的步驟後，即可開始儲存設備 VM 移轉。</block>
+  <block id="e6cdb2e8fd56069e3f8b1ba41a084c16" category="paragraph">執行儲存設備 VM 移轉時，最佳實務做法是在 ASA r2 叢集和 AFF 叢集上都留出 30% 的 CPU 資源餘裕，以便執行移轉 CPU 工作負載。</block>
+  <block id="d51f8c48eb34589de8201aa4a4e1bb32" category="list-text">儲存設備虛擬機器移轉完成後，用戶端 I/O 將無縫地切換到目的地叢集，不會出現任何中斷，並且 ASA r2 叢集上的儲存設備虛擬機器將自動移除。預設情況下，自動切換和自動儲存設備虛擬機器移除均已啟用。您可以選擇停用其中一個或兩個選項，並手動執行。</block>
+  <block id="5acdde98e011a39e7d095f08e45f6aa6" category="list-text">ASA 叢集是儲存設備 VM 將從中移轉的 _來源_ 叢集，而 ASA r2 叢集則是儲存設備 VM 將移轉至的 _目的地_ 叢集。</block>
+  <block id="8615bdfe7ecbf2b89ae674e2e472ec74" category="paragraph">儲存設備 VM 從 ASA r2 叢集移轉至目的地叢集。</block>
+  <block id="0c6ebd7a88269ada1575b4886c06142b" category="paragraph">如果您停用了自動切換和自動儲存設備 VM 移除，請執行移轉後切換和清理，手動將 ASA r2 用戶端切換到目的地叢集，並從 ASA r2 叢集中移除儲存設備 VM。</block>
+  <block id="315b489bb525e107008775639b339a39" category="section-title">步驟 5：移轉後切換與清理</block>
+  <block id="15ebd4861ee96044bf76eeb910e398e2" category="paragraph">ASA r2 系統支援 QuickAssist 技術（QAT）。ASA 系統不支援 QAT。從 ONTAP 9.20.1 開始，ONTAP 可降低儲存設備虛擬機器（VM）從 ASA（非 QAT）系統移轉至 ASA r2（QAT）系統後可能發生的高讀取延遲與 CPU 使用率。</block>
+  <block id="8f9f944f8100faf2d65bd2172fa3f72c" category="paragraph">您只能將儲存設備虛擬機器從 ASA 叢集移轉到 ASA r2 叢集。不支援從任何其他類型的 ONTAP 系統移轉到 ASA r2 系統。</block>
+  <block id="cc513af47ff0e5225fcee3b9bf7f0bc6" category="paragraph">您已準備好執行移轉預先檢查。</block>
+  <block id="adade9adc77b057f9acabd21a9e1a777" category="paragraph">在將儲存設備 VM 從 ASA 叢集移轉到 ASA r2 叢集之前，必須執行移轉預先檢查並修復所有必要的問題。預先檢查成功通過後，才能執行移轉。</block>
+  <block id="8c47c94ae99dbb2bc5f1439debd3796d" category="paragraph">如果您停用了自動切換和自動儲存設備 VM 移除，請執行移轉後切換和清理，手動將 ASA 用戶端切換到目的地叢集，並從 ASA 叢集中移除儲存設備 VM。</block>
+  <block id="192e216161959d2336315020b9933ac4" category="cell">SCSI 持續保留註冊規模</block>
+  <block id="261d8342915863b4035b9b7d3bc5b49d" category="cell">每個 LUN 支援的最大 SCSI-3 持續保留註冊數從 182 增加到 256。</block>
+  <block id="fa864467d02b35efb5b48d7a1226e621" category="cell">ONTAP 9.20.1</block>
+  <block id="e949936ffbec9d205ebeefebf10c817c" category="summary">了解 ONTAP 9.20.1 中為 ASA r2 系統提供的新功能。</block>
+  <block id="f68aedcf2e468f1c3f6b842007df4479" category="doc">ASA r2 系統的 ONTAP 9.20.1 新增功能</block>
+  <block id="21f0a773bab82435faab5253ad4d6585" category="inline-link-macro">支援將儲存設備虛擬機器從 ASA r2 系統無中斷移轉到 ASA 和 AFF 系統</block>
+  <block id="518bc3100300b69f5b0264175b5e2cf0" category="cell"><block ref="518bc3100300b69f5b0264175b5e2cf0" category="inline-link-macro-rx"></block></block>
+  <block id="66fc7d9e5d52d6a20345ee848e9297ea" category="cell">您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集無中斷地移轉到 2 節點 ASA 叢集或 2 節點 AFF 叢集。在移轉過程中，現有的主機對映以及 LUN 和命名空間的儲存設備單元組態將保持不變，從而降低維運工作量和風險。</block>
+  <block id="599b18a8337a5884ac1579f43bb8263c" category="inline-link-macro">支援將儲存設備虛擬機器從 ASA 系統移轉到 ASA r2 系統後提升效能</block>
+  <block id="766b29e37aac383dc1a9f4409b0e5592" category="cell"><block ref="766b29e37aac383dc1a9f4409b0e5592" category="inline-link-macro-rx"></block></block>
+  <block id="7ec90f77fd2dd6f5d0d6938efe76b4e0" category="cell">ONTAP 可減少儲存設備虛擬機器 (VM) 從 ASA 系統移轉到 ASA r2 系統後可能出現的額外讀取延遲和 CPU 使用率。</block>
+  <block id="11be1117d68a0ecbb0aaa144037b22a5" category="inline-link-macro">支援使用 Broadcom 安全的 HBA 的 FC-SP-3 驗證和加密</block>
+  <block id="d0ac7256e5432e7656364692f56f4c7b" category="cell"><block ref="d0ac7256e5432e7656364692f56f4c7b" category="inline-link-macro-rx"></block></block>
+  <block id="bb59e2d7f0142dbbf49c6b187d125599" category="cell">ONTAP 支援在配備 ASA r2 系統的 Broadcom 安全的 HBA 上進行 Fibre Channel 安全協定 3（FC-SP-3）驗證和加密。FC-SP-3 支援可實現硬體層級的端對端加密和裝置驗證，以保護 FC 和 NVMe/FC SAN 主機與 ONTAP 儲存設備系統之間傳輸中的資料，同時符合 T11 Fibre Channel 安全性標準。</block>
+  <block id="f354570f2186880f06e45404fe590603" category="cell">支援 Web 管理可用度保護和預叢集增強功能</block>
+  <block id="e5497ca20b23726913b592a39dce5d3d" category="cell">已實施多項改進措施，以確保在連線氾濫期間 Web[1] 管理 API 的可用度。此外，還增強了叢集前動態主機設定協定（DHCP）的處理能力，以便節點管理 LIF 能夠在等待叢集設定期間維護和續約 DHCP 連線。</block>
+  <block id="24c02f9a31f46a240bb7c7f109b9dc0c" category="inline-link-macro">支援儲存設備虛擬機器 Volume 加密金鑰的自動移轉</block>
+  <block id="d94a6bbd52d9f23cb24b01f87648eb64" category="cell"><block ref="d94a6bbd52d9f23cb24b01f87648eb64" category="inline-link-macro-rx"></block></block>
+  <block id="7bf46f5e844cf2f733abcaf92adb91d3" category="cell">在資料儲存設備虛擬機器上啟用外部金鑰管理程式後， ONTAP 會自動將該儲存設備虛擬機器的 Volume 加密金鑰從管理範圍的金鑰管理程式移轉到新的資料儲存設備虛擬機器金鑰管理程式。這簡化了向外部金鑰管理的轉換，並省去了標準工作流程中分隔的手冊移轉步驟。</block>
+  <block id="89540ca487415f3ab5378672c3ab081c" category="inline-link-macro">MAV 群組支援</block>
+  <block id="ce782a1aaf51980457629959899c6469" category="cell"><block ref="ce782a1aaf51980457629959899c6469" category="inline-link-macro-rx"></block></block>
+  <block id="5fd54cac2cf007dc72fc12447abf3cd1" category="cell">除了個別系統管理員之外，MAV 核准群組還可以包含身分供應商 (IdP)、Active Directory (AD) 和 LDAP (nsswitch) 群組作為核准者。支援的群組類型包括 Entra ID、ADFS、AD 網域群組和 LDAP 群組。在 IdP、AD 或 LDAP 目錄中新增或移除使用者，不需要對 MAV 組態進行任何變更。</block>
+  <block id="9f35e9e3fc6ffde8c7572d976ab4117c" category="inline-link-macro">SNMP 對 SHA-512 的支援</block>
+  <block id="7e7e151fc1354950fb627ad39fce282d" category="cell"><block ref="7e7e151fc1354950fb627ad39fce282d" category="inline-link-macro-rx"></block></block>
+  <block id="1c915015c820236330c991eb8149a1f9" category="cell">ONTAP 支援對 SNMPv3 使用者進行 SHA-512 驗證。此增強功能可讓您對外部 SNMP 用戶端和交換器監控（包括需要 SHA-512 驗證的交換器）使用更強大的 SNMPv3 驗證。</block>
+  <block id="fa01e81f35e55e16b30a8244e2c9b997" category="inline-link-macro">支援簡化儲存效率資料減量率的報告</block>
+  <block id="b1e2aa8c9f41075961e8b65b3b4ff5c2" category="cell"><block ref="b1e2aa8c9f41075961e8b65b3b4ff5c2" category="inline-link-macro-rx"></block></block>
+  <block id="23642b585b6e152f5f1d31d2aa638f2c" category="cell">儲存效率資料減量率 (DRR) 僅包含可縮減資料，從而更精確地評估 ONTAP 儲存效率空間節約效益。在 ONTAP 9.19.1 及更早版本中，DRR 同時包含可縮減資料和不可縮減資料。</block>
+  <block id="a1c0e51cd7bb5faee5373e526a971bcb" category="cell">支援 SAN 複本卸載效能改進</block>
+  <block id="e763b69372c6115c2ff599d9075bc8eb" category="cell">ONTAP 可提升符合條件的 NVMe 和 SCSI 複本工作負載的 SAN 複本卸載效能。詳情請聯絡您的 NetApp 代表。</block>
+  <block id="e1ef8d39059918ff1a92b10671c211ed" category="cell">自動重複資料刪除技術排程器（ADS）最佳化</block>
+  <block id="1a4475ca10830a3c7c7b314a2a7c82fd" category="cell">Automatic Dedupe Scheduler （ADS）已獲得改良，允許每個節點有更多並行重複資料刪除技術工作階段，以及更智慧、更具針對性的節流，以進一步平衡用戶端 I/O。DP Volume 上的重複資料刪除技術活動（來自 SnapMirror 傳輸）與全域重複資料刪除技術工作階段，會與一般 Volume 重複資料刪除技術一起受到更佳的代管，進而減少爭用與中繼資料成長。您無需變更組態，即可獲得儲存效率節約的優點，尤其是在混合工作負載下。此功能預設為啟用。</block>
+  <block id="26aa769cc38e7ddfc9db99a049241d2e" category="section-title">System Manager</block>
+  <block id="3e4a76f4ec9b8cf757e20b0919369314" category="inline-link-macro">支援憑證到期警示</block>
+  <block id="00e467126329fd7d7190f2760e057ddc" category="cell"><block ref="00e467126329fd7d7190f2760e057ddc" category="inline-link-macro-rx"></block></block>
+  <block id="e3348f99e30fd92ad3f432118a3ea5ed" category="cell">System Manager 會在叢集或儲存設備虛擬機器（SVM）憑證到期前 30 天顯示儀表板健全狀況警報，並每天更新剩餘到期天數。</block>
+  <block id="9390a79d9dac8a8d2d84cc1fcb21ffe6" category="inline-link-macro">支援使用者密碼過期警示</block>
+  <block id="2431597cab2c036d426bcb54027ec3d6" category="cell"><block ref="2431597cab2c036d426bcb54027ec3d6" category="inline-link-macro-rx"></block></block>
+  <block id="bbd11531972c9e166fabbb5dfd82acbd" category="cell">如果與使用者帳戶關聯的角色已設定密碼過期警示，則使用者在登入 System Manager 後會立即收到頁面頂部的橫幅警示，此警示會在密碼過期前 14 天開始顯示。每次使用者登入時，警示都會更新，以顯示密碼過期前剩餘的天數。</block>
+  <block id="290121bb9aa53673a1305e69e7450334" category="inline-link-macro">支援額外的 AutoSupport 警報</block>
+  <block id="696db33f3a27fb61d7a41cf083369398" category="cell"><block ref="696db33f3a27fb61d7a41cf083369398" category="inline-link-macro-rx"></block></block>
+  <block id="18770d28af8537961088ebf517a0919b" category="cell">System Manager 會顯示新的 AutoSupport 警報，幫助您解決 AutoSupport 組態問題。</block>
+  <block id="91212cf0cb1305e307a119012a835107" category="inline-link-macro">設定的快照回應原則</block>
+  <block id="fc069eaabab1a38d374ec83666bf87de" category="paragraph">從 ONTAP 9.17.1 開始，您可以使用人工智慧自主勒索軟體防護（ARP/AI）來保護 ASA r2 系統上的資料。ARP/AI 可以偵測潛力的勒索軟體威脅，在偵測到可疑活動時在 System Manager 中顯示警告，並且根據 <block ref="f4aec1a5ba7c097093b2f8cbb86a7294" category="inline-link-macro-rx"></block>，可以自動建立 ARP 快照。</block>
+  <block id="6123887d3e4591aced031b145448be19" category="summary">了解如何設定 ARP/AI 快照回應原則並修改 ARP 快照保留期間，以滿足您的儲存設備和業務需求。</block>
+  <block id="cce08d806d29c04aaff790ac6080eb4d" category="doc">在 ASA r2 儲存設備系統上設定 ARP/AI 快照回應原則和保留期間</block>
+  <block id="873dc75f0e259de5a6fb99c8ea61a4d6" category="paragraph">如果人工智慧自主勒索軟體防護（ARP/AI）在您的 ASA r2 系統上的一個或多個儲存設備單元上偵測到異常活動，它可以自動建立 ARP 快照來保護資料。從 ONTAP 9.20.1 開始，您可以透過設定快照回應原則來設定 ARP/AI 是否建立這些快照，該原則獨立於 ARP/AI 的勒索軟體偵測和警報功能（此功能始終保持作用中）。根據您的儲存容量和業務需求，您可能還需要增加或減少預設的 ARP 快照保留期間。</block>
+  <block id="d2213f4e9e43a64bc8162f172003de24" category="section-title">設定快照回應原則</block>
+  <block id="cd90d2d37b2b10e760c6b373d3d614b3" category="paragraph">快照回應原則控制 ARP/AI 是否建立定期快照、攻擊觸發快照或完全不建立快照。ARP/AI 偵測和警示在所有原則下均保持作用中；只有快照建立會改變。您可以為儲存設備虛擬機器設定預設原則，該儲存設備虛擬機器上的新儲存設備單元將繼承此原則，並且您可以為個別儲存設備單元置換預設值。</block>
+  <block id="b39a035a995fc6597c8eb942210d1527" category="cell">行為</block>
+  <block id="083208f8d2a6ba480d51a9759d221428" category="cell">定期和主動式快照（預設）</block>
+  <block id="df93bdc1a03eb329ed852ab26b015124" category="cell">ARP/AI 會產生警示與事件記錄，定期建立快照，並在偵測到攻擊時建立額外的快照。</block>
+  <block id="52dfccb04a492eb2e1f7b33b3598a0c7" category="cell">僅主動式快照</block>
+  <block id="5aee7917080f87e57e9f08939a338d10" category="cell">ARP/AI 僅在偵測到攻擊時才會產生警報和事件記錄並建立快照。不會建立定期快照。</block>
+  <block id="c2c664b83286a58085e976ed0ccecbd0" category="cell">僅提醒</block>
+  <block id="85fc486aa124623a554584fb7e8d8329" category="cell">ARP/AI 僅產生警示與事件記錄。不會建立 ARP/AI 快照。</block>
+  <block id="650948f0eefb5e8ffeb0843b14706842" category="admonition">如果您選擇「僅警報」原則，ARP/AI 將不會建立任何快照。如果確認發生勒索軟體攻擊，則沒有可用於資料恢復的 ARP/AI 快照。選擇此原則前，請確保您有足夠的外部資料保護，例如排程快照或其他備份解決方案。</block>
+  <block id="af44ce25a1d3f9f4dc1dc1437c234769" category="admonition">當您變更快照回應原則時，現有的 ARP/AI 快照不會立即刪除。它們會在達到預定的到期時間時刪除。</block>
+  <block id="2451b9a101c4c4f43ae855d6e97e474b" category="paragraph">設定儲存設備 VM 的預設快照回應原則：</block>
+  <block id="df2d6fe9f018caff03460e3f7b7b3f8c" category="list-text">在 *安全性* 區段中，在 *反勒索軟體* 旁邊，選取 <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選取 *編輯反勒索軟體設定*。</block>
+  <block id="c0b5516950371a179c01b5137c780ecd" category="list-text">選擇要套用於在儲存設備 VM 上建立的新儲存設備單元的預設快照回應原則。</block>
+  <block id="f3a0403b4b2b1cf78e0df6dfba914df0" category="paragraph">為儲存設備單元設定快照回應原則，置換 storage VM 預設值：</block>
+  <block id="86733b8d55fc7753af31354155019e34" category="list-text">在 System Manager 中，選擇 *儲存設備* 並選擇儲存設備單元。</block>
+  <block id="8302fbf11cc1f730871bb6bfda7c0df9" category="list-text">在 *反勒索軟體* 下，選取 <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>，然後選取 *編輯反勒索軟體設定*。</block>
+  <block id="9efc573c69705d3f1df7249ca593bb3f" category="list-text">選擇要套用於儲存設備單元的快照回應原則。</block>
+  <block id="341adb20e10a597fc5caa28d49f4d32a" category="paragraph">如果儲存設備單元的快照回應原則建立定期或攻擊觸發的 ARP 快照，則這些快照的預設保留期間取決於您回應異常活動所採取的行動。</block>
+  <block id="4f4498359ba76e12366d4fd7024a7472" category="inline-link-macro">快照回應原則</block>
+  <block id="73db5396ed0091c7d44309ce60186aa8" category="admonition">如果儲存設備單元的<block ref="0d4039d2002f44304467faf3fff47df8" category="inline-link-macro-rx"></block>設定為僅發出警報或僅建立攻擊觸發的快照，即使啟用了 ARP/AI，該儲存設備單元也不會出現定期 ARP 快照。</block>
+  <block id="98bc946d6706803d8c3b4dd6101a0b9d" category="inline-link-macro">使用 SnapLock for SnapVault 保護次要系統上的快照</block>
+  <block id="e136aa005eb20c1d1d80ba8a4b333f45" category="paragraph">SnapLock 法規遵循時鐘必須初始化為 <block ref="d952811e0ea01f5e55739fa5cd74f09e" category="inline-link-macro-rx"></block>。</block>
+  <block id="8bf2ef6362cdad11d5a5d863f7be6cff" category="paragraph">從 ONTAP 9.20.1 開始，您可以透過現有的 FC 架構設定後端 SnapLock for SnapVault 複寫。若要這麼做，您的 ONTAP 系統後端必須設定為 FC 複寫，且 FC 架構和叢集間 IP 網路都必須正常運作。複寫資料可以透過 FC 架構傳輸，但叢集通訊和複寫管理功能需要叢集間 IP 網路。</block>
+  <block id="42237859a4535306aaa63bc78a1bf059" category="inline-link-macro">設定 ONTAP 系統後端以進行 FC 複寫</block>
+  <block id="992cd38818daff3fee8d5b9c293e3a03" category="paragraph">了解如何<block ref="3a14c754d99af4bcf1aeb9863af8e23b" category="inline-link-macro-rx"></block>。</block>
+  <block id="edc7fbacac3b21a9797f68fae4b0e7e3" category="sidebar">將 ASA 儲存設備虛擬機器移轉到 ASA r2 叢集</block>
+  <block id="6b89f18892d0106d14be6445620238ef" category="sidebar">將 ASA r2 儲存設備 VM 移轉到 ASA 或 AFF 叢集</block>
+  <block id="c379a2fd725ef344a839da0df913acc6" category="sidebar">設定 ARP/AI 快照回應原則</block>
+  <block id="a723b6a368d39c8d49c195613b8f0358" category="sidebar">ONTAP 9.20.1 的新增功能</block>
 </blocks>

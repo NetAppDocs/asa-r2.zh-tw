@@ -22,7 +22,7 @@ ASA r2 系統支援多種 SAN 功能，但不支援某些 ONTAP 軟體功能。
 * ONTAP S3 SnapMirror 和 S3 API
 * SnapLock
 +
-SnapLock Compliance 和 Enterprise 模式不支援 SAN 環境中的主叢集。SnapLock for SnapVault 支援二線系統叢集。
+SAN 環境中的主要叢集不支援 SnapLock Compliance 與 Enterprise 模式。次要叢集支援 SnapLock for SnapVault。
 
 * SnapMirror複製在ASA r2 系統上受支持，但有以下限制：
 +

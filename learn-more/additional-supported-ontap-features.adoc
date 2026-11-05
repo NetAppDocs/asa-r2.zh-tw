@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn-more/additional-supported-ontap-features.html 
 keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, command line interface, clustered external key servers, external key management, encryption at rest, administrator access management, client authentication, oauth 2.0, saml authentication, fips compliance, link aggregation groups, iscsi, fibre channel, fc, nvme, nvme unmap, hole punch, deallocation, system manager 
-summary: 由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常見的ONTAP任務和系統管理器功能在ASA r2 系統上的執行方式與在其他ONTAP系統上的執行方式相同。 
+summary: 了解 ONTAP 的哪些常見功能（包括加密、驗證、連網、SAN 協定和儲存效率）在 ASA r2 系統上以相同的方式運作。 
 ---
 = ASA r2 系統支援的常見ONTAP功能
 :allow-uri-read: 
@@ -14,6 +14,15 @@ summary: 由於ASA r2 系統運作的是ONTAP的精簡版本，因此許多常�
 由於 ASA r2 系統運作的是 ONTAP 的簡化版本，因此您可以像在其他 ONTAP 系統上一樣執行許多常見的 ONTAP 工作和 System Manager 功能。
 
 有關常見特性和功能的更多信息，請參閱以下ONTAP文件。
+
+
+
+[[autosupport]]
+== AutoSupport
+
+從 ONTAP 9.20.1 開始，如果 AutoSupport 設定為 SMTP 協定而非 HTTPS 協定、如果 AutoSupport 已停用但仍設定了客戶與合作夥伴電子郵件收件者，以及如果 AutoSupport 傳輸因為 DNS 問題而失敗，System Manager 會顯示 AutoSupport 警報。
+
+link:https://docs.netapp.com/us-en/ontap/system-admin/manage-autosupport-concept.html["進一步了解 AutoSupport"^]。
 
 
 
@@ -38,6 +47,8 @@ link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-ke
 
 您可以使用一個或多個 KMIP 伺服器來保護叢集用於存取加密資料的金鑰。
 
+從 ONTAP 9.20.1 開始，當您在資料儲存設備虛擬機器上啟用外部金鑰管理程式時， ONTAP 會自動將該儲存設備虛擬機器的 Volume 加密金鑰從管理範圍的金鑰管理程式移轉到新的資料儲存設備虛擬機器金鑰管理程式。這簡化了向外部金鑰管理的轉換，並省去了標準工作流程中分隔的手冊移轉步驟。
+
 * link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["啟用外部金鑰管理"^]。
 * link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["啟用外部金鑰管理 (NVE)"^] 。
 
@@ -54,10 +65,9 @@ link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-ke
 [[administrator-access-management]]
 === 管理員存取管理
 
-指派給管理員的角色決定了管理員可以執行哪些功能。系統管理器為叢集管理員和儲存虛擬機器管理員提供了預定義角色。您可以在建立管理員帳戶時指派角色，也可以稍後指派其他角色。
+指派給系統管理員的角色決定了系統管理員可以執行哪些功能。System Manager 為叢集管理員和儲存 VM 管理員提供預先定義的角色。您可以在建立系統管理員帳戶時指派角色，也可以稍後指派不同的角色。
 
-* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["學習如何使用系統管理員管理管理員存取權限"^]。
-
+link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["學習如何使用系統管理員管理管理員存取權限"^]。
 
 
 
@@ -67,6 +77,23 @@ link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-ke
 ONTAP使用標準方法來保護用戶端和管理員對儲存的訪問，並防止病毒感染。先進技術可用於靜態資料加密和 WORM 儲存。  ONTAP透過與可信任來源驗證用戶端電腦和使用者的身份來驗證其身分。  ONTAP透過將使用者的憑證與檔案或目錄上配置的權限進行比較，來授權使用者存取檔案或目錄。
 
 link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["了解客戶端身份驗證和授權"^] 。
+
+
+
+[[fc-sp-3-authentication-and-encryption]]
+=== FC-SP-3 驗證和加密
+
+從 ONTAP 9.20.1 開始， ONTAP 支援在配備 ASA r2 系統的 Broadcom 安全 HBA 上使用 Fibre Channel Security Protocol 3 （FC-SP-3）驗證和加密。FC-SP-3 支援可實現硬體層級的端對端加密和裝置驗證，以保護 FC 和 NVMe/FC SAN 主機與 ONTAP 儲存設備系統之間傳輸中的資料，同時符合 T11 Fibre Channel 安全性標準。
+
+* link:https://docs.netapp.com/us-en/ontap/san-admin/fc-sp-3-security-support.html["了解 FC-SP-3 驗證和加密"^]。
+
+
+
+
+[[multi-admin-verification-mav]]
+=== 多重管理員驗證 (MAV)
+
+從 ONTAP 9.20.1 開始，MAV 核准群組除了包含個別系統管理員外，還可以包含身分供應商（IdP）、Active Directory（AD）和 LDAP（nsswitch）群組作為核准者。支援的群組類型包括 Entra ID、ADFS、AD 網域群組和 LDAP 群組。在 IdP、AD 或 LDAP 目錄中新增或移除使用者，無需變更 MAV 組態。link:https://docs.netapp.com/us-en/ontap/multi-admin-verify/index.html["進一步了解 MAV"^]。
 
 
 
@@ -84,7 +111,18 @@ link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["�
 
 您可以為 Web 服務設定和啟用安全性斷言標記語言 (SAML) 驗證。  SAML 透過外部身分提供者 (IdP) 而不是目錄服務提供者（例如 Active Directory 和 LDAP）來驗證使用者身分。
 
-link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["學習配置 SAML 身份驗證"^] 。
+link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["學習如何設定 SAML 驗證"^]。
+
+
+
+[[snmp]]
+=== SNMP
+
+從 ONTAP 9.20.1 開始，ONTAP 支援對 SNMPv3 使用者使用 SHA-512 驗證。此增強功能可讓您對外部 SNMP 用戶端和交換器監控（包括需要 SHA-512 驗證的交換器）使用更強大的 SNMPv3 驗證。
+
+* link:https://docs.netapp.com/us-en/ontap/networking/configure_snmpv3_users_in_a_cluster.html["學習如何設定 SNMPv3 使用者"^]。
+* link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cshm/config-snmpv3.html["學習如何在交換器上設定 SNMPv3"^]。
+
 
 
 
@@ -178,7 +216,7 @@ ASA r2 系統支援所有 SAN 協定（iSCSI、FC、NVMe/FC、NVMe/TCP）。
 +
 ** link:https://docs.netapp.com/us-en/ontap/san-admin/nvme-copy-offload.html["學習如何設定 NVMe 複製卸載"^]。
 +
-從ONTAP 9.18.1 開始，支援 NVMe 複製卸載。 NVMe 複製卸載功能可讓 NVMe 主機將複製作業從其 CPU 解除安裝至ONTAP儲存控制器的 CPU。主機可以將資料從一個 NVMe 命名空間複製到另一個 NVMe 命名空間，同時將其 CPU 資源保留給應用程式工作負載。
+從 ONTAP 9.18.1 開始，ONTAP 支援 NVMe 複本卸載。NVMe 複本卸載可讓 NVMe 主機將複製作業從其 CPU 卸載至 ONTAP 儲存控制器的 CPU。主機可以將資料從一個 NVMe 命名空間複製到另一個命名空間，同時保留其 CPU 資源給應用程式工作負載。
 
 ** link:https://docs.netapp.com/us-en/ontap/san-admin/enable-space-allocation.html["了解更多關於 NVMe 空間分配（取消映射）的信息"^]。
 +
@@ -201,10 +239,19 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 
 
 
+[[data-reduction-rate-drr]]
+=== 資料減量率（DRR）
+
+從 ONTAP 9.20.1 開始，儲存效率資料減量率（DRR）僅包含可縮減資料，從而更精確地評估 ONTAP 儲存效率的空間節約效益。在 ONTAP 9.19.1 及更早版本中，DRR 同時包含可縮減資料和不可縮減資料。
+
+link:https://docs.netapp.com/us-en/ontap/concepts/capacity-measurements.html["進一步瞭解 ONTAP 如何報告已使用的儲存設備"^]。
+
+
+
 [[global-deduplication]]
 === 全域重複資料刪除
 
-從 ONTAP 9.19.1 開始，_全域重複資料刪除_ 將link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["現有 ONTAP 重複資料刪除空間節省"^]儲存單元層級的重複資料刪除擴展到整個儲存可用度區域 (SAZ)。透過消除 SAZ 中所有儲存單元的重複資料區塊，可以顯著提高儲存效率並降低整體擁有成本。全域重複資料刪除無需功能授權，預設為啟用狀態，可與現有儲存效率技術無縫地整合，並以極低的效能影響透明運行，無需任何管理組態。
+從 ONTAP 9.19.1 開始，全域重複資料刪除將儲存設備單元層級的 link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["現有 ONTAP 重複資料刪除空間節省"^] 擴展到整個儲存可用度區（SAZ）。透過消除 SAZ 中所有儲存設備單元的複製資料區塊，您可以顯著提高儲存效率並降低總擁有成本。全域重複資料刪除無需功能授權，預設為啟用，可與現有的儲存效率技術無縫地整合，並以極低的效能影響透明地運作，無需進行管理組態。
 
 
 
@@ -214,3 +261,12 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 您可以在 System Manager 中搜尋各種行動、物件和資訊主題。您也可以搜尋表格資料中的特定條目。
 
 link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["學習如何在系統管理員中搜尋、篩選和排序訊息"^]。
+
+
+
+[[user-password-expiration-alerts]]
+=== 使用者密碼過期警示
+
+從 ONTAP 9.20.1 開始，如果與使用者帳戶關聯的角色已設定密碼過期警示，使用者在登入 System Manager 後，會立即在頁面頂端收到橫幅警示，此警示會在密碼過期前 14 天開始發出。每次使用者登入時，警示都會更新，以顯示密碼過期前剩餘的天數。您可以在新增或編輯系統管理員角色時設定過期警示。
+
+link:https://docs.netapp.com/us-en/ontap/authentication/configure-password-expiry-alerts.html["了解如何在 System Manager 中設定密碼過期警示"^]。

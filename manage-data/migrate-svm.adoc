@@ -16,6 +16,8 @@ summary: 如果儲存可用性區域的空間不足，您可以將儲存單元�
 
 NOTE: 您無法將儲存 VM 從 ASA MetroCluster 移轉至 ASA r2 叢集。ASA r2 系統不支援 MetroCluster 組態。
 
+ASA r2 系統支援 QuickAssist 技術（QAT）。ASA 系統不支援 QAT。從 ONTAP 9.20.1 開始，ONTAP 可降低儲存設備虛擬機器（VM）從 ASA（非 QAT）系統移轉至 ASA r2（QAT）系統後可能發生的高讀取延遲與 CPU 使用率。
+
 ASA和ASA r2 儲存系統之間支援儲存虛擬機器遷移，具體方式如下：
 
 [cols="2"]
@@ -51,7 +53,7 @@ ASA和ASA r2 儲存系統之間支援儲存虛擬機器遷移，具體方式如�
 |===
 有關ASA和ASA r2 系統的最新列表，請參閱link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。  ASA r2 系統在NetAppHardware Universe中被列為「ASA A 系列/C 系列（新）」。
 
-您只能將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。不支援從任何其他類型的ONTAP系統遷移。
+您只能將儲存設備虛擬機器從 ASA 叢集移轉到 ASA r2 叢集。不支援從任何其他類型的 ONTAP 系統移轉到 ASA r2 系統。
 
 .開始之前
 ASA r2 叢集和ASA叢集中的所有節點必須執行ONTAP 9.18.1 或更高版本。叢集節點上的ONTAP 9.18.1 修補程式版本可能有所不同。
@@ -103,6 +105,9 @@ lun show -vserver <storage_VM>
 
 在將儲存虛擬機器從ASA叢集遷移到ASA r2 叢集之前，需要建立對等關係。對等關係定義了網路連接，使ONTAP叢集和儲存虛擬機器能夠安全地交換資料。
 
+.關於這項工作
+ASA 叢集是儲存設備 VM 將從中移轉的 _來源_ 叢集，而 ASA r2 叢集則是儲存設備 VM 將移轉至的 _目的地_ 叢集。
+
 .開始之前
 您必須使用下列方法之一在被對等連接的叢集中的每個節點上建立叢集間 LIF。
 
@@ -112,11 +117,11 @@ lun show -vserver <storage_VM>
 
 
 .步驟
-. 在ASA r2 叢集上，與ASA叢集建立對等關係並產生密碼短語：
+. 在目的地叢集上，與來源叢集建立對等關係並產生密碼短語：
 +
 [source, cli]
 ----
-cluster peer create -peer-addrs <ASA_cluster_LIF_IPs> -generate-passphrase
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
 ----
 +
 以下範例在叢集 1 和叢集 2 之間建立叢集對等關係，並建立系統產生的密碼短語：
@@ -134,13 +139,13 @@ Warning: make a note of the passphrase - it cannot be displayed again.
 
 ----
 . 複製產生的密碼短語。
-. 在ASA叢集上，與ASA r2 叢集建立對等關係：
+. 在來源叢集上，與目的地叢集建立對等關係：
 +
 [source, cli]
 ----
-cluster peer create -peer-addrs <ASA_r2_LIF_IPs>
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
 ----
-. 輸入在ASA r2 叢集上產生的密碼短語。
+. 輸入在目的地叢集上產生的密碼短語。
 . 驗證叢集對等關係是否已建立：
 +
 [source, cli]
@@ -165,24 +170,27 @@ cluster2             1-80-123456             Available      ok
 ASA和ASA r2 叢集已建立對等連接，儲存 VM 資料可以安全傳輸。
 
 .接下來呢？
-您已準備好為ASA儲存虛擬機器進行遷移。
+您已準備好執行移轉預先檢查。
 
 
 
-[[step-3-prepare-for-storage-vm-migration-from-an-asa-to-an-asa-r2-cluster]]
-== 步驟 3：準備將儲存虛擬機器從ASA遷移到ASA r2 集群
+[[step-3-execute-the-migration-pre-check]]
+== 步驟 3：執行移轉預檢查
 
-在將儲存虛擬機器 (VM) 從ASA叢集遷移到ASA r2 叢集之前，必須執行遷移預檢查並修復任何必要的問題。預檢查必須成功通過才能執行遷移。
+在將儲存設備 VM 從 ASA 叢集移轉到 ASA r2 叢集之前，必須執行移轉預先檢查並修復所有必要的問題。預先檢查成功通過後，才能執行移轉。
+
+.關於這項工作
+ASA 叢集是儲存設備 VM 將從中移轉的 _來源_ 叢集，而 ASA r2 叢集則是儲存設備 VM 將移轉至的 _目的地_ 叢集。
 
 .步驟
-. 從您的ASA r2 叢集執行遷移預檢查：
+. 從目的地叢集執行移轉預檢查：
 +
 [source, cli]
 ----
-vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
 ----
 +
-如果您需要修復任何問題才能為 ASA 叢集移轉做好準備，系統將顯示問題及其修正行動。請修復問題並重複預檢查，直至成功完成。
+若移轉前需要解決任何問題，系統會顯示問題及修正行動。請修復問題並重複預檢查，直至成功完成。
 
 
 
@@ -199,7 +207,9 @@ vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check
 執行儲存 VM 遷移時，最佳實務是在ASA叢集和ASA r2 叢集上都留出 30% 的 CPU 餘裕，以便 CPU 工作負載能夠執行。
 
 .關於這項工作
-儲存虛擬機器遷移後，用戶端將自動切換到ASA r2 集群， ASA集群上的儲存虛擬機器將自動刪除。預設啟用自動切換和自動儲存虛擬機器移除功能。您也可以選擇停用它們，然後手動執行切換和儲存虛擬機器刪除操作。
+* 儲存設備虛擬機器移轉完成後，用戶端 I/O 將無縫地切換到目的地叢集，不會出現任何中斷，並且 ASA r2 叢集上的儲存設備虛擬機器將自動移除。預設情況下，自動切換和自動儲存設備虛擬機器移除均已啟用。您可以選擇停用其中一個或兩個選項，並手動執行。
+* ASA 叢集是儲存設備 VM 將從中移轉的 _來源_ 叢集，而 ASA r2 叢集則是儲存設備 VM 將移轉至的 _目的地_ 叢集。
+
 
 .開始之前
 * ASA r2 叢集必須有足夠的可用空間來容納遷移的儲存虛擬機器。
@@ -215,14 +225,14 @@ vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check
 
 
 .步驟
-. 從ASA r2 叢集啟動儲存虛擬機器遷移：
+. 從目的地叢集，開始儲存 VM 移轉：
 +
 [source, cli]
 ----
-vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
 ----
 +
-若要停用自動切換，請使用 `-auto-cutover false`範圍。若要停用ASA儲存 VM 的自動刪除，請使用下列方法： `-auto-source-cleanup false`範圍。
+若要停用自動切換，請使用  `-auto-cutover false` 參數。若要停用自動移除來源儲存設備 VM，請使用  `-auto-source-cleanup false` 參數。
 
 . 監控遷移狀態
 +
@@ -231,15 +241,81 @@ vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
 vserver migrate show -vserver <storage_VM_name>
 ----
 +
-遷移完成後，*狀態*將顯示為*遷移完成*。
+如果在自動切換開始前需要暫停或取消遷移，請使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必須先暫停遷移，然後才能取消遷移。切換開始後，您將無法取消遷移。
+
++
+如果啟用自動切換，移轉完成後，*狀態* 將顯示為 *移轉完成*。如果停用自動切換，*狀態* 將顯示為 *準備清理來源*。
 
 
-
-
-NOTE: 如果在自動切換開始前需要暫停或取消遷移，請使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必須先暫停遷移，然後才能取消遷移。切換開始後，您將無法取消遷移。
 
 .結果
 儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。儲存虛擬機器的名稱和 UUID、資料 LIF 名稱、IP 位址以及物件名稱（例如磁碟區名稱）保持不變。儲存虛擬機器中已移轉物件的 UUID 已更新。
 
 .接下來呢？
-如果您停用了自動切換和自動儲存虛擬機器移除功能，link:svm-post-migrate-cutover-cleanup.html["手動將ASA客戶端切換到ASA R2 集群，並從ASA集群中移除儲存虛擬機器。"] 。
+如果您停用了自動切換和自動儲存設備 VM 移除，請執行移轉後切換和清理，手動將 ASA 用戶端切換到目的地叢集，並從 ASA 叢集中移除儲存設備 VM。
+
+
+
+[[step-5-post-migration-cutover-and-cleanup]]
+== 步驟 5：移轉後切換與清理
+
+在叢集間儲存設備虛擬機器移轉期間，用戶端 I/O 會切換到目的地叢集，來源叢集上的儲存設備虛擬機器將自動移除。如果您選擇在移轉期間停用來源儲存設備虛擬機器的自動切換和移除，則需要在移轉狀態達到 *準備清理來源* 後手動執行這些步驟。
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== 儲存設備 VM 移轉後手動切換用戶端
+
+如果在儲存設備 VM 的叢集間移轉期間停用自動用戶端切換，則在移轉關係準備好進行切換後，請手動執行切換，以便目的地儲存設備 VM 可以向用戶端提供資料。
+
+.關於這項工作
+從目的地叢集執行此工作。
+
+.步驟
+. 手動執行用戶端切換：
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. 確認切換操作已完成：
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.結果
+資料正從目的地叢集上的儲存 VM 提供給您的用戶端。
+
+.接下來呢？
+您現在已準備好從來源叢集移除儲存 VM。
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== 移轉後手動移除儲存 VM
+
+如果在叢集間儲存設備 VM 移轉期間停用自動來源清理，則在移轉完成後，請從來源叢集移除儲存設備 VM 以釋放儲存空間。
+
+.開始之前
+您的用戶端應該從目的地叢集提供資料。
+
+.步驟
+. 從來源叢集，驗證來源儲存設備虛擬機器的狀態是否為 *準備進行來源清理*：
++
+[source, cli]
+----
+vserver migrate show
+----
+. 移除來源儲存設備 VM：
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.結果
+來源叢集上的儲存 VM 已移除。

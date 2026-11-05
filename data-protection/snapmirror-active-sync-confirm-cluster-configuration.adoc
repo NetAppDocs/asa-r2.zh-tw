@@ -17,7 +17,7 @@ SnapMirror主動同步依賴對等集群，以便在發生故障轉移時保護�
 . 確認集群之間存在集群對等關係。
 +
 
-NOTE: SnapMirror主動同步需要使用預設 IP 空間來建立叢集對等關係。不支援自訂 IP 空間。
+NOTE: SnapMirror 作用中同步需要叢集對等端點關係使用預設 IPspace。不支援自訂 IPspace。
 
 +
 link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["建立集群對等關係"] 。

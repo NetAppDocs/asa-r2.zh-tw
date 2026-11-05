@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-planned-failover.html 
 keywords: snapmirror active sync, planned failover, disaster recovery 
-summary: 了解如何執行SnapMirror主動同步關係的計畫故障轉移，以確保業務連續性和災難復原。 
+summary: 對 SnapMirror 作用中同步關係執行計畫性容錯移轉，以測試容錯移轉程序或對主要站台執行維護。 
 ---
 = 故障轉移 ASA r2 SnapMirror 作用中同步關係
 :allow-uri-read: 

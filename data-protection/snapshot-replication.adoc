@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-replication.html 
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication 
-summary: 使用 ONTAP System Manager 將資料複製到遠端位置、以進行備份和災難恢復。設定需要建立複寫原則和關係。 
+summary: 使用 ONTAP System Manager 將資料複製到遠端位置以進行備份和災難恢復。建立複寫原則和關係以設定快照複寫。 
 searchtitle: 使用 ONTAP System Manager| ASA R2 將快照複寫到遠端叢集 
 ---
 = 從 ASA R2 儲存系統將快照複寫到遠端叢集
@@ -17,7 +17,7 @@ Snapshot 複寫是將 ASA R2 系統上的一致性群組複製到地理位置遠
 
 NOTE: 僅支援與ASA r2 儲存系統進行快照複製。您無法將快照從ASA r2 系統複製到ASA、 AFF或FAS系統，也無法從ASA、 AFF或FAS系統複製到ASA r2 系統。
 
-若要設定 Snapshot 複寫、您需要在 ASA R2 系統和遠端位置之間建立複寫關係。複寫關係是由複寫原則所管理。叢集設定期間會建立複寫所有快照的預設原則。您可以使用預設原則、也可以選擇性地建立新原則。
+若要設定快照複寫，請在您的 ASA r2 系統和遠端位置之間建立複寫關係。複寫關係由複寫原則控制。叢集設定期間會建立一個預設原則，用於複寫所有快照。您可以使用預設原則，也可以建立新原則。
 
 從ONTAP 9.17.1 開始，您可以將非同步複製策略套用至具有層次結構關係的一致性群組。  ONTAP 9.16.1 中的層次結構關係中的一致性群組不支援非同步複製。
 
@@ -88,12 +88,12 @@ NOTE: 採用非同步策略時，資料在寫入來源之後才會複製到遠�
 
 為了增強抵禦勒索軟體攻擊的安全性，請建立 SnapLock for SnapVault 複寫關係。
 
+.關於這項工作
+* 在建立複製關係時，必須為複製關係選擇適當的複製策略。您可以使用預定義策略或建立自訂策略。
+
+
 .開始之前
-* link:pre-defined-protection-policies.html["了解複製策略"] 。
-+
-在建立複製關係時，必須為複製關係選擇適當的複製策略。您可以使用預定義策略或建立自訂策略。
-
-
+從 ONTAP 9.20.1 開始，您可以透過現有的 FC 架構設定後端 SnapMirror 非同步複寫。若要這麼做，您的 ONTAP 系統後端必須設定為 FC 複寫，而且 FC 架構與叢集間 IP 網路都必須正常運作。複寫資料可以透過 FC 架構傳輸，但叢集通訊和複寫管理功能需要叢集間 IP 網路。link:https://docs.netapp.com/us-en/ontap/data-protection/configure-backend-fc-replication.html["學習如何設定 ONTAP 系統後端以進行 FC 複寫"^]。
 
 
 
@@ -101,6 +101,13 @@ NOTE: 採用非同步策略時，資料在寫入來源之後才會複製到遠�
 === 建立關係以將快照複寫到遠端叢集
 
 透過將快照複寫到遠端叢集來保護您的資料。一致性群組的複寫快照可用於災難恢復或資料移轉。
+
+.關於這項工作
+在 ONTAP 9.20.1 及更高版本中：
+
+* 若要使用後端 FC 複寫建立 SnapMirror 關係，您必須使用受支援的預先定義非同步資料保護原則，並選取 FC 傳輸協定。後端複寫預設使用 IP 協定。link:pre-defined-protection-policies.html["了解哪些預先定義的複寫原則支援後端 FC 複寫"]。
+* 建立複寫關係後，若要變更選取的傳輸協定，您必須 link:snapmirror-active-sync-break-relationship.html["中斷"] 該關係，然後使用所需的傳輸協定重新建立該關係。
+
 
 .步驟
 . 在 System Manager 中、選取 * 保護 > 複寫 * 。
@@ -129,6 +136,7 @@ _sourc_ 一致性群組是指您要複寫的本機叢集上的一致性群組。
 
 |===
 . 選取複寫原則。
+. 在 ONTAP 9.20.1 及更高版本中，選擇複寫關係的傳輸協定。
 . 若要延遲資料傳輸的開始，請選擇 *Destination settings*，然後取消選擇 *Start transfer immediately*。
 +
 根據預設、初始資料傳輸會立即開始。
@@ -154,7 +162,8 @@ _sourc_ 一致性群組是指您要複寫的本機叢集上的一致性群組。
 NOTE: ASA r2 系統不支援 SnapLock Compliance 模式或 SnapLock Enterprise 模式。建立 SnapLock for SnapVault 複寫關係僅能鎖定目的地快照。並不能啟用 SnapLock Compliance 或 Enterprise 模式。
 
 .開始之前
-您必須 link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["初始化 SnapLock Compliance 時鐘"]。
+* 您必須 link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["初始化 SnapLock Compliance 時鐘"]。
+
 
 .步驟
 . 在 System Manager 中，選擇 *Protection > Consistency groups* ，然後選擇一致性群組。
@@ -162,7 +171,11 @@ NOTE: ASA r2 系統不支援 SnapLock Compliance 模式或 SnapLock Enterprise �
 . 在 * 遠端保護 * 下、選取 * 複寫到遠端叢集 * 。
 . 選取 * 複寫原則 * 。
 +
-您必須選取 _Vault_ 複寫原則。
+您必須選擇一個 _vault_ 複寫原則。在 ONTAP 9.20.1 及更高版本中，您必須選擇 _MirrorAndVault_ 原則來設定後端 FC 複寫。
+
+. 在 ONTAP 9.20.1 及更新版本中，選擇傳輸協定。
++
+建立複寫關係後，若要變更選取的傳輸協定，您必須 link:snapmirror-active-sync-break-relationship.html["中斷"] 該關係，然後使用所需的傳輸協定重新建立該關係。
 
 . 選擇「目的地設定」，然後選擇「鎖定目的地快照以防止刪除」。
 . 輸入資料保留期間上限和下限。
@@ -179,6 +192,9 @@ NOTE: ASA r2 系統不支援 SnapLock Compliance 模式或 SnapLock Enterprise �
 
 .接下來呢？
 建立複寫關係後，初始資料傳輸將按照複寫原則中的定義開始。您可以選擇測試複寫容錯移轉，以驗證在 ASA r2 系統離線時是否能成功進行容錯移轉。
+
+.相關資訊
+link:pre-defined-protection-policies.html["了解預定義的保護策略"]。
 
 
 

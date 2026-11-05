@@ -1,0 +1,61 @@
+= 
+:allow-uri-read: 
+
+
+.開始之前
+您必須使用下列方法之一在被對等連接的叢集中的每個節點上建立叢集間 LIF。
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["在共用資料連接埠上配置集群間 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["在專用資料連接埠上配置集群間 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["在自訂 IP 空間中設定叢集間 LIF"^]
+
+
+.步驟
+. 在目的地叢集上，與來源叢集建立對等關係並產生密碼短語：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
+----
++
+以下範例在叢集 1 和叢集 2 之間建立叢集對等關係，並建立系統產生的密碼短語：
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. 複製產生的密碼短語。
+. 在來源叢集上，與目的地叢集建立對等關係：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
+----
+. 輸入在目的地叢集上產生的密碼短語。
+. 驗證叢集對等關係是否已建立：
++
+[source, cli]
+----
+cluster peer show
+----
++
+以下範例顯示了成功建立對等連接叢集的預期輸出。
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+

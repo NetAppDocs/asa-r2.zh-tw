@@ -1,0 +1,325 @@
+---
+sidebar: sidebar 
+permalink: manage-data/migrate-svm-from-asa-r2.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
+summary: 從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集不中斷營運地移轉到 2 節點 ASA 或 2 節點 AFF 叢集。 
+---
+= 將儲存設備 VM 從 ASA r2 叢集移轉至 ASA 或 AFF 叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集不中斷營運地移轉到 2 節點 ASA 或 2 節點 AFF 叢集。您可能需要移轉儲存設備 VM 來整合 SAN 和 NAS 工作負載、採用 ASA r2 系統不支援的 ONTAP 功能，或作為環境硬體重新整理的一部分。在移轉期間，現有的主機對映以及 LUN 和命名空間的儲存設備單元組態將保持不變，從而降低維運工作量和風險。
+
+.開始之前
+* 您必須是叢集管理員。
+* 兩個叢集中的所有節點都必須執行 ONTAP 9.20.1 或更高版本。
+
+
+.關於這項工作
+* 您只能將 ASA r2 儲存設備 VM 從 2 節點 ASA r2 叢集移轉到 2 節點 AFF 叢集。
++
+** 您無法將 ASA r2 儲存設備 VM 移轉到 FAS 叢集，或移轉到節點數超過 2 個的 ASA 或 AFF 叢集。
+** 您無法將 ASA r2 儲存 VM 從具有超過 2 個節點的 ASA r2 叢集中移轉。
+
+
+* 從 ASA r2 叢集到 AFF 叢集的資料移轉是不可逆的。
++
+您可以在切換之前中止移轉，但切換開始後，您無法中斷或回復移轉。移轉完成後，您無法將資料從 AFF 叢集移轉到 ASA r2 叢集。
+
++
+您可以link:migrate-svm.html["將 SVM 從 ASA 移轉到 ASA r2 叢集"]。
+
+* 您一次只能移轉一台儲存設備 VM。
+* 儲存設備虛擬機器最多可包含 400 個儲存設備單元。
+* 儲存設備虛擬機器不能包含 SnapMirror 目的地儲存設備單元。
+
+
+
+
+[[step-1-create-a-cluster-peer-relationship]]
+== 步驟 1 ：建立叢集對等關係
+
+在將儲存設備虛擬機器從 ASA r2 叢集移轉之前，您需要建立對等關係。對等關係定義了網路連線，使 ONTAP 叢集和儲存設備虛擬機器能夠安全地交換資料。
+
+.關於這項工作
+在下列程序中， ASA 或 AFF 叢集是 _目的地_ 叢集，而 ASA r2 叢集是 _來源_ 叢集。
+
+.開始之前
+您必須使用下列方法之一在被對等連接的叢集中的每個節點上建立叢集間 LIF。
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["在共用資料連接埠上配置集群間 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["在專用資料連接埠上配置集群間 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["在自訂 IP 空間中設定叢集間 LIF"^]
+
+
+.步驟
+. 在目的地叢集上，與來源叢集建立對等關係並產生密碼短語：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
+----
++
+以下範例在叢集 1 和叢集 2 之間建立叢集對等關係，並建立系統產生的密碼短語：
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. 複製產生的密碼短語。
+. 在來源叢集上，與目的地叢集建立對等關係：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
+----
+. 輸入在目的地叢集上產生的密碼短語。
+. 驗證叢集對等關係是否已建立：
++
+[source, cli]
+----
+cluster peer show
+----
++
+以下範例顯示了成功建立對等連接叢集的預期輸出。
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+
+
+.結果
+叢集已建立對等關係。Storage VM 資料可以安全地傳輸。
+
+.接下來呢？
+您已準備好為 ASA r2 儲存設備 VM 進行移轉。
+
+
+
+[[step-2-prepare-the-asa-r2-storage-vm-for-migration]]
+== 步驟 2：準備 ASA r2 儲存 VM 以進行移轉
+
+在將儲存設備虛擬機器（VM）從 ASA r2 叢集移轉之前，您需要移除複寫和 SnapMirror 作用中同步關係，並執行各種檢查。
+
+.步驟
+. link:../data-protection/snapmirror-active-sync-break-relationship.html["移除所有現有的複寫關係"]。
+. link:../data-protection/snapmirror-active-sync-delete-relationship.html["移除所有現有的 SnapMirrror 作用中同步關係"]。
+. 檢查 IPsec 是否已啟用：
++
+[source, cli]
+----
+security ipsec config show
+----
++
+.. 如果啟用了 IPsec，請將其停用：
++
+[source, cli]
+----
+security ipsec config modify -is-enabled -false
+----
++
+了解更多關於該 link:https://docs.netapp.com/us-en/ontap-cli/security-ipsec-config-show.html["security ipsec config show"^] 命令的資訊。
+
+.. 檢查 IPv6 和虛擬 IP （VIP） LIF：
++
+[source, cli]
+----
+network interface show -vserver <storage_vm_name> -fields address-family, is-vip
+----
++
+對於 IPv6 LIF，此 `-address-family`為 `ipv6`。對於 VIP LIF， `-is-vip` 參數為 `true`。
+
+.. 如果存在任何 IPv6 或 VIP LIF，請將其移除：
++
+[source, cli]
+----
+network interface delete -vserver <storage_vm_name> - lif <lif_name>
+----
+.. 確認儲存 VM 上沒有剩餘的 IPv6 或 VIP LIF：
++
+[source, cli]
+----
+network interface show -vserver <storage_VM_name>
+----
++
+了解更多關於 link:https://docs.netapp.com/us-en/ontap-cli/network-interface-show.html["network interface show"^] 和 link:https://docs.netapp.com/us-en/ontap-cli/network-interface-delete.html["network interface delete"^] 命令的資訊。
+
+
+
+. 檢查是否設定了任何介面群組：
++
+[source, cli]
+----
+network port ifgrp show
+----
++
+.. 如果設定了介面群組，請檢查儲存 VM 上是否有任何 LIF 繫結至介面群組：
++
+[source, cli]
+----
+network interface show -vserver <storage_VM_name> -fields home,node, home-port, curr-node, curr-port
+----
+.. 如果儲存設備虛擬機器上的 LIF 綁定到介面群組，請將 LIF 移轉到不同的實體連接埠：
++
+[source, cli]
+----
+network interface migrate -vserver <storage_VM_name> -lif <LIF> -des-node <destination_node> -dest-port <destination_port>
+----
++
+了解更多關於該 link:https://docs.netapp.com/us-en/ontap-cli/network-port-ifgrp-show.html["network port ifgrp show"^] 命令的資訊。
+
+
+
+
+
+.接下來呢？
+您現在已準備好執行移轉預先檢查。
+
+
+
+[[step-3-execute-the-migration-pre-check]]
+== 步驟 3：執行移轉預檢查
+
+在從 ASA r2 叢集移轉儲存設備虛擬機器之前，您必須執行移轉預先檢查並修復任何必要的問題。在預先檢查成功通過之前，您無法執行移轉。
+
+.步驟
+. 從目的地叢集執行移轉預檢查：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
+----
++
+若移轉前需要解決任何問題，系統會顯示問題及修正行動。請修復問題並重複預檢查，直至成功完成。
+
+
+
+.接下來呢？
+您已準備好從 ASA r2 叢集移轉儲存 VM。
+
+
+
+[[step-4-migrate-a-storage-vm-from-an-asa-r2-cluster]]
+== 步驟 4：從 ASA r2 叢集移轉儲存設備 VM
+
+在 ASA r2 和 ASA 或 AFF 叢集之間建立必要的叢集對等關係並完成準備兩個叢集的步驟後，即可開始儲存設備 VM 移轉。
+
+執行儲存設備 VM 移轉時，最佳實務做法是在 ASA r2 叢集和 AFF 叢集上都留出 30% 的 CPU 資源餘裕，以便執行移轉 CPU 工作負載。
+
+.關於這項工作
+* 儲存設備虛擬機器移轉完成後，用戶端 I/O 將無縫地切換到目的地叢集，不會出現任何中斷，並且 ASA r2 叢集上的儲存設備虛擬機器將自動移除。預設情況下，自動切換和自動儲存設備虛擬機器移除均已啟用。您可以選擇停用其中一個或兩個選項，並手動執行。
+* ASA 叢集是儲存設備 VM 將從中移轉的 _來源_ 叢集，而 ASA r2 叢集則是儲存設備 VM 將移轉至的 _目的地_ 叢集。
+
+
+.步驟
+. 從目的地叢集，開始儲存 VM 移轉：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
+----
++
+若要停用自動切換，請使用  `-auto-cutover false` 參數。若要停用自動移除來源儲存設備 VM，請使用  `-auto-source-cleanup false` 參數。
+
+. 監控遷移狀態
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+如果在自動切換開始前需要暫停或取消遷移，請使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必須先暫停遷移，然後才能取消遷移。切換開始後，您將無法取消遷移。
+
++
+如果啟用自動切換，移轉完成後，*狀態* 將顯示為 *移轉完成*。如果停用自動切換，*狀態* 將顯示為 *準備清理來源*。
+
+
+
+.結果
+儲存設備 VM 從 ASA r2 叢集移轉至目的地叢集。
+
+.接下來呢？
+如果您停用了自動切換和自動儲存設備 VM 移除，請執行移轉後切換和清理，手動將 ASA r2 用戶端切換到目的地叢集，並從 ASA r2 叢集中移除儲存設備 VM。
+
+
+
+[[step-5-post-migration-cutover-and-cleanup]]
+== 步驟 5：移轉後切換與清理
+
+在叢集間儲存設備虛擬機器移轉期間，用戶端 I/O 會切換到目的地叢集，來源叢集上的儲存設備虛擬機器將自動移除。如果您選擇在移轉期間停用來源儲存設備虛擬機器的自動切換和移除，則需要在移轉狀態達到 *準備清理來源* 後手動執行這些步驟。
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== 儲存設備 VM 移轉後手動切換用戶端
+
+如果在儲存設備 VM 的叢集間移轉期間停用自動用戶端切換，則在移轉關係準備好進行切換後，請手動執行切換，以便目的地儲存設備 VM 可以向用戶端提供資料。
+
+.關於這項工作
+從目的地叢集執行此工作。
+
+.步驟
+. 手動執行用戶端切換：
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. 確認切換操作已完成：
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.結果
+資料正從目的地叢集上的儲存 VM 提供給您的用戶端。
+
+.接下來呢？
+您現在已準備好從來源叢集移除儲存 VM。
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== 移轉後手動移除儲存 VM
+
+如果在叢集間儲存設備 VM 移轉期間停用自動來源清理，則在移轉完成後，請從來源叢集移除儲存設備 VM 以釋放儲存空間。
+
+.開始之前
+您的用戶端應該從目的地叢集提供資料。
+
+.步驟
+. 從來源叢集，驗證來源儲存設備虛擬機器的狀態是否為 *準備進行來源清理*：
++
+[source, cli]
+----
+vserver migrate show
+----
+. 移除來源儲存設備 VM：
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.結果
+來源叢集上的儲存 VM 已移除。

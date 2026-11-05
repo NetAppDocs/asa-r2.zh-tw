@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn-more/hardware-comparison.html 
 keywords: compare asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, hardware comparison, asa r2 
-summary: ASA 系統提供專為僅 SAN 解決方案最佳化的硬體支援。ASA R2 系統提供硬體與軟體的最佳化。 
+summary: 將 ASA r2 系統與 ASA、AFF 和 FAS 系統進行比較，包括 ONTAP 特性、儲存層和支援的協定。 
 searchtitle: ASA r2 與其他 ONTAP 系統的差異 
 ---
 = ASA r2 與其他 ONTAP 系統的差異
@@ -30,7 +30,7 @@ ASA r2 系統是基於 All Flash 系統建構的、適用於純 SAN 環境的硬
 [[personality-differences]]
 == 性格差異
 
-在 ASA r2 系統上，ONTAP 軟體經過精簡，旨在提供對基本 SAN 功能的支援，同時限制非 SAN 相關特性和功能的可見度和可用度。例如，執行在 ASA r2 系統上的 System Manager 不會顯示為 NAS 用戶端建立主目錄的選項。這種精簡版的 ONTAP 被識別為 _ASA r2 personality_。運作在 ASA 系統上的 ONTAP 被識別為 _ASA ONTAP personality_。運作在 AFF 和 FAS ONTAP 系統上的 ONTAP 被識別為 _unified ONTAP personality_。ONTAP personality 之間的差異在 ONTAP 命令參考手冊（man pages）、REST API 規格以及相關的 EMS 訊息中均有說明。
+在 ASA r2 系統上，ONTAP 軟體經過精簡，旨在為必要的 SAN 功能提供支援，同時限制非 SAN 相關特性和功能的可見度和可用度。例如，在 ASA r2 系統上執行的 System Manager 不會顯示為 NAS 用戶端建立主目錄的選項。這種精簡版的 ONTAP 被稱為 _ASA r2 特性_。在 ASA 系統上執行的 ONTAP 被稱為 _ASA ONTAP 特性_。在 AFF 和 FAS 系統上執行的 ONTAP 被稱為 _統一 ONTAP 特性_。ONTAP 特性之間的差異在 ONTAP 命令參考資料（man pages）、REST API 規格以及相關的 EMS 訊息中均有說明。
 
 您可以從系統管理員或 ONTAP CLI 驗證 ONTAP 儲存設備的特性設定。
 
@@ -53,7 +53,7 @@ ASA r2 系統使用簡化的儲存層，該儲存層與FAS、 AFF和ASA系統所
 FAS、AFF 和 ASA 系統的儲存層使用彙總作為基本儲存設備單元。一個彙總擁有儲存系統中一組特定的磁碟機。彙總會將自身擁有的磁碟機空間指派給 LUN 和命名空間的磁碟區。借助這些系統，ONTAP 使用者可以建立和修改彙總、磁碟區、LUN 和命名空間。
 
 .ASA r2 系統
-ASA r2 系統中的儲存層使用儲存可用區，而非聚合。儲存可用區是單一 HA 對的兩個節點均可存取的公共儲存池。 HA對中的兩個節點均可存取其共享儲存可用區中的所有可用磁碟。例如，在雙節點ASA r2 系統ONTAP叢集中，有一個儲存可用區，叢集中的兩個節點均可存取。在四節點ASA r2 系統ONTAP叢集中，有兩個儲存可用區。叢集中的每個 HA 對都可以存取其中一個儲存可用區。
+ASA r2 系統的儲存層不使用 Aggregate，而是使用儲存可用度區域。儲存可用度區域是一個共用的儲存設備資源池，可供單一 HA 配對的兩個節點存取。HA 配對中的兩個節點都可以存取其共享儲存設備可用度區域中的所有可用磁碟。例如，雙節點 ASA r2 叢集擁有一個儲存可用度區域，兩個節點都可以存取。四節點 ASA r2 叢集擁有兩個儲存可用度區域。叢集中的每個 HA 配對都可以存取其中一個儲存可用度區域。
 
 建立儲存單元（基於 LUN 或 NVMe 命名空間）時，ONTAP 會自動在對應的儲存可用區中建立一個磁碟區來存放該儲存單元。新建立的磁碟區會自動放置在儲存可用區內，以達到最佳效能和均衡的容量利用率。儲存可用區內的容量利用率均衡取決於您的 ONTAP 版本。link:../administer/space-balancing.html["了解ASA r2 叢集中的容量均衡"^]。
 

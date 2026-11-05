@@ -30,7 +30,7 @@ cluster show
 . link:../manage-data/move-storage-units.html["移動"] 或 link:../manage-data/delete-storage-units.html["刪除"] 來自該節點的所有儲存設備單元。
 . 如果您在要移除的節點上有 SCSI 儲存設備單元（LUN），link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["從選擇性 LUN 對應（SLM）報告節點清單中刪除該節點及其 HA 合作夥伴"^]。
 +
-如果您沒有從 SLM 報告節點清單中移除節點及其 HA 合作夥伴，即使 LUN 已移至另一個節點，也可能遺失先前位於該節點上的 LUN 的存取。
+如果您沒有從 SLM 報告節點清單中移除節點及其 HA 合作夥伴，即使 LUN 已移至另一個節點，也可能失去對先前位於該節點上的 LUN 的存取。
 
 . link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["刪除"^] 或 link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["移轉"^] 來自該節點的所有網路介面（LIF）。
 +
@@ -40,7 +40,7 @@ iSCSI LIF 移轉僅限於主節點或 HA 合作夥伴上的連接埠，因此必
 
 ** 應刪除叢集間 LIF。
 +
-刪除叢集間 LIF 時，會顯示一則可忽略的警告。
+刪除叢集間 LIF 時，您可以忽略出現的警告。
 
 ** 叢集管理 LIF 應該移至另一個節點。
 
@@ -169,7 +169,7 @@ cluster remove-node -node <node_name>
 cluster remove-node -cluster_ip <node_ip>
 ----
 +
-如果存在必須在移除節點之前解決的條件，則會產生故障訊息。如果發生這種情況，請解決這些條件並重新執行  `cluster remove-node` 命令。
+如果存在必須先解決才能移除節點的情況， ONTAP 將產生故障訊息。如果發生這種情況，請解決這些情況並重新執行  `cluster remove-node` 命令。
 
 +
 節點從叢集中成功移除後會自動重新開機。

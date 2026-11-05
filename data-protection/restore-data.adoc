@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/restore-data.html 
 keywords: restore data, asa r2, data restoration 
-summary: 如果一致性群組中的資料毀損或遺失、您可以從遠端快照還原整個一致性群組。 
+summary: 當 ASA r2 系統上的資料遺失或損壞時，從本機或遠端快照還原一致性群組或儲存設備單元。 
 ---
 = 還原 ASA R2 儲存系統上的資料
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 如果一致性群組中的資料毀損或遺失、您可以從遠端�
 
 
 [role="lead"]
-如果資料遺失或毀損、則可還原受快照保護的一致性群組或儲存單元中的資料。
+如果受快照保護的一致性群組或儲存設備單元中的資料遺失或損壞，請從快照還原資料，將資料還原至建立快照的時間點。
 
 
 
@@ -43,7 +43,7 @@ summary: 如果一致性群組中的資料毀損或遺失、您可以從遠端�
 .步驟
 . 在 System Manager 中、選取 * 保護 > 複寫 * 。
 . 選取 * 本機目的地 * 。
-. 選擇要恢復的 * 來源 * ，然後選擇image:icon_kabob.gif["三個垂直藍點"]。
+. 選擇要還原的*來源*；然後選擇image:icon_kabob.gif["三個垂直藍點"]。
 . 選擇*還原*。
 . 選取您要還原資料的叢集、儲存 VM 和一致性群組。
 . 選取您要還原的快照。

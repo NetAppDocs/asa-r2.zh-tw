@@ -2,22 +2,22 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
 keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
-summary: 了解如何在ASA r2 叢集發生計劃外故障轉移後重新建立SnapMirror主動同步關係。 
+summary: 在您的 ASA r2 叢集發生非計畫性容錯移轉後，重新建立 SnapMirror 作用中同步關係。 
 ---
-= 在 ASA r2 發生計劃外故障切換後重新建立 SnapMirror 作用中同步
+= 在 ASA r2 上發生非計畫性容錯移轉後重新建立 SnapMirror 作用中同步
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-在 ASA r2 系統上，SnapMirror 主動同步支援對稱主動/主動配置。在對稱主動/主動配置中，兩個站點都可以存取本地儲存以進行主動 I/O 操作。如果來源叢集發生故障或隔離，中介程式將觸發自動計劃外故障轉移（AUFO），並從目標叢集處理所有 I/O 操作，直到來源叢集恢復為止。
+在發生非計畫性容錯移轉後，重新建立 SnapMirror 作用中同步關係，以恢復原始來源叢集上的作業。在 ASA r2 系統上，SnapMirror 作用中同步支援對稱的作用中/作用中組態。在對稱的作用中/作用中組態中，兩個站台都可以存取本機儲存設備以進行作用中 I/O。如果來源叢集發生故障或是隔離的， ONTAP Mediator 會觸發自動非計畫性容錯移轉（AUFO），並從目的地叢集提供所有 I/O，直到來源叢集恢復為止。
 
 如果您的 SnapMirror 活動同步關係發生 AUFO，則應在原始來源叢集復原聯機後重新建立該關係並復原作業。
 
 .開始之前
 * SnapMirror活動同步關係必須同步。
-* 當正在進行非中斷操作（例如儲存單元移動）時，您無法啟動計劃內故障轉移。
+* 當不中斷營運的操作（例如儲存設備單元移動）正在進行時，您無法啟動計畫性容錯移轉。
 * ONTAP調解器必須已配置、已連線且處於法定人數。
 * 若要恢復遺失的 I/O 路徑或更新主機上的 I/O 路徑狀態，需要在主儲存叢集復原運作後對主機執行儲存/適配器重新掃描。
 

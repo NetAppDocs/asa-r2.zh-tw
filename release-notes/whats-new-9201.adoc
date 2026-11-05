@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9201.html 
+keywords: 'what"s new, release notes, 9.20.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: 了解 ONTAP 9.20.1 中為 ASA r2 系統提供的新功能。 
+---
+= ASA r2 系統的 ONTAP 9.20.1 新增功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解 ONTAP 9.20.1 中為 ASA r2 系統提供的新功能。
+
+
+
+[[san-data-migration]]
+== SAN資料遷移
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../manage-data/migrate-svm-from-asa-r2.html["支援將儲存設備虛擬機器從 ASA r2 系統無中斷移轉到 ASA 和 AFF 系統"] | 您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集無中斷地移轉到 2 節點 ASA 叢集或 2 節點 AFF 叢集。在移轉過程中，現有的主機對映以及 LUN 和命名空間的儲存設備單元組態將保持不變，從而降低維運工作量和風險。 
+
+
+| link:../manage-data/migrate-svm.html["支援將儲存設備虛擬機器從 ASA 系統移轉到 ASA r2 系統後提升效能"] | ONTAP 可減少儲存設備虛擬機器 (VM) 從 ASA 系統移轉到 ASA r2 系統後可能出現的額外讀取延遲和 CPU 使用率。 
+|===
+
+
+[[security]]
+== 安全性
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#fc-sp-3-authentication-and-encryption["支援使用 Broadcom 安全的 HBA 的 FC-SP-3 驗證和加密"] | ONTAP 支援在配備 ASA r2 系統的 Broadcom 安全的 HBA 上進行 Fibre Channel 安全協定 3（FC-SP-3）驗證和加密。FC-SP-3 支援可實現硬體層級的端對端加密和裝置驗證，以保護 FC 和 NVMe/FC SAN 主機與 ONTAP 儲存設備系統之間傳輸中的資料，同時符合 T11 Fibre Channel 安全性標準。 
+
+
+| 支援 Web 管理可用度保護和預叢集增強功能 | 已實施多項改進措施，以確保在連線氾濫期間 Web[1] 管理 API 的可用度。此外，還增強了叢集前動態主機設定協定（DHCP）的處理能力，以便節點管理 LIF 能夠在等待叢集設定期間維護和續約 DHCP 連線。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#external-key-management-for-encryption-at-rest["支援儲存設備虛擬機器 Volume 加密金鑰的自動移轉"] | 在資料儲存設備虛擬機器上啟用外部金鑰管理程式後， ONTAP 會自動將該儲存設備虛擬機器的 Volume 加密金鑰從管理範圍的金鑰管理程式移轉到新的資料儲存設備虛擬機器金鑰管理程式。這簡化了向外部金鑰管理的轉換，並省去了標準工作流程中分隔的手冊移轉步驟。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#multi-admin-verification-mav["MAV 群組支援"] | 除了個別系統管理員之外，MAV 核准群組還可以包含身分供應商 (IdP)、Active Directory (AD) 和 LDAP (nsswitch) 群組作為核准者。支援的群組類型包括 Entra ID、ADFS、AD 網域群組和 LDAP 群組。在 IdP、AD 或 LDAP 目錄中新增或移除使用者，不需要對 MAV 組態進行任何變更。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#snmp["SNMP 對 SHA-512 的支援"] | ONTAP 支援對 SNMPv3 使用者進行 SHA-512 驗證。此增強功能可讓您對外部 SNMP 用戶端和交換器監控（包括需要 SHA-512 驗證的交換器）使用更強大的 SNMPv3 驗證。 
+|===
+
+
+[[storage-efficiency]]
+== 儲存效率
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#data-reduction-rate-drr["支援簡化儲存效率資料減量率的報告"] | 儲存效率資料減量率 (DRR) 僅包含可縮減資料，從而更精確地評估 ONTAP 儲存效率空間節約效益。在 ONTAP 9.19.1 及更早版本中，DRR 同時包含可縮減資料和不可縮減資料。 
+
+
+| 支援 SAN 複本卸載效能改進 | ONTAP 可提升符合條件的 NVMe 和 SCSI 複本工作負載的 SAN 複本卸載效能。詳情請聯絡您的 NetApp 代表。 
+
+
+| 自動重複資料刪除技術排程器（ADS）最佳化 | Automatic Dedupe Scheduler （ADS）已獲得改良，允許每個節點有更多並行重複資料刪除技術工作階段，以及更智慧、更具針對性的節流，以進一步平衡用戶端 I/O。DP Volume 上的重複資料刪除技術活動（來自 SnapMirror 傳輸）與全域重複資料刪除技術工作階段，會與一般 Volume 重複資料刪除技術一起受到更佳的代管，進而減少爭用與中繼資料成長。您無需變更組態，即可獲得儲存效率節約的優點，尤其是在混合工作負載下。此功能預設為啟用。 
+|===
+
+
+[[system-manager]]
+== System Manager
+
+[cols="2,4"]
+|===
+| 更新 | 說明 
+
+
+| link:../administer/manage-certificates.html["支援憑證到期警示"] | System Manager 會在叢集或儲存設備虛擬機器（SVM）憑證到期前 30 天顯示儀表板健全狀況警報，並每天更新剩餘到期天數。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#system-manager["支援使用者密碼過期警示"] | 如果與使用者帳戶關聯的角色已設定密碼過期警示，則使用者在登入 System Manager 後會立即收到頁面頂部的橫幅警示，此警示會在密碼過期前 14 天開始顯示。每次使用者登入時，警示都會更新，以顯示密碼過期前剩餘的天數。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#autosupport["支援額外的 AutoSupport 警報"] | System Manager 會顯示新的 AutoSupport 警報，幫助您解決 AutoSupport 組態問題。 
+|===

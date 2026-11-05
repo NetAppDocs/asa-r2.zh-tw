@@ -74,7 +74,7 @@ summary: 使用 System Manager 為您的使用者帳戶設定 Active Directory �
 . 返回 System Manager 的確認視窗、然後選取 * 我已使用主機 URI 或中繼資料 * 設定 IDP 。
 . 選取 * 登出 * 以啟用 SAML 型驗證。
 +
-IDP系統會顯示驗證畫面。
+IdP 系統顯示驗證畫面。
 
 
 
