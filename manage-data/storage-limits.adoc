@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
 keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
-summary: 為了獲得最佳效能、配置和支持，您應該了解ASA r2 的儲存限制。 
+summary: 在 NetApp Hardware Universe 中查詢適用於您的系統和 ONTAP 版本的 ASA r2 儲存設備限制，以確保最佳效能、組態和支援。 
 ---
 = 確定您的 ASA r2 系統儲存設備限制
 :allow-uri-read: 
@@ -11,12 +11,12 @@ summary: 為了獲得最佳效能、配置和支持，您應該了解ASA r2 的�
 
 
 [role="lead"]
-為了獲得最佳效能、組態和支援，您應瞭解 ASA r2 的儲存設備限制。
+了解 ASA r2 系統的儲存設備限制有助於您進行設定，以獲得最佳效能和支援。您可以在 NetApp Hardware Universe 中查詢系統和 ONTAP 版本的限制。
 
 限制可能會因您的 ASA r2 系統和 ONTAP 版本而異。請參閱 link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 以取得適用於您特定系統的最新限制完整清單。
 
 
-NOTE: Hardware Universe 中未列出虛擬機器 （VM） 數量限制。根據 ASA r2 系統 Volume 限制，建議每個 HA 配對最多支援 800 個 VM，每個叢集最多支援 1,200 個 VM。此限制不適用於駐留在 VMFS 資料儲存中的 VM。VMFS 資料儲存沒有 VM 數量上限。
+NOTE: Hardware Universe 中未列出虛擬機器（VM）限制。根據 ASA r2 系統 Volume 限制，建議每個 HA 配對的 VM 數量上限為 800，每個叢集為 1,200。此限制不適用於位於 VMFS 資料存放區中的 VM。VMFS 資料存放區沒有 VM 數量上限。
 
 .關於這項工作
 ASA r2 系統在 NetApp Hardware Universe 的*產品*下列為「ASA」平台。

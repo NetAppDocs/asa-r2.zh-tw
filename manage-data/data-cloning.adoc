@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/data-cloning.html 
 keywords: data cloning, clone data, cloning data, luns, namespaces, clone storage units, clone, cloning, clone consistency groups 
-summary: 在 ASA R2 上複製儲存單元和一致性群組、以建立資料複本、以便在正式作業環境以外的環境中用於各種用途。 
+summary: 在 ASA r2 系統上複製儲存設備單元和一致性群組，以建立資料副本供正式作業環境以外使用。 
 searchtitle: 使用 ONTAP System Manager | ASA R2 進行資料複製 
 ---
 = 在 ASA R2 儲存系統上複製資料
@@ -82,7 +82,7 @@ searchtitle: 使用 ONTAP System Manager | ASA R2 進行資料複製
 
 複本是從複製一致性群組的快照建立而成。複製所使用的快照是在預設情況下啟動複製程序的時間點拍攝。您可以修改預設行為、以使用預先存在的快照。
 
-儲存單元對應會複製為複製程序的一部分。快照原則不會在複製程序中複製。
+儲存單元對應會在複製程序中一併複製。Snapshot 快照技術原則不會在複製程序中一併複製。
 
 您可以從儲存在 ASA R2 系統本機上的一致性群組或複寫到遠端位置的一致性群組建立複本。
 

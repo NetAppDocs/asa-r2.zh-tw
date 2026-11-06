@@ -2,16 +2,16 @@
 sidebar: sidebar 
 permalink: manage-data/migrate-svm-from-asa-r2.html 
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
-summary: 從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集不中斷營運地移轉到 2 節點 ASA 或 2 節點 AFF 叢集。 
+summary: 從 ONTAP 9.20.1 開始，將儲存設備 VM 從 2 節點 ASA r2 叢集不中斷地移轉至 2 節點 ASA 或 AFF 叢集。 
 ---
-= 將儲存設備 VM 從 ASA r2 叢集移轉至 ASA 或 AFF 叢集
+= 將儲存 VM 從 ASA r2 叢集移轉至 ASA 或 AFF 叢集
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集不中斷營運地移轉到 2 節點 ASA 或 2 節點 AFF 叢集。您可能需要移轉儲存設備 VM 來整合 SAN 和 NAS 工作負載、採用 ASA r2 系統不支援的 ONTAP 功能，或作為環境硬體重新整理的一部分。在移轉期間，現有的主機對映以及 LUN 和命名空間的儲存設備單元組態將保持不變，從而降低維運工作量和風險。
+從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）從 2 節點 ASA r2 叢集無中斷地移轉到 2 節點 ASA 或 2 節點 AFF 叢集。您可能需要移轉儲存設備 VM 來整合 SAN 和 NAS 工作負載、採用 ASA r2 系統不支援的 ONTAP 功能，或重新整理硬體。在移轉期間，現有的主機對映以及 LUN 和命名空間的儲存設備單元組態將保持不變，從而降低維運工作量和風險。
 
 .開始之前
 * 您必須是叢集管理員。
@@ -21,8 +21,8 @@ summary: 從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）�
 .關於這項工作
 * 您只能將 ASA r2 儲存設備 VM 從 2 節點 ASA r2 叢集移轉到 2 節點 AFF 叢集。
 +
-** 您無法將 ASA r2 儲存設備 VM 移轉到 FAS 叢集，或移轉到節點數超過 2 個的 ASA 或 AFF 叢集。
-** 您無法將 ASA r2 儲存 VM 從具有超過 2 個節點的 ASA r2 叢集中移轉。
+** 您無法將 ASA r2 儲存設備 VM 移轉到 FAS 叢集，或移轉到具有兩個以上節點的 ASA 或 AFF 叢集。
+** 您無法從具有兩個以上節點的 ASA r2 叢集移轉 ASA r2 儲存 VM。
 
 
 * 從 ASA r2 叢集到 AFF 叢集的資料移轉是不可逆的。
@@ -30,7 +30,7 @@ summary: 從 ONTAP 9.20.1 開始，您可以將儲存設備虛擬機器（VM）�
 您可以在切換之前中止移轉，但切換開始後，您無法中斷或回復移轉。移轉完成後，您無法將資料從 AFF 叢集移轉到 ASA r2 叢集。
 
 +
-您可以link:migrate-svm.html["將 SVM 從 ASA 移轉到 ASA r2 叢集"]。
+您可以link:migrate-svm.html["將儲存設備虛擬機器從 ASA 移轉到 ASA r2 叢集"]。
 
 * 您一次只能移轉一台儲存設備 VM。
 * 儲存設備虛擬機器最多可包含 400 個儲存設備單元。
@@ -120,7 +120,7 @@ cluster2             1-80-123456             Available      ok
 
 .步驟
 . link:../data-protection/snapmirror-active-sync-break-relationship.html["移除所有現有的複寫關係"]。
-. link:../data-protection/snapmirror-active-sync-delete-relationship.html["移除所有現有的 SnapMirrror 作用中同步關係"]。
+. link:../data-protection/snapmirror-active-sync-delete-relationship.html["移除所有現有的 SnapMirror 作用中同步關係"]。
 . 檢查 IPsec 是否已啟用：
 +
 [source, cli]
@@ -144,7 +144,7 @@ security ipsec config modify -is-enabled -false
 network interface show -vserver <storage_vm_name> -fields address-family, is-vip
 ----
 +
-對於 IPv6 LIF，此 `-address-family`為 `ipv6`。對於 VIP LIF， `-is-vip` 參數為 `true`。
+對於 IPv6 LIF，此 `-address-family`為 `ipv6`。對於 VIP LIF， `-is-vip`參數為 `true`。
 
 .. 如果存在任何 IPv6 或 VIP LIF，請將其移除：
 +
@@ -152,7 +152,7 @@ network interface show -vserver <storage_vm_name> -fields address-family, is-vip
 ----
 network interface delete -vserver <storage_vm_name> - lif <lif_name>
 ----
-.. 確認儲存 VM 上沒有剩餘的 IPv6 或 VIP LIF：
+.. 請確認儲存設備虛擬機器上沒有剩餘的 IPv6 或 VIP LIF：
 +
 [source, cli]
 ----
@@ -221,7 +221,7 @@ vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -che
 
 在 ASA r2 和 ASA 或 AFF 叢集之間建立必要的叢集對等關係並完成準備兩個叢集的步驟後，即可開始儲存設備 VM 移轉。
 
-執行儲存設備 VM 移轉時，最佳實務做法是在 ASA r2 叢集和 AFF 叢集上都留出 30% 的 CPU 資源餘裕，以便執行移轉 CPU 工作負載。
+最佳實務做法是在 ASA r2 叢集和 AFF 叢集上都留出 30% 的 CPU 餘裕，以便移轉工作負載能夠運作。
 
 .關於這項工作
 * 儲存設備虛擬機器移轉完成後，用戶端 I/O 將無縫地切換到目的地叢集，不會出現任何中斷，並且 ASA r2 叢集上的儲存設備虛擬機器將自動移除。預設情況下，自動切換和自動儲存設備虛擬機器移除均已啟用。您可以選擇停用其中一個或兩個選項，並手動執行。

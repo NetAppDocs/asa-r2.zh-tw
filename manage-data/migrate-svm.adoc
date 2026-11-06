@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/migrate-svm.html 
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
-summary: 如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。 
+summary: 將儲存 VM 從 ASA 叢集不中斷地移轉至 ASA r2 叢集，包括驗證儲存 VM、建立叢集對等關係、執行預先檢查和移轉。 
 ---
 = 將儲存虛擬機器從ASA集群遷移到ASA r2 集群
 :allow-uri-read: 
@@ -16,7 +16,7 @@ summary: 如果儲存可用性區域的空間不足，您可以將儲存單元�
 
 NOTE: 您無法將儲存 VM 從 ASA MetroCluster 移轉至 ASA r2 叢集。ASA r2 系統不支援 MetroCluster 組態。
 
-ASA r2 系統支援 QuickAssist 技術（QAT）。ASA 系統不支援 QAT。從 ONTAP 9.20.1 開始，ONTAP 可降低儲存設備虛擬機器（VM）從 ASA（非 QAT）系統移轉至 ASA r2（QAT）系統後可能發生的高讀取延遲與 CPU 使用率。
+ASA r2 系統支援 QuickAssist 技術（QAT）。ASA 系統不支援 QAT。從 ONTAP 9.20.1 開始，ONTAP 可降低儲存設備 VM 從 ASA（非 QAT）系統移轉至 ASA r2（QAT）系統後可能發生的讀取延遲過高與 CPU 使用率過高問題。
 
 ASA和ASA r2 儲存系統之間支援儲存虛擬機器遷移，具體方式如下：
 
@@ -249,7 +249,7 @@ vserver migrate show -vserver <storage_VM_name>
 
 
 .結果
-儲存虛擬機器從ASA叢集遷移到ASA r2 叢集。儲存虛擬機器的名稱和 UUID、資料 LIF 名稱、IP 位址以及物件名稱（例如磁碟區名稱）保持不變。儲存虛擬機器中已移轉物件的 UUID 已更新。
+儲存設備虛擬機器從 ASA 叢集移轉到 ASA r2 叢集。儲存設備虛擬機器的名稱和 UUID、資料 LIF 名稱、IP 位址以及物件名稱（例如 Volume 名稱）保持不變。儲存設備虛擬機器中已移轉物件的 UUID 已更新。
 
 .接下來呢？
 如果您停用了自動切換和自動儲存設備 VM 移除，請執行移轉後切換和清理，手動將 ASA 用戶端切換到目的地叢集，並從 ASA 叢集中移除儲存設備 VM。

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/move-storage-units.html 
 keywords: move lun, lun move, move namespace, move storage unit, asa r2 
-summary: 如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。 
+summary: 當某個區域空間不足時，將儲存單元移至另一個儲存可用度區，以平衡叢集的儲存使用率。 
 ---
 = 在 ASA R2 儲存系統上移動儲存單元
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: 如果儲存可用性區域的空間不足，您可以將儲存單元�
 [role="lead"]
 如果儲存可用性區域的空間不足，您可以將儲存單元移至其他儲存可用性區域，以平衡叢集的儲存使用率。
 
-您可以在儲存單元上線並提供資料時移動儲存單元。移動作業不會中斷營運。
+您可以移動處於線上且正在提供資料的儲存設備單元。移動作業不會造成中斷。
 
 .開始之前
 * 您必須執行 ONTAP 9.16.1 或更新版本。
